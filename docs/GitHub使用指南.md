@@ -4,8 +4,10 @@
 
 - 项目根目录已初始化为 Git 仓库，主分支为 `main`。
 - 已配置 `.gitignore` 与 `.gitattributes`，两个官网 ZIP 已展开为可追踪源码。
-- GitHub CLI 已安装。本机首次使用需完成 `gh auth login --web` 授权。
-- 远程仓库地址、首次推送和交付链接须在账号授权与访问范围确定后完成；本说明不代表已上传。
+- GitHub CLI 已安装并以 `32muyuxuanshou` 完成授权，Git 使用 HTTPS 凭据。
+- 公开远程仓库：`https://github.com/32muyuxuanshou/massage-physiotherapy-robot`，本地名称 `origin`。
+- 本机初始版本为 `1eefef9`，基线标签 `baseline-2026-09-05`；第一版交付标签为 `v0.1.0`。
+- 本仓库后续提交使用 GitHub 用户名和 noreply 邮箱，不修改其他项目的全局 Git 身份。
 
 以下命令在项目根目录的 PowerShell 运行。新安装 CLI 后请重新打开终端；若 `gh` 未识别，
 可使用 `& 'C:/Program Files/GitHub CLI/gh.exe'` 替代 `gh`。
@@ -86,7 +88,7 @@ gh release view v0.1.0 --web
 
 ## 让 ChatGPT 等 AI 网页端读取项目
 
-本项目选择公开源码与可公开交付资料。远程创建完成后，给 AI 提供仓库链接，并让它先读
+本项目选择公开源码与可公开交付资料。给 AI 提供仓库链接，并让它先读
 根目录 `README.md`、`AI感知模块/README.md` 和 `deliverables/README.md`。
 公开链接是否能直接读取，取决于该 AI 网页端的浏览工具；不会仅因公开就自动索引全部文件。
 
@@ -96,7 +98,7 @@ ChatGPT 网页端可在 Plugins（插件）入口搜索并安装 GitHub，按提
 
 可复制的请求示例：
 
-> 请使用 GitHub 读取这个项目：粘贴仓库链接。先读 README.md、AI感知模块/README.md、
+> 请使用 GitHub 读取这个项目：https://github.com/32muyuxuanshou/massage-physiotherapy-robot 。先读 README.md、AI感知模块/README.md、
 > deliverables/README.md，再根据我的问题查看具体源码或交付文件。请说明实际读取的分支与文件，
 > 对未能读取的附件明确说明，不要仅根据文件名推断内容。
 

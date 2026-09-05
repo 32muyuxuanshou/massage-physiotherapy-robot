@@ -2,6 +2,10 @@
 
 项目源码、工程文档与交付资料的统一版本管理入口。
 
+公开仓库：[massage-physiotherapy-robot](https://github.com/32muyuxuanshou/massage-physiotherapy-robot)。
+交付下载：[Releases](https://github.com/32muyuxuanshou/massage-physiotherapy-robot/releases)。
+让 AI 网页端阅读时，提供仓库链接并要求先读本页、AI 模块说明和交付索引。
+
 ## 项目入口
 
 | 内容 | 路径 |
