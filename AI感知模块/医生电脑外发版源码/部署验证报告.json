@@ -1,0 +1,38 @@
+{
+  "schema": "doctor-portable-deployment-validation-v2",
+  "deployment_version": "2.1.0",
+  "build_date": "2026-08-20",
+  "status": "PASS",
+  "distribution": {
+    "target": "windows-doctor-computer",
+    "doctor_annotation_surface": "SMPL-X only",
+    "archive_contains_smplx_model_data": false,
+    "archive_contains_skel_model_data": false,
+    "archive_contains_generated_model_templates": false,
+    "first_run_requires_user_obtained_smplx_addon_zip": true,
+    "first_run_requires_skel_files": false,
+    "skel_status": "internal research only; not exposed in the v2.1 doctor workflow"
+  },
+  "checks": {
+    "windows_powershell_5_1_parse": "PASS",
+    "portable_python_runtime": "PASS",
+    "restricted_model_asset_count_in_archive": 0,
+    "zip_roundtrip_extraction": "PASS",
+    "official_smplx_zip_structure_validation": "PASS",
+    "first_run_full_configuration": "PASS",
+    "smplx_neutral_template_generation": "PASS",
+    "smplx_female_template_generation": "PASS",
+    "smplx_male_template_generation": "PASS",
+    "template_topology_shape_pose_signature_validation": "PASS",
+    "portable_launcher_resource_self_test": "PASS",
+    "portable_doctor_three_point_annotation": "PASS",
+    "portable_atomic_autosave_and_formal_export": "PASS",
+    "portable_save_close_reopen_binding_restore": "PASS",
+    "doctor_launcher_visual_review": "PASS",
+    "blender_doctor_workspace_visual_review": "PASS",
+    "skel_asset_count_in_v2_1_doctor_workflow": 0
+  },
+  "medical_notice": "The tool records doctor judgments and does not infer or recommend acupoint locations.",
+  "robot_notice": "Blender coordinates are not robot-executable coordinates; patient registration, calibration and safety control remain separate work.",
+  "license_notice": "The in-app checkbox only records confirmation. It does not grant a license. The actual user must obtain the official SMPL-X files and accept the official license."
+}

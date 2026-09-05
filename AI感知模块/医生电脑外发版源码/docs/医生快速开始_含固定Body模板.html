@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>医生穴位标注工作台｜快速开始</title>
+  <style>
+    :root{--green:#1f5845;--green2:#2f765c;--ink:#22302b;--muted:#63716c;--bg:#eef3f1;--warn:#965825}
+    *{box-sizing:border-box}body{margin:0;font-family:"Microsoft YaHei UI","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);line-height:1.72}
+    header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 24px}header div,main{max-width:980px;margin:auto}h1{margin:0 0 8px;font-size:30px}header p{margin:0;color:#d9ebe4}
+    main{padding:26px 20px 50px}section{background:#fff;border-radius:14px;padding:24px 28px;margin-bottom:18px;box-shadow:0 5px 18px rgba(28,68,53,.08)}h2{margin:0 0 12px;color:var(--green)}
+    .notice{background:#fff7ec;color:#69411f;border:1px solid #edcfaa;border-radius:10px;padding:14px 16px}.ok{background:#eff8f4;border:1px solid #c9e2d7;border-radius:10px;padding:14px 16px}
+    .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.step{border:1px solid #d7e4df;border-radius:10px;padding:15px;background:#f8fbfa}.step b{display:block;color:var(--green)}code{background:#edf2f0;padding:2px 6px;border-radius:4px}@media(max-width:760px){.flow{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header><div><h1>医生穴位标注工作台</h1><p>含固定 SMPL-X Body 模板｜解压后直接使用</p></div></header>
+  <main>
+    <section>
+      <h2>开始标注</h2>
+      <div class="flow">
+        <div class="step"><b>1. 解压 ZIP</b>完整解压到普通文件夹，不要在压缩包预览中运行。</div>
+        <div class="step"><b>2. 双击开始使用</b>打开 <code>开始使用_医生穴位标注工作台.cmd</code>。</div>
+        <div class="step"><b>3. 填写并选择</b>填写医生、任务编号，选择中性、女性或男性。</div>
+      </div>
+      <p class="ok">模型已随包提供，不需要安装 Blender、Python、插件，也不需要首次下载 SMPL-X。</p>
+    </section>
+    <section>
+      <h2>标注步骤</h2>
+      <ol>
+        <li>填写穴位标准编码、中文名称、身体分区和左/右/中线。</li>
+        <li>点击“开始点选人体表面”，再在人体上单击。</li>
+        <li>双侧穴位必须分别建立左侧和右侧实例。</li>
+        <li>每次增删改都会自动保存；完成时点击“保存本次标注”。</li>
+      </ol>
+    </section>
+    <section>
+      <h2>模板与许可</h2>
+      <p>不确定时使用中性主 Atlas。三个性别模板分别保存，坐标绑定不会直接混用。</p>
+      <p class="notice">内置的是去掉身份体型和表情 shape blendshapes 的固定 SMPL-X Body，不是完整 SMPL-X Model。依据 CC BY 4.0 分享；署名、修改说明和官方许可链接见根目录 <strong>SMPL-X_BODY_许可与署名.md</strong>。</p>
+    </section>
+    <section>
+      <h2>安全边界</h2>
+      <p class="notice">本工具只记录医生判断，不自动推荐穴位。Blender 世界坐标不能直接发送给按摩机器人，必须另做真人配准、外参标定、接触法向、力/速度限制和安全控制。</p>
+    </section>
+  </main>
+</body>
+</html>

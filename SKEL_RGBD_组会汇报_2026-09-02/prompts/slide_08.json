@@ -1,0 +1,63 @@
+{
+  "slide": 8,
+  "title": "工程 Pilot 数据集与泛化划分",
+  "prompt": "# Codex PPT Slide Image Prompt\n\n## Canvas\n{\n  \"type\": \"16:9 full-slide PowerPoint image\",\n  \"language\": \"Chinese\",\n  \"slide_number\": 8,\n  \"render_slide_number\": false\n}\n\n## Deck Goal\n汇报基于 SKEL 与虚拟 RGB-D 的穴位定位训练数据生成流程、验证结果和下一步。\n\n## Required Background\n{\n  \"deck_context\": {\n    \"source_summary\": \"面向按摩理疗机器人穴位定位，使用参数化 SKEL 人体、表面穴位 Atlas 和虚拟 RGB-D 相机，生成带二维与三维穴位标签的工程训练数据。当前使用 20 个工程测试点验证流程，不作为正式医学标注。\",\n    \"core_claim\": \"已经打通从人体表面标注、Shape/Pose 传播、虚拟 RGB-D 渲染到二维与三维标签及可见性判断的完整工程链路。\",\n    \"canonical_terms\": [\n      \"SKEL\",\n      \"RGB-D\",\n      \"Atlas\",\n      \"face_index + barycentric\",\n      \"Shape / Pose\",\n      \"PASS_WITH_RESTRICTIONS\"\n    ]\n  },\n  \"slide_local_context\": {\n    \"required_background\": \"主 Pilot 不包含 C4；372/372 张 RGB 图像唯一。每张样本带 E01–E20 共 20 个非医学工程测试点，不能写成医学真值。\"\n  }\n}\n\n## Global Style\n{\n  \"name\": \"极简白底科研汇报风\",\n  \"visual_direction\": \"纯白背景；真实实验截图为主；短中文文字、细箭头和必要数字；无装饰性元素。\",\n  \"color_palette\": \"white background; black and dark gray text; muted teal #0F766E accent; preserve coral/orange acupoint marks and source-image colors\",\n  \"typography\": \"modern Chinese sans-serif; large bold left-aligned title; compact readable labels; strong numeric hierarchy\",\n  \"texture_and_finish\": \"flat and clean; no gradients, shadows, textures, patterns, rounded cards, stock icons, or ornamental illustration\",\n  \"deck_consistency\": \"Match the approved Slide 3 palette, typography, whitespace, screenshot treatment, and thin-arrow language; vary composition by slide role.\"\n}\n\n## Input Images\n\n- Image 1: E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png — approved sample slide style reference; match style only; do not copy its layout or content\n- Image 2: E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\NORMAL_MAIN_overlay.png — strict NORMAL_MAIN sample overlay; preserve body, point overlays and source colors; crop or scale only\n- Image 3: E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\C1_MILD_OBLIQUE_overlay.png — strict C1 mild-oblique sample overlay; preserve body, point overlays and source colors; crop or scale only\n- Image 4: E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\C2_EDGE_CROP_overlay.png — strict C2 edge-crop sample overlay; preserve cropping condition, body, point overlays and source colors\n- Image 5: E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\C3_EXTERNAL_OCCLUDER_overlay.png — strict C3 external-occluder sample overlay; preserve occluder, body, point overlays and source colors\n\n\n## Slide\n{\n  \"number\": 8,\n  \"title\": \"工程 Pilot 数据集与泛化划分\",\n  \"role\": \"dataset evidence and split design\",\n  \"intent\": \"展示完成的数据规模、相机组成和按人体隔离的三类泛化测试。\"\n}\n\n## Text\n{\n  \"title\": \"工程 Pilot 数据集与泛化划分\",\n  \"key_points\": [\n    \"360 张主 Pilot RGB-D 样本 + 12 张 C4 极端侧视挑战样本\",\n    \"NORMAL_MAIN 144 · C1 108 · C2 54 · C3 54\",\n    \"COMBINATION / SHAPE / POSE 三类 Holdout\",\n    \"所有划分均按人体组合隔离\"\n  ],\n  \"speaker_focus\": null\n}\n\n## Layout\n{\n  \"composition\": \"顶部左对齐标题。左侧约 58% 将四张严格输入的真实 Overlay 排成紧凑 2×2 图组，仅标 NORMAL、C1、C2、C3；右侧约 42% 突出大数字 360 + 12，下方用三条细蓝绿色分支列出 COMBINATION、SHAPE、POSE Holdout。底部一行工程边界说明。\",\n  \"relationship_to_previous_slide\": \"从已验证的相机兼容组合推进到实际数据集规模\"\n}\n\n## Visual Elements\n{\n  \"main_visual\": \"four supplied engineering sample overlays arranged as a clean 2x2 evidence group\",\n  \"supporting_elements\": \"large 360 + 12, one thin branching line, small sample-count labels\"\n}\n\n## Constraints\n[\n  \"Render 360, 12, 144, 108, 54 and 54 exactly.\",\n  \"Do not claim the 20 points are medical ground truth.\",\n  \"No cards, gradients, decorative illustration, logo, or page number.\"\n]\n\n## Style Reference Rule\nUse Image 1 as the approved sample-slide style reference. Match its palette, typography mood, density, texture, and overall visual identity. Do not copy its exact layout unless this slide's layout explicitly asks for it.\n\n## Input Image Handling Rules\nFor any input image marked as a strict input asset, include it visibly and preserve its content. Do not redraw, replace, relabel, or invent a similar figure. Scale and crop only as needed for composition while keeping the important labels, arrows, data, and relationships recognizable.\n\n## Universal Constraints\n- The final image itself must contain the title and key points.\n- Render Chinese text exactly and legibly; avoid garbled characters.\n- Keep the confirmed deck style consistent while varying layout by slide role.\n- No watermark, unrelated logo, or extra slide number.\n",
+  "out": "slide_08.png",
+  "input_images": [
+    {
+      "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+      "role": "approved sample slide style reference",
+      "fidelity": "match style only; do not copy its layout or content"
+    },
+    {
+      "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\NORMAL_MAIN_overlay.png",
+      "role": "strict NORMAL_MAIN sample overlay",
+      "fidelity": "preserve body, point overlays and source colors; crop or scale only"
+    },
+    {
+      "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\C1_MILD_OBLIQUE_overlay.png",
+      "role": "strict C1 mild-oblique sample overlay",
+      "fidelity": "preserve body, point overlays and source colors; crop or scale only"
+    },
+    {
+      "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\C2_EDGE_CROP_overlay.png",
+      "role": "strict C2 edge-crop sample overlay",
+      "fidelity": "preserve cropping condition, body, point overlays and source colors"
+    },
+    {
+      "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\C3_EXTERNAL_OCCLUDER_overlay.png",
+      "role": "strict C3 external-occluder sample overlay",
+      "fidelity": "preserve occluder, body, point overlays and source colors"
+    }
+  ],
+  "requires_context_images": true,
+  "expected_backend": "built-in image tool",
+  "sample_generation_method": {
+    "backend_used": "built-in image tool",
+    "tool_name": "image_gen",
+    "mode": "edit",
+    "prompt_source": "approved Slide 3 inline structured prompt",
+    "size": "16:9 landscape; generated 1672x941",
+    "quality": "built-in default",
+    "model_config": "built-in Image2 path",
+    "approved_sample_path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+    "input_context_preparation": "view_image each local source asset before built-in image generation; use referenced_image_paths for edit/compositing",
+    "handoff_rule": "Use the same built-in image tool, edit/compositing mode, and approved sample style; return a blocker if unavailable."
+  },
+  "generation_contract": {
+    "must_use_selected_image_backend": true,
+    "must_match_sample_generation_method": true,
+    "forbidden_final_image_methods": [
+      "local drawing/rendering scripts",
+      "Pillow-generated slides",
+      "SVG/HTML/CSS/canvas screenshots",
+      "python-pptx/PptxGenJS/native PPT layout screenshots",
+      "manually composited text/image overlays"
+    ],
+    "must_return": [
+      "backend_used",
+      "selected_source",
+      "qa_note"
+    ]
+  }
+}

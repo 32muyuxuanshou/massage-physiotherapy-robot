@@ -1,0 +1,32 @@
+{
+  "schema": "simulated-reference-click-plan-v1",
+  "atlas_id": "SIM_BACK_20_REFERENCE_V1",
+  "entry_method": "REAL_BLENDER_OPERATOR_LEFTMOUSE_AUTOMATION",
+  "medical_validated": false,
+  "medical_truth": false,
+  "source": "SIMULATED_FROM_REFERENCE",
+  "purpose": "Exercise the full manual annotation and training-label pipeline with medically named approximate engineering points.",
+  "laterality_convention": "Subject left/right. Canonical SKEL object-local +X is subject-left and -X is subject-right.",
+  "points": [
+    {"order": 1, "code": "GV14", "name_zh": "大椎", "side": "MIDLINE", "body_region": "NECK", "target_local_xy_m": [0.000, 0.340], "reference_rule": "C7 spinous-process level; approximate skin projection only"},
+    {"order": 2, "code": "GB21", "name_zh": "肩井", "side": "LEFT", "body_region": "NECK", "target_local_xy_m": [0.150, 0.340], "reference_rule": "midpoint of the C7 spinous-process-to-acromion line, subject-left; approximate"},
+    {"order": 3, "code": "GB21", "name_zh": "肩井", "side": "RIGHT", "body_region": "NECK", "target_local_xy_m": [-0.150, 0.340], "reference_rule": "midpoint of the C7 spinous-process-to-acromion line, subject-right; approximate"},
+    {"order": 4, "code": "SI15", "name_zh": "肩中俞", "side": "LEFT", "body_region": "TORSO", "target_local_xy_m": [0.078, 0.340], "reference_rule": "same C7 level as GV14, subject-left; 2 B-cun cannot be recovered exactly"},
+    {"order": 5, "code": "SI15", "name_zh": "肩中俞", "side": "RIGHT", "body_region": "TORSO", "target_local_xy_m": [-0.078, 0.340], "reference_rule": "same C7 level as GV14, subject-right; 2 B-cun cannot be recovered exactly"},
+    {"order": 6, "code": "BL13", "name_zh": "肺俞", "side": "LEFT", "body_region": "TORSO", "target_local_xy_m": [0.075, 0.235], "reference_rule": "T3 level, subject-left; approximate"},
+    {"order": 7, "code": "BL13", "name_zh": "肺俞", "side": "RIGHT", "body_region": "TORSO", "target_local_xy_m": [-0.075, 0.235], "reference_rule": "T3 level, subject-right; approximate"},
+    {"order": 8, "code": "GV9", "name_zh": "至阳", "side": "MIDLINE", "body_region": "TORSO", "target_local_xy_m": [0.000, 0.145], "reference_rule": "T7 spinous-process level; approximate"},
+    {"order": 9, "code": "BL17", "name_zh": "膈俞", "side": "LEFT", "body_region": "TORSO", "target_local_xy_m": [0.075, 0.145], "reference_rule": "T7 level, subject-left; approximate"},
+    {"order": 10, "code": "BL17", "name_zh": "膈俞", "side": "RIGHT", "body_region": "TORSO", "target_local_xy_m": [-0.075, 0.145], "reference_rule": "T7 level, subject-right; approximate"},
+    {"order": 11, "code": "GV6", "name_zh": "脊中", "side": "MIDLINE", "body_region": "TORSO", "target_local_xy_m": [0.000, 0.045], "reference_rule": "T11 spinous-process level; approximate"},
+    {"order": 12, "code": "BL20", "name_zh": "脾俞", "side": "LEFT", "body_region": "TORSO", "target_local_xy_m": [0.075, 0.045], "reference_rule": "T11 level, subject-left; approximate"},
+    {"order": 13, "code": "BL20", "name_zh": "脾俞", "side": "RIGHT", "body_region": "TORSO", "target_local_xy_m": [-0.075, 0.045], "reference_rule": "T11 level, subject-right; approximate"},
+    {"order": 14, "code": "GV4", "name_zh": "命门", "side": "MIDLINE", "body_region": "TORSO", "target_local_xy_m": [0.000, -0.085], "reference_rule": "L2 spinous-process level; approximate"},
+    {"order": 15, "code": "BL23", "name_zh": "肾俞", "side": "LEFT", "body_region": "TORSO", "target_local_xy_m": [0.070, -0.085], "reference_rule": "L2 level, subject-left; approximate"},
+    {"order": 16, "code": "BL23", "name_zh": "肾俞", "side": "RIGHT", "body_region": "TORSO", "target_local_xy_m": [-0.070, -0.085], "reference_rule": "L2 level, subject-right; approximate"},
+    {"order": 17, "code": "BL25", "name_zh": "大肠俞", "side": "LEFT", "body_region": "TORSO", "target_local_xy_m": [0.075, -0.155], "reference_rule": "L4 level, subject-left; approximate"},
+    {"order": 18, "code": "BL25", "name_zh": "大肠俞", "side": "RIGHT", "body_region": "TORSO", "target_local_xy_m": [-0.075, -0.155], "reference_rule": "L4 level, subject-right; approximate"},
+    {"order": 19, "code": "BL28", "name_zh": "膀胱俞", "side": "LEFT", "body_region": "TORSO", "target_local_xy_m": [0.075, -0.235], "reference_rule": "second posterior sacral foramen level, subject-left; highest uncertainty"},
+    {"order": 20, "code": "BL28", "name_zh": "膀胱俞", "side": "RIGHT", "body_region": "TORSO", "target_local_xy_m": [-0.075, -0.235], "reference_rule": "second posterior sacral foramen level, subject-right; highest uncertainty"}
+  ]
+}

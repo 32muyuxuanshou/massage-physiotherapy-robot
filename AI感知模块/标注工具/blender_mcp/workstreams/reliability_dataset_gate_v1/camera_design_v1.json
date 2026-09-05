@@ -1,0 +1,20 @@
+{
+  "schema": "reliability-dataset-camera-design-v1",
+  "resolution": [1280, 1024],
+  "partition_appearance_seeds": {
+    "RELIABILITY_TRAIN": 202609020301,
+    "CALIBRATION": 202609020302,
+    "UNTOUCHED_TEST": 202609020303
+  },
+  "scenarios": [
+    {"camera_id":"R_NORMAL","kind":"CONTROL_NORMAL","matrix_world":[[1.0,0.0,0.0,-0.000365525484085083],[0.0,1.0,0.0,-0.2915360629558563],[0.0,0.0,1.0,2.8949742317199707],[0.0,0.0,0.0,1.0]],"lens_mm":42.0},
+    {"camera_id":"R_OBLIQUE","kind":"CONTROL_OBLIQUE","matrix_world":[[0.9982357025146484,-0.0020156889222562313,0.05934039130806923,0.1599999964237213],[0.0,0.9994235634803772,0.033948659896850586,-0.20000000298023224],[-0.0593746155500412,-0.033888768404722214,0.9976603388786316,2.819999933242798],[0.0,0.0,0.0,1.0]],"lens_mm":42.0},
+    {"camera_id":"R_LEFT_MILD","kind":"TRUNCATION","direction":"LEFT","matrix_world":[[1.0,0.0,0.0,0.9846344745159149],[0.0,1.0,0.0,-0.2915360629558563],[0.0,0.0,1.0,2.8949742317199707],[0.0,0.0,0.0,1.0]],"lens_mm":42.0},
+    {"camera_id":"R_LEFT_MODERATE","kind":"TRUNCATION","direction":"LEFT","matrix_world":[[1.0,0.0,0.0,1.0346344745159149],[0.0,1.0,0.0,-0.2915360629558563],[0.0,0.0,1.0,2.8949742317199707],[0.0,0.0,0.0,1.0]],"lens_mm":42.0},
+    {"camera_id":"R_RIGHT_MILD","kind":"TRUNCATION","direction":"RIGHT","matrix_world":[[1.0,0.0,0.0,-0.9853655254840851],[0.0,1.0,0.0,-0.2915360629558563],[0.0,0.0,1.0,2.8949742317199707],[0.0,0.0,0.0,1.0]],"lens_mm":42.0},
+    {"camera_id":"R_RIGHT_MODERATE","kind":"TRUNCATION","direction":"RIGHT","matrix_world":[[1.0,0.0,0.0,-1.035365525484085],[0.0,1.0,0.0,-0.2915360629558563],[0.0,0.0,1.0,2.8949742317199707],[0.0,0.0,0.0,1.0]],"lens_mm":42.0},
+    {"camera_id":"R_C3_EXTERNAL_OCCLUDER","kind":"EXTERNAL_OCCLUSION","matrix_world":[[1.0,0.0,0.0,-0.000365525484085083],[0.0,1.0,0.0,-0.2915360629558563],[0.0,0.0,1.0,2.8949742317199707],[0.0,0.0,0.0,1.0]],"lens_mm":42.0,"occluder":{"name":"__ACU_EXTERNAL_OCCLUDER__","location_world_m":[0.0,0.105,0.82],"dimensions_m":[0.25,0.14,0.04]}}
+  ],
+  "excluded": ["C4_SELF_OCCLUSION_STRESS remains challenge-only"],
+  "freeze_rule": "Body partitions and camera profiles are frozen before any frozen-locator prediction is generated."
+}

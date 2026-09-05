@@ -1,0 +1,35 @@
+{
+  "schema": "skel-natural-prone-safe-shape-set-v1",
+  "medical_truth": false,
+  "template": "SKEL_FEMALE_TRUNK_LIMB_v2.3",
+  "pose_profile": "natural-prone-arms-alongside-v1",
+  "single_dimension_test": {
+    "default_range": [-0.5, 0.5],
+    "beta_2_conservative_range": [-0.2, 0.5],
+    "reason": "beta_2=-0.25 begins to enter the frozen rigid bed; beta_2=-0.20 retains about 1.24 mm clearance."
+  },
+  "frozen_shapes": [
+    {
+      "shape_id": "S0_BASE",
+      "betas": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    },
+    {
+      "shape_id": "S1_LATENT_A",
+      "betas": [0.4, 0.3, -0.3, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    },
+    {
+      "shape_id": "S2_LATENT_B",
+      "betas": [-0.4, -0.15, 0.3, -0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    }
+  ],
+  "evidence": {
+    "single_dimension_report": "outputs/BlenderMCP/workstreams/prone_shape_regression/2026-08-28_16-44-42_shape_smoke/shape_smoke_report.json",
+    "beta_2_boundary_report": "outputs/BlenderMCP/workstreams/prone_shape_regression/2026-08-28_16-49-39_beta2_boundary/beta2_boundary_report.json",
+    "combination_report": "outputs/BlenderMCP/workstreams/prone_shape_regression/2026-08-28_16-51-06_shape_combinations/shape_combination_report.json"
+  },
+  "limitations": [
+    "Engineering latent profiles only; they are not clinical body-type labels.",
+    "Safe means passed current fixed-scene geometry checks, not soft-tissue or mattress-contact validation.",
+    "Do not sample dimensions independently outside the tested ranges."
+  ]
+}

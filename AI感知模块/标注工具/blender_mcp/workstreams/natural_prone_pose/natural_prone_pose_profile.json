@@ -1,0 +1,29 @@
+{
+  "schema": "skel-native-natural-prone-pose-v1",
+  "profile_id": "natural-prone-arms-alongside-v1",
+  "medical_truth": false,
+  "description": "Conservative engineering pose: arms lowered alongside the torso and rotated clear of the fixed bed, both elbows mildly flexed, head mildly rotated; trunk and legs neutral.",
+  "betas": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+  "pose_degrees": {
+    "head_twist": 18.0,
+    "shoulder_r_x": 80.0,
+    "shoulder_r_y": 18.0,
+    "elbow_flexion_r": 25.0,
+    "shoulder_l_x": -80.0,
+    "shoulder_l_y": -18.0,
+    "elbow_flexion_l": 25.0
+  },
+  "pose_vector_degrees": [
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 18.0, 0.0, 0.0, 0.0, 80.0,
+    18.0, 0.0, 25.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -80.0,
+    -18.0, 0.0, 25.0, 0.0, 0.0, 0.0
+  ],
+  "selection_evidence": "Fixed-transform sweeps showed X80/E25 alone penetrated the bed by about 0.128 m. Mirrored shoulder Y +18/-18 degrees kept both arms alongside the torso and moved the global body minimum to 0.00719 m above the frozen bed plane without changing camera, bed, or rigid prone transform.",
+  "limitations": [
+    "Engineering pose only; not clinician-approved positioning.",
+    "No pillow, face cradle, mattress deformation, breathing, or soft-tissue contact simulation.",
+    "Shape parameters remain zero."
+  ]
+}

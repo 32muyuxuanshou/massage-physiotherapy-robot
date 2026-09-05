@@ -1,0 +1,13 @@
+
+1.创建桌面快捷方式
+# 将 physiotherapy-client 中的 desktop_app2.desktop 移动到桌面 ~/Desktop 目录下
+cp /home/user/physiotherapy-client/desktop_app2.desktop ~/Desktop/
+# 赋予执行权限
+chmod +x ~/Desktop/desktop_app2.desktop
+
+2.配置开机启动
+# 将 physiotherapy-client 中的 desktop_app2_auto.desktop 移动到 ~/.config/autostart 目录下
+cp /home/user/physiotherapy-client/desktop_app2_auto.desktop ~/.config/autostart/
+
+# 赋予执行权限
+chmod +x ~/.config/autostart/desktop_app2_auto.desktop

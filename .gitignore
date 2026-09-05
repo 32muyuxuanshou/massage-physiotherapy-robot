@@ -1,0 +1,57 @@
+# Local credentials and machine state
+.codex/
+.DS_Store
+Thumbs.db
+.idea/
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+
+# Dependencies, caches and generated application output
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vite/
+dist/
+build/
+logs/
+*.log
+backups/
+*.db
+*.db-*
+*.sqlite*
+_test_output/
+
+# Local backups, licensed assets, packaged runtimes and experiment data
+/升级备份/
+/AI感知模块/构建缓存/
+/AI感知模块/发布/
+/AI感知模块/模型资源/
+/AI感知模块/医生标注部署版/
+/AI感知模块/outputs/
+*.blend
+*.blend[0-9]
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.npz
+*.npy
+
+# Large media and delivery archives are uploaded separately to Releases
+*.mp4
+*.zip
+*.7z
+*.rar
+*.exe
+*.msi
+/颐养智能.pptx
+
+# Generated presentation previews and intermediate rendering
+qa_render*/

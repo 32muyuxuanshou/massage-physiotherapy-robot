@@ -1,0 +1,48 @@
+{
+  "schema": "skel-eng-back20-qc-dataset-config-v1",
+  "medical_truth": false,
+  "atlas_id": "ENG_BACK_20_V1",
+  "atlas_sha256": "2f4b92697308bc66458c4d98ee8733a0f4c799390dba51c61abf15767ddd0b6f",
+  "resolution": [1280, 1024],
+  "buffer_sampling_contract": {
+    "version": "CENTER_RAY_DEPTH_V2",
+    "geometry_buffers": "pixel-centre scene rays; first opaque surface camera-Z and object ownership",
+    "rgb": "Eevee one unfiltered sample, same camera/frame/geometry",
+    "rgb_geometry_silhouette_notice": "GPU coverage may differ from centre-ray ownership at individual boundary pixels; counts recorded, not treated as exact RGB surface identity",
+    "dense_silhouette_ray_validation": true
+  },
+  "shapes": [
+    {"shape_id": "S0_BASE", "betas": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]},
+    {"shape_id": "S1_LATENT_A", "betas": [0.4, 0.3, -0.3, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]},
+    {"shape_id": "S2_LATENT_B", "betas": [-0.4, -0.15, 0.3, -0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+  ],
+  "poses": [
+    {"pose_id": "P0_BASE", "overrides_degrees": {}},
+    {"pose_id": "P1_HEAD_NEG20", "overrides_degrees": {"head_twist": -20.0}},
+    {"pose_id": "P2_HEAD_POS35", "overrides_degrees": {"head_twist": 35.0}},
+    {"pose_id": "P3_ELBOW_22", "overrides_degrees": {"elbow_flexion_r": 22.0, "elbow_flexion_l": 22.0}},
+    {"pose_id": "P4_ARMS_SLIGHTLY_OPEN", "overrides_degrees": {"shoulder_r_x": 76.0, "shoulder_l_x": -76.0}}
+  ],
+  "cameras": [
+    {
+      "camera_id": "C0_TOP",
+      "matrix_world": [[1.0, 0.0, 0.0, -0.000365525484085083], [0.0, 1.0, 0.0, -0.2915360629558563], [0.0, 0.0, 1.0, 2.8949742317199707], [0.0, 0.0, 0.0, 1.0]]
+    },
+    {
+      "camera_id": "C1_MILD_OBLIQUE",
+      "matrix_world": [[0.9982357025146484, -0.0020156889222562313, 0.05934039130806923, 0.1599999964237213], [0.0, 0.9994235634803772, 0.033948659896850586, -0.20000000298023224], [-0.0593746155500412, -0.033888768404722214, 0.9976603388786316, 2.819999933242798], [0.0, 0.0, 0.0, 1.0]]
+    }
+  ],
+  "qc_thresholds": {
+    "visible_point_depth_error_m": 0.003,
+    "visible_point_backprojection_error_m": 0.003,
+    "body_min_clearance_m": 0.0,
+    "body_max_clearance_m": 0.03,
+    "required_visible_points": 20
+  },
+  "notices": [
+    "E01-E20 are engineering trial targets, not medical acupoints.",
+    "Pose direction names are parameter-sign labels, not clinical left/right descriptions.",
+    "Both cameras are synthetic pinhole cameras, not calibrated robot RGB-D cameras."
+  ]
+}

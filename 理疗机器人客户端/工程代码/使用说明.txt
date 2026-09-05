@@ -1,0 +1,527 @@
+================================================================
+ 颐本智能理疗系统 - 使用说明
+ 版本: 0.1.0
+ 更新日期: 2026-07-05
+================================================================
+
+本项目提供三种使用方式，请按需选择：
+
+  方式 1: 开发模式          —— 直接以源码方式运行（Windows/Linux/macOS）
+  方式 2: desktop_app2      —— 原有 pywebview 桌面应用（已在项目内）
+  方式 3: 打包部署 (Linux)  —— 一键打成 AppImage/ELF，用户双击即用
+
+================================================================
+方式 1: 开发模式
+================================================================
+
+适用于开发人员，需要本地装好 Python + Node。
+
+⚠️ 重要：开发模式有两条等价路径，选择适合你的一种，然后保持一致。
+   不要混用，否则会引入不必要的文件复制和延迟。
+
+------------------------------------------------------------
+1.0 开发模式的两条路径（先选好）
+------------------------------------------------------------
+
+【路径 A】后端 serve 前端（推荐，最简单）
+    流程：  改前端代码 → npm run build → 复制 dist 到 backend/static → 刷新浏览器
+    适用：  不需要热更新；想用一条命令就启动全套
+    启动：  python -m uvicorn app.main:app --reload  （详见 1.2）
+           或  .\backend\.venv\Scripts\python.exe launcher.py （详见 1.4）
+    访问：  http://127.0.0.1:8000   （一个地址搞定）
+
+【路径 B】Vite dev 服务器 + 后端（带热更新）
+    流程：  改前端代码 → 浏览器自动热更新，无需任何构建
+    适用：  频繁改前端组件/样式，需要即时反馈
+    启动：  两个终端 —— 后端 uvicorn（终端1） + Vite dev（终端2）
+    访问：  http://localhost:5173   （Vite 代理 /api/* 到 8000）
+           此时访问 8000 看到的是 JSON，不是前端页面（正常现象）
+
+⚠️ 切记：
+    路径 A 下，backend/static/ 必须是前端 dist 的副本（不是源码！）
+    路径 B 下，backend/static/ 不重要，访问 5173 看前端
+    两条路径互不冲突，但不要在同一会话里频繁切换
+
+------------------------------------------------------------
+1.1 环境准备（首次）
+------------------------------------------------------------
+
+(1) 后端环境（Python 3.10+）
+
+    cd backend
+    python -m venv .venv
+
+    # Windows PowerShell
+    .venv\Scripts\Activate.ps1
+
+    # Windows CMD
+    .venv\Scripts\activate.bat
+
+    # Linux / macOS
+    source .venv/bin/activate
+
+    pip install --upgrade pip
+    pip install -r requirements.txt
+
+(2) 前端环境（Node 18+）
+
+    cd frontend
+    npm install
+
+------------------------------------------------------------
+1.2 启动后端（仅后端 API）
+------------------------------------------------------------
+
+    cd backend
+    # 激活 venv 后：
+    python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+    # 访问：
+    #   API:    http://127.0.0.1:8000/api/v1/...
+    #   文档:   http://127.0.0.1:8000/docs
+
+注意：必须是 `python -m uvicorn ...`，不能 `python app/main.py`，
+否则会报 `ModuleNotFoundError: No module named 'app'`。
+
+⚠️ 关于访问 http://127.0.0.1:8000/ 看到什么：
+    - 如果 backend/static/index.html 存在  → 返回 Vue 前端首页（路径 A 准备好后）
+    - 如果 backend/static/ 不存在或为空     → 返回 JSON:
+        {"message":"颐本智能理疗系统 API","version":"0.1.0","docs":"/docs"}
+    - 这是预期行为，不是 bug。是否看到前端取决于路径 A 是否准备就绪。
+
+------------------------------------------------------------
+1.2.1 路径 A：构建前端并复制到 backend/static（首次或前端改完后）
+------------------------------------------------------------
+
+【一次性准备 - Windows PowerShell】
+
+    cd D:\coder\physiotherapy-client\frontend
+    npm install                # 首次或依赖变更后
+    npm run build              # 输出到 frontend/dist/
+
+    # 复制 dist 到 backend/static
+    Remove-Item -Recurse -Force D:\coder\physiotherapy-client\backend\static
+    Copy-Item -Recurse D:\coder\physiotherapy-client\frontend\dist D:\coder\physiotherapy-client\backend\static
+
+【一次性准备 - Windows CMD】
+
+    cd D:\coder\physiotherapy-client\frontend
+    npm install
+    npm run build
+    rd /s /q D:\coder\physiotherapy-client\backend\static
+    xcopy /E /I /Y D:\coder\physiotherapy-client\frontend\dist D:\coder\physiotherapy-client\backend\static
+
+【一次性准备 - Linux / macOS】
+
+    cd /path/to/physiotherapy-client/frontend
+    npm install
+    npm run build
+
+    rm -rf ../backend/static
+    cp -r dist ../backend/static
+
+【简化方案：写一个 sync 脚本】
+
+    在项目根目录创建 sync_frontend.sh（Linux/macOS）或 sync_frontend.ps1（Windows）：
+
+    Linux/macOS (sync_frontend.sh):
+        #!/usr/bin/env bash
+        set -e
+        cd "$(dirname "$0")/frontend"
+        npm run build
+        rm -rf ../backend/static
+        cp -r dist ../backend/static
+        echo "✓ 前端已同步到 backend/static"
+
+    Windows PowerShell (sync_frontend.ps1):
+        Set-Location $PSScriptRoot\frontend
+        npm run build
+        Remove-Item -Recurse -Force ..\backend\static
+        Copy-Item -Recurse dist ..\backend\static
+        Write-Host "✓ 前端已同步到 backend/static"
+
+    以后改完前端代码，只需执行：
+        bash sync_frontend.sh          # 或 pwsh sync_frontend.ps1
+        # 然后刷新浏览器即可（uvicorn --reload 会自动重启后端）
+
+【手动验证】复制完后检查：
+
+    # 应该能看到 index.html 和 assets/ 目录
+    ls backend/static/                 # Linux/macOS
+    dir backend\static                  # Windows CMD
+
+    # 启动后端后访问 http://127.0.0.1:8000 应该看到登录页
+    # 而不是 {"message":"颐本智能理疗系统 API"...}
+
+------------------------------------------------------------
+1.3 路径 B：启动 Vite dev 服务器（带热更新）
+------------------------------------------------------------
+
+⚠️ 这是路径 B，会跳过 backend/static 的复制要求。
+   改前端代码 → 浏览器自动更新，无需 npm run build。
+   缺点：要开两个终端，部署/打包时还得回到路径 A 跑一遍。
+
+【需要两个终端】
+
+终端 1 - 启动后端：
+
+    cd backend
+    python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+终端 2 - 启动 Vite：
+
+    cd frontend
+    npm run dev
+
+    # Vite 默认运行在 http://localhost:5173
+    # 会把 /api/* 代理到 http://127.0.0.1:8000
+
+【访问】
+
+    http://localhost:5173       ← 访问这个，Vite 提供的开发版前端
+    http://127.0.0.1:8000       ← 此时访问会返回 JSON（因为 backend/static 没前端）
+
+【改代码后的行为】
+
+    - 改 frontend/src/** 下任何文件 → 浏览器自动热更新，无需任何操作
+    - 改 backend/app/** 下任何文件 → uvicorn --reload 自动重启后端
+    - 改依赖（package.json / requirements.txt）→ 需要重启对应进程
+
+------------------------------------------------------------
+1.4 用 launcher.py 一键启动（路径 A，最省事）
+------------------------------------------------------------
+
+launcher.py 在打包模式下作为 PyInstaller 入口，在开发模式下也能直接跑。
+它本质就是 "启动 uvicorn + 等端口就绪 + 打开浏览器 + Ctrl+C 干净退出"。
+
+    # 在项目根目录 (D:\coder\physiotherapy-client) 下执行：
+    # 用 backend/.venv 下的 python 跑 launcher.py
+    .\backend\.venv\Scripts\python.exe launcher.py
+
+    # Linux/macOS 等价：
+    ./backend/.venv/bin/python launcher.py
+
+效果：
+    1. 自动启动 uvicorn 后端 (127.0.0.1:8000)
+    2. 等待端口就绪（最多 60 秒）
+    3. 自动用默认浏览器打开 http://127.0.0.1:8000
+    4. Ctrl+C 干净退出（自动 kill 后端子进程）
+
+⚠️ launcher 走的是路径 A，访问 http://127.0.0.1:8000 看到什么，
+   取决于 backend/static/index.html 是否存在。
+   首次或前端改完后，请先跑 ./sync_frontend.sh（或 sync_frontend.ps1）。
+
+⚠️ 注意：launcher.py 不带 --reload。改 Python 代码后需要 Ctrl+C 重启。
+   需要热更新就改用 1.2 节的 `uvicorn --reload` 或 1.3 节的 Vite dev。
+
+------------------------------------------------------------
+1.5 初始化数据库（首次）
+------------------------------------------------------------
+
+    cd backend
+    # 激活 venv 后：
+    python -m app.scripts.init_db
+
+------------------------------------------------------------
+1.6 常用命令速查
+------------------------------------------------------------
+
+    # === 路径 A（后端 serve 前端） ===
+
+    # 同步前端 dist 到 backend/static（首次或前端改完后）
+    bash sync_frontend.sh                   # Linux/macOS
+    pwsh sync_frontend.ps1                  # Windows PowerShell
+    # 或手动：
+    #   cd frontend && npm run build
+    #   rm -rf ../backend/static && cp -r dist ../backend/static
+
+    # 启动后端（带热重载，推荐）
+    cd backend
+    python -m uvicorn app.main:app --reload --port 8000
+
+    # 或用 launcher 启动（自动打开浏览器）
+    .\backend\.venv\Scripts\python.exe launcher.py
+
+    # 访问：http://127.0.0.1:8000
+
+    # === 路径 B（Vite dev，带前端热更新） ===
+
+    # 终端 1：后端
+    cd backend
+    python -m uvicorn app.main:app --reload --port 8000
+
+    # 终端 2：Vite
+    cd frontend
+    npm run dev
+
+    # 访问：http://localhost:5173
+
+------------------------------------------------------------
+1.7 常见问题
+------------------------------------------------------------
+
+Q: 启动后访问 http://127.0.0.1:8000 看到 JSON 而不是登录页？
+A: backend/static 下没有 index.html。属于路径 A 没准备好。
+   解决办法（二选一）：
+     1. 跑 sync_frontend.sh / sync_frontend.ps1，把前端 dist 复制过来
+     2. 改走路径 B：cd frontend && npm run dev，访问 http://localhost:5173
+
+Q: 改了 frontend/src 下的代码，刷新浏览器没变化？
+A: 你在用路径 A，需要重新构建 + 复制：
+     cd frontend && npm run build
+     rm -rf ../backend/static && cp -r dist ../backend/static
+   或者改走路径 B（Vite dev，浏览器自动热更新）。
+
+Q: 改了 backend/app 下的代码，没生效？
+A: uvicorn 没带 --reload 时不会自动重启：
+     - 启动时加上 --reload 参数
+     - 或 Ctrl+C 重启 launcher / uvicorn
+
+Q: Vite dev 报跨域错误？
+A: 检查 frontend/vite.config.js 的 proxy 配置是否指向 8000，
+   且后端 8000 端口确实在跑。
+
+Q: backend/static/index.html 不存在会怎样？
+A: FastAPI 在 / 路径会返回 JSON {"message":"颐本智能理疗系统 API"...
+   这是预期行为，不是 bug。访问 /docs 可以看 API 文档。
+
+
+================================================================
+方式 2: desktop_app2（原有 pywebview 桌面应用）
+================================================================
+
+desktop_app2.py / desktop_app2.desktop 是项目内已有的桌面应用入口，
+使用 pywebview 弹出无边框窗口并嵌入前端。
+
+------------------------------------------------------------
+2.1 Windows 启动方式
+------------------------------------------------------------
+
+(1) 准备
+
+    cd D:\coder\physiotherapy-client
+    # 确保 backend/.venv 已激活过并装好依赖
+    .\backend\.venv\Scripts\pip.exe install pywebview
+
+(2) 运行
+
+    .\backend\.venv\Scripts\python.exe desktop_app2.py
+
+行为：
+    - 启动后端 uvicorn (127.0.0.1:8000)
+    - 弹出无边框 pywebview 窗口 (1024x768)
+    - 窗口标题: "颐本智能理疗系统"
+    - 关闭窗口自动停止后端
+
+------------------------------------------------------------
+2.2 Linux 启动方式
+------------------------------------------------------------
+
+(1) 安装 pywebview 系统依赖（仅 Linux）
+
+    # Ubuntu 22.04+ / Debian 12+
+    sudo apt install python3-gi gir1.2-gtk-3.0 gir1.2-webkit2-4.1
+
+(2) 激活后端 venv 并装 pywebview
+
+    cd backend
+    source .venv/bin/activate
+    pip install pywebview
+    deactivate
+    cd ..
+
+(3) 运行
+
+    # 注意：在 backend/.venv 下跑，而不是系统 python
+    ./backend/.venv/bin/python desktop_app2.py
+
+------------------------------------------------------------
+2.3 创建桌面快捷方式
+------------------------------------------------------------
+
+Windows:
+    复制 desktop_app2.py 到桌面，右键 → 创建快捷方式。
+    快捷方式"目标"设置为：
+        D:\coder\physiotherapy-client\backend\.venv\Scripts\pythonw.exe "D:\coder\physiotherapy-client\desktop_app2.py"
+
+    或直接参考 创建桌面快捷方式以及开机启动说明.txt
+
+Linux:
+    复制 desktop_app2.desktop 到桌面：
+        cp desktop_app2.desktop ~/Desktop/
+        chmod +x ~/Desktop/desktop_app2.desktop
+
+------------------------------------------------------------
+2.4 注意事项
+------------------------------------------------------------
+
+- desktop_app2 是单窗口应用，窗口关闭才会退出后端
+- 仅适合本地单机使用，不适合部署到服务器
+- Linux 上必须有 GTK + WebKit2 系统包，否则启动失败
+- 不影响方式 3 的打包流程，两者并存
+
+
+================================================================
+方式 3: 打包部署 (Linux)
+================================================================
+
+把整套系统打包成 AppImage 或 ELF 可执行文件，用户**零依赖**双击即用。
+
+详细文档请参考 BUILD.md（推荐先读这个）。
+下面只列关键命令。
+
+------------------------------------------------------------
+3.1 构建环境准备（Linux 机器）
+------------------------------------------------------------
+
+(1) 系统包
+
+    sudo apt update
+    sudo apt install -y python3 python3-venv python3-pip \
+                        nodejs npm build-essential libfuse2
+
+(2) 后端虚拟环境
+
+    cd backend
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install --upgrade pip
+    pip install -r requirements.txt
+    deactivate
+    cd ..
+
+(3) 前端构建
+
+    cd frontend
+    npm install
+    npm run build
+    cd ..
+
+(4) appimagetool（生成 AppImage 必需）
+
+    mkdir -p ~/bin && cd ~/bin
+    wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+    chmod +x appimagetool-x86_64.AppImage
+    ./appimagetool-x86_64.AppImage --appimage-extract
+    sudo ln -sf $(pwd)/squashfs-root/AppRun /usr/local/bin/appimagetool
+
+------------------------------------------------------------
+3.2 一键打包
+------------------------------------------------------------
+
+    cd /path/to/physiotherapy-client
+    chmod +x build.sh
+    ./build.sh
+
+产物在 dist/ 下：
+    dist/physiotherapy-client                  (~120 MB, ELF 可执行)
+    dist/颐本智能理疗系统-x86_64.AppImage     (~120 MB, 双击即用)
+
+------------------------------------------------------------
+3.3 用户使用
+------------------------------------------------------------
+
+把 dist/ 下的两个文件分发给用户。用户机器上只需要任意现代浏览器
+（Firefox / Chromium / Chrome 之一），无需 Python / Node / 任何依赖。
+
+启动方式：
+
+    # AppImage（推荐）
+    chmod +x 颐本智能理疗系统-x86_64.AppImage
+    ./颐本智能理疗系统-x86_64.AppImage
+
+    # 或裸 ELF
+    ./physiotherapy-client
+
+启动后：
+    1. 自动启动后端 uvicorn (127.0.0.1:8000)
+    2. 自动用系统默认浏览器打开 http://127.0.0.1:8000
+    3. 默认账号: 13800138000 / 123456
+    4. Ctrl+C 干净退出
+
+数据存放位置（首次自动创建）：
+    ~/.local/share/physiotherapy-client/
+        physiotherapy.db    用户数据库
+        logs/               应用日志
+
+可通过环境变量自定义：
+    export PHYSIOTHERAPY_DATA_DIR=/your/custom/path
+    ./颐本智能理疗系统-x86_64.AppImage
+
+------------------------------------------------------------
+3.4 打包脚本参数
+------------------------------------------------------------
+
+    ./build.sh                  # 全流程
+    ./build.sh --skip-frontend  # 跳过前端嵌入（dist 已就位时）
+    ./build.sh --skip-appimage  # 只生成 ELF，不打 AppImage
+    ./build.sh --help           # 查看帮助
+
+------------------------------------------------------------
+3.5 常见问题（快速对照）
+------------------------------------------------------------
+
+Q: AppImage 双击没反应？
+A: 缺 FUSE。安装 libfuse2，或用 ELF 版 `./physiotherapy-client`。
+
+Q: 浏览器没自动打开？
+A: 终端会打印 http://127.0.0.1:8000，手动访问即可。
+
+Q: 端口 8000 被占用？
+A: 编辑 launcher.py 顶部 PORT = 8000，改成其他值，重新打包。
+
+Q: 体积太大（> 200 MB）？
+A: PyInstaller 已默认排除 tkinter/numpy/matplotlib 等大模块。
+   如仍偏大，检查 requirements.txt 是否有多余依赖。
+
+Q: 启动报 ModuleNotFoundError？
+A: 在 build.sh 的 HIDDEN_IMPORTS 数组中添加缺失模块，重新打包。
+
+更多排错详见 BUILD.md 第 6、7 章。
+
+
+================================================================
+附: 三种方式对比
+================================================================
+
+| 维度       | 方式 1 开发模式       | 方式 2 desktop_app2 | 方式 3 打包部署         |
+|------------|----------------------|---------------------|-------------------------|
+| 适用对象   | 开发人员              | 本地单机用户        | 终端用户/客户机          |
+| Python     | 必须                 | 必须                | 不需要                  |
+| Node       | dev 模式需要          | 不需要              | 不需要（构建时需要）    |
+| 浏览器     | 可选（用 Vite dev）   | 否（pywebview 窗口） | 需要任意浏览器         |
+| 跨平台     | 全平台                | 全平台              | 仅 Linux (x86_64)       |
+| 部署难度   | 无                    | 单文件夹拷贝        | 单文件双击              |
+| 热更新     | ✓                     | ✗                   | ✗                      |
+| 适合场景   | 改代码调试            | Windows 桌面体验    | 给客户/部署到设备        |
+
+================================================================
+附: 默认账号
+================================================================
+
+    手机号:    13800138000
+    密码:      123456
+
+================================================================
+附: 关键文件清单
+================================================================
+
+源码：
+    backend/app/main.py            FastAPI 入口（已适配打包）
+    backend/app/database.py        数据库（已适配打包）
+    backend/requirements.txt       后端依赖
+    frontend/package.json          前端依赖
+    frontend/vite.config.js        前端构建配置
+
+桌面应用：
+    desktop_app2.py                pywebview 启动器（原有）
+    desktop_app2.desktop           Linux 桌面文件（原有）
+
+打包相关（新）：
+    launcher.py                    PyInstaller 入口（开发/打包共用）
+    build.sh                       一键打包脚本
+    sync_frontend.sh / .ps1        开发模式同步前端 dist 到 backend/static
+    颐本智能理疗系统.desktop       AppImage 桌面文件
+    BUILD.md                       打包与使用详细文档
+
+================================================================

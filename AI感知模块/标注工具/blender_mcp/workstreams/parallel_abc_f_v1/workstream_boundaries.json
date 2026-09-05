@@ -1,0 +1,41 @@
+{
+  "schema": "parallel-workstream-boundaries-v1",
+  "shared_output_root": "E:/项目-按摩理疗机器人/AI感知模块/outputs/交付文件/2026-08-31_13-36-44",
+  "workstreams": {
+    "A": {
+      "name": "CANDIDATE_SHAPE_COMBINATION_VALIDATION_V1",
+      "code_root": "标注工具/blender_mcp/workstreams/candidate_shape_combination_v1",
+      "output_subdir": "A_shape_combination",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh"
+    },
+    "B": {
+      "name": "ENHANCED_POSE_ONLY_V1",
+      "code_root": "标注工具/blender_mcp/workstreams/enhanced_pose_only_v1",
+      "output_subdir": "B_pose_only",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh"
+    },
+    "C": {
+      "name": "30_SAMPLE_OVERFIT_TRAINING_V1",
+      "code_root": "标注工具/blender_mcp/workstreams/overfit_training_v1",
+      "output_subdir": "C_overfit_training",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "high"
+    },
+    "F": {
+      "name": "QA_INFRASTRUCTURE_V1",
+      "code_root": "标注工具/blender_mcp/workstreams/qa_infrastructure_v1",
+      "output_subdir": "F_qa",
+      "model": "root-session",
+      "reasoning_effort": "xhigh"
+    }
+  },
+  "not_authorized": [
+    "D_REAL_RGBD_CAMERA_CHARACTERIZATION_V1",
+    "E_DOCTOR_ATLAS_V1",
+    "SHAPE_POSE_COMBO_V1",
+    "large_scale_dataset_generation",
+    "medical_model_training"
+  ]
+}

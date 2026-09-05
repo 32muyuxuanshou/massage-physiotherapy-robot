@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>医生穴位标注工作台｜快速开始</title>
+  <style>
+    :root{--green:#1f5845;--green2:#2f765c;--ink:#22302b;--muted:#63716c;--bg:#eef3f1;--warn:#965825}
+    *{box-sizing:border-box}body{margin:0;font-family:"Microsoft YaHei UI","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);line-height:1.72}
+    header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 24px}header div,main{max-width:980px;margin:auto}h1{margin:0 0 8px;font-size:30px}header p{margin:0;color:#d9ebe4}
+    main{padding:26px 20px 50px}section{background:#fff;border-radius:14px;padding:24px 28px;margin-bottom:18px;box-shadow:0 5px 18px rgba(28,68,53,.08)}h2{margin:0 0 12px;color:var(--green)}h3{margin:16px 0 6px}
+    .notice{background:#fff7ec;color:#69411f;border:1px solid #edcfaa;border-radius:10px;padding:14px 16px}.ok{background:#eff8f4;border:1px solid #c9e2d7;border-radius:10px;padding:14px 16px}
+    .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.step{border:1px solid #d7e4df;border-radius:10px;padding:15px;background:#f8fbfa}.step b{display:block;color:var(--green)}code{background:#edf2f0;padding:2px 6px;border-radius:4px}
+    a.button{display:inline-block;padding:10px 16px;margin:5px 6px 0 0;border-radius:8px;background:var(--green);color:#fff;text-decoration:none;font-weight:700}@media(max-width:760px){.flow{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header><div><h1>医生穴位标注工作台</h1><p>医生电脑版｜环境随包提供，模型由实际使用者首次导入</p></div></header>
+  <main>
+    <section>
+      <h2>第一次使用</h2>
+      <div class="flow">
+        <div class="step"><b>1. 官网取得文件</b>用实际使用者本人的账号下载 SMPL-X Blender Add-on ZIP。</div>
+        <div class="step"><b>2. 双击开始使用</b>首次会自动显示“配置官方模型”窗口。</div>
+        <div class="step"><b>3. 选择一个 ZIP</b>程序验证文件并在本机生成三个性别模板。</div>
+      </div>
+      <p class="notice"><strong>界面勾选不等于取得许可。</strong>它只确认实际使用者已经在官方网站完成许可流程。</p>
+    </section>
+    <section>
+      <h2>需要准备的一个文件</h2>
+      <ol>
+        <li><strong>SMPL-X Blender Add-on ZIP</strong>：应包含 <code>blender_manifest.toml</code> 和官方模型 data。</li>
+      </ol>
+      <a class="button" href="https://smpl-x.is.tue.mpg.de/download.php">SMPL-X 下载</a>
+    </section>
+    <section>
+      <h2>配置完成后</h2>
+      <p class="ok">以后无需再次安装环境。双击 <strong>开始使用_医生穴位标注工作台.cmd</strong>，填写医生和任务编号，选择中性、女性或男性模板，然后点击“开始全身穴位标注”。</p>
+      <ol>
+        <li>软件自动打开医生专用 3D 视图和右侧穴位面板。</li>
+        <li>填写穴位编码、中文名称、身体分区和左/右/中线。</li>
+        <li>点击 <strong>开始点选人体表面</strong>，再在人体上单击。</li>
+        <li>每次增删改都会自动保存 JSON；完成时点击 <strong>保存本次标注</strong>。</li>
+      </ol>
+    </section>
+    <section>
+      <h2>模板与性别</h2>
+      <p><strong>SMPL-X：</strong>用于全身、手指和头面部主标注；不确定时选中性主 Atlas。</p>
+      <p>中性、女性、男性模板分别保存。穴位编码可以相同，但三种模板的坐标绑定不会直接混用。</p>
+      <p><strong>SKEL：</strong>v2.1 暂留内部研究，不要求医生安装或重复标注。未经验证的骨架不会叠加到医生界面。</p>
+    </section>
+    <section>
+      <h2>安全边界</h2>
+      <p class="notice">本工具只记录医生判断，不自动推荐穴位。Blender 世界坐标不能直接发送给按摩机器人，必须另做真人配准、外参标定、接触法向、力/速度限制和安全控制。</p>
+    </section>
+  </main>
+</body>
+</html>

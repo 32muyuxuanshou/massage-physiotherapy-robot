@@ -1,0 +1,43 @@
+{
+  "schema": "truth-status-policy-v1",
+  "statuses": {
+    "ENGINEERING_REFERENCE": {
+      "medical_truth": false,
+      "medical_validated": false,
+      "allowed_uses": [
+        "geometry regression",
+        "RGB-D pipeline testing",
+        "training pipeline overfit testing"
+      ],
+      "prohibited_claims": [
+        "medical acupoint ground truth",
+        "clinical accuracy",
+        "robot treatment target"
+      ]
+    },
+    "DOCTOR_DRAFT": {
+      "medical_truth": false,
+      "medical_validated": false,
+      "allowed_uses": [
+        "annotation workflow review",
+        "doctor revision"
+      ],
+      "prohibited_claims": [
+        "frozen medical Atlas",
+        "robot treatment target"
+      ]
+    },
+    "DOCTOR_CONFIRMED": {
+      "medical_truth": true,
+      "medical_validated": true,
+      "required_evidence": [
+        "doctor identity or governed pseudonym",
+        "review session",
+        "Atlas version",
+        "confirmation record"
+      ]
+    }
+  },
+  "default_for_ambiguous_legacy_artifact": "REJECT_UNTIL_EXPLICIT_ENVELOPE",
+  "notice": "A string containing 'doctor_annotation' is not sufficient evidence of DOCTOR_CONFIRMED status."
+}

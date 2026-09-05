@@ -1,0 +1,53 @@
+{
+  "schema": "truncation-gate-profiles-v2",
+  "medical_truth": false,
+  "resolution": [1280, 1024],
+  "baseline_camera_matrix_world": [[1.0, 0.0, 0.0, -0.000365525484085083], [0.0, 1.0, 0.0, -0.2915360629558563], [0.0, 0.0, 1.0, 2.8949742317199707], [0.0, 0.0, 0.0, 1.0]],
+  "scenarios": [
+    {
+      "camera_id": "TRUNC_LEFT_MILD",
+      "subject_side_clipped": "LEFT",
+      "image_edge_clipped": "LEFT",
+      "severity": "MILD",
+      "camera_offset_x_m": 1.0,
+      "matrix_world": [[1.0, 0.0, 0.0, 0.9996344745159149], [0.0, 1.0, 0.0, -0.2915360629558563], [0.0, 0.0, 1.0, 2.8949742317199707], [0.0, 0.0, 0.0, 1.0]],
+      "lens_mm": 42.0,
+      "expect": {"minimum_visible": 18, "minimum_out_of_frame": 1, "maximum_out_of_frame": 2}
+    },
+    {
+      "camera_id": "TRUNC_LEFT_MODERATE",
+      "subject_side_clipped": "LEFT",
+      "image_edge_clipped": "LEFT",
+      "severity": "MODERATE",
+      "camera_offset_x_m": 1.050365525484085,
+      "matrix_world": [[1.0, 0.0, 0.0, 1.05], [0.0, 1.0, 0.0, -0.2915360629558563], [0.0, 0.0, 1.0, 2.8949742317199707], [0.0, 0.0, 0.0, 1.0]],
+      "lens_mm": 42.0,
+      "expect": {"minimum_visible": 12, "minimum_out_of_frame": 3, "maximum_out_of_frame": 8}
+    },
+    {
+      "camera_id": "TRUNC_RIGHT_MILD",
+      "subject_side_clipped": "RIGHT",
+      "image_edge_clipped": "RIGHT",
+      "severity": "MILD",
+      "camera_offset_x_m": -1.0,
+      "matrix_world": [[1.0, 0.0, 0.0, -1.000365525484085], [0.0, 1.0, 0.0, -0.2915360629558563], [0.0, 0.0, 1.0, 2.8949742317199707], [0.0, 0.0, 0.0, 1.0]],
+      "lens_mm": 42.0,
+      "expect": {"minimum_visible": 18, "minimum_out_of_frame": 1, "maximum_out_of_frame": 2}
+    },
+    {
+      "camera_id": "TRUNC_RIGHT_MODERATE",
+      "subject_side_clipped": "RIGHT",
+      "image_edge_clipped": "RIGHT",
+      "severity": "MODERATE",
+      "camera_offset_x_m": -1.050365525484085,
+      "matrix_world": [[1.0, 0.0, 0.0, -1.0507310509681702], [0.0, 1.0, 0.0, -0.2915360629558563], [0.0, 0.0, 1.0, 2.8949742317199707], [0.0, 0.0, 0.0, 1.0]],
+      "lens_mm": 42.0,
+      "expect": {"minimum_visible": 12, "minimum_out_of_frame": 3, "maximum_out_of_frame": 8}
+    }
+  ],
+  "notices": [
+    "Profiles are strict camera-translation mirrors around the frozen baseline camera X.",
+    "MILD and MODERATE are engineering strata defined by measured truncation, not clinical categories.",
+    "No severe profile, training, real RGB-D calibration or medical claim is part of this gate."
+  ]
+}

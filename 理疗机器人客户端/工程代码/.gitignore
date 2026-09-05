@@ -1,0 +1,21 @@
+# Local secrets
+.env.docker
+backend/.env
+
+# Local runtime data and logs
+*.log
+logs/
+__pycache__/
+.pytest_cache/
+backend/data/*.db
+backend/data/*.db-*
+backend/uploads/
+backend/logs/
+backups/
+
+# IDE and build output
+.idea/
+.venv/
+backend/.venv/
+frontend/node_modules/
+frontend/dist/

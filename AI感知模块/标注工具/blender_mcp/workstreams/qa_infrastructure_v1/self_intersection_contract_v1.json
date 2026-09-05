@@ -1,0 +1,39 @@
+{
+  "schema": "self-intersection-qa-contract-v1",
+  "predicate": "BVH_NONADJACENT_TRIANGLE_OVERLAP_V1",
+  "epsilon_m": 1e-7,
+  "adjacency_filter": "exclude triangle pairs sharing any vertex",
+  "baseline": {
+    "blend": "E:/项目-按摩理疗机器人/AI感知模块/outputs/交付文件/2026-08-30_19-24-33/runs/A/snapshots/A_BASE.blend",
+    "object": "SKEL-skin-female",
+    "global_nonadjacent_overlap_pairs": 293,
+    "engineering_anchor_face_count": 20,
+    "anchor_neighborhood_rings": 2,
+    "anchor_neighborhood_face_count": 646,
+    "anchor_neighborhood_overlap_pairs": 0,
+    "status": "KNOWN_GLOBAL_OVERLAPS_OUTSIDE_ANCHOR_NEIGHBORHOOD"
+  },
+  "hard_gate_for_A_and_B": {
+    "anchor_neighborhood_overlap_pairs_must_equal": 0,
+    "global_overlap_count_must_be_recorded": true,
+    "visual_review_required": true,
+    "topology_must_match_canonical": true
+  },
+  "calibration_findings": [
+    {
+      "case": "B02_NEG",
+      "anchor_neighborhood_overlap_pairs": 2,
+      "pairs": [[8250, 11498], [8250, 11499]],
+      "status": "REJECT"
+    },
+    {
+      "case": "B06_POS",
+      "anchor_neighborhood_overlap_pairs": 2,
+      "pairs": [[8250, 11498], [8250, 11499]],
+      "near_engineering_anchor": "BL17_RIGHT / face 8263 / engineering reference only",
+      "status": "CAUTION_REJECT_FOR_COMBINATION_SEED"
+    }
+  ],
+  "prohibited_claim": "complete body mesh is self-intersection-free",
+  "allowed_claim_when_passed": "no nonadjacent triangle overlap was detected in the frozen 2-ring neighborhood of the 20 engineering surface anchors"
+}

@@ -1,0 +1,43 @@
+{
+  "slide": 10,
+  "title": "阶段结论与下一步",
+  "prompt": "# Codex PPT Slide Image Prompt\n\n## Canvas\n{\n  \"type\": \"16:9 full-slide PowerPoint image\",\n  \"language\": \"Chinese\",\n  \"slide_number\": 10,\n  \"render_slide_number\": false\n}\n\n## Deck Goal\n汇报基于 SKEL 与虚拟 RGB-D 的穴位定位训练数据生成流程、验证结果和下一步。\n\n## Required Background\n{\n  \"deck_context\": {\n    \"source_summary\": \"面向按摩理疗机器人穴位定位，使用参数化 SKEL 人体、表面穴位 Atlas 和虚拟 RGB-D 相机，生成带二维与三维穴位标签的工程训练数据。当前使用 20 个工程测试点验证流程，不作为正式医学标注。\",\n    \"core_claim\": \"已经打通从人体表面标注、Shape/Pose 传播、虚拟 RGB-D 渲染到二维与三维标签及可见性判断的完整工程链路。\",\n    \"canonical_terms\": [\n      \"SKEL\",\n      \"RGB-D\",\n      \"Atlas\",\n      \"face_index + barycentric\",\n      \"Shape / Pose\",\n      \"PASS_WITH_RESTRICTIONS\"\n    ]\n  },\n  \"slide_local_context\": {\n    \"required_background\": \"三类 Holdout 顺序固定为 Combination、Shape、Pose。RTMPose-S 当前状态为 PASS_SYNTHETIC_CANDIDATE_WITH_SHAPE_MEAN_REGRESSION；可靠性状态为 PASS_SYNTHETIC_RTMPOSE_RELIABILITY_FEASIBILITY_V1。Shape 分支接受点 BAD15 为 4.95%，接近 5% 上限。当前全部结果仅证明合成工程流程可行，不代表医学准确、真人泛化或机器人接触安全。\"\n  }\n}\n\n## Global Style\n{\n  \"name\": \"极简白底科研汇报风\",\n  \"visual_direction\": \"纯白背景；真实实验截图为主；短中文文字、细箭头和必要数字；无装饰性元素。\",\n  \"color_palette\": \"white background; black and dark gray text; muted teal #0F766E accent; preserve coral/orange acupoint marks and source-image colors\",\n  \"typography\": \"modern Chinese sans-serif; large bold left-aligned title; compact readable labels; strong numeric hierarchy\",\n  \"texture_and_finish\": \"flat and clean; no gradients, shadows, textures, patterns, rounded cards, stock icons, or ornamental illustration\",\n  \"deck_consistency\": \"Match the approved Slide 3 palette, typography, whitespace, screenshot treatment, and thin-arrow language; vary composition by slide role.\"\n}\n\n## Input Images\n\n- Image 1: E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png — approved sample slide style reference; match style only; do not copy its layout or content\n\n\n## Slide\n{\n  \"number\": 10,\n  \"title\": \"阶段结论与下一步\",\n  \"role\": \"closing summary and next gates\",\n  \"intent\": \"收束已完成的合成工程闭环，展示 RTMPose-S 三类 Holdout 与可靠性终态，并把下一主任务切换到真实 RGB-D 域门。\"\n}\n\n## Text\n{\n  \"title\": \"阶段结论与下一步\",\n  \"key_points\": [\n    \"已完成：Atlas → RGB-D → 几何/可见性验证 → Pilot → 第一版模型\",\n    \"RTMPose-S 三类 Holdout：Combination 1.837 / 3.937 / 7.493 px；Shape 2.200 / 4.462 / 6.841 px；Pose 1.830 / 4.112 / 5.250 px（Mean / P95 / Max）\",\n    \"全部 >20 px 错误 = 0；Shape Mean 相比 Tiny 退化 13.1%\",\n    \"RTMPose-S 可靠性门禁通过：接受率 80.00% / 57.86% / 77.98%，接受点 BAD30 均为 0\",\n    \"唯一下一主任务：REAL_RGBD_DOMAIN_GATE_V1\"\n  ],\n  \"speaker_focus\": null\n}\n\n## Layout\n{\n  \"composition\": \"纯白底，标题左上。标题下用细蓝绿色箭头串起 Atlas、RGB-D、验证、Pilot、模型。中部左侧约 58% 放三行无边框 RTMPose-S Holdout 表，列为 Mean、P95、Max；右侧约 42% 放可靠性摘要，突出 接受点 BAD30 = 0，并列三条接受率 80.00% / 57.86% / 77.98%。Shape Mean +13.1% 与 Shape BAD15 4.95% 使用橙色细字风险提示。底部用一条明显但简洁的蓝绿色箭头指向 REAL_RGBD_DOMAIN_GATE_V1，并列 相机型号 / 内参与畸变 / 深度噪声 / 真实俯卧样本 四个短词；最底部一行边界说明。\",\n  \"relationship_to_previous_slide\": \"在 Tiny 基线页之后给出 RTMPose-S 的最新完整终态和唯一下一门\"\n}\n\n## Visual Elements\n{\n  \"main_visual\": \"minimal three-row RTMPose-S metrics table plus compact reliability summary\",\n  \"supporting_elements\": \"five-stage completion arrow, one real-domain next-gate arrow, and two thin orange risk notes\"\n}\n\n## Constraints\n[\n  \"Render every metric exactly, and keep the Holdout order Combination, Shape, Pose.\",\n  \"State RTMPose-S as a synthetic candidate, not a production replacement.\",\n  \"Do not mention 7 remaining C2 errors; they have been reduced to zero.\",\n  \"Do not list further architecture search as the next step.\",\n  \"Include the engineering limitation sentence clearly and compactly.\",\n  \"No screenshots, cards, illustrations, gradients, shadows, logos, or page number.\"\n]\n\n## Style Reference Rule\nUse Image 1 as the approved sample-slide style reference. Match its palette, typography mood, density, texture, and overall visual identity. Do not copy its exact layout unless this slide's layout explicitly asks for it.\n\n## Input Image Handling Rules\nFor any input image marked as a strict input asset, include it visibly and preserve its content. Do not redraw, replace, relabel, or invent a similar figure. Scale and crop only as needed for composition while keeping the important labels, arrows, data, and relationships recognizable.\n\n## Universal Constraints\n- The final image itself must contain the title and key points.\n- Render Chinese text exactly and legibly; avoid garbled characters.\n- Keep the confirmed deck style consistent while varying layout by slide role.\n- No watermark, unrelated logo, or extra slide number.\n",
+  "out": "slide_10.png",
+  "input_images": [
+    {
+      "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+      "role": "approved sample slide style reference",
+      "fidelity": "match style only; do not copy its layout or content"
+    }
+  ],
+  "requires_context_images": true,
+  "expected_backend": "built-in image tool",
+  "sample_generation_method": {
+    "backend_used": "built-in image tool",
+    "tool_name": "image_gen",
+    "mode": "edit",
+    "prompt_source": "approved Slide 3 inline structured prompt",
+    "size": "16:9 landscape; generated 1672x941",
+    "quality": "built-in default",
+    "model_config": "built-in Image2 path",
+    "approved_sample_path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+    "input_context_preparation": "view_image each local source asset before built-in image generation; use referenced_image_paths for edit/compositing",
+    "handoff_rule": "Use the same built-in image tool, edit/compositing mode, and approved sample style; return a blocker if unavailable."
+  },
+  "generation_contract": {
+    "must_use_selected_image_backend": true,
+    "must_match_sample_generation_method": true,
+    "forbidden_final_image_methods": [
+      "local drawing/rendering scripts",
+      "Pillow-generated slides",
+      "SVG/HTML/CSS/canvas screenshots",
+      "python-pptx/PptxGenJS/native PPT layout screenshots",
+      "manually composited text/image overlays"
+    ],
+    "must_return": [
+      "backend_used",
+      "selected_source",
+      "qa_note"
+    ]
+  }
+}

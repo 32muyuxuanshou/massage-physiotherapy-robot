@@ -1,0 +1,19 @@
+{
+  "schema": "rtmpose-reliability-untouched-acceptance-v1",
+  "frozen_before_untouched_inference": true,
+  "per_locator_hard_gates": {
+    "availability_unavailable_recall_min": 0.80,
+    "availability_available_recall_min": 0.70,
+    "bad15_recall_among_available_min": 0.70,
+    "combined_accept_fraction_min": 0.50,
+    "combined_unavailable_false_accept_rate_max": 0.10,
+    "combined_bad15_rate_among_accepted_available_max": 0.05,
+    "combined_bad30_rate_among_accepted_available_max": 0.05,
+    "invalid_predicted_3d_max": 0
+  },
+  "decision": {
+    "all_three_pass": "PASS_SYNTHETIC_RTMPOSE_RELIABILITY_FEASIBILITY_V1",
+    "any_fail": "PASS_WITH_RESIDUAL_RISK_OR_FAIL_REQUIRES_ANALYSIS"
+  },
+  "not_authorized": ["threshold retuning on untouched test", "medical claim", "real-human claim", "robot execution", "production safety claim"]
+}

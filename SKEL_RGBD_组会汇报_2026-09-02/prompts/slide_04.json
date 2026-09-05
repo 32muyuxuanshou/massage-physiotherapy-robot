@@ -1,0 +1,48 @@
+{
+  "slide": 4,
+  "title": "虚拟 RGB-D 数据生成",
+  "prompt": "# Codex PPT Slide Image Prompt\n\n## Canvas\n{\n  \"type\": \"16:9 full-slide PowerPoint image\",\n  \"language\": \"Chinese\",\n  \"slide_number\": 4,\n  \"render_slide_number\": false\n}\n\n## Deck Goal\n汇报基于 SKEL 与虚拟 RGB-D 的穴位定位训练数据生成流程、验证结果和下一步。\n\n## Required Background\n{\n  \"deck_context\": {\n    \"source_summary\": \"面向按摩理疗机器人穴位定位，使用参数化 SKEL 人体、表面穴位 Atlas 和虚拟 RGB-D 相机，生成带二维与三维穴位标签的工程训练数据。当前使用 20 个工程测试点验证流程，不作为正式医学标注。\",\n    \"core_claim\": \"已经打通从人体表面标注、Shape/Pose 传播、虚拟 RGB-D 渲染到二维与三维标签及可见性判断的完整工程链路。\",\n    \"canonical_terms\": [\n      \"SKEL\",\n      \"RGB-D\",\n      \"Atlas\",\n      \"face_index + barycentric\",\n      \"Shape / Pose\",\n      \"PASS_WITH_RESTRICTIONS\"\n    ]\n  },\n  \"slide_local_context\": {\n    \"required_background\": \"已完成从三维人体到一份完整 RGB-D 训练样本的生成链路。\"\n  }\n}\n\n## Global Style\n{\n  \"name\": \"极简白底科研汇报风\",\n  \"visual_direction\": \"纯白背景；真实实验截图为主；短中文文字、细箭头和必要数字；无装饰性元素。\",\n  \"color_palette\": \"white background; black and dark gray text; muted teal #0F766E accent; preserve coral/orange acupoint marks and source-image colors\",\n  \"typography\": \"modern Chinese sans-serif; large bold left-aligned title; compact readable labels; strong numeric hierarchy\",\n  \"texture_and_finish\": \"flat and clean; no gradients, shadows, textures, patterns, rounded cards, stock icons, or ornamental illustration\",\n  \"deck_consistency\": \"Match the approved Slide 3 palette, typography, whitespace, screenshot treatment, and thin-arrow language; vary composition by slide role.\"\n}\n\n## Input Images\n\n- Image 1: E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png — approved sample slide style reference; match style only; do not copy its layout or content\n- Image 2: E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_04\\rgbd_quad.png — strict main evidence figure: RGB, depth, skin mask, and 2D keypoint overlay; preserve all four panels, colors, English panel labels, body content, and keypoint overlay exactly; crop or scale only\n\n\n## Slide\n{\n  \"number\": 4,\n  \"title\": \"虚拟 RGB-D 数据生成\",\n  \"role\": \"pipeline output evidence\",\n  \"intent\": \"用真实四联图证明完整训练样本已经能够输出。\"\n}\n\n## Text\n{\n  \"title\": \"虚拟 RGB-D 数据生成\",\n  \"key_points\": [\n    \"RGB / Depth / Skin Mask / 穴位 Overlay\",\n    \"2D / 3D 坐标 · 表面法向 · 可见性与遮挡原因\"\n  ],\n  \"speaker_focus\": null\n}\n\n## Layout\n{\n  \"composition\": \"标题与一句结论在顶部；严格输入四联图横向铺满中部；底部仅两行输出标签，用细竖线分隔，不做卡片。\",\n  \"relationship_to_previous_slide\": \"from annotation method to generated output\"\n}\n\n## Visual Elements\n{\n  \"main_visual\": \"large supplied RGB/Depth/Skin Mask/Overlay four-panel figure\",\n  \"supporting_elements\": \"small muted-teal labels and thin separators\"\n}\n\n## Constraints\n[\n  \"Keep the four supplied panels equally visible.\",\n  \"No invented chart, legend, icons, gradients, or decorative background.\"\n]\n\n## Style Reference Rule\nUse Image 1 as the approved sample-slide style reference. Match its palette, typography mood, density, texture, and overall visual identity. Do not copy its exact layout unless this slide's layout explicitly asks for it.\n\n## Input Image Handling Rules\nFor any input image marked as a strict input asset, include it visibly and preserve its content. Do not redraw, replace, relabel, or invent a similar figure. Scale and crop only as needed for composition while keeping the important labels, arrows, data, and relationships recognizable.\n\n## Universal Constraints\n- The final image itself must contain the title and key points.\n- Render Chinese text exactly and legibly; avoid garbled characters.\n- Keep the confirmed deck style consistent while varying layout by slide role.\n- No watermark, unrelated logo, or extra slide number.\n",
+  "out": "slide_04.png",
+  "input_images": [
+    {
+      "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+      "role": "approved sample slide style reference",
+      "fidelity": "match style only; do not copy its layout or content"
+    },
+    {
+      "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_04\\rgbd_quad.png",
+      "role": "strict main evidence figure: RGB, depth, skin mask, and 2D keypoint overlay",
+      "fidelity": "preserve all four panels, colors, English panel labels, body content, and keypoint overlay exactly; crop or scale only"
+    }
+  ],
+  "requires_context_images": true,
+  "expected_backend": "built-in image tool",
+  "sample_generation_method": {
+    "backend_used": "built-in image tool",
+    "tool_name": "image_gen",
+    "mode": "edit",
+    "prompt_source": "approved Slide 3 inline structured prompt",
+    "size": "16:9 landscape; generated 1672x941",
+    "quality": "built-in default",
+    "model_config": "built-in Image2 path",
+    "approved_sample_path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+    "input_context_preparation": "view_image each local source asset before built-in image generation; use referenced_image_paths for edit/compositing",
+    "handoff_rule": "Use the same built-in image tool, edit/compositing mode, and approved sample style; return a blocker if unavailable."
+  },
+  "generation_contract": {
+    "must_use_selected_image_backend": true,
+    "must_match_sample_generation_method": true,
+    "forbidden_final_image_methods": [
+      "local drawing/rendering scripts",
+      "Pillow-generated slides",
+      "SVG/HTML/CSS/canvas screenshots",
+      "python-pptx/PptxGenJS/native PPT layout screenshots",
+      "manually composited text/image overlays"
+    ],
+    "must_return": [
+      "backend_used",
+      "selected_source",
+      "qa_note"
+    ]
+  }
+}

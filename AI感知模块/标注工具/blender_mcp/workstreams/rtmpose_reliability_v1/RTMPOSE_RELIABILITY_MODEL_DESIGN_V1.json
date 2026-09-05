@@ -1,0 +1,29 @@
+{
+  "schema": "rtmpose-reliability-model-design-v1",
+  "frozen_before_untouched_test": true,
+  "scope": "Synthetic engineering feasibility only; one independent reliability system per frozen RTMPose-S locator.",
+  "reason_for_bad15": "TRAIN and CALIBRATION contained no BAD30 positives for two locators. BAD15 is frozen before untouched inference as a stricter, learnable risk event.",
+  "models": {
+    "availability": {
+      "target": "gt_available_for_3d",
+      "threshold_rule": "On CALIBRATION only: require unavailable recall >= 0.90 and maximize available recall."
+    },
+    "bad15": {
+      "population": "GT-available rows only",
+      "target": "final_3d_error_mm > 15",
+      "threshold_rule": "On CALIBRATION only: require BAD15 recall >= 0.80 and maximize safe-row acceptance."
+    }
+  },
+  "estimator": "body-and-class-weighted L2 logistic regression",
+  "preprocessing": "training median imputation, then training mean/std scaling",
+  "optimization": {
+    "dtype": "float64",
+    "optimizer": "torch LBFGS",
+    "max_iter": 250,
+    "l2": 0.001,
+    "seed": 2026090204
+  },
+  "locators": ["COMBINATION_HOLDOUT", "SHAPE_HOLDOUT", "POSE_HOLDOUT"],
+  "pooling_allowed": false,
+  "not_authorized": ["medical claim", "real-human claim", "robot execution", "production safety threshold"]
+}

@@ -1,0 +1,387 @@
+{
+  "deck_name": "SKEL_RGBD_组会汇报_2026-09-02",
+  "language": "Chinese",
+  "goal": "汇报基于 SKEL 与虚拟 RGB-D 的穴位定位训练数据生成流程、验证结果和下一步。",
+  "deck_context": {
+    "source_summary": "面向按摩理疗机器人穴位定位，使用参数化 SKEL 人体、表面穴位 Atlas 和虚拟 RGB-D 相机，生成带二维与三维穴位标签的工程训练数据。当前使用 20 个工程测试点验证流程，不作为正式医学标注。",
+    "core_claim": "已经打通从人体表面标注、Shape/Pose 传播、虚拟 RGB-D 渲染到二维与三维标签及可见性判断的完整工程链路。",
+    "canonical_terms": [
+      "SKEL",
+      "RGB-D",
+      "Atlas",
+      "face_index + barycentric",
+      "Shape / Pose",
+      "PASS_WITH_RESTRICTIONS"
+    ]
+  },
+  "selected_image_backend": "built-in image tool",
+  "max_concurrent_slides": 3,
+  "sample_generation_method": {
+    "backend_used": "built-in image tool",
+    "tool_name": "image_gen",
+    "mode": "edit",
+    "prompt_source": "approved Slide 3 inline structured prompt",
+    "size": "16:9 landscape; generated 1672x941",
+    "quality": "built-in default",
+    "model_config": "built-in Image2 path",
+    "approved_sample_path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+    "input_context_preparation": "view_image each local source asset before built-in image generation; use referenced_image_paths for edit/compositing",
+    "handoff_rule": "Use the same built-in image tool, edit/compositing mode, and approved sample style; return a blocker if unavailable."
+  },
+  "style": {
+    "name": "极简白底科研汇报风",
+    "visual_direction": "纯白背景；真实实验截图为主；短中文文字、细箭头和必要数字；无装饰性元素。",
+    "color_palette": "white background; black and dark gray text; muted teal #0F766E accent; preserve coral/orange acupoint marks and source-image colors",
+    "typography": "modern Chinese sans-serif; large bold left-aligned title; compact readable labels; strong numeric hierarchy",
+    "texture_and_finish": "flat and clean; no gradients, shadows, textures, patterns, rounded cards, stock icons, or ornamental illustration",
+    "deck_consistency": "Match the approved Slide 3 palette, typography, whitespace, screenshot treatment, and thin-arrow language; vary composition by slide role."
+  },
+  "approved_style_reference": {
+    "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+    "role": "approved sample slide style reference",
+    "fidelity": "match style only; do not copy its layout or content"
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "基于SKEL与虚拟RGB-D的穴位定位数据生成",
+      "role": "cover and research objective",
+      "intent": "用一页说明研究对象、数据难点和技术选择。",
+      "key_points": [
+        "面向按摩理疗机器人穴位定位",
+        "真人三维穴位数据获取困难",
+        "参数化人体模型 → 带标注的 RGB-D 数据"
+      ],
+      "local_context": {
+        "required_background": "目标是为后续穴位定位模型准备带二维和三维标签的 RGB-D 训练数据。"
+      },
+      "layout": {
+        "composition": "左侧约 38% 为标题、三条研究目标和一句结论；右侧约 62% 放大真实 SKEL Blender 插件截图；仅用一条细箭头从数据难点指向参数化生成。",
+        "relationship_to_previous_slide": "opening"
+      },
+      "visual_elements": {
+        "main_visual": "cropped SKEL Blender plugin screenshot",
+        "supporting_elements": "one thin muted-teal arrow and small 2D / 3D label"
+      },
+      "required_images": [
+        {
+          "path": "assets/slide_01/skel_plugin_crop.jpg",
+          "role": "strict main evidence image: real SKEL Blender plugin screenshot",
+          "fidelity": "preserve screenshot pixels, model, grid, plugin fields and source colors; crop or scale only"
+        }
+      ],
+      "constraints": [
+        "Include only the title, the three key points, and the short goal sentence.",
+        "Do not add logos, page numbers, decorative icons, gradients, or extra labels."
+      ]
+    },
+    {
+      "number": 2,
+      "title": "总体技术路线",
+      "role": "process",
+      "intent": "用一条连续流程说明从标准人体到训练标签的完整链路。",
+      "key_points": [
+        "标准 SKEL 人体 → 表面穴位标注 → Shape / Pose",
+        "虚拟 RGB-D 相机 → RGB / Depth / Mask",
+        "输出 2D / 3D 穴位标签"
+      ],
+      "local_context": {
+        "required_background": "完整流程节点依次为：标准 SKEL 人体、表面穴位标注、改变体型与姿势、虚拟 RGB-D 相机、RGB / Depth / Mask、2D / 3D 穴位标签。当前使用 20 个工程测试点验证流程，尚未作为正式医学标注。"
+      },
+      "layout": {
+        "composition": "单条横向流程为主；六个文字节点由细箭头连接；把来源板中的真实截图裁成三个小证据节点：SKEL/标注、Shape/Pose、RGB-D 输出。脚注只占一行。",
+        "relationship_to_previous_slide": "continuation with a horizontal workflow"
+      },
+      "visual_elements": {
+        "main_visual": "one horizontal six-step workflow with three real screenshot inserts",
+        "supporting_elements": "thin arrows only"
+      },
+      "required_images": [
+        {
+          "path": "assets/slide_02/process_source_board.jpg",
+          "role": "strict source board containing real SKEL, plugin control, and RGB-D output screenshots",
+          "fidelity": "use the supplied screenshots as small evidence inserts; preserve content and do not redraw them"
+        }
+      ],
+      "constraints": [
+        "Footnote must read exactly: 当前使用20个工程测试点验证流程，尚未作为正式医学标注。",
+        "No extra icons, illustrations, gradients, cards, or page numbers."
+      ]
+    },
+    {
+      "number": 3,
+      "title": "穴位 Atlas 与表面传播",
+      "role": "concept and implementation",
+      "intent": "已批准的风格样张。",
+      "key_points": [
+        "face_index + barycentric",
+        "Atlas 导入 / 导出",
+        "Shape / Pose 表面传播"
+      ],
+      "local_context": {
+        "required_background": "穴位绑定在人体表面，而不是固定空间坐标。"
+      },
+      "layout": {
+        "composition": "reuse approved sample exactly"
+      },
+      "sample_approved": true,
+      "constraints": [
+        "Reuse the approved final image; do not regenerate."
+      ]
+    },
+    {
+      "number": 4,
+      "title": "虚拟 RGB-D 数据生成",
+      "role": "pipeline output evidence",
+      "intent": "用真实四联图证明完整训练样本已经能够输出。",
+      "key_points": [
+        "RGB / Depth / Skin Mask / 穴位 Overlay",
+        "2D / 3D 坐标 · 表面法向 · 可见性与遮挡原因"
+      ],
+      "local_context": {
+        "required_background": "已完成从三维人体到一份完整 RGB-D 训练样本的生成链路。"
+      },
+      "layout": {
+        "composition": "标题与一句结论在顶部；严格输入四联图横向铺满中部；底部仅两行输出标签，用细竖线分隔，不做卡片。",
+        "relationship_to_previous_slide": "from annotation method to generated output"
+      },
+      "visual_elements": {
+        "main_visual": "large supplied RGB/Depth/Skin Mask/Overlay four-panel figure",
+        "supporting_elements": "small muted-teal labels and thin separators"
+      },
+      "required_images": [
+        {
+          "path": "assets/slide_04/rgbd_quad.png",
+          "role": "strict main evidence figure: RGB, depth, skin mask, and 2D keypoint overlay",
+          "fidelity": "preserve all four panels, colors, English panel labels, body content, and keypoint overlay exactly; crop or scale only"
+        }
+      ],
+      "constraints": [
+        "Keep the four supplied panels equally visible.",
+        "No invented chart, legend, icons, gradients, or decorative background."
+      ]
+    },
+    {
+      "number": 5,
+      "title": "投影与遮挡验证",
+      "role": "validation cases",
+      "intent": "用四个真实案例证明投影、出画和遮挡状态能够被区分。",
+      "key_points": [
+        "多点投影与 3D—2D—3D 检查",
+        "出画点识别",
+        "外部遮挡识别",
+        "自遮挡与背向判断"
+      ],
+      "local_context": {
+        "required_background": "本页只展示验证覆盖面，不解释复杂判断过程。正常 Overlay、边缘出画、外部遮挡和极端侧视四类案例都要出现。"
+      },
+      "layout": {
+        "composition": "标题上置；真实四类案例横向成为主体；正常 Overlay 稍大，另外三类稍小；底部只放一条细流程 3D穴位 → 2D投影 → Depth反投影 → 3D校验。",
+        "relationship_to_previous_slide": "output verification"
+      },
+      "visual_elements": {
+        "main_visual": "supplied four-condition visibility comparison",
+        "supporting_elements": "four concise Chinese condition labels and one thin-arrow projection chain"
+      },
+      "required_images": [
+        {
+          "path": "assets/slide_05/visibility_cases.png",
+          "role": "strict validation evidence containing normal/mild, out-of-frame, external occlusion, and extreme side view cases",
+          "fidelity": "preserve all four source cases, point overlays, colors, and occluder content exactly; crop or scale only"
+        }
+      ],
+      "constraints": [
+        "Do not explain the internal visibility algorithm.",
+        "No decorative icons, card shadows, gradient, page number, or extra case."
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Shape 与 Pose 验证结果",
+      "role": "data evidence",
+      "intent": "把变量控制、组合筛选和最终精度集中为一页结论。",
+      "key_points": [
+        "Shape-only / Pose-only",
+        "17 个合格 Shape×Pose 组合",
+        "固定主相机 17/17 通过",
+        "最大反投影误差 ≈ 1.295 mm"
+      ],
+      "local_context": {
+        "required_background": "先分别控制体型和姿势变量，再进行组合验证，最终得到 17 个能够稳定生成 RGB-D 数据的离散人体组合。本页不展示早期门禁和 48 个警告。"
+      },
+      "layout": {
+        "composition": "左侧或上半部使用来源板中的 Shape 与 Pose 对比网格；右侧或下方突出 17/17 与 1.295 mm 两个大数字；17 组合矩阵作为细长证据条，不放解释性卡片。",
+        "relationship_to_previous_slide": "quantitative validation summary"
+      },
+      "visual_elements": {
+        "main_visual": "supplied shape/pose evidence board",
+        "supporting_elements": "large 17/17 and 1.295 mm with thin alignment rules"
+      },
+      "required_images": [
+        {
+          "path": "assets/slide_06/shape_pose_evidence_board.jpg",
+          "role": "strict source board containing Shape-only grid, Pose-only grid, and 17-combination matrix",
+          "fidelity": "preserve the experiment thumbnails, green/orange borders, labels, and matrix content; crop or scale only"
+        }
+      ],
+      "constraints": [
+        "Do not mention 48 warnings or early gates.",
+        "Use exactly the values 17, 17/17, and 1.295 mm."
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Camera 与可见性验证结果",
+      "role": "comparison and result table",
+      "intent": "把四类视角的兼容性、总体配对数和误差上限并列呈现。",
+      "key_points": [
+        "轻微斜视 17/17",
+        "边缘出画 17/17",
+        "外部遮挡 17/17",
+        "极端侧视 3/17",
+        "68 个配对 → 54 个兼容配对",
+        "最大 Depth 误差 2.909 mm；最大反投影误差 2.944 mm",
+        "PASS_WITH_RESTRICTIONS"
+      ],
+      "local_context": {
+        "required_background": "常规视角、出画和外部遮挡条件全部通过；极端侧视受到限制，因此后续只使用经过验证的兼容组合。"
+      },
+      "layout": {
+        "composition": "左侧约 62% 放真实四类案例对比图；右侧约 38% 放四行极简结果表；底部突出 68 → 54、两项误差和阶段结论。",
+        "relationship_to_previous_slide": "camera-condition comparison after body-variation validation"
+      },
+      "visual_elements": {
+        "main_visual": "supplied four-condition camera comparison",
+        "supporting_elements": "minimal four-row table, large 68→54, small PASS_WITH_RESTRICTIONS tag"
+      },
+      "required_images": [
+        {
+          "path": "assets/slide_07/camera_visibility_cases.png",
+          "role": "strict main evidence figure with four camera and visibility cases",
+          "fidelity": "preserve all four cases, point overlays, source English labels, colors, and occluder content; crop or scale only"
+        }
+      ],
+      "constraints": [
+        "Render every fraction and millimetre value exactly.",
+        "No additional categories, icons, gradients, or page number."
+      ]
+    },
+    {
+      "number": 8,
+      "title": "工程 Pilot 数据集与泛化划分",
+      "role": "dataset evidence and split design",
+      "intent": "展示完成的数据规模、相机组成和按人体隔离的三类泛化测试。",
+      "key_points": [
+        "360 张主 Pilot RGB-D 样本 + 12 张 C4 极端侧视挑战样本",
+        "NORMAL_MAIN 144 · C1 108 · C2 54 · C3 54",
+        "COMBINATION / SHAPE / POSE 三类 Holdout",
+        "所有划分均按人体组合隔离"
+      ],
+      "local_context": {
+        "required_background": "主 Pilot 不包含 C4；372/372 张 RGB 图像唯一。每张样本带 E01–E20 共 20 个非医学工程测试点，不能写成医学真值。"
+      },
+      "layout": {
+        "composition": "顶部左对齐标题。左侧约 58% 将四张严格输入的真实 Overlay 排成紧凑 2×2 图组，仅标 NORMAL、C1、C2、C3；右侧约 42% 突出大数字 360 + 12，下方用三条细蓝绿色分支列出 COMBINATION、SHAPE、POSE Holdout。底部一行工程边界说明。",
+        "relationship_to_previous_slide": "从已验证的相机兼容组合推进到实际数据集规模"
+      },
+      "visual_elements": {
+        "main_visual": "four supplied engineering sample overlays arranged as a clean 2x2 evidence group",
+        "supporting_elements": "large 360 + 12, one thin branching line, small sample-count labels"
+      },
+      "required_images": [
+        {
+          "path": "assets/slide_08/NORMAL_MAIN_overlay.png",
+          "role": "strict NORMAL_MAIN sample overlay",
+          "fidelity": "preserve body, point overlays and source colors; crop or scale only"
+        },
+        {
+          "path": "assets/slide_08/C1_MILD_OBLIQUE_overlay.png",
+          "role": "strict C1 mild-oblique sample overlay",
+          "fidelity": "preserve body, point overlays and source colors; crop or scale only"
+        },
+        {
+          "path": "assets/slide_08/C2_EDGE_CROP_overlay.png",
+          "role": "strict C2 edge-crop sample overlay",
+          "fidelity": "preserve cropping condition, body, point overlays and source colors"
+        },
+        {
+          "path": "assets/slide_08/C3_EXTERNAL_OCCLUDER_overlay.png",
+          "role": "strict C3 external-occluder sample overlay",
+          "fidelity": "preserve occluder, body, point overlays and source colors"
+        }
+      ],
+      "constraints": [
+        "Render 360, 12, 144, 108, 54 and 54 exactly.",
+        "Do not claim the 20 points are medical ground truth.",
+        "No cards, gradients, decorative illustration, logo, or page number."
+      ]
+    },
+    {
+      "number": 9,
+      "title": "第一版定位模型验证",
+      "role": "baseline model result and error attribution",
+      "intent": "证明工程数据能够训练定位模型，并明确当前瓶颈主要在二维定位。",
+      "key_points": [
+        "TinyHeatmapNet：RGB → 20 个工程测试点",
+        "平均 2D 误差：3.212 / 3.353 / 4.400 px",
+        "平均 3D 误差：6.012 / 6.281 / 8.193 mm",
+        "GT-UV + Scene Depth ≈ 0.18 mm → 主要误差来自二维定位"
+      ],
+      "local_context": {
+        "required_background": "三个数依次对应 COMBINATION_HOLDOUT、SHAPE_HOLDOUT、POSE_HOLDOUT。结果仅为合成工程基线，不代表真人或医学准确。"
+      },
+      "layout": {
+        "composition": "顶部左对齐标题。左侧约 60% 放大严格输入的三列真实预测 Montage，不重绘任何点；右侧约 40% 用三行无边框结果对齐展示三类 Holdout 的 2D/3D 均值。底部用细箭头表示 RGB → 2D 定位 → Depth → 3D，并突出 ≈0.18 mm 的诊断结论。",
+        "relationship_to_previous_slide": "数据集完成后验证其能否支撑第一版定位模型"
+      },
+      "visual_elements": {
+        "main_visual": "large supplied three-column prediction montage",
+        "supporting_elements": "minimal aligned numeric rows and one thin diagnostic pipeline"
+      },
+      "required_images": [
+        {
+          "path": "assets/slide_09/test_prediction_montage.png",
+          "role": "strict baseline prediction montage from COMBINATION_HOLDOUT test",
+          "fidelity": "preserve all three panels, bodies, predicted/ground-truth point overlays and source colors; crop or scale only"
+        }
+      ],
+      "constraints": [
+        "Keep the three supplied montage panels visible and unmodified.",
+        "Render all error values and units exactly.",
+        "No invented accuracy curve, heatmap, chart, icons, gradient, logo, or page number."
+      ]
+    },
+    {
+      "number": 10,
+      "title": "阶段结论与下一步",
+      "role": "closing summary and next gates",
+      "intent": "收束已完成的合成工程闭环，展示 RTMPose-S 三类 Holdout 与可靠性终态，并把下一主任务切换到真实 RGB-D 域门。",
+      "key_points": [
+        "已完成：Atlas → RGB-D → 几何/可见性验证 → Pilot → 第一版模型",
+        "RTMPose-S 三类 Holdout：Combination 1.837 / 3.937 / 7.493 px；Shape 2.200 / 4.462 / 6.841 px；Pose 1.830 / 4.112 / 5.250 px（Mean / P95 / Max）",
+        "全部 >20 px 错误 = 0；Shape Mean 相比 Tiny 退化 13.1%",
+        "RTMPose-S 可靠性门禁通过：接受率 80.00% / 57.86% / 77.98%，接受点 BAD30 均为 0",
+        "唯一下一主任务：REAL_RGBD_DOMAIN_GATE_V1"
+      ],
+      "local_context": {
+        "required_background": "三类 Holdout 顺序固定为 Combination、Shape、Pose。RTMPose-S 当前状态为 PASS_SYNTHETIC_CANDIDATE_WITH_SHAPE_MEAN_REGRESSION；可靠性状态为 PASS_SYNTHETIC_RTMPOSE_RELIABILITY_FEASIBILITY_V1。Shape 分支接受点 BAD15 为 4.95%，接近 5% 上限。当前全部结果仅证明合成工程流程可行，不代表医学准确、真人泛化或机器人接触安全。"
+      },
+      "layout": {
+        "composition": "纯白底，标题左上。标题下用细蓝绿色箭头串起 Atlas、RGB-D、验证、Pilot、模型。中部左侧约 58% 放三行无边框 RTMPose-S Holdout 表，列为 Mean、P95、Max；右侧约 42% 放可靠性摘要，突出 接受点 BAD30 = 0，并列三条接受率 80.00% / 57.86% / 77.98%。Shape Mean +13.1% 与 Shape BAD15 4.95% 使用橙色细字风险提示。底部用一条明显但简洁的蓝绿色箭头指向 REAL_RGBD_DOMAIN_GATE_V1，并列 相机型号 / 内参与畸变 / 深度噪声 / 真实俯卧样本 四个短词；最底部一行边界说明。",
+        "relationship_to_previous_slide": "在 Tiny 基线页之后给出 RTMPose-S 的最新完整终态和唯一下一门"
+      },
+      "visual_elements": {
+        "main_visual": "minimal three-row RTMPose-S metrics table plus compact reliability summary",
+        "supporting_elements": "five-stage completion arrow, one real-domain next-gate arrow, and two thin orange risk notes"
+      },
+      "constraints": [
+        "Render every metric exactly, and keep the Holdout order Combination, Shape, Pose.",
+        "State RTMPose-S as a synthetic candidate, not a production replacement.",
+        "Do not mention 7 remaining C2 errors; they have been reduced to zero.",
+        "Do not list further architecture search as the next step.",
+        "Include the engineering limitation sentence clearly and compactly.",
+        "No screenshots, cards, illustrations, gradients, shadows, logos, or page number."
+      ]
+    }
+  ]
+}

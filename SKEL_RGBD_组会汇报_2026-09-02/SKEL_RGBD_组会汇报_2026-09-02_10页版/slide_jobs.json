@@ -1,0 +1,458 @@
+{
+  "run_status": "slides_recorded",
+  "deck_name": "SKEL_RGBD_组会汇报_2026-09-02",
+  "selected_backend": "built-in image tool",
+  "sample_generation_method": {
+    "backend_used": "built-in image tool",
+    "tool_name": "image_gen",
+    "mode": "edit",
+    "prompt_source": "approved Slide 3 inline structured prompt",
+    "size": "16:9 landscape; generated 1672x941",
+    "quality": "built-in default",
+    "model_config": "built-in Image2 path",
+    "approved_sample_path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+    "input_context_preparation": "view_image each local source asset before built-in image generation; use referenced_image_paths for edit/compositing",
+    "handoff_rule": "Use the same built-in image tool, edit/compositing mode, and approved sample style; return a blocker if unavailable."
+  },
+  "max_concurrent_slides": 3,
+  "slides": [
+    {
+      "slide_id": "slide_01",
+      "number": 1,
+      "title": "基于SKEL与虚拟RGB-D的穴位定位数据生成",
+      "job": "prompts/slide_01.json",
+      "out": "origin_image/slide_01.png",
+      "input_images": [
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy its layout or content"
+        },
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_01\\skel_plugin_crop.jpg",
+          "role": "strict main evidence image: real SKEL Blender plugin screenshot",
+          "fidelity": "preserve screenshot pixels, model, grid, plugin fields and source colors; crop or scale only"
+        }
+      ],
+      "requires_context_images": true,
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "/root/slide_01",
+        "agent_nickname": "slide_01",
+        "prompt": "prompts/slide_01.json",
+        "prompt_sha256": "b795c8a46bfcb04e0d9828119f6a3465f531f520c61576cac18fd2f289b99cec",
+        "dispatched_at": "2026-09-02T11:52:17Z"
+      },
+      "result": {
+        "agent_id": "/root/slide_01",
+        "backend_used": "built-in image tool",
+        "selected_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a06158-eb3d-79a3-8158-46e0ffb3b9f9\\exec-5a9b03cf-a164-4545-a585-46db34d14b2b.png",
+        "selected_source_sha256": "32be1b7b9a4ec4c486363174ae1c762bd86876d120a42f2938c7e6e4fcc711f8",
+        "final_image": "origin_image/slide_01.png",
+        "final_image_sha256": "32be1b7b9a4ec4c486363174ae1c762bd86876d120a42f2938c7e6e4fcc711f8",
+        "expected_backend": "built-in image tool",
+        "expected_backend_labels": [
+          "built-in image tool",
+          "image_gen"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Previously approved slide retained unchanged while extending deck.",
+        "recorded_at": "2026-09-02T11:52:17Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_02",
+      "number": 2,
+      "title": "总体技术路线",
+      "job": "prompts/slide_02.json",
+      "out": "origin_image/slide_02.png",
+      "input_images": [
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy its layout or content"
+        },
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_02\\process_source_board.jpg",
+          "role": "strict source board containing real SKEL, plugin control, and RGB-D output screenshots",
+          "fidelity": "use the supplied screenshots as small evidence inserts; preserve content and do not redraw them"
+        }
+      ],
+      "requires_context_images": true,
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "/root/slide_02",
+        "agent_nickname": "slide_02",
+        "prompt": "prompts/slide_02.json",
+        "prompt_sha256": "e28913983802c12d5352adbb24b2b5b3539aef5c280cbeb44ae6a3737feca1f0",
+        "dispatched_at": "2026-09-02T11:52:18Z"
+      },
+      "result": {
+        "agent_id": "/root/slide_02",
+        "backend_used": "built-in image tool",
+        "selected_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a06159-5024-77c2-bd0c-0445a732f4ad\\exec-0bb37977-d759-4082-bb54-9b201df23055.png",
+        "selected_source_sha256": "e5481b448f1ddfae397b42379d586b4b76ebeabc367dbe1676cf3d247cd30a0f",
+        "final_image": "origin_image/slide_02.png",
+        "final_image_sha256": "e5481b448f1ddfae397b42379d586b4b76ebeabc367dbe1676cf3d247cd30a0f",
+        "expected_backend": "built-in image tool",
+        "expected_backend_labels": [
+          "built-in image tool",
+          "image_gen"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Previously approved slide retained unchanged while extending deck.",
+        "recorded_at": "2026-09-02T11:52:18Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_03",
+      "number": 3,
+      "title": "穴位 Atlas 与表面传播",
+      "job": "prompts/slide_03.json",
+      "out": "origin_image/slide_03.png",
+      "input_images": [
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy its layout or content"
+        }
+      ],
+      "requires_context_images": true,
+      "status": "accepted",
+      "dispatch": null,
+      "result": {
+        "final_image": "origin_image/slide_03.png",
+        "accepted_sample": true
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_04",
+      "number": 4,
+      "title": "虚拟 RGB-D 数据生成",
+      "job": "prompts/slide_04.json",
+      "out": "origin_image/slide_04.png",
+      "input_images": [
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy its layout or content"
+        },
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_04\\rgbd_quad.png",
+          "role": "strict main evidence figure: RGB, depth, skin mask, and 2D keypoint overlay",
+          "fidelity": "preserve all four panels, colors, English panel labels, body content, and keypoint overlay exactly; crop or scale only"
+        }
+      ],
+      "requires_context_images": true,
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "/root/slide_04",
+        "agent_nickname": "slide_04",
+        "prompt": "prompts/slide_04.json",
+        "prompt_sha256": "f7fb7cd8e9276e519aac4a44c5107e3b821a44caba72606df064a008defded13",
+        "dispatched_at": "2026-09-02T11:52:17Z"
+      },
+      "result": {
+        "agent_id": "/root/slide_04",
+        "backend_used": "built-in image tool",
+        "selected_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a06159-d18b-71c0-a7d5-fa3b346e743e\\exec-eff73e93-8861-4d74-8989-fe6e07b08a78.png",
+        "selected_source_sha256": "a8bd38ecffeb72cf163c4bf79614d76f7944dfcba179fcdcb2d1f80044665576",
+        "final_image": "origin_image/slide_04.png",
+        "final_image_sha256": "a8bd38ecffeb72cf163c4bf79614d76f7944dfcba179fcdcb2d1f80044665576",
+        "expected_backend": "built-in image tool",
+        "expected_backend_labels": [
+          "built-in image tool",
+          "image_gen"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Previously approved slide retained unchanged while extending deck.",
+        "recorded_at": "2026-09-02T11:52:18Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_05",
+      "number": 5,
+      "title": "投影与遮挡验证",
+      "job": "prompts/slide_05.json",
+      "out": "origin_image/slide_05.png",
+      "input_images": [
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy its layout or content"
+        },
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_05\\visibility_cases.png",
+          "role": "strict validation evidence containing normal/mild, out-of-frame, external occlusion, and extreme side view cases",
+          "fidelity": "preserve all four source cases, point overlays, colors, and occluder content exactly; crop or scale only"
+        }
+      ],
+      "requires_context_images": true,
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "/root/slide_05",
+        "agent_nickname": "slide_05",
+        "prompt": "prompts/slide_05.json",
+        "prompt_sha256": "e3bb4b6f87663cdc84ee6b837758c33da9ba93fbcc0c59af916b8a34556778da",
+        "dispatched_at": "2026-09-02T11:52:17Z"
+      },
+      "result": {
+        "agent_id": "/root/slide_05",
+        "backend_used": "built-in image tool",
+        "selected_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a0615f-c419-77b1-85b4-11cc6400c8d9\\exec-75860c50-191b-4d96-a9a9-623f1efa391c.png",
+        "selected_source_sha256": "c2e7b298ffa7217461ad0054c6de63f2e7db0e17720a76d59c4ca9b83c9091ef",
+        "final_image": "origin_image/slide_05.png",
+        "final_image_sha256": "c2e7b298ffa7217461ad0054c6de63f2e7db0e17720a76d59c4ca9b83c9091ef",
+        "expected_backend": "built-in image tool",
+        "expected_backend_labels": [
+          "built-in image tool",
+          "image_gen"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Previously approved slide retained unchanged while extending deck.",
+        "recorded_at": "2026-09-02T11:52:17Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_06",
+      "number": 6,
+      "title": "Shape 与 Pose 验证结果",
+      "job": "prompts/slide_06.json",
+      "out": "origin_image/slide_06.png",
+      "input_images": [
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy its layout or content"
+        },
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_06\\shape_pose_evidence_board.jpg",
+          "role": "strict source board containing Shape-only grid, Pose-only grid, and 17-combination matrix",
+          "fidelity": "preserve the experiment thumbnails, green/orange borders, labels, and matrix content; crop or scale only"
+        }
+      ],
+      "requires_context_images": true,
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "/root/slide_06",
+        "agent_nickname": "slide_06",
+        "prompt": "prompts/slide_06.json",
+        "prompt_sha256": "af465cc67681b517e0d23adeff2d83259b0a7c3a042a9404d0a5a1810e75b449",
+        "dispatched_at": "2026-09-02T11:52:17Z"
+      },
+      "result": {
+        "agent_id": "/root/slide_06",
+        "backend_used": "built-in image tool",
+        "selected_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a06161-db50-7f83-8550-4680070a9ed7\\exec-8c94425b-e9b7-4c5f-a362-36c1e30cbb5d.png",
+        "selected_source_sha256": "44d396364c1ec2079505eec46dd2528c36d11a30f1224940606e60908b0852d2",
+        "final_image": "origin_image/slide_06.png",
+        "final_image_sha256": "44d396364c1ec2079505eec46dd2528c36d11a30f1224940606e60908b0852d2",
+        "expected_backend": "built-in image tool",
+        "expected_backend_labels": [
+          "built-in image tool",
+          "image_gen"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Previously approved slide retained unchanged while extending deck.",
+        "recorded_at": "2026-09-02T11:52:17Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_07",
+      "number": 7,
+      "title": "Camera 与可见性验证结果",
+      "job": "prompts/slide_07.json",
+      "out": "origin_image/slide_07.png",
+      "input_images": [
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy its layout or content"
+        },
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_07\\camera_visibility_cases.png",
+          "role": "strict main evidence figure with four camera and visibility cases",
+          "fidelity": "preserve all four cases, point overlays, source English labels, colors, and occluder content; crop or scale only"
+        }
+      ],
+      "requires_context_images": true,
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "/root/slide_07",
+        "agent_nickname": "slide_07",
+        "prompt": "prompts/slide_07.json",
+        "prompt_sha256": "cd39b35eb6d6ece98841cc4394ccc335af21ccff37644521f495953b7b4dc705",
+        "dispatched_at": "2026-09-02T11:52:18Z"
+      },
+      "result": {
+        "agent_id": "/root/slide_07",
+        "backend_used": "built-in image tool",
+        "selected_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a06165-6158-7c03-94f8-85b2bb93d2fa\\exec-312221cb-7141-4221-bda6-8f54b33a0ea5.png",
+        "selected_source_sha256": "6cd626e9d8a24028ab411300bab7773ae9a4d3542241d4aacb0fe69695630e4e",
+        "final_image": "origin_image/slide_07.png",
+        "final_image_sha256": "6cd626e9d8a24028ab411300bab7773ae9a4d3542241d4aacb0fe69695630e4e",
+        "expected_backend": "built-in image tool",
+        "expected_backend_labels": [
+          "built-in image tool",
+          "image_gen"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Previously approved slide retained unchanged while extending deck.",
+        "recorded_at": "2026-09-02T11:52:18Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_08",
+      "number": 8,
+      "title": "工程 Pilot 数据集与泛化划分",
+      "job": "prompts/slide_08.json",
+      "out": "origin_image/slide_08.png",
+      "input_images": [
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy its layout or content"
+        },
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\NORMAL_MAIN_overlay.png",
+          "role": "strict NORMAL_MAIN sample overlay",
+          "fidelity": "preserve body, point overlays and source colors; crop or scale only"
+        },
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\C1_MILD_OBLIQUE_overlay.png",
+          "role": "strict C1 mild-oblique sample overlay",
+          "fidelity": "preserve body, point overlays and source colors; crop or scale only"
+        },
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\C2_EDGE_CROP_overlay.png",
+          "role": "strict C2 edge-crop sample overlay",
+          "fidelity": "preserve cropping condition, body, point overlays and source colors"
+        },
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_08\\C3_EXTERNAL_OCCLUDER_overlay.png",
+          "role": "strict C3 external-occluder sample overlay",
+          "fidelity": "preserve occluder, body, point overlays and source colors"
+        }
+      ],
+      "requires_context_images": true,
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "/root/slide_08",
+        "agent_nickname": "slide_08",
+        "prompt": "prompts/slide_08.json",
+        "prompt_sha256": "b5182714c74445ae7d24ab26a0e208490da1677dad5e406d27ae37eeee890e5e",
+        "dispatched_at": "2026-09-02T11:53:28Z"
+      },
+      "result": {
+        "agent_id": "/root/slide_08",
+        "backend_used": "built-in image tool",
+        "selected_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a0616f-d054-7ce3-b034-e8308b2472d1\\exec-22fc0a03-d259-480e-b877-97e897503774.png",
+        "selected_source_sha256": "7c7f7bfaf99e7dcc46150d85c0a38b631311937027dba851df71776499ea06cb",
+        "final_image": "origin_image/slide_08.png",
+        "final_image_sha256": "7c7f7bfaf99e7dcc46150d85c0a38b631311937027dba851df71776499ea06cb",
+        "expected_backend": "built-in image tool",
+        "expected_backend_labels": [
+          "built-in image tool",
+          "image_gen"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Four strict overlays preserved; all sample counts and split labels are exact and readable.",
+        "recorded_at": "2026-09-02T11:59:35Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_09",
+      "number": 9,
+      "title": "第一版定位模型验证",
+      "job": "prompts/slide_09.json",
+      "out": "origin_image/slide_09.png",
+      "input_images": [
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy its layout or content"
+        },
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\assets\\slide_09\\test_prediction_montage.png",
+          "role": "strict baseline prediction montage from COMBINATION_HOLDOUT test",
+          "fidelity": "preserve all three panels, bodies, predicted/ground-truth point overlays and source colors; crop or scale only"
+        }
+      ],
+      "requires_context_images": true,
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "/root/slide_02",
+        "agent_nickname": "slide_02",
+        "prompt": "prompts/slide_09.json",
+        "prompt_sha256": "b02e34dab9c860f172023636c5e81dcafaf70a5a4db30092736aaa23bbb4cf6f",
+        "dispatched_at": "2026-09-02T11:53:29Z"
+      },
+      "result": {
+        "agent_id": "/root/slide_02",
+        "backend_used": "built-in image tool",
+        "selected_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a06159-5024-77c2-bd0c-0445a732f4ad\\exec-3c74f636-976e-4805-b03d-9d2a38ce3152.png",
+        "selected_source_sha256": "db8eac4b15aafd43b5310ff1e9b83e556db2f61c2c3cd9565343360ed204641c",
+        "final_image": "origin_image/slide_09.png",
+        "final_image_sha256": "db8eac4b15aafd43b5310ff1e9b83e556db2f61c2c3cd9565343360ed204641c",
+        "expected_backend": "built-in image tool",
+        "expected_backend_labels": [
+          "built-in image tool",
+          "image_gen"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Prediction montage preserved; Chinese labels and all 2D/3D metrics are clear and exact.",
+        "recorded_at": "2026-09-02T11:57:18Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_10",
+      "number": 10,
+      "title": "阶段结论与下一步",
+      "job": "prompts/slide_10.json",
+      "out": "origin_image/slide_10.png",
+      "input_images": [
+        {
+          "path": "E:\\项目-按摩理疗机器人\\SKEL_RGBD_组会汇报_2026-09-02\\origin_image\\slide_03.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy its layout or content"
+        }
+      ],
+      "requires_context_images": true,
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "/root/slide_06",
+        "agent_nickname": "slide_06",
+        "prompt": "prompts/slide_10.json",
+        "prompt_sha256": "b41c1b9411031a202652e1fb1a601b60bc3058a969b4cb0a4369b7e04ec6a01d",
+        "dispatched_at": "2026-09-02T11:53:29Z"
+      },
+      "result": {
+        "agent_id": "/root/slide_06",
+        "backend_used": "built-in image tool",
+        "selected_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a06161-db50-7f83-8550-4680070a9ed7\\exec-3f35ba1e-d018-4f88-859a-932ec966f8f2.png",
+        "selected_source_sha256": "ee4a83041f06a271deef9b2dd4c7ffc064da39a8a03c7596a57a76ef2277503d",
+        "final_image": "origin_image/slide_10.png",
+        "final_image_sha256": "ee4a83041f06a271deef9b2dd4c7ffc064da39a8a03c7596a57a76ef2277503d",
+        "expected_backend": "built-in image tool",
+        "expected_backend_labels": [
+          "built-in image tool",
+          "image_gen"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Corrected three next-step lines; candidate status, metrics, C2 risk and engineering limitation are exact.",
+        "recorded_at": "2026-09-02T12:02:45Z"
+      },
+      "blocker": null
+    }
+  ],
+  "updated_at": "2026-09-02T12:02:45Z"
+}

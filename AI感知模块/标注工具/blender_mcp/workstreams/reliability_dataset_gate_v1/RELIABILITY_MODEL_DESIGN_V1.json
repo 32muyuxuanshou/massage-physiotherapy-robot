@@ -1,0 +1,37 @@
+{
+  "schema": "reliability-model-design-v1",
+  "frozen_before_training": true,
+  "scope": "Synthetic engineering feasibility only; one independent reliability system per frozen locator.",
+  "models": {
+    "availability": {
+      "target": "gt_available_for_3d",
+      "estimator": "body-and-class-weighted L2 logistic regression",
+      "threshold_rule": "On CALIBRATION only: require unavailable recall >= 0.90 and maximize available recall; if infeasible, maximize balanced accuracy."
+    },
+    "bad30": {
+      "population": "GT-available rows only",
+      "target": "bad30",
+      "estimator": "body-and-class-weighted L2 logistic regression",
+      "threshold_rule": "On CALIBRATION only: require BAD30 recall >= 0.80 and maximize safe-row acceptance; if infeasible, maximize balanced accuracy."
+    }
+  },
+  "preprocessing": {
+    "missing": "training median imputation",
+    "scaling": "training mean and standard deviation",
+    "constant_std_floor": 1e-8
+  },
+  "optimization": {
+    "dtype": "float64",
+    "optimizer": "torch LBFGS",
+    "max_iter": 250,
+    "l2": 0.001,
+    "seed": 2026090204
+  },
+  "independence": {
+    "locators": ["COMBINATION_HOLDOUT", "SHAPE_HOLDOUT", "POSE_HOLDOUT"],
+    "pooling_allowed": false,
+    "partition_unit": "Shape-Pose body geometry"
+  },
+  "untouched_test_lock": "No locator inference or reliability evaluation on UNTOUCHED_TEST until all six logistic models and six thresholds are frozen.",
+  "not_authorized": ["medical claim", "real-human claim", "robot execution", "production safety threshold"]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "reliability-dataset-camera-reserve-design-v1",
+  "created_after": "All 168 predeclared samples were generated with no locator prediction. One calibration mild-left sample had body-silhouette truncation but zero engineering points out of frame.",
+  "replacement": {
+    "partition": "CALIBRATION",
+    "case_id": "RCAL_G04",
+    "replaces_sample_id": "RCAL_G04__R_LEFT_MILD",
+    "scenario": {
+      "camera_id": "R_LEFT_MILD_RESERVE",
+      "kind": "TRUNCATION",
+      "direction": "LEFT",
+      "matrix_world": [[1.0,0.0,0.0,1.009634474515915],[0.0,1.0,0.0,-0.2915360629558563],[0.0,0.0,1.0,2.8949742317199707],[0.0,0.0,0.0,1.0]],
+      "lens_mm": 42.0
+    }
+  },
+  "selection_rule": "Use the exact midpoint between the frozen mild and moderate left camera translations. Require at least one target OUT_OF_FRAME while retaining at least two visible targets.",
+  "restrictions": [
+    "The original failed sample remains preserved as diagnostic evidence.",
+    "No locator prediction existed when this reserve camera was selected.",
+    "No body partition or geometry changes."
+  ]
+}

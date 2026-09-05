@@ -1,0 +1,52 @@
+{
+  "schema": "parallel-abc-f-baseline-manifest-v1",
+  "created_at": "2026-08-31T13:36:44+08:00",
+  "immutable": true,
+  "delivery_root": "E:/项目-按摩理疗机器人/AI感知模块/outputs/交付文件/2026-08-31_13-36-44",
+  "canonical_skel": {
+    "family": "SKEL",
+    "gender": "female",
+    "vertex_count": 6890,
+    "triangle_count": 13776,
+    "topology_signature_sha256": "dc8b3f270680f4a66d1010713a49d771850ddb0850f9151d74cb10bbc90b7733"
+  },
+  "sources": [
+    {
+      "role": "scene_rgbd_snapshots",
+      "path": "E:/项目-按摩理疗机器人/AI感知模块/outputs/交付文件/2026-08-28_20-21-54",
+      "sha256sums_sha256": "d3634bd82909b3aaccd00cadba91a5adfce007c1a1698ce0eda66de2b0b8b255",
+      "sha256_entries": 516,
+      "verified_missing": 0,
+      "verified_mismatch": 0
+    },
+    {
+      "role": "engineering_reference_atlas_and_labels",
+      "path": "E:/项目-按摩理疗机器人/AI感知模块/outputs/交付文件/2026-08-29_16-21-55",
+      "sha256sums_sha256": "844c9f269c5de8965d18f9a41152172bdd35184f0f989b7dc705ea0d67971595",
+      "sha256_entries": 274,
+      "verified_missing": 0,
+      "verified_mismatch": 0,
+      "truth_status_override": {
+        "medical_truth": false,
+        "medical_validated": false,
+        "reason": "The 20 points are engineering references created through the real plugin entry, not doctor-confirmed medical truth."
+      }
+    },
+    {
+      "role": "enhanced_single_beta_shape_analysis",
+      "path": "E:/项目-按摩理疗机器人/AI感知模块/outputs/交付文件/2026-08-30_19-24-33",
+      "sha256sums_sha256": "6a9f4e65aacebee7816c768ff1d597fb2391f379afce2fb8a5fe08ab6338c508",
+      "sha256_entries": 559,
+      "verified_missing": 0,
+      "verified_mismatch": 0
+    }
+  ],
+  "prohibited_mutations": [
+    "canonical SKEL",
+    "formal plugin source unless separately authorized",
+    "formal Atlas",
+    "existing delivery packages",
+    "user Blend sessions",
+    "other workstream outputs"
+  ]
+}

@@ -1,0 +1,1828 @@
+{
+  "schema_version": "acupoint-training-sample-v2",
+  "created_at": "2026-08-31T10:38:58+00:00",
+  "medical_truth": false,
+  "source_blend": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\acu_camera_smoke_ovzvnlyl\\C03_LONG_NARROW__D06_THORAX_EXTENSION_P4__C1_MILD_OBLIQUE\\C03_LONG_NARROW__D06_THORAX_EXTENSION_P4__C1_MILD_OBLIQUE.blend",
+  "source_blend_dirty": true,
+  "source_scene_snapshot_sha256": "d5c9b1695683731870e3c520ea6e5f6d7d011d4273ad784b1dc85f56ff6c716e",
+  "source_fixture": "E:\\项目-按摩理疗机器人\\AI感知模块\\outputs\\内部工程证据\\2026-08-31_18-38-27_CAMERA_VISIBILITY_DIVERSITY_V1\\engineering_fixture_manual20.json",
+  "source_fixture_sha256": "1c8f4ebad2a0f065abc87de0823984012f9a6db951677c35a727862dce1f18a7",
+  "scene": {
+    "name": "Scene",
+    "frame": 1,
+    "snapshot_replayable": true,
+    "snapshot_sha256": "d5c9b1695683731870e3c520ea6e5f6d7d011d4273ad784b1dc85f56ff6c716e",
+    "dirty_at_export_start": true,
+    "unit": "m",
+    "unit_scale_length": 1.0,
+    "contract": "SKEL_NATIVE_POSE_PRONE_BACK_RGBD_ENGINEERING_V1",
+    "prone_definition": "rigid +90deg X then 180deg Z from canonical; back +Z; face toward bed; head at image top",
+    "bed_top_z_m": 0.0,
+    "native_pose_parameters_degrees": {
+      "head_twist": 18.0,
+      "shoulder_r_x": 80.0,
+      "shoulder_r_y": 18.0,
+      "elbow_flexion_r": 25.0,
+      "shoulder_l_x": -80.0,
+      "shoulder_l_y": -18.0,
+      "elbow_flexion_l": 25.0,
+      "thorax_extension": 4.0
+    },
+    "native_shape_betas": [
+      0.25,
+      0.25,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.35
+    ],
+    "native_pose_profile_sha256": "c21f3330c4f0246645630cb42af8bd3d0dadace6c483abcf6f9bffddd6be2e53"
+  },
+  "model": {
+    "family": "SKEL",
+    "variant": "1.1.1",
+    "gender": "female",
+    "template_id": "skel-female-trunk-limb-v2.3",
+    "canonical_shape_id": "shape-zero",
+    "canonical_pose_id": "template-default",
+    "object_name": "SKEL-skin-female",
+    "vertex_count": 6890,
+    "polygon_count": 13776,
+    "topology_signature_sha256": "dc8b3f270680f4a66d1010713a49d771850ddb0850f9151d74cb10bbc90b7733",
+    "shape_parameters": {
+      "beta_0": 0.0,
+      "beta_1": 0.0,
+      "beta_2": 0.0,
+      "beta_3": 0.0,
+      "beta_4": 0.0,
+      "beta_5": 0.0,
+      "beta_6": 0.0,
+      "beta_7": 0.0,
+      "beta_8": 0.0,
+      "beta_9": 0.0
+    },
+    "pose": {
+      "representation": "SKEL biomechanical degrees",
+      "parameters": {
+        "ankle_angle_l": 0.0,
+        "ankle_angle_r": 0.0,
+        "elbow_flexion_l": 0.0,
+        "elbow_flexion_r": 0.0,
+        "head_bending": 0.0,
+        "head_extension": 0.0,
+        "head_twist": 0.0,
+        "hip_adduction_l": 0.0,
+        "hip_adduction_r": 0.0,
+        "hip_flexion_l": 0.0,
+        "hip_flexion_r": 0.0,
+        "hip_rotation_l": 0.0,
+        "hip_rotation_r": 0.0,
+        "knee_angle_l": 0.0,
+        "knee_angle_r": 0.0,
+        "lumbar_bending": 0.0,
+        "lumbar_extension": 0.0,
+        "lumbar_twist": 0.0,
+        "mtp_angle_l": 0.0,
+        "mtp_angle_r": 0.0,
+        "pelvis_list": 0.0,
+        "pelvis_rotation": 0.0,
+        "pelvis_tilt": 0.0,
+        "pro_sup_l": 0.0,
+        "pro_sup_r": 0.0,
+        "scapula_abduction_l": 0.0,
+        "scapula_abduction_r": 0.0,
+        "scapula_elevation_l": 0.0,
+        "scapula_elevation_r": 0.0,
+        "scapula_upward_rot_l": 0.0,
+        "scapula_upward_rot_r": 0.0,
+        "shoulder_l_x": 0.0,
+        "shoulder_l_y": 0.0,
+        "shoulder_l_z": 0.0,
+        "shoulder_r_x": 0.0,
+        "shoulder_r_y": 0.0,
+        "shoulder_r_z": 0.0,
+        "subtalar_angle_l": 0.0,
+        "subtalar_angle_r": 0.0,
+        "thorax_bending": 0.0,
+        "thorax_extension": 0.0,
+        "thorax_twist": 0.0,
+        "wrist_deviation_l": 0.0,
+        "wrist_deviation_r": 0.0,
+        "wrist_flexion_l": 0.0,
+        "wrist_flexion_r": 0.0
+      }
+    }
+  },
+  "camera": {
+    "name": "ACU_PRONE_BACK_CAMERA",
+    "coordinate_convention": "OpenCV camera: +X right, +Y down, +Z forward; pixel origin top-left",
+    "pixel_coordinate_note": "continuous edge coordinates; pixel center (column,row) is (column+0.5,row+0.5)",
+    "intrinsics": {
+      "width": 1280,
+      "height": 1024,
+      "fx": 1493.3333333333333,
+      "fy": 1493.3333333333333,
+      "cx": 640.0,
+      "cy": 512.0,
+      "lens_mm": 42.0,
+      "sensor_width_mm": 36.0,
+      "sensor_height_mm": 24.0,
+      "sensor_fit": "HORIZONTAL",
+      "pixel_aspect_x": 1.0,
+      "pixel_aspect_y": 1.0,
+      "shift_x": 0.0,
+      "shift_y": 0.0,
+      "K": [
+        [
+          1493.3333333333333,
+          0.0,
+          640.0
+        ],
+        [
+          0.0,
+          1493.3333333333333,
+          512.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "world_to_blender_camera": [
+      [
+        0.9982359409332275,
+        -0.0,
+        -0.05937463417649269,
+        0.007718722335994244
+      ],
+      [
+        -0.002015689155086875,
+        0.9994235634803772,
+        -0.033888768404722214,
+        0.29577356576919556
+      ],
+      [
+        0.05934040620923042,
+        0.03394866734743118,
+        0.9976604580879211,
+        -2.8161070346832275
+      ],
+      [
+        -0.0,
+        0.0,
+        -0.0,
+        1.0
+      ]
+    ],
+    "world_to_opencv_camera": [
+      [
+        0.9982359409332275,
+        0.0,
+        -0.05937463417649269,
+        0.007718722335994244
+      ],
+      [
+        0.002015689155086875,
+        -0.9994235634803772,
+        0.033888768404722214,
+        -0.29577356576919556
+      ],
+      [
+        -0.05934040620923042,
+        -0.03394866734743118,
+        -0.9976604580879211,
+        2.8161070346832275
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "blender_projection_matrix": [
+      [
+        2.3333332538604736,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.9166667461395264,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0002000331878662,
+        -0.020002000033855438
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ]
+    ],
+    "distortion": {
+      "model": "NONE_SYNTHETIC_PINHOLE",
+      "coefficients": [],
+      "notice": "Real RGB-D intrinsics/distortion/noise remain uncalibrated."
+    }
+  },
+  "buffers": {
+    "scene_depth_z": {
+      "file": "scene_depth_z.npy",
+      "dtype": "float32",
+      "unit": "m",
+      "meaning": "OPENCV_CAMERA_Z_FIRST_VISIBLE_SCENE_SURFACE",
+      "background_value": 0.0
+    },
+    "depth_valid_mask": {
+      "file": "depth_valid_mask.png",
+      "dtype": "uint8",
+      "values": [
+        0,
+        255
+      ]
+    },
+    "skin_mask": {
+      "file": "skin_mask.png",
+      "dtype": "uint8",
+      "meaning": "VISIBLE_SKEL_SKIN_FIRST_SURFACE",
+      "values": [
+        0,
+        255
+      ]
+    }
+  },
+  "render": {
+    "schema": "training-export-render-buffers-v1",
+    "blender_version": "4.5.12 LTS",
+    "source_scene": "Scene",
+    "temporary_scene_used": true,
+    "temporary_scene_is_source_scene_copy": true,
+    "source_scene_nodes_modified": false,
+    "frame": 1,
+    "render_engine": "BLENDER_EEVEE_NEXT",
+    "camera": {
+      "name": "ACU_PRONE_BACK_CAMERA",
+      "intrinsics": {
+        "width": 1280,
+        "height": 1024,
+        "fx": 1493.3333333333333,
+        "fy": 1493.3333333333333,
+        "cx": 640.0,
+        "cy": 512.0,
+        "lens_mm": 42.0,
+        "sensor_width_mm": 36.0,
+        "sensor_height_mm": 24.0,
+        "sensor_fit": "HORIZONTAL",
+        "pixel_aspect_x": 1.0,
+        "pixel_aspect_y": 1.0,
+        "shift_x": 0.0,
+        "shift_y": 0.0,
+        "K": [
+          [
+            1493.3333333333333,
+            0.0,
+            640.0
+          ],
+          [
+            0.0,
+            1493.3333333333333,
+            512.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "world_to_opencv_camera": [
+        [
+          0.9982359409332275,
+          0.0,
+          -0.05937463417649269,
+          0.007718722335994244
+        ],
+        [
+          0.002015689155086875,
+          -0.9994235634803772,
+          0.033888768404722214,
+          -0.29577356576919556
+        ],
+        [
+          -0.05934040620923042,
+          -0.03394866734743118,
+          -0.9976604580879211,
+          2.8161070346832275
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "coordinate_convention": "OpenCV +X right, +Y down, +Z forward; image origin top-left"
+    },
+    "depth": {
+      "file": "scene_depth_z.npy",
+      "dtype": "float32",
+      "unit": "m",
+      "meaning": "camera-space Zc of first visible scene surface",
+      "background_invalid_value": 0.0,
+      "far_clip_guard_m": 0.1,
+      "backend": "SCENE_RAY_CAST_PIXEL_CENTER",
+      "clip_rule": "clip_start <= camera_Z < clip_end; far_clip_guard applies only to diagnostic raster pass"
+    },
+    "valid_mask": {
+      "file": "depth_valid_mask.png",
+      "values": {
+        "valid": 255,
+        "invalid": 0
+      }
+    },
+    "skin_mask": {
+      "file": "skin_mask.png",
+      "meaning": "visible SKEL skin is the first scene surface",
+      "values": {
+        "visible_skin": 255,
+        "other": 0
+      },
+      "derivation": "first pixel-centre scene ray hit is the SKEL skin object",
+      "depth_match_tolerance_m": null,
+      "second_render_required": false,
+      "diagnostic_body_render_performed": true
+    },
+    "alignment": {
+      "width": 1280,
+      "height": 1024,
+      "same_camera": "ACU_PRONE_BACK_CAMERA",
+      "same_frame": 1,
+      "rgb_and_scene_z_same_render": false,
+      "rgb_and_scene_z_same_camera_frame_geometry": true,
+      "body_only_z_same_camera_frame_resolution_geometry": true,
+      "pixel_sampling": "PIXEL_CENTER_UNFILTERED",
+      "eevee_render_samples": 1,
+      "rgb_antialiasing": false
+    },
+    "debug_intermediates_kept": false,
+    "raster_diagnostic": {
+      "skin_ownership_disagreement_pixels": 5,
+      "max_depth_disagreement_m": 2.9042468070983887,
+      "notice": "GPU silhouette coverage can differ at subpixel boundaries; labels/depth use centre rays, RGB uses raster coverage."
+    },
+    "statistics": {
+      "valid_pixel_count": 1080895,
+      "skin_pixel_count": 159033,
+      "depth_min_m": 2.5133888721466064,
+      "depth_max_m": 2.9195139408111572
+    },
+    "limitations": [
+      "Eevee exports use one unfiltered pixel-centre sample; RGB edges are not antialiased.",
+      "Synthetic pinhole camera has no real-sensor distortion or noise.",
+      "RGB raster coverage and centre-ray surface ownership may differ at individual silhouette pixels.",
+      "Only opaque geometry with matching viewport/render geometry is validated; coplanar ties are undefined.",
+      "Transparent materials, motion blur, and depth of field require separate validation."
+    ]
+  },
+  "points": [
+    {
+      "id": "57498071-c785-4537-b2f7-e8484d4b3bb2",
+      "point_id": "GV14_MIDLINE",
+      "code": "GV14",
+      "name_zh": "大椎",
+      "meridian": "GV",
+      "side": "MIDLINE",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "NECK",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.00037207879358902574,
+        0.22726985812187195,
+        -0.086640864610672
+      ],
+      "local_position_m": [
+        0.00037207879358902574,
+        0.22726985812187195,
+        -0.086640864610672
+      ],
+      "world_position_m": [
+        0.00037207879358902574,
+        0.08664087951183319,
+        0.22726985812187195
+      ],
+      "world_normal": [
+        -0.08285579085350037,
+        0.1834658831357956,
+        0.9795280694961548
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:45:54+00:00",
+      "updated_at": "2026-08-29T07:45:54+00:00",
+      "face_index": 11424,
+      "vertex_indices": [
+        4700,
+        2878,
+        2877
+      ],
+      "barycentric": [
+        0.011729413643479347,
+        0.594209611415863,
+        0.39406099915504456
+      ],
+      "xyz_camera_opencv_m": [
+        -0.009440271183848381,
+        -0.520586371421814,
+        2.538100004196167
+      ],
+      "uv_pixel_opencv": [
+        634.4456595046531,
+        205.70435363540662
+      ],
+      "camera_depth_z_m": 2.538100004196167,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 11424,
+      "ray_error_m": 6.681073189727814e-08,
+      "xyz_world_blender_m": [
+        -0.0010848251404240727,
+        0.234121173620224,
+        0.2707567512989044
+      ]
+    },
+    {
+      "id": "c75f0468-fcdf-4f52-85f2-60d22136dfdf",
+      "point_id": "BL13_LEFT",
+      "code": "BL13",
+      "name_zh": "肺俞",
+      "meridian": "BL",
+      "side": "LEFT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.08494716882705688,
+        0.12152502685785294,
+        -0.11006100475788116
+      ],
+      "local_position_m": [
+        0.08494716882705688,
+        0.12152502685785294,
+        -0.11006100475788116
+      ],
+      "world_position_m": [
+        0.08494716882705688,
+        0.11006101220846176,
+        0.12152501940727234
+      ],
+      "world_normal": [
+        -0.218568354845047,
+        -0.163709819316864,
+        0.9619911909103394
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:50:50+00:00",
+      "updated_at": "2026-08-29T07:50:50+00:00",
+      "face_index": 4728,
+      "vertex_indices": [
+        2937,
+        1834,
+        2933
+      ],
+      "barycentric": [
+        0.40336185693740845,
+        0.03941020742058754,
+        0.5572279095649719
+      ],
+      "xyz_camera_opencv_m": [
+        -0.09181685745716095,
+        -0.4081442654132843,
+        2.5343780517578125
+      ],
+      "uv_pixel_opencv": [
+        585.8986895393946,
+        271.50887203755326
+      ],
+      "camera_depth_z_m": 2.5343780517578125,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 4728,
+      "ray_error_m": 4.280032699210963e-08,
+      "xyz_world_blender_m": [
+        -0.0828685536980629,
+        0.121870256960392,
+        0.283171683549881
+      ]
+    },
+    {
+      "id": "c181a5d4-50bc-425a-abcb-ed83f7d60dc4",
+      "point_id": "BL13_RIGHT",
+      "code": "BL13",
+      "name_zh": "肺俞",
+      "meridian": "BL",
+      "side": "RIGHT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        -0.08421555161476135,
+        0.12152472138404846,
+        -0.11283501237630844
+      ],
+      "local_position_m": [
+        -0.08421555161476135,
+        0.12152472138404846,
+        -0.11283501237630844
+      ],
+      "world_position_m": [
+        -0.08421555161476135,
+        0.11283501982688904,
+        0.12152471393346786
+      ],
+      "world_normal": [
+        0.1870133876800537,
+        -0.1806374341249466,
+        0.965606689453125
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:51:40+00:00",
+      "updated_at": "2026-08-29T07:51:40+00:00",
+      "face_index": 11616,
+      "vertex_indices": [
+        5295,
+        6394,
+        6392
+      ],
+      "barycentric": [
+        0.17994444072246552,
+        0.3183063864707947,
+        0.5017491579055786
+      ],
+      "xyz_camera_opencv_m": [
+        0.07052886486053467,
+        -0.40865904092788696,
+        2.524752378463745
+      ],
+      "uv_pixel_opencv": [
+        681.7162117587488,
+        270.2875164347893
+      ],
+      "camera_depth_z_m": 2.524752378463745,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 11616,
+      "ray_error_m": 1.2687881563549044e-07,
+      "xyz_world_blender_m": [
+        0.07976088672876358,
+        0.12271152436733246,
+        0.28311818838119507
+      ]
+    },
+    {
+      "id": "9d0a1f20-9000-42ac-addd-c9126dd2ff6f",
+      "point_id": "GV9_MIDLINE",
+      "code": "GV9",
+      "name_zh": "至阳",
+      "meridian": "GV",
+      "side": "MIDLINE",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.0003654250758700073,
+        0.06513340026140213,
+        -0.10650262236595154
+      ],
+      "local_position_m": [
+        0.0003654250758700073,
+        0.06513340026140213,
+        -0.10650262236595154
+      ],
+      "world_position_m": [
+        0.0003654250758700073,
+        0.10650262981653214,
+        0.06513339281082153
+      ],
+      "world_normal": [
+        0.012912065722048283,
+        -0.2183428406715393,
+        0.9757867455482483
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:52:03+00:00",
+      "updated_at": "2026-08-29T07:52:03+00:00",
+      "face_index": 6861,
+      "vertex_indices": [
+        751,
+        3505,
+        3014
+      ],
+      "barycentric": [
+        0.09112929552793503,
+        0.39557498693466187,
+        0.5132957100868225
+      ],
+      "xyz_camera_opencv_m": [
+        -0.010947545990347862,
+        -0.35139408707618713,
+        2.539527654647827
+      ],
+      "uv_pixel_opencv": [
+        633.5624503573862,
+        305.3676751238701
+      ],
+      "camera_depth_z_m": 2.539527654647827,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 6861,
+      "ray_error_m": 1.600251297842881e-07,
+      "xyz_world_blender_m": [
+        -0.002333112293854356,
+        0.06497795879840851,
+        0.2751557528972626
+      ]
+    },
+    {
+      "id": "df3b3a82-e456-4b55-95d1-f31e22a7840d",
+      "point_id": "BL17_LEFT",
+      "code": "BL17",
+      "name_zh": "膈俞",
+      "meridian": "BL",
+      "side": "LEFT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.08494868874549866,
+        0.0651356428861618,
+        -0.09743307530879974
+      ],
+      "local_position_m": [
+        0.08494868874549866,
+        0.0651356428861618,
+        -0.09743307530879974
+      ],
+      "world_position_m": [
+        0.08494868874549866,
+        0.09743308275938034,
+        0.06513563543558121
+      ],
+      "world_normal": [
+        -0.18740151822566986,
+        -0.31565141677856445,
+        0.9301853775978088
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:52:40+00:00",
+      "updated_at": "2026-08-29T07:52:40+00:00",
+      "face_index": 1376,
+      "vertex_indices": [
+        1252,
+        892,
+        1236
+      ],
+      "barycentric": [
+        0.31081855297088623,
+        0.48124879598617554,
+        0.20793265104293823
+      ],
+      "xyz_camera_opencv_m": [
+        -0.09307369589805603,
+        -0.3534228205680847,
+        2.550355911254883
+      ],
+      "uv_pixel_opencv": [
+        585.501703535681,
+        305.05708807704514
+      ],
+      "camera_depth_z_m": 2.550355911254883,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 1376,
+      "ray_error_m": 2.0928042985779254e-07,
+      "xyz_world_blender_m": [
+        -0.08496101200580597,
+        0.06663791835308075,
+        0.26916012167930603
+      ]
+    },
+    {
+      "id": "3c0ad98f-5ee9-4838-aed6-d0c819703645",
+      "point_id": "BL17_RIGHT",
+      "code": "BL17",
+      "name_zh": "膈俞",
+      "meridian": "BL",
+      "side": "RIGHT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        -0.08422642946243286,
+        0.06512542814016342,
+        -0.10186466574668884
+      ],
+      "local_position_m": [
+        -0.08422642946243286,
+        0.06512542814016342,
+        -0.10186466574668884
+      ],
+      "world_position_m": [
+        -0.08422642946243286,
+        0.10186467319726944,
+        0.06512542068958282
+      ],
+      "world_normal": [
+        0.22802050411701202,
+        -0.26883578300476074,
+        0.9358066916465759
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:53:18+00:00",
+      "updated_at": "2026-08-29T07:53:18+00:00",
+      "face_index": 8263,
+      "vertex_indices": [
+        4719,
+        4380,
+        4735
+      ],
+      "barycentric": [
+        0.3495069146156311,
+        0.5017322301864624,
+        0.1487608253955841
+      ],
+      "xyz_camera_opencv_m": [
+        0.07277288287878036,
+        -0.3547907769680023,
+        2.5395328998565674
+      ],
+      "uv_pixel_opencv": [
+        682.792976524062,
+        303.37073056408354
+      ],
+      "camera_depth_z_m": 2.5395328998565674,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 8263,
+      "ray_error_m": 3.2816403427042423e-07,
+      "xyz_world_blender_m": [
+        0.08123244345188141,
+        0.06837252527475357,
+        0.2700645625591278
+      ]
+    },
+    {
+      "id": "1592a67e-fe62-46ae-bb5b-db03397172e6",
+      "point_id": "GV6_MIDLINE",
+      "code": "GV6",
+      "name_zh": "脊中",
+      "meridian": "GV",
+      "side": "MIDLINE",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.00036465009907260537,
+        -0.03354988619685173,
+        -0.06786925345659256
+      ],
+      "local_position_m": [
+        0.00036465009907260537,
+        -0.03354988619685173,
+        -0.06786925345659256
+      ],
+      "world_position_m": [
+        0.00036465009907260537,
+        0.06786925345659256,
+        -0.03354988992214203
+      ],
+      "world_normal": [
+        -0.4073732793331146,
+        -0.21371959149837494,
+        0.887902557849884
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:53:43+00:00",
+      "updated_at": "2026-08-29T07:53:43+00:00",
+      "face_index": 11864,
+      "vertex_indices": [
+        3023,
+        6299,
+        3024
+      ],
+      "barycentric": [
+        0.042280517518520355,
+        0.004390483722090721,
+        0.9533290266990662
+      ],
+      "xyz_camera_opencv_m": [
+        -0.0076255761086940765,
+        -0.2607402503490448,
+        2.578108787536621
+      ],
+      "uv_pixel_opencv": [
+        635.5829920583515,
+        360.96986928160186
+      ],
+      "camera_depth_z_m": 2.578108787536621,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 11864,
+      "ray_error_m": 4.9745317277187725e-08,
+      "xyz_world_blender_m": [
+        -0.0011237043654546142,
+        -0.026933392509818077,
+        0.23953960835933685
+      ]
+    },
+    {
+      "id": "290619d1-d56e-4521-8dd3-8b735632f873",
+      "point_id": "BL20_LEFT",
+      "code": "BL20",
+      "name_zh": "脾俞",
+      "meridian": "BL",
+      "side": "LEFT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.08493436872959137,
+        -0.03354325890541077,
+        -0.06722696870565414
+      ],
+      "local_position_m": [
+        0.08493436872959137,
+        -0.03354325890541077,
+        -0.06722696870565414
+      ],
+      "world_position_m": [
+        0.08493436872959137,
+        0.06722696870565414,
+        -0.033543262630701065
+      ],
+      "world_normal": [
+        -0.3853478729724884,
+        -0.17724579572677612,
+        0.9055887460708618
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:54:14+00:00",
+      "updated_at": "2026-08-29T07:54:14+00:00",
+      "face_index": 6403,
+      "vertex_indices": [
+        1496,
+        2834,
+        1493
+      ],
+      "barycentric": [
+        0.646669328212738,
+        0.3007661700248718,
+        0.052564531564712524
+      ],
+      "xyz_camera_opencv_m": [
+        -0.09006261080503464,
+        -0.2578103542327881,
+        2.5832111835479736
+      ],
+      "uv_pixel_opencv": [
+        587.9355386587241,
+        362.9619352431288
+      ],
+      "camera_depth_z_m": 2.5832111835479736,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 6403,
+      "ray_error_m": 7.920075813483186e-08,
+      "xyz_world_blender_m": [
+        -0.0837121456861496,
+        -0.030034812167286873,
+        0.23944327235221863
+      ]
+    },
+    {
+      "id": "d2ded599-7eaa-4d18-a866-5ba987530fb0",
+      "point_id": "BL20_RIGHT",
+      "code": "BL20",
+      "name_zh": "脾俞",
+      "meridian": "BL",
+      "side": "RIGHT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        -0.08422164618968964,
+        -0.03355150669813156,
+        -0.07443684339523315
+      ],
+      "local_position_m": [
+        -0.08422164618968964,
+        -0.03355150669813156,
+        -0.07443684339523315
+      ],
+      "world_position_m": [
+        -0.08422164618968964,
+        0.07443684339523315,
+        -0.03355151414871216
+      ],
+      "world_normal": [
+        0.37845557928085327,
+        -0.16030184924602509,
+        0.9116330146789551
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:54:51+00:00",
+      "updated_at": "2026-08-29T07:54:51+00:00",
+      "face_index": 13290,
+      "vertex_indices": [
+        4965,
+        6297,
+        4966
+      ],
+      "barycentric": [
+        0.06582549959421158,
+        0.25524193048477173,
+        0.6789325475692749
+      ],
+      "xyz_camera_opencv_m": [
+        0.07517550140619278,
+        -0.261614054441452,
+        2.5682740211486816
+      ],
+      "uv_pixel_opencv": [
+        683.7110998185873,
+        359.88344828128265
+      ],
+      "camera_depth_z_m": 2.5682740211486816,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 13290,
+      "ray_error_m": 1.5114995262524744e-07,
+      "xyz_world_blender_m": [
+        0.082113116979599,
+        -0.02572624199092388,
+        0.24440544843673706
+      ]
+    },
+    {
+      "id": "d29e6820-fe03-4b6e-8350-2e70ccc594d7",
+      "point_id": "GV4_MIDLINE",
+      "code": "GV4",
+      "name_zh": "命门",
+      "meridian": "GV",
+      "side": "MIDLINE",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.0003640888025984168,
+        -0.11812914907932281,
+        -0.0717882588505745
+      ],
+      "local_position_m": [
+        0.0003640888025984168,
+        -0.11812914907932281,
+        -0.0717882588505745
+      ],
+      "world_position_m": [
+        0.0003640888025984168,
+        0.0717882513999939,
+        -0.11812915652990341
+      ],
+      "world_normal": [
+        0.1462360918521881,
+        0.4962393045425415,
+        0.8557813167572021
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:55:22+00:00",
+      "updated_at": "2026-08-29T07:55:22+00:00",
+      "face_index": 4971,
+      "vertex_indices": [
+        3022,
+        2913,
+        3021
+      ],
+      "barycentric": [
+        0.14422762393951416,
+        0.06120261177420616,
+        0.7945697903633118
+      ],
+      "xyz_camera_opencv_m": [
+        -0.00753320986405015,
+        -0.17161044478416443,
+        2.576479434967041
+      ],
+      "uv_pixel_opencv": [
+        635.6337344500771,
+        412.53419636643423
+      ],
+      "camera_depth_z_m": 2.576479434967041,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 4971,
+      "ray_error_m": 7.491922937427302e-08,
+      "xyz_world_blender_m": [
+        -0.0007551477174274623,
+        -0.11595650762319565,
+        0.24418030679225922
+      ]
+    },
+    {
+      "id": "8394ad3d-a166-475b-9978-5535fe8c7fc2",
+      "point_id": "BL23_LEFT",
+      "code": "BL23",
+      "name_zh": "肾俞",
+      "meridian": "BL",
+      "side": "LEFT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.09199880808591843,
+        -0.11813661456108093,
+        -0.06332184374332428
+      ],
+      "local_position_m": [
+        0.09199880808591843,
+        -0.11813661456108093,
+        -0.06332184374332428
+      ],
+      "world_position_m": [
+        0.09199880808591843,
+        0.06332183629274368,
+        -0.11813662201166153
+      ],
+      "world_normal": [
+        -0.4030037522315979,
+        0.31038251519203186,
+        0.8609592318534851
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:55:56+00:00",
+      "updated_at": "2026-08-29T07:55:56+00:00",
+      "face_index": 6334,
+      "vertex_indices": [
+        886,
+        2928,
+        887
+      ],
+      "barycentric": [
+        0.048141833394765854,
+        0.8041610717773438,
+        0.1476970613002777
+      ],
+      "xyz_camera_opencv_m": [
+        -0.09692426770925522,
+        -0.1701594442129135,
+        2.5893940925598145
+      ],
+      "uv_pixel_opencv": [
+        584.1026608521889,
+        413.86709286363765
+      ],
+      "camera_depth_z_m": 2.5893940925598145,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 6334,
+      "ray_error_m": 2.8662955852853273e-07,
+      "xyz_world_blender_m": [
+        -0.09075191617012024,
+        -0.11784511059522629,
+        0.23665259778499603
+      ]
+    },
+    {
+      "id": "d759b261-9642-47bc-a946-cafcb5e468a9",
+      "point_id": "BL23_RIGHT",
+      "code": "BL23",
+      "name_zh": "肾俞",
+      "meridian": "BL",
+      "side": "RIGHT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        -0.09126231074333191,
+        -0.11814065277576447,
+        -0.06593437492847443
+      ],
+      "local_position_m": [
+        -0.09126231074333191,
+        -0.11814065277576447,
+        -0.06593437492847443
+      ],
+      "world_position_m": [
+        -0.09126231074333191,
+        0.06593436747789383,
+        -0.11814066022634506
+      ],
+      "world_normal": [
+        0.3770773410797119,
+        0.30523768067359924,
+        0.8744385838508606
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:56:30+00:00",
+      "updated_at": "2026-08-29T07:56:30+00:00",
+      "face_index": 13222,
+      "vertex_indices": [
+        4374,
+        6389,
+        4372
+      ],
+      "barycentric": [
+        0.11101071536540985,
+        0.7476897239685059,
+        0.14129957556724548
+      ],
+      "xyz_camera_opencv_m": [
+        0.08225429058074951,
+        -0.17375710606575012,
+        2.577265501022339
+      ],
+      "uv_pixel_opencv": [
+        687.6602328651023,
+        411.3207031683031
+      ],
+      "camera_depth_z_m": 2.577265501022339,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 13222,
+      "ray_error_m": 7.524717553229688e-08,
+      "xyz_world_blender_m": [
+        0.08882295340299606,
+        -0.11383777111768723,
+        0.23799224197864532
+      ]
+    },
+    {
+      "id": "8ff2cbe1-6ce2-46ca-aa7c-d2e94c8919cc",
+      "point_id": "BL25_LEFT",
+      "code": "BL25",
+      "name_zh": "大肠俞",
+      "meridian": "BL",
+      "side": "LEFT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.09201471507549286,
+        -0.18860669434070587,
+        -0.09479652345180511
+      ],
+      "local_position_m": [
+        0.09201471507549286,
+        -0.18860669434070587,
+        -0.09479652345180511
+      ],
+      "world_position_m": [
+        0.09201471507549286,
+        0.09479650855064392,
+        -0.18860669434070587
+      ],
+      "world_normal": [
+        -0.331269770860672,
+        0.3928539752960205,
+        0.857861340045929
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:56:56+00:00",
+      "updated_at": "2026-08-29T07:56:56+00:00",
+      "face_index": 6372,
+      "vertex_indices": [
+        3112,
+        3121,
+        3113
+      ],
+      "barycentric": [
+        0.4774022698402405,
+        0.3989024758338928,
+        0.1236952468752861
+      ],
+      "xyz_camera_opencv_m": [
+        -0.09875975549221039,
+        -0.09857576340436935,
+        2.558955430984497
+      ],
+      "uv_pixel_opencv": [
+        582.3666262090279,
+        454.47399873866084
+      ],
+      "camera_depth_z_m": 2.558955430984497,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 6372,
+      "ray_error_m": 6.537857940340133e-08,
+      "xyz_world_blender_m": [
+        -0.09063363075256348,
+        -0.18835417926311493,
+        0.2695549428462982
+      ]
+    },
+    {
+      "id": "d470c9c8-d68d-418e-b11d-0e4463969dcc",
+      "point_id": "BL25_RIGHT",
+      "code": "BL25",
+      "name_zh": "大肠俞",
+      "meridian": "BL",
+      "side": "RIGHT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        -0.09127137064933777,
+        -0.18862083554267883,
+        -0.09595409035682678
+      ],
+      "local_position_m": [
+        -0.09127137064933777,
+        -0.18862083554267883,
+        -0.09595409035682678
+      ],
+      "world_position_m": [
+        -0.09127137064933777,
+        0.09595407545566559,
+        -0.18862083554267883
+      ],
+      "world_normal": [
+        0.3208637833595276,
+        0.40153542160987854,
+        0.8577969670295715
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:57:29+00:00",
+      "updated_at": "2026-08-29T07:57:29+00:00",
+      "face_index": 13261,
+      "vertex_indices": [
+        6536,
+        6542,
+        6535
+      ],
+      "barycentric": [
+        0.11086367815732956,
+        0.4811437726020813,
+        0.40799257159233093
+      ],
+      "xyz_camera_opencv_m": [
+        0.08076363801956177,
+        -0.10089309513568878,
+        2.5492868423461914
+      ],
+      "uv_pixel_opencv": [
+        687.3101068002534,
+        452.89836437133476
+      ],
+      "camera_depth_z_m": 2.5492868423461914,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 13261,
+      "ray_error_m": 8.971687092477304e-08,
+      "xyz_world_blender_m": [
+        0.0891420766711235,
+        -0.18570995330810547,
+        0.26846322417259216
+      ]
+    },
+    {
+      "id": "ed49279f-7814-44cd-8fa4-6016f7c33921",
+      "point_id": "BL28_LEFT",
+      "code": "BL28",
+      "name_zh": "膀胱俞",
+      "meridian": "BL",
+      "side": "LEFT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.09198974072933197,
+        -0.26616203784942627,
+        -0.11216118186712265
+      ],
+      "local_position_m": [
+        0.09198974072933197,
+        -0.26616203784942627,
+        -0.11216118186712265
+      ],
+      "world_position_m": [
+        0.09198974072933197,
+        0.11216115951538086,
+        -0.26616203784942627
+      ],
+      "world_normal": [
+        -0.42472943663597107,
+        0.09850706160068512,
+        0.8999451398849487
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T07:58:11+00:00",
+      "updated_at": "2026-08-29T07:58:11+00:00",
+      "face_index": 5311,
+      "vertex_indices": [
+        3109,
+        3108,
+        3116
+      ],
+      "barycentric": [
+        0.003417043015360832,
+        0.05785069614648819,
+        0.9387322664260864
+      ],
+      "xyz_camera_opencv_m": [
+        -0.09940022230148315,
+        -0.02096608839929104,
+        2.5415990352630615
+      ],
+      "uv_pixel_opencv": [
+        581.5967415614854,
+        499.68123600856103
+      ],
+      "camera_depth_z_m": 2.5415990352630615,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 5311,
+      "ray_error_m": 1.850685827191803e-07,
+      "xyz_world_blender_m": [
+        -0.09008660167455673,
+        -0.26532989740371704,
+        0.28953880071640015
+      ]
+    },
+    {
+      "id": "6c4d77dc-9473-44e8-bffb-792ff2e3cbb4",
+      "point_id": "BL28_RIGHT",
+      "code": "BL28",
+      "name_zh": "膀胱俞",
+      "meridian": "BL",
+      "side": "RIGHT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        -0.09124070405960083,
+        -0.2661636471748352,
+        -0.11276433616876602
+      ],
+      "local_position_m": [
+        -0.09124070405960083,
+        -0.2661636471748352,
+        -0.11276433616876602
+      ],
+      "world_position_m": [
+        -0.09124070405960083,
+        0.11276431381702423,
+        -0.2661636471748352
+      ],
+      "world_normal": [
+        0.4355406165122986,
+        0.11729422956705093,
+        0.8924945592880249
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T08:00:33+00:00",
+      "updated_at": "2026-08-29T08:00:33+00:00",
+      "face_index": 12199,
+      "vertex_indices": [
+        6530,
+        6540,
+        6531
+      ],
+      "barycentric": [
+        0.11782635748386383,
+        0.8428285717964172,
+        0.03934508562088013
+      ],
+      "xyz_camera_opencv_m": [
+        0.08041782677173615,
+        -0.022826990112662315,
+        2.530592679977417
+      ],
+      "uv_pixel_opencv": [
+        687.4555317663888,
+        498.52951717412964
+      ],
+      "camera_depth_z_m": 2.530592679977417,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 12199,
+      "ray_error_m": 2.086162567138672e-07,
+      "xyz_world_blender_m": [
+        0.09006354212760925,
+        -0.263096421957016,
+        0.2897796928882599
+      ]
+    },
+    {
+      "id": "1c13045e-328c-44e8-8e8c-851a850a6a9e",
+      "point_id": "GB21_LEFT",
+      "code": "GB21",
+      "name_zh": "肩井",
+      "meridian": "GB",
+      "side": "LEFT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false; C7-to-acromion midpoint approximate",
+      "confidence": 1.0,
+      "body_region": "NECK",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.1483927071094513,
+        0.22725822031497955,
+        -0.0716615840792656
+      ],
+      "local_position_m": [
+        0.1483927071094513,
+        0.22725822031497955,
+        -0.0716615840792656
+      ],
+      "world_position_m": [
+        0.1483927071094513,
+        0.07166159898042679,
+        0.22725822031497955
+      ],
+      "world_normal": [
+        -0.4116513133049011,
+        0.41974830627441406,
+        0.8089218735694885
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T08:16:32+00:00",
+      "updated_at": "2026-08-29T08:16:32+00:00",
+      "face_index": 6689,
+      "vertex_indices": [
+        1833,
+        1885,
+        1826
+      ],
+      "barycentric": [
+        0.5882085561752319,
+        0.21332332491874695,
+        0.19846810400485992
+      ],
+      "xyz_camera_opencv_m": [
+        -0.16038602590560913,
+        -0.5141698718070984,
+        2.5610053539276123
+      ],
+      "uv_pixel_opencv": [
+        546.4782124260723,
+        212.18531691559684
+      ],
+      "camera_depth_z_m": 2.5610053539276123,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 6689,
+      "ray_error_m": 1.8189185285171422e-07,
+      "xyz_world_blender_m": [
+        -0.153110533952713,
+        0.22693076729774475,
+        0.25708475708961487
+      ]
+    },
+    {
+      "id": "fbe5ad89-48dc-4dfc-b26d-1e5415d405f6",
+      "point_id": "GB21_RIGHT",
+      "code": "GB21",
+      "name_zh": "肩井",
+      "meridian": "GB",
+      "side": "RIGHT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false; C7-to-acromion midpoint approximate",
+      "confidence": 1.0,
+      "body_region": "NECK",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        -0.14766323566436768,
+        0.22726181149482727,
+        -0.07389352470636368
+      ],
+      "local_position_m": [
+        -0.14766323566436768,
+        0.22726181149482727,
+        -0.07389352470636368
+      ],
+      "world_position_m": [
+        -0.14766323566436768,
+        0.07389353960752487,
+        0.22726181149482727
+      ],
+      "world_normal": [
+        0.4915119707584381,
+        0.42080625891685486,
+        0.7624552249908447
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T08:17:05+00:00",
+      "updated_at": "2026-08-29T08:17:05+00:00",
+      "face_index": 13577,
+      "vertex_indices": [
+        5294,
+        5348,
+        5347
+      ],
+      "barycentric": [
+        0.21824030578136444,
+        0.4365423619747162,
+        0.34521734714508057
+      ],
+      "xyz_camera_opencv_m": [
+        0.14698411524295807,
+        -0.513778567314148,
+        2.5401899814605713
+      ],
+      "uv_pixel_opencv": [
+        726.4093947164575,
+        209.95855187126284
+      ],
+      "camera_depth_z_m": 2.5401899814605713,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 13577,
+      "ray_error_m": 1.8189185285171422e-07,
+      "xyz_world_blender_m": [
+        0.154953271150589,
+        0.22724634408950806,
+        0.2596147060394287
+      ]
+    },
+    {
+      "id": "8243d99a-f96f-444e-ad1f-6567203ce198",
+      "point_id": "SI15_LEFT",
+      "code": "SI15",
+      "name_zh": "肩中俞",
+      "meridian": "SI",
+      "side": "LEFT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false; same C7 level as GV14; 2 B-cun approximate",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        0.07789808511734009,
+        0.22723186016082764,
+        -0.09315259009599686
+      ],
+      "local_position_m": [
+        0.07789808511734009,
+        0.22723186016082764,
+        -0.09315259009599686
+      ],
+      "world_position_m": [
+        0.07789808511734009,
+        0.09315260499715805,
+        0.22723186016082764
+      ],
+      "world_normal": [
+        -0.10741239786148071,
+        0.2924513518810272,
+        0.950228750705719
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T08:17:36+00:00",
+      "updated_at": "2026-08-29T08:17:36+00:00",
+      "face_index": 4703,
+      "vertex_indices": [
+        733,
+        2886,
+        1814
+      ],
+      "barycentric": [
+        0.3441014587879181,
+        0.4222186207771301,
+        0.2336799055337906
+      ],
+      "xyz_camera_opencv_m": [
+        -0.08950207382440567,
+        -0.5206573605537415,
+        2.5369086265563965
+      ],
+      "uv_pixel_opencv": [
+        587.3152368022528,
+        205.51872447386728
+      ],
+      "camera_depth_z_m": 2.5369086265563965,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 4703,
+      "ray_error_m": 1.884864366154897e-07,
+      "xyz_world_blender_m": [
+        -0.08093482255935669,
+        0.2342326045036316,
+        0.27669647336006165
+      ]
+    },
+    {
+      "id": "50bb959c-efa1-4763-9fc1-7432ec725e60",
+      "point_id": "SI15_RIGHT",
+      "code": "SI15",
+      "name_zh": "肩中俞",
+      "meridian": "SI",
+      "side": "RIGHT",
+      "notes": "SIMULATED_FROM_REFERENCE; medical_validated=false; same C7 level as GV14; 2 B-cun approximate",
+      "confidence": 1.0,
+      "body_region": "TORSO",
+      "target_mesh": "SKEL-skin-female",
+      "canonical_local_position_m": [
+        -0.0771668404340744,
+        0.22722914814949036,
+        -0.09192680567502975
+      ],
+      "local_position_m": [
+        -0.0771668404340744,
+        0.22722914814949036,
+        -0.09192680567502975
+      ],
+      "world_position_m": [
+        -0.0771668404340744,
+        0.09192682057619095,
+        0.22722914814949036
+      ],
+      "world_normal": [
+        0.10825729370117188,
+        0.3076717257499695,
+        0.9453139901161194
+      ],
+      "pose_id": "CANONICAL",
+      "review_status": "DRAFT",
+      "created_at": "2026-08-29T08:18:09+00:00",
+      "updated_at": "2026-08-29T08:18:09+00:00",
+      "face_index": 11592,
+      "vertex_indices": [
+        5275,
+        6345,
+        4219
+      ],
+      "barycentric": [
+        0.5088860392570496,
+        0.0032378581818193197,
+        0.48787611722946167
+      ],
+      "xyz_camera_opencv_m": [
+        0.073936328291893,
+        -0.521966814994812,
+        2.527806282043457
+      ],
+      "uv_pixel_opencv": [
+        683.6788152505517,
+        203.6415433956954
+      ],
+      "camera_depth_z_m": 2.527806282043457,
+      "ray_tolerance_m": 0.0001,
+      "in_front": true,
+      "in_frame": true,
+      "front_facing": true,
+      "visible": true,
+      "visibility_reason": "VISIBLE",
+      "ray_hit_object": "SKEL-skin-female",
+      "ray_hit_face_index": 11592,
+      "ray_error_m": 2.407356265396403e-07,
+      "xyz_world_blender_m": [
+        0.08275271952152252,
+        0.2358502745628357,
+        0.27602916955947876
+      ]
+    }
+  ],
+  "notices": [
+    "All ENG_* records are frozen engineering anchors, not medical acupoints.",
+    "This sample uses a nonzero native SKEL articulated pose followed by the rigid prone transform.",
+    "SKEL is a structural prior, not patient CT.",
+    "Synthetic camera coordinates are not robot execution coordinates."
+  ]
+}

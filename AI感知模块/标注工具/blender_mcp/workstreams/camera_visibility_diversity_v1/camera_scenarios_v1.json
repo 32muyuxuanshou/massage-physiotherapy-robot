@@ -1,0 +1,49 @@
+{
+  "schema": "camera-visibility-diversity-scenarios-v1",
+  "resolution": [1280, 1024],
+  "scenarios": [
+    {
+      "camera_id": "C1_MILD_OBLIQUE",
+      "purpose": "Previously validated mild oblique view; must remain compatible with every frozen Shape-Pose cell.",
+      "matrix_world": [[0.9982357025146484, -0.0020156889222562313, 0.05934039130806923, 0.1599999964237213], [0.0, 0.9994235634803772, 0.033948659896850586, -0.20000000298023224], [-0.0593746155500412, -0.033888768404722214, 0.9976603388786316, 2.819999933242798], [0.0, 0.0, 0.0, 1.0]],
+      "lens_mm": 42.0,
+      "qualification_policy": "REQUIRE_ALL_17",
+      "expect": {"minimum_visible": 18}
+    },
+    {
+      "camera_id": "C4_SELF_OCCLUSION_STRESS",
+      "purpose": "Oblique view intended to introduce genuine body self-occlusion while retaining useful back coverage.",
+      "location_world_m": [-2.0, -0.2, 0.9],
+      "target_world_m": [0.0, -0.2, 0.2],
+      "lens_mm": 60.0,
+      "qualification_policy": "FREEZE_COMPATIBLE_CELLS_ONLY",
+      "expect": {"minimum_visible": 6, "minimum_self_occluded": 1, "minimum_back_facing": 1}
+    },
+    {
+      "camera_id": "C2_EDGE_CROP",
+      "purpose": "Top view translated laterally so a subset of engineering points leaves the image.",
+      "matrix_world": [[1.0, 0.0, 0.0, 1.05], [0.0, 1.0, 0.0, -0.2915360629558563], [0.0, 0.0, 1.0, 2.8949742317199707], [0.0, 0.0, 0.0, 1.0]],
+      "lens_mm": 42.0,
+      "qualification_policy": "REQUIRE_ALL_17",
+      "expect": {"minimum_visible": 2, "minimum_out_of_frame": 2}
+    },
+    {
+      "camera_id": "C3_EXTERNAL_OCCLUDER",
+      "purpose": "Top view with a detached opaque box above the upper back; scene Depth must see the box and Skin Mask must not.",
+      "matrix_world": [[1.0, 0.0, 0.0, -0.000365525484085083], [0.0, 1.0, 0.0, -0.2915360629558563], [0.0, 0.0, 1.0, 2.8949742317199707], [0.0, 0.0, 0.0, 1.0]],
+      "lens_mm": 42.0,
+      "qualification_policy": "REQUIRE_ALL_17",
+      "occluder": {
+        "name": "__ACU_EXTERNAL_OCCLUDER__",
+        "location_world_m": [0.0, 0.105, 0.82],
+        "dimensions_m": [0.25, 0.14, 0.04]
+      },
+      "expect": {"minimum_visible": 8, "minimum_external_occluded": 2}
+    }
+  ],
+  "notices": [
+    "Synthetic pinhole cameras; not calibrated robot RGB-D hardware.",
+    "E01-E20 are non-medical engineering points.",
+    "Camera diversity qualification is discrete and does not imply continuous camera-space coverage."
+  ]
+}
