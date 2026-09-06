@@ -2,10 +2,66 @@
   "created": "2026-09-06",
   "purpose": "写作前声明主要论点的意图和证据边界；定向工程综述，不是系统综述或实验结果",
   "claims": [
-    {"id":"C1","intent":"engineering_recommendation","claim":"优先真实背部标注、预训练二维关键点模型及标定RGB-D基线","sources":["P03","P20","P27"],"limit":"本项目尚无真实精度结果"},
-    {"id":"C2","intent":"research_hypothesis","claim":"人体全局先验与任意表面点对应可能改善穴位定位泛化","sources":["P01","P10","P14","P19"],"limit":"跨模型映射、个体穴位语义与增益均需实验"},
-    {"id":"C3","intent":"critical_evidence_audit","claim":"现有穴位论文误差不能直接作为本项目原始三维毫米精度","sources":["P19","P20","P21","P27"],"limit":"区分容差修正、归一化、骨架与穴位指标"},
-    {"id":"C4","intent":"dataset_scope","claim":"卧姿数据和合成预训练可辅助，但不能替代目标真实俯卧背部测试","sources":["P17","P18","P22","P23"],"limit":"SLP主要仰卧与侧卧，未提供目标穴位真值"},
-    {"id":"C5","intent":"experimental_plan","claim":"按受试者分组，报告尾部误差、覆盖率与独立测量误差","sources":["P24","P25"],"limit":"将相关思想迁移到回归问题，不宣称统计或临床保证"}
-  ]
+    {
+      "id": "C1",
+      "intent": "engineering_recommendation",
+      "claim": "优先真实照片mesh拟合与Atlas投影产标质量门，然后训练关键点学生模型",
+      "sources": [
+        "P01",
+        "P14",
+        "P15",
+        "P10",
+        "P11",
+        "P03"
+      ],
+      "limit": "本项目尚无真实精度结果"
+    },
+    {
+      "id": "C2",
+      "intent": "research_hypothesis",
+      "claim": "规范点对应和质量校正可能降低真实穴位标签生成成本与偏差",
+      "sources": [
+        "P01",
+        "P10",
+        "P14",
+        "P19"
+      ],
+      "limit": "新增假设，须独立医生真值检验，不能用教师伪标签自证"
+    },
+    {
+      "id": "C3",
+      "intent": "critical_evidence_audit",
+      "claim": "现有穴位论文误差不能直接作为本项目原始三维毫米精度",
+      "sources": [
+        "P19",
+        "P20",
+        "P21",
+        "P27"
+      ],
+      "limit": "区分容差修正、归一化、骨架与穴位指标"
+    },
+    {
+      "id": "C4",
+      "intent": "dataset_scope",
+      "claim": "卧姿数据和合成预训练可辅助，但不能替代目标真实俯卧背部测试",
+      "sources": [
+        "P17",
+        "P18",
+        "P22",
+        "P23"
+      ],
+      "limit": "SLP主要仰卧与侧卧，未提供目标穴位真值"
+    },
+    {
+      "id": "C5",
+      "intent": "experimental_plan",
+      "claim": "按受试者分组，报告尾部误差、覆盖率与独立测量误差",
+      "sources": [
+        "P24",
+        "P25"
+      ],
+      "limit": "将相关思想迁移到回归问题，不宣称统计或临床保证"
+    }
+  ],
+  "revision": "v2"
 }
