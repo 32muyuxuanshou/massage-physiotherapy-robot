@@ -34,4 +34,4 @@ AI感知模块/outputs/内部工程证据/2026-09-06_SAM3D_REAL8_V1/：
 - engineering_projection/：工程点图片、来源 hash、完整索引和权重。
 - run_batch.py、project_engineering_points.py、render_engineering_points.py：本次执行脚本。
 
-这些路径是本地忽略目录，网页端不会自动获得其中素材。公开 Git 仅交接本说明；真人素材和授权模型不公开提交。
+用户现已授权公开上传本轮真实图片与运行结果。完整副本及说明见 [网页端交付目录](handoffs/real-scene-2026-09-06/README.md)，原运行目录仍为本地忽略目录。授权模型权重按官方途径获取。

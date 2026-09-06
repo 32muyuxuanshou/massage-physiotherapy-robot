@@ -1,0 +1,1163 @@
+{
+  "stage": "PROJECTION_PROTOTYPE_NOT_LABEL_VALIDATED",
+  "method": "Frozen project SKEL->SMPLX nearest canonical vertex map composed with official MHR->SMPLX barycentric surface map; no individualized SKEL fitting",
+  "medical_validation": false,
+  "training_eligible": false,
+  "cross_gender_transfer_validated": false,
+  "source_atlas_gender": "female",
+  "mhr_identity": "predicted",
+  "external_occlusion_modeled": false,
+  "camera": "upstream default FOV; no metric calibration",
+  "camera_reprojection_max_px": 0.00012582719804741396,
+  "camera_reprojection_mean_px": 2.3115720921444254e-05,
+  "smplx_topology_exact_match": true,
+  "skel_atlas_face_indices_match": true,
+  "sources": {
+    "AI感知模块\\outputs\\交付文件\\2026-08-28_20-21-54\\engineering_atlas_back20_v1.json": "2f4b92697308bc66458c4d98ee8733a0f4c799390dba51c61abf15767ddd0b6f",
+    "AI感知模块\\模型资源\\SMPL-X_SKEL_v2.2_internal\\alignment\\mapping_female.npz": "942e8f90a87e6e2757c73ba7513ecd00e4af03893689f062a83a777a60289b98",
+    "AI感知模块\\模型资源\\SMPL-X_SKEL_v2.2_internal\\alignment\\canonical_female.npz": "a8cbe7316f417b96ea1843d73983a661a2f81d271d2cf96a8aa4875444704831",
+    "AI感知模块\\研究资料\\真实场景关键点定位_2026-09-06\\local\\MHR\\tools\\mhr_smpl_conversion\\assets\\mhr2smplx_mapping.npz": "d6d023f9f483be73cd4491d0ddf217450627263405c9bc6bf43795dfff809af1"
+  },
+  "points": [
+    {
+      "point_id": "E01",
+      "side": "MIDLINE",
+      "region": "neck_base_midline",
+      "xy_original": [
+        419.42482271263145,
+        722.5812096340635
+      ],
+      "xyz_model": [
+        -0.6399906401204803,
+        -1.01057995562341,
+        -0.06696312961943188
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        305,
+        460,
+        302
+      ],
+      "smplx_vertices": [
+        10,
+        2036,
+        8954
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        4039,
+        1385,
+        4813
+      ],
+      "mhr_barycentric": [
+        [
+          0.10634258579077899,
+          0.4582348841720844,
+          0.43542253003713655
+        ],
+        [
+          0.145128954832514,
+          0.6135387827971328,
+          0.24133226237035318
+        ],
+        [
+          0.14024477222106135,
+          0.5076549838072877,
+          0.35210024397165096
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.008092704229056835,
+      "interpolated_point_to_mhr_surface_model_m": 0.0009740063695431491
+    },
+    {
+      "point_id": "E02",
+      "side": "MIDLINE",
+      "region": "upper_thoracic_midline",
+      "xy_original": [
+        606.8026114249495,
+        692.2147380270836
+      ],
+      "xyz_model": [
+        -0.5425665688830681,
+        -1.025995028405576,
+        -0.058300310519439416
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        3470,
+        3012,
+        4702
+      ],
+      "smplx_vertices": [
+        3353,
+        5920,
+        6220
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        11407,
+        11464,
+        11408
+      ],
+      "mhr_barycentric": [
+        [
+          0.059274065001191534,
+          0.46573678882669456,
+          0.4749891461721139
+        ],
+        [
+          0.022165825380388436,
+          0.9247774497768912,
+          0.05305672484272032
+        ],
+        [
+          0.2954960018940674,
+          0.6120889455612243,
+          0.09241505254470835
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.008786691352725029,
+      "interpolated_point_to_mhr_surface_model_m": 0.0004075779617409451
+    },
+    {
+      "point_id": "E03",
+      "side": "MIDLINE",
+      "region": "middle_thoracic_midline",
+      "xy_original": [
+        842.1798105048183,
+        731.3085925275407
+      ],
+      "xyz_model": [
+        -0.4169678897998347,
+        -1.0061146946345267,
+        -0.06854174673303445
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        3028,
+        3029,
+        2951
+      ],
+      "smplx_vertices": [
+        5501,
+        5932,
+        3359
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        12708,
+        12550,
+        12709
+      ],
+      "mhr_barycentric": [
+        [
+          0.018960880249837442,
+          0.4266752730801489,
+          0.5543638466700137
+        ],
+        [
+          0.01584025652110771,
+          0.7856030662424554,
+          0.19855667723643694
+        ],
+        [
+          0.41309015037459684,
+          0.21716636765244138,
+          0.3697434819729618
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.004681702237576246,
+      "interpolated_point_to_mhr_surface_model_m": 0.00027491858320148
+    },
+    {
+      "point_id": "E04",
+      "side": "MIDLINE",
+      "region": "lower_thoracic_midline",
+      "xy_original": [
+        1000.4016011764531,
+        755.9393417506201
+      ],
+      "xyz_model": [
+        -0.33341637062474905,
+        -0.9919290079308987,
+        -0.056153029687439314
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        3025,
+        3017,
+        3505
+      ],
+      "smplx_vertices": [
+        3383,
+        5944,
+        5486
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        13189,
+        13365,
+        13191
+      ],
+      "mhr_barycentric": [
+        [
+          0.12782130076838993,
+          0.02325836401863295,
+          0.8489203352129772
+        ],
+        [
+          0.8632887184371744,
+          0.011820952821170369,
+          0.12489032874165525
+        ],
+        [
+          0.943908684450159,
+          0.013291210752808055,
+          0.042800104797033035
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.011280545964837074,
+      "interpolated_point_to_mhr_surface_model_m": 5.8293381412142205e-05
+    },
+    {
+      "point_id": "E05",
+      "side": "MIDLINE",
+      "region": "upper_lumbar_midline",
+      "xy_original": [
+        1234.1767610222553,
+        788.9802380235095
+      ],
+      "xyz_model": [
+        -0.20473243843062017,
+        -0.9704777545800681,
+        -0.021955554959159015
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        3023,
+        3502,
+        6472
+      ],
+      "smplx_vertices": [
+        5496,
+        5495,
+        8150
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        13835,
+        13970,
+        13836
+      ],
+      "mhr_barycentric": [
+        [
+          0.010936252298857113,
+          0.7846764835446349,
+          0.20438726415650796
+        ],
+        [
+          0.024506180824731827,
+          0.7827838443757228,
+          0.19270997479954538
+        ],
+        [
+          0.03049995069762526,
+          0.8014140843106564,
+          0.16808596499171832
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.010609079152345657,
+      "interpolated_point_to_mhr_surface_model_m": 0.0009500650726028575
+    },
+    {
+      "point_id": "E06",
+      "side": "MIDLINE",
+      "region": "lumbosacral_midline",
+      "xy_original": [
+        1511.5261201617843,
+        715.5256747005213
+      ],
+      "xyz_model": [
+        -0.05861376900520177,
+        -1.012562619249302,
+        -0.04515004179267669
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        3159,
+        841,
+        3158
+      ],
+      "smplx_vertices": [
+        4297,
+        5675,
+        5614
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        14580,
+        14719,
+        14720
+      ],
+      "mhr_barycentric": [
+        [
+          0.5430519246104315,
+          0.3825378197863473,
+          0.0744102556032211
+        ],
+        [
+          0.5820363602291967,
+          0.02982629955102502,
+          0.3881373402197783
+        ],
+        [
+          0.056633236191751646,
+          0.04508911235425568,
+          0.8982776514539926
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.011451155878603458,
+      "interpolated_point_to_mhr_surface_model_m": 8.971986629708238e-06
+    },
+    {
+      "point_id": "E07",
+      "side": "SUBJECT_LEFT",
+      "region": "posterior_shoulder",
+      "xy_original": [
+        411.75056663283874,
+        909.5983863660404
+      ],
+      "xyz_model": [
+        -0.6159463405215472,
+        -0.9308946616764779,
+        -0.17983603735842496
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        1853,
+        1832,
+        1850
+      ],
+      "smplx_vertices": [
+        5468,
+        5627,
+        4449
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        12681,
+        12677,
+        12988
+      ],
+      "mhr_barycentric": [
+        [
+          0.4239962115772848,
+          0.33524684305469427,
+          0.240756945368021
+        ],
+        [
+          0.2665860176576887,
+          0.28638675282987996,
+          0.4470272295124313
+        ],
+        [
+          0.01628086238688374,
+          0.8964063813191204,
+          0.08731275629399583
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.01737113669514656,
+      "interpolated_point_to_mhr_surface_model_m": 0.0005779736689515404
+    },
+    {
+      "point_id": "E08",
+      "side": "SUBJECT_RIGHT",
+      "region": "posterior_shoulder",
+      "xy_original": [
+        620.4360745284002,
+        623.4134511815785
+      ],
+      "xyz_model": [
+        -0.5647617791453934,
+        -1.0553161954323043,
+        0.13267999373927236
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        5291,
+        5311,
+        5292
+      ],
+      "smplx_vertices": [
+        7235,
+        7184,
+        7184
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        12588,
+        12894,
+        12894
+      ],
+      "mhr_barycentric": [
+        [
+          0.11408257147080803,
+          0.810848671394926,
+          0.07506875713426597
+        ],
+        [
+          0.25293317094783996,
+          0.36287031902878797,
+          0.3841965100233721
+        ],
+        [
+          0.25293317094783996,
+          0.36287031902878797,
+          0.3841965100233721
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.017654551193118095,
+      "interpolated_point_to_mhr_surface_model_m": 0.0008467432665214338
+    },
+    {
+      "point_id": "E09",
+      "side": "SUBJECT_LEFT",
+      "region": "upper_scapular",
+      "xy_original": [
+        548.0638348353827,
+        880.7889414756601
+      ],
+      "xyz_model": [
+        -0.5482519460617195,
+        -0.9469229460683668,
+        -0.19478028932071756
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        1242,
+        1826,
+        1825
+      ],
+      "smplx_vertices": [
+        3882,
+        4451,
+        3880
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        12221,
+        12689,
+        12533
+      ],
+      "mhr_barycentric": [
+        [
+          0.034566496471902575,
+          0.3651447553635568,
+          0.6002887481645407
+        ],
+        [
+          0.12877641408562812,
+          0.11424615419744019,
+          0.7569774317169317
+        ],
+        [
+          0.10849589420319977,
+          0.4976985578934046,
+          0.39380554790339567
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.00888890866190195,
+      "interpolated_point_to_mhr_surface_model_m": 0.0004835142498516248
+    },
+    {
+      "point_id": "E10",
+      "side": "SUBJECT_RIGHT",
+      "region": "upper_scapular",
+      "xy_original": [
+        689.3025631364924,
+        598.241095332539
+      ],
+      "xyz_model": [
+        -0.5166447560151652,
+        -1.0720681514180788,
+        0.08743852879147122
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        5289,
+        5348,
+        5294
+      ],
+      "smplx_vertices": [
+        6630,
+        7187,
+        6631
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        12571,
+        12731,
+        12415
+      ],
+      "mhr_barycentric": [
+        [
+          0.48774062842050914,
+          0.1318678661482644,
+          0.38039150543122646
+        ],
+        [
+          0.08683294224625893,
+          0.13653272677512737,
+          0.7766343309786137
+        ],
+        [
+          0.34157803597533004,
+          0.302922655073102,
+          0.35549930895156795
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.010295831598341465,
+      "interpolated_point_to_mhr_surface_model_m": 0.00024031457322477458
+    },
+    {
+      "point_id": "E11",
+      "side": "SUBJECT_LEFT",
+      "region": "medial_scapular",
+      "xy_original": [
+        757.8512627141179,
+        813.169008785619
+      ],
+      "xyz_model": [
+        -0.4532805458423483,
+        -0.9739466180444691,
+        -0.15678139440260425
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        2971,
+        2968,
+        2966
+      ],
+      "smplx_vertices": [
+        5567,
+        5566,
+        3367
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        12702,
+        12544,
+        12701
+      ],
+      "mhr_barycentric": [
+        [
+          0.23676132789175863,
+          0.4174228045497961,
+          0.3458158675584453
+        ],
+        [
+          0.47753537761200143,
+          0.14528617144206932,
+          0.3771784509459292
+        ],
+        [
+          0.22615091265868292,
+          0.28056675403972164,
+          0.49328233330159543
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.005101511254906654,
+      "interpolated_point_to_mhr_surface_model_m": 0.0003984225471348374
+    },
+    {
+      "point_id": "E12",
+      "side": "SUBJECT_RIGHT",
+      "region": "medial_scapular",
+      "xy_original": [
+        833.8099779316624,
+        622.485814741985
+      ],
+      "xyz_model": [
+        -0.42709361342321184,
+        -1.0596864152903254,
+        0.0312763535133828
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        6426,
+        6429,
+        6393
+      ],
+      "smplx_vertices": [
+        6128,
+        8279,
+        8277
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        12719,
+        12717,
+        12716
+      ],
+      "mhr_barycentric": [
+        [
+          0.2790998261741077,
+          0.23329212351323583,
+          0.48760805031265647
+        ],
+        [
+          0.2299400037824061,
+          0.3486967706585489,
+          0.42136322555904504
+        ],
+        [
+          0.13985301217764254,
+          0.8478177136362511,
+          0.012329274186106331
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.005680187605321407,
+      "interpolated_point_to_mhr_surface_model_m": 0.0005332162535742261
+    },
+    {
+      "point_id": "E13",
+      "side": "SUBJECT_LEFT",
+      "region": "lower_scapular",
+      "xy_original": [
+        831.9213919207393,
+        952.4189500260143
+      ],
+      "xyz_model": [
+        -0.416624336420649,
+        -0.9081735888911885,
+        -0.16736994147417494
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        1435,
+        2906,
+        1436
+      ],
+      "smplx_vertices": [
+        5561,
+        4071,
+        4068
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        13173,
+        13345,
+        13172
+      ],
+      "mhr_barycentric": [
+        [
+          0.8066354346118129,
+          0.12986378381598468,
+          0.06350078157220254
+        ],
+        [
+          0.12049582082918064,
+          0.04617645637504829,
+          0.833327722795771
+        ],
+        [
+          0.2680285332636244,
+          0.19611729716678417,
+          0.5358541695695914
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.011863229796290398,
+      "interpolated_point_to_mhr_surface_model_m": 2.92032386207225e-05
+    },
+    {
+      "point_id": "E14",
+      "side": "SUBJECT_RIGHT",
+      "region": "lower_scapular",
+      "xy_original": [
+        922.2224152653873,
+        684.9741130917043
+      ],
+      "xyz_model": [
+        -0.37735298762133734,
+        -1.0207763746520608,
+        0.07945071976250223
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        6366,
+        4909,
+        6367
+      ],
+      "smplx_vertices": [
+        6815,
+        6812,
+        6814
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        13202,
+        13035,
+        13032
+      ],
+      "mhr_barycentric": [
+        [
+          0.1466097579573965,
+          0.8261904494744311,
+          0.027199792568172412
+        ],
+        [
+          0.29636199252385376,
+          0.5211775175395963,
+          0.18246048993654992
+        ],
+        [
+          0.22990464492025603,
+          0.4605345131046856,
+          0.30956084197505834
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.01084159966558218,
+      "interpolated_point_to_mhr_surface_model_m": 0.0002635594238745521
+    },
+    {
+      "point_id": "E15",
+      "side": "SUBJECT_LEFT",
+      "region": "lower_thoracic_paraspinal",
+      "xy_original": [
+        1063.6850387914749,
+        976.2855530935301
+      ],
+      "xyz_model": [
+        -0.30332169391801034,
+        -0.8897471941540107,
+        -0.13238760116358667
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        2841,
+        2842,
+        794
+      ],
+      "smplx_vertices": [
+        3427,
+        3426,
+        3355
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        13529,
+        13351,
+        13528
+      ],
+      "mhr_barycentric": [
+        [
+          0.085423251816797,
+          0.8915210406476641,
+          0.02305570753553888
+        ],
+        [
+          0.5535114718995209,
+          0.14261330539689898,
+          0.30387522270358014
+        ],
+        [
+          0.00792974706013766,
+          0.7933173997012078,
+          0.1987528532386545
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.007274355739355087,
+      "interpolated_point_to_mhr_surface_model_m": 0.00024309390457339514
+    },
+    {
+      "point_id": "E16",
+      "side": "SUBJECT_RIGHT",
+      "region": "lower_thoracic_paraspinal",
+      "xy_original": [
+        1064.323495662444,
+        758.322089595244
+      ],
+      "xyz_model": [
+        -0.29279728223408674,
+        -0.9768561595833604,
+        0.08313796993736536
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        4283,
+        6303,
+        6302
+      ],
+      "smplx_vertices": [
+        6116,
+        6187,
+        6188
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        13561,
+        13556,
+        13561
+      ],
+      "mhr_barycentric": [
+        [
+          0.09340839115601861,
+          0.8217777166777314,
+          0.08481389216625003
+        ],
+        [
+          0.526527736437252,
+          0.40499791538288527,
+          0.06847434817986268
+        ],
+        [
+          0.013588551553823547,
+          0.1066024467500555,
+          0.879809001696121
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.008108223788440228,
+      "interpolated_point_to_mhr_surface_model_m": 0.00018565092064680953
+    },
+    {
+      "point_id": "E17",
+      "side": "SUBJECT_LEFT",
+      "region": "lumbar_paraspinal",
+      "xy_original": [
+        1316.5562110596616,
+        896.8145809095331
+      ],
+      "xyz_model": [
+        -0.174292508225829,
+        -0.9261048513095984,
+        -0.11268786249739746
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        801,
+        887,
+        796
+      ],
+      "smplx_vertices": [
+        3428,
+        3519,
+        3431
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        14074,
+        14076,
+        14076
+      ],
+      "mhr_barycentric": [
+        [
+          0.03409148501570747,
+          0.04473639583262894,
+          0.9211721191516636
+        ],
+        [
+          0.7799234758745786,
+          0.16239766119932805,
+          0.05767886292609334
+        ],
+        [
+          0.00868783288290742,
+          0.014096453864099577,
+          0.9772157132529931
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.007127705030143261,
+      "interpolated_point_to_mhr_surface_model_m": 1.3967698494167942e-05
+    },
+    {
+      "point_id": "E18",
+      "side": "SUBJECT_RIGHT",
+      "region": "lumbar_paraspinal",
+      "xy_original": [
+        1259.274495089846,
+        743.8981603257024
+      ],
+      "xyz_model": [
+        -0.1787087992734219,
+        -0.9868091843271521,
+        0.06840349048593335
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        4284,
+        4372,
+        4289
+      ],
+      "smplx_vertices": [
+        6192,
+        6280,
+        6189
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        14214,
+        14214,
+        14216
+      ],
+      "mhr_barycentric": [
+        [
+          0.9794371633450027,
+          0.01036275175114856,
+          0.010200084903848735
+        ],
+        [
+          0.058725945219511244,
+          0.16381577269882744,
+          0.7774582820816613
+        ],
+        [
+          0.9123695816820865,
+          0.06760282062465926,
+          0.020027597693254257
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.0067001027055084705,
+      "interpolated_point_to_mhr_surface_model_m": 5.857957181027374e-05
+    },
+    {
+      "point_id": "E19",
+      "side": "SUBJECT_LEFT",
+      "region": "lower_lumbar_lateral",
+      "xy_original": [
+        1540.1173956753328,
+        882.1834251675193
+      ],
+      "xyz_model": [
+        -0.07016698035536925,
+        -0.9389011930571164,
+        -0.14735119009082814
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        1786,
+        1787,
+        1789
+      ],
+      "smplx_vertices": [
+        4408,
+        5679,
+        4407
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        14837,
+        14566,
+        14835
+      ],
+      "mhr_barycentric": [
+        [
+          0.05583716540811057,
+          0.4393482140512226,
+          0.5048146205406668
+        ],
+        [
+          0.866211496366242,
+          0.10615447519245533,
+          0.02763402844130274
+        ],
+        [
+          0.4060391627694814,
+          0.17711944263903212,
+          0.4168413945914865
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.008339588530361652,
+      "interpolated_point_to_mhr_surface_model_m": 0.0008629763247538891
+    },
+    {
+      "point_id": "E20",
+      "side": "SUBJECT_RIGHT",
+      "region": "lower_lumbar_lateral",
+      "xy_original": [
+        1407.9267852024288,
+        689.7008711626961
+      ],
+      "xyz_model": [
+        -0.08474469629878117,
+        -1.0165685670259268,
+        0.10006713200638462
+      ],
+      "inside_image": true,
+      "medical_annotation": false,
+      "training_eligible": false,
+      "visibility": "UNASSESSED",
+      "source_skel_vertices": [
+        5249,
+        5250,
+        5252
+      ],
+      "smplx_vertices": [
+        7144,
+        7143,
+        8373
+      ],
+      "source_barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mhr_faces": [
+        14603,
+        14744,
+        14605
+      ],
+      "mhr_barycentric": [
+        [
+          0.5694241362102923,
+          0.05701382820020056,
+          0.3735620355895072
+        ],
+        [
+          0.2903501662105715,
+          0.5590478677646714,
+          0.15060196602475703
+        ],
+        [
+          0.8749728443486986,
+          0.10274273191335787,
+          0.02228442373794364
+        ]
+      ],
+      "canonical_bridge_max_distance_model_m": 0.010555744171142578,
+      "interpolated_point_to_mhr_surface_model_m": 0.000990002449993256
+    }
+  ]
+}
