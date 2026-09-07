@@ -1,0 +1,47 @@
+{
+  "annotation_source": "assistant visual inspection of original images only, 2026-09-07",
+  "status": "DRAFT_NOT_EXPERT_REVIEWED",
+  "scope": "Conservative visible-region interiors; gaps and boundaries remain UNKNOWN. Not anatomical point ground truth or automatic segmentation.",
+  "boundary_margin_px": 12,
+  "frames": {
+    "S01": {
+      "regions": [
+        {"label":"VISIBLE_BACK_CORE","polygon":[[580,700],[600,660],[670,625],[730,630],[780,665],[850,700],[1020,725],[1210,755],[1290,800],[1350,1045],[490,1045],[520,925],[560,810]]},
+        {"label":"CLOTHED","polygon":[[1390,780],[1500,690],[1720,680],[1919,760],[1919,1079],[1470,1079],[1450,880]]},
+        {"label":"HEAD_HAIR","polygon":[[20,680],[120,590],[310,590],[430,685],[445,745],[300,825],[90,855],[15,805]]},
+        {"label":"BACKGROUND","polygon":[[805,555],[1010,555],[1010,655],[835,647],[800,620]]}
+      ],
+      "contour_refs":[
+        {"id":"B1","axis":"vertical","x":1000,"y":685,"search":[500,850],"uncertainty_px":12,"description":"visible superior torso silhouette"},
+        {"id":"B2","axis":"vertical","x":1100,"y":697,"search":[500,850],"uncertainty_px":12,"description":"visible superior torso silhouette"},
+        {"id":"B3","axis":"vertical","x":1200,"y":716,"search":[500,850],"uncertainty_px":12,"description":"visible superior torso silhouette"}
+      ]
+    },
+    "S03": {
+      "regions":[
+        {"label":"VISIBLE_BACK_CORE","polygon":[[880,490],[1060,540],[1270,575],[1480,610],[1450,1050],[335,1050],[360,935],[395,870],[590,860],[760,830],[860,735],[900,585]]},
+        {"label":"ROBOT_OCCLUDED","polygon":[[470,35],[690,35],[805,180],[935,280],[925,375],[860,465],[820,565],[825,650],[760,750],[650,795],[545,780],[470,710],[410,610],[360,540],[380,415]]},
+        {"label":"CLOTHED","polygon":[[1605,610],[1919,600],[1919,1079],[1580,1079]]},
+        {"label":"HEAD_HAIR","polygon":[[30,340],[180,285],[320,300],[405,350],[335,480],[345,550],[160,625],[20,590]]}
+      ],
+      "contour_refs":[
+        {"id":"B1","axis":"horizontal","x":326,"y":900,"search":[180,550],"uncertainty_px":15,"description":"visible lateral torso silhouette"},
+        {"id":"B2","axis":"horizontal","x":300,"y":980,"search":[180,550],"uncertainty_px":15,"description":"visible lateral torso silhouette"},
+        {"id":"B3","axis":"horizontal","x":280,"y":1040,"search":[180,550],"uncertainty_px":15,"description":"visible lateral torso silhouette"}
+      ]
+    },
+    "S05": {
+      "regions":[
+        {"label":"VISIBLE_BACK_CORE","polygon":[[460,720],[540,650],[690,600],[825,600],[940,625],[1090,610],[1140,540],[1370,552],[1585,590],[1660,1045],[300,1045],[335,930],[395,810]]},
+        {"label":"ROBOT_OCCLUDED","polygon":[[750,25],[1150,25],[1135,435],[1090,510],[1065,550],[980,570],[900,555],[860,520],[830,470],[760,430]]},
+        {"label":"CLOTHED","polygon":[[1650,565],[1820,490],[1919,480],[1919,1079],[1780,1079],[1735,810]]},
+        {"label":"HEAD_HAIR","polygon":[[0,570],[110,510],[230,530],[330,580],[345,635],[290,705],[150,740],[10,820]]}
+      ],
+      "contour_refs":[
+        {"id":"B1","axis":"vertical","x":1200,"y":507,"search":[300,750],"uncertainty_px":12,"description":"visible superior torso silhouette"},
+        {"id":"B2","axis":"vertical","x":1350,"y":516,"search":[300,750],"uncertainty_px":12,"description":"visible superior torso silhouette"},
+        {"id":"B3","axis":"vertical","x":1500,"y":530,"search":[300,750],"uncertainty_px":12,"description":"visible superior torso silhouette"}
+      ]
+    }
+  }
+}
