@@ -1,0 +1,29 @@
+{
+  "status": "DEVELOPMENT_INPUTS_FROZEN_NO_MODEL_RUN",
+  "seed": 20260908,
+  "counts": {
+    "retained_coco20": 20,
+    "additional_coco14": 14,
+    "public_back5": 5,
+    "seated_back1": 1,
+    "total": 40
+  },
+  "selection": "Retain all historical COCO20; sort remaining eligible paired candidates by SHA256(seed:image:subject_idx), take 14 unique images.",
+  "eligibility": "Same as COCO20: valid MHR; bbox dimensions >=80; best COCO bbox IoU >=0.5; >=6 labeled joints; non-crowd.",
+  "candidate_count": 427,
+  "split": "All 40 are development images; no validation/test split in this round.",
+  "identity_independence": "unknown; unique image hashes do not imply unique people; B3/B4 provenance names the same person",
+  "pretraining_overlap": "COCO/SAM-source development images; not an unseen test set.",
+  "controls": "Every model receives the same copied original image, fixed bbox_xyxy and K. Any required internal preprocessing must map outputs back to original image coordinates.",
+  "camera": {
+    "fx": "hypot(width,height)",
+    "fy": "hypot(width,height)",
+    "cx": "width/2",
+    "cy": "height/2",
+    "units": "pixels",
+    "calibrated": false
+  },
+  "labels": "Existing COCO17 annotations are retained for 34 images. No 37-point position labels were created. Prior model predictions are not ground truth.",
+  "remote_paths": "Expected existing server paths only; not verified on server in this preparation run.",
+  "execution": "No model inference or training performed."
+}

@@ -1,0 +1,16 @@
+{
+  "status": "FIXED_BEFORE_QUERY_RESULTS_REVIEW",
+  "seed": 20260908,
+  "sample_ids": ["B1", "B2", "B3", "B4", "B5", "N1"],
+  "split": "Previously reviewed development photos, not independent test",
+  "question": "Can original reviewed SKEL face bindings query NLF canonical points directly, and how do these predictions differ from fitted-mesh propagation?",
+  "binding": "37 original ordered face vertex indices and barycentric weights, applied to official NLF canonical SMPL vertices. No nearest-neighbor projection and no side flips.",
+  "controls": "Same DEV40 original RGB, bbox and K; frozen NLF v0.3.2.patch4, num_aug=1. Reuse prior frozen SAM and NLF parametric meshes.",
+  "queries": "37 barycentric positions plus 102 unique support vertices, total139 in one query set",
+  "comparisons": ["SAM MHR historical native binding", "NLF fitted SMPL with original SKEL binding", "NLF direct canonical point predictions", "Direct point versus barycentric interpolation of directly queried support vertices"],
+  "verification": ["Ordered face and vertex identity", "Weights and side identity", "Output shape and finite coordinates", "3D-to-2D self projection"],
+  "metrics": "Distances between model outputs only. No new 37-point ground truth, no clinical or real-surface accuracy claim.",
+  "visibility": "No calibrated visibility filter. Visualizations include all 37 predictions, including uncertain or potentially occluded points.",
+  "training": false,
+  "original_atlas_modified": false
+}

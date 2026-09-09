@@ -1,0 +1,15 @@
+{
+  "status": "FROZEN_BEFORE_PROTOTYPE_TRAINING",
+  "steps": 32,
+  "lr": 1e-05,
+  "optimizer": "AdamW weight_decay0 clip_grad_norm1",
+  "edge_weight": 0.1,
+  "prior_weight": 1.0,
+  "seed": 20260908,
+  "schedule": "alternate N1 with 8 COCO images cycling; batch1; no accumulation for smoke test",
+  "trainable": "head_pose.proj and head_camera.proj only; eval mode with autograd",
+  "supervision": "COCO 70 fitted2D/root-relative3D joints; N1 six previous sparse boundary observations plus frozen-baseline shape/scale/3Dkeypoint/camera prior",
+  "deviation_from_design": "Sparse piecewise differentiable silhouette sections replace dense rendering in this prototype; no new renderer installed; full mesh3D loss not implemented; only one target image",
+  "split": "all nine are already reviewed development/training images, no independent validation or test",
+  "checkpoint": "heads and optimizer; not a deployable validated model"
+}

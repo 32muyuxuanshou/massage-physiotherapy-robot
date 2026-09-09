@@ -1,0 +1,23 @@
+{
+  "status": "FIXED_BEFORE_INFERENCE",
+  "samples": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "N1"
+  ],
+  "split": "previously viewed development only",
+  "seed": 20260908,
+  "variants": [
+    "original",
+    "pad gray127 with dx=.4W dy=.15H no resampling",
+    "crop bbox plus10percent margin clipped to image no resampling"
+  ],
+  "camera": "K_new=A@K; bbox translated; output projection translated back to original pixels; original camera XYZ unchanged",
+  "models": "frozen SAM ViTH body and NLF patch4 direct139+1048 anchors",
+  "metrics": "within-model 37 point displacement: original-image pixels and camera millimeters, not accuracy; compare each altered input with same-run original",
+  "visibility": "all37 no visibility filtering",
+  "training": false
+}

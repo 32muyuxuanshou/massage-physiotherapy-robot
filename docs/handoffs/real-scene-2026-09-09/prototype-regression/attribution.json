@@ -1,0 +1,56 @@
+{
+  "status": "TRAINING_IMAGE_COUNTERFACTUAL_ONLY",
+  "camera_delta_mm": [
+    6.3300580978393555,
+    5.241036415100098,
+    5.911111831665039
+  ],
+  "mean_local_vertex_change_mm": 6.0464606285095215,
+  "combinations": {
+    "baseline": {
+      "signed_px": [
+        -147.72802734375,
+        -77.456787109375,
+        -40.980224609375,
+        -34.021484375,
+        -45.064208984375,
+        -18.126220703125
+      ],
+      "mean_absolute_px": 60.562825520833336
+    },
+    "camera_only": {
+      "signed_px": [
+        -100.1923828125,
+        -42.379150390625,
+        -17.973388671875,
+        -12.387939453125,
+        -20.168701171875,
+        -9.86328125
+      ],
+      "mean_absolute_px": 33.827473958333336
+    },
+    "geometry_only": {
+      "signed_px": [
+        -110.759521484375,
+        -47.41357421875,
+        -17.078369140625,
+        -9.39208984375,
+        -29.968505859375,
+        -20.33984375
+      ],
+      "mean_absolute_px": 39.158650716145836
+    },
+    "both": {
+      "signed_px": [
+        -57.412353515625,
+        -12.353271484375,
+        5.455810546875,
+        11.993408203125,
+        -4.6298828125,
+        -12.044921875
+      ],
+      "mean_absolute_px": 17.31494140625
+    }
+  },
+  "interpretation": "Geometry includes global rotation, pose, shape and scale; not a shape-only change. Camera/geometry effects are coupled and non-additive. No independent 3D reference."
+}

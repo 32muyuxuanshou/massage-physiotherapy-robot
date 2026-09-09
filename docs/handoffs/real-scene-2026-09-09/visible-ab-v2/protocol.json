@@ -1,0 +1,44 @@
+{
+  "status": "FROZEN_BEFORE_SCALEUP",
+  "seed": 20260908,
+  "total_images": 343,
+  "total_people": 427,
+  "split_unit": "image SHA; not verified identity",
+  "pretraining_overlap": "COCO training source potentially used in SAM pretraining; fine-tuning holdout only",
+  "prior_viewed_images_excluded_from_validation": true,
+  "epochs": 10,
+  "accumulation": 8,
+  "lr": 1e-05,
+  "weight_decay": 0,
+  "initialization": "original official SAM, not nine-image prototype",
+  "supervision": "same normalized fitted 2D + pelvis-relative fitted 3D joint loss as prototype; no contour loss",
+  "selection": "same existing validity/bbox/COCO matching filter; no model-score filtering",
+  "train": {
+    "images": 274,
+    "people": 345,
+    "tags": {
+      "image_boundary": 177,
+      "general": 345,
+      "wide_or_compact": 289,
+      "raised_arm": 53,
+      "inclined_torso": 67
+    }
+  },
+  "validation": {
+    "images": 69,
+    "people": 82,
+    "tags": {
+      "wide_or_compact": 67,
+      "image_boundary": 46,
+      "general": 82,
+      "raised_arm": 15,
+      "inclined_torso": 13
+    }
+  },
+  "experiment": "Add visible COCO manual body-joint loss to fitted joint supervision",
+  "manual_weight": 1.0,
+  "manual_visibility": "v=2 only",
+  "control": "Original fitted-only training unchanged; compare all models on corrected validation annotations",
+  "hypothesis": "Independent visible 2D annotation improves source-holdout joint agreement; does not establish mesh surface accuracy",
+  "association_revision": "v2: label-to-label assignment + visual review of changed matches; 9 uncertain training cases get no manual loss; original images and splits retained"
+}

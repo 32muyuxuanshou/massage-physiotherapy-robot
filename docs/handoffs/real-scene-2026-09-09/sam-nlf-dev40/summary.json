@@ -1,0 +1,67 @@
+{
+  "caution": "Development images only. Joint definitions across models are not completely equivalent. These are 2D coarse-joint metrics, not surface or acupoint accuracy. B1-B5/N1 have no ground truth and receive no scores. Identity independence is unknown. This development batch is biased toward clothed/sports scenes; lying poses are insufficiently covered, not full coverage.",
+  "total_images": 40,
+  "ground_truth_images": 34,
+  "coco_indices": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "smpl_indices": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    1,
+    2,
+    4,
+    5,
+    7,
+    8
+  ],
+  "sam_indices": [
+    5,
+    6,
+    7,
+    8,
+    62,
+    41,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "sam_mapping_source": "E:\\项目-按摩理疗机器人\\AI感知模块\\研究资料\\真实场景关键点定位_2026-09-06\\local\\sam-3d-body\\sam_3d_body\\metadata\\__init__.py",
+  "metric": "Per-image mean Euclidean pixel distance divided by sqrt(COCO annotation bbox area); PCK uses distance/scale < 0.05; COCO visibility >0.",
+  "aggregation": "Unweighted macro average over scored images, separately for each model.",
+  "coordinate_contract": "joints2d in original-image pixels. NLF vertices3d are millimeters and are unused by 2D metrics; overlays supplied separately.",
+  "models": {
+    "sam": {
+      "scored_images": 34,
+      "labeled_joint_count": 338,
+      "mean_error_px": 7.89262525022235,
+      "mean_error_normalized": 0.03344082064039993,
+      "pck05": 0.8199866310160429
+    },
+    "nlf": {
+      "scored_images": 34,
+      "labeled_joint_count": 338,
+      "mean_error_px": 11.800241333896313,
+      "mean_error_normalized": 0.05982543842327386,
+      "pck05": 0.6561051693404634
+    }
+  }
+}

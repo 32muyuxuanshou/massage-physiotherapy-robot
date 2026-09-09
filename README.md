@@ -1,6 +1,11 @@
 # 按摩理疗机器人
 
+> **网页端最新交付（2026-09-09）：** [完整实验、批量mesh对照与当前训练状态](docs/handoffs/real-scene-2026-09-09/README.md)。内含更正后的验证指标，请以此入口替代旧交付状态。
 项目源码、工程文档与交付资料的统一版本管理入口。
+
+> **最新执行（2026-09-09）：** [69图82人体批量mesh对照](AI感知模块/outputs/内部工程证据/2026-09-09_BATCH_MESH/README.md)完成。发现并修正两图三个人体的COCO标注对应，原模型/第2轮/第10轮NME更正为0.035207/0.035243/0.035442，未见主指标提升。全427记录已做对应审查；9条训练记录暂不使用新增人工loss。修正后的可见人工关节监督对照V2已启动10轮，尚无结果，Atlas和原模型未替换。
+
+> AI真实场景微调主线已于2026-09-08获用户授权恢复：已完成官方MHR下载、20图对照及回归头单步更新检查，尚无新正式checkpoint或泛化提升结论。[当前状态与恢复记录](docs/ai-workflow-pause-2026-09-08.md)为最新入口；下方2026-09-06交接文档属于历史版本。本次记录尚未提交或推送到GitHub。
 
 公开仓库：[massage-physiotherapy-robot](https://github.com/32muyuxuanshou/massage-physiotherapy-robot)。
 交付下载：[Releases](https://github.com/32muyuxuanshou/massage-physiotherapy-robot/releases)。
