@@ -1,6 +1,6 @@
 # AI 感知模块
 
-> **网页端最新交付（2026-09-09）：** [背部 Surface 监督可行性审计与 V2 训练复盘](../docs/handoffs/real-scene-2026-09-09/back-surface-supervision-pilot-v1/README.md)。修正版 Visible A/B V2 已完成，epoch5 的 NME 为 0.034273，epoch10 的 PCK05 为 0.812213；改善只在 COCO 来源二维关节 validation 成立。现有 5 个来源/人物组、25 个稀疏轮廓参考不足以评价未见人体背部 surface，正式 surface 训练暂停，进入 30 人、按受试者隔离的数据采集阶段。
+> **网页端最新交付（2026-09-09）：** [MHR 真实背部表面可拟合性 Gate V1](../docs/handoffs/real-scene-2026-09-09/mhr-back-surface-fitability-gate-v1/README.md)。Gate 为 `INCONCLUSIVE_OPTIMIZATION_OR_DATA_LIMITED`：8 个既有真实视频帧均缺少深度、标定和注册，Official SAM 与 V2 的真实 surface error 无法计算。先采 3 名受试者、每人 A 拟合/B 独立视角评价/C 重复性的标定 RGB-D Gate；通过后再决定是否扩到 30 人和微调网络。
 
 官方SAM预训练推理、真实照片mesh叠加及项目37点传播已跑通。只贴mesh无需训练；没有完整复现论文训练与基准评测。当前计算服务器为172.18.18.151，COCO首批1,280张图片与原始人体标注已就绪；另行授权下载的官方COCO MHR标注24/24分片已验证，现有图库匹配641张图片、1,110条人体标注。其它SAM数据来源未下载。网络训练、穴位精度和标签放行状态以当前状态记录为准。
 

@@ -1,0 +1,134 @@
+{
+  "status": "FROZEN_ACQUISITION_PROTOCOL_BEFORE_DATA",
+  "gate_scope": "small representation-fitability gate, not the later 30-subject training dataset",
+  "minimum": {
+    "verified_subjects": 3,
+    "preferred_subjects": 5,
+    "capture_bundles_per_subject": 3,
+    "qualified_rgb_depth_pairs": "9 minimum for 3 subjects"
+  },
+  "capture_bundles": [
+    {
+      "id": "A",
+      "role": "FIT",
+      "pose": "comfortable prone, neutral arms, clean exposed back, no robot"
+    },
+    {
+      "id": "B",
+      "role": "HELD_OUT_VIEW",
+      "pose": "same maintained pose from a second calibrated view or synchronized second RGB-D camera"
+    },
+    {
+      "id": "C",
+      "role": "REPEATABILITY",
+      "pose": "new comfortable prone placement with head/arm variation, no robot"
+    }
+  ],
+  "calibration": {
+    "rgb_intrinsics": [
+      "fx",
+      "fy",
+      "cx",
+      "cy",
+      "distortion model and coefficients",
+      "image size"
+    ],
+    "depth_intrinsics": [
+      "fx",
+      "fy",
+      "cx",
+      "cy",
+      "distortion model and coefficients",
+      "depth size"
+    ],
+    "extrinsics": "4x4 metric rigid transform between raw depth and RGB optical frames, with direction named explicitly",
+    "depth_unit": "store raw scale and canonical meters; verify with measured planar targets at near/mid/far working distances",
+    "registration_qa": [
+      "save raw unregistered RGB/depth",
+      "save registered depth",
+      "report calibration reprojection RMS",
+      "report planar depth median/P95 absolute error",
+      "visually inspect discontinuities at a calibration target"
+    ],
+    "initial_engineering_gates": {
+      "calibration_reprojection_rms_px_max": 1.0,
+      "registered_boundary_median_px_max": 2.0,
+      "planar_depth_median_abs_mm_max": 5.0,
+      "planar_depth_p95_abs_mm_max": 10.0
+    }
+  },
+  "semantic_annotation": {
+    "view": "original RGB and registered depth only; no SAM/MHR mesh overlay",
+    "classes": [
+      "VISIBLE_BARE_BACK",
+      "OTHER_SKIN",
+      "ROBOT_OCCLUDED",
+      "CLOTHED",
+      "BED",
+      "HAIR",
+      "SELF_OCCLUDED",
+      "UNKNOWN",
+      "BACKGROUND"
+    ],
+    "surface_loss_allowed": [
+      "VISIBLE_BARE_BACK with valid registered depth and acceptable local depth quality"
+    ],
+    "surface_loss_forbidden": [
+      "robot",
+      "clothes",
+      "bed",
+      "hair",
+      "unknown",
+      "occlusion boundaries",
+      "invalid/multipath/flying depth"
+    ],
+    "quality": "two independent masks for held-out observations; adjudicate disagreements and retain UNKNOWN rather than guessing"
+  },
+  "fit_eval_independence": {
+    "preferred": "fit bundle A; evaluate synchronized calibrated bundle B after applying known camera extrinsics",
+    "secondary": "fit selected spatial tiles; evaluate disjoint upper/mid/lower and left/right tiles in the same registered frame",
+    "secondary_claim_limit": "same-frame spatial holdout supports OPTIMIZATION_FEASIBILITY only",
+    "never": "score the exact depth pixels used by the fitting loss as held-out improvement"
+  },
+  "future_execution": {
+    "initializations": [
+      "official SAM 3D Body",
+      "V2 epoch5",
+      "optional V2 epoch10"
+    ],
+    "network_weights": "frozen",
+    "development_subjects": "use at most 1-2 subjects for optimizer/loss-scale choices",
+    "evaluation_subjects": "freeze parameters and thresholds before remaining subjects",
+    "parameter_stages": [
+      "camera only",
+      "pose only",
+      "shape/scale only",
+      "combined with priors"
+    ],
+    "surface_loss": "robust point-to-plane after coordinate/normal validation; point-to-point as diagnostic",
+    "priors": [
+      "initialization",
+      "pose",
+      "shape",
+      "scale/skeleton",
+      "camera drift"
+    ],
+    "primary_metric": "held-out visible bare-back surface error in mm, subject-macro",
+    "reports": [
+      "mean",
+      "median",
+      "P90",
+      "P95",
+      "max",
+      "per-region",
+      "per-subject",
+      "parameter before/after"
+    ],
+    "dmd37": "method-to-method displacement only; never target error"
+  },
+  "gate_states": [
+    "PASS_MHR_BACK_SURFACE_FITABILITY",
+    "INCONCLUSIVE_OPTIMIZATION_OR_DATA_LIMITED",
+    "FAIL_CURRENT_MHR_FITABILITY_HYPOTHESIS"
+  ]
+}

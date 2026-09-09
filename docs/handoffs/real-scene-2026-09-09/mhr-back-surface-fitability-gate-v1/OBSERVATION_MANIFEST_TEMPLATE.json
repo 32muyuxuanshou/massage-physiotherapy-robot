@@ -1,0 +1,47 @@
+{
+  "status": "TEMPLATE",
+  "subject_id": "SUBJECT_XXX",
+  "session_id": "SESSION_YYYYMMDD_XXX",
+  "consent_and_use_scope_recorded": false,
+  "captures": [
+    {
+      "frame_id": "FRAME_XXX_A",
+      "role": "FIT",
+      "rgb_path": "relative/path/rgb.png",
+      "depth_raw_path": "relative/path/depth_raw.png",
+      "depth_registered_path": "relative/path/depth_registered.npy",
+      "depth_raw_unit_scale_to_m": null,
+      "rgb_intrinsics": {
+        "width": null,
+        "height": null,
+        "fx": null,
+        "fy": null,
+        "cx": null,
+        "cy": null,
+        "distortion_model": null,
+        "distortion_coefficients": []
+      },
+      "depth_intrinsics": {
+        "width": null,
+        "height": null,
+        "fx": null,
+        "fy": null,
+        "cx": null,
+        "cy": null,
+        "distortion_model": null,
+        "distortion_coefficients": []
+      },
+      "depth_to_rgb_extrinsics_4x4": null,
+      "visible_bare_back_mask_path": "relative/path/visible_bare_back_mask.png",
+      "semantic_mask_path": "relative/path/semantic_mask.png",
+      "mesh_overlay_seen_during_annotation": false,
+      "calibration_report_path": "relative/path/calibration_report.json",
+      "quality": {
+        "valid_depth_ratio_in_bare_back": null,
+        "registration_boundary_median_px": null,
+        "depth_median_abs_mm": null,
+        "depth_p95_abs_mm": null
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # 按摩理疗机器人
 
-> **网页端最新交付（2026-09-09）：** [背部 Surface 监督可行性审计与 V2 训练复盘](docs/handoffs/real-scene-2026-09-09/back-surface-supervision-pilot-v1/README.md)。V2 的二维关节 validation 改善已复核；现有数据不足以独立评价未见人体背部 surface，因此正式 surface 训练暂停，先执行受试者隔离的数据采集计划。
+> **网页端最新交付（2026-09-09）：** [MHR 真实背部表面可拟合性 Gate V1](docs/handoffs/real-scene-2026-09-09/mhr-back-surface-fitability-gate-v1/README.md)。Gate 为 `INCONCLUSIVE_OPTIMIZATION_OR_DATA_LIMITED`：现有真实视频有可见背部，但没有标定、注册的真实深度，不能计算 surface error，也不能判断 MHR 表示是否足够。下一步先采 3 人 A/B/C 最小 RGB-D Gate，不直接启动 30 人训练或全局微调。
 项目源码、工程文档与交付资料的统一版本管理入口。
 
 > **最新研究边界：** 原模型/第2轮/第10轮的旧 fitted-only 结果不支持主指标提升；修正版 Visible A/B V2 已完成 10 轮，epoch5 的 NME 为 0.034273，epoch10 的 PCK05 为 0.812213。当前证据只到 COCO 来源二维关节 validation，不能宣称 Mesh surface、DMD37 或医学准确性。

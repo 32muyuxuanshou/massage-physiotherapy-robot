@@ -1,0 +1,82 @@
+{
+  "status": "CODE_AUDITED_NO_FITTING_EXECUTED",
+  "sam3d_code_commit": "b5c765a0d89d789985e186d396315e7590887b94",
+  "sources": [
+    "sam_3d_body/models/heads/mhr_head.py",
+    "sam_3d_body/models/heads/camera_head.py"
+  ],
+  "mhr_raw_head_layout": {
+    "total": 519,
+    "global_rotation_6d": 6,
+    "body_continuous": 260,
+    "shape": 45,
+    "scale_skeleton_basis": 28,
+    "hands_left_right": 108,
+    "face": 72,
+    "face_behavior": "multiplied by zero in the current body forward path"
+  },
+  "mhr_forward_contract": {
+    "body_pose": "continuous 260 is converted to model pose parameters; mhr_forward uses the first 130 body values",
+    "shape": "45 coefficients",
+    "scale": "28 coefficients mapped through scale_comps to 68 actual scale values",
+    "global_body_translation": "feed-forward body head sets it to zero",
+    "vertices": "18,439 vertices; MHR output divided by 100, then y/z signs flipped by the wrapper",
+    "vertex_offsets_argument": "present in function signature but unused in this implementation"
+  },
+  "camera_contract": {
+    "raw_dimension": 3,
+    "raw_fields": [
+      "s",
+      "tx",
+      "ty"
+    ],
+    "conversion": "s plus bbox size and focal length determines tz; bbox/image/intrinsic center contributes x/y translation",
+    "metric_camera_translation": "pred_cam_t with 3 values after perspective_projection"
+  },
+  "future_controlled_parameter_groups": {
+    "camera_only": {
+      "dimensions": 3,
+      "variables": [
+        "s",
+        "tx",
+        "ty"
+      ]
+    },
+    "pose_only": {
+      "dimensions": 266,
+      "variables": [
+        "global_rotation_6d",
+        "body_continuous_260"
+      ]
+    },
+    "identity_geometry_only": {
+      "dimensions": 73,
+      "variables": [
+        "shape_45",
+        "scale_skeleton_28"
+      ]
+    },
+    "combined": {
+      "dimensions": 342,
+      "variables": [
+        "camera_3",
+        "global_rotation_6d",
+        "body_continuous_260",
+        "shape_45",
+        "scale_skeleton_28"
+      ]
+    },
+    "held_fixed": [
+      "network weights",
+      "hands_108",
+      "face_72",
+      "MHR assets"
+    ]
+  },
+  "multi_frame_sharing": {
+    "representation_support": "A custom optimization loop can pass shared shape/scale tensors and per-frame pose/camera tensors through the batched differentiable MHR path.",
+    "built_in_fitter": false,
+    "limitation": "The estimator does not provide a ready per-subject shared-parameter fitting API; it must be implemented and validated after qualified data exist."
+  },
+  "representation_limit_to_test": "The current parameterization has pose, identity shape and skeletal scale but no active local soft-tissue/contact vertex-offset term in this wrapper."
+}

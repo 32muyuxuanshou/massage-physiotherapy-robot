@@ -1,0 +1,29 @@
+{
+  "gate_state": "INCONCLUSIVE_OPTIMIZATION_OR_DATA_LIMITED",
+  "actual_fitting_executed": false,
+  "global_finetuning_executed": false,
+  "reason": "No registered/calibrated real RGB-D, qualified multi-view reconstruction, or other independent 3D visible-bare-back observation exists in the audited workspace.",
+  "not_a_failure_of_mhr": "No representation test was run, so the evidence cannot distinguish MHR representation limits from SAM image-to-parameter prediction error.",
+  "next_minimum_experiment": "Acquire three verified subjects with three calibrated RGB-D bundles each: fit view A, held-out view B, repeatability bundle C. Run staged camera/pose/shape-scale/combined per-image fitting with all network weights frozen.",
+  "primary_blockers": [
+    "data",
+    "sensor calibration",
+    "RGB-depth registration",
+    "bare-back semantic validity",
+    "independent held-out geometry"
+  ],
+  "not_current_priorities": [
+    "global finetuning",
+    "LoRA",
+    "more decoder unfreezing",
+    "DMD37 training",
+    "30-subject dataset",
+    "medical labeling"
+  ],
+  "claim_boundary": {
+    "mesh_more_accurate": false,
+    "dmd37_more_accurate": false,
+    "medical_accuracy": false,
+    "mhr_representation_failed": false
+  }
+}

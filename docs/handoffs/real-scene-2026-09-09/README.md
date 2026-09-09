@@ -2,7 +2,7 @@
 
 这是当前交付入口，替代9月7日“37点已复核、未训练”的旧状态。目标仍是复杂真实场景的人体表面贴合与固定37工程点定位，工程优先；当前无医学穴位精度或真实毫米精度结论。
 
-> **最新状态（2026-09-09）**：[背部 Surface 监督可行性审计与 V2 训练复盘](back-surface-supervision-pilot-v1/README.md) 已完成。V2 的二维关节 validation 改善复核成立，但现有数据没有独立的未见受试者背部 surface 评价，因此正式 surface 训练已按研究门槛暂停；新交付给出逐关节/长尾/梯度审计和 30 人最小采集方案。以下“V2 正在运行”的段落保留为当时状态，已由新交付取代。
+> **最新状态（2026-09-09）**：[MHR 真实背部表面可拟合性 Gate V1](mhr-back-surface-fitability-gate-v1/README.md) 已完成。Gate 为 `INCONCLUSIVE_OPTIMIZATION_OR_DATA_LIMITED`：当前没有标定、注册的真实 RGB-D 背部观测，不能运行可信 fitting 或评价 held-out surface。下一步先采 3 人 A/B/C 最小 Gate；通过后再决定 30 人数据集与微调。以下“V2 正在运行”的段落保留为当时状态，已由最新 Gate 取代。
 
 ## 请先了解这次结论
 
