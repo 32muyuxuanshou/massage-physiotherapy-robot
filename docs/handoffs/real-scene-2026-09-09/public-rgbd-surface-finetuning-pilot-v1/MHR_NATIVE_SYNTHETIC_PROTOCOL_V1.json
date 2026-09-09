@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "task_id": "PUBLIC_RGBD_SURFACE_FINETUNING_PILOT_V1",
+  "component": "MHR_NATIVE_SYNTHETIC_GENERATOR",
+  "status": "PROTOCOL_AND_MINIMUM_IMPLEMENTATION_READY_SMOKE_EXECUTION_REQUIRED",
+  "purpose": "Create exact-replayable synthetic RGB/Z-depth supervision directly from the licensed MHR TorchScript and its actual topology, then prove the generator's geometry is internally reversible before any formal training uses it.",
+  "scope_exclusions": [
+    "no SAM inference",
+    "no network training or fine-tuning",
+    "no vertex_offsets",
+    "no medical labels or DMD37 claims",
+    "no claim that bounded random MHR parameters are a natural-pose distribution",
+    "no real-domain accuracy claim"
+  ],
+  "implementation": {
+    "generator": "code/generate_mhr_native_synthetic.py",
+    "independent_validator": "code/validate_mhr_native_synthetic.py",
+    "runtime": "the existing CUDA environment that loads the official SAM 3D Body checkpoint and MHR asset",
+    "large_output_location": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/mhr_native_synthetic/",
+    "repository_policy": "Only code, protocol and a compact aggregate validation summary are committed. Model assets and generated samples remain on the server."
+  },
+  "actual_mhr_contract": {
+    "mhr_model_sha256_expected": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "vertex_count": 18439,
+    "face_count": 36874,
+    "parameter_dimensions": {
+      "global_trans": 3,
+      "global_rot": 3,
+      "body_pose_params": 133,
+      "hand_pose_params": 108,
+      "shape_params": 45,
+      "scale_params": 28,
+      "expr_params": 72
+    },
+    "wrapper_axis_conversion": "raw MHR vertices/keypoints/joints are multiplied by [1,-1,-1] before OpenCV-camera placement",
+    "topology_storage": "One batch-level int32 topology_faces.npy with dtype/shape/content SHA-256; per-sample vertices reference that exact topology.",
+    "vertex_offsets": "DISABLED: the current wrapper argument has no effect above repeated-forward numerical noise and is not exposed by the generator."
+  },
+  "sampling": {
+    "master_seed": 2026090903,
+    "seed_derivation": "NumPy SeedSequence([master_seed, identity_index, view_index]); identity shape/scale use a separate deterministic identity seed",
+    "identity_shared": [
+      "shape_params",
+      "scale_params"
+    ],
+    "per_sample": [
+      "global_rot",
+      "body_pose_params",
+      "hand_pose_params",
+      "camera intrinsics",
+      "camera extrinsics/viewpoint",
+      "material and procedural background"
+    ],
+    "global_trans": "zero in MHR; metric camera placement is saved separately",
+    "shape": "N(0,0.65), clipped to [-2.0,2.0]",
+    "scale": "N(0,0.30), clipped to [-1.25,1.25]",
+    "body_rotation_parameters": "indices 0:124 use N(0,0.11 rad), clipped to [-0.32,0.32]; embedded hand indices 62:116 are reset to zero",
+    "body_translation_parameters": "indices 124:130 fixed to zero",
+    "jaw_parameters": "indices 130:133 fixed to zero because the current body wrapper slices to 130",
+    "hand_pca": "N(0,0.07), clipped to [-0.22,0.22]",
+    "expression": "72 zeros, matching the current SAM body head",
+    "camera": "OpenCV pinhole, randomized 620-820 px focal length at 512x512, full azimuth, elevation within +/-25 degrees, roll within +/-5 degrees; distance derived from the actual generated mesh bounding sphere",
+    "raster_sample_coordinates": "pyrender/OpenGL fragment centres at (column+0.5,row+0.5); independent depth rays use the identical sample coordinate",
+    "sampling_limit": "These narrow bounds are an engineering smoke distribution chosen to avoid obvious MHR parameter explosions. They are not learned joint limits or a substitute for motion-capture pose sampling."
+  },
+  "required_per_sample_artifacts": {
+    "params.npz": "exact float32 global/body/hand/shape/scale/expression parameters",
+    "vertices_camera_m.npy": "exact float32 18439x3 mesh vertices in saved OpenCV camera coordinates",
+    "camera.json": "K, R, T, camera centre, image size, view angles, metric convention and depth definition",
+    "rgb.png": "512x512 rendered RGB composited on a deterministic procedural background",
+    "depth_z_m.npy": "float32 metric first-surface camera Z-depth; zero background",
+    "depth_mm.png": "uint16 rounded millimetre inspection/export derivative",
+    "mask.png": "uint8 foreground mask exactly equal to depth_z_m > 0",
+    "keypoints_mhr308_camera_m.npy": "all 308 MHR keypoints in camera coordinates",
+    "joints127_camera_m.npy": "all 127 MHR skeleton joint coordinates in camera coordinates",
+    "keypoints_mhr308_projection.npz": "2D coordinates, in-frame flags, z-buffer visibility flags and sampled raster depth",
+    "sample.json": "identity/view indices, all seeds, dimensions, topology/model/vertex hashes and artifact file hashes"
+  },
+  "visibility": {
+    "definition": "A keypoint is visible when it has positive Z, projects inside the image, has valid rendered depth, and its Z is no more than 0.08 m behind the first visible mesh surface.",
+    "reason_for_tolerance": "MHR keypoints may be joint-centred or surface-regressed rather than lying exactly on the rasterized skin. Visibility is an engineering occlusion label, not a medical visibility label.",
+    "stored": "all 308 labels are saved; visible count for the first MHR70 is summarized per sample"
+  },
+  "smoke_100": {
+    "identity_count": 10,
+    "samples_per_identity": 10,
+    "sample_count": 100,
+    "command": "python code/generate_mhr_native_synthetic.py --sam-repo <SAM_REPO> --checkpoint <MODEL_CKPT> --mhr <MHR_MODEL> --output /raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/mhr_native_synthetic/smoke100 --identity-count 10 --samples-per-identity 10 --master-seed 2026090903 && python code/validate_mhr_native_synthetic.py --sam-repo <SAM_REPO> --checkpoint <MODEL_CKPT> --mhr <MHR_MODEL> --dataset /raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/mhr_native_synthetic/smoke100 --output /raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/mhr_native_synthetic/smoke100_validation.json --rays-per-sample 16"
+  },
+  "full_1000": {
+    "authorization": "Run only after smoke100 automatic and visual gates pass; generation does not authorize training.",
+    "identity_count": 100,
+    "samples_per_identity": 10,
+    "sample_count": 1000,
+    "identity_disjoint_split": {
+      "train": "identity_0000 through identity_0079: 800 samples",
+      "validation": "identity_0080 through identity_0089: 100 samples",
+      "test": "identity_0090 through identity_0099: 100 samples"
+    },
+    "reason_for_identity_split": "Shape and scale are shared within identity, so sample-level random splitting would leak synthetic identity geometry.",
+    "validation": "Run the same validator on every sample with at least 8 deterministic interior rays per sample, plus visual contact sheets stratified by identity and viewpoint."
+  },
+  "automatic_validation": {
+    "params_to_mesh": {
+      "procedure": "Reload params.npz, run the same licensed MHR asset, apply the declared axis and saved camera transform, and compare vertices, 308 keypoints and 127 joints with saved arrays.",
+      "threshold": "maximum absolute coordinate difference <= 1e-6 m",
+      "hashes": "Verify model, topology, canonical stored vertex array and every artifact file hash."
+    },
+    "mesh_to_depth_to_backprojection": {
+      "procedure": "Choose deterministic pixels after 7x7 silhouette erosion and exclusion of 3x3 depth ranges >=0.03 m, backproject saved Z-depth with K, intersect the corresponding OpenCV ray independently against every front-facing saved MHR triangle, and compare the first mesh intersection with the backprojected point.",
+      "threshold": "maximum 3D ray/surface closure residual <= 0.005 m",
+      "rays": "16 per sample for smoke100; at least 8 per sample for full1000",
+    "additional_identity": "Backprojected points must reproject to their source pixels within 1e-5 px. OpenGL back-face culling and (u+0.5,v+0.5) fragment-centre sampling are reproduced explicitly rather than absorbed into a wider threshold."
+    },
+    "dataset_integrity": [
+      "sample IDs and sample seeds are unique",
+      "shape and scale are byte-identical across all ten samples of one identity",
+      "each identity occurs in exactly one train/validation/test split",
+      "the shared topology file hash matches the manifest"
+    ],
+    "image_contract": [
+      "RGB/mask/depth dimensions match camera.json",
+      "mask is byte-exact to depth_z_m > 0",
+      "all foreground depth values are finite and positive",
+      "depth_mm.png is the exact clipped rounded-millimetre derivative",
+      "foreground contains at least 1000 pixels"
+    ]
+  },
+  "smoke_acceptance": {
+    "automatic": "100/100 samples pass every validation check",
+    "visual": "Inspect a 10x10 RGB/depth/mask contact sheet; no near-plane clipping, gross self-intersection, camera crop failure, empty body, face inversion or obvious broken topology",
+    "failure_action": "Write FAIL_DO_NOT_USE, preserve the failing sample and seed, fix the root cause, then generate into a new output directory. Never overwrite a failed run."
+  },
+  "full_1000_acceptance": {
+    "automatic": "1000/1000 samples pass",
+    "visual": "Review at least 100 stratified samples including every identity and the azimuth/elevation extremes",
+    "distribution_review": "Report pose/shape/scale/camera histograms and reject obvious pathological modes before any training proposal",
+    "training_boundary": "Passing validates generator geometry only. A separate experiment must decide whether synthetic images improve real held-out HuMMan or target-domain RGB-D performance."
+  }
+}

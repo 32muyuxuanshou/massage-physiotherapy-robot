@@ -1,0 +1,296 @@
+{
+  "status": "PASS_1_EPOCH_ENGINEERING_SMOKE_NOT_EFFICACY",
+  "initialization": "Official SAM 3D Body checkpoint",
+  "trainable_modules": [
+    "head_pose.proj",
+    "head_camera.proj"
+  ],
+  "vertex_offsets": "DISABLED",
+  "sealed_data_accessed": false,
+  "new_supervision": "Camera-A person-mask RGB-D surface only",
+  "stability_terms": "detached Official teacher 2D and pelvis-relative 3D joints plus head-init L2",
+  "selection_metric": "mean across VAL subjects of each subject's median frame-level exact observed-to-triangle median distance in mm",
+  "selected_checkpoint": null,
+  "baseline_validation": {
+    "aggregation": {
+      "subject_count": 1,
+      "point_to_triangle_mean_of_subject_frame_medians_mm": 135.91849812499288,
+      "point_to_triangle_median_of_subject_frame_medians_mm": 135.91849812499288,
+      "point_to_triangle_p90_of_subject_frame_medians_mm": 135.91849812499288,
+      "point_to_triangle_p95_of_subject_frame_medians_mm": 135.91849812499288,
+      "point_to_triangle_mean_of_subject_frame_p90_mm": 317.4489639991971,
+      "point_to_triangle_mean_of_subject_frame_p95_mm": 356.83166468735885,
+      "rendered_depth_mean_of_subject_frame_medians_mm": 130.66637516021729,
+      "rendered_depth_mean_of_subject_frame_p90_mm": 247.23709821701053,
+      "rendered_depth_mean_of_subject_frame_p95_mm": 272.60712087154377,
+      "rendered_depth_median_coverage": 0.4026174349567588,
+      "subjects": [
+        {
+          "subject_id": "p001037",
+          "point_to_triangle_frame_median_mm": 135.91849812499288,
+          "point_to_triangle_frame_p90_mm": 317.4489639991971,
+          "point_to_triangle_frame_p95_mm": 356.83166468735885,
+          "rendered_depth_frame_median_mm": 130.66637516021729,
+          "rendered_depth_frame_p90_mm": 247.23709821701053,
+          "rendered_depth_frame_p95_mm": 272.60712087154377,
+          "rendered_depth_coverage": 0.4026174349567588
+        }
+      ]
+    },
+    "parameter_sanity": {
+      "limits": {
+        "camera_translation_delta_m": 0.5,
+        "global_rotation_rms_parameter": 0.75,
+        "body_pose_rms_parameter": 0.75
+      },
+      "maximum_over_val_observations": {
+        "camera_translation_delta_m": 2.421438694000244e-08,
+        "global_rotation_rms_parameter": 6.882551417675131e-08,
+        "body_pose_rms_parameter": 1.944144969456829e-07
+      },
+      "within_all_limits": true
+    },
+    "observations": [
+      {
+        "id": "p001037_a000025_f000032",
+        "subject_id": "p001037",
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 18608,
+          "unit": "mm",
+          "mean_mm": 219.33122817453412,
+          "median_mm": 203.2158654740458,
+          "p90_mm": 461.0345009100597,
+          "p95_mm": 475.14208789986236,
+          "max_mm": 524.4411279368003
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 6310,
+          "unit": "mm",
+          "mean_mm": 187.52071842338694,
+          "median_mm": 208.70423316955566,
+          "p90_mm": 318.90337467193604,
+          "p95_mm": 345.70824503898604,
+          "max_mm": 580.3718566894531,
+          "observed_point_count": 18608,
+          "in_image_count": 18608,
+          "overlap_count": 6310,
+          "mesh_coverage_of_observed_points": 0.3391014617368874,
+          "signed_mean_mm": 184.77052595649394,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 2.421438694000244e-08,
+          "global_rotation_rms_parameter": 0.0,
+          "body_pose_rms_parameter": 1.1705632374514607e-07
+        }
+      },
+      {
+        "id": "p001037_a000025_f000064",
+        "subject_id": "p001037",
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 21378,
+          "unit": "mm",
+          "mean_mm": 83.28333750205361,
+          "median_mm": 68.62113077593995,
+          "p90_mm": 173.8634270883345,
+          "p95_mm": 238.52124147485537,
+          "max_mm": 669.5061932094752
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 9965,
+          "unit": "mm",
+          "mean_mm": 76.23580126563807,
+          "median_mm": 52.628517150878906,
+          "p90_mm": 175.57082176208502,
+          "p95_mm": 199.5059967041015,
+          "max_mm": 329.49864864349365,
+          "observed_point_count": 21378,
+          "in_image_count": 21378,
+          "overlap_count": 9965,
+          "mesh_coverage_of_observed_points": 0.4661334081766302,
+          "signed_mean_mm": 66.10218555079115,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 1.4901161193847656e-08,
+          "global_rotation_rms_parameter": 6.882551417675131e-08,
+          "body_pose_rms_parameter": 1.944144969456829e-07
+        }
+      }
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "training_loss_component_means": {
+        "total": 0.07564337411895394,
+        "surface_m": 0.07564337411895394,
+        "teacher_joint_2d": 1.2156942304933921e-15,
+        "teacher_joint_3d": 8.648475536185397e-15,
+        "head_initialization": 0.0
+      },
+      "validation": {
+        "aggregation": {
+          "subject_count": 1,
+          "point_to_triangle_mean_of_subject_frame_medians_mm": 119.32451522241885,
+          "point_to_triangle_median_of_subject_frame_medians_mm": 119.32451522241885,
+          "point_to_triangle_p90_of_subject_frame_medians_mm": 119.32451522241885,
+          "point_to_triangle_p95_of_subject_frame_medians_mm": 119.32451522241885,
+          "point_to_triangle_mean_of_subject_frame_p90_mm": 289.798186964799,
+          "point_to_triangle_mean_of_subject_frame_p95_mm": 326.18171557674634,
+          "rendered_depth_mean_of_subject_frame_medians_mm": 113.25505375862122,
+          "rendered_depth_mean_of_subject_frame_p90_mm": 225.0099003314972,
+          "rendered_depth_mean_of_subject_frame_p95_mm": 249.9192416667938,
+          "rendered_depth_median_coverage": 0.44047444086128673,
+          "subjects": [
+            {
+              "subject_id": "p001037",
+              "point_to_triangle_frame_median_mm": 119.32451522241885,
+              "point_to_triangle_frame_p90_mm": 289.798186964799,
+              "point_to_triangle_frame_p95_mm": 326.18171557674634,
+              "rendered_depth_frame_median_mm": 113.25505375862122,
+              "rendered_depth_frame_p90_mm": 225.0099003314972,
+              "rendered_depth_frame_p95_mm": 249.9192416667938,
+              "rendered_depth_coverage": 0.44047444086128673
+            }
+          ]
+        },
+        "parameter_sanity": {
+          "limits": {
+            "camera_translation_delta_m": 0.5,
+            "global_rotation_rms_parameter": 0.75,
+            "body_pose_rms_parameter": 0.75
+          },
+          "maximum_over_val_observations": {
+            "camera_translation_delta_m": 0.02785550430417061,
+            "global_rotation_rms_parameter": 0.004779944662004709,
+            "body_pose_rms_parameter": 0.003909762017428875
+          },
+          "within_all_limits": true
+        },
+        "observations": [
+          {
+            "id": "p001037_a000025_f000032",
+            "subject_id": "p001037",
+            "point_to_triangle": {
+              "metric": "observed_to_exact_triangle_surface",
+              "sample_count": 18608,
+              "unit": "mm",
+              "mean_mm": 197.8990288420262,
+              "median_mm": 181.6867844730146,
+              "p90_mm": 428.9998313724068,
+              "p95_mm": 443.2150792953214,
+              "max_mm": 491.69075906193797
+            },
+            "rendered_depth": {
+              "metric": "heldout_rendered_depth_absolute_z_residual",
+              "sample_count": 6912,
+              "unit": "mm",
+              "mean_mm": 171.60192421740956,
+              "median_mm": 181.13327026367188,
+              "p90_mm": 300.9588122367859,
+              "p95_mm": 325.1148819923401,
+              "max_mm": 588.7081623077393,
+              "observed_point_count": 18608,
+              "in_image_count": 18608,
+              "overlap_count": 6912,
+              "mesh_coverage_of_observed_points": 0.3714531384350817,
+              "signed_mean_mm": 166.97719858752356,
+              "depth_definition": "OpenCV camera +Z metric z-depth"
+            },
+            "parameter_delta_from_official": {
+              "camera_translation_delta_m": 0.02785550430417061,
+              "global_rotation_rms_parameter": 0.004294149111956358,
+              "body_pose_rms_parameter": 0.003909762017428875
+            }
+          },
+          {
+            "id": "p001037_a000025_f000064",
+            "subject_id": "p001037",
+            "point_to_triangle": {
+              "metric": "observed_to_exact_triangle_surface",
+              "sample_count": 21378,
+              "unit": "mm",
+              "mean_mm": 70.6943330303539,
+              "median_mm": 56.962245971823094,
+              "p90_mm": 150.5965425571913,
+              "p95_mm": 209.14835185817122,
+              "max_mm": 669.6147485665756
+            },
+            "rendered_depth": {
+              "metric": "heldout_rendered_depth_absolute_z_residual",
+              "sample_count": 10892,
+              "unit": "mm",
+              "mean_mm": 64.98487805383327,
+              "median_mm": 45.37683725357056,
+              "p90_mm": 149.0609884262085,
+              "p95_mm": 174.7236013412475,
+              "max_mm": 307.13415145874023,
+              "observed_point_count": 21378,
+              "in_image_count": 21378,
+              "overlap_count": 10892,
+              "mesh_coverage_of_observed_points": 0.5094957432874918,
+              "signed_mean_mm": 50.434637816128294,
+              "depth_definition": "OpenCV camera +Z metric z-depth"
+            },
+            "parameter_delta_from_official": {
+              "camera_translation_delta_m": 0.025818118825554848,
+              "global_rotation_rms_parameter": 0.004779944662004709,
+              "body_pose_rms_parameter": 0.00367349642328918
+            }
+          }
+        ]
+      },
+      "counters": {
+        "optimizer_updates": 1,
+        "training_observation_exposures": 4
+      },
+      "elapsed_seconds": 43.61272883415222,
+      "checkpoint_selection_eligible": true
+    }
+  ],
+  "counters": {
+    "optimizer_updates": 1,
+    "training_observation_exposures": 4
+  },
+  "epochs_planned": 1,
+  "epochs_completed": 1,
+  "stop_reason": "PLANNED_FINAL_EPOCH",
+  "early_stop_state": {
+    "best_value_mm": 119.32451522241885,
+    "best_epoch": 1,
+    "epochs_without_improvement": 0,
+    "stopped_early": false
+  },
+  "elapsed_seconds": 43.79289793968201,
+  "peak_cuda_allocated_gib": 3.17236328125,
+  "checkpoints": [
+    {
+      "path": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/smoke_epoch1_run6/official_pose_camera_epoch1.pt",
+      "sha256": "2a83b90408b4cf58025ae8b5c7ebaeba58a247952b39d5f78ce7913b52cf9dc6",
+      "bytes": 31625670,
+      "head_state_roundtrip_exact": true
+    }
+  ],
+  "smoke_gate": {
+    "exactly_one_epoch": true,
+    "optimizer_updates_exact": true,
+    "observation_exposures_exact": true,
+    "both_heads_received_nonzero_finite_gradient": true,
+    "checkpoint_roundtrip_exact": true,
+    "validation_primary_finite": true,
+    "rendered_depth_coverage_above_floor": true,
+    "sealed_data_accessed": false
+  },
+  "input_assets": {
+    "official_checkpoint_sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+    "mhr_model_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc"
+  },
+  "protocol_sha256": "ace0499bee388b12b41d835dc87cb9fbcf48acb1d0b4c35b59b5d633e7346ea6",
+  "workset_sha256": "e8b6f3d5bb35ff24cc362f84fb20bc1da781674415167efc1065c02f78308f32",
+  "claim_limit": "A smoke pass proves execution integrity only; VAL efficacy and SEALED generalization remain unclaimed."
+}

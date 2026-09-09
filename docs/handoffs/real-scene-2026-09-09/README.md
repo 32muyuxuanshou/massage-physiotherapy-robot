@@ -2,7 +2,7 @@
 
 这是当前交付入口，替代9月7日“37点已复核、未训练”的旧状态。目标仍是复杂真实场景的人体表面贴合与固定37工程点定位，工程优先；当前无医学穴位精度或真实毫米精度结论。
 
-> **最新状态（2026-09-09）**：[公开 RGB-D MHR 可拟合性实验 V1](public-rgbd-mhr-fitability-sanity-v1/README.md) 已完成。Gate 为 `PASS_PUBLIC_MHR_FITABILITY_SANITY`：HuMMan-Point 5 人的 Camera A fitting 在未参与优化的 Camera B 上也一致改善，组合优化后的 held-out 中位误差 subject-mean 为 Official 22.1 mm、V2-E5 24.1 mm。公开样本是穿衣平板/支撑姿态，并非治疗床裸背俯卧；下一步采自己的 3 人目标域 RGB-D Gate，暂不启动 30 人数据集或 decoder/LoRA。以下旧状态段落保留作历史追溯，由本条取代。
+> **最新状态（2026-09-10）**：[公开 RGB-D Surface 微调 Pilot V1](public-rgbd-surface-finetuning-pilot-v1/README.md) 已完成。Gate 为 `PASS_REAL_RGBD_SURFACE_FINETUNING_PILOT`：从 Official 初始化、只训练 pose/camera 输出头，E1 在 5 名 SEALED 真人上将 subject-macro point-to-triangle 误差从 58.72 mm 降至 27.54 mm，3/5 人改善，P90/P95 同向改善，全程无 test-time fitting。两名低初始误差个体退化，当前只证明 HuMMan 穿衣人体的 feed-forward surface 改善。
 
 ## 请先了解这次结论
 

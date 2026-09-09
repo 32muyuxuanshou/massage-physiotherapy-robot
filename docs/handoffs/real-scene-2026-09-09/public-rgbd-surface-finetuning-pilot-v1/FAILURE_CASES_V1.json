@@ -1,0 +1,30 @@
+{
+  "status": "MIXED_SUBJECT_RESPONSE",
+  "sealed_subjects_worsened": [
+    {
+      "subject_id": "p000757",
+      "official_primary_mm": 18.787299255703434,
+      "finetuned_primary_mm": 21.02848123370306,
+      "delta_mm": 2.241181977999627,
+      "improved": false,
+      "official_p90_mm": 48.68461179438076,
+      "finetuned_p90_mm": 56.837994779768025,
+      "official_p95_mm": 63.239065931808895,
+      "finetuned_p95_mm": 72.38974533179552
+    },
+    {
+      "subject_id": "p000830",
+      "official_primary_mm": 20.007759570443678,
+      "finetuned_primary_mm": 29.985125810280515,
+      "delta_mm": 9.977366239836837,
+      "improved": false,
+      "official_p90_mm": 61.64499298267578,
+      "finetuned_p90_mm": 67.5826008452089,
+      "official_p95_mm": 70.09664930872472,
+      "finetuned_p95_mm": 83.45882591151067
+    }
+  ],
+  "count_worsened": 2,
+  "count_improved": 3,
+  "interpretation": "The large aggregate gain is partly driven by correcting high-error Official cases. Two already-low-error subjects regress, so the current head-only objective is not uniformly safe."
+}

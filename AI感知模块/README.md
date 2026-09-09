@@ -1,6 +1,6 @@
 # AI 感知模块
 
-> **网页端最新交付（2026-09-09）：** [公开 RGB-D MHR 可拟合性实验 V1](../docs/handoffs/real-scene-2026-09-09/public-rgbd-mhr-fitability-sanity-v1/README.md)。Gate 为 `PASS_PUBLIC_MHR_FITABILITY_SANITY`：HuMMan-Point 5 人、40 次冻结网络实验中，未参与拟合的 Camera B 也一致改善；Official/V2-E5 组合优化后的 subject-mean 中位误差为 22.1/24.1 mm。它只证明穿衣支撑姿态的 MHR 可拟合性，下一步必须采 3 名治疗床俯卧、裸背目标域 RGB-D，暂不扩到 30 人或继续 decoder/LoRA。
+> **网页端最新交付（2026-09-10）：** [公开 RGB-D Surface 微调 Pilot V1](../docs/handoffs/real-scene-2026-09-09/public-rgbd-surface-finetuning-pilot-v1/README.md)。Gate 为 `PASS_REAL_RGBD_SURFACE_FINETUNING_PILOT`：只训练 pose/camera 输出头后，E1 在 5 名 SEALED HuMMan 真人上将 feed-forward surface 主误差从 58.72 mm 降至 27.54 mm，3/5 人改善，且无 test-time fitting。下一步先解决低误差个体退化，再扩数据和建立治疗床裸背目标域 Gate。
 
 官方SAM预训练推理、真实照片mesh叠加及项目37点传播已跑通。只贴mesh无需训练；没有完整复现论文训练与基准评测。当前计算服务器为172.18.18.151，COCO首批1,280张图片与原始人体标注已就绪；另行授权下载的官方COCO MHR标注24/24分片已验证，现有图库匹配641张图片、1,110条人体标注。其它SAM数据来源未下载。网络训练、穴位精度和标签放行状态以当前状态记录为准。
 

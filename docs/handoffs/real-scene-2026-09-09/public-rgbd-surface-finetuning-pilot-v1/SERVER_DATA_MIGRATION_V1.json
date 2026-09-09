@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "status": "COMPLETED_VERIFIED",
+  "completed_at": "2026-09-09T20:38:00+08:00",
+  "policy": "SERVER_FIRST_FOR_NEW_DATA_AND_LARGE_EXPERIMENT_ARTIFACTS",
+  "server": "172.18.18.151:436",
+  "server_archive_root": "/raid5/xuhd/datasets/humman/archives",
+  "server_experiment_root": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1",
+  "total_bytes": 55753113208,
+  "server_du": "52G",
+  "server_filesystem_at_start": {
+    "mount": "/raid5",
+    "size": "44T",
+    "available": "1.8T",
+    "use_percent": 96
+  },
+  "files": [
+    {"file": "point_cameras.7z", "bytes": 58953, "sha256": "45568209120dc8b8abd728a8cfeb26f44d54b5990eae71512efc207497474924"},
+    {"file": "point_kinect_color_part_02.7z", "bytes": 13892569135, "sha256": "3d49992304f3c689e4d23841fd3232c11b6ee4ff357181b58944a6a008af81d4"},
+    {"file": "point_kinect_depth_part_08.7z", "bytes": 20142712774, "sha256": "16bac430062f5b4efd5c63baa23820d957b126add37de99e1626b979a604fefa"},
+    {"file": "point_kinect_depth_part_09.7z", "bytes": 20317952592, "sha256": "3665a6c4494a0cac5404f605fb0a80d5e0ba2a4049f9aa570c56e90899d78507"},
+    {"file": "point_kinect_mask.7z", "bytes": 1376700892, "sha256": "6f7a7a5c9b4942bc50acb22593af8c28373592438faba9aa4f8d4125f114c950"},
+    {"file": "smpl_params.7z", "bytes": 23118862, "sha256": "2cccdcee712ea7f1f5a06e7621c9f39910317955b5063339d9d131d65399a4fd"}
+  ],
+  "verification": {
+    "method": "sha256 recomputed independently on server after transfer",
+    "all_six_match_local_download_report": true,
+    "partial_old_files_transferred": false
+  },
+  "storage_rule": "Before any additional download or extraction, record expected bytes, expected new usable subjects, working-set size, and peak free-space requirement."
+}

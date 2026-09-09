@@ -1,0 +1,23 @@
+{
+  "status": "DEFINED_NOT_RUN",
+  "protocol": "TRAINING_PROTOCOL_V1.json",
+  "entrypoint": "code/train_rgbd_surface.py --mode smoke",
+  "hard_preconditions": [
+    "TRAINING_PROTOCOL_V1 status is FROZEN_FOR_1_EPOCH_SMOKE",
+    "workset manifest final_split_frozen is true",
+    "workset manifest workset_qa_passed is true",
+    "all TRAIN/VAL observation checksums match",
+    "no SEALED sample or SEALED-named materialized path is present"
+  ],
+  "pass_conditions": [
+    "one epoch exactly",
+    "optimizer updates equal ceil(selected TRAIN observations / accumulation)",
+    "exposures equal selected TRAIN observations",
+    "pose and camera projection heads both receive finite non-zero gradients",
+    "Camera-B subject-macro point-to-triangle result is finite",
+    "median Camera-B rendered-depth coverage is at least 0.05",
+    "checkpoint head tensors survive an exact save/load round trip"
+  ],
+  "failure_policy": "Stop. Keep the report and checkpoint marked research-only; do not start the formal pilot.",
+  "claim_limit": "PASS means the governed one-epoch path works. It does not establish improvement, generalization, clinical accuracy or READY_TO_TRAIN."
+}

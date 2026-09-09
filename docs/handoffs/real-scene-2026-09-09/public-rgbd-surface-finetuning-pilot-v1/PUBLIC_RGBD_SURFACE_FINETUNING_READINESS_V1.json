@@ -1,0 +1,37 @@
+{
+  "task": "PUBLIC_RGBD_SURFACE_FINETUNING_PILOT_V1",
+  "status": "READY_FOR_FINETUNING",
+  "assessed_at": "2026-09-10T00:00:00+08:00",
+  "checks": {
+    "subject_split_frozen": true,
+    "train_subjects_sufficient_for_feasibility_pilot": true,
+    "validation_subjects_exist": true,
+    "sealed_test_subjects_reserved_and_unread": true,
+    "no_subject_leakage": true,
+    "geometry_contract_passed": true,
+    "surface_metric_unit_tests_passed": true,
+    "differentiable_surface_loss_passed": true,
+    "gradient_audit_passed": true,
+    "one_epoch_smoke_passed": true,
+    "parameter_sanity_passed": true,
+    "zero_sealed_access": true
+  },
+  "evidence": {
+    "archive_usable_subjects": 131,
+    "train_subjects": 15,
+    "val_subjects": 5,
+    "sealed_subjects": 5,
+    "new_download_gb": 0.0,
+    "server_workset_bytes": 566269128,
+    "smoke_optimizer_updates": 1,
+    "smoke_observation_exposures": 4,
+    "smoke_peak_cuda_allocated_gib": 3.17236328125,
+    "smoke_baseline_primary_mm": 135.9184458403629,
+    "smoke_epoch1_primary_mm": 119.3238821573517,
+    "smoke_checkpoint_sha256": "f92b6a44f6f90127a9dc588fc9ce270ed4a23b4b499dddc5412d78bbcc8569c8",
+    "workset_sha256": "e8b6f3d5bb35ff24cc362f84fb20bc1da781674415167efc1065c02f78308f32"
+  },
+  "authorization": "Formal training may start only after TRAINING_PROTOCOL_V1 is frozen for the E1-E10 observation window.",
+  "claim_limit": "Readiness is an engineering gate. It is not evidence of unseen-subject efficacy or deployment readiness.",
+  "post_readiness_note": "Formal E1-E10 completed; this file remains the pre-training readiness decision."
+}

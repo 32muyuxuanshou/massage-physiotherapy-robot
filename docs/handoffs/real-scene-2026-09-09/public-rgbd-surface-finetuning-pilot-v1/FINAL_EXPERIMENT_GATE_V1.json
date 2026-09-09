@@ -1,0 +1,23 @@
+{
+  "status": "PASS_REAL_RGBD_SURFACE_FINETUNING_PILOT",
+  "readiness_gate": "READY_FOR_FINETUNING",
+  "best_epoch": 1,
+  "actual_epochs": 10,
+  "optimizer_updates": 120,
+  "person_exposures": 450,
+  "stop_reason": "E1 remained best through E10; train loss kept falling while unseen-subject VAL regressed after E1. No E20 extension.",
+  "sealed_subjects_improved": "3/5",
+  "official_primary_mm": 58.71738433858261,
+  "finetuned_primary_mm": 27.535311170647503,
+  "primary_relative_improvement_percent": 53.10535119910932,
+  "official_mean_frame_p90_mm": 128.26245107807387,
+  "finetuned_mean_frame_p90_mm": 73.8069657162857,
+  "official_mean_frame_p95_mm": 146.45672081222597,
+  "finetuned_mean_frame_p95_mm": 94.323912383798,
+  "official_rendered_depth_median_mm": 75.06041526794434,
+  "finetuned_rendered_depth_median_mm": 44.362759590148926,
+  "no_test_time_fitting": true,
+  "parameter_sanity_passed": true,
+  "joint_regression": "NO_SEVERE_OFFICIAL_RELATIVE_REGRESSION; no joint GT accuracy claim",
+  "claim": "Public HuMMan unseen-subject feed-forward clothed-body surface improvement only."
+}

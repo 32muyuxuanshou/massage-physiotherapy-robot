@@ -1,0 +1,17 @@
+{
+  "status": "FROZEN_BEST_CHECKPOINT_SERVER_ONLY",
+  "selected_epoch": 1,
+  "selection_split": "VAL",
+  "selection_metric": "mean across VAL subjects of each subject's median frame-level exact observed-to-triangle median distance in mm",
+  "selection_value_mm": 29.74557723772204,
+  "server_path": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/formal_to_epoch10_v1/official_pose_camera_epoch1.pt",
+  "bytes": 31631430,
+  "sha256": "2baa8f11b51e53e19347a3a0536c7de3e6c00cc81748120e4043ac7878acd82c",
+  "head_state_roundtrip_exact": true,
+  "initialization": "Official SAM 3D Body",
+  "trainable_modules": [
+    "head_pose.proj",
+    "head_camera.proj"
+  ],
+  "not_committed_to_git": true
+}

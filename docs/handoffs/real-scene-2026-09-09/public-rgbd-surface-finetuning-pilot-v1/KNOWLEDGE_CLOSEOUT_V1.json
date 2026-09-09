@@ -1,0 +1,32 @@
+{
+  "status": "KNOWLEDGE_CLOSED",
+  "facts": {
+    "code": "changed-and-verified",
+    "runtime": "verified-current",
+    "documentation": "changed-and-verified",
+    "rules": "verified-current",
+    "memory": "not-applicable-generated-read-only",
+    "workspace": "pending-user-review-before-cleanup"
+  },
+  "runtime_evidence": [
+    "FORMAL_E1_E10_TRAINING_REPORT_V1.json",
+    "SEALED_TEST_SURFACE_RESULTS_V1.json",
+    "FINAL_EXPERIMENT_GATE_V1.json"
+  ],
+  "current_authoritative_entry": "README.md",
+  "pending_cleanup_candidates": [
+    "humman_local_inventory.json",
+    "humman_minimum_download_plan.json",
+    "humman_subject_split_candidates.json"
+  ],
+  "cleanup_note": "Draft-like files remain for review and provenance; no destructive cleanup performed before user review.",
+  "out_of_scope": [
+    "treatment-table bare-back domain validation",
+    "medical DMD37 accuracy",
+    "robot deployment"
+  ],
+  "warnings": [
+    "Two of five SEALED subjects regress despite aggregate improvement.",
+    "Joint metrics are stability proxies against Official, not ground-truth accuracy."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETED_READ_ONLY_DEV5",
+  "models": [
+    "official",
+    "v2_e5"
+  ],
+  "subjects_per_model": 5,
+  "optimizer_steps": 0,
+  "checkpoint_written": false,
+  "sealed_test_accessed": false,
+  "all_subjects_nonzero_paths": [
+    "surface_loss_to_mesh_vertices",
+    "surface_loss_to_raw_pose_output",
+    "surface_loss_to_raw_camera_output",
+    "surface_loss_to_pose_head_parameters",
+    "surface_loss_to_camera_head_parameters"
+  ],
+  "official_subject_mean_gradient_norms": {
+    "pose_head_parameters": 9.338401412963867,
+    "camera_head_parameters": 8.382400798797608,
+    "raw_pose_output": 0.22784550189971925,
+    "raw_camera_output": 1.8140352487564086,
+    "mesh_vertices": 0.11181917637586594
+  },
+  "v2_e5_subject_mean_gradient_norms": {
+    "pose_head_parameters": 9.514814376831055,
+    "camera_head_parameters": 8.372860050201416,
+    "raw_pose_output": 0.22645210325717927,
+    "raw_camera_output": 1.8596870183944703,
+    "mesh_vertices": 0.12115639746189118
+  },
+  "finding": "A real differentiable RGB-D surface loss reaches both proposed trainable output heads on every DEV subject.",
+  "claim_limit": "This establishes gradient connectivity, not optimization quality or generalization.",
+  "canonical_detail": "SURFACE_GRADIENT_CHAIN_AUDIT_V1.json"
+}

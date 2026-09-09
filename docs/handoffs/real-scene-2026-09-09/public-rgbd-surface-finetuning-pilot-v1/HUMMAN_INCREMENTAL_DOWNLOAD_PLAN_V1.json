@@ -1,0 +1,35 @@
+{
+  "status": "NO_NEW_PUBLIC_DATA_DOWNLOAD_NEEDED_FOR_INITIAL_STRUCTURAL_PILOT",
+  "new_download_destination": "SERVER_ONLY; no further local downloads",
+  "additional_public_archive_bytes_minimum": 0,
+  "rationale": "Select new subjects from already downloaded RGB/depth/mask/calibration intersection first.",
+  "server_existing_data_inventory": "not_checked_by_this_local_read_only_worker",
+  "next_actions": [
+    "Audit server existing files/checksums before any transfer.",
+    "Transfer only selected missing sequence files if available; otherwise transfer existing local archives then extract on server.",
+    "Reserve SEALED subjects by ID now; do not inspect their image content for method tuning.",
+    "If extra action/body-type coverage is demonstrated necessary, inspect remote archive headers on server and choose smallest additional depth shard with existing color_part02 coverage."
+  ],
+  "existing_remote_archive_index": "E:\\项目-按摩理疗机器人\\AI感知模块\\outputs\\内部工程证据\\2026-09-09_PUBLIC_RGBD_MHR_FITABILITY_SANITY_V1\\humman_meta\\remote_archive_inventory.json",
+  "no_download_executed": true,
+  "server_first_policy": {
+    "download_new_data_to": "server_only",
+    "local_new_dataset_downloads_allowed": false,
+    "local_archives": "Retain historical files; migrate or copy to server, verify checksums before using server copy.",
+    "extraction": "Server only for new subject RGB/depth/mask payloads; select sequences rather than full expansion.",
+    "local_artifacts": "Code, JSON audit reports and compact review outputs only."
+  },
+  "storage_constraint": {
+    "reported_remaining_server_bytes": 1800000000000,
+    "reported_remaining_display": "1.8 TB",
+    "measurement_source": "Current task constraint; not independently measured by this local worker",
+    "known_archive_payload_bytes": 55753113208,
+    "known_archive_share_of_reported_free": 0.03097395178222222,
+    "required_preflight": "Measure current free disk on destination server; account for existing files, transfers, selective decompression, processed targets, caches and checkpoints.",
+    "uncompressed_selected_payload_bytes": "unknown_until_selected archive-entry sizes are budgeted",
+    "execution_gate": "Do not schedule downloads/extraction whose projected peak disk usage exceeds measured available space; retain operating headroom.",
+    "avoid_full_expansion": true
+  },
+  "selection_rule_frozen": true,
+  "final_split_frozen": false
+}

@@ -1,0 +1,410 @@
+{
+  "status": "FINAL_SPLIT_FROZEN_AND_SEALED_EVALUATION_COMPLETED",
+  "rule_frozen": true,
+  "final_split_frozen": true,
+  "final_split_frozen_at": "2026-09-09T22:08:36+08:00",
+  "final_freeze_binding": {
+    "workset_manifest": "FINAL_FROZEN_WORKSET_MANIFEST_V1.json",
+    "workset_manifest_sha256": "e8b6f3d5bb35ff24cc362f84fb20bc1da781674415167efc1065c02f78308f32",
+    "nonsealed_rgbd_qa_final_sha256": "cc1d64069f1b6bce58743aeb6b9993935a1828afff28591bdd64592c19db1537",
+    "training_samples": 45,
+    "validation_samples": 15,
+    "dev_samples_excluded": 18,
+    "sealed_pixels_read": false
+  },
+  "final_subjects": {
+    "DEV_EXCLUDED_FROM_TRAINER": [
+      "p000823",
+      "p000879",
+      "p000880",
+      "p000881",
+      "p001088",
+      "p001110"
+    ],
+    "TRAIN": [
+      "p000816",
+      "p000821",
+      "p000826",
+      "p000831",
+      "p000837",
+      "p000859",
+      "p000861",
+      "p000874",
+      "p000902",
+      "p000924",
+      "p000942",
+      "p000956",
+      "p000973",
+      "p001008",
+      "p001018"
+    ],
+    "VAL": [
+      "p000842",
+      "p000853",
+      "p000913",
+      "p000914",
+      "p001037"
+    ],
+    "SEALED_EXCLUDED": [
+      "p000757",
+      "p000783",
+      "p000830",
+      "p000878",
+      "p001002"
+    ]
+  },
+  "seed": "humman-pilot-v1-20260909",
+  "rule": "Remove all exposed subjects to DEV; sort remaining structural pool by SHA256(seed + colon + subject); first 5 SEALED, next 5 VAL, next 15 TRAIN; all others UNASSIGNED_RESERVE.",
+  "subject_disjoint": true,
+  "all_sequences_actions_frames_cameras_follow_subject": true,
+  "candidate_subjects": {
+    "DEV": [
+      "p000823",
+      "p000879",
+      "p000880",
+      "p000881",
+      "p001088",
+      "p001110"
+    ],
+    "TRAIN": [
+      "p000924",
+      "p000861",
+      "p000837",
+      "p000859",
+      "p000826",
+      "p000816",
+      "p000874",
+      "p001008",
+      "p000973",
+      "p000831",
+      "p000902",
+      "p000942",
+      "p001018",
+      "p000956",
+      "p000821"
+    ],
+    "VAL": [
+      "p001037",
+      "p000913",
+      "p000853",
+      "p000914",
+      "p000842"
+    ],
+    "SEALED": [
+      "p000830",
+      "p001002",
+      "p000757",
+      "p000783",
+      "p000878"
+    ],
+    "UNASSIGNED_RESERVE": [
+      "p000805",
+      "p000832",
+      "p000834",
+      "p000793",
+      "p001005",
+      "p001028",
+      "p001049",
+      "p000907",
+      "p000854",
+      "p000936",
+      "p000790",
+      "p001024",
+      "p000875",
+      "p000996",
+      "p000785",
+      "p000966",
+      "p000983",
+      "p000961",
+      "p000835",
+      "p001109",
+      "p000931",
+      "p001036",
+      "p001096",
+      "p000971",
+      "p000802",
+      "p000923",
+      "p001030",
+      "p000813",
+      "p000846",
+      "p000838",
+      "p000843",
+      "p000921",
+      "p000872",
+      "p000959",
+      "p000829",
+      "p000807",
+      "p000814",
+      "p000789",
+      "p000771",
+      "p000758",
+      "p000877",
+      "p000810",
+      "p000852",
+      "p000939",
+      "p000997",
+      "p000828",
+      "p000792",
+      "p001004",
+      "p000955",
+      "p000917",
+      "p000827",
+      "p000794",
+      "p001017",
+      "p000857",
+      "p001042",
+      "p000845",
+      "p000808",
+      "p000904",
+      "p000847",
+      "p000972",
+      "p000833",
+      "p000839",
+      "p000851",
+      "p000901",
+      "p000844",
+      "p000989",
+      "p000988",
+      "p001091",
+      "p000945",
+      "p000952",
+      "p000908",
+      "p000978",
+      "p000963",
+      "p000970",
+      "p000998",
+      "p001048",
+      "p000922",
+      "p000985",
+      "p000893",
+      "p000977",
+      "p001031",
+      "p000915",
+      "p000817",
+      "p000858",
+      "p000926",
+      "p000938",
+      "p000764",
+      "p000894",
+      "p001039",
+      "p000912",
+      "p000984",
+      "p001001",
+      "p000891",
+      "p000964",
+      "p000969",
+      "p001052",
+      "p000841",
+      "p000864",
+      "p000948",
+      "p001040"
+    ]
+  },
+  "candidate_counts": {
+    "DEV": 6,
+    "TRAIN": 15,
+    "VAL": 5,
+    "SEALED": 5,
+    "UNASSIGNED_RESERVE": 100
+  },
+  "final_freeze_preconditions": [
+    "Server archive migration and checksum manifest complete.",
+    "Reconcile server-only exposure records with repository audit; exclude any newly exposed subjects.",
+    "Freeze final subject list and manifest hashes before training; do not use SEALED pixels/results for selection or tuning."
+  ],
+  "initial_budget": "Approximately 30 subjects including DEV5; 1 sequence per subject, sparse frame sampling.",
+  "frame_sampling_rule": "After server metadata verification, use up to 3 synchronized frames per chosen sequence at 25/50/75 percent of the usable frame range, deduplicated; freeze frame IDs before training.",
+  "exposure_audit": "HUMMAN_EXPOSURE_AUDIT_V1.json",
+  "exposed_subjects_removed_from_val_and_sealed": [],
+  "one_sequence_per_subject_candidates": {
+    "p000823": {
+      "sequence": "p000823_a000035",
+      "action": "a000035",
+      "action_name": "Straight Arm Plank",
+      "split": "DEV"
+    },
+    "p000879": {
+      "sequence": "p000879_a005516",
+      "action": "a005516",
+      "action_name": "Left Straddle Hip Stretch",
+      "split": "DEV"
+    },
+    "p000880": {
+      "sequence": "p000880_a000079",
+      "action": "a000079",
+      "action_name": "Kneeling Wide Brace",
+      "split": "DEV"
+    },
+    "p000881": {
+      "sequence": "p000881_a000043",
+      "action": "a000043",
+      "action_name": "Glute Bridge",
+      "split": "DEV"
+    },
+    "p001088": {
+      "sequence": "p001088_a000203",
+      "action": "a000203",
+      "action_name": "Prone Side Leg Raise R",
+      "split": "DEV"
+    },
+    "p001110": {
+      "sequence": "p001110_a000652",
+      "action": "a000652",
+      "action_name": "Vertical Mountain Climber",
+      "split": "DEV"
+    },
+    "p000924": {
+      "sequence": "p000924_a000081",
+      "action": "a000081",
+      "action_name": "Four-Legged Diamond Brace",
+      "split": "TRAIN"
+    },
+    "p000861": {
+      "sequence": "p000861_a001444",
+      "action": "a001444",
+      "action_name": "Corpse - Side",
+      "split": "TRAIN"
+    },
+    "p000837": {
+      "sequence": "p000837_a000126",
+      "action": "a000126",
+      "action_name": "Supine Touch Knee",
+      "split": "TRAIN"
+    },
+    "p000859": {
+      "sequence": "p000859_a000107",
+      "action": "a000107",
+      "action_name": "Bend Over Your Legs",
+      "split": "TRAIN"
+    },
+    "p000826": {
+      "sequence": "p000826_a000219",
+      "action": "a000219",
+      "action_name": "Stacked Leg Glute Bridge L",
+      "split": "TRAIN"
+    },
+    "p000816": {
+      "sequence": "p000816_a000126",
+      "action": "a000126",
+      "action_name": "Supine Touch Knee",
+      "split": "TRAIN"
+    },
+    "p000874": {
+      "sequence": "p000874_a000042",
+      "action": "a000042",
+      "action_name": "Static Glute Bridge",
+      "split": "TRAIN"
+    },
+    "p001008": {
+      "sequence": "p001008_a005311",
+      "action": "a005311",
+      "action_name": "Left Internal Oblique Muscle Stretch",
+      "split": "TRAIN"
+    },
+    "p000973": {
+      "sequence": "p000973_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "split": "TRAIN"
+    },
+    "p000831": {
+      "sequence": "p000831_a000306",
+      "action": "a000306",
+      "action_name": "Neck Bridge Supine",
+      "split": "TRAIN"
+    },
+    "p000902": {
+      "sequence": "p000902_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "split": "TRAIN"
+    },
+    "p000942": {
+      "sequence": "p000942_a005386",
+      "action": "a005386",
+      "action_name": "Supine Flexion Right Twist Stretch",
+      "split": "TRAIN"
+    },
+    "p001018": {
+      "sequence": "p001018_a000184",
+      "action": "a000184",
+      "action_name": "Front Shoulder Stretch",
+      "split": "TRAIN"
+    },
+    "p000956": {
+      "sequence": "p000956_a001454",
+      "action": "a001454",
+      "action_name": "Standing - Sitting Straight Leg - Right",
+      "split": "TRAIN"
+    },
+    "p000821": {
+      "sequence": "p000821_a000043",
+      "action": "a000043",
+      "action_name": "Glute Bridge",
+      "split": "TRAIN"
+    },
+    "p001037": {
+      "sequence": "p001037_a000025",
+      "action": "a000025",
+      "action_name": "Four-Legged Swimming",
+      "split": "VAL"
+    },
+    "p000913": {
+      "sequence": "p000913_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "split": "VAL"
+    },
+    "p000853": {
+      "sequence": "p000853_a000043",
+      "action": "a000043",
+      "action_name": "Glute Bridge",
+      "split": "VAL"
+    },
+    "p000914": {
+      "sequence": "p000914_a005591",
+      "action": "a005591",
+      "action_name": "Left Leg Clam Support",
+      "split": "VAL"
+    },
+    "p000842": {
+      "sequence": "p000842_a000042",
+      "action": "a000042",
+      "action_name": "Static Glute Bridge",
+      "split": "VAL"
+    },
+    "p000830": {
+      "sequence": "p000830_a000306",
+      "action": "a000306",
+      "action_name": "Neck Bridge Supine",
+      "split": "SEALED"
+    },
+    "p001002": {
+      "sequence": "p001002_a000269",
+      "action": "a000269",
+      "action_name": "Lower Back Curl",
+      "split": "SEALED"
+    },
+    "p000757": {
+      "sequence": "p000757_a000219",
+      "action": "a000219",
+      "action_name": "Stacked Leg Glute Bridge L",
+      "split": "SEALED"
+    },
+    "p000783": {
+      "sequence": "p000783_a001312",
+      "action": "a001312",
+      "action_name": "Sumo Squat Stretch",
+      "split": "SEALED"
+    },
+    "p000878": {
+      "sequence": "p000878_a005516",
+      "action": "a005516",
+      "action_name": "Left Straddle Hip Stretch",
+      "split": "SEALED"
+    }
+  },
+  "sequence_selection_rule": "In DEV/TRAIN/VAL/SEALED order, prefer least-used action among each subject's structurally complete sequences; SHA256(seed:sequence) breaks ties. Metadata only; no image inspection.",
+  "sealed_pixels_read": true,
+  "sealed_opened_only_after_val_checkpoint_freeze": true
+}

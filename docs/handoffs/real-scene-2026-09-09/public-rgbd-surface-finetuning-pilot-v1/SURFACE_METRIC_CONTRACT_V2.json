@@ -1,0 +1,27 @@
+{
+  "schema_version": "2.0",
+  "status": "FROZEN_FOR_DEV_PILOT_ONLY",
+  "canonical_detail": "GEOMETRY_METRIC_CONTRACT_V1.json",
+  "input_unit": "metre",
+  "report_unit": "millimetre",
+  "camera_convention": "OpenCV +X right, +Y down, +Z forward",
+  "metrics": {
+    "legacy": "one-sided observed point to nearest MHR vertex; retained only for V1 comparison",
+    "point_to_triangle": "exact one-sided observed point to continuous MHR triangle surface",
+    "rendered_depth": "absolute observed-vs-rendered Camera-B Z residual on overlap pixels, always reported with mesh coverage"
+  },
+  "primary_development_metric": "held-out Camera-B point-to-triangle median, aggregated by subject",
+  "companion_checks": [
+    "rendered-depth median and P95",
+    "rendered-depth mesh coverage",
+    "legacy nearest-vertex metric",
+    "parameter sanity"
+  ],
+  "split_scope": "existing HuMMan DEV5 only",
+  "sealed_test_accessed": false,
+  "limitations": [
+    "person-mask surface may include clothing",
+    "one-sided geometry does not penalize unseen mesh regions",
+    "DEV choices must be frozen before sealed-test access"
+  ]
+}

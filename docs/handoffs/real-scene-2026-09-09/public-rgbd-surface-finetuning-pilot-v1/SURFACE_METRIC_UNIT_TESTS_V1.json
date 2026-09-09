@@ -1,0 +1,23 @@
+{
+  "status": "ALL_SYNTHETIC_TESTS_PASSED",
+  "test_count": 6,
+  "server": "172.18.18.151",
+  "environment": "existing SAM 3D Body CUDA venv; EGL pyrender",
+  "tests": [
+    "test_degenerate_triangle_falls_back_to_segment",
+    "test_rendered_depth_opencv_coordinate_contract",
+    "test_triangle_bvh_matches_exhaustive_small_case",
+    "test_triangle_distance_and_millimetre_contract",
+    "test_triangle_interior_distinguishes_legacy_vertex_metric",
+    "test_world_camera_roundtrip_contract"
+  ],
+  "verified_values": {
+    "synthetic_plane_rendered_center_depth_m": 2.0,
+    "synthetic_triangle_offset_expected_mm": 10.0,
+    "point_on_triangle_interior_point_to_triangle_mm": 0.0,
+    "same_point_legacy_nearest_vertex_mm": 1000.0
+  },
+  "real_observations_accessed": false,
+  "sealed_test_accessed": false,
+  "raw_runtime_record": "SURFACE_METRIC_TOY_TESTS_V1.json"
+}

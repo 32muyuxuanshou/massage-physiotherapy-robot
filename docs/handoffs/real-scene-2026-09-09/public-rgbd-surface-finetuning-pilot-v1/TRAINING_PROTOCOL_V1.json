@@ -1,0 +1,130 @@
+{
+  "task": "PUBLIC_RGBD_SURFACE_FINETUNING_PILOT_V1",
+  "status": "FROZEN_FOR_FORMAL_PILOT",
+  "seed": 20260909,
+  "initialization": {
+    "checkpoint": "Official SAM 3D Body only",
+    "checkpoint_sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+    "mhr_model_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "v2_e5_allowed": false,
+    "vertex_offsets": "DISABLED"
+  },
+  "trainable_modules_exact": [
+    "head_pose.proj",
+    "head_camera.proj"
+  ],
+  "frozen_modules": "all remaining SAM 3D Body parameters",
+  "workset_contract": {
+    "train_subjects": 15,
+    "val_subjects": 5,
+    "frames_per_subject_maximum": 3,
+    "subject_disjoint": true,
+    "final_split_frozen_required": true,
+    "workset_qa_passed_required": true,
+    "sealed_samples_materialized_for_trainer": false,
+    "manifest": "FINAL_FROZEN_WORKSET_MANIFEST_V1.json",
+    "manifest_sha256": "e8b6f3d5bb35ff24cc362f84fb20bc1da781674415167efc1065c02f78308f32",
+    "nonsealed_rgbd_qa_final_sha256": "cc1d64069f1b6bce58743aeb6b9993935a1828afff28591bdd64592c19db1537",
+    "frozen_at": "2026-09-09T22:08:36+08:00"
+  },
+  "loss": {
+    "only_new_supervision": "Camera-A person-mask RGB-D observed surface in metres",
+    "surface": "one-sided observed point to differentiable barycentric samples of MHR triangles, robust Huber",
+    "observed_samples": 2048,
+    "triangle_samples": 4096,
+    "huber_delta_m": 0.03,
+    "stability": "detached Official initialization predictions preserve 2D joints and pelvis-relative 3D joints; direct L2 preserves head initialization",
+    "teacher_targets_are_ground_truth": false,
+    "weights": {
+      "surface": 1.0,
+      "teacher_joint_2d": 1.0,
+      "teacher_joint_3d": 1.0,
+      "head_initialization": 0.0001
+    },
+    "weights_status": "FROZEN_FOR_FORMAL_PILOT_E1_TO_E10"
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 1e-05,
+    "weight_decay": 0.0,
+    "gradient_accumulation_observations": 4,
+    "gradient_clip_norm": 1.0
+  },
+  "smoke": {
+    "epochs": 1,
+    "maximum_train_observations": 4,
+    "maximum_val_observations": 2,
+    "scientific_checkpoint_selection": false
+  },
+  "formal_pilot": {
+    "epochs": 10,
+    "epoch_labels": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "E6",
+      "E7",
+      "E8",
+      "E9",
+      "E10"
+    ],
+    "continuation_parent_protocol_sha256": null,
+    "launch_authorized": true,
+    "checkpoint_each_epoch": true,
+    "validation_each_epoch": true,
+    "selection": "lowest VAL subject-macro point-to-triangle mean; ties choose earliest epoch",
+    "early_stop": {
+      "enabled": true,
+      "monitor": "VAL point_to_triangle_mean_of_subject_frame_medians_mm",
+      "mode": "min",
+      "patience_epochs": 5,
+      "minimum_delta_mm": 0.1,
+      "minimum_epochs_before_early_stop": 10,
+      "first_window_rule": "E1-E10 must complete. Early stopping is disabled through E10; any extension beyond E10 requires a separately frozen epoch budget and starts a fresh patience counter.",
+      "resume_granularity": "completed epoch checkpoint"
+    }
+  },
+  "validation": {
+    "view": "Camera B only",
+    "maximum_eval_points": 25000,
+    "primary_selection_metric": "mean across VAL subjects of each subject's median frame-level exact observed-to-triangle median distance in mm",
+    "secondary_metric": "rendered metric Z-depth residual and mesh coverage",
+    "tail_metrics": "For point-to-triangle and rendered depth, report subject-equal means of per-subject frame-median P90/P95; also report P90/P95 across subject frame-medians for point-to-triangle.",
+    "aggregation": "subject macro; frames never count as independent subjects",
+    "parameter_sanity_limits": {
+      "camera_translation_delta_m": 0.5,
+      "global_rotation_rms_parameter": 0.75,
+      "body_pose_rms_parameter": 0.75
+    },
+    "sealed_usage": "none until one final, separately authorized evaluation"
+  },
+  "smoke_gate": {
+    "minimum_rendered_depth_coverage": 0.05,
+    "requires": [
+      "exactly one completed epoch",
+      "exact optimizer-update and observation-exposure counters",
+      "non-zero finite gradients in both permitted heads",
+      "finite held-out point-to-triangle metric",
+      "rendered-depth coverage at or above the fixed floor",
+      "exact checkpoint head-state round trip",
+      "zero SEALED access"
+    ],
+    "meaning": "engineering execution integrity only, not efficacy or readiness for deployment"
+  },
+  "run_state_transition": {
+    "smoke": "Reviewer changes status to FROZEN_FOR_1_EPOCH_SMOKE only after workset QA, final split freeze and loss-weight freeze.",
+    "formal": "Reviewer changes status to FROZEN_FOR_FORMAL_PILOT only after a passing smoke and explicit protocol freeze."
+  },
+  "mandatory_run_records": [
+    "optimizer updates",
+    "training observation exposures",
+    "elapsed wall time",
+    "peak CUDA allocated memory",
+    "checkpoint path, bytes and sha256",
+    "protocol and workset sha256",
+    "baseline and per-epoch Camera-B subject-macro metrics"
+  ],
+  "claim_limit": "This protocol authorizes the governed E1-E10 formal pilot. E10 is a review point; no efficacy, deployment, or SEALED-generalization claim exists before review and the single sealed evaluation."
+}

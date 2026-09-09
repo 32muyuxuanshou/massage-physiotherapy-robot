@@ -1,0 +1,93 @@
+{
+  "status": "NO_SEVERE_OFFICIAL_RELATIVE_JOINT_REGRESSION",
+  "metric_scope": "Stability against Official predictions, not ground-truth joint accuracy",
+  "validation": {
+    "subject_count": 5,
+    "joint_2d_nme_mean": 0.011109757330268621,
+    "joint_2d_pck05_stability_mean": 0.9971428571428571,
+    "joint_3d_pelvis_relative_mean_mm": 30.002677154541015,
+    "joint_3d_pelvis_relative_p95_mm_mean": 48.892107582092265,
+    "subjects": [
+      {
+        "subject_id": "p000842",
+        "joint_2d_nme": 0.007294783368706703,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 26.901283264160156,
+        "joint_3d_pelvis_relative_p95_mm": 45.92962341308589
+      },
+      {
+        "subject_id": "p000853",
+        "joint_2d_nme": 0.015136471949517727,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 27.535816192626953,
+        "joint_3d_pelvis_relative_p95_mm": 43.43695621490478
+      },
+      {
+        "subject_id": "p000913",
+        "joint_2d_nme": 0.004365625325590372,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 24.10723304748535,
+        "joint_3d_pelvis_relative_p95_mm": 51.9839900970459
+      },
+      {
+        "subject_id": "p000914",
+        "joint_2d_nme": 0.010033799335360527,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 19.401636123657227,
+        "joint_3d_pelvis_relative_p95_mm": 30.720711135864242
+      },
+      {
+        "subject_id": "p001037",
+        "joint_2d_nme": 0.018718106672167778,
+        "joint_2d_pck05_stability": 0.9857142857142858,
+        "joint_3d_pelvis_relative_mean_mm": 52.06741714477539,
+        "joint_3d_pelvis_relative_p95_mm": 72.38925704956054
+      }
+    ]
+  },
+  "sealed": {
+    "subject_count": 5,
+    "joint_2d_nme_mean": 0.011136040091514587,
+    "joint_2d_pck05_stability_mean": 0.9971428571428571,
+    "joint_3d_pelvis_relative_mean_mm": 26.521195220947266,
+    "joint_3d_pelvis_relative_p95_mm_mean": 44.27868282318115,
+    "subjects": [
+      {
+        "subject_id": "p000757",
+        "joint_2d_nme": 0.007452022284269333,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 18.186298370361328,
+        "joint_3d_pelvis_relative_p95_mm": 29.486631298065184
+      },
+      {
+        "subject_id": "p000783",
+        "joint_2d_nme": 0.02284247986972332,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 33.82942581176758,
+        "joint_3d_pelvis_relative_p95_mm": 51.38890533447265
+      },
+      {
+        "subject_id": "p000830",
+        "joint_2d_nme": 0.01325690746307373,
+        "joint_2d_pck05_stability": 0.9857142857142858,
+        "joint_3d_pelvis_relative_mean_mm": 26.743288040161133,
+        "joint_3d_pelvis_relative_p95_mm": 54.158352279663085
+      },
+      {
+        "subject_id": "p000878",
+        "joint_2d_nme": 0.005462952423840761,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 17.860368728637695,
+        "joint_3d_pelvis_relative_p95_mm": 33.530016994476306
+      },
+      {
+        "subject_id": "p001002",
+        "joint_2d_nme": 0.0066658384166657925,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 35.986595153808594,
+        "joint_3d_pelvis_relative_p95_mm": 52.829508209228514
+      }
+    ]
+  },
+  "interpretation": "Sealed 2D NME change is 0.0111 bbox scale and PCK05 stability is 0.9971. This supports structural stability but cannot claim improved joint accuracy."
+}

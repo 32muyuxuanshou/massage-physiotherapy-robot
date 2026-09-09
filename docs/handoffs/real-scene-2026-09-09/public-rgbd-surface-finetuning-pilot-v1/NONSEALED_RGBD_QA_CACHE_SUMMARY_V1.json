@@ -1,0 +1,47 @@
+{
+  "task": "PUBLIC_RGBD_SURFACE_FINETUNING_PILOT_V1",
+  "status": "PASS_WITH_SENSOR_BOUNDARY_NOISE",
+  "scope": "NONSEALED_DEV_TRAIN_VAL_ONLY",
+  "server_workset": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/workset_v1",
+  "server_cache": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache",
+  "extraction": {
+    "archives": 5,
+    "views": 156,
+    "status": "DECODE_FRAME_ID_QA_PASS_GEOMETRY_NOT_YET_VALIDATED"
+  },
+  "registration_qa": {
+    "subject_frame_observations": 78,
+    "auto_usable": 78,
+    "camera_008_projection_retention_min": 0.9108643457382953,
+    "camera_008_registered_points_min": 8480,
+    "camera_008_body_core_proxy_points_min": 2732,
+    "camera_009_projection_retention_min": 0.9823216628685865,
+    "camera_009_registered_points_min": 12303,
+    "camera_009_body_core_proxy_points_min": 4151,
+    "cross_camera_symmetric_nn_p95_median_m": 0.12420554382978338,
+    "cross_camera_symmetric_nn_p95_p95_m": 0.41053407317390994,
+    "cross_camera_metric_role": "DESCRIPTIVE_ONLY_DIFFERENT_VISIBLE_SURFACES"
+  },
+  "visual_review": {
+    "contact_sheet_pages_reviewed": 6,
+    "views_reviewed": 156,
+    "decision": "PASS_WITH_SENSOR_BOUNDARY_NOISE",
+    "finding": "No systematic mirror, axis flip, scale mismatch, or camera mismatch. Minor silhouette-edge and floor sensor noise remains documented.",
+    "representative_pages_in_repository": [
+      "evidence/nonsealed-rgbd-registration/registration_contact_sheet_01.jpg",
+      "evidence/nonsealed-rgbd-registration/registration_contact_sheet_03.jpg",
+      "evidence/nonsealed-rgbd-registration/registration_contact_sheet_06.jpg"
+    ]
+  },
+  "cache": {
+    "candidate_files": 78,
+    "bytes": 566269128,
+    "camera_mapping": "kinect_008=Camera A; kinect_009=Camera B",
+    "interface": "prepare_observations.py A/B keys verified in every cache file",
+    "training_consumption": "Only final manifest TRAIN/VAL rows are eligible"
+  },
+  "final_qa_sha256": "cc1d64069f1b6bce58743aeb6b9993935a1828afff28591bdd64592c19db1537",
+  "final_frozen_manifest_sha256": "e8b6f3d5bb35ff24cc362f84fb20bc1da781674415167efc1065c02f78308f32",
+  "sealed_pixels_read": false,
+  "claim_limit": "The body-core proxy is a registration support region, not an anatomical torso or clinical back label. This QA does not establish fine-tuning efficacy."
+}

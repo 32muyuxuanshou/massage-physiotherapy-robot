@@ -1,0 +1,40 @@
+{
+  "status": "COMPLETED_DEV5_ONLY",
+  "sealed_test_accessed": false,
+  "subjects": 5,
+  "models": {
+    "official": {
+      "camera_pose": {
+        "legacy_median_mm_subject_mean": 22.681281516364663,
+        "point_to_triangle_median_mm_subject_mean": 21.247101647121234,
+        "rendered_depth_median_mm_subject_mean": 24.876129627227783,
+        "rendered_depth_coverage_subject_mean": 0.675362220485753
+      },
+      "combined_camera_pose_shape_scale": {
+        "legacy_median_mm_subject_mean": 22.052253971854523,
+        "point_to_triangle_median_mm_subject_mean": 20.468327705935202,
+        "rendered_depth_median_mm_subject_mean": 24.070143699645996,
+        "rendered_depth_coverage_subject_mean": 0.686814392952325
+      },
+      "combined_extra_legacy_gain_mm": 0.6290275445101401
+    },
+    "v2_e5": {
+      "camera_pose": {
+        "legacy_median_mm_subject_mean": 24.584075541540518,
+        "point_to_triangle_median_mm_subject_mean": 23.27579847942813,
+        "rendered_depth_median_mm_subject_mean": 27.640676498413086,
+        "rendered_depth_coverage_subject_mean": 0.652797517664915
+      },
+      "combined_camera_pose_shape_scale": {
+        "legacy_median_mm_subject_mean": 24.08320109337834,
+        "point_to_triangle_median_mm_subject_mean": 22.678741049598365,
+        "rendered_depth_median_mm_subject_mean": 27.126288414001465,
+        "rendered_depth_coverage_subject_mean": 0.664723152124538
+      },
+      "combined_extra_legacy_gain_mm": 0.5008744481621783
+    }
+  },
+  "finding": "Camera+Pose captures nearly all current DEV5 held-out gain. Adding Shape/Scale improves subject-mean median by only about 0.5-0.8 mm across the three metrics.",
+  "recommendation": "Use pose and camera output heads for the first global pilot; keep shape/scale frozen until validation evidence justifies the extra freedom.",
+  "canonical_detail": "DEV5_PARAMETER_GROUP_ABLATION_V2.json"
+}

@@ -1,0 +1,438 @@
+{
+  "status": "COMPLETE",
+  "root": "public-rgbd-surface-finetuning-pilot-v1",
+  "file_count": 86,
+  "total_bytes": 19437196,
+  "files": [
+    {
+      "path": "CAMERA_POSE_SHAPE_ABLATION_V2.json",
+      "bytes": 1910,
+      "sha256": "cf3c74f6a76446cd892eccbb4e68e8f999911daaffaa7a6ccb1cefca6ea15ada"
+    },
+    {
+      "path": "CHECKPOINT_MANIFEST_V1.json",
+      "bytes": 714,
+      "sha256": "38e20f9db5309118d56f55070f97a6c7ab071ba419718f417386a1b06a840927"
+    },
+    {
+      "path": "code/.gitignore",
+      "bytes": 19,
+      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+    },
+    {
+      "path": "code/audit_surface_gradient_chain.py",
+      "bytes": 7530,
+      "sha256": "6236af153409c07a8a6cdf994cfc67a4c85120462b8b5dc07eaf1884e71f1204"
+    },
+    {
+      "path": "code/build_worker_bd_outputs.py",
+      "bytes": 6173,
+      "sha256": "3c66d2eff2e092936658adb4fe6d78a1ded4032e2a52490ddb90bbd6f49b838b"
+    },
+    {
+      "path": "code/evaluate_dev_ablation.py",
+      "bytes": 5354,
+      "sha256": "3ab7f21e21cc50ced0d66597c2fb248776fed0cfc399a7189070bc9f636f5938"
+    },
+    {
+      "path": "code/evaluate_official_vs_checkpoint.py",
+      "bytes": 14496,
+      "sha256": "c41e5e8c830fe9d414c86f81e2a0e4840991604d539c64b043ff1282814d36bd"
+    },
+    {
+      "path": "code/generate_mhr_native_synthetic.py",
+      "bytes": 17093,
+      "sha256": "e04d0698d374b93a63cdd2843bbc35f765555fff67b9d58f15cb47688ebbe7be"
+    },
+    {
+      "path": "code/make_mhr_smoke_contact_sheet.py",
+      "bytes": 2422,
+      "sha256": "c6851689d9afdbb1ab7bd57c4c67606c91a5d4c79f96dd7c0e4821a52717c757"
+    },
+    {
+      "path": "code/qa_cache_nonsealed_workset.py",
+      "bytes": 16029,
+      "sha256": "1de3e7e8c4219b1e1af7114ac0cea718cd6b179416ede0ce6ec007b309951682"
+    },
+    {
+      "path": "code/qa_cache_sealed_workset.py",
+      "bytes": 16475,
+      "sha256": "b01dce7772ab7160f7c769530a5a68ed319a421319fce9814667e852d4c1fa5d"
+    },
+    {
+      "path": "code/README.md",
+      "bytes": 6364,
+      "sha256": "8dc3b9015df9b073af6cb3f63114a554f458ef027ad3af416ddcf14578fd9b12"
+    },
+    {
+      "path": "code/run_camera_pose_dev.py",
+      "bytes": 2482,
+      "sha256": "2ecb7c364952dcf0a4cea3e4c73dceefcb935c5f1086f0df715ad3888d2c3a1a"
+    },
+    {
+      "path": "code/surface_metrics.py",
+      "bytes": 8636,
+      "sha256": "619b32af927ae466203a2e48bf44389511d28cddb32dff7c4d36d551a9194d81"
+    },
+    {
+      "path": "code/test_surface_metrics_toy.py",
+      "bytes": 3265,
+      "sha256": "a3b0186c680563ec41be2978031f4196c1af2f8e5abefcc577a747f36e18b7e5"
+    },
+    {
+      "path": "code/train_rgbd_surface.py",
+      "bytes": 31841,
+      "sha256": "d5093608878e9177da1083fbe096406b8dcd268071e7939f755f210e6eb25923"
+    },
+    {
+      "path": "code/validate_mhr_native_synthetic.py",
+      "bytes": 12280,
+      "sha256": "f97ca8cdcada6d182688cbb4e41729dbc1731cdd4b468794388ad3f22f9f580a"
+    },
+    {
+      "path": "DEV5_HELDOUT_METRIC_ABLATION_V1.json",
+      "bytes": 198261,
+      "sha256": "0fcdf350be2174cab21451372ec34264ec6149505d98436cd4254048b18b4086"
+    },
+    {
+      "path": "DEV5_PARAMETER_GROUP_ABLATION_V2.json",
+      "bytes": 27261,
+      "sha256": "684ba98ee9a7cea18e1db4f6b65591e2dbefc788289060098f1d238c4d54662b"
+    },
+    {
+      "path": "evidence/nonsealed-rgbd-registration/NONSEALED_RGBD_REGISTRATION_QA_FINAL_V1.json",
+      "bytes": 370773,
+      "sha256": "cc1d64069f1b6bce58743aeb6b9993935a1828afff28591bdd64592c19db1537"
+    },
+    {
+      "path": "evidence/nonsealed-rgbd-registration/registration_contact_sheet_01.jpg",
+      "bytes": 886523,
+      "sha256": "8183071c0a64d36a16e2d29f320e4090b2d5c5632d4fb0bd5f121ffd333c24ab"
+    },
+    {
+      "path": "evidence/nonsealed-rgbd-registration/registration_contact_sheet_03.jpg",
+      "bytes": 882485,
+      "sha256": "cc42351a21ddecd7f7306bdb262a8a664bf9ec4d45958c943abab5e164353fbc"
+    },
+    {
+      "path": "evidence/nonsealed-rgbd-registration/registration_contact_sheet_06.jpg",
+      "bytes": 886042,
+      "sha256": "e2c12c53baabcc39a767f8adcce3b4eeb2035c88a142c8fbf5c5968936c952c3"
+    },
+    {
+      "path": "extract_server_sealed_workset.py",
+      "bytes": 11722,
+      "sha256": "2260af96e48485cac3208027db4bf27e2d7dccec7d1296d28412d301f70150e9"
+    },
+    {
+      "path": "extract_server_workset.py",
+      "bytes": 11062,
+      "sha256": "9587ef30204e00eb8a959b518c5c87819d7ea7e6cc67d3c7c79d261e78108c69"
+    },
+    {
+      "path": "FAILURE_CASES_V1.json",
+      "bytes": 1121,
+      "sha256": "ea56f7095d53b1cae47ffa7c4169cfc7a20fb6440c95a79a9d16597a2e2a603f"
+    },
+    {
+      "path": "FINAL_EXPERIMENT_GATE_V1.json",
+      "bytes": 1124,
+      "sha256": "e681340f30230e96982115d20d099b62c1d87a8a08a6412d21ec869d0996f5bc"
+    },
+    {
+      "path": "FINAL_FROZEN_WORKSET_MANIFEST_V1.json",
+      "bytes": 27721,
+      "sha256": "e8b6f3d5bb35ff24cc362f84fb20bc1da781674415167efc1065c02f78308f32"
+    },
+    {
+      "path": "finalize_humman_governance.py",
+      "bytes": 8946,
+      "sha256": "f5a497494aff7acedec814317f97f7189a55b6dcc65f2dbe2ea898dd389aa927"
+    },
+    {
+      "path": "FORMAL_E1_E10_TRAINING_REPORT_V1.json",
+      "bytes": 295857,
+      "sha256": "99f94f9bf6c81f97b109e3c7fc9088fda01051645c0d45a44e84f3384499616e"
+    },
+    {
+      "path": "GEOMETRY_METRIC_CONTRACT_V1.json",
+      "bytes": 3269,
+      "sha256": "c85a5276a03ab1b23e0540e8cb1a3f1c089a7c1cfba06a27c79042a0eb7379d5"
+    },
+    {
+      "path": "HUMMAN_EXISTING_ARCHIVE_INVENTORY_V1.json",
+      "bytes": 4155855,
+      "sha256": "595d925a3d25e4990316e8457b63b49c06d3651190168ad9475c7b211799b121"
+    },
+    {
+      "path": "HUMMAN_EXPOSURE_AUDIT_V1.json",
+      "bytes": 244850,
+      "sha256": "910a51ae2eda1c5e942c5907a7742a70c8338c555f531caa11e50eb359a57d71"
+    },
+    {
+      "path": "HUMMAN_INCREMENTAL_DOWNLOAD_PLAN_V1.json",
+      "bytes": 2508,
+      "sha256": "6e3b0c10530a4d42292d97f8f46b85c9d64940c57acfe25376648b396acc4485"
+    },
+    {
+      "path": "humman_local_inventory.json",
+      "bytes": 4159698,
+      "sha256": "4cd863713fea1c1f20acee8303215127f5768c7bb3e27214508aa70dc429ca4c"
+    },
+    {
+      "path": "humman_minimum_download_plan.json",
+      "bytes": 1215,
+      "sha256": "77f6c69058331480d05658d25343bf73cb53efb377b212296b7168d725ec52de"
+    },
+    {
+      "path": "HUMMAN_SUBJECT_POOL_V1.json",
+      "bytes": 24789,
+      "sha256": "e512e5508a04e4eee77b3d92f29cb4dfe1aa421f8d43e73f7a0e92f45e744225"
+    },
+    {
+      "path": "humman_subject_split_candidates.json",
+      "bytes": 51097,
+      "sha256": "59f0f784c33900206446c09afd77a4660ea39d22b9ab5c60177ee51e1ac3fd93"
+    },
+    {
+      "path": "HUMMAN_SUBJECT_SPLIT_V1.json",
+      "bytes": 10432,
+      "sha256": "c488baba6e254052488b4b885ed79d4b22f9fac9a04ab931c3541a58468c541f"
+    },
+    {
+      "path": "inventory_humman.py",
+      "bytes": 11135,
+      "sha256": "8dd951eac941d5016ba40b36d2644554c74c43ee645057405c4a40e985a7e6f0"
+    },
+    {
+      "path": "JOINT_REGRESSION_V1.json",
+      "bytes": 3663,
+      "sha256": "fd838b640a078495819e34cdac9e60da0043d1921777decd5d918f22806c53af"
+    },
+    {
+      "path": "KNOWLEDGE_CLOSEOUT_V1.json",
+      "bytes": 1133,
+      "sha256": "e76f5460c3f7aef5c98912d94026052a7800eed06c89a55194ed61c60fe4f075"
+    },
+    {
+      "path": "MHR_NATIVE_SYNTHETIC_PROTOCOL_V1.json",
+      "bytes": 9741,
+      "sha256": "1458989e15e3c46fb9f21f999a338b7746d4ed5984cc1244ecf48f77f7cd8a6a"
+    },
+    {
+      "path": "MHR_NATIVE_SYNTHETIC_SMOKE100_V1.json",
+      "bytes": 5894,
+      "sha256": "9aadc89696ee234d4e1d65a6abcfb3b872dc86ec0a24801b4952cf6a3a658051"
+    },
+    {
+      "path": "NONSEALED_RGBD_QA_CACHE_PROTOCOL_V1.json",
+      "bytes": 2955,
+      "sha256": "f7e888cba68515e3ef860ba599d4a820ba27ff9ec5e17e7c5a3c03b31d282629"
+    },
+    {
+      "path": "NONSEALED_RGBD_QA_CACHE_SUMMARY_V1.json",
+      "bytes": 2363,
+      "sha256": "f0c51f7d9b46ed76a156dd8e5fe3c862e44dc659daa48e6c7afe9663def116aa"
+    },
+    {
+      "path": "ONE_EPOCH_SMOKE_GATE_V1.json",
+      "bytes": 1175,
+      "sha256": "2667473688d77d55b4ce217dc87182f14ac140ba844b1aa47f23fb91d636550e"
+    },
+    {
+      "path": "ONE_EPOCH_SMOKE_RESULT_V1.json",
+      "bytes": 12424,
+      "sha256": "86e3bd35a929cfc32bce1af7caa59b346c10e0c4eed8702b91de1e76ddefb7b3"
+    },
+    {
+      "path": "PARAMETER_SANITY_V1.json",
+      "bytes": 1102,
+      "sha256": "9d9b837fd6c22909186b2da8a23b35552758e4bc9127d9a3d39e0a17b6a6cdd3"
+    },
+    {
+      "path": "PER_EPOCH_METRICS_V1.csv",
+      "bytes": 2651,
+      "sha256": "50153e12ecb1a4266251a6da9add4b3154114757e01ce30efae6d584bf457002"
+    },
+    {
+      "path": "PER_EPOCH_METRICS_V1.json",
+      "bytes": 10197,
+      "sha256": "e3770bc844dd19250914636d5a8c548c5b04beaebb8404fa9287242eac40dc55"
+    },
+    {
+      "path": "PUBLIC_RGBD_SURFACE_FINETUNING_READINESS_V1.json",
+      "bytes": 1656,
+      "sha256": "3ad0fdf957db6097039e1ec728e40d6b26b3783870942af5655e8f24e86143df"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6341,
+      "sha256": "7b8cbd7925482309c391e0b5a6e7d67a218ba8bc24081516a5bc47f381e638ea"
+    },
+    {
+      "path": "RGBD_SURFACE_GRADIENT_AUDIT_V1.json",
+      "bytes": 1287,
+      "sha256": "3e75701859db0433e9d8e1c43671934f809125feeb4c11818d7684ec67f88230"
+    },
+    {
+      "path": "RGBD_SURFACE_LOSS_V1.json",
+      "bytes": 1108,
+      "sha256": "df9953cd44440eaaac516964acce3e1905a3111c7047c123dcded509405f6b01"
+    },
+    {
+      "path": "SEALED_EVALUATION_MANIFEST_V1.json",
+      "bytes": 5494,
+      "sha256": "5955fe3d8eccd86fd27a71ead40a01007be185a41a2aa660fce921e399e4241a"
+    },
+    {
+      "path": "SEALED_RGBD_REGISTRATION_QA_FINAL_V1.json",
+      "bytes": 72695,
+      "sha256": "31c9c2f03ab9c03d65994e39030ae83f79f870221f323d245886913838d38ce8"
+    },
+    {
+      "path": "SEALED_TEST_SURFACE_RESULTS_V1.json",
+      "bytes": 62535,
+      "sha256": "476377d80ce0defdaafe892e61dd14002ccf922cd8db103c936f93367f12d748"
+    },
+    {
+      "path": "SERVER_DATA_MIGRATION_V1.json",
+      "bytes": 1758,
+      "sha256": "e20ea089c50072d624ec904aa471c1c2bbee076d383197619212f11deede8936"
+    },
+    {
+      "path": "SERVER_SEALED_SELECTIVE_EXTRACTION_PLAN_V1.json",
+      "bytes": 16906,
+      "sha256": "f76ea4a1cda4ef52eb151d4941ca6abf633e4dbb98c2825a192f8aeaf33da664"
+    },
+    {
+      "path": "SERVER_SEALED_WORKSET_EXTRACTION_QA_V1.json",
+      "bytes": 18355,
+      "sha256": "9e9e9966522be9458b00a338cede797f00032fe971b9190a6720041c4449a3f5"
+    },
+    {
+      "path": "SERVER_SELECTIVE_EXTRACTION_PLAN_V1.json",
+      "bytes": 62237,
+      "sha256": "2c5bc1c6bfef934b88ecc703bbfb7594419ba2d4c8f2b2ceace1912af76f1ec0"
+    },
+    {
+      "path": "SERVER_WORKSET_EXTRACTION_QA_V1.json",
+      "bytes": 90798,
+      "sha256": "6b6639d428f7a951ff50d51c4e879d73544957d7b8df3b4df0016679eb8f69f1"
+    },
+    {
+      "path": "SURFACE_FINETUNING_READINESS_INPUT_V1.json",
+      "bytes": 1125,
+      "sha256": "b30ac70c0a63edf02e3f7ded9c3770ae7bd568942d3985c0149aa7c06ee85db6"
+    },
+    {
+      "path": "SURFACE_GRADIENT_CHAIN_AUDIT_V1.json",
+      "bytes": 3378,
+      "sha256": "1fc75327a040f0c7a0e8c383288e9e0f52f7988b2c193eeecef0498ac0d2343d"
+    },
+    {
+      "path": "SURFACE_GRADIENT_CHAIN_OFFICIAL_DEV5.json",
+      "bytes": 4749,
+      "sha256": "6f79c0c5b305695942e1cdca2b2c625178fadbeae65c768194e6ffbd45d33f84"
+    },
+    {
+      "path": "SURFACE_GRADIENT_CHAIN_V2_E5_DEV5.json",
+      "bytes": 4747,
+      "sha256": "8b608de3b65948079c09716e28501abdd1e9497d068c4dfa9544059bedd0d6bb"
+    },
+    {
+      "path": "SURFACE_METRIC_CONTRACT_V2.json",
+      "bytes": 1123,
+      "sha256": "2b4f07d9ab89655d7ba87923edd68482282c5cd4f78f662b4fa6f38d1fcc48a5"
+    },
+    {
+      "path": "SURFACE_METRIC_TOY_TESTS_V1.json",
+      "bytes": 478,
+      "sha256": "031f2f53211e4956db26f0b41e2d0bc593b1e1666dd89ec2493c8171748cf239"
+    },
+    {
+      "path": "SURFACE_METRIC_UNIT_TESTS_V1.json",
+      "bytes": 874,
+      "sha256": "e5d4f769816bd5a797ea124a52852ee6255f295308e6de4941536ea5c35415a4"
+    },
+    {
+      "path": "TRAINING_CURVE_DECISION_V1.json",
+      "bytes": 719,
+      "sha256": "86143fd62b628a2559f6afd8d5b1694587b19a9c65d384bdba2c62546ae920bc"
+    },
+    {
+      "path": "TRAINING_DRY_RUN_V1.json",
+      "bytes": 458,
+      "sha256": "d3f94f6a8e49775faefff17d7f8d567db77181a3b182c85766be3d1489b98021"
+    },
+    {
+      "path": "TRAINING_PROTOCOL_V1.json",
+      "bytes": 5408,
+      "sha256": "66e203540d85b11bc8d664bd36451d6040abd16409b97a88d50735bb1af05037"
+    },
+    {
+      "path": "VAL_EVALUATION_MANIFEST_V1.json",
+      "bytes": 6715,
+      "sha256": "5bde7de3e1bff0c8f0761170b07539874db4b59a3542debabf10baf4f599f636"
+    },
+    {
+      "path": "VALIDATION_OFFICIAL_VS_E1_FULL_V1.json",
+      "bytes": 58485,
+      "sha256": "5957f394c134af749c8807116c47ca41dfda22081c93b2cd7134d60c5f0ad9a1"
+    },
+    {
+      "path": "VALIDATION_SURFACE_RESULTS_V1.json",
+      "bytes": 8764,
+      "sha256": "116937f7d47a7216a3efb8be7392f531ad635f2a627227d825ba979d129be635"
+    },
+    {
+      "path": "visualizations/registration_contact_sheet_01.jpg",
+      "bytes": 886523,
+      "sha256": "8183071c0a64d36a16e2d29f320e4090b2d5c5632d4fb0bd5f121ffd333c24ab"
+    },
+    {
+      "path": "visualizations/registration_contact_sheet_02.jpg",
+      "bytes": 913455,
+      "sha256": "5bfa4de8b6d18e848fd8066ef75a0fc2efd0d8f18e41f4e0695f177a1feadf7a"
+    },
+    {
+      "path": "visualizations/registration_contact_sheet_03.jpg",
+      "bytes": 882485,
+      "sha256": "cc42351a21ddecd7f7306bdb262a8a664bf9ec4d45958c943abab5e164353fbc"
+    },
+    {
+      "path": "visualizations/registration_contact_sheet_04.jpg",
+      "bytes": 898454,
+      "sha256": "f86c13681f7fb308ea2182adc9b0afeabbd76fe101342218b1b1913afcf6cf34"
+    },
+    {
+      "path": "visualizations/registration_contact_sheet_05.jpg",
+      "bytes": 887018,
+      "sha256": "2c967d636e2223a78452e1beae17f63642395fc1e12108b219b1c7338faa26bf"
+    },
+    {
+      "path": "visualizations/registration_contact_sheet_06.jpg",
+      "bytes": 886042,
+      "sha256": "e2c12c53baabcc39a767f8adcce3b4eeb2035c88a142c8fbf5c5968936c952c3"
+    },
+    {
+      "path": "visualizations/sealed-qa/registration_contact_sheet_01.jpg",
+      "bytes": 890835,
+      "sha256": "33767a685a470dce3a5a47b0689e601cdd750ba4961fd313dc2d74a8cc79c514"
+    },
+    {
+      "path": "visualizations/sealed-qa/registration_contact_sheet_02.jpg",
+      "bytes": 135941,
+      "sha256": "609b29c20726d15b662f2b9eb50cdd45e8331bc079011f924157bf14c8bf7dbe"
+    },
+    {
+      "path": "visualizations/sealed_subject_comparison.png",
+      "bytes": 58796,
+      "sha256": "1d7f7d853d61b75d6c75d53baa4cdfea527282dfa4749a439ff46ee86d48a18a"
+    },
+    {
+      "path": "visualizations/training_curve_val_surface.png",
+      "bytes": 79327,
+      "sha256": "1f6cc1438f02966967d0d0d1bb87b78ef945ea3e4010d3a36f2835de030ab730"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "task_id": "PUBLIC_RGBD_SURFACE_FINETUNING_PILOT_V1",
+  "component": "MHR_NATIVE_SYNTHETIC_GENERATOR",
+  "status": "PASS_GENERATOR_GEOMETRY_SMOKE100",
+  "executed_at": "2026-09-09T20:46:27+08:00",
+  "server": "172.18.18.151",
+  "server_root": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/mhr_native_synthetic/",
+  "accepted_dataset": {
+    "path": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/mhr_native_synthetic/smoke100_v2",
+    "bytes": 138657934,
+    "sample_count": 100,
+    "identity_count": 10,
+    "samples_per_identity": 10,
+    "master_seed": 2026090903,
+    "manifest_sha256": "4c48ee51471f127aee8240c4e65e6282bab14b42d7a916dda884179a98da2304",
+    "topology_file_sha256": "79d3954cae04ae7a16ad2005238df81da2003b971b5b582457495430182b77c5",
+    "foreground_pixel_count_range": [
+      14403,
+      28014
+    ],
+    "visible_mhr70_count_range": [
+      26,
+      62
+    ]
+  },
+  "mhr": {
+    "model_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "vertex_count": 18439,
+    "face_count": 36874,
+    "actual_model_used": true,
+    "surrogate_body_model_used": false,
+    "vertex_offsets_used": false
+  },
+  "automatic_validation": {
+    "report_path": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/mhr_native_synthetic/smoke100_v2_validation_final.json",
+    "report_sha256": "2adf27ed336f14c6ebf722621d27a4c80d0562bf26983a1f7a7bf2d8a59406f1",
+    "status": "PASS",
+    "pass_count": 100,
+    "fail_count": 0,
+    "rays_per_sample": 16,
+    "total_independent_rays": 1600,
+    "thresholds": {
+      "parameter_replay_max_m": 0.000001,
+      "mesh_depth_backprojection_max_m": 0.005,
+      "backprojection_reprojection_max_px": 0.00001
+    },
+    "observed": {
+      "parameter_replay_max_abs_m": 4.76837158203125e-7,
+      "mesh_depth_backprojection_max_m": 0.004505913760647949,
+      "mesh_depth_backprojection_p95_of_sample_p95_m": 0.0027314070034810075,
+      "backprojection_reprojection_max_px": 2.842170943040401e-14
+    },
+    "checks_per_sample": [
+      "all artifact file hashes",
+      "topology and canonical vertex-array hashes",
+      "saved params regenerate vertices, 308 keypoints and 127 joints",
+      "mask equals depth > 0",
+      "uint16 millimetre depth is the exact declared derivative",
+      "finite positive foreground depth",
+      "front-facing triangle ray intersection",
+      "mesh-depth-backprojection surface closure",
+      "backprojection-reprojection pixel closure"
+    ],
+    "dataset_integrity_checks": {
+      "manifest_sample_count": true,
+      "unique_sample_ids": true,
+      "unique_sample_seeds": true,
+      "identity_count": true,
+      "shape_scale_shared_within_identity": true,
+      "identity_split_disjoint": true,
+      "topology_file_hash": true
+    }
+  },
+  "validator_correction_audit": {
+    "first_report": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/mhr_native_synthetic/smoke100_validation.json",
+    "first_status": "FAIL_DO_NOT_USE_32_OF_100_PASS",
+    "second_intermediate_status": "FAIL_DO_NOT_USE_92_OF_100_PASS",
+    "root_causes": [
+      "The initial independent ray used integer (u,v), while pyrender/OpenGL evaluates depth at fragment centre (u+0.5,v+0.5).",
+      "The initial ray test accepted both triangle windings although the renderer uses back-face culling.",
+      "Outer-mask erosion did not exclude internal z-buffer boundaries such as one body part crossing another."
+    ],
+    "evidence": "On one failing sample, ray offset +0.5 reduced maximum Z residual from about 70.7 mm to 3.64 mm without changing the mesh, depth or 5 mm gate.",
+    "corrections": [
+      "use fragment-centre rays and backprojection",
+      "intersect front-facing triangles only",
+      "retain 7x7 mask erosion",
+      "exclude 3x3 depth neighbourhoods whose range is at least 0.03 m"
+    ],
+    "gate_change": "NONE; the maximum surface-closure threshold remained 0.005 m",
+    "failed_artifacts_policy": "The failed first run is preserved on the server and is not an accepted dataset."
+  },
+  "visual_validation": {
+    "contact_sheet_path": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/mhr_native_synthetic/smoke100_v2_contact_sheet.jpg",
+    "contact_sheet_sha256": "d8779184c85eeb897b4582cd8b515cc18deda280bc4cbda2a6b9e555ea898b1e",
+    "layout": "10x10 samples, each RGB | inverse-depth | mask",
+    "reviewed_sample_count": 100,
+    "status": "PASS_FOR_GEOMETRY_SMOKE",
+    "observations": [
+      "All 100 samples contain a complete, non-empty human render with matching depth and mask.",
+      "No gross near-plane clipping, left-right reflection, empty body, camera crop failure or broken topology was observed.",
+      "Viewpoints span front, side, back and oblique directions."
+    ],
+    "distribution_limitation": "The smoke uses narrow bounded random parameters and is dominated by near-neutral upright body configurations. It does not yet cover realistic prone/contact or the full complex-pose target distribution."
+  },
+  "decision": {
+    "generator_geometry": "PASS",
+    "full_1000_generation": "PROTOCOL_READY_NOT_EXECUTED",
+    "formal_training": "NOT_AUTHORIZED_BY_THIS_RESULT",
+    "required_before_training": [
+      "design a realistic pose-source or pose-library strategy rather than scaling this random smoke distribution unchanged",
+      "run the identity-disjoint 1000 protocol and obtain 1000/1000 automatic PASS",
+      "visually review at least 100 stratified samples including all identities and view extremes",
+      "freeze a synthetic-to-real ablation evaluated on held-out public RGB-D and target-domain data"
+    ]
+  },
+  "claim_limit": "This result proves exact MHR parameter replay and internally consistent synthetic RGB/Z-depth geometry. It does not prove realistic pose coverage, real-scene generalization, bare-back surface accuracy, DMD37 accuracy or medical validity."
+}

@@ -1,0 +1,660 @@
+{
+  "task": "PUBLIC_RGBD_SURFACE_FINETUNING_PILOT_V1",
+  "status": "FINAL_FROZEN_WORKSET_QA_PASS",
+  "frozen_at": "2026-09-09T22:08:36+08:00",
+  "final_split_frozen": true,
+  "workset_qa_passed": true,
+  "sealed_data_materialized_for_trainer": false,
+  "sealed_subject_ids": [
+    "p000830",
+    "p001002",
+    "p000757",
+    "p000783",
+    "p000878"
+  ],
+  "dev_subject_ids": [
+    "p000823",
+    "p000879",
+    "p000880",
+    "p000881",
+    "p001088",
+    "p001110"
+  ],
+  "train_subject_ids": [
+    "p000816",
+    "p000821",
+    "p000826",
+    "p000831",
+    "p000837",
+    "p000859",
+    "p000861",
+    "p000874",
+    "p000902",
+    "p000924",
+    "p000942",
+    "p000956",
+    "p000973",
+    "p001008",
+    "p001018"
+  ],
+  "val_subject_ids": [
+    "p000842",
+    "p000853",
+    "p000913",
+    "p000914",
+    "p001037"
+  ],
+  "counts": {
+    "TRAIN": 45,
+    "VAL": 15,
+    "total": 60
+  },
+  "camera_roles": {
+    "a": "kinect_008 training surface",
+    "b": "kinect_009 held-out validation only"
+  },
+  "qa_final_path": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/NONSEALED_RGBD_REGISTRATION_QA_FINAL_V1.json",
+  "qa_final_sha256": "cc1d64069f1b6bce58743aeb6b9993935a1828afff28591bdd64592c19db1537",
+  "samples": [
+    {
+      "id": "p000924_a000081_f000026",
+      "subject_id": "p000924",
+      "sequence": "p000924_a000081",
+      "action": "a000081",
+      "frame_id": 26,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000924_a000081_f000026.npz",
+      "observation_sha256": "dd37195ed7a5ddb3b7297cd9d8ff7b6c9ba374adf672f6d8d74d9738f2ac8e5c"
+    },
+    {
+      "id": "p000924_a000081_f000052",
+      "subject_id": "p000924",
+      "sequence": "p000924_a000081",
+      "action": "a000081",
+      "frame_id": 52,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000924_a000081_f000052.npz",
+      "observation_sha256": "65f25324fb4d9133fe7bef4168792218c242b9fd8b998cc192af40a14608e864"
+    },
+    {
+      "id": "p000924_a000081_f000078",
+      "subject_id": "p000924",
+      "sequence": "p000924_a000081",
+      "action": "a000081",
+      "frame_id": 78,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000924_a000081_f000078.npz",
+      "observation_sha256": "a83c1cf029caddab39c514299d5e3141cd16344d10892f4f3aa460bb8e79a3b1"
+    },
+    {
+      "id": "p000861_a001444_f000009",
+      "subject_id": "p000861",
+      "sequence": "p000861_a001444",
+      "action": "a001444",
+      "frame_id": 9,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000861_a001444_f000009.npz",
+      "observation_sha256": "c7bb323ba949b65cf68b5a60779e2aa256c5f149ddd24d5250ad10a04c5f34a0"
+    },
+    {
+      "id": "p000861_a001444_f000018",
+      "subject_id": "p000861",
+      "sequence": "p000861_a001444",
+      "action": "a001444",
+      "frame_id": 18,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000861_a001444_f000018.npz",
+      "observation_sha256": "3099456ffd7917c7967b15083ac9b300665ca233e355748d91d5c0469aa089a0"
+    },
+    {
+      "id": "p000861_a001444_f000028",
+      "subject_id": "p000861",
+      "sequence": "p000861_a001444",
+      "action": "a001444",
+      "frame_id": 28,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000861_a001444_f000028.npz",
+      "observation_sha256": "60338de80144d4c131609077ca91e16a71ba2a75e9b8955ee6cfffb344ad6584"
+    },
+    {
+      "id": "p000837_a000126_f000020",
+      "subject_id": "p000837",
+      "sequence": "p000837_a000126",
+      "action": "a000126",
+      "frame_id": 20,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000837_a000126_f000020.npz",
+      "observation_sha256": "4b3f5715305809ed0f21373d755498ead3b256335f5f5987d256e6489f6d86ab"
+    },
+    {
+      "id": "p000837_a000126_f000040",
+      "subject_id": "p000837",
+      "sequence": "p000837_a000126",
+      "action": "a000126",
+      "frame_id": 40,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000837_a000126_f000040.npz",
+      "observation_sha256": "84064e4f44c2eae6df64e9acd489ec9928a8154f378886cc651e2f8b5a76df25"
+    },
+    {
+      "id": "p000837_a000126_f000060",
+      "subject_id": "p000837",
+      "sequence": "p000837_a000126",
+      "action": "a000126",
+      "frame_id": 60,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000837_a000126_f000060.npz",
+      "observation_sha256": "ca016c4efa31c1408ae3bbac5226b5defa28bad0fa94a1029f260f7b89b86197"
+    },
+    {
+      "id": "p000859_a000107_f000022",
+      "subject_id": "p000859",
+      "sequence": "p000859_a000107",
+      "action": "a000107",
+      "frame_id": 22,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000859_a000107_f000022.npz",
+      "observation_sha256": "55806a88d89d32db4eee25dfeffff79c8ef487755c94e7a3aaec7cf1f4232bc4"
+    },
+    {
+      "id": "p000859_a000107_f000044",
+      "subject_id": "p000859",
+      "sequence": "p000859_a000107",
+      "action": "a000107",
+      "frame_id": 44,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000859_a000107_f000044.npz",
+      "observation_sha256": "29ce7359351c99d05eaa65affdfa9aa961b008904a6ad2f7a027ad01d9ca312b"
+    },
+    {
+      "id": "p000859_a000107_f000065",
+      "subject_id": "p000859",
+      "sequence": "p000859_a000107",
+      "action": "a000107",
+      "frame_id": 65,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000859_a000107_f000065.npz",
+      "observation_sha256": "224cec53aab06f123f52d31c1dab05636d5a36c0bc890a2eec9e8cf37d14040d"
+    },
+    {
+      "id": "p000826_a000219_f000023",
+      "subject_id": "p000826",
+      "sequence": "p000826_a000219",
+      "action": "a000219",
+      "frame_id": 23,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000826_a000219_f000023.npz",
+      "observation_sha256": "c5f2cf31ab9f9df337af17e3533963d4d2bcf872c38aa12e6f70aab74b419d25"
+    },
+    {
+      "id": "p000826_a000219_f000046",
+      "subject_id": "p000826",
+      "sequence": "p000826_a000219",
+      "action": "a000219",
+      "frame_id": 46,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000826_a000219_f000046.npz",
+      "observation_sha256": "95f10244ccfc92afcbd54f80d5439d43a2dcf9d88c648ad8f5bd766bc74555c2"
+    },
+    {
+      "id": "p000826_a000219_f000069",
+      "subject_id": "p000826",
+      "sequence": "p000826_a000219",
+      "action": "a000219",
+      "frame_id": 69,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000826_a000219_f000069.npz",
+      "observation_sha256": "3b638e2c66c75c2c92166bbb3f0490443d7d8a10bab090aa78c0fd5a6ed60b83"
+    },
+    {
+      "id": "p000816_a000126_f000022",
+      "subject_id": "p000816",
+      "sequence": "p000816_a000126",
+      "action": "a000126",
+      "frame_id": 22,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000816_a000126_f000022.npz",
+      "observation_sha256": "78b4731bcd434ce80b92017e322ede2e673a54dbd921f265db659a57b4a5e16c"
+    },
+    {
+      "id": "p000816_a000126_f000043",
+      "subject_id": "p000816",
+      "sequence": "p000816_a000126",
+      "action": "a000126",
+      "frame_id": 43,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000816_a000126_f000043.npz",
+      "observation_sha256": "ea5d4550dbc6b0dd03733007573113b1df47d99e608fe845e2f292f339547097"
+    },
+    {
+      "id": "p000816_a000126_f000064",
+      "subject_id": "p000816",
+      "sequence": "p000816_a000126",
+      "action": "a000126",
+      "frame_id": 64,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000816_a000126_f000064.npz",
+      "observation_sha256": "df25010160b835f619aab426067eccf39e3dec7bad8ef67189d9ff3d689a40f3"
+    },
+    {
+      "id": "p000874_a000042_f000011",
+      "subject_id": "p000874",
+      "sequence": "p000874_a000042",
+      "action": "a000042",
+      "frame_id": 11,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000874_a000042_f000011.npz",
+      "observation_sha256": "0b53a742e4b8eefb9cb4fac053cec60bbac8bf32000707bceb8db1bd84d21fd4"
+    },
+    {
+      "id": "p000874_a000042_f000022",
+      "subject_id": "p000874",
+      "sequence": "p000874_a000042",
+      "action": "a000042",
+      "frame_id": 22,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000874_a000042_f000022.npz",
+      "observation_sha256": "3d9c247f7334345d4b6564e35287e49922875f23cc2fb10b7ba6ac7eac0d34c8"
+    },
+    {
+      "id": "p000874_a000042_f000034",
+      "subject_id": "p000874",
+      "sequence": "p000874_a000042",
+      "action": "a000042",
+      "frame_id": 34,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000874_a000042_f000034.npz",
+      "observation_sha256": "5fbc1017b3dc32fe0560e83227138e342cb248dc7107632a8c928103a95ceb1e"
+    },
+    {
+      "id": "p001008_a005311_f000011",
+      "subject_id": "p001008",
+      "sequence": "p001008_a005311",
+      "action": "a005311",
+      "frame_id": 11,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p001008_a005311_f000011.npz",
+      "observation_sha256": "1c6c1dc7ddcff6abdf63f560f54b7e8d2d3280794f4d1f475fcc7d013b5cad4e"
+    },
+    {
+      "id": "p001008_a005311_f000022",
+      "subject_id": "p001008",
+      "sequence": "p001008_a005311",
+      "action": "a005311",
+      "frame_id": 22,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p001008_a005311_f000022.npz",
+      "observation_sha256": "f1c237f5ce6ce6d43ca06ef09b9880ee9b64bf392551acbd5aef6602877d3687"
+    },
+    {
+      "id": "p001008_a005311_f000034",
+      "subject_id": "p001008",
+      "sequence": "p001008_a005311",
+      "action": "a005311",
+      "frame_id": 34,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p001008_a005311_f000034.npz",
+      "observation_sha256": "1afdd711daf835747bdb94a36b78aa6287d2342378e88386ca6de17eff33ee73"
+    },
+    {
+      "id": "p000973_a000017_f000009",
+      "subject_id": "p000973",
+      "sequence": "p000973_a000017",
+      "action": "a000017",
+      "frame_id": 9,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000973_a000017_f000009.npz",
+      "observation_sha256": "b6a4c3df18b3fd4d22f03c022763106f7cdc12831c3063e814ae33a0aca7b763"
+    },
+    {
+      "id": "p000973_a000017_f000018",
+      "subject_id": "p000973",
+      "sequence": "p000973_a000017",
+      "action": "a000017",
+      "frame_id": 18,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000973_a000017_f000018.npz",
+      "observation_sha256": "a9b145f9bc0db9090f8f7f776980cef4d8a9cab422e8c2909993535f3acd052c"
+    },
+    {
+      "id": "p000973_a000017_f000026",
+      "subject_id": "p000973",
+      "sequence": "p000973_a000017",
+      "action": "a000017",
+      "frame_id": 26,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000973_a000017_f000026.npz",
+      "observation_sha256": "7ed18933fb838a7d317da88da455f6d37abd4ca2c9752943ceec5fc8ee15290f"
+    },
+    {
+      "id": "p000831_a000306_f000048",
+      "subject_id": "p000831",
+      "sequence": "p000831_a000306",
+      "action": "a000306",
+      "frame_id": 48,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000831_a000306_f000048.npz",
+      "observation_sha256": "91b3cf89e721aa1f2dc0a1bb77ecec958b81490b84674b3cbe27883f98da9ee1"
+    },
+    {
+      "id": "p000831_a000306_f000096",
+      "subject_id": "p000831",
+      "sequence": "p000831_a000306",
+      "action": "a000306",
+      "frame_id": 96,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000831_a000306_f000096.npz",
+      "observation_sha256": "cf054bb8fac0e318792e5a4e3b6be0d6b8e348fbffefb5b899bfefdcc2f919fd"
+    },
+    {
+      "id": "p000831_a000306_f000145",
+      "subject_id": "p000831",
+      "sequence": "p000831_a000306",
+      "action": "a000306",
+      "frame_id": 145,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000831_a000306_f000145.npz",
+      "observation_sha256": "ed9fda88e80742ff519c2046288c9507421700bbd94e14983c1557d6e8b184b4"
+    },
+    {
+      "id": "p000902_a000017_f000010",
+      "subject_id": "p000902",
+      "sequence": "p000902_a000017",
+      "action": "a000017",
+      "frame_id": 10,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000902_a000017_f000010.npz",
+      "observation_sha256": "c92ab32d42e6ba468e201df1a1514b19db098792b4f3f302de61d6e56f76dd98"
+    },
+    {
+      "id": "p000902_a000017_f000020",
+      "subject_id": "p000902",
+      "sequence": "p000902_a000017",
+      "action": "a000017",
+      "frame_id": 20,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000902_a000017_f000020.npz",
+      "observation_sha256": "6c7bfd0e7ab8eff65882ea29f97f28c719cb56b5f56263910f230a258b289091"
+    },
+    {
+      "id": "p000902_a000017_f000031",
+      "subject_id": "p000902",
+      "sequence": "p000902_a000017",
+      "action": "a000017",
+      "frame_id": 31,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000902_a000017_f000031.npz",
+      "observation_sha256": "4e123bb5ffd38ef5e12eab9490e77a8d324555e8ffd777752f5aca7611565a1f"
+    },
+    {
+      "id": "p000942_a005386_f000012",
+      "subject_id": "p000942",
+      "sequence": "p000942_a005386",
+      "action": "a005386",
+      "frame_id": 12,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000942_a005386_f000012.npz",
+      "observation_sha256": "9fd10d02d73e0a808157eddfc2c090194a6ac198dc0a8ffd5140956c6ab35a9a"
+    },
+    {
+      "id": "p000942_a005386_f000024",
+      "subject_id": "p000942",
+      "sequence": "p000942_a005386",
+      "action": "a005386",
+      "frame_id": 24,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000942_a005386_f000024.npz",
+      "observation_sha256": "047df19a951ee7b38e6b4390b03bd2616aaf8351a3980b23b1ac7d302b29b390"
+    },
+    {
+      "id": "p000942_a005386_f000037",
+      "subject_id": "p000942",
+      "sequence": "p000942_a005386",
+      "action": "a005386",
+      "frame_id": 37,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000942_a005386_f000037.npz",
+      "observation_sha256": "541be97339b224dc852c65f80d247d07691e2c30f4d456b7a5a8b3d38e58564c"
+    },
+    {
+      "id": "p001018_a000184_f000009",
+      "subject_id": "p001018",
+      "sequence": "p001018_a000184",
+      "action": "a000184",
+      "frame_id": 9,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p001018_a000184_f000009.npz",
+      "observation_sha256": "8acb2dff70aacf1cc6cb904ae2ae92b15ec0854f4c1e046eaad83c88899a05ed"
+    },
+    {
+      "id": "p001018_a000184_f000018",
+      "subject_id": "p001018",
+      "sequence": "p001018_a000184",
+      "action": "a000184",
+      "frame_id": 18,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p001018_a000184_f000018.npz",
+      "observation_sha256": "bfc84c07ec1e3631e2ecde95fc5cfcbf820a316e76a1b42d28b640650f40e825"
+    },
+    {
+      "id": "p001018_a000184_f000026",
+      "subject_id": "p001018",
+      "sequence": "p001018_a000184",
+      "action": "a000184",
+      "frame_id": 26,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p001018_a000184_f000026.npz",
+      "observation_sha256": "f6136c3e6409f5ed3cd5ad99a3c252e5ededbcb5166fccc9cf344099cc7e40ef"
+    },
+    {
+      "id": "p000956_a001454_f000088",
+      "subject_id": "p000956",
+      "sequence": "p000956_a001454",
+      "action": "a001454",
+      "frame_id": 88,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000956_a001454_f000088.npz",
+      "observation_sha256": "d0c785927b9796274590ce91b7edd7c66c4c00ee12833b49398e89293690db0f"
+    },
+    {
+      "id": "p000956_a001454_f000176",
+      "subject_id": "p000956",
+      "sequence": "p000956_a001454",
+      "action": "a001454",
+      "frame_id": 176,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000956_a001454_f000176.npz",
+      "observation_sha256": "1e0ce88c86e6538837fbdf321de08f744010b2593c76e098540273b33a4e6d41"
+    },
+    {
+      "id": "p000956_a001454_f000265",
+      "subject_id": "p000956",
+      "sequence": "p000956_a001454",
+      "action": "a001454",
+      "frame_id": 265,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000956_a001454_f000265.npz",
+      "observation_sha256": "63532198106da4aca9a3b5ad1de7ddc82fe985bad1660f4fac1134763f5c9988"
+    },
+    {
+      "id": "p000821_a000043_f000025",
+      "subject_id": "p000821",
+      "sequence": "p000821_a000043",
+      "action": "a000043",
+      "frame_id": 25,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000821_a000043_f000025.npz",
+      "observation_sha256": "65547ede3897169958b70de4df2bbbdedd105765c73fc2f82ade39a38cec45c0"
+    },
+    {
+      "id": "p000821_a000043_f000050",
+      "subject_id": "p000821",
+      "sequence": "p000821_a000043",
+      "action": "a000043",
+      "frame_id": 50,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000821_a000043_f000050.npz",
+      "observation_sha256": "11f1265f23ac32479a35de2d8a461ffde37fc78cd9994aa27cab0e3b02be894c"
+    },
+    {
+      "id": "p000821_a000043_f000076",
+      "subject_id": "p000821",
+      "sequence": "p000821_a000043",
+      "action": "a000043",
+      "frame_id": 76,
+      "split": "TRAIN",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000821_a000043_f000076.npz",
+      "observation_sha256": "bf4e155417941129c3629c1d7db7f7555a68b26c99067c3ec6b2c40437c31f51"
+    },
+    {
+      "id": "p001037_a000025_f000032",
+      "subject_id": "p001037",
+      "sequence": "p001037_a000025",
+      "action": "a000025",
+      "frame_id": 32,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p001037_a000025_f000032.npz",
+      "observation_sha256": "f25b6ceaa7093572a7239b4421b8c8f28046994c4fddd3c0eccb0eff6d0f34cc"
+    },
+    {
+      "id": "p001037_a000025_f000064",
+      "subject_id": "p001037",
+      "sequence": "p001037_a000025",
+      "action": "a000025",
+      "frame_id": 64,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p001037_a000025_f000064.npz",
+      "observation_sha256": "094f6ca4b9e012b2001dc911100f5339eaab64761b9b026942a507ba6781e34d"
+    },
+    {
+      "id": "p001037_a000025_f000097",
+      "subject_id": "p001037",
+      "sequence": "p001037_a000025",
+      "action": "a000025",
+      "frame_id": 97,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p001037_a000025_f000097.npz",
+      "observation_sha256": "64b569e5dad6733b7b31b4d233841513d5bf64ba466471d35d62242ce40584c7"
+    },
+    {
+      "id": "p000913_a000017_f000008",
+      "subject_id": "p000913",
+      "sequence": "p000913_a000017",
+      "action": "a000017",
+      "frame_id": 8,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000913_a000017_f000008.npz",
+      "observation_sha256": "6d190091db480a5efc3ad7d8e9571f887d2c0882d69472d0ffc1cf80fe82dda8"
+    },
+    {
+      "id": "p000913_a000017_f000016",
+      "subject_id": "p000913",
+      "sequence": "p000913_a000017",
+      "action": "a000017",
+      "frame_id": 16,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000913_a000017_f000016.npz",
+      "observation_sha256": "ea6c7cc51a909ac4f0a5db58cfc288a537330bcc57ac9fc5325aff6122166b7c"
+    },
+    {
+      "id": "p000913_a000017_f000023",
+      "subject_id": "p000913",
+      "sequence": "p000913_a000017",
+      "action": "a000017",
+      "frame_id": 23,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000913_a000017_f000023.npz",
+      "observation_sha256": "b490c2716e4512655a1f95e036cfd59ad5e9110fb5760a2a4a1712c5cf43bbb5"
+    },
+    {
+      "id": "p000853_a000043_f000020",
+      "subject_id": "p000853",
+      "sequence": "p000853_a000043",
+      "action": "a000043",
+      "frame_id": 20,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000853_a000043_f000020.npz",
+      "observation_sha256": "f6c5827670523cd6ee8e10d3082347020f140cc2f5c4921ac34abd06af6275e4"
+    },
+    {
+      "id": "p000853_a000043_f000040",
+      "subject_id": "p000853",
+      "sequence": "p000853_a000043",
+      "action": "a000043",
+      "frame_id": 40,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000853_a000043_f000040.npz",
+      "observation_sha256": "ed5ff9dd3efe350bd49379ecdfeb159b86d114b89bf8c7bf49418ac893c0c7b8"
+    },
+    {
+      "id": "p000853_a000043_f000061",
+      "subject_id": "p000853",
+      "sequence": "p000853_a000043",
+      "action": "a000043",
+      "frame_id": 61,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000853_a000043_f000061.npz",
+      "observation_sha256": "9cfdf7f3b415db4718af1ecd028b4030b9c75ec5b3238ea09256a996337417bc"
+    },
+    {
+      "id": "p000914_a005591_f000025",
+      "subject_id": "p000914",
+      "sequence": "p000914_a005591",
+      "action": "a005591",
+      "frame_id": 25,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000914_a005591_f000025.npz",
+      "observation_sha256": "590910d88fbfd11f28ff88917b16e8428cd0945b8dbb43226278c7ca2b11edd6"
+    },
+    {
+      "id": "p000914_a005591_f000050",
+      "subject_id": "p000914",
+      "sequence": "p000914_a005591",
+      "action": "a005591",
+      "frame_id": 50,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000914_a005591_f000050.npz",
+      "observation_sha256": "b513d3a86a5e3cebd33f34d79596869424e3cc0c6c3a55df4fc62b17f2020ec0"
+    },
+    {
+      "id": "p000914_a005591_f000076",
+      "subject_id": "p000914",
+      "sequence": "p000914_a005591",
+      "action": "a005591",
+      "frame_id": 76,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000914_a005591_f000076.npz",
+      "observation_sha256": "25ef80e67dfc0c047dc747722ec116dba737f79d13626b09cca3cf5a4aab73bd"
+    },
+    {
+      "id": "p000842_a000042_f000014",
+      "subject_id": "p000842",
+      "sequence": "p000842_a000042",
+      "action": "a000042",
+      "frame_id": 14,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000842_a000042_f000014.npz",
+      "observation_sha256": "4754dbaabc218f94a16d17e77fce3c00a8f066e927024d3047a3b83000e3fb00"
+    },
+    {
+      "id": "p000842_a000042_f000029",
+      "subject_id": "p000842",
+      "sequence": "p000842_a000042",
+      "action": "a000042",
+      "frame_id": 29,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000842_a000042_f000029.npz",
+      "observation_sha256": "5d74d8d8afcddcde5369f395a36354f028c695d78289061ec27983d25f5c7b09"
+    },
+    {
+      "id": "p000842_a000042_f000044",
+      "subject_id": "p000842",
+      "sequence": "p000842_a000042",
+      "action": "a000042",
+      "frame_id": 44,
+      "split": "VAL",
+      "observation_npz": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/val/p000842_a000042_f000044.npz",
+      "observation_sha256": "9da2d7469f9f2e18223e614fdf8e478da94caeebad6d05645f2a13c3c2827a54"
+    }
+  ]
+}

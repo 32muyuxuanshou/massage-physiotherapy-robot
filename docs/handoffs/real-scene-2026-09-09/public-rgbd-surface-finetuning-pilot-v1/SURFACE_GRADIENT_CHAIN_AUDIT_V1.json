@@ -1,0 +1,99 @@
+{
+  "status": "COMPLETED_READ_ONLY_SURFACE_GRADIENT_CHAIN_AUDIT_V1",
+  "split": "DEV5_ONLY",
+  "sealed_test_accessed": false,
+  "optimizer_steps": 0,
+  "checkpoint_written": false,
+  "official": {
+    "pose_head_parameter_gradient_norm": {
+      "subject_count": 5,
+      "subject_mean": 9.338401412963867,
+      "subject_median": 9.235776901245117,
+      "min": 7.503828048706055,
+      "max": 12.469987869262695
+    },
+    "camera_head_parameter_gradient_norm": {
+      "subject_count": 5,
+      "subject_mean": 8.382400798797608,
+      "subject_median": 7.821257591247559,
+      "min": 6.158340930938721,
+      "max": 12.62617301940918
+    },
+    "raw_pose_output_gradient_norm": {
+      "subject_count": 5,
+      "subject_mean": 0.22784550189971925,
+      "subject_median": 0.2202996462583542,
+      "min": 0.17249485850334167,
+      "max": 0.2852601706981659
+    },
+    "raw_camera_output_gradient_norm": {
+      "subject_count": 5,
+      "subject_mean": 1.8140352487564086,
+      "subject_median": 1.8734731674194336,
+      "min": 1.5879653692245483,
+      "max": 1.9923838376998901
+    },
+    "mesh_vertex_gradient_norm": {
+      "subject_count": 5,
+      "subject_mean": 0.11181917637586594,
+      "subject_median": 0.10048072040081024,
+      "min": 0.07941931486129761,
+      "max": 0.1718253791332245
+    },
+    "raw_pose_output_slice_gradient_norm_subject_mean": {
+      "global_rotation_6d": 0.15496679097414018,
+      "body_continuous": 0.16495188623666762,
+      "shape": 0.006383240036666393,
+      "scale_skeleton": 0.004683056194335222,
+      "hands": 9.2868019692105e-06,
+      "face_zeroed": 0.0
+    }
+  },
+  "v2_e5": {
+    "pose_head_parameter_gradient_norm": {
+      "subject_count": 5,
+      "subject_mean": 9.514814376831055,
+      "subject_median": 9.10506534576416,
+      "min": 7.696057319641113,
+      "max": 12.781481742858887
+    },
+    "camera_head_parameter_gradient_norm": {
+      "subject_count": 5,
+      "subject_mean": 8.372860050201416,
+      "subject_median": 8.330061912536621,
+      "min": 6.569395542144775,
+      "max": 11.403024673461914
+    },
+    "raw_pose_output_gradient_norm": {
+      "subject_count": 5,
+      "subject_mean": 0.22645210325717927,
+      "subject_median": 0.21761968731880188,
+      "min": 0.17373795807361603,
+      "max": 0.2825298309326172
+    },
+    "raw_camera_output_gradient_norm": {
+      "subject_count": 5,
+      "subject_mean": 1.8596870183944703,
+      "subject_median": 1.9432649612426758,
+      "min": 1.6506292819976807,
+      "max": 2.031547784805298
+    },
+    "mesh_vertex_gradient_norm": {
+      "subject_count": 5,
+      "subject_mean": 0.12115639746189118,
+      "subject_median": 0.10489490628242493,
+      "min": 0.08506104350090027,
+      "max": 0.19747480750083923
+    },
+    "raw_pose_output_slice_gradient_norm_subject_mean": {
+      "global_rotation_6d": 0.15700101107358932,
+      "body_continuous": 0.16118258088827134,
+      "shape": 0.006416330859065056,
+      "scale_skeleton": 0.004753581993281841,
+      "hands": 8.461722700303653e-06,
+      "face_zeroed": 0.0
+    }
+  },
+  "verified_chain": "loss -> sampled triangle points -> MHR vertices/pred_cam_t -> raw pose/camera outputs -> projection head weights",
+  "interpretation": "The differentiable surface objective reaches both proposed output heads for every DEV subject; this is feasibility evidence, not a training result."
+}

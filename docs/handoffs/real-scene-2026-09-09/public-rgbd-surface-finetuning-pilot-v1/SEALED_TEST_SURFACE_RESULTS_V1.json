@@ -1,0 +1,1556 @@
+{
+  "status": "COMPLETED_READ_ONLY_OFFICIAL_VS_FINETUNED",
+  "evaluation_split": "SEALED",
+  "sealed_data_accessed": true,
+  "optimizer_constructed": false,
+  "optimizer_steps": 0,
+  "backward_calls": 0,
+  "models": {
+    "baseline": "Official SAM 3D Body",
+    "candidate": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/formal_to_epoch10_v1/official_pose_camera_epoch1.pt"
+  },
+  "geometry_subject_macro": {
+    "official": {
+      "subject_count": 5,
+      "point_to_triangle_mean_of_subject_frame_medians_mm": 58.71738433858261,
+      "point_to_triangle_median_of_subject_frame_medians_mm": 42.514982818441496,
+      "point_to_triangle_p90_of_subject_frame_medians_mm": 113.05010711586945,
+      "point_to_triangle_p95_of_subject_frame_medians_mm": 126.8734412992839,
+      "point_to_triangle_mean_of_subject_frame_p90_mm": 128.26245107807387,
+      "point_to_triangle_mean_of_subject_frame_p95_mm": 146.45672081222597,
+      "rendered_depth_mean_of_subject_frame_medians_mm": 75.06041526794434,
+      "rendered_depth_mean_of_subject_frame_p90_mm": 154.0242958068848,
+      "rendered_depth_mean_of_subject_frame_p95_mm": 186.16226196289057,
+      "rendered_depth_median_coverage": 0.7456912357902457,
+      "subjects": [
+        {
+          "subject_id": "p000757",
+          "point_to_triangle_frame_median_mm": 18.787299255703434,
+          "point_to_triangle_frame_p90_mm": 48.68461179438076,
+          "point_to_triangle_frame_p95_mm": 63.239065931808895,
+          "rendered_depth_frame_median_mm": 21.022796630859375,
+          "rendered_depth_frame_p90_mm": 63.90423774719241,
+          "rendered_depth_frame_p95_mm": 77.51940488815308,
+          "rendered_depth_coverage": 0.81788
+        },
+        {
+          "subject_id": "p000783",
+          "point_to_triangle_frame_median_mm": 42.514982818441496,
+          "point_to_triangle_frame_p90_mm": 112.84552300768648,
+          "point_to_triangle_frame_p95_mm": 123.68804170312988,
+          "rendered_depth_frame_median_mm": 43.12175512313843,
+          "rendered_depth_frame_p90_mm": 144.45400238037112,
+          "rendered_depth_frame_p95_mm": 185.32189726829506,
+          "rendered_depth_coverage": 0.7456912357902457
+        },
+        {
+          "subject_id": "p000830",
+          "point_to_triangle_frame_median_mm": 20.007759570443678,
+          "point_to_triangle_frame_p90_mm": 61.64499298267578,
+          "point_to_triangle_frame_p95_mm": 70.09664930872472,
+          "rendered_depth_frame_median_mm": 24.643123149871826,
+          "rendered_depth_frame_p90_mm": 86.10451221466064,
+          "rendered_depth_frame_p95_mm": 102.4075448513031,
+          "rendered_depth_coverage": 0.7898458940257547
+        },
+        {
+          "subject_id": "p000878",
+          "point_to_triangle_frame_median_mm": 71.58010456562607,
+          "point_to_triangle_frame_p90_mm": 122.26016852234206,
+          "point_to_triangle_frame_p95_mm": 149.72573516986682,
+          "rendered_depth_frame_median_mm": 70.28770446777344,
+          "rendered_depth_frame_p90_mm": 144.08669471740723,
+          "rendered_depth_frame_p95_mm": 168.95816326141357,
+          "rendered_depth_coverage": 0.5861208452798131
+        },
+        {
+          "subject_id": "p001002",
+          "point_to_triangle_frame_median_mm": 140.69677548269837,
+          "point_to_triangle_frame_p90_mm": 295.87695908328425,
+          "point_to_triangle_frame_p95_mm": 325.5341119475995,
+          "rendered_depth_frame_median_mm": 216.2266969680786,
+          "rendered_depth_frame_p90_mm": 331.57203197479254,
+          "rendered_depth_frame_p95_mm": 396.60429954528803,
+          "rendered_depth_coverage": 0.44806600737316404
+        }
+      ]
+    },
+    "finetuned": {
+      "subject_count": 5,
+      "point_to_triangle_mean_of_subject_frame_medians_mm": 27.535311170647503,
+      "point_to_triangle_median_of_subject_frame_medians_mm": 23.2793454635126,
+      "point_to_triangle_p90_of_subject_frame_medians_mm": 38.61284962642775,
+      "point_to_triangle_p95_of_subject_frame_medians_mm": 41.488757565143494,
+      "point_to_triangle_mean_of_subject_frame_p90_mm": 73.8069657162857,
+      "point_to_triangle_mean_of_subject_frame_p95_mm": 94.323912383798,
+      "rendered_depth_mean_of_subject_frame_medians_mm": 44.362759590148926,
+      "rendered_depth_mean_of_subject_frame_p90_mm": 112.74951219558719,
+      "rendered_depth_mean_of_subject_frame_p95_mm": 137.0559358596801,
+      "rendered_depth_median_coverage": 0.7491906005221932,
+      "subjects": [
+        {
+          "subject_id": "p000757",
+          "point_to_triangle_frame_median_mm": 21.02848123370306,
+          "point_to_triangle_frame_p90_mm": 56.837994779768025,
+          "point_to_triangle_frame_p95_mm": 72.38974533179552,
+          "rendered_depth_frame_median_mm": 32.213449478149414,
+          "rendered_depth_frame_p90_mm": 82.53804445266728,
+          "rendered_depth_frame_p95_mm": 94.59873437881464,
+          "rendered_depth_coverage": 0.78032
+        },
+        {
+          "subject_id": "p000783",
+          "point_to_triangle_frame_median_mm": 23.2793454635126,
+          "point_to_triangle_frame_p90_mm": 65.23409011112793,
+          "point_to_triangle_frame_p95_mm": 74.39654744589525,
+          "rendered_depth_frame_median_mm": 29.438257217407227,
+          "rendered_depth_frame_p90_mm": 95.44533491134644,
+          "rendered_depth_frame_p95_mm": 122.94867634773254,
+          "rendered_depth_coverage": 0.8047531992687386
+        },
+        {
+          "subject_id": "p000830",
+          "point_to_triangle_frame_median_mm": 29.985125810280515,
+          "point_to_triangle_frame_p90_mm": 67.5826008452089,
+          "point_to_triangle_frame_p95_mm": 83.45882591151067,
+          "rendered_depth_frame_median_mm": 68.02600622177124,
+          "rendered_depth_frame_p90_mm": 117.94512271881104,
+          "rendered_depth_frame_p95_mm": 157.16003775596596,
+          "rendered_depth_coverage": 0.7491906005221932
+        },
+        {
+          "subject_id": "p000878",
+          "point_to_triangle_frame_median_mm": 19.018937841882085,
+          "point_to_triangle_frame_p90_mm": 64.1655117471721,
+          "point_to_triangle_frame_p95_mm": 103.13665683176929,
+          "rendered_depth_frame_median_mm": 18.98115873336792,
+          "rendered_depth_frame_p90_mm": 77.4986863136292,
+          "rendered_depth_frame_p95_mm": 103.03604006767259,
+          "rendered_depth_coverage": 0.7103111394286928
+        },
+        {
+          "subject_id": "p001002",
+          "point_to_triangle_frame_median_mm": 44.36466550385924,
+          "point_to_triangle_frame_p90_mm": 115.21463109815157,
+          "point_to_triangle_frame_p95_mm": 138.2377863980193,
+          "rendered_depth_frame_median_mm": 73.15492630004883,
+          "rendered_depth_frame_p90_mm": 190.32037258148193,
+          "rendered_depth_frame_p95_mm": 207.53619074821472,
+          "rendered_depth_coverage": 0.6703727544034174
+        }
+      ]
+    },
+    "finetuned_minus_official": {
+      "point_to_triangle_mean_of_subject_frame_medians_mm": -31.18207316793511,
+      "point_to_triangle_median_of_subject_frame_medians_mm": -19.235637354928897,
+      "point_to_triangle_p90_of_subject_frame_medians_mm": -74.43725748944169,
+      "point_to_triangle_p95_of_subject_frame_medians_mm": -85.3846837341404,
+      "point_to_triangle_mean_of_subject_frame_p90_mm": -54.45548536178816,
+      "point_to_triangle_mean_of_subject_frame_p95_mm": -52.132808428427964,
+      "rendered_depth_mean_of_subject_frame_medians_mm": -30.69765567779541,
+      "rendered_depth_mean_of_subject_frame_p90_mm": -41.27478361129761,
+      "rendered_depth_mean_of_subject_frame_p95_mm": -49.10632610321048,
+      "rendered_depth_median_coverage": 0.003499364731947563
+    },
+    "finetuned_minus_official_primary_mm": -31.18207316793511
+  },
+  "joint_stability_subject_macro": {
+    "subject_count": 5,
+    "joint_2d_nme_mean": 0.011136040091514587,
+    "joint_2d_pck05_stability_mean": 0.9971428571428571,
+    "joint_3d_pelvis_relative_mean_mm": 26.521195220947266,
+    "joint_3d_pelvis_relative_p95_mm_mean": 44.27868282318115,
+    "subjects": [
+      {
+        "subject_id": "p000757",
+        "joint_2d_nme": 0.007452022284269333,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 18.186298370361328,
+        "joint_3d_pelvis_relative_p95_mm": 29.486631298065184
+      },
+      {
+        "subject_id": "p000783",
+        "joint_2d_nme": 0.02284247986972332,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 33.82942581176758,
+        "joint_3d_pelvis_relative_p95_mm": 51.38890533447265
+      },
+      {
+        "subject_id": "p000830",
+        "joint_2d_nme": 0.01325690746307373,
+        "joint_2d_pck05_stability": 0.9857142857142858,
+        "joint_3d_pelvis_relative_mean_mm": 26.743288040161133,
+        "joint_3d_pelvis_relative_p95_mm": 54.158352279663085
+      },
+      {
+        "subject_id": "p000878",
+        "joint_2d_nme": 0.005462952423840761,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 17.860368728637695,
+        "joint_3d_pelvis_relative_p95_mm": 33.530016994476306
+      },
+      {
+        "subject_id": "p001002",
+        "joint_2d_nme": 0.0066658384166657925,
+        "joint_2d_pck05_stability": 1.0,
+        "joint_3d_pelvis_relative_mean_mm": 35.986595153808594,
+        "joint_3d_pelvis_relative_p95_mm": 52.829508209228514
+      }
+    ]
+  },
+  "joint_stability_interpretation": "2D and pelvis-relative 3D changes are stability proxies against Official predictions, not ground-truth accuracy.",
+  "parameter_sanity": {
+    "limits": {
+      "camera_translation_delta_m": 0.5,
+      "global_rotation_rms_parameter": 0.75,
+      "body_pose_rms_parameter": 0.75
+    },
+    "maximum_over_evaluation_observations": {
+      "camera_translation_delta_m": 0.18669012188911438,
+      "global_rotation_rms_parameter": 0.034590378403663635,
+      "body_pose_rms_parameter": 0.02522464282810688
+    },
+    "within_all_limits": true
+  },
+  "rows": [
+    {
+      "id": "p000830_a000306_f000028",
+      "subject_id": "p000830",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 18948,
+          "unit": "mm",
+          "mean_mm": 27.125138249392144,
+          "median_mm": 20.007759570443678,
+          "p90_mm": 61.64499298267578,
+          "p95_mm": 69.61927994119266,
+          "max_mm": 560.9751595254822
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 14966,
+          "unit": "mm",
+          "mean_mm": 36.68736301130524,
+          "median_mm": 24.643123149871826,
+          "p90_mm": 86.10451221466064,
+          "p95_mm": 102.4075448513031,
+          "max_mm": 759.2438459396362,
+          "observed_point_count": 18948,
+          "in_image_count": 18948,
+          "overlap_count": 14966,
+          "mesh_coverage_of_observed_points": 0.7898458940257547,
+          "signed_mean_mm": 15.78429252502674,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 18948,
+          "unit": "mm",
+          "mean_mm": 34.782763271577174,
+          "median_mm": 29.985125810280515,
+          "p90_mm": 67.58180779539018,
+          "p95_mm": 77.768693603097,
+          "max_mm": 487.76470659270024
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 14324,
+          "unit": "mm",
+          "mean_mm": 77.13489879845442,
+          "median_mm": 68.02600622177124,
+          "p90_mm": 117.94512271881104,
+          "p95_mm": 157.16003775596596,
+          "max_mm": 641.6603326797485,
+          "observed_point_count": 18948,
+          "in_image_count": 18948,
+          "overlap_count": 14324,
+          "mesh_coverage_of_observed_points": 0.7559636900992189,
+          "signed_mean_mm": -72.79453082678539,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.020100977271795273,
+          "median_normalized_change": 0.018615299835801125,
+          "p90_normalized_change": 0.04422536566853524,
+          "pck05_stability": 0.9571428571428572,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 27.85624122619629,
+          "median_mm": 23.98124122619629,
+          "p90_mm": 61.63338012695313,
+          "p95_mm": 70.7337131500244,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.13329698145389557,
+          "global_rotation_rms_parameter": 0.01738286390900612,
+          "body_pose_rms_parameter": 0.02522464282810688
+        }
+      }
+    },
+    {
+      "id": "p000830_a000306_f000056",
+      "subject_id": "p000830",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 19150,
+          "unit": "mm",
+          "mean_mm": 40.44469564278782,
+          "median_mm": 29.754548406872154,
+          "p90_mm": 91.35425349568781,
+          "p95_mm": 99.02863434700167,
+          "max_mm": 585.3259869443115
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 14764,
+          "unit": "mm",
+          "mean_mm": 64.96163740031476,
+          "median_mm": 35.223186016082764,
+          "p90_mm": 144.83698606491092,
+          "p95_mm": 196.33031487464893,
+          "max_mm": 805.8619499206543,
+          "observed_point_count": 19150,
+          "in_image_count": 19150,
+          "overlap_count": 14764,
+          "mesh_coverage_of_observed_points": 0.7709660574412532,
+          "signed_mean_mm": 32.02808256945097,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 19150,
+          "unit": "mm",
+          "mean_mm": 31.268753169334122,
+          "median_mm": 23.305451505972886,
+          "p90_mm": 67.5826008452089,
+          "p95_mm": 83.45882591151067,
+          "max_mm": 633.6020112029253
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 14347,
+          "unit": "mm",
+          "mean_mm": 56.17531007978238,
+          "median_mm": 40.75920581817627,
+          "p90_mm": 112.94121742248534,
+          "p95_mm": 128.6580085754394,
+          "max_mm": 764.0167474746704,
+          "observed_point_count": 19150,
+          "in_image_count": 19150,
+          "overlap_count": 14347,
+          "mesh_coverage_of_observed_points": 0.7491906005221932,
+          "signed_mean_mm": -47.86862297208332,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.012866097502410412,
+          "median_normalized_change": 0.00993686355650425,
+          "p90_normalized_change": 0.03195899538695812,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 26.337692260742188,
+          "median_mm": 23.124935150146484,
+          "p90_mm": 46.63635330200196,
+          "p95_mm": 54.158352279663085,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.13006407022476196,
+          "global_rotation_rms_parameter": 0.01482369750738144,
+          "body_pose_rms_parameter": 0.022036774083971977
+        }
+      }
+    },
+    {
+      "id": "p000830_a000306_f000085",
+      "subject_id": "p000830",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 18684,
+          "unit": "mm",
+          "mean_mm": 24.943381387670826,
+          "median_mm": 17.4658467413797,
+          "p90_mm": 60.264224279978926,
+          "p95_mm": 70.09664930872472,
+          "max_mm": 234.43023626126984
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 14951,
+          "unit": "mm",
+          "mean_mm": 33.57226447862619,
+          "median_mm": 22.72641658782959,
+          "p90_mm": 82.44752883911133,
+          "p95_mm": 102.17934846878052,
+          "max_mm": 457.9892158508301,
+          "observed_point_count": 18684,
+          "in_image_count": 18684,
+          "overlap_count": 14951,
+          "mesh_coverage_of_observed_points": 0.8002033825733248,
+          "signed_mean_mm": 10.934059886691259,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 18684,
+          "unit": "mm",
+          "mean_mm": 37.523540967998024,
+          "median_mm": 30.33027813159582,
+          "p90_mm": 72.43428555027393,
+          "p95_mm": 91.05135248823237,
+          "max_mm": 389.4763614390609
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 13653,
+          "unit": "mm",
+          "mean_mm": 87.38016987042506,
+          "median_mm": 75.53493976593018,
+          "p90_mm": 143.1001663208008,
+          "p95_mm": 193.21739673614502,
+          "max_mm": 539.6373271942139,
+          "observed_point_count": 18684,
+          "in_image_count": 18684,
+          "overlap_count": 13653,
+          "mesh_coverage_of_observed_points": 0.7307321772639692,
+          "signed_mean_mm": -82.49233023618976,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.01325690746307373,
+          "median_normalized_change": 0.009808986447751522,
+          "p90_normalized_change": 0.02760098520666361,
+          "pck05_stability": 0.9857142857142858,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 26.743288040161133,
+          "median_mm": 24.42168426513672,
+          "p90_mm": 42.849498748779304,
+          "p95_mm": 51.90123043060301,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.14300145208835602,
+          "global_rotation_rms_parameter": 0.01694442518055439,
+          "body_pose_rms_parameter": 0.02495708502829075
+        }
+      }
+    },
+    {
+      "id": "p001002_a000269_f000028",
+      "subject_id": "p001002",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 17026,
+          "unit": "mm",
+          "mean_mm": 144.09841694806127,
+          "median_mm": 128.45379294628185,
+          "p90_mm": 281.80053381634355,
+          "p95_mm": 308.9206587204707,
+          "max_mm": 378.22834949215877
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 7927,
+          "unit": "mm",
+          "mean_mm": 203.44297671146617,
+          "median_mm": 215.77739715576172,
+          "p90_mm": 302.6885986328125,
+          "p95_mm": 378.3199071884155,
+          "max_mm": 701.5928030014038,
+          "observed_point_count": 17026,
+          "in_image_count": 17026,
+          "overlap_count": 7927,
+          "mesh_coverage_of_observed_points": 0.4655820509808528,
+          "signed_mean_mm": 201.4478076612632,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 17026,
+          "unit": "mm",
+          "mean_mm": 46.749843376741374,
+          "median_mm": 37.04115057123528,
+          "p90_mm": 106.66791901700248,
+          "p95_mm": 128.98779276521768,
+          "max_mm": 239.65436485110618
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 11618,
+          "unit": "mm",
+          "mean_mm": 80.62127559356178,
+          "median_mm": 57.07871913909912,
+          "p90_mm": 185.6501817703247,
+          "p95_mm": 202.30426788330078,
+          "max_mm": 496.22559547424316,
+          "observed_point_count": 17026,
+          "in_image_count": 17026,
+          "overlap_count": 11618,
+          "mesh_coverage_of_observed_points": 0.6823681428403618,
+          "signed_mean_mm": 57.794192599068204,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.0066658384166657925,
+          "median_normalized_change": 0.005785378161817789,
+          "p90_normalized_change": 0.012175061833113432,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 35.73081970214844,
+          "median_mm": 32.90596008300781,
+          "p90_mm": 49.9928466796875,
+          "p95_mm": 51.4054256439209,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.17549121379852295,
+          "global_rotation_rms_parameter": 0.03443136066198349,
+          "body_pose_rms_parameter": 0.01906772516667843
+        }
+      }
+    },
+    {
+      "id": "p001002_a000269_f000056",
+      "subject_id": "p001002",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 17089,
+          "unit": "mm",
+          "mean_mm": 155.76472697124981,
+          "median_mm": 140.69677548269837,
+          "p90_mm": 295.87695908328425,
+          "p95_mm": 325.5341119475995,
+          "max_mm": 392.56374525983415
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 7657,
+          "unit": "mm",
+          "mean_mm": 216.5617324266886,
+          "median_mm": 216.2266969680786,
+          "p90_mm": 332.6242685317993,
+          "p95_mm": 396.60429954528803,
+          "max_mm": 754.8737525939941,
+          "observed_point_count": 17089,
+          "in_image_count": 17089,
+          "overlap_count": 7657,
+          "mesh_coverage_of_observed_points": 0.44806600737316404,
+          "signed_mean_mm": 215.22961449682268,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 17089,
+          "unit": "mm",
+          "mean_mm": 52.88260983590201,
+          "median_mm": 44.36466550385924,
+          "p90_mm": 115.21463109815157,
+          "p95_mm": 138.2377863980193,
+          "max_mm": 197.44790264884534
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 11456,
+          "unit": "mm",
+          "mean_mm": 92.82507663124433,
+          "median_mm": 73.15492630004883,
+          "p90_mm": 190.32037258148193,
+          "p95_mm": 207.53619074821472,
+          "max_mm": 516.3557529449463,
+          "observed_point_count": 17089,
+          "in_image_count": 17089,
+          "overlap_count": 11456,
+          "mesh_coverage_of_observed_points": 0.6703727544034174,
+          "signed_mean_mm": 71.1628502786326,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.006650685332715511,
+          "median_normalized_change": 0.0055137258023023605,
+          "p90_normalized_change": 0.012391292676329614,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 36.00429153442383,
+          "median_mm": 34.58734893798828,
+          "p90_mm": 49.77365226745606,
+          "p95_mm": 52.829508209228514,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.17806583642959595,
+          "global_rotation_rms_parameter": 0.033495210111141205,
+          "body_pose_rms_parameter": 0.018805593252182007
+        }
+      }
+    },
+    {
+      "id": "p001002_a000269_f000084",
+      "subject_id": "p001002",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 16616,
+          "unit": "mm",
+          "mean_mm": 164.2206465098264,
+          "median_mm": 145.10272866803444,
+          "p90_mm": 315.4523855963108,
+          "p95_mm": 342.82814530944086,
+          "max_mm": 408.2083893149007
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 7087,
+          "unit": "mm",
+          "mean_mm": 223.8306887684377,
+          "median_mm": 229.03203964233398,
+          "p90_mm": 331.57203197479254,
+          "p95_mm": 421.3101625442505,
+          "max_mm": 792.1105623245239,
+          "observed_point_count": 16616,
+          "in_image_count": 16616,
+          "overlap_count": 7087,
+          "mesh_coverage_of_observed_points": 0.42651661049590756,
+          "signed_mean_mm": 222.55609180823996,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 16616,
+          "unit": "mm",
+          "mean_mm": 56.18132359259014,
+          "median_mm": 45.64339233388118,
+          "p90_mm": 125.49984999594221,
+          "p95_mm": 151.00341598929336,
+          "max_mm": 248.69259614090626
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 10963,
+          "unit": "mm",
+          "mean_mm": 98.55938364443179,
+          "median_mm": 74.71275329589844,
+          "p90_mm": 202.45461463928225,
+          "p95_mm": 224.90473985671997,
+          "max_mm": 537.9555225372314,
+          "observed_point_count": 16616,
+          "in_image_count": 16616,
+          "overlap_count": 10963,
+          "mesh_coverage_of_observed_points": 0.659785748675975,
+          "signed_mean_mm": 75.49772753633309,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.006759440526366234,
+          "median_normalized_change": 0.006012056488543749,
+          "p90_normalized_change": 0.012988876644521951,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 35.986595153808594,
+          "median_mm": 31.459136962890625,
+          "p90_mm": 51.912548828125004,
+          "p95_mm": 53.4660945892334,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.18669012188911438,
+          "global_rotation_rms_parameter": 0.034590378403663635,
+          "body_pose_rms_parameter": 0.019803276285529137
+        }
+      }
+    },
+    {
+      "id": "p000757_a000219_f000039",
+      "subject_id": "p000757",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 25000,
+          "unit": "mm",
+          "mean_mm": 25.820481915625585,
+          "median_mm": 17.009769136848924,
+          "p90_mm": 48.68461179438076,
+          "p95_mm": 57.05746874429624,
+          "max_mm": 514.4067807010283
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 20447,
+          "unit": "mm",
+          "mean_mm": 26.980660227205945,
+          "median_mm": 19.313335418701172,
+          "p90_mm": 63.90423774719241,
+          "p95_mm": 77.51940488815308,
+          "max_mm": 361.0835075378418,
+          "observed_point_count": 25000,
+          "in_image_count": 25000,
+          "overlap_count": 20447,
+          "mesh_coverage_of_observed_points": 0.81788,
+          "signed_mean_mm": 17.918301029777144,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 25000,
+          "unit": "mm",
+          "mean_mm": 31.013141162058766,
+          "median_mm": 22.34475155982,
+          "p90_mm": 59.14773019801867,
+          "p95_mm": 72.38974533179552,
+          "max_mm": 563.5600889987905
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 19508,
+          "unit": "mm",
+          "mean_mm": 47.51071574650315,
+          "median_mm": 37.925004959106445,
+          "p90_mm": 87.43569850921631,
+          "p95_mm": 103.51422429084775,
+          "max_mm": 438.2021427154541,
+          "observed_point_count": 25000,
+          "in_image_count": 25000,
+          "overlap_count": 19508,
+          "mesh_coverage_of_observed_points": 0.78032,
+          "signed_mean_mm": -32.680999928379194,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.007452022284269333,
+          "median_normalized_change": 0.0068016559816896915,
+          "p90_normalized_change": 0.013783420994877815,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 18.186298370361328,
+          "median_mm": 17.07773208618164,
+          "p90_mm": 28.64632797241211,
+          "p95_mm": 29.486631298065184,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.08691595494747162,
+          "global_rotation_rms_parameter": 0.012049761600792408,
+          "body_pose_rms_parameter": 0.019965853542089462
+        }
+      }
+    },
+    {
+      "id": "p000757_a000219_f000078",
+      "subject_id": "p000757",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 22491,
+          "unit": "mm",
+          "mean_mm": 28.465317297841345,
+          "median_mm": 22.916549984964014,
+          "p90_mm": 60.943476702385915,
+          "p95_mm": 70.11643892828008,
+          "max_mm": 574.5799539881209
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 18517,
+          "unit": "mm",
+          "mean_mm": 38.92174811692065,
+          "median_mm": 26.616334915161133,
+          "p90_mm": 93.11652183532718,
+          "p95_mm": 110.7961416244507,
+          "max_mm": 423.1119155883789,
+          "observed_point_count": 22491,
+          "in_image_count": 22491,
+          "overlap_count": 18517,
+          "mesh_coverage_of_observed_points": 0.823307100618025,
+          "signed_mean_mm": 25.220289822369484,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 22491,
+          "unit": "mm",
+          "mean_mm": 23.18796127737919,
+          "median_mm": 17.497931453442167,
+          "p90_mm": 49.60451459889132,
+          "p95_mm": 66.62713723659988,
+          "max_mm": 622.1893081824105
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 18961,
+          "unit": "mm",
+          "mean_mm": 37.53974807896787,
+          "median_mm": 32.11390972137451,
+          "p90_mm": 75.19519329071045,
+          "p95_mm": 90.37983417510986,
+          "max_mm": 1006.8812370300293,
+          "observed_point_count": 22491,
+          "in_image_count": 22491,
+          "overlap_count": 18961,
+          "mesh_coverage_of_observed_points": 0.8430483304432884,
+          "signed_mean_mm": -29.062155995475337,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.011064848862588406,
+          "median_normalized_change": 0.009646972641348839,
+          "p90_normalized_change": 0.018090751208364963,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 19.487709045410156,
+          "median_mm": 16.30620574951172,
+          "p90_mm": 29.887960052490236,
+          "p95_mm": 42.85411539077753,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.10344482958316803,
+          "global_rotation_rms_parameter": 0.012944362126290798,
+          "body_pose_rms_parameter": 0.022218238562345505
+        }
+      }
+    },
+    {
+      "id": "p000757_a000219_f000118",
+      "subject_id": "p000757",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 25000,
+          "unit": "mm",
+          "mean_mm": 27.485869103743426,
+          "median_mm": 18.787299255703434,
+          "p90_mm": 48.577568281196264,
+          "p95_mm": 63.239065931808895,
+          "max_mm": 639.0939057622627
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 20223,
+          "unit": "mm",
+          "mean_mm": 26.659773594252123,
+          "median_mm": 21.022796630859375,
+          "p90_mm": 56.635308265686035,
+          "p95_mm": 67.82022714614857,
+          "max_mm": 190.94085693359375,
+          "observed_point_count": 25000,
+          "in_image_count": 25000,
+          "overlap_count": 20223,
+          "mesh_coverage_of_observed_points": 0.80892,
+          "signed_mean_mm": 17.412982413542764,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 25000,
+          "unit": "mm",
+          "mean_mm": 30.78045951476376,
+          "median_mm": 21.02848123370306,
+          "p90_mm": 56.837994779768025,
+          "p95_mm": 76.05830729456851,
+          "max_mm": 685.5326025985718
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 19360,
+          "unit": "mm",
+          "mean_mm": 40.46762464952863,
+          "median_mm": 32.213449478149414,
+          "p90_mm": 82.53804445266728,
+          "p95_mm": 94.59873437881464,
+          "max_mm": 424.6697425842285,
+          "observed_point_count": 25000,
+          "in_image_count": 25000,
+          "overlap_count": 19360,
+          "mesh_coverage_of_observed_points": 0.7744,
+          "signed_mean_mm": -31.376706088377425,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.0063649690710008144,
+          "median_normalized_change": 0.00558624230325222,
+          "p90_normalized_change": 0.010461171437054873,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 17.366098403930664,
+          "median_mm": 16.295936584472656,
+          "p90_mm": 25.772673988342287,
+          "p95_mm": 27.102783107757567,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.07921754568815231,
+          "global_rotation_rms_parameter": 0.012055942788720131,
+          "body_pose_rms_parameter": 0.019247623160481453
+        }
+      }
+    },
+    {
+      "id": "p000783_a001312_f000010",
+      "subject_id": "p000783",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 16410,
+          "unit": "mm",
+          "mean_mm": 50.64190996180852,
+          "median_mm": 42.514982818441496,
+          "p90_mm": 112.84552300768648,
+          "p95_mm": 123.68804170312988,
+          "max_mm": 563.4001417939222
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 12230,
+          "unit": "mm",
+          "mean_mm": 63.973743322922964,
+          "median_mm": 43.12175512313843,
+          "p90_mm": 144.45400238037112,
+          "p95_mm": 185.32189726829506,
+          "max_mm": 577.2055387496948,
+          "observed_point_count": 16410,
+          "in_image_count": 16410,
+          "overlap_count": 12230,
+          "mesh_coverage_of_observed_points": 0.7452772699573431,
+          "signed_mean_mm": 49.03533389503997,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 16410,
+          "unit": "mm",
+          "mean_mm": 29.386654639557253,
+          "median_mm": 22.740757293540725,
+          "p90_mm": 65.23409011112793,
+          "p95_mm": 74.39654744589525,
+          "max_mm": 574.0206359831409
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 13206,
+          "unit": "mm",
+          "mean_mm": 45.358987571650445,
+          "median_mm": 28.939664363861084,
+          "p90_mm": 95.44533491134644,
+          "p95_mm": 122.94867634773254,
+          "max_mm": 551.1569976806641,
+          "observed_point_count": 16410,
+          "in_image_count": 16410,
+          "overlap_count": 13206,
+          "mesh_coverage_of_observed_points": 0.8047531992687386,
+          "signed_mean_mm": 16.983633255861065,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.02284247986972332,
+          "median_normalized_change": 0.029609989374876022,
+          "p90_normalized_change": 0.039144749939441684,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 33.82942581176758,
+          "median_mm": 37.41019821166992,
+          "p90_mm": 50.41726455688477,
+          "p95_mm": 51.435143852233885,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.05396893620491028,
+          "global_rotation_rms_parameter": 0.008980343118309975,
+          "body_pose_rms_parameter": 0.014852690510451794
+        }
+      }
+    },
+    {
+      "id": "p000783_a001312_f000020",
+      "subject_id": "p000783",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 16362,
+          "unit": "mm",
+          "mean_mm": 51.13403724749004,
+          "median_mm": 43.150972558893415,
+          "p90_mm": 113.09968320341582,
+          "p95_mm": 124.12203678427277,
+          "max_mm": 143.80506577630504
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 12201,
+          "unit": "mm",
+          "mean_mm": 64.8160647021074,
+          "median_mm": 44.1737174987793,
+          "p90_mm": 144.96862888336182,
+          "p95_mm": 185.46044826507568,
+          "max_mm": 580.2015066146851,
+          "observed_point_count": 16362,
+          "in_image_count": 16362,
+          "overlap_count": 12201,
+          "mesh_coverage_of_observed_points": 0.7456912357902457,
+          "signed_mean_mm": 50.75915424894694,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 16362,
+          "unit": "mm",
+          "mean_mm": 29.83083650678987,
+          "median_mm": 23.2793454635126,
+          "p90_mm": 66.25057050455379,
+          "p95_mm": 75.8532981766377,
+          "max_mm": 109.98819321077208
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 13171,
+          "unit": "mm",
+          "mean_mm": 45.638376275713426,
+          "median_mm": 29.438257217407227,
+          "p90_mm": 95.65556049346924,
+          "p95_mm": 123.16089868545532,
+          "max_mm": 551.6237020492554,
+          "observed_point_count": 16362,
+          "in_image_count": 16362,
+          "overlap_count": 13171,
+          "mesh_coverage_of_observed_points": 0.8049749419386383,
+          "signed_mean_mm": 18.46009182881118,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.022239133715629578,
+          "median_normalized_change": 0.028593145310878754,
+          "p90_normalized_change": 0.03733058534562588,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 32.9737434387207,
+          "median_mm": 36.16819763183594,
+          "p90_mm": 48.18748741149902,
+          "p95_mm": 49.99301013946533,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.05376084893941879,
+          "global_rotation_rms_parameter": 0.00944048073142767,
+          "body_pose_rms_parameter": 0.014837376773357391
+        }
+      }
+    },
+    {
+      "id": "p000783_a001312_f000029",
+      "subject_id": "p000783",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 16414,
+          "unit": "mm",
+          "mean_mm": 48.94066886288399,
+          "median_mm": 41.04992384911641,
+          "p90_mm": 109.22726570133648,
+          "p95_mm": 120.44394131531192,
+          "max_mm": 163.31641098592488
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 12280,
+          "unit": "mm",
+          "mean_mm": 62.526810149804774,
+          "median_mm": 41.58598184585571,
+          "p90_mm": 141.27044677734378,
+          "p95_mm": 181.4691007137298,
+          "max_mm": 571.0126161575317,
+          "observed_point_count": 16414,
+          "in_image_count": 16414,
+          "overlap_count": 12280,
+          "mesh_coverage_of_observed_points": 0.7481418301449981,
+          "signed_mean_mm": 46.21922478613714,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 16414,
+          "unit": "mm",
+          "mean_mm": 29.230245797137307,
+          "median_mm": 23.64916639767209,
+          "p90_mm": 63.54980425005659,
+          "p95_mm": 72.98106637317296,
+          "max_mm": 154.95679503223576
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 13153,
+          "unit": "mm",
+          "mean_mm": 45.57750245550146,
+          "median_mm": 29.50286865234375,
+          "p90_mm": 92.42243766784668,
+          "p95_mm": 120.57735919952393,
+          "max_mm": 550.6500005722046,
+          "observed_point_count": 16414,
+          "in_image_count": 16414,
+          "overlap_count": 13153,
+          "mesh_coverage_of_observed_points": 0.8013281345193127,
+          "signed_mean_mm": 14.940002884854295,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.022897927090525627,
+          "median_normalized_change": 0.029610808938741684,
+          "p90_normalized_change": 0.039214985072612764,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 33.84840393066406,
+          "median_mm": 37.509124755859375,
+          "p90_mm": 50.146610260009766,
+          "p95_mm": 51.38890533447265,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.05278143659234047,
+          "global_rotation_rms_parameter": 0.009184871800243855,
+          "body_pose_rms_parameter": 0.014968756586313248
+        }
+      }
+    },
+    {
+      "id": "p000878_a005516_f000010",
+      "subject_id": "p000878",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 18715,
+          "unit": "mm",
+          "mean_mm": 73.33598517868829,
+          "median_mm": 70.02837580858804,
+          "p90_mm": 121.133715711464,
+          "p95_mm": 145.88979988893777,
+          "max_mm": 637.7842373976723
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 10978,
+          "unit": "mm",
+          "mean_mm": 80.59056590523826,
+          "median_mm": 68.85671615600586,
+          "p90_mm": 142.53318309783938,
+          "p95_mm": 166.61315560340876,
+          "max_mm": 488.8336658477783,
+          "observed_point_count": 18715,
+          "in_image_count": 18715,
+          "overlap_count": 10978,
+          "mesh_coverage_of_observed_points": 0.5865882981565589,
+          "signed_mean_mm": 73.32125809440676,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 18715,
+          "unit": "mm",
+          "mean_mm": 27.968890145543554,
+          "median_mm": 17.430663840330325,
+          "p90_mm": 62.68463607550994,
+          "p95_mm": 99.64129502840018,
+          "max_mm": 574.1089052839221
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 13466,
+          "unit": "mm",
+          "mean_mm": 31.53407663996606,
+          "median_mm": 17.685890197753906,
+          "p90_mm": 73.15623760223389,
+          "p95_mm": 99.71541166305542,
+          "max_mm": 374.9566078186035,
+          "observed_point_count": 18715,
+          "in_image_count": 18715,
+          "overlap_count": 13466,
+          "mesh_coverage_of_observed_points": 0.7195297889393535,
+          "signed_mean_mm": 20.43143346336928,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.005462952423840761,
+          "median_normalized_change": 0.005234057549387217,
+          "p90_normalized_change": 0.009700722247362138,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 17.860368728637695,
+          "median_mm": 16.023771286010742,
+          "p90_mm": 29.883754539489747,
+          "p95_mm": 33.530016994476306,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.08083049207925797,
+          "global_rotation_rms_parameter": 0.016360171139240265,
+          "body_pose_rms_parameter": 0.017374875023961067
+        }
+      }
+    },
+    {
+      "id": "p000878_a005516_f000020",
+      "subject_id": "p000878",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 18735,
+          "unit": "mm",
+          "mean_mm": 79.4880302963341,
+          "median_mm": 76.67431375958485,
+          "p90_mm": 126.98030936810606,
+          "p95_mm": 151.0136028604631,
+          "max_mm": 223.23061241896934
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 10794,
+          "unit": "mm",
+          "mean_mm": 87.58381265875629,
+          "median_mm": 75.06787776947021,
+          "p90_mm": 149.81003999710083,
+          "p95_mm": 176.17278099060067,
+          "max_mm": 474.3976593017578,
+          "observed_point_count": 18735,
+          "in_image_count": 18735,
+          "overlap_count": 10794,
+          "mesh_coverage_of_observed_points": 0.5761409127301842,
+          "signed_mean_mm": 80.29535481813596,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 18735,
+          "unit": "mm",
+          "mean_mm": 31.097146280746237,
+          "median_mm": 21.505089560468623,
+          "p90_mm": 66.05321562201308,
+          "p95_mm": 103.13665683176929,
+          "max_mm": 225.62926980902316
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 13304,
+          "unit": "mm",
+          "mean_mm": 35.56561401036584,
+          "median_mm": 21.983802318572998,
+          "p90_mm": 81.18543624877931,
+          "p95_mm": 106.77196383476254,
+          "max_mm": 400.03061294555664,
+          "observed_point_count": 18735,
+          "in_image_count": 18735,
+          "overlap_count": 13304,
+          "mesh_coverage_of_observed_points": 0.7101147584734454,
+          "signed_mean_mm": 26.928086445335875,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.005816567223519087,
+          "median_normalized_change": 0.005691908299922943,
+          "p90_normalized_change": 0.010075632296502591,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 18.285266876220703,
+          "median_mm": 15.861950874328613,
+          "p90_mm": 29.89842586517334,
+          "p95_mm": 34.52464208602903,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.08067402988672256,
+          "global_rotation_rms_parameter": 0.01620974764227867,
+          "body_pose_rms_parameter": 0.01740625686943531
+        }
+      }
+    },
+    {
+      "id": "p000878_a005516_f000030",
+      "subject_id": "p000878",
+      "split": "SEALED",
+      "official": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 18834,
+          "unit": "mm",
+          "mean_mm": 74.541133016752,
+          "median_mm": 71.58010456562607,
+          "p90_mm": 122.26016852234206,
+          "p95_mm": 149.72573516986682,
+          "max_mm": 670.5620608578381
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 11039,
+          "unit": "mm",
+          "mean_mm": 82.24025317125643,
+          "median_mm": 70.28770446777344,
+          "p90_mm": 144.08669471740723,
+          "p95_mm": 168.95816326141357,
+          "max_mm": 463.2575511932373,
+          "observed_point_count": 18834,
+          "in_image_count": 18834,
+          "overlap_count": 11039,
+          "mesh_coverage_of_observed_points": 0.5861208452798131,
+          "signed_mean_mm": 75.00534259988969,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "finetuned": {
+        "point_to_triangle": {
+          "metric": "observed_to_exact_triangle_surface",
+          "sample_count": 18834,
+          "unit": "mm",
+          "mean_mm": 29.341573167121663,
+          "median_mm": 19.018937841882085,
+          "p90_mm": 64.1655117471721,
+          "p95_mm": 104.09044869108813,
+          "max_mm": 606.9084534472893
+        },
+        "rendered_depth": {
+          "metric": "heldout_rendered_depth_absolute_z_residual",
+          "sample_count": 13378,
+          "unit": "mm",
+          "mean_mm": 33.295204766325256,
+          "median_mm": 18.98115873336792,
+          "p90_mm": 77.4986863136292,
+          "p95_mm": 103.03604006767259,
+          "max_mm": 383.831262588501,
+          "observed_point_count": 18834,
+          "in_image_count": 18834,
+          "overlap_count": 13378,
+          "mesh_coverage_of_observed_points": 0.7103111394286928,
+          "signed_mean_mm": 23.601839362033406,
+          "depth_definition": "OpenCV camera +Z metric z-depth"
+        }
+      },
+      "stability": {
+        "joint_2d_stability_proxy": {
+          "bbox_normalization": "sqrt((x2-x1) * (y2-y1)) for cached xyxy bbox",
+          "nme": 0.005342545453459024,
+          "median_normalized_change": 0.00520064402371645,
+          "p90_normalized_change": 0.009991803579032421,
+          "pck05_stability": 1.0,
+          "meaning": "fraction of MHR70 joints changing by no more than 5% bbox scale",
+          "is_ground_truth_accuracy": false
+        },
+        "joint_3d_pelvis_relative_stability_proxy": {
+          "mean_mm": 17.370941162109375,
+          "median_mm": 15.679128646850586,
+          "p90_mm": 29.38926124572754,
+          "p95_mm": 31.63122539520263,
+          "is_ground_truth_accuracy": false
+        },
+        "parameter_delta_from_official": {
+          "camera_translation_delta_m": 0.07914841920137405,
+          "global_rotation_rms_parameter": 0.015764405950903893,
+          "body_pose_rms_parameter": 0.018036233261227608
+        }
+      }
+    }
+  ],
+  "input_sha256": {
+    "official_checkpoint": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+    "mhr_model": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "finetuned_checkpoint": "2baa8f11b51e53e19347a3a0536c7de3e6c00cc81748120e4043ac7878acd82c",
+    "evaluation_manifest": "5955fe3d8eccd86fd27a71ead40a01007be185a41a2aa660fce921e399e4241a",
+    "protocol": "66e203540d85b11bc8d664bd36451d6040abd16409b97a88d50735bb1af05037"
+  },
+  "checkpoint_metadata": {
+    "status": "PILOT_RESEARCH_CHECKPOINT_NOT_DEPLOYABLE",
+    "epoch": 1,
+    "protocol_sha256": "66e203540d85b11bc8d664bd36451d6040abd16409b97a88d50735bb1af05037",
+    "workset_sha256": "e8b6f3d5bb35ff24cc362f84fb20bc1da781674415167efc1065c02f78308f32"
+  },
+  "elapsed_seconds": 245.69090127944946,
+  "claim_limit": "This evaluation reports public geometry and Official-relative stability. Joint deltas are not GT accuracy; a SEALED run is a one-time final evaluation, not a tuning signal.",
+  "scientific_summary": {
+    "subjects_improved": 3,
+    "subject_count": 5,
+    "relative_primary_improvement_percent": 53.10535119910932,
+    "per_subject": [
+      {
+        "subject_id": "p000757",
+        "official_primary_mm": 18.787299255703434,
+        "finetuned_primary_mm": 21.02848123370306,
+        "delta_mm": 2.241181977999627,
+        "improved": false,
+        "official_p90_mm": 48.68461179438076,
+        "finetuned_p90_mm": 56.837994779768025,
+        "official_p95_mm": 63.239065931808895,
+        "finetuned_p95_mm": 72.38974533179552
+      },
+      {
+        "subject_id": "p000783",
+        "official_primary_mm": 42.514982818441496,
+        "finetuned_primary_mm": 23.2793454635126,
+        "delta_mm": -19.235637354928897,
+        "improved": true,
+        "official_p90_mm": 112.84552300768648,
+        "finetuned_p90_mm": 65.23409011112793,
+        "official_p95_mm": 123.68804170312988,
+        "finetuned_p95_mm": 74.39654744589525
+      },
+      {
+        "subject_id": "p000830",
+        "official_primary_mm": 20.007759570443678,
+        "finetuned_primary_mm": 29.985125810280515,
+        "delta_mm": 9.977366239836837,
+        "improved": false,
+        "official_p90_mm": 61.64499298267578,
+        "finetuned_p90_mm": 67.5826008452089,
+        "official_p95_mm": 70.09664930872472,
+        "finetuned_p95_mm": 83.45882591151067
+      },
+      {
+        "subject_id": "p000878",
+        "official_primary_mm": 71.58010456562607,
+        "finetuned_primary_mm": 19.018937841882085,
+        "delta_mm": -52.56116672374399,
+        "improved": true,
+        "official_p90_mm": 122.26016852234206,
+        "finetuned_p90_mm": 64.1655117471721,
+        "official_p95_mm": 149.72573516986682,
+        "finetuned_p95_mm": 103.13665683176929
+      },
+      {
+        "subject_id": "p001002",
+        "official_primary_mm": 140.69677548269837,
+        "finetuned_primary_mm": 44.36466550385924,
+        "delta_mm": -96.33210997883913,
+        "improved": true,
+        "official_p90_mm": 295.87695908328425,
+        "finetuned_p90_mm": 115.21463109815157,
+        "official_p95_mm": 325.5341119475995,
+        "finetuned_p95_mm": 138.2377863980193
+      }
+    ],
+    "final_experiment_gate": "PASS_REAL_RGBD_SURFACE_FINETUNING_PILOT",
+    "gate_reason": "3/5 sealed subjects improved; subject-macro median, P90/P95 and rendered-depth errors improved; no test-time fitting; 2D stability proxy and parameter sanity passed."
+  }
+}

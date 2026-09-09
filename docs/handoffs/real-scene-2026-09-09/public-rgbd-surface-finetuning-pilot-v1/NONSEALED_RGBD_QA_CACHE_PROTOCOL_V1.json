@@ -1,0 +1,39 @@
+{
+  "task": "PUBLIC_RGBD_SURFACE_FINETUNING_PILOT_V1",
+  "artifact": "NONSEALED_RGBD_QA_CACHE_PROTOCOL_V1",
+  "status": "IMPLEMENTED_EXECUTION_PENDING_SELECTIVE_EXTRACTION",
+  "input_plan": "SERVER_SELECTIVE_EXTRACTION_PLAN_V1.json",
+  "input_workset_server": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/workset_v1",
+  "scope": {"splits": ["DEV", "TRAIN", "VAL"], "subjects": 26, "subject_frame_observations": 78,
+            "views": 156, "cameras": ["kinect_008", "kinect_009"], "sealed_pixels_allowed": false},
+  "hard_preconditions": [
+    "SERVER_WORKSET_EXTRACTION_QA_V1 status equals DECODE_FRAME_ID_QA_PASS_GEOMETRY_NOT_YET_VALIDATED",
+    "plan sealed_pixels_selected is false",
+    "all planned rows belong to DEV, TRAIN, or VAL",
+    "no planned or materialized workset directory belongs to a SEALED subject",
+    "workset contains no unplanned sequence directory"
+  ],
+  "geometry_contract": {
+    "implementation": "previous public-rgbd-mhr-fitability-sanity-v1/code/humman_geometry.py imported without modification",
+    "world_to_camera": "X_camera = R_world_to_camera @ X_world + T_world_to_camera",
+    "depth": "uint16 millimetre Z-depth converted to metres",
+    "mask_selection": "person mask is applied in depth coordinates before registration",
+    "projection": "OpenCV pinhole with released K and no distortion coefficients",
+    "z_buffer": "frontmost projected person depth within 5 mm per color pixel"
+  },
+  "automatic_usability_gate": {"registered_person_points_each_view_min": 5000,
+    "projection_retention_each_view_min": 0.8, "geometric_torso_proxy_points_each_view_min": 750,
+    "rotation_orthonormal_and_determinant_tolerance": 1e-5,
+    "cross_camera_nearest_surface_distance": "descriptive only because cameras see different surfaces"},
+  "torso_validity_definition": {"name": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+    "method": "erode projected silhouette by 7x7 pixels and retain points in its central 20-80 percent x/y quantile box",
+    "allowed_use": "registration support QA and sample filtering",
+    "forbidden_claim": "anatomical torso or clinical back annotation"},
+  "outputs": {"server_only_large_cache": "sample_cache/{dev,train,val}/*.npz",
+    "server_qa": "NONSEALED_RGBD_REGISTRATION_QA_V1.json",
+    "server_contact_sheets": "registration_contact_sheet_*.jpg",
+    "repository": "protocol, executable code, compact final summary, and small contact-sheet evidence only"},
+  "trainer_interface": "cam008 is cached under prepare_observations Camera-A keys (rgb_a, bbox_a, K_a, R_a, T_a, points_a); cam009 uses the corresponding Camera-B keys.",
+  "cache_consumption_rule": "The cache contains every planned candidate for auditability. A training loader may consume only rows whose manifest usable is true and visual_registration_review is PASS.",
+  "decision_rule": "No training starts until automatic QA and all contact-sheet pages pass visual review for gross RGB-depth displacement."
+}

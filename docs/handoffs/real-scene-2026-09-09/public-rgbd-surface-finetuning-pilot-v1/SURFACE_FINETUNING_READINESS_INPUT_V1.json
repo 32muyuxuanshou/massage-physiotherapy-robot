@@ -1,0 +1,29 @@
+{
+  "status": "READY_FOR_PROTOCOL_FREEZE_NOT_TRAINED",
+  "sealed_test_accessed": false,
+  "training_completed": false,
+  "evidence": {
+    "synthetic_metric_tests": "ALL_SYNTHETIC_TESTS_PASSED",
+    "surface_gradient_to_pose_and_camera_heads": "VERIFIED_ON_OFFICIAL_AND_V2_E5_DEV5",
+    "parameter_group_ablation": "CAMERA_AND_POSE_CAPTURE_MOST_DEV_HELDOUT_GAIN",
+    "shape_scale_increment": "SMALL_ON_CURRENT_DEV5; DO_NOT_PRIORITIZE_IN_FIRST_GLOBAL_PILOT"
+  },
+  "recommended_first_trainable_modules": [
+    "head_pose.proj",
+    "head_camera.proj"
+  ],
+  "recommended_surface_loss": "robust observed-to-differentiable-barycentric-triangle-samples plus frozen pre-registered priors",
+  "must_freeze_before_training": [
+    "TRAIN/VAL/SEALED subject split",
+    "surface observation validity",
+    "legacy/point-to-triangle/rendered-depth metrics and coverage threshold",
+    "optimizer, steps, learning rate, seed, checkpoint selection rule",
+    "joint-loss retention and weights"
+  ],
+  "prohibited_claims": [
+    "training completed",
+    "sealed-test improvement",
+    "bare-back accuracy",
+    "medical accuracy"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "status": "COMPLETED_READ_ONLY_DEV5_SURFACE_GRADIENT_AUDIT",
+  "model_tag": "v2_e5",
+  "split": "DEV5_ONLY",
+  "sealed_test_accessed": false,
+  "optimizer_steps": 0,
+  "checkpoint_written": false,
+  "trainable_modules_during_audit": [
+    "head_pose.proj",
+    "head_camera.proj"
+  ],
+  "trainable_parameter_count": 2634250,
+  "surface_loss": "robust observed-point to differentiable barycentric MHR triangle samples",
+  "gradient_chain": "loss -> sampled triangle points -> MHR vertices/pred_cam_t -> raw pose/camera outputs -> projection head weights",
+  "limitations": [
+    "This proves a nonzero local gradient path; it does not prove optimization will generalize.",
+    "Triangle sampling approximates the continuous surface training loss and is not the exact evaluation metric.",
+    "The audit performs no optimizer step and is not a training run."
+  ],
+  "rows": [
+    {
+      "observation_id": "p000823_a000035_f000016",
+      "loss_m": 0.15662440657615662,
+      "observed_samples": 1024,
+      "triangle_surface_samples": 4096,
+      "pose_head_parameter_gradient_norm": 9.10506534576416,
+      "camera_head_parameter_gradient_norm": 6.608468055725098,
+      "raw_pose_output_gradient_norm": 0.20630982518196106,
+      "raw_camera_output_gradient_norm": 1.7229804992675781,
+      "mesh_vertex_gradient_norm": 0.10489490628242493,
+      "raw_pose_output_slice_gradient_norms": {
+        "global_rotation_6d": 0.14608660340309143,
+        "body_continuous": 0.1454327553510666,
+        "shape": 0.006716552190482616,
+        "scale_skeleton": 0.005161902867257595,
+        "hands": 2.7579558263823856e-06,
+        "face_zeroed": 0.0
+      }
+    },
+    {
+      "observation_id": "p000879_a000035_f000025",
+      "loss_m": 0.12940189242362976,
+      "observed_samples": 1024,
+      "triangle_surface_samples": 4096,
+      "pose_head_parameter_gradient_norm": 7.8712158203125,
+      "camera_head_parameter_gradient_norm": 6.569395542144775,
+      "raw_pose_output_gradient_norm": 0.17373795807361603,
+      "raw_camera_output_gradient_norm": 1.6506292819976807,
+      "mesh_vertex_gradient_norm": 0.08551125228404999,
+      "raw_pose_output_slice_gradient_norms": {
+        "global_rotation_6d": 0.12250711768865585,
+        "body_continuous": 0.12284266203641891,
+        "shape": 0.008540067821741104,
+        "scale_skeleton": 0.0036920467391610146,
+        "hands": 0.0,
+        "face_zeroed": 0.0
+      }
+    },
+    {
+      "observation_id": "p000880_a000035_f000025",
+      "loss_m": 0.21899515390396118,
+      "observed_samples": 1024,
+      "triangle_surface_samples": 4096,
+      "pose_head_parameter_gradient_norm": 10.120251655578613,
+      "camera_head_parameter_gradient_norm": 8.330061912536621,
+      "raw_pose_output_gradient_norm": 0.21761968731880188,
+      "raw_camera_output_gradient_norm": 1.9432649612426758,
+      "mesh_vertex_gradient_norm": 0.13283997774124146,
+      "raw_pose_output_slice_gradient_norms": {
+        "global_rotation_6d": 0.15972191095352173,
+        "body_continuous": 0.1475750058889389,
+        "shape": 0.007169513497501612,
+        "scale_skeleton": 0.004177985247224569,
+        "hands": 0.0,
+        "face_zeroed": 0.0
+      }
+    },
+    {
+      "observation_id": "p000881_a000035_f000028",
+      "loss_m": 0.3196001648902893,
+      "observed_samples": 1024,
+      "triangle_surface_samples": 4096,
+      "pose_head_parameter_gradient_norm": 12.781481742858887,
+      "camera_head_parameter_gradient_norm": 8.953350067138672,
+      "raw_pose_output_gradient_norm": 0.2825298309326172,
+      "raw_camera_output_gradient_norm": 2.031547784805298,
+      "mesh_vertex_gradient_norm": 0.19747480750083923,
+      "raw_pose_output_slice_gradient_norms": {
+        "global_rotation_6d": 0.2177562266588211,
+        "body_continuous": 0.17990724742412567,
+        "shape": 0.004544506315141916,
+        "scale_skeleton": 0.004248494282364845,
+        "hands": 0.0,
+        "face_zeroed": 0.0
+      }
+    },
+    {
+      "observation_id": "p001088_a000203_f000090",
+      "loss_m": 0.1401747614145279,
+      "observed_samples": 1024,
+      "triangle_surface_samples": 4096,
+      "pose_head_parameter_gradient_norm": 7.696057319641113,
+      "camera_head_parameter_gradient_norm": 11.403024673461914,
+      "raw_pose_output_gradient_norm": 0.25206321477890015,
+      "raw_camera_output_gradient_norm": 1.9500125646591187,
+      "mesh_vertex_gradient_norm": 0.08506104350090027,
+      "raw_pose_output_slice_gradient_norms": {
+        "global_rotation_6d": 0.1389331966638565,
+        "body_continuous": 0.21015523374080658,
+        "shape": 0.005111014470458031,
+        "scale_skeleton": 0.006487480830401182,
+        "hands": 3.955065767513588e-05,
+        "face_zeroed": 0.0
+      }
+    }
+  ]
+}

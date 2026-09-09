@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "status": "IMPLEMENTED_AND_GRADIENT_AUDITED_NOT_TRAINED",
+  "observation": "Camera-A registered sensor-depth person surface in metres",
+  "prediction": "differentiable barycentric samples on MHR triangles after pred_cam_t",
+  "loss": {
+    "correspondence": "each sampled observed point to nearest sampled triangle-surface point",
+    "robust_penalty": "Huber",
+    "huber_delta_m": 0.03,
+    "default_observed_samples": 1024,
+    "default_triangle_samples": 4096,
+    "surface_sampling": "fixed-seed face IDs and Dirichlet barycentric weights"
+  },
+  "gradient_chain": "loss -> barycentric triangle samples -> MHR vertices and pred_cam_t -> raw pose/camera outputs -> head_pose.proj and head_camera.proj",
+  "candidate_trainable_modules": [
+    "head_pose.proj",
+    "head_camera.proj"
+  ],
+  "held_fixed": [
+    "backbone",
+    "decoder",
+    "MHR model",
+    "vertex_offsets",
+    "Camera-B held-out observation"
+  ],
+  "implementation": "code/audit_surface_gradient_chain.py",
+  "claim_limit": "Gradient feasibility only. No optimizer step or completed training result."
+}

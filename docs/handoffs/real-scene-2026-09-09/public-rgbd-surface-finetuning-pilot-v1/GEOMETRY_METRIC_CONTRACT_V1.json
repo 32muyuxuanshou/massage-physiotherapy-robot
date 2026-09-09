@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "task": "PUBLIC_RGBD_SURFACE_FINETUNING_PILOT_V1",
+  "split_policy": {
+    "implemented_and_debugged_on": "existing HuMMan DEV5 only",
+    "sealed_test_access": false,
+    "sealed_test_rule": "Do not open until metric code, training protocol, checkpoint selection and thresholds are frozen."
+  },
+  "units": {
+    "input_geometry": "metres",
+    "HuMMan_depth_source": "uint16 millimetre Z-depth converted by /1000",
+    "reported_distance": "millimetres",
+    "rendered_depth": "metres internally, absolute and signed residuals reported in millimetres"
+  },
+  "coordinates": {
+    "camera_convention": "OpenCV: +X image-right, +Y image-down, +Z forward",
+    "HuMMan_extrinsic": "X_camera = R_world_to_camera @ X_world + T_world_to_camera",
+    "camera_to_world_row_vector_implementation": "X_world = (X_camera - T) @ R",
+    "MHR_wrapper": "raw MHR vertices in metres, multiply coordinates by [1,-1,-1], then add pred_cam_t",
+    "heldout_transform": "Camera-A MHR -> world using A inverse extrinsic -> Camera-B using B world-to-camera extrinsic",
+    "renderer_conversion": "pyrender camera pose diag(1,-1,-1,1) maps OpenGL camera to the OpenCV camera frame",
+    "pixel_projection": "u=fx*x/z+cx, v=fy*y/z+cy; nearest pixel centre for depth comparison"
+  },
+  "metrics": {
+    "legacy": {
+      "definition": "one-sided Camera-B observed point to nearest MHR vertex",
+      "role": "backward comparison with V1 only",
+      "known_bias": "penalizes points over triangle interiors according to mesh vertex density"
+    },
+    "point_to_triangle": {
+      "definition": "one-sided Camera-B observed point to closest point on any MHR triangle",
+      "implementation": "exact triangle-region distance; conservative centroid bounding-sphere tree only prunes triangles whose lower bound cannot win",
+      "primary_geometry_role": true
+    },
+    "rendered_depth": {
+      "definition": "absolute Camera-B observed Z minus rasterized MHR Z at overlapping held-out color pixels",
+      "visibility": "GPU depth buffer keeps the front-most MHR surface; explicit two-sided triangles prevent EGL backface-driver differences",
+      "required_companion_metric": "mesh coverage of observed points",
+      "zero_depth": "no rendered overlap and excluded from residual distribution"
+    }
+  },
+  "aggregation": {
+    "per_observation_statistics": ["mean_mm", "median_mm", "p90_mm", "p95_mm", "max_mm"],
+    "scientific_unit": "subject",
+    "pixel_or_point_samples_are_not_independent_subjects": true
+  },
+  "surface_training_gradient_contract": {
+    "loss": "robust observed point to differentiable barycentric triangle-surface samples",
+    "chain": "loss -> triangle samples -> MHR vertices and pred_cam_t -> raw pose/camera outputs -> head_pose.proj and head_camera.proj",
+    "audit_only": "gradient audit executes zero optimizer steps and writes no checkpoint",
+    "vertex_offsets": "disabled"
+  },
+  "claim_limits": [
+    "HuMMan person masks describe clothed/person surface, not bare-back skin.",
+    "One-sided point-to-triangle does not penalize unobserved mesh regions.",
+    "Rendered-depth residual is reported only with overlap coverage.",
+    "DEV5 selects implementation choices; it is not a sealed generalization result."
+  ]
+}

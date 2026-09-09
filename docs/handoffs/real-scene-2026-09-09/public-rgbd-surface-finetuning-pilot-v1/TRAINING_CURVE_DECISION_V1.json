@@ -1,0 +1,22 @@
+{
+  "review_point": "E10",
+  "current_best_epoch": 1,
+  "current_best_primary_mm": 29.74557723772204,
+  "last_5_validation_primary_mm": [
+    34.503740669421575,
+    33.89080759158661,
+    33.7477134841145,
+    33.366956428253765,
+    34.58164920837896
+  ],
+  "still_improving": false,
+  "plateau": false,
+  "overfitting_after_early_best": true,
+  "parameter_drift": false,
+  "decision": "STOP",
+  "reason": "E1 is best; E2-E10 never improve over E1, while training surface loss continues downward. Extending to E20 would spend compute on a train/VAL divergence signal.",
+  "optimizer_updates": 120,
+  "person_exposures": 450,
+  "elapsed_seconds": 1707.2169377803802,
+  "sealed_accessed": false
+}
