@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "task_id": "PUBLIC_RGBD_MHR_FITABILITY_SANITY_V1",
+  "network_weights": "FROZEN",
+  "models": [
+    "official",
+    "v2_e5"
+  ],
+  "initialization": "same RGB Camera A and exact calibrated K; V2 changes only pose/camera output heads",
+  "observation": "HuMMan sensor depth selected by depth-space person mask then registered to color camera",
+  "fit_view": "kinect_008",
+  "held_out_view": "kinect_009; never read by optimizer",
+  "loss": {
+    "surface": "one-sided observed-person-depth to sampled MHR vertices robust point-to-point",
+    "huber_delta_m": 0.03,
+    "fit_observation_samples": 2048,
+    "fit_mesh_vertex_samples": 4096,
+    "init_prior_weight": 0.01,
+    "why_not_point_to_plane": "Kinect normals and silhouette boundaries were not reliable enough for the first gate"
+  },
+  "optimizer": {
+    "name": "Adam",
+    "steps": 100,
+    "learning_rate": 0.002,
+    "fresh_initialization_per_group": true,
+    "seed": 20260909
+  },
+  "metrics": [
+    "mean_mm",
+    "median_mm",
+    "p90_mm",
+    "p95_mm",
+    "max_mm"
+  ],
+  "primary_metric": "Camera B held-out median point-to-point error, aggregated first by subject",
+  "vertex_offsets": "DISABLED",
+  "claim_limit": "clothed/person surface only; no bare-back skin or medical accuracy"
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PASS_ARGUMENT_HAS_NO_EFFECT",
+  "test": "same MHR params with vertex_offsets=None versus nonzero 0.01 tensor",
+  "vertex_count": 18439,
+  "offset_tensor_shape": [
+    1,
+    18439,
+    3
+  ],
+  "offset_value": 0.01,
+  "max_abs_vertex_delta_m": 3.5762786865234375e-07,
+  "mean_abs_vertex_delta_m": 6.688066211957278e-10,
+  "no_offset_repeat_max_abs_delta_m": 3.5762786865234375e-07,
+  "no_offset_repeat_mean_abs_delta_m": 7.776758126354366e-10,
+  "effect_above_repeat_noise": false,
+  "torchscript_forward_schema": "forward(__torch__.MHRDemo self, Tensor identity_coeffs, Tensor model_parameters, Tensor face_expr_coeffs, bool apply_correctives=True) -> ((Tensor, Tensor))",
+  "interpretation": "Current SAM 3D Body wrapper accepts vertex_offsets but never forwards it into the MHR TorchScript call; nonzero offsets produce no change above repeated-forward numerical noise. Do not enable it for fitting."
+}

@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0",
+  "task_id": "PUBLIC_RGBD_MHR_FITABILITY_SANITY_V1",
+  "dataset": "HuMMan-Point v1.0",
+  "selection_status": "RGB_VISUAL_QA_COMPLETE_DEPTH_REGISTRATION_QA_PENDING",
+  "selection_unit": "one sequence from each of five distinct subject identifiers",
+  "subject_count": 5,
+  "sequence_count": 5,
+  "selection_principles": [
+    "different subjects",
+    "action semantics that are closer to horizontal or torso-support poses than generic standing motion",
+    "ten color and ten depth camera streams present in archive inventory",
+    "camera JSON and SMPL metadata present",
+    "enough frames to select one stable timestamp",
+    "Camera A and Camera B will be chosen only after actual back/torso visibility and depth validity are inspected"
+  ],
+  "selected_sequences": [
+    {
+      "subject_id": "p000823",
+      "sequence_id": "p000823_a000035",
+      "action_id": 35,
+      "action_name": "Straight Arm Plank",
+      "frame_count": 33,
+      "color_views": 10,
+      "depth_views": 10,
+      "mask_frames_in_archive_inventory": 330,
+      "planned_fit_frame": 16,
+      "planned_camera_a_fit": "kinect_008",
+      "planned_camera_b_held_out": "kinect_009",
+      "inclusion_reason": "Distinct subject with a torso-support pose and complete selected-modality archive entries.",
+      "unresolved_checks": [
+        "depth validity",
+        "RGB-depth registration",
+        "cross-view mutual visibility"
+      ],
+      "rgb_visual_qa": {
+        "back_or_posterior_torso_visible_in_a": true,
+        "back_or_posterior_torso_visible_in_b": true,
+        "camera_pair_distinct": true,
+        "depth_registration_status": "PENDING",
+        "pose_observation": "straight-arm plank with posterior torso visible from overhead cameras",
+        "camera_revision_reason": "C002 rejected for near-torso cropping and C007 rejected because it crops action 203; C008/C009 retain the relevant body."
+      }
+    },
+    {
+      "subject_id": "p000879",
+      "sequence_id": "p000879_a000035",
+      "action_id": 35,
+      "action_name": "Straight Arm Plank",
+      "frame_count": 51,
+      "color_views": 10,
+      "depth_views": 10,
+      "mask_frames_in_archive_inventory": 510,
+      "planned_fit_frame": 25,
+      "planned_camera_a_fit": "kinect_008",
+      "planned_camera_b_held_out": "kinect_009",
+      "inclusion_reason": "Second independent subject for the same action, allowing subject-level repeatability rather than pixel pooling.",
+      "unresolved_checks": [
+        "depth validity",
+        "RGB-depth registration",
+        "cross-view mutual visibility"
+      ],
+      "rgb_visual_qa": {
+        "back_or_posterior_torso_visible_in_a": true,
+        "back_or_posterior_torso_visible_in_b": true,
+        "camera_pair_distinct": true,
+        "depth_registration_status": "PENDING",
+        "pose_observation": "straight-arm plank with posterior torso visible from overhead cameras",
+        "camera_revision_reason": "C002 rejected for near-torso cropping and C007 rejected because it crops action 203; C008/C009 retain the relevant body."
+      }
+    },
+    {
+      "subject_id": "p000880",
+      "sequence_id": "p000880_a000035",
+      "action_id": 35,
+      "action_name": "Straight Arm Plank",
+      "frame_count": 51,
+      "color_views": 10,
+      "depth_views": 10,
+      "mask_frames_in_archive_inventory": 510,
+      "planned_fit_frame": 25,
+      "planned_camera_a_fit": "kinect_008",
+      "planned_camera_b_held_out": "kinect_009",
+      "inclusion_reason": "Third independent subject for a controlled same-action comparison.",
+      "unresolved_checks": [
+        "depth validity",
+        "RGB-depth registration",
+        "cross-view mutual visibility"
+      ],
+      "rgb_visual_qa": {
+        "back_or_posterior_torso_visible_in_a": true,
+        "back_or_posterior_torso_visible_in_b": true,
+        "camera_pair_distinct": true,
+        "depth_registration_status": "PENDING",
+        "pose_observation": "straight-arm plank with posterior torso visible from overhead cameras",
+        "camera_revision_reason": "C002 rejected for near-torso cropping and C007 rejected because it crops action 203; C008/C009 retain the relevant body."
+      }
+    },
+    {
+      "subject_id": "p000881",
+      "sequence_id": "p000881_a000035",
+      "action_id": 35,
+      "action_name": "Straight Arm Plank",
+      "frame_count": 57,
+      "color_views": 10,
+      "depth_views": 10,
+      "mask_frames_in_archive_inventory": 570,
+      "planned_fit_frame": 28,
+      "planned_camera_a_fit": "kinect_008",
+      "planned_camera_b_held_out": "kinect_009",
+      "inclusion_reason": "Fourth independent subject for a controlled same-action comparison.",
+      "unresolved_checks": [
+        "depth validity",
+        "RGB-depth registration",
+        "cross-view mutual visibility"
+      ],
+      "rgb_visual_qa": {
+        "back_or_posterior_torso_visible_in_a": true,
+        "back_or_posterior_torso_visible_in_b": true,
+        "camera_pair_distinct": true,
+        "depth_registration_status": "PENDING",
+        "pose_observation": "straight-arm plank with posterior torso visible from overhead cameras",
+        "camera_revision_reason": "C002 rejected for near-torso cropping and C007 rejected because it crops action 203; C008/C009 retain the relevant body."
+      }
+    },
+    {
+      "subject_id": "p001088",
+      "sequence_id": "p001088_a000203",
+      "action_id": 203,
+      "action_name": "Prone Side Leg Raise R",
+      "frame_count": 207,
+      "color_views": 10,
+      "depth_views": 10,
+      "mask_frames_in_archive_inventory": 2070,
+      "planned_fit_frame": 90,
+      "planned_camera_a_fit": "kinect_008",
+      "planned_camera_b_held_out": "kinect_009",
+      "inclusion_reason": "Distinct subject with a unilateral leg-raise support pose and two back-visible overhead views; retained for pose-diverse fitability, not as confirmed prone evidence.",
+      "unresolved_checks": [
+        "depth validity",
+        "RGB-depth registration",
+        "cross-view mutual visibility"
+      ],
+      "rgb_visual_qa": {
+        "back_or_posterior_torso_visible_in_a": true,
+        "back_or_posterior_torso_visible_in_b": true,
+        "camera_pair_distinct": true,
+        "depth_registration_status": "PENDING",
+        "pose_observation": "quadruped/plank-like unilateral leg raise; despite the action label, the inspected frames are not chest-down prone lying",
+        "camera_revision_reason": "C002 rejected for near-torso cropping and C007 rejected because it crops action 203; C008/C009 retain the relevant body."
+      }
+    }
+  ],
+  "download_plan": {
+    "strategy": "Download only archive parts required for the five selected sequences, then extract only matching entries.",
+    "solid_archive_constraint": "The required 7z files are solid archives. Selective extraction still requires downloading and scanning each complete required archive part.",
+    "required_archives": [
+      {
+        "name": "point_kinect_color_part_02.7z",
+        "bytes": 13892569135,
+        "contains": "50 color videos: ten views for each selected sequence"
+      },
+      {
+        "name": "point_kinect_depth_part_08.7z",
+        "bytes": 20142712774,
+        "contains": "depth frames for the four action-35 sequences"
+      },
+      {
+        "name": "point_kinect_depth_part_09.7z",
+        "bytes": 20317952592,
+        "contains": "depth frames for p001088_a000203"
+      },
+      {
+        "name": "point_kinect_mask.7z",
+        "bytes": 1376700892,
+        "contains": "person/foreground masks for all five sequences"
+      },
+      {
+        "name": "point_cameras.7z",
+        "bytes": 58953,
+        "contains": "camera calibration metadata"
+      },
+      {
+        "name": "smpl_params.7z",
+        "bytes": 23118862,
+        "contains": "auxiliary fitted SMPL metadata"
+      }
+    ],
+    "required_archive_bytes_total": 55753113208,
+    "note": "The archive total is a download/decompression cost, not the final extracted subset size. SMPL is auxiliary and will not be used as surface ground truth."
+  },
+  "fit_eval_split_contract": {
+    "timestamp": "one RGB-reviewed stable frame per sequence; frozen in selected_sequences",
+    "camera_a_role": "FIT: RGB initializes SAM/MHR; registered sensor depth supplies the fitting observation",
+    "camera_b_role": "HELD_OUT_TEST: synchronized sensor depth is never passed to the optimizer",
+    "camera_choice_status": "RGB_VISUAL_QA_COMPLETE; DEPTH_REGISTRATION_QA_PENDING",
+    "fallback_if_no_valid_pair": "Exclude the sequence with a recorded reason. Do not reuse Camera A pixels as held-out evidence and do not lower the gate."
+  },
+  "explicit_exclusions": [
+    {
+      "dataset": "HuMMan-Recon",
+      "reason": "The audited 339-sequence metadata did not contain the initially searched target action IDs, while HuMMan-Point supplied five candidate sequences and direct sensor depth."
+    },
+    {
+      "dataset": "PROX",
+      "reason": "Deferred to body-scene-contact stress testing; registration-gated and not the cleanest independent multi-view fit/test entry point."
+    },
+    {
+      "dataset": "Goliath-4",
+      "reason": "Access is gated and SAM 3D Body training-overlap risk is high; reserved for implementation sanity."
+    },
+    {
+      "dataset": "BEHAVE",
+      "reason": "Useful for contact and occlusion, but no target-like prone/back-visible sequence was confirmed during this audit."
+    }
+  ],
+  "claim_limit": "This subset can test clothed/person-surface MHR fitability across five subjects. It cannot validate bare-back skin geometry, DMD37 locations, or medical accuracy.",
+  "visual_audit_finding": "All five selections expose the posterior torso from Cameras 002 and 008. Four are straight-arm planks. The action-203 sequence is not true chest-down prone lying in the inspected capture; it is retained only as a complex unilateral-leg-raise support pose.",
+  "camera_pair_revision": "Final RGB candidate: C008 FIT and C009 HELD_OUT after rejecting C002 and C007 for cropping. Registration review still required."
+}

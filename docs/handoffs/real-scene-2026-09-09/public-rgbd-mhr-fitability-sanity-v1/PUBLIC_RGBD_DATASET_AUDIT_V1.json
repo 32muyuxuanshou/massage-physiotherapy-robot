@@ -1,0 +1,248 @@
+{
+  "schema_version": "1.0",
+  "task_id": "PUBLIC_RGBD_MHR_FITABILITY_SANITY_V1",
+  "audited_at": "2026-09-09",
+  "gate_1": {
+    "decision": "PUBLIC_DATA_USABLE_FOR_FITABILITY_SANITY",
+    "primary_dataset": "HuMMan-Point v1.0",
+    "claim_boundary": "The public release is sufficient for a small clothed/person-surface fitability sanity check with independent synchronized views. It is not evidence of bare-back skin accuracy or medical landmark accuracy.",
+    "remaining_entry_checks": []
+  },
+  "value_conventions": {
+    "true": "confirmed by an official release document, inspected release metadata/code, or an acquired file",
+    "false": "explicitly absent from the audited release or incompatible with the requested field",
+    "null": "not confirmed from the material inspected; no assumption is made"
+  },
+  "datasets": [
+    {
+      "dataset_name": "HuMMan-Point v1.0",
+      "official_source": "https://huggingface.co/datasets/caizhongang/HuMMan/tree/main/humman_release_v1.0_point",
+      "toolbox": "https://github.com/MotrixLab/humman_toolbox/tree/main/humman_point",
+      "paper": {
+        "title": "HuMMan: Multi-modal 4D Human Dataset for Versatile Sensing and Modeling",
+        "venue": "ECCV 2022",
+        "url": "https://arxiv.org/abs/2204.13686"
+      },
+      "license": {
+        "name": "S-Lab License 1.0",
+        "research_use": "Non-commercial use and redistribution are permitted subject to the license conditions.",
+        "commercial_use": "Not granted by default; the license instructs users to contact the contributors.",
+        "source": "https://github.com/MotrixLab/humman_toolbox/blob/main/LICENSE"
+      },
+      "actual_access_status": {
+        "status": "SELECTED_MODALITY_ARCHIVES_DOWNLOADED_AND_FIVE_SUBJECTS_EXTRACTED",
+        "verified_locally": [
+          "RGB video for 10 views",
+          "sensor-depth PNG for 10 views",
+          "depth-space person masks",
+          "K/R/T for color and depth cameras",
+          "five selected timestamps and camera pairs",
+          "visual depth-to-RGB overlays"
+        ],
+        "downloaded_archive_bytes": 55753112208
+      },
+      "rgb_available": true,
+      "depth_available": true,
+      "depth_is_sensor_measurement": true,
+      "depth_metric_scale": {
+        "available": true,
+        "raw_encoding": "uint16 PNG",
+        "raw_unit_interpretation": "millimetres",
+        "canonical_unit": "metres",
+        "conversion": "z_m = raw_depth / 1000.0",
+        "evidence": "The official toolbox creates Open3D point clouds with its default depth_scale=1000 and metric depth truncation. A physical-scale spot check remains required before scoring."
+      },
+      "intrinsics_available": true,
+      "distortion_available": false,
+      "distortion_note": "The inspected cameras.json files contain K, R and T only. No distortion model or coefficients were present. Treat release images as following the release pinhole workflow; do not invent coefficients.",
+      "extrinsics_available": true,
+      "rgb_depth_registration_available": true,
+      "rgb_depth_registration_note": "RGB and depth are not initially co-located. The release provides separate color/depth K,R,T and reference code to transform depth points into the color camera.",
+      "multi_view_available": true,
+      "synchronized_views": true,
+      "camera_count": {
+        "kinect_color": 10,
+        "kinect_depth": 10,
+        "mobile_sensor_also_listed": true
+      },
+      "human_mask_available": true,
+      "scene_mask_available": false,
+      "body_index_available": false,
+      "mask_note": "The release describes masks computed from the background. They are person/foreground masks, not skin masks or anatomical-part masks.",
+      "3d_scan_available": false,
+      "point_cloud_available": true,
+      "point_cloud_note": "Metric point clouds are derived from sensor depth and calibration; a separate packaged scan is not required for this sanity experiment.",
+      "fitted_body_model_available": true,
+      "fitted_body_model": "SMPL parameters in world coordinates; these are auxiliary annotations and must not replace sensor depth as independent surface observation.",
+      "subject_id_available": true,
+      "action_label_available": true,
+      "lying_available": false,
+      "prone_confirmed": false,
+      "back_visible_confirmed": true,
+      "pose_evidence": "Four selected sequences are straight-arm planks. Action 203 is labeled Prone Side Leg Raise R, but actual multi-view inspection shows a quadruped/plank-like unilateral leg raise rather than chest-down prone lying. Posterior torso is visible in Cameras 008 and 009.",
+      "body_scene_contact_available": true,
+      "body_scene_contact_note": "Floor/support contact can occur, but the selected actions are not a massage-bed bare-back capture protocol.",
+      "clothing": "clothed dynamic-human capture; exposed bare back is not confirmed",
+      "target_domain_similarity": "MEDIUM_FOR_POSE_AND_MULTIVIEW_GEOMETRY_LOW_FOR_BARE_BACK_SKIN",
+      "sam3db_training_overlap_risk": "LOW_AS_LISTED: HuMMan is not listed in the SAM 3D Body paper's training-dataset table inspected for this audit; undisclosed overlap cannot be ruled out.",
+      "recommended_role": "FITABILITY",
+      "recommendation_reason": "It is currently the best accessible source for a five-subject, sensor-depth, calibrated, independent-view surface test."
+    },
+    {
+      "dataset_name": "PROX",
+      "official_source": "https://prox.is.tue.mpg.de/",
+      "paper": {
+        "title": "Resolving 3D Human Pose Ambiguities with 3D Scene Constraints",
+        "venue": "ICCV 2019",
+        "url": "https://arxiv.org/abs/1908.06963"
+      },
+      "license": {
+        "name": "PROX dataset terms",
+        "research_use": "Access requires registration and acceptance of the official terms.",
+        "commercial_use": "Not assumed; commercial licensing must be discussed with the rights holder.",
+        "source": "https://prox.is.tue.mpg.de/"
+      },
+      "actual_access_status": {
+        "status": "REGISTRATION_REQUIRED_NOT_DOWNLOADED",
+        "verified_scope": "Official project/paper audit only; no local PROX sample was used."
+      },
+      "rgb_available": true,
+      "depth_available": true,
+      "depth_is_sensor_measurement": true,
+      "depth_metric_scale": null,
+      "intrinsics_available": true,
+      "distortion_available": null,
+      "extrinsics_available": true,
+      "rgb_depth_registration_available": true,
+      "multi_view_available": false,
+      "synchronized_views": false,
+      "human_mask_available": null,
+      "scene_mask_available": null,
+      "body_index_available": false,
+      "3d_scan_available": true,
+      "point_cloud_available": true,
+      "fitted_body_model_available": true,
+      "fitted_body_model": "SMPL-X fits are available but are fitted model output, not independent observed human-surface ground truth.",
+      "subject_id_available": true,
+      "action_label_available": null,
+      "lying_available": true,
+      "prone_confirmed": null,
+      "back_visible_confirmed": null,
+      "body_scene_contact_available": true,
+      "target_domain_similarity": "MEDIUM_FOR_INDOOR_BODY_SCENE_CONTACT_LOW_TO_UNKNOWN_FOR_PRONE_BARE_BACK",
+      "sam3db_training_overlap_risk": "UNKNOWN",
+      "recommended_role": "CONTACT_STRESS",
+      "recommendation_reason": "Use only after the primary HuMMan geometry pipeline works, to measure how strong body-scene contact changes residuals. Do not treat PROX SMPL-X fits as real surface truth."
+    },
+    {
+      "dataset_name": "Goliath public four-subject release (Goliath-4)",
+      "official_source": "https://github.com/facebookresearch/goliath",
+      "paper": {
+        "title": "Codec Avatar Studio: Paired Human Captures for Complete, Driveable, and Generalizable Avatars",
+        "venue": "NeurIPS 2024 Datasets and Benchmarks",
+        "url": "https://arxiv.org/abs/2404.02168"
+      },
+      "license": {
+        "name": "CC BY-NC 4.0",
+        "research_use": "Non-commercial use is permitted subject to attribution and the license terms.",
+        "commercial_use": "Not permitted by this license.",
+        "source": "https://github.com/facebookresearch/goliath/blob/main/LICENSE"
+      },
+      "actual_access_status": {
+        "status": "GATED_EMAIL_REQUEST_NOT_DOWNLOADED",
+        "verified_scope": "Public repository and access statement only. The repository states that dataset access is gated."
+      },
+      "rgb_available": true,
+      "depth_available": null,
+      "depth_is_sensor_measurement": null,
+      "depth_metric_scale": null,
+      "intrinsics_available": true,
+      "distortion_available": null,
+      "extrinsics_available": true,
+      "rgb_depth_registration_available": null,
+      "multi_view_available": true,
+      "synchronized_views": null,
+      "human_mask_available": true,
+      "scene_mask_available": null,
+      "body_index_available": null,
+      "3d_scan_available": true,
+      "point_cloud_available": null,
+      "fitted_body_model_available": true,
+      "subject_id_available": true,
+      "action_label_available": null,
+      "lying_available": null,
+      "prone_confirmed": null,
+      "back_visible_confirmed": null,
+      "body_scene_contact_available": null,
+      "target_domain_similarity": "MEDIUM_FOR_HIGH_QUALITY_BODY_GEOMETRY_UNKNOWN_FOR_TARGET_POSE",
+      "sam3db_training_overlap_risk": "HIGH: the SAM 3D Body paper lists Goliath-series data among its training sources; the public four-subject release must not be presented as an unseen-generalization benchmark.",
+      "recommended_role": "IMPLEMENTATION_SANITY",
+      "recommendation_reason": "If access is granted, use its calibration, registered/unregistered meshes and multi-view projections to debug geometry code only."
+    },
+    {
+      "dataset_name": "BEHAVE",
+      "official_source": "https://virtualhumans.mpi-inf.mpg.de/behave/",
+      "toolbox": "https://github.com/xiexh20/behave-dataset",
+      "paper": {
+        "title": "BEHAVE: Dataset and Method for Tracking Human Object Interactions",
+        "venue": "CVPR 2022",
+        "url": "https://arxiv.org/abs/2204.06950"
+      },
+      "license": {
+        "name": "BEHAVE non-commercial license",
+        "research_use": "Non-commercial scientific research is permitted subject to the license terms and citation requirement.",
+        "commercial_use": "Prohibited by the inspected license.",
+        "publication_requirement": "Human faces must be blurred when images are used in publications or public presentations.",
+        "source": "https://github.com/xiexh20/behave-dataset/blob/main/LICENSE"
+      },
+      "actual_access_status": {
+        "status": "TOOLBOX_AUDITED_DATA_NOT_DOWNLOADED",
+        "verified_scope": "Official repository structure, loading code and license were inspected."
+      },
+      "rgb_available": true,
+      "depth_available": true,
+      "depth_is_sensor_measurement": true,
+      "depth_metric_scale": {
+        "available": true,
+        "raw_unit_interpretation": "millimetres",
+        "canonical_unit": "metres",
+        "conversion": "z_m = raw_depth / 1000.0",
+        "evidence": "The official toolbox's Kinect calibration code divides depth by 1000."
+      },
+      "intrinsics_available": true,
+      "distortion_available": null,
+      "extrinsics_available": true,
+      "rgb_depth_registration_available": true,
+      "rgb_depth_registration_note": "The official README states that provided depth is pixel-aligned to color and has the same resolution.",
+      "multi_view_available": true,
+      "synchronized_views": true,
+      "camera_count": 4,
+      "human_mask_available": true,
+      "scene_mask_available": false,
+      "body_index_available": false,
+      "object_mask_available": true,
+      "3d_scan_available": false,
+      "point_cloud_available": true,
+      "point_cloud_note": "Segmented person and object point clouds are provided/derivable; object template scans are provided, not independent full human scans.",
+      "fitted_body_model_available": true,
+      "fitted_body_model": "SMPL-H registrations are provided and must remain auxiliary rather than surface ground truth.",
+      "subject_id_available": true,
+      "action_label_available": true,
+      "lying_available": null,
+      "prone_confirmed": null,
+      "back_visible_confirmed": null,
+      "body_scene_contact_available": true,
+      "target_domain_similarity": "MEDIUM_FOR_MULTIVIEW_RGBD_AND_CONTACT_LOW_TO_UNKNOWN_FOR_PRONE_BARE_BACK",
+      "sam3db_training_overlap_risk": "UNKNOWN",
+      "recommended_role": "CONTACT_STRESS",
+      "recommendation_reason": "It is a useful accessible alternative for testing occlusion and human-object contact after the primary fitter is validated, but no target-like prone sequence was confirmed in this audit."
+    }
+  ],
+  "audit_conclusions": [
+    "HuMMan-Point is the only audited source selected for the primary five-subject fitability sanity experiment.",
+    "Sensor depth, rather than SMPL/SMPL-X/SMPL-H registrations, is the independent surface observation.",
+    "PROX and BEHAVE are deferred contact-stress datasets; Goliath-4 is an implementation-sanity dataset with high training-overlap risk.",
+    "No audited public dataset has yet been shown to match the final prone, exposed-back massage domain.",
+    "Actual RGB inspection found no confirmed chest-down prone capture in the five selected sequences; this lowers target-domain similarity but does not invalidate the general fitability sanity test."
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "groups": {
+    "camera": [
+      "pred_cam_t (3)"
+    ],
+    "pose": [
+      "global_rot (3)",
+      "body_pose (130)"
+    ],
+    "shape_scale": [
+      "shape (45)",
+      "scale/skeleton basis (28)"
+    ],
+    "combined": [
+      "all preceding variables"
+    ]
+  },
+  "fixed": [
+    "SAM backbone",
+    "decoder",
+    "pose/camera head weights",
+    "hands",
+    "face",
+    "MHR implementation",
+    "camera calibration"
+  ],
+  "run_count": 40,
+  "subjects": 5,
+  "models": 2,
+  "groups_per_model": 4,
+  "steps_per_run": 100,
+  "sanity_limits": {
+    "camera_translation_delta_m": 0.5,
+    "global_rotation_rms_rad": 0.75,
+    "body_pose_rms_parameter": 0.75,
+    "shape_rms_coefficient": 3.0,
+    "scale_rms_coefficient": 3.0
+  },
+  "status": "40_RUNS_COMPLETED",
+  "heldout_results_subject_mean": {
+    "official": {
+      "camera": {
+        "subjects": 5,
+        "initial_heldout_median_mm_subject_mean": 157.30389632646364,
+        "refined_heldout_median_mm_subject_mean": 42.21634911883288,
+        "heldout_relative_improvement_subject_mean": 0.728980419361563,
+        "heldout_relative_improvement_subject_median": 0.7229680196069406,
+        "refined_heldout_metrics_subject_macro_mean": {
+          "mean_mm": 58.136766038912526,
+          "median_mm": 42.21634911883288,
+          "p90_mm": 126.12209901746105,
+          "p95_mm": 166.494869329673,
+          "max_mm": 694.7957177898173
+        }
+      },
+      "pose": {
+        "subjects": 5,
+        "initial_heldout_median_mm_subject_mean": 157.30389632646364,
+        "refined_heldout_median_mm_subject_mean": 40.698057830752475,
+        "heldout_relative_improvement_subject_mean": 0.7155779205004226,
+        "heldout_relative_improvement_subject_median": 0.6969863740134198,
+        "refined_heldout_metrics_subject_macro_mean": {
+          "mean_mm": 56.688404876246466,
+          "median_mm": 40.698057830752475,
+          "p90_mm": 123.20141853802465,
+          "p95_mm": 153.384750503803,
+          "max_mm": 662.6857357199827
+        }
+      },
+      "shape_scale": {
+        "subjects": 5,
+        "initial_heldout_median_mm_subject_mean": 157.30389632646364,
+        "refined_heldout_median_mm_subject_mean": 153.9988343610998,
+        "heldout_relative_improvement_subject_mean": 0.024670655899573117,
+        "heldout_relative_improvement_subject_median": 0.025508875438106045,
+        "refined_heldout_metrics_subject_macro_mean": {
+          "mean_mm": 145.14052425204812,
+          "median_mm": 153.9988343610998,
+          "p90_mm": 247.69121925245727,
+          "p95_mm": 267.3900965502414,
+          "max_mm": 736.872942080253
+        }
+      },
+      "combined": {
+        "subjects": 5,
+        "initial_heldout_median_mm_subject_mean": 157.30389632646364,
+        "refined_heldout_median_mm_subject_mean": 22.052253971854523,
+        "heldout_relative_improvement_subject_mean": 0.8504907442843113,
+        "heldout_relative_improvement_subject_median": 0.8419888483989879,
+        "refined_heldout_metrics_subject_macro_mean": {
+          "mean_mm": 32.29455931780933,
+          "median_mm": 22.052253971854523,
+          "p90_mm": 71.31876223672728,
+          "p95_mm": 94.72019952025934,
+          "max_mm": 655.4745034350317
+        }
+      }
+    },
+    "v2_e5": {
+      "camera": {
+        "subjects": 5,
+        "initial_heldout_median_mm_subject_mean": 173.09334836827173,
+        "refined_heldout_median_mm_subject_mean": 48.056671417811934,
+        "heldout_relative_improvement_subject_mean": 0.7266518330387658,
+        "heldout_relative_improvement_subject_median": 0.7294360371519736,
+        "refined_heldout_metrics_subject_macro_mean": {
+          "mean_mm": 64.12624195669873,
+          "median_mm": 48.056671417811934,
+          "p90_mm": 137.25976641307025,
+          "p95_mm": 178.59407935977075,
+          "max_mm": 693.0098582203656
+        }
+      },
+      "pose": {
+        "subjects": 5,
+        "initial_heldout_median_mm_subject_mean": 173.09334836827173,
+        "refined_heldout_median_mm_subject_mean": 46.73089927596228,
+        "heldout_relative_improvement_subject_mean": 0.7070429601973374,
+        "heldout_relative_improvement_subject_median": 0.6948750481154026,
+        "refined_heldout_metrics_subject_macro_mean": {
+          "mean_mm": 61.512600338019844,
+          "median_mm": 46.73089927596228,
+          "p90_mm": 131.22635488174006,
+          "p95_mm": 157.8444437024211,
+          "max_mm": 669.0925563847333
+        }
+      },
+      "shape_scale": {
+        "subjects": 5,
+        "initial_heldout_median_mm_subject_mean": 173.09334342474708,
+        "refined_heldout_median_mm_subject_mean": 169.78753491509892,
+        "heldout_relative_improvement_subject_mean": 0.022355483084479905,
+        "heldout_relative_improvement_subject_median": 0.02239818417296649,
+        "refined_heldout_metrics_subject_macro_mean": {
+          "mean_mm": 159.1691300353567,
+          "median_mm": 169.78753491509892,
+          "p90_mm": 267.9889876019486,
+          "p95_mm": 288.13363186143187,
+          "max_mm": 736.9847603543151
+        }
+      },
+      "combined": {
+        "subjects": 5,
+        "initial_heldout_median_mm_subject_mean": 173.09334342474708,
+        "refined_heldout_median_mm_subject_mean": 24.08320109337834,
+        "heldout_relative_improvement_subject_mean": 0.8520676781764349,
+        "heldout_relative_improvement_subject_median": 0.855052992630689,
+        "refined_heldout_metrics_subject_macro_mean": {
+          "mean_mm": 35.40793625473337,
+          "median_mm": 24.08320109337834,
+          "p90_mm": 80.17461471599013,
+          "p95_mm": 105.16661009703925,
+          "max_mm": 659.0801637863848
+        }
+      }
+    }
+  },
+  "engineering_finding": "Camera-only and pose-only each recover most of the initial held-out error; shape/scale alone contributes little; combined is consistently best."
+}

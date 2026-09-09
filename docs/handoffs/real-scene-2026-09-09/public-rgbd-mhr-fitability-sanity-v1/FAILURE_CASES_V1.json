@@ -1,0 +1,26 @@
+{
+  "fatal_failures": [],
+  "limitations": [
+    {
+      "id": "NO_TRUE_PRONE",
+      "effect": "Five-person subset contains four planks and one quadruped/plank-like leg raise; it does not test chest-down treatment-table contact."
+    },
+    {
+      "id": "CLOTHING_SURFACE",
+      "effect": "Person depth measures clothing/hair as well as body; no bare-back skin claim."
+    },
+    {
+      "id": "DEPTH_MASK_ARTIFACTS",
+      "effect": "Background-subtraction masks have small disconnected artifacts; main body support is visually aligned, but no skin mask."
+    },
+    {
+      "id": "ONE_SIDED_VERTEX_METRIC",
+      "effect": "The first gate uses observed-point to dense-MHR-vertex distance without point-to-plane or explicit mutual visibility."
+    },
+    {
+      "id": "NO_ANATOMICAL_REGIONS",
+      "effect": "No reliable back-region labels were available, so upper/mid/lower torso metrics are not claimed."
+    }
+  ],
+  "highest_residual_note": "P95 and max remain sensitive to non-overlap, occlusion, hair/clothing and mask artifacts; median is the primary robust gate metric."
+}

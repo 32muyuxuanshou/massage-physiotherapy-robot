@@ -1,6 +1,6 @@
 # 按摩理疗机器人
 
-> **网页端最新交付（2026-09-09）：** [MHR 真实背部表面可拟合性 Gate V1](docs/handoffs/real-scene-2026-09-09/mhr-back-surface-fitability-gate-v1/README.md)。Gate 为 `INCONCLUSIVE_OPTIMIZATION_OR_DATA_LIMITED`：现有真实视频有可见背部，但没有标定、注册的真实深度，不能计算 surface error，也不能判断 MHR 表示是否足够。下一步先采 3 人 A/B/C 最小 RGB-D Gate，不直接启动 30 人训练或全局微调。
+> **网页端最新交付（2026-09-09）：** [公开 RGB-D MHR 可拟合性实验 V1](docs/handoffs/real-scene-2026-09-09/public-rgbd-mhr-fitability-sanity-v1/README.md)。Gate 为 `PASS_PUBLIC_MHR_FITABILITY_SANITY`：HuMMan-Point 5 名穿衣真人、40 次冻结网络拟合中，独立 Camera B 的中位表面误差由 Official 157.3 mm 降到 22.1 mm、V2-E5 173.1 mm 降到 24.1 mm。公开数据没有标准治疗床俯卧或裸背，下一步采自己的 3 人目标域 RGB-D Gate，暂不启动 30 人采集或 decoder/LoRA 微调。
 项目源码、工程文档与交付资料的统一版本管理入口。
 
 > **最新研究边界：** 原模型/第2轮/第10轮的旧 fitted-only 结果不支持主指标提升；修正版 Visible A/B V2 已完成 10 轮，epoch5 的 NME 为 0.034273，epoch10 的 PCK05 为 0.812213。当前证据只到 COCO 来源二维关节 validation，不能宣称 Mesh surface、DMD37 或医学准确性。

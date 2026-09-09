@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "task_id": "PUBLIC_RGBD_MHR_FITABILITY_SANITY_V1",
+  "dataset": "HuMMan-Point v1.0",
+  "status": "FROZEN_AFTER_FILE_FORMAT_QA_BEFORE_MHR_FITTING",
+  "purpose": "Define which sensor-depth samples may supervise or evaluate MHR surface fitting without confusing a foreground mask with bare skin.",
+  "observation_source": "HuMMan Kinect sensor depth transformed with released calibration; fitted SMPL parameters are excluded as observation truth.",
+  "released_mask_semantics": {
+    "known": "The official release calls these masks computed with background. They are used here only as person/foreground support.",
+    "not_known": [
+      "bare skin",
+      "clothing type",
+      "anatomical body part",
+      "front versus back",
+      "occlusion ownership at boundaries"
+    ],
+    "hard_rule": "person mask != bare skin mask"
+  },
+  "classes": [
+    {
+      "name": "VALID_BODY_SURFACE",
+      "definition": "A depth sample on the visible person surface, away from unreliable boundaries, with valid metric depth and consistent calibration.",
+      "fit_loss_allowed": true,
+      "held_out_metric_allowed": true,
+      "claim": "body/person surface alignment only unless separately proven to be bare skin"
+    },
+    {
+      "name": "CLOTHING_SURFACE",
+      "definition": "Visible clothing measured by the depth sensor, including tight or loose garments.",
+      "fit_loss_allowed": true,
+      "held_out_metric_allowed": true,
+      "claim": "clothed surface alignment; never skin or anatomical surface accuracy",
+      "qualification": "Very loose, flapping or topology-changing garments may be excluded during visual QA and recorded as a failure/exclusion reason."
+    },
+    {
+      "name": "SCENE_OBJECT",
+      "definition": "Floor, wall, furniture, equipment or another non-person object.",
+      "fit_loss_allowed": false,
+      "held_out_metric_allowed": false
+    },
+    {
+      "name": "BED_CONTACT",
+      "definition": "Support-surface depth at or immediately adjacent to a body/support contact zone where ownership is ambiguous.",
+      "fit_loss_allowed": false,
+      "held_out_metric_allowed": false,
+      "note": "HuMMan candidates may use floor/support rather than a bed. The same exclusion applies."
+    },
+    {
+      "name": "HAIR",
+      "definition": "Hair surface or hair/body boundary.",
+      "fit_loss_allowed": false,
+      "held_out_metric_allowed": false
+    },
+    {
+      "name": "SELF_OCCLUDED",
+      "definition": "An anatomical surface not directly observed by the scoring camera, including surfaces hidden by another body part.",
+      "fit_loss_allowed": false,
+      "held_out_metric_allowed": false
+    },
+    {
+      "name": "UNKNOWN",
+      "definition": "A sample whose ownership, calibration, depth reliability or semantics cannot be established.",
+      "fit_loss_allowed": false,
+      "held_out_metric_allowed": false
+    }
+  ],
+  "automatic_validity_pipeline": [
+    {
+      "order": 1,
+      "rule": "Read raw uint16 depth without normalization; remove raw value 0 and values outside the frozen working-depth interval."
+    },
+    {
+      "order": 2,
+      "rule": "Unproject in the depth camera and transform/project into the corresponding color camera using PUBLIC_RGBD_GEOMETRY_CONTRACT_V1."
+    },
+    {
+      "order": 3,
+      "rule": "Require support from the released person/foreground mask after its coordinate frame has been verified."
+    },
+    {
+      "order": 4,
+      "rule": "Erode the person mask and exclude a depth-discontinuity band so flying pixels and mixed foreground/background samples cannot enter fitting or scoring."
+    },
+    {
+      "order": 5,
+      "rule": "Apply an independent depth-consistency/normal-quality check; invalid, isolated and multipath-like samples become UNKNOWN."
+    },
+    {
+      "order": 6,
+      "rule": "For cross-view evaluation, keep only Camera-B samples visible from Camera B. Mutual visibility with Camera A is not required for held-out scoring, but Camera-A data must never enter the Camera-B metric."
+    }
+  ],
+  "manual_visual_qa": {
+    "required_for_each_selected_frame": true,
+    "checks": [
+      "person mask follows the person rather than scene/background",
+      "torso/back visibility is sufficient for the intended comparison",
+      "garment looseness is documented",
+      "support-contact boundary is excluded",
+      "hair does not enter torso/back scoring",
+      "Camera A and Camera B show genuinely independent geometry",
+      "registration overlays have no gross edge offset"
+    ],
+    "annotation_source": "RGB, raw depth, registered depth and released person mask only; do not display SAM/MHR overlays while deciding observation validity."
+  },
+  "fit_view_policy": {
+    "camera": "Camera A",
+    "allowed": [
+      "VALID_BODY_SURFACE",
+      "CLOTHING_SURFACE"
+    ],
+    "forbidden": [
+      "SCENE_OBJECT",
+      "BED_CONTACT",
+      "HAIR",
+      "SELF_OCCLUDED",
+      "UNKNOWN"
+    ],
+    "role": "optimizer input"
+  },
+  "held_out_view_policy": {
+    "camera": "Camera B",
+    "independence": "No Camera-B depth point, silhouette, mask-derived loss, normal, metric or tuned residual may enter optimization or early stopping.",
+    "allowed": [
+      "VALID_BODY_SURFACE",
+      "CLOTHING_SURFACE"
+    ],
+    "forbidden": [
+      "SCENE_OBJECT",
+      "BED_CONTACT",
+      "HAIR",
+      "SELF_OCCLUDED",
+      "UNKNOWN"
+    ],
+    "role": "primary independent evaluation"
+  },
+  "reporting": {
+    "primary_surface_label": "CLOTHED_OR_PERSON_SURFACE",
+    "prohibited_labels": [
+      "bare-back skin ground truth",
+      "medical surface accuracy",
+      "DMD37 accuracy"
+    ],
+    "required_counts": [
+      "raw depth pixels",
+      "person-mask-supported points",
+      "points removed by boundary/depth validity filters",
+      "fit points used",
+      "held-out points scored",
+      "per-subject inclusion/exclusion reason"
+    ],
+    "statistical_unit": "subject; dense pixels are samples within a subject and must not be counted as independent subjects"
+  },
+  "known_limitations": [
+    "The release mask does not separate clothing from skin.",
+    "The five candidates have not yet passed actual-frame visual QA.",
+    "No public selected observation is yet confirmed to be an exposed prone back.",
+    "Contact and self-occlusion labels are inferred conservatively during QA rather than supplied as authoritative dataset classes."
+  ],
+  "failure_policy": "When a sample cannot be assigned safely, label it UNKNOWN and exclude it. If too little valid independent Camera-B surface remains, exclude the frame/sequence or return INCONCLUSIVE_DATA_OR_OPTIMIZATION_LIMITED.",
+  "mask_finding_after_extraction": {
+    "shape": [
+      576,
+      640
+    ],
+    "coordinate_frame": "paired Kinect depth camera",
+    "use": "apply before unprojection; then transform selected person points into color camera",
+    "not_available": "independent color-space skin/anatomical mask"
+  }
+}

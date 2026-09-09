@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "task_id": "PUBLIC_RGBD_MHR_FITABILITY_SANITY_V1",
+  "dataset": "HuMMan-Point v1.0",
+  "status": "FROZEN_AFTER_DATA_FORMAT_QA_BEFORE_MHR_FITTING",
+  "scope": "Kinect color/depth streams in the five-sequence public fitability subset",
+  "coordinate_frames": {
+    "world": {
+      "name": "HUMMAN_WORLD",
+      "definition": "HuMMan world coordinates; the official release states that this frame is the same as kinect_color_000.",
+      "unit": "metres"
+    },
+    "color_camera": {
+      "name_pattern": "kinect_color_NNN",
+      "model": "OpenCV pinhole",
+      "axes": "+x right, +y down, +z forward",
+      "unit": "metres"
+    },
+    "depth_camera": {
+      "name_pattern": "kinect_depth_NNN",
+      "model": "OpenCV pinhole",
+      "axes": "+x right, +y down, +z forward",
+      "unit": "metres"
+    },
+    "mhr_model": {
+      "name": "MHR_NATIVE",
+      "definition": "Coordinates returned by the MHR TorchScript body model before the SAM 3D Body wrapper's output-axis conversion.",
+      "axes": "implementation-defined until the wrapper conversion is applied",
+      "unit": "metres",
+      "required_conversion": "Use the same y/z sign conversion as the current SAM 3D Body head before comparing to OpenCV camera coordinates. Do not infer an extra rotation from appearance."
+    },
+    "sam_output_camera": {
+      "name": "SAM_OPENCV_CAMERA",
+      "definition": "MHR vertices after the current SAM 3D Body wrapper's axis conversion and predicted perspective camera translation.",
+      "axes": "+x right, +y down, +z forward",
+      "unit": "metres"
+    }
+  },
+  "camera_model": {
+    "projection": "u = fx * Xc/Zc + cx; v = fy * Yc/Zc + cy",
+    "intrinsics_layout": "K = [[fx,0,cx],[0,fy,cy],[0,0,1]]",
+    "pixel_coordinates": "integer array indices refer to pixel centres; u is column/x and v is row/y",
+    "valid_projection": "Zc > 0 and projected coordinates lie inside the target image",
+    "opencv_opengl_rule": "Dataset projection and scoring stay in OpenCV coordinates. Any renderer-specific OpenGL conversion must be explicit and must not change stored geometry."
+  },
+  "extrinsics": {
+    "stored_direction": "WORLD_TO_CAMERA",
+    "stored_equation": "X_camera = R_world_to_camera * X_world + T_world_to_camera",
+    "inverse_equation": "X_world = transpose(R_world_to_camera) * (X_camera - T_world_to_camera)",
+    "homogeneous_matrix": "T_camera_from_world = [[R,T],[0,0,0,1]]",
+    "cross_camera_equation": "X_color = R_color * (transpose(R_depth) * (X_depth - T_depth)) + T_color",
+    "warning": "R,T are not camera-to-world. Their direction must not be changed to make an overlay look plausible."
+  },
+  "depth": {
+    "stored_type": "uint16 PNG",
+    "definition": "Z-depth along the depth camera optical z axis, not Euclidean ray length",
+    "raw_unit": "millimetres",
+    "canonical_unit": "metres",
+    "conversion": "Z = raw_depth / 1000.0",
+    "invalid_raw_values": [
+      0
+    ],
+    "unprojection": "X = (u-cx)*Z/fx; Y = (v-cy)*Z/fy; point = [X,Y,Z]",
+    "scale_evidence": "The release's Open3D code uses the default depth scale of 1000 and metric depth truncation.",
+    "scale_validation_required": "Before reporting millimetres, verify plausible human/camera distances and at least one known-scale or cross-view consistency check."
+  },
+  "distortion": {
+    "coefficients_in_release_camera_json": false,
+    "assumption": "Use the released images and K with the release's pinhole workflow; assume no additional distortion correction only for reproducing that workflow.",
+    "claim_limit": "Absence of coefficients does not prove zero physical lens distortion. This is a documented release assumption, not a calibrated fact."
+  },
+  "rgb_depth_relation": {
+    "same_resolution": false,
+    "already_pixel_registered": false,
+    "color_resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "depth_resolution": {
+      "width": 640,
+      "height": 576
+    },
+    "registration_method": "Unproject raw depth with K_depth, transform depth-camera to color-camera using the two world-to-camera extrinsics, project with K_color, then z-buffer into the color image.",
+    "interpolation_rule": "Do not bilinearly mix foreground and background depth at discontinuities; use nearest valid projected depth with a z-buffer or operate directly on 3D points.",
+    "mask_relation": "The inspected masks are 640x576 in the paired Kinect depth pixel frame. Apply the person mask before unprojection, then register selected 3D points into color with K/R/T."
+  },
+  "mhr_placement": {
+    "initial_mesh_camera_equation": "V_color = axis_convert(V_mhr_native) + predicted_camera_translation",
+    "world_equation_for_camera_a": "V_world = transpose(R_color_A) * (V_color - T_color_A)",
+    "held_out_projection": "V_color_B = R_color_B * V_world + T_color_B",
+    "root_translation_definition": "Use the current SAM 3D Body output pred_cam_t as the perspective camera-frame translation after the wrapper's documented conversion. Do not reinterpret it as HuMMan world translation.",
+    "fitting_rule": "If camera translation is optimized, it remains a Camera-A camera-frame parameter and is converted to world by Camera A's fixed calibration before Camera B evaluation."
+  },
+  "mandatory_independent_tests": [
+    {
+      "id": "CALIBRATION_ROUND_TRIP",
+      "procedure": "Transform sampled points world->camera->world for every selected color and depth camera.",
+      "acceptance": "maximum round-trip residual <= 5e-6 metres using the decimal-serialized release R/T; this tolerance was frozen before MHR fitting after observing <=2.13e-6 m and is not a surface-error gate"
+    },
+    {
+      "id": "DEPTH_COLOR_REGISTRATION",
+      "procedure": "Project depth-derived person points into the paired color image and compare their support with the released person mask and RGB silhouette.",
+      "acceptance": "Record overlap and boundary diagnostics; no fitting run is valid until gross flips, index swaps and scale errors are absent. A numeric threshold must be frozen after inspecting one development subject and before evaluating the remaining subjects."
+    },
+    {
+      "id": "CROSS_VIEW_REPROJECTION",
+      "procedure": "Transform valid Camera-A depth points to world and project them into Camera B using only official extrinsics/intrinsics.",
+      "acceptance": "The projection must agree with the synchronized Camera-B observation where the same surface is mutually visible; occlusions are excluded rather than forced to match."
+    },
+    {
+      "id": "MHR_AXIS_TEST",
+      "procedure": "Project the unmodified SAM output through the declared MHR-to-OpenCV conversion and compare with the RGB person box/joints.",
+      "acceptance": "No additional manual axis swap, mirror, sign flip or scale factor is allowed after this contract is frozen."
+    }
+  ],
+  "known_unknowns": [
+    "No distortion coefficients are present in the inspected HuMMan camera JSON.",
+    "The exact mask coordinate frame remains to be verified from the extracted mask dimensions and overlays.",
+    "The selected fit/test camera IDs and frame IDs remain pending visual QA.",
+    "Sensor depth bias and multipath behaviour have not been independently calibrated."
+  ],
+  "failure_policy": "If registration or scale cannot be validated, mark the experiment INCONCLUSIVE_DATA_OR_OPTIMIZATION_LIMITED. Do not repair transforms by visual trial-and-error and do not score fitted SMPL as observed geometry."
+}
