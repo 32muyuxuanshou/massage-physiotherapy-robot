@@ -1,0 +1,39 @@
+{
+  "materials": [
+    {
+      "id": "sam3d_official_weights",
+      "type": "restricted model checkpoint",
+      "source": "Hugging Face facebook/sam-3d-body-vith",
+      "location": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/model.ckpt",
+      "share_status": "hash/path only"
+    },
+    {
+      "id": "v2_checkpoints",
+      "type": "derived head checkpoints",
+      "source": "V2 training",
+      "location": "/raid5/xuhd/nlf_pilot_20260908/visible_ab_v2",
+      "share_status": "hash/path only"
+    },
+    {
+      "id": "coco2014",
+      "type": "public image/annotation dataset",
+      "source": "COCO 2014 with per-image license metadata",
+      "location": "AI感知模块/outputs/内部工程证据/2026-09-08_COCO2014_DATASET",
+      "share_status": "metadata/results only in handoff"
+    },
+    {
+      "id": "target_sparse_refs",
+      "type": "assistant engineering annotations",
+      "source": "original public RGB images",
+      "location": "AI感知模块/outputs/内部工程证据/2026-09-08_TARGET_DATA_V1",
+      "share_status": "already in repository; not blinded truth"
+    },
+    {
+      "id": "user_video_frames",
+      "type": "project-local real RGB frames",
+      "source": "workspace videos",
+      "location": "docs/handoffs/real-scene-2026-09-06/input",
+      "share_status": "existing repository handoff; no subject identity claim"
+    }
+  ]
+}

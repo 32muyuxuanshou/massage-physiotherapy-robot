@@ -1,0 +1,63 @@
+{
+  "decision": "INSUFFICIENT_NEED_NEW_SURFACE_REFERENCE",
+  "formal_surface_training_started": false,
+  "basis": {
+    "unique_subjects": "Only five conservative public source/subject groups have sparse references; no sealed unseen target-domain subject test exists.",
+    "event_region_coverage": "A few standing, raised-arm, leaning and seated views; no adequate lying/prone, strong twist, robot/bed/contact, body-shape, clothing and occlusion strata.",
+    "supervision_independence": "Existing contour drafts were produced after predictions had been viewed, and S05 mask/contour share the same image. SAM/MHR fits and Atlas projections are model-derived.",
+    "target_back_relevance": "Twenty-five references are sparse 2D outer-boundary samples, not a dense visible bare-back surface or calibrated depth measurement."
+  },
+  "why_no_10_epoch_surface_run": "Without an independent held-out surface metric, a lower training contour loss would only demonstrate fitting and could not answer whether unseen back surfaces improve.",
+  "minimum_collection_plan": {
+    "scope": "Operational minimum for a controlled pilot, not a powered clinical study",
+    "subjects": 30,
+    "images": "2-4 non-adjacent target-region observations per subject (about 60-120 images)",
+    "subject_split": {
+      "train": 18,
+      "validation": 6,
+      "sealed_test": 6
+    },
+    "split_rule": "Split by verified person plus capture session before annotation/model review; no adjacent frames or same person across splits.",
+    "required_event_families": [
+      "prone/lying on treatment bed with and without robot/contact occlusion",
+      "seated or forward-leaning target back",
+      "standing with neutral, raised-arm and strong-twist poses"
+    ],
+    "coverage_controls": [
+      "sex/body-shape diversity",
+      "near/far scale",
+      "oblique views",
+      "partial visibility",
+      "hair",
+      "waist/shoulder clothing",
+      "bed and robot boundaries"
+    ],
+    "annotation": {
+      "source_view": "Annotate original RGB/depth without any mesh overlay.",
+      "labels": [
+        "visible bare-back skin",
+        "other skin",
+        "clothing",
+        "hair",
+        "robot",
+        "bed",
+        "self-occlusion",
+        "unknown"
+      ],
+      "geometry": "Dense pixel mask plus uncertainty boundary; calibrated depth or multi-view surface where available.",
+      "quality": "Two independent annotators for validation/test, adjudication, and saved disagreement/unknown regions.",
+      "provenance": "Record subject/session IDs, camera calibration, timestamps, annotator, revision, and whether any prediction had been seen."
+    },
+    "use": {
+      "train": "18-subject labels may drive the new surface loss.",
+      "validation": "6 subjects may select epoch and loss weight; they cease to be final test once used for tuning.",
+      "sealed_test": "6 subjects remain inaccessible until protocol, code, thresholds and checkpoint are frozen."
+    },
+    "primary_metric": "Held-out visible bare-back symmetric contour distance and, where depth exists, robust point-to-observed-depth error; report mean/median/P90/P95/worst/per-subject.",
+    "secondary_metrics": [
+      "manual joint NME/PCK05 regression",
+      "camera/shape/scale sanity",
+      "failure strata"
+    ]
+  }
+}

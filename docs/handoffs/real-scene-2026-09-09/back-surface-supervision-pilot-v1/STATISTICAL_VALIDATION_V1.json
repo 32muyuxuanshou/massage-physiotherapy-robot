@@ -1,0 +1,16 @@
+{
+  "status": "AUDITED",
+  "checks": {
+    "descriptive_only": "Pass: 10,000 paired image bootstrap intervals added; no unsupported significance test.",
+    "p_value_interpretation": "Not applicable: no p-values reported.",
+    "confidence_intervals": "Pass: intervals describe paired image-macro metric deltas, not clinical uncertainty.",
+    "multiple_comparisons": "Caution: 10 epochs, 12 joints and several metrics were inspected; no multiplicity-adjusted confirmatory claim.",
+    "causal_language": "Pass: V2 is interpreted as an association under a controlled training change, not proof of surface causality.",
+    "subgroup_interactions": "Caution: per-joint/visibility summaries are exploratory; no interaction tests.",
+    "missing_data": "COCO v=0 joints are excluded; v=1 has only 44 observations and is reported separately.",
+    "sample_size": "69 validation images/82 people; independence by person is unverified and COCO-source/pretraining overlap is possible.",
+    "effect_size": "Legacy epoch5 NME relative change is reported; absolute deltas and tail counts retained.",
+    "model_assumptions": "Metric code and aggregation were re-read; differing aggregation contracts are explicitly reconciled.",
+    "conclusion_strength": "Bounded to reused source-domain 2D joint validation; no mesh/DMD37/medical claim."
+  }
+}

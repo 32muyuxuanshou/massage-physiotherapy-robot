@@ -1,0 +1,798 @@
+{
+  "status": "COMPLETED_READ_ONLY_GRADIENT_AUDIT",
+  "samples": 12,
+  "sample_selection": "12 deterministic hash-selected eligible training people",
+  "checkpoint": "official pretrained initialization",
+  "optimizer_steps": 0,
+  "manual_weight": 1.0,
+  "trainable_parameters": 2634250,
+  "trainable_modules": [
+    "head_pose.proj",
+    "head_camera.proj"
+  ],
+  "direct_surface_supervision": false,
+  "normalization": {
+    "fitted_2d": "pred and target xy divided elementwise by [image width, image height]",
+    "manual_visible_2d": "same image width/height normalization; v=2 only",
+    "fitted_relative_3d": "pelvis-relative meters, SmoothL1 mean"
+  },
+  "aggregate": {
+    "fitted_2d": {
+      "loss": {
+        "mean": 0.00022604508156594724,
+        "median": 3.184265278832754e-05,
+        "min": 4.08533560403157e-06,
+        "max": 0.0020256880670785904
+      },
+      "parameter_gradient_norm": {
+        "mean": 0.04735249456280144,
+        "median": 0.005607047816738486,
+        "min": 0.0004334221302997321,
+        "max": 0.44880247116088867
+      },
+      "pose_projection_parameter_gradient_norm": {
+        "mean": 0.04314603592987017,
+        "median": 0.004933756776154041,
+        "min": 0.0004235462984070182,
+        "max": 0.4231860935688019
+      },
+      "camera_projection_parameter_gradient_norm": {
+        "mean": 0.01809301460525603,
+        "median": 0.00217307242564857,
+        "min": 9.199604392051697e-05,
+        "max": 0.14945624768733978
+      },
+      "raw_pose_output_gradient_norm_mean": {
+        "global_rotation": 0.0009020835683865395,
+        "body_pose": 0.002092944268952124,
+        "shape": 2.4863509432056694e-06,
+        "scale_skeleton": 0.00017300743040019975,
+        "hands": 9.51113907679731e-05,
+        "face_zeroed": 0.0
+      }
+    },
+    "fitted_relative_3d": {
+      "loss": {
+        "mean": 0.0003170635397206449,
+        "median": 0.00016966079419944435,
+        "min": 5.909652463742532e-05,
+        "max": 0.0015316817443817854
+      },
+      "parameter_gradient_norm": {
+        "mean": 0.04477422242052853,
+        "median": 0.026789343915879726,
+        "min": 0.010517347604036331,
+        "max": 0.16934145987033844
+      },
+      "pose_projection_parameter_gradient_norm": {
+        "mean": 0.04334384691901505,
+        "median": 0.025420263409614563,
+        "min": 0.009348992258310318,
+        "max": 0.16743436455726624
+      },
+      "camera_projection_parameter_gradient_norm": {
+        "mean": 0.010360903688706458,
+        "median": 0.007623333018273115,
+        "min": 0.0022909522522240877,
+        "max": 0.026158208027482033
+      },
+      "raw_pose_output_gradient_norm_mean": {
+        "global_rotation": 0.000977126060509666,
+        "body_pose": 0.002318904827310083,
+        "shape": 4.148118743311595e-06,
+        "scale_skeleton": 0.0001878984858194599,
+        "hands": 0.00012618106150815342,
+        "face_zeroed": 0.0
+      }
+    },
+    "manual_visible_2d": {
+      "loss": {
+        "mean": 0.00019435127281515938,
+        "median": 0.00012112106924178079,
+        "min": 3.2328240195056424e-05,
+        "max": 0.0006579649052582681
+      },
+      "parameter_gradient_norm": {
+        "mean": 0.0075444274601371335,
+        "median": 0.0034225555136799812,
+        "min": 0.0013597371289506555,
+        "max": 0.021573880687355995
+      },
+      "pose_projection_parameter_gradient_norm": {
+        "mean": 0.003856088975832487,
+        "median": 0.0025591750163584948,
+        "min": 0.0008583158487454057,
+        "max": 0.014099739491939545
+      },
+      "camera_projection_parameter_gradient_norm": {
+        "mean": 0.0062754902270777775,
+        "median": 0.0024036855902522802,
+        "min": 0.0009953577537089586,
+        "max": 0.016328798606991768
+      },
+      "raw_pose_output_gradient_norm_mean": {
+        "global_rotation": 0.0002289389328022177,
+        "body_pose": 0.0004049791805300629,
+        "shape": 1.4719863917396954e-06,
+        "scale_skeleton": 7.82022899935934e-05,
+        "hands": 3.5762340454918253e-06,
+        "face_zeroed": 0.0
+      }
+    }
+  },
+  "gradient_conflict": {
+    "manual_vs_fitted_2d": {
+      "mean_cosine": 0.06493072925756375,
+      "median_cosine": 0.09236189350485802,
+      "negative_count": 4,
+      "sample_count": 12
+    },
+    "manual_vs_fitted_relative_3d": {
+      "mean_cosine": 0.042885381262749434,
+      "median_cosine": -0.02212672960013151,
+      "negative_count": 7,
+      "sample_count": 12
+    },
+    "fitted_2d_vs_fitted_relative_3d": {
+      "mean_cosine": 0.41044265404343605,
+      "median_cosine": 0.33315566182136536,
+      "negative_count": 1,
+      "sample_count": 12
+    }
+  },
+  "details": [
+    {
+      "id": "460491_0",
+      "image": "COCO_train2014_000000460491.jpg",
+      "visible_manual_joints": 12,
+      "losses": {
+        "fitted_2d": {
+          "loss": 1.4722650121257175e-05,
+          "parameter_gradient_norm": 0.0012003157753497362,
+          "pose_projection_parameter_gradient_norm": 0.0011821857187896967,
+          "camera_projection_parameter_gradient_norm": 0.00020783377112820745,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00013909474364481866,
+            "body_pose": 0.0002609620860312134,
+            "shape": 3.829775039321248e-07,
+            "scale_skeleton": 1.8792199625750072e-05,
+            "hands": 3.0133223845041357e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 7.262083818204701e-05,
+          "parameter_gradient_norm": 0.010517347604036331,
+          "pose_projection_parameter_gradient_norm": 0.009348992258310318,
+          "camera_projection_parameter_gradient_norm": 0.0048177726566791534,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0006017378182150424,
+            "body_pose": 0.0011159332934767008,
+            "shape": 1.5104152453204733e-06,
+            "scale_skeleton": 5.1213562983321026e-05,
+            "hands": 0.00010048841795651242,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 3.288237712695263e-05,
+          "parameter_gradient_norm": 0.0013597371289506555,
+          "pose_projection_parameter_gradient_norm": 0.0009116801666095853,
+          "camera_projection_parameter_gradient_norm": 0.0010088233975693583,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00011656698188744485,
+            "body_pose": 0.00014660887245554477,
+            "shape": 3.4527448633525637e-07,
+            "scale_skeleton": 3.287485014880076e-05,
+            "hands": 9.949218338078936e-07,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": 0.13000568747520447,
+        "manual_vs_fitted_relative_3d": 0.5304628610610962,
+        "fitted_2d_vs_fitted_relative_3d": 0.4703882932662964
+      }
+    },
+    {
+      "id": "100930_0",
+      "image": "COCO_train2014_000000100930.jpg",
+      "visible_manual_joints": 9,
+      "losses": {
+        "fitted_2d": {
+          "loss": 0.0020256880670785904,
+          "parameter_gradient_norm": 0.44880247116088867,
+          "pose_projection_parameter_gradient_norm": 0.4231860935688019,
+          "camera_projection_parameter_gradient_norm": 0.14945624768733978,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0077875638380646706,
+            "body_pose": 0.019097940996289253,
+            "shape": 1.888714723463636e-05,
+            "scale_skeleton": 0.0013187298318371177,
+            "hands": 0.000774419168010354,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 0.0015316817443817854,
+          "parameter_gradient_norm": 0.16934145987033844,
+          "pose_projection_parameter_gradient_norm": 0.16743436455726624,
+          "camera_projection_parameter_gradient_norm": 0.025342974811792374,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.002738564508035779,
+            "body_pose": 0.0071441796608269215,
+            "shape": 6.250961632758845e-06,
+            "scale_skeleton": 0.0006453096284531057,
+            "hands": 0.00033418135717511177,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 0.00016450442490167916,
+          "parameter_gradient_norm": 0.004279968794435263,
+          "pose_projection_parameter_gradient_norm": 0.00324168149381876,
+          "camera_projection_parameter_gradient_norm": 0.002794572152197361,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00038772233529016376,
+            "body_pose": 0.0008240370661951602,
+            "shape": 1.311404616899381e-06,
+            "scale_skeleton": 0.00010311290679965168,
+            "hands": 2.452912212902447e-06,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": -0.025284405797719955,
+        "manual_vs_fitted_relative_3d": -0.031015459448099136,
+        "fitted_2d_vs_fitted_relative_3d": 0.7270076870918274
+      }
+    },
+    {
+      "id": "245209_0",
+      "image": "COCO_train2014_000000245209.jpg",
+      "visible_manual_joints": 10,
+      "losses": {
+        "fitted_2d": {
+          "loss": 1.1882480066560674e-05,
+          "parameter_gradient_norm": 0.001565641607157886,
+          "pose_projection_parameter_gradient_norm": 0.0013129637809470296,
+          "camera_projection_parameter_gradient_norm": 0.0008528540492989123,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 3.397967520868406e-05,
+            "body_pose": 0.00012866604083683342,
+            "shape": 2.455398089296068e-07,
+            "scale_skeleton": 1.4518399439111818e-05,
+            "hands": 2.4684200980118476e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 7.142061076592654e-05,
+          "parameter_gradient_norm": 0.022264083847403526,
+          "pose_projection_parameter_gradient_norm": 0.021804802119731903,
+          "camera_projection_parameter_gradient_norm": 0.0044988966546952724,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0006966031505726278,
+            "body_pose": 0.0012895440449938178,
+            "shape": 6.8044732870475855e-06,
+            "scale_skeleton": 7.161396933952346e-05,
+            "hands": 7.688405457884073e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 0.00016058348410297185,
+          "parameter_gradient_norm": 0.003470588708296418,
+          "pose_projection_parameter_gradient_norm": 0.0028272997587919235,
+          "camera_projection_parameter_gradient_norm": 0.0020127990283071995,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 6.662294617854059e-05,
+            "body_pose": 0.00014971305790822953,
+            "shape": 7.007437261563609e-07,
+            "scale_skeleton": 3.8401263736886904e-05,
+            "hands": 1.5933261465761461e-06,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": 0.1169041097164154,
+        "manual_vs_fitted_relative_3d": -0.021327022463083267,
+        "fitted_2d_vs_fitted_relative_3d": 0.28785064816474915
+      }
+    },
+    {
+      "id": "78016_0",
+      "image": "COCO_train2014_000000078016.jpg",
+      "visible_manual_joints": 12,
+      "losses": {
+        "fitted_2d": {
+          "loss": 5.4451033065561205e-05,
+          "parameter_gradient_norm": 0.005547602195292711,
+          "pose_projection_parameter_gradient_norm": 0.005433458369225264,
+          "camera_projection_parameter_gradient_norm": 0.001119561493396759,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00025126346736215055,
+            "body_pose": 0.00044167591840960085,
+            "shape": 8.44039846015221e-07,
+            "scale_skeleton": 2.2851423636893742e-05,
+            "hands": 1.172950942418538e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 0.0007881568162702024,
+          "parameter_gradient_norm": 0.0916212946176529,
+          "pose_projection_parameter_gradient_norm": 0.087807796895504,
+          "camera_projection_parameter_gradient_norm": 0.026158208027482033,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.002655057469382882,
+            "body_pose": 0.006025130394846201,
+            "shape": 9.284375664719846e-06,
+            "scale_skeleton": 0.0003631155996117741,
+            "hands": 0.00019415152200963348,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 6.480797310359776e-05,
+          "parameter_gradient_norm": 0.001977762905880809,
+          "pose_projection_parameter_gradient_norm": 0.0017090373439714313,
+          "camera_projection_parameter_gradient_norm": 0.0009953577537089586,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00012160076585132629,
+            "body_pose": 0.00016606687859166414,
+            "shape": 2.1222325585767976e-07,
+            "scale_skeleton": 1.8320439266972244e-05,
+            "hands": 1.0556574352449388e-06,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": 0.06781967729330063,
+        "manual_vs_fitted_relative_3d": 0.26779353618621826,
+        "fitted_2d_vs_fitted_relative_3d": 0.8659757971763611
+      }
+    },
+    {
+      "id": "436025_1",
+      "image": "COCO_train2014_000000436025.jpg",
+      "visible_manual_joints": 10,
+      "losses": {
+        "fitted_2d": {
+          "loss": 3.3284788514720276e-05,
+          "parameter_gradient_norm": 0.005666493438184261,
+          "pose_projection_parameter_gradient_norm": 0.004434055183082819,
+          "camera_projection_parameter_gradient_norm": 0.0035282152239233255,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00029514136258512735,
+            "body_pose": 0.000642473460175097,
+            "shape": 7.061818791953556e-07,
+            "scale_skeleton": 6.673882307950407e-05,
+            "hands": 3.653487510746345e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 5.9515517932595685e-05,
+          "parameter_gradient_norm": 0.011964124627411366,
+          "pose_projection_parameter_gradient_norm": 0.011742734350264072,
+          "camera_projection_parameter_gradient_norm": 0.0022909522522240877,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00046933270641602576,
+            "body_pose": 0.000764697149861604,
+            "shape": 1.4698956647407613e-06,
+            "scale_skeleton": 4.5110155042493716e-05,
+            "hands": 4.1731935198185965e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 0.0004084153624717146,
+          "parameter_gradient_norm": 0.016131099313497543,
+          "pose_projection_parameter_gradient_norm": 0.005332023371011019,
+          "camera_projection_parameter_gradient_norm": 0.015224384143948555,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00013001855404581875,
+            "body_pose": 0.00045536906691268086,
+            "shape": 2.0517284156085225e-06,
+            "scale_skeleton": 0.0001246646570507437,
+            "hands": 4.6378240767808165e-06,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": 0.5510639548301697,
+        "manual_vs_fitted_relative_3d": -0.05134712904691696,
+        "fitted_2d_vs_fitted_relative_3d": 0.3357279300689697
+      }
+    },
+    {
+      "id": "90258_1",
+      "image": "COCO_train2014_000000090258.jpg",
+      "visible_manual_joints": 12,
+      "losses": {
+        "fitted_2d": {
+          "loss": 5.355320354283322e-06,
+          "parameter_gradient_norm": 0.0006815906381234527,
+          "pose_projection_parameter_gradient_norm": 0.0006379461265169084,
+          "camera_projection_parameter_gradient_norm": 0.00023998024698812515,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 4.345517299952917e-05,
+            "body_pose": 8.218758011935279e-05,
+            "shape": 1.2433950757895218e-07,
+            "scale_skeleton": 1.1752325917768758e-05,
+            "hands": 9.137536835623905e-06,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 0.00023776233138050884,
+          "parameter_gradient_norm": 0.06504207104444504,
+          "pose_projection_parameter_gradient_norm": 0.06366085261106491,
+          "camera_projection_parameter_gradient_norm": 0.013332941569387913,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0010162157705053687,
+            "body_pose": 0.0030008822213858366,
+            "shape": 5.915619567531394e-06,
+            "scale_skeleton": 0.00020822379156015813,
+            "hands": 0.00017936911899596453,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 3.5597167880041525e-05,
+          "parameter_gradient_norm": 0.0014551128260791302,
+          "pose_projection_parameter_gradient_norm": 0.0008583158487454057,
+          "camera_projection_parameter_gradient_norm": 0.0011750094126909971,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 5.800603321404196e-05,
+            "body_pose": 9.771402255864814e-05,
+            "shape": 2.872071718229563e-07,
+            "scale_skeleton": 2.1433090296341106e-05,
+            "hands": 7.234755230456358e-07,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": 0.14144842326641083,
+        "manual_vs_fitted_relative_3d": -0.10578238219022751,
+        "fitted_2d_vs_fitted_relative_3d": -0.14094918966293335
+      }
+    },
+    {
+      "id": "116286_1",
+      "image": "COCO_train2014_000000116286.jpg",
+      "visible_manual_joints": 12,
+      "losses": {
+        "fitted_2d": {
+          "loss": 4.08533560403157e-06,
+          "parameter_gradient_norm": 0.0004334221302997321,
+          "pose_projection_parameter_gradient_norm": 0.0004235462984070182,
+          "camera_projection_parameter_gradient_norm": 9.199604392051697e-05,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 4.894077210337855e-05,
+            "body_pose": 8.442845137324184e-05,
+            "shape": 1.2565463691771583e-07,
+            "scale_skeleton": 8.860761226969771e-06,
+            "hands": 1.1532742064446211e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 0.0002731909044086933,
+          "parameter_gradient_norm": 0.04463190957903862,
+          "pose_projection_parameter_gradient_norm": 0.04231826588511467,
+          "camera_projection_parameter_gradient_norm": 0.014183496125042439,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0006744629354216158,
+            "body_pose": 0.0022311906795948744,
+            "shape": 6.612592642341042e-06,
+            "scale_skeleton": 0.00027119406149722636,
+            "hands": 0.00017172189836855978,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 7.446241215802729e-05,
+          "parameter_gradient_norm": 0.0020108406897634268,
+          "pose_projection_parameter_gradient_norm": 0.0013809027150273323,
+          "camera_projection_parameter_gradient_norm": 0.0014617072883993387,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00015884051390457898,
+            "body_pose": 0.00019878872262779623,
+            "shape": 5.467028358907555e-07,
+            "scale_skeleton": 3.401780122658238e-05,
+            "hands": 2.145091912097996e-06,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": 0.06178849935531616,
+        "manual_vs_fitted_relative_3d": 0.12807713449001312,
+        "fitted_2d_vs_fitted_relative_3d": 0.05875690281391144
+      }
+    },
+    {
+      "id": "398704_0",
+      "image": "COCO_train2014_000000398704.jpg",
+      "visible_manual_joints": 10,
+      "losses": {
+        "fitted_2d": {
+          "loss": 5.2883089665556327e-05,
+          "parameter_gradient_norm": 0.011914895847439766,
+          "pose_projection_parameter_gradient_norm": 0.007277828641235828,
+          "camera_projection_parameter_gradient_norm": 0.009433872997760773,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00025570063735358417,
+            "body_pose": 0.000674926326610148,
+            "shape": 1.3426632676782901e-06,
+            "scale_skeleton": 0.0001286163169424981,
+            "hands": 3.704894334077835e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 0.00016559724463149905,
+          "parameter_gradient_norm": 0.031314603984355927,
+          "pose_projection_parameter_gradient_norm": 0.029035724699497223,
+          "camera_projection_parameter_gradient_norm": 0.011727369390428066,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0007284584571607411,
+            "body_pose": 0.0014820437645539641,
+            "shape": 3.4550457712612115e-06,
+            "scale_skeleton": 0.00014827563427388668,
+            "hands": 0.00011047665611840785,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 0.0003168563998769969,
+          "parameter_gradient_norm": 0.017006421461701393,
+          "pose_projection_parameter_gradient_norm": 0.005961625371128321,
+          "camera_projection_parameter_gradient_norm": 0.015927253291010857,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.000346551212714985,
+            "body_pose": 0.00035458614001981914,
+            "shape": 2.3552574930363335e-06,
+            "scale_skeleton": 8.543847070541233e-05,
+            "hands": 7.628928415215341e-06,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": -0.6209586262702942,
+        "manual_vs_fitted_relative_3d": -0.2271568924188614,
+        "fitted_2d_vs_fitted_relative_3d": 0.18546748161315918
+      }
+    },
+    {
+      "id": "161246_0",
+      "image": "COCO_train2014_000000161246.jpg",
+      "visible_manual_joints": 8,
+      "losses": {
+        "fitted_2d": {
+          "loss": 3.0400517061934806e-05,
+          "parameter_gradient_norm": 0.0068407789804041386,
+          "pose_projection_parameter_gradient_norm": 0.0060320328921079636,
+          "camera_projection_parameter_gradient_norm": 0.003226583357900381,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0001452812139177695,
+            "body_pose": 0.00037678860826417804,
+            "shape": 9.978570005841902e-07,
+            "scale_skeleton": 7.188659947132692e-05,
+            "hands": 3.265534178353846e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 5.909652463742532e-05,
+          "parameter_gradient_norm": 0.016053682193160057,
+          "pose_projection_parameter_gradient_norm": 0.015807515010237694,
+          "camera_projection_parameter_gradient_norm": 0.002800571033731103,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00020800800120923668,
+            "body_pose": 0.0008229241939261556,
+            "shape": 2.1684106741304277e-06,
+            "scale_skeleton": 8.948724280344322e-05,
+            "hands": 6.500889139715582e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 0.0003021538723260164,
+          "parameter_gradient_norm": 0.015137404203414917,
+          "pose_projection_parameter_gradient_norm": 0.006438425742089748,
+          "camera_projection_parameter_gradient_norm": 0.013699916191399097,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0002542439033277333,
+            "body_pose": 0.0006763373967260122,
+            "shape": 4.100754267710727e-06,
+            "scale_skeleton": 0.00020583689911291003,
+            "hands": 9.41127564146882e-06,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": 0.2713084816932678,
+        "manual_vs_fitted_relative_3d": -0.022926436737179756,
+        "fitted_2d_vs_fitted_relative_3d": 0.3005369305610657
+      }
+    },
+    {
+      "id": "188189_0",
+      "image": "COCO_train2014_000000188189.jpg",
+      "visible_manual_joints": 6,
+      "losses": {
+        "fitted_2d": {
+          "loss": 0.000278152379905805,
+          "parameter_gradient_norm": 0.05715237930417061,
+          "pose_projection_parameter_gradient_norm": 0.04088195413351059,
+          "camera_projection_parameter_gradient_norm": 0.03993820771574974,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0011939306277781725,
+            "body_pose": 0.0016438630409538746,
+            "shape": 4.321771484683268e-06,
+            "scale_skeleton": 0.00018708592688199133,
+            "hands": 8.478987729176879e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 0.00013198137457948178,
+          "parameter_gradient_norm": 0.0216461680829525,
+          "pose_projection_parameter_gradient_norm": 0.020559456199407578,
+          "camera_projection_parameter_gradient_norm": 0.0067723942920565605,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0007690252386964858,
+            "body_pose": 0.0009947412181645632,
+            "shape": 2.1178359475015895e-06,
+            "scale_skeleton": 4.4726853957399726e-05,
+            "hands": 4.931821604259312e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 3.2328240195056424e-05,
+          "parameter_gradient_norm": 0.0027557904832065105,
+          "pose_projection_parameter_gradient_norm": 0.002291050273925066,
+          "camera_projection_parameter_gradient_norm": 0.0015314926858991385,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.00021060711878817528,
+            "body_pose": 0.0003851470537483692,
+            "shape": 1.8211873111795285e-06,
+            "scale_skeleton": 6.912307435413823e-05,
+            "hands": 3.787547711908701e-06,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": -0.15938296914100647,
+        "manual_vs_fitted_relative_3d": 0.10459056496620178,
+        "fitted_2d_vs_fitted_relative_3d": 0.6185076832771301
+      }
+    },
+    {
+      "id": "101485_2",
+      "image": "COCO_train2014_000000101485.jpg",
+      "visible_manual_joints": 10,
+      "losses": {
+        "fitted_2d": {
+          "loss": 6.263791874516755e-06,
+          "parameter_gradient_norm": 0.0005852939793840051,
+          "pose_projection_parameter_gradient_norm": 0.0005287077510729432,
+          "camera_projection_parameter_gradient_norm": 0.00025107208057306707,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 1.8370512407273054e-05,
+            "body_pose": 6.471071537816897e-05,
+            "shape": 1.1557474266510326e-07,
+            "scale_skeleton": 9.818485523283016e-06,
+            "hands": 7.780578926031012e-06,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 0.00017372434376738966,
+          "parameter_gradient_norm": 0.01843404211103916,
+          "pose_projection_parameter_gradient_norm": 0.016370724886655807,
+          "camera_projection_parameter_gradient_norm": 0.00847427174448967,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0006303585832938552,
+            "body_pose": 0.0011379820061847568,
+            "shape": 2.000108452193672e-06,
+            "scale_skeleton": 0.0001476286124670878,
+            "hands": 9.377520473208278e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 8.165865438058972e-05,
+          "parameter_gradient_norm": 0.0033745223190635443,
+          "pose_projection_parameter_gradient_norm": 0.0012212861329317093,
+          "camera_projection_parameter_gradient_norm": 0.0031457687728106976,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 5.0122642278438434e-05,
+            "body_pose": 7.09730084054172e-05,
+            "shape": 4.3643919411806564e-07,
+            "scale_skeleton": 1.2975060599274002e-05,
+            "hands": 1.1040284562113811e-06,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": 0.39478495717048645,
+        "manual_vs_fitted_relative_3d": -0.11554227769374847,
+        "fitted_2d_vs_fitted_relative_3d": 0.330583393573761
+      }
+    },
+    {
+      "id": "442531_0",
+      "image": "COCO_train2014_000000442531.jpg",
+      "visible_manual_joints": 7,
+      "losses": {
+        "fitted_2d": {
+          "loss": 0.0001953715254785493,
+          "parameter_gradient_norm": 0.027839049696922302,
+          "pose_projection_parameter_gradient_norm": 0.02642165869474411,
+          "camera_projection_parameter_gradient_norm": 0.008769750595092773,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.000612280797213316,
+            "body_pose": 0.0016167080029845238,
+            "shape": 1.7424644056518446e-06,
+            "scale_skeleton": 0.00021643807122018188,
+            "hands": 8.089069160632789e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "fitted_relative_3d": {
+          "loss": 0.00024001422571018338,
+          "parameter_gradient_norm": 0.034459881484508514,
+          "pose_projection_parameter_gradient_norm": 0.03423493355512619,
+          "camera_projection_parameter_gradient_norm": 0.003930995706468821,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0005376880872063339,
+            "body_pose": 0.0018176092999055982,
+            "shape": 2.1876903701922856e-06,
+            "scale_skeleton": 0.0001688827178440988,
+            "hands": 9.706546552479267e-05,
+            "face_zeroed": 0.0
+          }
+        },
+        "manual_visible_2d": {
+          "loss": 0.0006579649052582681,
+          "parameter_gradient_norm": 0.021573880687355995,
+          "pose_projection_parameter_gradient_norm": 0.014099739491939545,
+          "camera_projection_parameter_gradient_norm": 0.016328798606991768,
+          "raw_pose_output_gradient_norms": {
+            "global_rotation": 0.0008463641861453652,
+            "body_pose": 0.001334408880211413,
+            "shape": 3.4949139262607787e-06,
+            "scale_skeleton": 0.00019222896662540734,
+            "hands": 7.379819180641789e-06,
+            "face_zeroed": 0.0
+          }
+        }
+      },
+      "gradient_cosine": {
+        "manual_vs_fitted_2d": -0.15032903850078583,
+        "manual_vs_fitted_relative_3d": 0.05879807844758034,
+        "fitted_2d_vs_fitted_relative_3d": 0.8854582905769348
+      }
+    }
+  ],
+  "limitations": [
+    "Gradient norms are local to 12 selected samples and the official initialization.",
+    "Raw pose-output slice norms describe pathways, not independent trainable modules.",
+    "A scalar weight of 1 does not equal equal influence because reduction counts, units, and residuals differ."
+  ]
+}

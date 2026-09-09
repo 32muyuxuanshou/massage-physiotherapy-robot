@@ -1,0 +1,189 @@
+{
+  "status": "AUDITED",
+  "decision_rule": "Count unique subjects/events and independent target-relevant observations, not frames times points.",
+  "candidates": [
+    {
+      "source": "B1/B2/B3/B5/N1 sparse visible-boundary references",
+      "repository_evidence": "AI感知模块/outputs/内部工程证据/2026-09-08_TARGET_DATA_V1/targets.json",
+      "human_or_real_observation": "assistant observations on original real RGB",
+      "derived_from_sam_or_mhr": false,
+      "previous_predictions_seen": true,
+      "training_target": "18 references across B1/B3/N1 were planned for train; 7 across B2/B5 for development validation",
+      "independent_evaluation_eligible": false,
+      "coverage": {
+        "images": 5,
+        "source_or_subject_groups": 5,
+        "sparse_references": 25,
+        "sealed_test_subjects": 0
+      },
+      "target_back_relevance": "partial torso side contours; not dense bare-back surface",
+      "confounders": [
+        "B2 shoulder cloth",
+        "B3 waist clothing",
+        "B5 arm occlusion",
+        "all references created after model predictions had been viewed"
+      ]
+    },
+    {
+      "source": "B4 real image",
+      "repository_evidence": "AI感知模块/outputs/内部工程证据/2026-09-08_TARGET_DATA_V1/targets.json",
+      "human_or_real_observation": "real RGB; no eligible contour label",
+      "derived_from_sam_or_mhr": false,
+      "previous_predictions_seen": true,
+      "training_target": false,
+      "independent_evaluation_eligible": false,
+      "coverage": {
+        "images": 1,
+        "source_or_subject_groups": 0,
+        "sparse_references": 0
+      },
+      "target_back_relevance": "arm/trunk contact makes isolated torso boundary ambiguous",
+      "confounders": [
+        "arm contact",
+        "same session/person group as B3"
+      ]
+    },
+    {
+      "source": "S01-S08 user-video frames",
+      "repository_evidence": "docs/handoffs/real-scene-2026-09-06/evidence/input_manifest.json",
+      "human_or_real_observation": "real RGB frames; assistant-reviewed ROIs and region states",
+      "derived_from_sam_or_mhr": false,
+      "previous_predictions_seen": true,
+      "training_target": false,
+      "independent_evaluation_eligible": false,
+      "coverage": {
+        "frames": 8,
+        "videos": 2,
+        "verified_unique_subjects": 0,
+        "labeled_surface_masks": 0
+      },
+      "target_back_relevance": "high, but current labels are visibility/region drafts rather than surface truth",
+      "confounders": [
+        "robot/contact head",
+        "bed",
+        "occlusion",
+        "cropping",
+        "subject identities unverified",
+        "adjacent video frames are correlated"
+      ]
+    },
+    {
+      "source": "S01/S03/S05 assistant contour checks",
+      "repository_evidence": "docs/handoffs/real-scene-2026-09-06/audit-2026-09-07/contour_diagnostics.csv",
+      "human_or_real_observation": "assistant observations on original RGB",
+      "derived_from_sam_or_mhr": false,
+      "previous_predictions_seen": true,
+      "training_target": false,
+      "independent_evaluation_eligible": false,
+      "coverage": {
+        "frames": 3,
+        "videos": 1,
+        "verified_unique_subjects": 0,
+        "sparse_references": 9
+      },
+      "target_back_relevance": "visible outer-boundary diagnostics",
+      "confounders": [
+        "same video",
+        "robot occlusion",
+        "not blind",
+        "no dense or 3D surface measurement"
+      ]
+    },
+    {
+      "source": "S05 hand-traced visible-person mask",
+      "repository_evidence": "docs/handoffs/real-scene-2026-09-06/mask-ab-2026-09-07/mask_provenance.json",
+      "human_or_real_observation": "assistant hand trace on original RGB",
+      "derived_from_sam_or_mhr": false,
+      "previous_predictions_seen": true,
+      "training_target": false,
+      "independent_evaluation_eligible": false,
+      "coverage": {
+        "frames": 1,
+        "masks": 1
+      },
+      "target_back_relevance": "visible person silhouette, not bare-back surface",
+      "confounders": [
+        "includes hair, skin and clothing",
+        "same-image contour checks overlap",
+        "mask-prompt inference is not contour-loss training"
+      ]
+    },
+    {
+      "source": "COCO human segmentations/keypoints",
+      "repository_evidence": "AI感知模块/outputs/内部工程证据/2026-09-08_COCO2014_DATASET",
+      "human_or_real_observation": "human-annotated real-image person masks/keypoints where available",
+      "derived_from_sam_or_mhr": false,
+      "previous_predictions_seen": "some development outputs viewed; source may overlap SAM pretraining",
+      "training_target": "V2 uses visible keypoints, not masks",
+      "independent_evaluation_eligible": false,
+      "coverage": {
+        "v2_images": 343,
+        "v2_people": 427,
+        "target_bare_back_count_audited": 0
+      },
+      "target_back_relevance": "generic clothed-person silhouette; not visible bare-back surface",
+      "confounders": [
+        "clothing",
+        "occlusion",
+        "non-target domain",
+        "possible pretraining overlap"
+      ]
+    },
+    {
+      "source": "official SAM 3D Body MHR fitted labels and projected mesh",
+      "repository_evidence": "docs/handoffs/real-scene-2026-09-09/scaleup343",
+      "human_or_real_observation": false,
+      "derived_from_sam_or_mhr": true,
+      "previous_predictions_seen": true,
+      "training_target": "fitted 2D and pelvis-relative fitted 3D joints are used",
+      "independent_evaluation_eligible": false,
+      "coverage": {
+        "v2_images": 343,
+        "v2_people": 427
+      },
+      "target_back_relevance": "model fit, not independent target surface truth",
+      "confounders": [
+        "self-confirmation if used to evaluate SAM/MHR",
+        "joint rather than surface supervision"
+      ]
+    },
+    {
+      "source": "DMD37 engineering Atlas and projected points",
+      "repository_evidence": "docs/handoffs/real-scene-2026-09-09/atlas-query",
+      "human_or_real_observation": false,
+      "derived_from_sam_or_mhr": "Atlas binding is fixed; image projections inherit predicted mesh/camera",
+      "previous_predictions_seen": true,
+      "training_target": false,
+      "independent_evaluation_eligible": false,
+      "coverage": {
+        "engineering_points": 37,
+        "medical_truth": false
+      },
+      "target_back_relevance": "downstream engineering topology/binding only",
+      "confounders": [
+        "not patient anatomy truth",
+        "cannot prove source mesh accuracy"
+      ]
+    },
+    {
+      "source": "calibrated RGB-D or synchronized multi-view target-back captures",
+      "repository_evidence": null,
+      "human_or_real_observation": "would be direct sensor observation after calibration and quality control",
+      "derived_from_sam_or_mhr": false,
+      "previous_predictions_seen": false,
+      "training_target": "unavailable",
+      "independent_evaluation_eligible": "yes if captured and sealed before model review",
+      "coverage": {
+        "available_subjects": 0,
+        "available_events": 0
+      },
+      "target_back_relevance": "high",
+      "confounders": [
+        "depth holes on skin/hair",
+        "robot occlusion",
+        "cross-sensor registration",
+        "bed/contact surfaces must be masked"
+      ]
+    }
+  ]
+}

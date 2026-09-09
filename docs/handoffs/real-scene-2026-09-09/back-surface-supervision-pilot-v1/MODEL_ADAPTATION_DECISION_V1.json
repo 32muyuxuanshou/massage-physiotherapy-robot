@@ -1,0 +1,42 @@
+{
+  "status": "ANALYZED_NOT_EXECUTED_DUE_TO_DATA_DECISION",
+  "recommended_order": [
+    "collect independent surface references",
+    "A/B current output heads + surface loss",
+    "only then test larger adaptation if the A/B diagnoses under-capacity"
+  ],
+  "options": {
+    "A_current_output_head_tuning": {
+      "solves": "low-cost global correction of pose/camera/shape outputs",
+      "current_evidence": "V2 changes 2D joint validation modestly; no surface evidence",
+      "required_supervision": "independent train/validation surface observations plus joint regression metric",
+      "risk": "camera and pose can absorb 2D loss without improving 3D surface",
+      "minimum_ab": "same official initialization and joint loss; B adds only surface loss",
+      "execute_when": "after subject-disjoint surface train/validation data exist"
+    },
+    "B_output_head_plus_limited_body_decoder": {
+      "solves": "more capacity for target-domain image-to-body mapping",
+      "current_evidence": "not supported yet; current failure could be supervision rather than capacity",
+      "required_supervision": "larger diverse surface dataset with held-out subjects",
+      "risk": "overfit and damage general pose robustness",
+      "minimum_ab": "freeze all else and unfreeze only the last body-decoder block against option A",
+      "execute_when": "only if A underfits training and validation together after labels are valid"
+    },
+    "C_adapter_or_lora": {
+      "solves": "parameter-efficient feature/domain adaptation",
+      "current_evidence": "no evidence that feature adaptation is the current bottleneck",
+      "required_supervision": "more target-domain subjects than the minimum output-head pilot",
+      "risk": "correlated small data can overfit despite few trainable parameters",
+      "minimum_ab": "A versus same insertion points with fixed LoRA rank/seed/budget",
+      "execute_when": "after output-head pilot shows repeatable surface signal but limited capacity"
+    },
+    "D_per_image_parameter_refinement": {
+      "solves": "fit one observed person/image using masks, depth or multi-view evidence",
+      "current_evidence": "prototype shows one training image contour can be fitted, partly through camera; no generalization proof",
+      "required_supervision": "per-image calibrated depth/multiview or trusted mask with occlusion labels",
+      "risk": "local fit, camera/shape cheating, latency; cannot stand in for global fine-tuning",
+      "minimum_ab": "hold out some observed pixels/views for the same subject and check 3D/depth plus camera priors",
+      "execute_when": "useful as a robot-time engineering module once sensor evidence exists, in parallel with global-model research"
+    }
+  }
+}
