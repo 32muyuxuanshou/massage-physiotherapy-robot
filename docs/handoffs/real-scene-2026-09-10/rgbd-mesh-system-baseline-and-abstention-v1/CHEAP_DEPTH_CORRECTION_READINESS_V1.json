@@ -1,0 +1,34 @@
+{
+  "schema": "CHEAP_DEPTH_CORRECTION_READINESS_V1",
+  "status": "READY",
+  "candidate": "bounded per-frame Txyz with out-of-range fallback Official",
+  "checks": {
+    "camera_a_only_estimation": true,
+    "camera_b_label_only": true,
+    "new_system_sealed_untouched": true,
+    "bounded_translation_only": true,
+    "deterministic": true,
+    "development_heldout_b_improvement": true,
+    "selector_val_heldout_b_improvement": true,
+    "selector_val_low_error_subject_systematic_regression": false,
+    "correction_latency_below_second_sam_forward": true,
+    "rule_frozen": true
+  },
+  "evidence": {
+    "development_improvement_vs_official_mm": 41.310292453052955,
+    "selector_val_improvement_vs_official_mm": 16.64052630128524,
+    "selector_val_improvement_vs_constant_txyz_mm": 5.19721788109404,
+    "selector_val_subjects_better_than_official": "11/12",
+    "selector_val_low_error_subjects_regressed": "0/5",
+    "txyz_correction_p50_ms": 109.63594348868355,
+    "second_sam_forward_reference_p50_ms": 288.0
+  },
+  "limitations": [
+    "Readiness uses 24 consumed subjects and 72 frames, not a new system sealed set.",
+    "Evaluation uses 5000 deterministic Camera-B points per frame rather than the previous 25000-point final metric budget.",
+    "CPU correction excludes depth preprocessing and is about 110 ms, so it is cheaper than a second SAM forward but not yet a few-millisecond kernel.",
+    "Dataset-provided ROI and registered person depth are assumed.",
+    "Whole-body surface evidence does not establish posterior torso, acupuncture, treatment-table, or raw-RGB robustness."
+  ],
+  "recommendation": "Permit one frozen SYSTEM_C evaluation on a future untouched system sealed set; do not alter the bound or fallback after opening it."
+}

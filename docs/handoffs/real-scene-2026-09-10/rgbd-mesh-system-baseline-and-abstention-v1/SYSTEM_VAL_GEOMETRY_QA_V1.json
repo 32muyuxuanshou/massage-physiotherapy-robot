@@ -1,0 +1,761 @@
+{
+  "status": "PASS_AUTO_AND_VISUAL_QA",
+  "task": "RGBD_MESH_SYSTEM_BASELINE_AND_ABSTENTION_V1",
+  "scope": "SYSTEM_SPLIT_GEOMETRY_QA",
+  "selected_split_pixels_read": true,
+  "final_reserve_pixels_read": false,
+  "source_plan": "/raid5/xuhd/rgbd_mesh_system_v1/SYSTEM_VAL_EXTRACTION_PLAN_V1.json",
+  "source_plan_sha256": "ce9f829c094846ce30bcd9a7b82b2868d346f7f352b9c1e2d1fe96f070b9d639",
+  "source_split_seed_from_plan": "aa96348281fe550e6f7bfb76a60544d11c84b581531f9137115f299fbd122f22",
+  "source_extraction_report": "/raid5/xuhd/rgbd_mesh_system_v1/SYSTEM_VAL_EXTRACTION_QA_V1.json",
+  "geometry_implementation": "/raid5/xuhd/public_rgbd_single_vs_multiview_v2/code/humman_geometry.py",
+  "geometry_implementation_sha256": "82e33398a57858ba63d637dc08fa88bfe3818f1b2abbd8938df4752381c31bee",
+  "torso_validity_scope": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+  "auto_gate": {
+    "min_person_points_each_view": 5000,
+    "min_torso_proxy_points_each_view": 750,
+    "min_projection_retention_each_view": 0.8,
+    "camera_rotation_tolerance": 1e-05,
+    "cross_camera_surface_consistency_is_gate": false
+  },
+  "observations": 6,
+  "counts_by_split": {
+    "SYSTEM_SEALED": 0,
+    "SYSTEM_VAL": 6
+  },
+  "auto_usable": 6,
+  "auto_usable_by_split": {
+    "SYSTEM_SEALED": 0,
+    "SYSTEM_VAL": 6
+  },
+  "contact_sheets": [
+    {
+      "path": "/raid5/xuhd/rgbd_mesh_system_v1/system_val_geometry_qa/registration_contact_sheet_01.jpg",
+      "sha256": "89205864f5ac26559f618fea744550a9c6f1e0220f0e8c2f3672fdc5c62c5ba0",
+      "rows": 6
+    }
+  ],
+  "results": [
+    {
+      "id": "p000851_a000017_f000008",
+      "subject": "p000851",
+      "sequence": "p000851_a000017",
+      "action": "a000017",
+      "split": "SYSTEM_VAL",
+      "frame_id": 8,
+      "usable": true,
+      "auto_gate_reasons": [],
+      "visual_registration_review": "PASS_BY_CONTACT_SHEET_REVIEW",
+      "views": {
+        "kinect_008": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 278691,
+          "depth_mask_pixels": 16612,
+          "registration": {
+            "raw_valid_person_depth_points": 16612,
+            "projected_inside_color_image": 16612,
+            "projected_person_points_after_front_surface_filter": 16598,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 16598,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 0.9991572357332049,
+          "projected_mask_pixels": 88428,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 5781,
+            "fraction_of_registered_person_points": 0.3482949752982287,
+            "depth_median_m": 2.1055514812469482,
+            "depth_p05_m": 1.7138440608978271,
+            "depth_p95_m": 2.308478355407715
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 1.227958492009598e-07,
+            "rotation_determinant": 0.9999999505664485,
+            "fx": 955.8413696289062,
+            "fy": 954.9600830078125
+          },
+          "auto_gate_reasons": []
+        },
+        "kinect_009": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 291829,
+          "depth_mask_pixels": 18165,
+          "registration": {
+            "raw_valid_person_depth_points": 18165,
+            "projected_inside_color_image": 18165,
+            "projected_person_points_after_front_surface_filter": 18165,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 18165,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 1.0,
+          "projected_mask_pixels": 96383,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 7501,
+            "fraction_of_registered_person_points": 0.4129369666941921,
+            "depth_median_m": 2.082801580429077,
+            "depth_p05_m": 1.8779008388519287,
+            "depth_p95_m": 2.2237627506256104
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 2.1943358530229773e-07,
+            "rotation_determinant": 1.0000002329704885,
+            "fx": 961.8096923828125,
+            "fy": 962.6044921875
+          },
+          "auto_gate_reasons": []
+        }
+      },
+      "cross_camera_surface_consistency": {
+        "available": true,
+        "role": "DESCRIPTIVE_ONLY_DIFFERENT_VISIBLE_SURFACES",
+        "sample_points_each_max": 3000,
+        "symmetric_nn_median_m": 0.00967275649295326,
+        "symmetric_nn_p95_m": 0.0658007888704865
+      },
+      "cache_npz": "/raid5/xuhd/rgbd_mesh_system_v1/system_val_geometry_qa/sample_cache/system_val/p000851_a000017_f000008.npz",
+      "cache_sha256": "8feec860f3e21b5cce91c74ca6008bdc70e2196b59d096ec61776cdc4b1f98d5"
+    },
+    {
+      "id": "p000851_a000017_f000017",
+      "subject": "p000851",
+      "sequence": "p000851_a000017",
+      "action": "a000017",
+      "split": "SYSTEM_VAL",
+      "frame_id": 17,
+      "usable": true,
+      "auto_gate_reasons": [],
+      "visual_registration_review": "PASS_BY_CONTACT_SHEET_REVIEW",
+      "views": {
+        "kinect_008": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 279291,
+          "depth_mask_pixels": 16608,
+          "registration": {
+            "raw_valid_person_depth_points": 16608,
+            "projected_inside_color_image": 16608,
+            "projected_person_points_after_front_surface_filter": 16595,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 16595,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 0.9992172447013488,
+          "projected_mask_pixels": 88478,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 5804,
+            "fraction_of_registered_person_points": 0.34974389876468814,
+            "depth_median_m": 2.1072301864624023,
+            "depth_p05_m": 1.7154753983020783,
+            "depth_p95_m": 2.310423755645752
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 1.227958492009598e-07,
+            "rotation_determinant": 0.9999999505664485,
+            "fx": 955.8413696289062,
+            "fy": 954.9600830078125
+          },
+          "auto_gate_reasons": []
+        },
+        "kinect_009": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 291631,
+          "depth_mask_pixels": 18111,
+          "registration": {
+            "raw_valid_person_depth_points": 18111,
+            "projected_inside_color_image": 18111,
+            "projected_person_points_after_front_surface_filter": 18111,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 18111,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 1.0,
+          "projected_mask_pixels": 96081,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 7443,
+            "fraction_of_registered_person_points": 0.4109657114460825,
+            "depth_median_m": 2.0820205211639404,
+            "depth_p05_m": 1.8784135460853577,
+            "depth_p95_m": 2.2234585285186768
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 2.1943358530229773e-07,
+            "rotation_determinant": 1.0000002329704885,
+            "fx": 961.8096923828125,
+            "fy": 962.6044921875
+          },
+          "auto_gate_reasons": []
+        }
+      },
+      "cross_camera_surface_consistency": {
+        "available": true,
+        "role": "DESCRIPTIVE_ONLY_DIFFERENT_VISIBLE_SURFACES",
+        "sample_points_each_max": 3000,
+        "symmetric_nn_median_m": 0.009931231779415368,
+        "symmetric_nn_p95_m": 0.060723023052764495
+      },
+      "cache_npz": "/raid5/xuhd/rgbd_mesh_system_v1/system_val_geometry_qa/sample_cache/system_val/p000851_a000017_f000017.npz",
+      "cache_sha256": "af0249a011762115c8fd7bb4f1ecfbe0ffdf0e23ad219a4d16a425577a5c2896"
+    },
+    {
+      "id": "p000851_a000017_f000026",
+      "subject": "p000851",
+      "sequence": "p000851_a000017",
+      "action": "a000017",
+      "split": "SYSTEM_VAL",
+      "frame_id": 26,
+      "usable": true,
+      "auto_gate_reasons": [],
+      "visual_registration_review": "PASS_BY_CONTACT_SHEET_REVIEW",
+      "views": {
+        "kinect_008": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 278859,
+          "depth_mask_pixels": 16678,
+          "registration": {
+            "raw_valid_person_depth_points": 16678,
+            "projected_inside_color_image": 16678,
+            "projected_person_points_after_front_surface_filter": 16665,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 16665,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 0.9992205300395731,
+          "projected_mask_pixels": 88900,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 5866,
+            "fraction_of_registered_person_points": 0.351995199519952,
+            "depth_median_m": 2.1038131713867188,
+            "depth_p05_m": 1.7092582881450653,
+            "depth_p95_m": 2.3057066798210144
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 1.227958492009598e-07,
+            "rotation_determinant": 0.9999999505664485,
+            "fx": 955.8413696289062,
+            "fy": 954.9600830078125
+          },
+          "auto_gate_reasons": []
+        },
+        "kinect_009": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 292217,
+          "depth_mask_pixels": 18112,
+          "registration": {
+            "raw_valid_person_depth_points": 18112,
+            "projected_inside_color_image": 18112,
+            "projected_person_points_after_front_surface_filter": 18112,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 18112,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 1.0,
+          "projected_mask_pixels": 96073,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 7460,
+            "fraction_of_registered_person_points": 0.4118816254416961,
+            "depth_median_m": 2.083402156829834,
+            "depth_p05_m": 1.8789854943752289,
+            "depth_p95_m": 2.2256828665733335
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 2.1943358530229773e-07,
+            "rotation_determinant": 1.0000002329704885,
+            "fx": 961.8096923828125,
+            "fy": 962.6044921875
+          },
+          "auto_gate_reasons": []
+        }
+      },
+      "cross_camera_surface_consistency": {
+        "available": true,
+        "role": "DESCRIPTIVE_ONLY_DIFFERENT_VISIBLE_SURFACES",
+        "sample_points_each_max": 3000,
+        "symmetric_nn_median_m": 0.009929514999686034,
+        "symmetric_nn_p95_m": 0.0635044676436432
+      },
+      "cache_npz": "/raid5/xuhd/rgbd_mesh_system_v1/system_val_geometry_qa/sample_cache/system_val/p000851_a000017_f000026.npz",
+      "cache_sha256": "bf86da186b808b7301359c33af423284648c08f72651de8c4d00a4432be27c77"
+    },
+    {
+      "id": "p000969_a000017_f000011",
+      "subject": "p000969",
+      "sequence": "p000969_a000017",
+      "action": "a000017",
+      "split": "SYSTEM_VAL",
+      "frame_id": 11,
+      "usable": true,
+      "auto_gate_reasons": [],
+      "visual_registration_review": "PASS_BY_CONTACT_SHEET_REVIEW",
+      "views": {
+        "kinect_008": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 278377,
+          "depth_mask_pixels": 24929,
+          "registration": {
+            "raw_valid_person_depth_points": 24929,
+            "projected_inside_color_image": 21350,
+            "projected_person_points_after_front_surface_filter": 21350,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 21350,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 0.8564322676400978,
+          "projected_mask_pixels": 116210,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 8183,
+            "fraction_of_registered_person_points": 0.3832786885245902,
+            "depth_median_m": 1.8670125007629395,
+            "depth_p05_m": 1.4801356792449951,
+            "depth_p95_m": 2.1023401975631715
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 2.3727928211147997e-07,
+            "rotation_determinant": 0.9999999570911018,
+            "fx": 955.8413696289062,
+            "fy": 954.9600830078125
+          },
+          "auto_gate_reasons": []
+        },
+        "kinect_009": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 292285,
+          "depth_mask_pixels": 24845,
+          "registration": {
+            "raw_valid_person_depth_points": 24845,
+            "projected_inside_color_image": 24845,
+            "projected_person_points_after_front_surface_filter": 24845,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 24845,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 1.0,
+          "projected_mask_pixels": 133324,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 10525,
+            "fraction_of_registered_person_points": 0.42362648420205273,
+            "depth_median_m": 1.8745067119598389,
+            "depth_p05_m": 1.6101346731185913,
+            "depth_p95_m": 2.05256233215332
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 1.1043334580129738e-07,
+            "rotation_determinant": 1.0000001260129159,
+            "fx": 961.8096923828125,
+            "fy": 962.6044921875
+          },
+          "auto_gate_reasons": []
+        }
+      },
+      "cross_camera_surface_consistency": {
+        "available": true,
+        "role": "DESCRIPTIVE_ONLY_DIFFERENT_VISIBLE_SURFACES",
+        "sample_points_each_max": 3000,
+        "symmetric_nn_median_m": 0.010694312544339588,
+        "symmetric_nn_p95_m": 0.07272325167593875
+      },
+      "cache_npz": "/raid5/xuhd/rgbd_mesh_system_v1/system_val_geometry_qa/sample_cache/system_val/p000969_a000017_f000011.npz",
+      "cache_sha256": "a6c43a011f1ef180db2df34a4b339996a29388300cedc1fab9536bc4ab58c711"
+    },
+    {
+      "id": "p000969_a000017_f000022",
+      "subject": "p000969",
+      "sequence": "p000969_a000017",
+      "action": "a000017",
+      "split": "SYSTEM_VAL",
+      "frame_id": 22,
+      "usable": true,
+      "auto_gate_reasons": [],
+      "visual_registration_review": "PASS_BY_CONTACT_SHEET_REVIEW",
+      "views": {
+        "kinect_008": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 278086,
+          "depth_mask_pixels": 24994,
+          "registration": {
+            "raw_valid_person_depth_points": 24994,
+            "projected_inside_color_image": 21380,
+            "projected_person_points_after_front_surface_filter": 21380,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 21380,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 0.8554052972713452,
+          "projected_mask_pixels": 116414,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 8230,
+            "fraction_of_registered_person_points": 0.38493919550982225,
+            "depth_median_m": 1.8668737411499023,
+            "depth_p05_m": 1.4790698170661927,
+            "depth_p95_m": 2.1013682007789614
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 2.3727928211147997e-07,
+            "rotation_determinant": 0.9999999570911018,
+            "fx": 955.8413696289062,
+            "fy": 954.9600830078125
+          },
+          "auto_gate_reasons": []
+        },
+        "kinect_009": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 292191,
+          "depth_mask_pixels": 24776,
+          "registration": {
+            "raw_valid_person_depth_points": 24776,
+            "projected_inside_color_image": 24776,
+            "projected_person_points_after_front_surface_filter": 24776,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 24776,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 1.0,
+          "projected_mask_pixels": 133076,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 10543,
+            "fraction_of_registered_person_points": 0.4255327736519212,
+            "depth_median_m": 1.8750149011611938,
+            "depth_p05_m": 1.6110679030418396,
+            "depth_p95_m": 2.0504477500915526
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 1.1043334580129738e-07,
+            "rotation_determinant": 1.0000001260129159,
+            "fx": 961.8096923828125,
+            "fy": 962.6044921875
+          },
+          "auto_gate_reasons": []
+        }
+      },
+      "cross_camera_surface_consistency": {
+        "available": true,
+        "role": "DESCRIPTIVE_ONLY_DIFFERENT_VISIBLE_SURFACES",
+        "sample_points_each_max": 3000,
+        "symmetric_nn_median_m": 0.010945549179984432,
+        "symmetric_nn_p95_m": 0.07344736621712372
+      },
+      "cache_npz": "/raid5/xuhd/rgbd_mesh_system_v1/system_val_geometry_qa/sample_cache/system_val/p000969_a000017_f000022.npz",
+      "cache_sha256": "06d7368771d4f595b2584719a897b3fa263a225994090f1342b78ab5b5ee0525"
+    },
+    {
+      "id": "p000969_a000017_f000033",
+      "subject": "p000969",
+      "sequence": "p000969_a000017",
+      "action": "a000017",
+      "split": "SYSTEM_VAL",
+      "frame_id": 33,
+      "usable": true,
+      "auto_gate_reasons": [],
+      "visual_registration_review": "PASS_BY_CONTACT_SHEET_REVIEW",
+      "views": {
+        "kinect_008": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 277985,
+          "depth_mask_pixels": 25031,
+          "registration": {
+            "raw_valid_person_depth_points": 25031,
+            "projected_inside_color_image": 21410,
+            "projected_person_points_after_front_surface_filter": 21410,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 21410,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 0.8553393791698294,
+          "projected_mask_pixels": 116643,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 8230,
+            "fraction_of_registered_person_points": 0.38439981317141525,
+            "depth_median_m": 1.8670696020126343,
+            "depth_p05_m": 1.4818316757678986,
+            "depth_p95_m": 2.1008777379989625
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 2.3727928211147997e-07,
+            "rotation_determinant": 0.9999999570911018,
+            "fx": 955.8413696289062,
+            "fy": 954.9600830078125
+          },
+          "auto_gate_reasons": []
+        },
+        "kinect_009": {
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "rgb_dtype": "uint8",
+          "depth_shape": [
+            576,
+            640
+          ],
+          "depth_dtype": "uint16",
+          "depth_nonzero_pixels": 291899,
+          "depth_mask_pixels": 24799,
+          "registration": {
+            "raw_valid_person_depth_points": 24799,
+            "projected_inside_color_image": 24799,
+            "projected_person_points_after_front_surface_filter": 24799,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 24799,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "projection_retention": 1.0,
+          "projected_mask_pixels": 133216,
+          "torso_proxy": {
+            "definition": "GEOMETRIC_BODY_CORE_PROXY_NOT_ANATOMY",
+            "silhouette_erosion_kernel_px": 7,
+            "interior_quantile_box_xy": [
+              0.2,
+              0.8
+            ],
+            "points": 10474,
+            "fraction_of_registered_person_points": 0.4223557401508125,
+            "depth_median_m": 1.876914381980896,
+            "depth_p05_m": 1.6134073913097382,
+            "depth_p95_m": 2.050312674045563
+          },
+          "camera": {
+            "rotation_orthonormal_max_abs": 1.1043334580129738e-07,
+            "rotation_determinant": 1.0000001260129159,
+            "fx": 961.8096923828125,
+            "fy": 962.6044921875
+          },
+          "auto_gate_reasons": []
+        }
+      },
+      "cross_camera_surface_consistency": {
+        "available": true,
+        "role": "DESCRIPTIVE_ONLY_DIFFERENT_VISIBLE_SURFACES",
+        "sample_points_each_max": 3000,
+        "symmetric_nn_median_m": 0.010775483075902727,
+        "symmetric_nn_p95_m": 0.07121892296475585
+      },
+      "cache_npz": "/raid5/xuhd/rgbd_mesh_system_v1/system_val_geometry_qa/sample_cache/system_val/p000969_a000017_f000033.npz",
+      "cache_sha256": "5e02c2f49fb4cefcad7177d187dc8eda2d539dbff02d6dedfd7f66c1b8f4bda7"
+    }
+  ],
+  "visual_reviewed_pages": 1
+}

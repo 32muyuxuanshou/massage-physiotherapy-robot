@@ -1,0 +1,128 @@
+{
+  "status": "SYSTEM_VAL_EXTRACTION_PLAN_FROZEN",
+  "winner": "MODEL_S",
+  "winner_checkpoint_sha256": "1aedfd0f2cf6819078b9aae451ea681c51239f0945180dc2459122710dc3f107",
+  "subject_split_sha256": "aa96348281fe550e6f7bfb76a60544d11c84b581531f9137115f299fbd122f22",
+  "inventory_sha256": "595d925a3d25e4990316e8457b63b49c06d3651190168ad9475c7b211799b121",
+  "server_archive_root": "/raid5/xuhd/datasets/humman/archives",
+  "server_workset_root": "/raid5/xuhd/rgbd_mesh_system_v1/system_val_workset",
+  "observations": [
+    {
+      "subject": "p000851",
+      "sequence": "p000851_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "frame_ids": [
+        8,
+        17,
+        26
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "split": "SYSTEM_VAL"
+    },
+    {
+      "subject": "p000969",
+      "sequence": "p000969_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "frame_ids": [
+        11,
+        22,
+        33
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "split": "SYSTEM_VAL"
+    }
+  ],
+  "selected_subjects": [
+    "p000851",
+    "p000969"
+  ],
+  "final_reserve_subjects_excluded": [
+    "p000813",
+    "p000814",
+    "p000827",
+    "p000832",
+    "p000841",
+    "p000854",
+    "p000875",
+    "p000908",
+    "p000945",
+    "p000971",
+    "p000984",
+    "p000988",
+    "p001017",
+    "p001039",
+    "p001042"
+  ],
+  "selected_pixels": true,
+  "final_reserve_pixels_selected": false,
+  "archives": [
+    {
+      "file": "point_cameras.7z",
+      "sha256": "45568209120dc8b8abd728a8cfeb26f44d54b5990eae71512efc207497474924",
+      "members": [
+        "p000851_a000017/cameras.json",
+        "p000969_a000017/cameras.json"
+      ]
+    },
+    {
+      "file": "point_kinect_color_part_02.7z",
+      "sha256": "3d49992304f3c689e4d23841fd3232c11b6ee4ff357181b58944a6a008af81d4",
+      "members": [
+        "p000851_a000017/kinect_color/kinect_008.mp4",
+        "p000851_a000017/kinect_color/kinect_009.mp4",
+        "p000969_a000017/kinect_color/kinect_008.mp4",
+        "p000969_a000017/kinect_color/kinect_009.mp4"
+      ]
+    },
+    {
+      "file": "point_kinect_depth_part_08.7z",
+      "sha256": "16bac430062f5b4efd5c63baa23820d957b126add37de99e1626b979a604fefa",
+      "members": [
+        "p000851_a000017/kinect_depth/kinect_008/000008.png",
+        "p000851_a000017/kinect_depth/kinect_008/000017.png",
+        "p000851_a000017/kinect_depth/kinect_008/000026.png",
+        "p000851_a000017/kinect_depth/kinect_009/000008.png",
+        "p000851_a000017/kinect_depth/kinect_009/000017.png",
+        "p000851_a000017/kinect_depth/kinect_009/000026.png"
+      ]
+    },
+    {
+      "file": "point_kinect_depth_part_09.7z",
+      "sha256": "3665a6c4494a0cac5404f605fb0a80d5e0ba2a4049f9aa570c56e90899d78507",
+      "members": [
+        "p000969_a000017/kinect_depth/kinect_008/000011.png",
+        "p000969_a000017/kinect_depth/kinect_008/000022.png",
+        "p000969_a000017/kinect_depth/kinect_008/000033.png",
+        "p000969_a000017/kinect_depth/kinect_009/000011.png",
+        "p000969_a000017/kinect_depth/kinect_009/000022.png",
+        "p000969_a000017/kinect_depth/kinect_009/000033.png"
+      ]
+    },
+    {
+      "file": "point_kinect_mask.7z",
+      "sha256": "6f7a7a5c9b4942bc50acb22593af8c28373592438faba9aa4f8d4125f114c950",
+      "members": [
+        "p000851_a000017/kinect_mask/kinect_008/000008.png",
+        "p000851_a000017/kinect_mask/kinect_008/000017.png",
+        "p000851_a000017/kinect_mask/kinect_008/000026.png",
+        "p000851_a000017/kinect_mask/kinect_009/000008.png",
+        "p000851_a000017/kinect_mask/kinect_009/000017.png",
+        "p000851_a000017/kinect_mask/kinect_009/000026.png",
+        "p000969_a000017/kinect_mask/kinect_008/000011.png",
+        "p000969_a000017/kinect_mask/kinect_008/000022.png",
+        "p000969_a000017/kinect_mask/kinect_008/000033.png",
+        "p000969_a000017/kinect_mask/kinect_009/000011.png",
+        "p000969_a000017/kinect_mask/kinect_009/000022.png",
+        "p000969_a000017/kinect_mask/kinect_009/000033.png"
+      ]
+    }
+  ]
+}

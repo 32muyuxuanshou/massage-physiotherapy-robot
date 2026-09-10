@@ -1,0 +1,19 @@
+{
+  "status": "BOTH_USEFUL_DIFFERENT_TRADEOFFS",
+  "abstention_status": "ABSOLUTE_FAILURE_DETECTION_NOT_READY",
+  "primary_result": {
+    "O_mm": 63.63442963249367,
+    "G_exact_mm": 25.470519560771855,
+    "G_gpu_mm": 23.92109276009672,
+    "C_mm": 22.482838885656385
+  },
+  "decision": "C has the best central error, three-of-four subject behavior, and lower latency. G_gpu has slightly better P95 and rescues a subject where C is weaker. Use C as the engineering default candidate and retain G_gpu as a high-robustness candidate until product-domain data decides.",
+  "not_claimed": [
+    "arbitrary pose robustness",
+    "treatment-table or bare-back performance",
+    "back-region accuracy",
+    "DMD37/acupoint accuracy",
+    "clinical safety"
+  ],
+  "next_single_experiment": "Frozen C versus frozen G_gpu on failure-enriched product-domain multi-pose RGB-D with independent held-out geometry."
+}

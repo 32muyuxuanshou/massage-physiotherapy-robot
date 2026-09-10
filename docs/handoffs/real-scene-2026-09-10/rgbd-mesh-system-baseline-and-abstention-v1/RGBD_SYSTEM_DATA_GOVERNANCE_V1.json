@@ -1,0 +1,30 @@
+{
+  "status": "FROZEN_BEFORE_SYSTEM_VAL_OR_SEALED_PIXEL_ACCESS",
+  "selection_basis": "Identity and archive structural metadata only; no RGB, depth, or model outputs inspected",
+  "consumed_development": {
+    "previous_development_subjects": 72,
+    "previous_selector_val_subjects": 12,
+    "previous_selector_sealed_subjects": 10,
+    "source": "../depth-aware-official-adapted-selector-v1/SELECTOR_DATA_GOVERNANCE_V1.json"
+  },
+  "groups": {
+    "SYSTEM_VAL": ["p000851", "p000969"],
+    "SYSTEM_SEALED": ["p000838", "p000891", "p000893", "p000931"],
+    "FINAL_DEEP_RESERVE": ["p000841", "p000813", "p001039", "p000827", "p000854", "p000971", "p000875", "p001017", "p000814", "p000945", "p000908", "p000988", "p000984", "p000832", "p001042"]
+  },
+  "counts": {"SYSTEM_VAL": 2, "SYSTEM_SEALED": 4, "FINAL_DEEP_RESERVE": 15},
+  "system_sealed_pose_plan": {
+    "policy": "Use every structurally usable archived action for each sealed subject; three deterministic non-adjacent frames per action, followed by RGB visual pose verification before scoring",
+    "expected_actions_from_metadata": {
+      "p000838": ["Belly Stretch", "Quadruped", "Neck Exercises"],
+      "p000891": ["Looking At Ceiling", "Supine Flexion Right Twist Stretch"],
+      "p000893": ["Quadruped", "Kneeling Forearm Stretch", "Thunderbolt Sitting Position - Positive", "Corpse - Side"],
+      "p000931": ["Belly Stretch", "Stacked Leg Glute Bridge L", "Child'S Pose"]
+    }
+  },
+  "tradeoff": "Only six non-Final-Reserve identities remained. Two are used for SYSTEM_VAL and four multi-action identities for SYSTEM_SEALED; all original 15 Final Reserve identities remain untouched.",
+  "subject_disjoint": true,
+  "system_val_pixels_opened": false,
+  "system_sealed_pixels_opened": false,
+  "final_deep_reserve_pixels_opened": false
+}

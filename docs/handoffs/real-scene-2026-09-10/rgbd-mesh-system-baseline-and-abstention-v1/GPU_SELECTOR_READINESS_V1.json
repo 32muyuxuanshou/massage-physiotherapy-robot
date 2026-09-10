@@ -1,0 +1,34 @@
+{
+  "status": "READY_AS_APPROXIMATE_RUNTIME_SELECTOR",
+  "recommended_threshold": {
+    "tau_mm": 15,
+    "winner_agreement_with_frozen_exact": 0.9166666666666666,
+    "camera_b_winner_accuracy": 0.9027777777777778
+  },
+  "requirements": {
+    "exact_agreement_min": 0.9
+  },
+  "observed": {
+    "all": {
+      "frames": 72,
+      "pearson_exact_vs_fast": 0.9417717061967835,
+      "auc_fast": 0.9662551440329218
+    }
+  },
+  "latency_ms": {
+    "frames": 72,
+    "p50": 38.20993547560647,
+    "p90": 39.63543252903037,
+    "scope": "both candidate meshes already available; Camera-A residual only"
+  },
+  "cuda": {
+    "device": "NVIDIA GeForce RTX 2080 Ti",
+    "peak_allocated_mb": 3047.435546875,
+    "incremental_peak_over_cached_meshes_mb": 23.349609375
+  },
+  "limits": [
+    "Mesh forward latency excluded",
+    "Point-splat depth is an approximation to point-to-triangle distance",
+    "HuMMan dataset ROI/depth only"
+  ]
+}

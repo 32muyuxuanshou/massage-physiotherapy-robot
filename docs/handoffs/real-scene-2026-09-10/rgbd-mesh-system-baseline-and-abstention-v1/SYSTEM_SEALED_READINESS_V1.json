@@ -1,0 +1,46 @@
+{
+  "status": "READY_FOR_ONE_SHOT_SYSTEM_SEALED",
+  "frozen_before_system_sealed_pixel_access": true,
+  "gates": {
+    "data_governance": "PASS",
+    "camera_a_to_b_geometry": "PASS",
+    "cheap_correction": "READY",
+    "historical_exact_selector": "FROZEN",
+    "gpu_selector": "READY_AS_APPROXIMATE_RUNTIME_SELECTOR",
+    "abstention": "NOT_READY_EXCLUDED_FROM_SEALED_PRIMARY"
+  },
+  "frozen_systems": [
+    "O",
+    "A",
+    "G_exact",
+    "G_gpu",
+    "B",
+    "C"
+  ],
+  "primary_product_comparison": [
+    "O",
+    "G_exact",
+    "C"
+  ],
+  "system_val_observation": {
+    "subjects": 2,
+    "frames": 6,
+    "absolute_mm": {
+      "O": 141.0086635855596,
+      "A": 19.905482196442414,
+      "G_exact": 19.905482196442414,
+      "G_gpu": 19.905482196442414,
+      "B": 74.20029525500419,
+      "C": 100.77559277837685
+    },
+    "policy": "No threshold, bound, algorithm, pose, or metric changed after this result."
+  },
+  "hashes": {
+    "RGBD_SYSTEM_DATA_GOVERNANCE_V1.json": "aa96348281fe550e6f7bfb76a60544d11c84b581531f9137115f299fbd122f22",
+    "SYSTEM_SEALED_EXTRACTION_PLAN_V1.json": "a3c66ca50695a678a704ca38d7806496460e4a755a0ab328dcda933c9a123098",
+    "CAMERA_A_TO_B_GEOMETRY_QA_V1.json": "2510ba421160ab7cc37009941dacb244ba15d0a1871f63161882ae260004798b",
+    "CHEAP_DEPTH_CORRECTION_RULE_FREEZE_V1.json": "24cc57a851938a48ce1a9053ec2dab51d767f6086a08281b6ec80153c551b873",
+    "GPU_SELECTOR_READINESS_V1.json": "11c2eb6bdd2bf9c3804dc03aa6ec16687e6d2e34c0dc695e93f9574ba71e6c67"
+  },
+  "final_deep_reserve_pixels_opened": false
+}

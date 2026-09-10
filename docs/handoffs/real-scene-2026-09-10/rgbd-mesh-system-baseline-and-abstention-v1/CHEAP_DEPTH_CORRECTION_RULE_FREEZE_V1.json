@@ -1,0 +1,20 @@
+{
+  "schema": "CHEAP_DEPTH_CORRECTION_RULE_FREEZE_V1",
+  "status": "FROZEN_BEFORE_NEW_SYSTEM_SEALED_ACCESS",
+  "system": "SYSTEM_C_OFFICIAL_PLUS_CAMERA_A_DEPTH_TXYZ",
+  "inputs": ["Camera A RGB", "Camera A K", "dataset-provided person ROI", "registered Camera A person depth/mask"],
+  "model": {"name": "Official SAM 3D Body", "sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056"},
+  "correction": {
+    "degrees_of_freedom": ["Tx", "Ty", "Tz"],
+    "deterministic_surface_anchors": 16384,
+    "iterations": 6,
+    "trim_upper_correspondence_fraction": 0.20,
+    "per_iteration_component_step_bound_m": 0.05,
+    "final_translation_norm_bound_m": 0.17788820176363325,
+    "out_of_range": "CORRECTION_OUT_OF_RANGE and return unmodified Official mesh"
+  },
+  "prohibited": ["Camera B runtime input", "subject ID", "GT winner", "pose/rotation/shape/scale/local deformation", "new system sealed threshold tuning"],
+  "development_sources": ["consumed DEVELOPMENT", "consumed SELECTOR_VAL"],
+  "new_system_sealed_opened": false,
+  "future_change_policy": "Any change creates a new version and requires a new untouched system test; this V1 receipt must remain immutable."
+}

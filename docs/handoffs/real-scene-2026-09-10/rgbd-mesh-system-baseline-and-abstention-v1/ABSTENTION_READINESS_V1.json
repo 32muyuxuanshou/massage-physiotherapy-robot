@@ -1,0 +1,29 @@
+{
+  "status": "NOT_READY_FOR_SAFETY_ABSTENTION",
+  "reason": "BAD50 has only 2/1 positives and BAD80 has 0/0; high-severity failure sensitivity and thresholds cannot be estimated.",
+  "primary_score": "selected_render_mm",
+  "evidence": {
+    "BAD30_val_auc": 0.9384615384615385,
+    "positive_counts": {
+      "DEVELOPMENT": {
+        "BAD30": 5,
+        "BAD50": 2,
+        "BAD80": 0
+      },
+      "SELECTOR_VAL": {
+        "BAD30": 10,
+        "BAD50": 1,
+        "BAD80": 0
+      }
+    },
+    "BAD50_minimum_evidence_met": false,
+    "BAD80_minimum_evidence_met": false
+  },
+  "permitted_claim": "Camera-A rendered residual ranks BAD30 risk on these consumed HuMMan rows.",
+  "prohibited_claims": [
+    "Validated safety rejector",
+    "Reliable BAD50 or BAD80 detection",
+    "Generalization beyond HuMMan dataset ROI/depth"
+  ],
+  "next_test": "Pre-register the same score and a finite threshold on a future non-reserve system validation set with enough BAD50/BAD80 positives."
+}

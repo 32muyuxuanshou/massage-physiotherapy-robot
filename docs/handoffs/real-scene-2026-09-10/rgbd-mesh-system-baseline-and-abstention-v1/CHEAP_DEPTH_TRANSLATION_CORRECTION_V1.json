@@ -1,0 +1,73 @@
+{
+  "schema": "CHEAP_DEPTH_TRANSLATION_CORRECTION_V1",
+  "status": "PASS_SELECT_BOUNDED_TXYZ",
+  "scope": {
+    "development": "12 consumed subjects, 36 frames",
+    "selector_val": "12 consumed subjects, 36 frames",
+    "new_system_sealed_opened": false,
+    "camera_a": "Official RGB->Mesh plus registered depth/K/dataset person ROI for correction",
+    "camera_b": "held-out labels only after A/world/B calibrated transform",
+    "evaluation": "deterministic 5000 Camera-B points per frame, exact point-to-triangle; subject-equal primary"
+  },
+  "algorithm": {
+    "mesh": "frozen Official SAM 3D Body",
+    "surface_correspondence": "16384 topology-bound deterministic MHR barycentric anchors",
+    "estimator": "six iterations of nearest-anchor correspondence, discard upper 20% correspondence distances, coordinate-wise median residual",
+    "step_bound_m": 0.05,
+    "candidates": ["Tz-only", "Txyz"],
+    "forbidden_changes": ["rotation", "pose", "shape", "scale", "skeleton", "hands", "face", "local vertices"]
+  },
+  "development_derived_bounds": {
+    "rule": "95th percentile of DEVELOPMENT raw correction, clipped to [0.03, 0.20] m",
+    "tz_abs_m": 0.17784325736895687,
+    "txyz_norm_m": 0.17788820176363325,
+    "out_of_range_action": "fallback Official",
+    "development_raw_norm_m": {
+      "tz_p50": 0.09216604123868072,
+      "tz_p90": 0.16111531352473604,
+      "tz_max": 0.19607951549500424,
+      "txyz_p50": 0.0884318713725326,
+      "txyz_p90": 0.15294366053068748,
+      "txyz_max": 0.19530587681886494
+    }
+  },
+  "subject_equal_absolute_mm": {
+    "development": {"official": 59.91508154634902, "tz": 19.084495884192737, "txyz": 18.604789093296063, "train_only_constant_txyz": 28.60433535727094},
+    "selector_val": {"official": 49.07541476310528, "tz": 33.37862822327548, "txyz": 32.43488846182004, "train_only_constant_txyz": 37.63210634291408}
+  },
+  "selector_val_audit": {
+    "subjects_better_than_official": {"tz": 10, "txyz": 11, "denominator": 12},
+    "frames_better_than_official": {"tz": 26, "txyz": 32, "denominator": 36},
+    "out_of_range_frames_fallback_official": {"tz": 4, "txyz": 3},
+    "official_under_30mm_subjects": 5,
+    "low_error_subjects_regressed": {"tz": 1, "txyz": 0},
+    "official_under_30mm_frames": 17,
+    "low_error_frames_regressed": {"tz": 6, "txyz": 1}
+  },
+  "latency_2080ti_host": {
+    "official_forward_p50_ms": 285.1048640150111,
+    "official_forward_p90_ms": 325.5101209797431,
+    "tz_correction_p50_ms": 115.29791151406243,
+    "tz_correction_p90_ms": 140.8728560199961,
+    "txyz_correction_p50_ms": 109.63594348868355,
+    "txyz_correction_p90_ms": 130.97014449886046,
+    "boundary": "correction-only CPU scipy cKDTree; excludes depth preprocessing and held-out Camera-B evaluation"
+  },
+  "decision": {
+    "selected": "Txyz",
+    "why_not_tz": "Txyz is only 0.944 mm better on selector VAL aggregate, but improves 11/12 rather than 10/12 subjects and avoids subject-level low-error regression (0/5 versus 1/5).",
+    "improvement_vs_official_selector_val_mm": 16.64052630128524,
+    "improvement_vs_constant_txyz_selector_val_mm": 5.19721788109404,
+    "claim": "Ready as a frozen cheap-correction candidate for a future system sealed test; not yet a sealed product result."
+  },
+  "server_artifacts": {
+    "root": "/raid5/xuhd/rgbd_mesh_system_baseline_and_abstention_v1",
+    "full_rows": "raw/cheap_depth_translation_audit.json",
+    "full_rows_sha256": "24451f2c328fe252fddd3a0329e68da40461581c88b7cb634a3a0b6fe4202caa",
+    "latency": "raw/cheap_depth_translation_latency.json",
+    "latency_sha256": "f21ea805fb87878e4cd06f7645938314e969c415e73d6aef3a79d1c9507f7986",
+    "audit_code_sha256": "868b59f031d555e3b3bbd18ca50a6202effb22e73a5932fb92e0a7089b443b16",
+    "benchmark_code_sha256": "57e4e97a2a0da6367985f505b78ae80cefa0a09db936b77935e679d6486c86d9",
+    "run_log": "raw/run.log"
+  }
+}
