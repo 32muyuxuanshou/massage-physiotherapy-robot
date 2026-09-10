@@ -1,0 +1,18 @@
+{
+  "status": "PARTIALLY_DETERMINED",
+  "method": [
+    "Fixed-input output deltas for Official, E1 and E10",
+    "Absolute versus translation-aligned evaluation",
+    "TRAIN-only constant Txyz calibration baseline"
+  ],
+  "controlled_field_swap_forward": {
+    "performed": false,
+    "reason": "The preserved inference wrapper does not expose a validated field-injection contract before MHR mesh construction. Inventing an unverified reconstruction path would make the decomposition less reliable."
+  },
+  "findings": {
+    "camera_root_translation": "dominant explanatory factor; about 89% of VAL absolute gain is removed by translation alignment",
+    "local_geometry": "residual 3.24 mm aligned gain exists",
+    "pose_shape_scale": "all changed, but their individual mesh contributions are not causally isolated"
+  },
+  "conclusion": "Attribution remains unresolved; no individual pose/shape/scale causal percentage is claimed."
+}

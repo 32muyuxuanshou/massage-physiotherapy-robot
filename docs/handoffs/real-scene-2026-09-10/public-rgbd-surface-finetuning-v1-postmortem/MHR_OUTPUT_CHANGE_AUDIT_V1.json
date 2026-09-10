@@ -1,0 +1,227 @@
+{
+  "status": "FIXED_INPUT_FORWARD_AUDITED",
+  "inputs": [
+    "p000823_a000035_f000008",
+    "p000879_a005516_f000016",
+    "p000880_a000079_f000022",
+    "p000881_a000043_f000022",
+    "p001088_a000203_f000052",
+    "p001110_a000652_f000030"
+  ],
+  "fixed_contract": [
+    "same RGB",
+    "same dataset bbox",
+    "same K",
+    "same preprocessing",
+    "deterministic eval mode"
+  ],
+  "delta_unit_notes": {
+    "pred_cam_t": "meters",
+    "global_rot": "wrapped Euler radians",
+    "body_pose": "Euler radians",
+    "shape/scale/hand/face": "native coefficient units",
+    "derived_mhr_scales": "MHR native scale values",
+    "pred_vertices": "meters"
+  },
+  "field_results": [
+    {
+      "comparison": "official_to_e1",
+      "field": "pred_cam_t",
+      "delta_rms_per_observation": {
+        "mean": 0.05381676089647755,
+        "median": 0.06049462123248528,
+        "p90": 0.07387911921466617,
+        "max": 0.07466283105706845
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e1",
+      "field": "global_rot",
+      "delta_rms_per_observation": {
+        "mean": 0.01765156881319776,
+        "median": 0.018243640667996122,
+        "p90": 0.02332470047427071,
+        "max": 0.02396368301174823
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e1",
+      "field": "body_pose",
+      "delta_rms_per_observation": {
+        "mean": 0.020892508174826355,
+        "median": 0.02191150593813672,
+        "p90": 0.026233515668623704,
+        "max": 0.028474334505874645
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e1",
+      "field": "shape",
+      "delta_rms_per_observation": {
+        "mean": 0.035717352208401575,
+        "median": 0.03369007361455998,
+        "p90": 0.04654345049029461,
+        "max": 0.04670279121778481
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e1",
+      "field": "scale",
+      "delta_rms_per_observation": {
+        "mean": 0.04315910883353641,
+        "median": 0.043742909371765254,
+        "p90": 0.05685481097471782,
+        "max": 0.06175722440085109
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e1",
+      "field": "derived_mhr_scales",
+      "delta_rms_per_observation": {
+        "mean": 0.005755198755515063,
+        "median": 0.005670318282613489,
+        "p90": 0.007335371061462705,
+        "max": 0.007649128828957094
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e1",
+      "field": "hand",
+      "delta_rms_per_observation": {
+        "mean": 0.024655926939055314,
+        "median": 0.025156703778968212,
+        "p90": 0.027535335099582142,
+        "max": 0.027832384590235633
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e1",
+      "field": "face",
+      "delta_rms_per_observation": {
+        "mean": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 0.0
+      },
+      "nonzero": false
+    },
+    {
+      "comparison": "official_to_e1",
+      "field": "pred_vertices",
+      "delta_rms_per_observation": {
+        "mean": 0.018592253856318745,
+        "median": 0.018723664416342857,
+        "p90": 0.02374657557155157,
+        "max": 0.025251904440030965
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e10",
+      "field": "pred_cam_t",
+      "delta_rms_per_observation": {
+        "mean": 0.09007835279268,
+        "median": 0.08366329426331687,
+        "p90": 0.14085700506228793,
+        "max": 0.14155943397098858
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e10",
+      "field": "global_rot",
+      "delta_rms_per_observation": {
+        "mean": 0.03756979090883272,
+        "median": 0.03541407324478672,
+        "p90": 0.05981437564772088,
+        "max": 0.07922470666323093
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e10",
+      "field": "body_pose",
+      "delta_rms_per_observation": {
+        "mean": 0.04852878789903193,
+        "median": 0.0525540926675458,
+        "p90": 0.058284177931256745,
+        "max": 0.06120506618134948
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e10",
+      "field": "shape",
+      "delta_rms_per_observation": {
+        "mean": 0.1584943429783305,
+        "median": 0.17116937524434014,
+        "p90": 0.17871376284928983,
+        "max": 0.18036494257777694
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e10",
+      "field": "scale",
+      "delta_rms_per_observation": {
+        "mean": 0.11153094363005674,
+        "median": 0.10756729397643335,
+        "p90": 0.14607745684147827,
+        "max": 0.16495892383964258
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e10",
+      "field": "derived_mhr_scales",
+      "delta_rms_per_observation": {
+        "mean": 0.01637747347456536,
+        "median": 0.016631592360075068,
+        "p90": 0.022023221930118714,
+        "max": 0.025572945027377874
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e10",
+      "field": "hand",
+      "delta_rms_per_observation": {
+        "mean": 0.08389153448902724,
+        "median": 0.08518161237673982,
+        "p90": 0.09182928537568175,
+        "max": 0.09212662307318102
+      },
+      "nonzero": true
+    },
+    {
+      "comparison": "official_to_e10",
+      "field": "face",
+      "delta_rms_per_observation": {
+        "mean": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "max": 0.0
+      },
+      "nonzero": false
+    },
+    {
+      "comparison": "official_to_e10",
+      "field": "pred_vertices",
+      "delta_rms_per_observation": {
+        "mean": 0.03232498793053268,
+        "median": 0.031255395971878985,
+        "p90": 0.046940356526867955,
+        "max": 0.05086812972883836
+      },
+      "nonzero": true
+    }
+  ],
+  "conclusion": "Because head_pose.proj emits every MHR parameter block, pose, shape, scale and hand outputs can all change. face is explicitly multiplied by zero in MHRHead.forward."
+}

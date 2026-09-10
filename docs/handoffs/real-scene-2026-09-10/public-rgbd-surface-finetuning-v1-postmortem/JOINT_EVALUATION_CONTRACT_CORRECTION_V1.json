@@ -1,0 +1,12 @@
+{
+  "status": "CORRECTED_TERMINOLOGY",
+  "historical_file": "2026-09-09/public-rgbd-surface-finetuning-pilot-v1/JOINT_REGRESSION_V1.json",
+  "correct_name": "JOINT_OUTPUT_STABILITY / JOINT_DEVIATION_FROM_OFFICIAL",
+  "comparisons": {
+    "2d": "Finetuned MHR70 prediction versus Official prediction, normalized by sqrt(bbox width * bbox height)",
+    "3d": "Finetuned prediction versus Official prediction after each prediction is made pelvis-relative"
+  },
+  "independent_manual_ground_truth_used": false,
+  "is_joint_accuracy": false,
+  "claim": "These values bound output drift from the Official teacher. They do not show that anatomical joint accuracy improved."
+}

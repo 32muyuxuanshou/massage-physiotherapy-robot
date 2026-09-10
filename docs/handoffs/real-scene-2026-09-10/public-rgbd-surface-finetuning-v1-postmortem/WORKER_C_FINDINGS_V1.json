@@ -1,0 +1,32 @@
+{
+  "status": "WORKER_C_COMPLETE_READ_ONLY",
+  "training_started": false,
+  "downloads_started": false,
+  "historical_handoff_modified": false,
+  "absolute_vs_translation_aligned_subject_macro_mm": {
+    "VAL": {"official_absolute": 59.9013, "e1_absolute": 29.8656, "official_aligned": 23.1330, "e1_aligned": 19.8929},
+    "CONSUMED_SEALED": {"official_absolute": 58.5458, "e1_absolute": 27.3057, "official_aligned": 19.7842, "e1_aligned": 16.8693}
+  },
+  "translation_interpretation": "Translation alignment removes about 89% of the VAL and 91% of the consumed-SEALED absolute Official-to-E1 gain. A smaller aligned gain remains, so the evidence supports translation-dominant mixed improvement rather than translation-only improvement.",
+  "train_only_constant_translation_baseline": {
+    "camera_a_bias_m": [0.00951945, -0.0276611, -0.09274817],
+    "VAL_primary_mm": 40.3005,
+    "CONSUMED_SEALED_primary_mm": 35.4061,
+    "interpretation": "The simple calibration absorbs about 65%/74% of the absolute E1 gain, but remains 10.43/8.10 mm worse than E1."
+  },
+  "root_camera_correlation": {"pearson_r": 0.552376, "claim": "correlation, not causation"},
+  "surface_loss": {
+    "exact_point_to_triangle": false,
+    "sampling": "2048 observations and 4096 face-index-uniform triangle samples; epoch-varying seed",
+    "perfect_geometry_floor_mm_equivalent": {"4096": 1.5938, "8192": 0.7553, "16384": 0.3344},
+    "perturbed_adjacent_seed_gradient_cosine": {"4096": 0.36, "8192": 0.53, "16384": 0.70},
+    "translation_and_rigid_rotation_direction_tests": "PASS_ALL_12",
+    "area_weighted_decision": "No automatic replacement: slightly lower floor, no material perturbed-gradient stability gain in the controlled test."
+  },
+  "loss_component_gradients": "At E1, surface gradients conflict locally with Official teacher 2D/3D on all three probed DEV frames (cosines about -0.27 and -0.49); this alone does not justify deleting teacher losses.",
+  "sensor_geometry_consistency_subject_macro_mm": {"median": 14.1046, "p90": 90.5834, "p95": 146.5326},
+  "sensor_claim_limit": "Descriptive cross-view nearest-neighbour consistency; not a true sensor error floor and not subtractable from model error.",
+  "body_part_result": "NOT_DETERMINABLE_WITH_AVAILABLE_RELIABLE_MAPPING",
+  "recommended_gate_contribution": "V1_SIGNAL_CONFIRMED_BUT_ATTRIBUTION_UNRESOLVED",
+  "required_before_next_training": "Fix/evaluate the stochastic surface-loss measurement contract and require the TRAIN-only translation calibration as a formal baseline."
+}

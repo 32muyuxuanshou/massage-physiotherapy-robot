@@ -1,0 +1,183 @@
+{
+  "status": "AUDITED",
+  "actual_trainable_scope": [
+    "head_pose.proj",
+    "head_camera.proj"
+  ],
+  "total_trainable_numel": 2634250,
+  "parameters": [
+    {
+      "parameter_name": "head_pose.proj.layers.0.0.weight",
+      "module": "head_pose.proj",
+      "shape": [
+        1024,
+        1024
+      ],
+      "numel": 1048576,
+      "initial_sha256": "74a531fae8450a6f428074a3b76de88dcf71a92108fb34ac1971777c7e04cd9c",
+      "e1_sha256": "acdea504d43273329516b13d7a78a346d1841c5449950f64e8b646edfa44b080",
+      "e10_sha256": "cc8304df86f41e454d3419536ca01d5145848aa61f8959a254f667b5b615fe96",
+      "official_to_e1": {
+        "l1_sum": 41.455042766622114,
+        "l2_norm": 0.053384898365447464,
+        "max_abs": 0.00011886283755302429
+      },
+      "official_to_e10": {
+        "l1_sum": 121.56058233909107,
+        "l2_norm": 0.16965699486816765,
+        "max_abs": 0.0008030664175748825
+      }
+    },
+    {
+      "parameter_name": "head_pose.proj.layers.0.0.bias",
+      "module": "head_pose.proj",
+      "shape": [
+        1024
+      ],
+      "numel": 1024,
+      "initial_sha256": "ba1c6472b990b14e30a60bb374fbf3ffa0176b6049618d8a0059fd393849af38",
+      "e1_sha256": "9dacaac2fbb326bf06f07e59feb96cccd17da66c063435c1db09230846a05162",
+      "e10_sha256": "914e87f725cd1db6a3ea0be5afeba5b8fafaa866d8925e5c484d53865fb18433",
+      "official_to_e1": {
+        "l1_sum": 0.04396758215443697,
+        "l2_norm": 0.001794872351185322,
+        "max_abs": 0.00011488981544971466
+      },
+      "official_to_e10": {
+        "l1_sum": 0.10606753798492718,
+        "l2_norm": 0.004744868046154379,
+        "max_abs": 0.0005989379133097827
+      }
+    },
+    {
+      "parameter_name": "head_pose.proj.layers.1.weight",
+      "module": "head_pose.proj",
+      "shape": [
+        519,
+        1024
+      ],
+      "numel": 531456,
+      "initial_sha256": "bf03f97d1537f8aac074e2652d3513ebff0822b3fb84f13fe4c0fab43157bcba",
+      "e1_sha256": "46533416133e55f84faec3380d22c160b2b33927ac8c67fbfa93bf799bf8416c",
+      "e10_sha256": "99c2d9f9f4cacffd685c7fc418aa18ac4e6573a7cd14499dec1065f53a19d97c",
+      "official_to_e1": {
+        "l1_sum": 12.829154396481158,
+        "l2_norm": 0.02942724481547889,
+        "max_abs": 0.00011722510680556297
+      },
+      "official_to_e10": {
+        "l1_sum": 48.521818231586735,
+        "l2_norm": 0.12312938134885151,
+        "max_abs": 0.0009568873792886734
+      }
+    },
+    {
+      "parameter_name": "head_pose.proj.layers.1.bias",
+      "module": "head_pose.proj",
+      "shape": [
+        519
+      ],
+      "numel": 519,
+      "initial_sha256": "1175bc20a42d3f83137d86c774775257473586744f63ffe915ddf1707b07a541",
+      "e1_sha256": "9f317f83bebdb8a689733025c883872f3e3e468dda8d3f242d59f7f678e3bc34",
+      "e10_sha256": "7438343fe86787d1ce401e13ae28f44a60c360730ddf5aeefdd85932104f783b",
+      "official_to_e1": {
+        "l1_sum": 0.01930739073031873,
+        "l2_norm": 0.0011994330675171505,
+        "max_abs": 0.00010917475447058678
+      },
+      "official_to_e10": {
+        "l1_sum": 0.06266928600962274,
+        "l2_norm": 0.004439706080399412,
+        "max_abs": 0.0008697635494172573
+      }
+    },
+    {
+      "parameter_name": "head_camera.proj.layers.0.0.weight",
+      "module": "head_camera.proj",
+      "shape": [
+        1024,
+        1024
+      ],
+      "numel": 1048576,
+      "initial_sha256": "553a412f43eecb158dcaee81fbc345072cd91d1bcafb80ead1d24ab23d6c2961",
+      "e1_sha256": "2caec5773b552f40282caddfffd3c7a6d538b97dfe465cb867ae5119dbbcc035",
+      "e10_sha256": "dd0dfbbd6d6395a6181ed31f4dcc3c7d1c89d359e5ffb89b8de661a2ef916ef9",
+      "official_to_e1": {
+        "l1_sum": 19.108125872350115,
+        "l2_norm": 0.034413061738613124,
+        "max_abs": 0.00011798832565546036
+      },
+      "official_to_e10": {
+        "l1_sum": 62.38323696680163,
+        "l2_norm": 0.11983081568196852,
+        "max_abs": 0.0009190421551465988
+      }
+    },
+    {
+      "parameter_name": "head_camera.proj.layers.0.0.bias",
+      "module": "head_camera.proj",
+      "shape": [
+        1024
+      ],
+      "numel": 1024,
+      "initial_sha256": "9f2a1fa8bc21a9a0c1bbb7403dc76b4b5c524cca1fa9ad3a58ea73e79ce237e2",
+      "e1_sha256": "452ac47f65592823f1cc0ead12157292d40293ed8ce3fba12e34d35ed48d918c",
+      "e10_sha256": "658dd4a492e04203f9d5d17734c7afa052b8931a529157590492efa51e9ec296",
+      "official_to_e1": {
+        "l1_sum": 0.02126026831501804,
+        "l2_norm": 0.0012193466514281762,
+        "max_abs": 0.00011229421943426132
+      },
+      "official_to_e10": {
+        "l1_sum": 0.05056354697080678,
+        "l2_norm": 0.0031252091436957423,
+        "max_abs": 0.0006180107593536377
+      }
+    },
+    {
+      "parameter_name": "head_camera.proj.layers.1.weight",
+      "module": "head_camera.proj",
+      "shape": [
+        3,
+        1024
+      ],
+      "numel": 3072,
+      "initial_sha256": "f4fccbdc74b0e878382fa0ddaf36113d36ce9bdec3ae87dc025ef3eb44aab9d1",
+      "e1_sha256": "44f37ce8d066ae285ac83e02ce1c34df2439d3ac76cec51e52354f9db8adc7b3",
+      "e10_sha256": "22d2160e5b463fdd33a4341a21238aea983188f5ced72a23a01998643468ac7e",
+      "official_to_e1": {
+        "l1_sum": 0.053183956659268006,
+        "l2_norm": 0.0017892799232298601,
+        "max_abs": 0.0001086764968931675
+      },
+      "official_to_e10": {
+        "l1_sum": 0.18924801945468062,
+        "l2_norm": 0.006899950157401937,
+        "max_abs": 0.0008820821531116962
+      }
+    },
+    {
+      "parameter_name": "head_camera.proj.layers.1.bias",
+      "module": "head_camera.proj",
+      "shape": [
+        3
+      ],
+      "numel": 3,
+      "initial_sha256": "bffdd70b1effda8df20778a3b175827df4d8b5c991cf90a7839837620972a2e2",
+      "e1_sha256": "74d98efaf9506fddaaf5f0f4474cb93511780a3b67960c9aa2d2482a6585174d",
+      "e10_sha256": "7536b1fdbbb9cdeac1f8a92b3ba2cf67dd9abdea89b863c537457c586c58d6e5",
+      "official_to_e1": {
+        "l1_sum": 0.000155177665874362,
+        "l2_norm": 0.00010894302180725845,
+        "max_abs": 9.419652633368969e-05
+      },
+      "official_to_e10": {
+        "l1_sum": 0.00046610040590167046,
+        "l2_norm": 0.00032172742318129204,
+        "max_abs": 0.00029388442635536194
+      }
+    }
+  ],
+  "conclusion": "The entire 519-output pose projection FFN and 3-output camera projection FFN were trainable. Output-block freezing was not implemented."
+}

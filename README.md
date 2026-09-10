@@ -1,6 +1,6 @@
 # 按摩理疗机器人
 
-> **网页端最新交付（2026-09-10）：** [公开 RGB-D Surface 微调 Pilot V1](docs/handoffs/real-scene-2026-09-09/public-rgbd-surface-finetuning-pilot-v1/README.md)。Gate 为 `PASS_REAL_RGBD_SURFACE_FINETUNING_PILOT`：E1 在 5 名 SEALED HuMMan 真人上将 feed-forward subject-macro point-to-triangle 误差从 58.72 mm 降至 27.54 mm，3/5 人改善，P90/P95 同向改善；只训练 pose/camera 输出头，无 test-time fitting。当前仍有两名低初始误差个体退化，且不代表治疗床裸背或穴位精度。
+> **网页端最新交付（2026-09-10）：** [公开 RGB-D Surface 微调 V1 复盘与修正门](docs/handoffs/real-scene-2026-09-10/public-rgbd-surface-finetuning-v1-postmortem/README.md)。Gate 为 `V1_SIGNAL_CONFIRMED_BUT_ATTRIBUTION_UNRESOLVED`：固定评分确认 E1 的 surface 改善与旧测试结果，但实际训练了整个 MHR pose 投影头，shape/scale/hand 均变化，且大部分收益由整体平移解释。历史 Pilot 信号保留，归因已修正；下一轮训练暂缓。
 项目源码、工程文档与交付资料的统一版本管理入口。
 
 > **最新研究边界：** 原模型/第2轮/第10轮的旧 fitted-only 结果不支持主指标提升；修正版 Visible A/B V2 已完成 10 轮，epoch5 的 NME 为 0.034273，epoch10 的 PCK05 为 0.812213。当前证据只到 COCO 来源二维关节 validation，不能宣称 Mesh surface、DMD37 或医学准确性。

@@ -1,0 +1,18 @@
+{
+  "status": "SOURCE_TRACED",
+  "model_input": ["RGB crop produced by prepare_batch", "camera intrinsic matrix K", "bbox-derived condition information inside the SAM3D pipeline"],
+  "preprocessing_support": ["HuMMan kinect person mask", "HuMMan depth image", "depth-to-color calibration", "registered person point cloud"],
+  "trace": [
+    {"stage": "dataset", "evidence": "qa_cache_nonsealed_workset.py reads kinect_depth and kinect_mask"},
+    {"stage": "registration", "evidence": "registered_person_points(depth, mask_depth, depth_camera, color_camera, rgb shape) projects valid person depth into color coordinates and creates mask_color"},
+    {"stage": "ROI", "evidence": "bbox_a = geometry.mask_bbox(mask_color)"},
+    {"stage": "cached observation", "evidence": "rgb_a, bbox_a, K_a and points_a are stored together"},
+    {"stage": "training/inference", "evidence": "train_rgbd_surface.py passes bbox_a into prepare_batch and K_a as cam_int; depth and mask arrays are not passed to model.forward_step"},
+    {"stage": "camera translation", "evidence": "PerspectiveHead derives pred_cam_t using predicted s/tx/ty together with bbox center, bbox size and K"}
+  ],
+  "depth_used_as_model_input": false,
+  "mask_used_as_model_input": false,
+  "depth_and_mask_used_to_supply_roi": true,
+  "correct_claim": "Under a dataset-provided person ROI derived from HuMMan depth/person-mask registration, RGB+K feed-forward MHR improved.",
+  "prohibited_overclaim": "The experiment does not establish an automatic full-frame RGB-only system because no RGB detector supplied the ROI."
+}

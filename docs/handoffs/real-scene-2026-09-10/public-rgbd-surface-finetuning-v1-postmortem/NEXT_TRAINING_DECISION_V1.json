@@ -1,0 +1,26 @@
+{
+  "status": "DO_NOT_LAUNCH_NEXT_TRAINING_YET",
+  "reason": "The pilot signal survives fixed measurement, but attribution is dominated by translation and the claimed output freeze was false; the current approximate loss is also noisy at 4096 samples.",
+  "required_before_training": [
+    "Implement and prove output-block freezing by exact equality of Official and trainable-model shape/scale/hand outputs when pose/camera-only is claimed.",
+    "Use a deterministic fixed observation manifest and deterministic or sufficiently stable mesh-surface sampling.",
+    "Keep Official and TRAIN-only constant Txyz calibration as mandatory baselines.",
+    "Add a topology-hash-matched MHR body-part segmentation before making torso claims."
+  ],
+  "next_controlled_training_after_prerequisites": {
+    "worth_running": true,
+    "single_primary_variable": "surface supervision view count: single-view versus synchronized multi-view",
+    "held_constant": [
+      "subjects/splits",
+      "initial checkpoint",
+      "trainable output blocks",
+      "loss",
+      "sampling",
+      "optimizer",
+      "epochs",
+      "evaluation manifest"
+    ],
+    "why": "It tests whether multi-view surface evidence improves local geometry beyond camera/root translation without mixing decoder, LoRA, synthetic data, or subject-count changes."
+  },
+  "new_untouched_test_use": "Only after the experiment and checkpoint rule are frozen; the historical SEALED split remains consumed."
+}

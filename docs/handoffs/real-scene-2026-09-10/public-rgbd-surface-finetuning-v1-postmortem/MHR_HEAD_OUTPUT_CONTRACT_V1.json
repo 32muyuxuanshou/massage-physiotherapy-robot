@@ -1,0 +1,16 @@
+{
+  "status": "SOURCE_VERIFIED",
+  "source": "sam_3d_body/models/heads/mhr_head.py",
+  "head_pose_projection_output_dimension": 519,
+  "blocks": [
+    {"field": "global_rotation_6d", "range": "[0,6)", "dimension": 6, "used": true, "conversion": "rot6d -> rotation matrix -> ZYX Euler global_rot"},
+    {"field": "body_pose_continuous", "range": "[6,266)", "dimension": 260, "used": true, "conversion": "compact_cont_to_model_params_body; hand and jaw entries are zeroed; MHR consumes first 130 body parameters"},
+    {"field": "shape", "range": "[266,311)", "dimension": 45, "used": true, "conversion": "passed directly as shape_params to MHR"},
+    {"field": "scale", "range": "[311,339)", "dimension": 28, "used": true, "conversion": "scale_mean + scale_params @ scale_comps produces 68 MHR scale values"},
+    {"field": "left_and_right_hand", "range": "[339,447)", "dimension": 108, "used": true, "conversion": "54 coefficients per hand; converted and inserted into full pose"},
+    {"field": "face_expression", "range": "[447,519)", "dimension": 72, "used": false, "conversion": "explicitly multiplied by zero before MHR"}
+  ],
+  "skeleton_related_conclusion": "There is no separately named skeleton output block. The 28 scale coefficients generate 68 scale values that enter MHR model_params and therefore alter skeletal/body proportions; joint coordinates also depend on pose, scale and shape.",
+  "camera_head": {"projection_output_dimension": 3, "native_fields": ["s", "tx", "ty"], "derived_pred_cam_t": "[tx+cx, ty+cy, 2*focal_length/(bbox_size*s)]", "dataset_dependencies": ["bbox center", "bbox size", "camera intrinsics"]},
+  "audit_conclusion": "Training all of head_pose.proj permits global rotation, body pose, shape, scale and hand coefficients to change together. Module-level freezing did not freeze shape, scale or skeleton-related effects."
+}

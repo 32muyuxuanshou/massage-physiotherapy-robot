@@ -1,0 +1,7 @@
+{
+  "status": "NOT_DETERMINABLE_WITH_AVAILABLE_RELIABLE_MAPPING",
+  "requested_regions": ["torso", "upper_torso", "lower_torso", "arms", "legs"],
+  "evidence": "The audited SAM 3D Body/MHR repository and supplied assets expose mesh faces and kinematic data but no reviewed vertex-to-body-part segmentation contract.",
+  "decision": "No coordinate threshold or hand-authored medical/torso region was invented. Per-region Official-versus-E1 error is therefore not reported.",
+  "needed_for_future": "A versioned MHR vertex/face segmentation whose topology hash matches the deployed MHR asset."
+}

@@ -1,0 +1,102 @@
+{
+  "task": "PUBLIC_RGBD_SURFACE_FINETUNING_V1_POSTMORTEM_AND_CORRECTION_GATE",
+  "status": "COMPLETE",
+  "final_postmortem_gate": "V1_SIGNAL_CONFIRMED_BUT_ATTRIBUTION_UNRESOLVED",
+  "historical_pass_disposition": "CONFIRMED_WITH_CORRECTED_ATTRIBUTION",
+  "historical_artifacts_modified": false,
+  "fixed_measurement": {
+    "official_primary_mm": 59.66545021308548,
+    "e1_primary_mm": 29.741269763691577,
+    "historical_e1_primary_mm": 29.7456,
+    "fixed_best_epoch": "E1",
+    "historical_best_confirmed": true,
+    "frames_using_all_valid_points": 14,
+    "frames_hitting_25000_cap": 1
+  },
+  "consumed_test_posthoc": {
+    "label": "CONSUMED_TEST_POSTHOC_ANALYSIS",
+    "official_primary_mm": 58.711391443781146,
+    "historical_e1_primary_mm": 27.53712870401352,
+    "result_still_holds": true,
+    "checkpoint_reselection_performed": false
+  },
+  "actual_trainable_scope": {
+    "parameters": [
+      "head_pose.proj.weight",
+      "head_pose.proj.bias",
+      "head_camera.proj.weight",
+      "head_camera.proj.bias"
+    ],
+    "numel": 2634250,
+    "description": "entire 519-D MHR pose projection plus camera projection; not output-block pose/camera-only freezing"
+  },
+  "output_freeze_answers": {
+    "shape_frozen": false,
+    "scale_frozen": false,
+    "skeleton_frozen": "NO_INDEPENDENT_SKELETON_BLOCK; derived 68-D MHR scales changed, so body-proportion output was not frozen",
+    "changed": [
+      "pred_cam_t",
+      "global_rot",
+      "body_pose",
+      "shape",
+      "scale",
+      "derived_mhr_scales",
+      "hand",
+      "pred_vertices"
+    ],
+    "unchanged": [
+      "face (forced to zero in forward)"
+    ]
+  },
+  "roi_contract": {
+    "model_inputs": [
+      "cropped RGB",
+      "camera intrinsics K",
+      "bbox center/size"
+    ],
+    "dataset_support": [
+      "HuMMan mask_color/person mask registered with Depth supplies bbox/ROI"
+    ],
+    "correct_claim": "Under a dataset-provided person ROI, RGB+K feed-forward MHR surface improved."
+  },
+  "benefit_source": {
+    "val_absolute_official_to_e1_mm": [
+      59.901296261510744,
+      29.865641437498766
+    ],
+    "val_translation_aligned_official_to_e1_mm": [
+      23.13295002792781,
+      19.892902680879647
+    ],
+    "absolute_gain_explained_by_translation_fraction": 0.8921,
+    "train_only_constant_bias_val_mm": 40.300501043719485,
+    "interpretation": "Most absolute gain is root/camera translation correction; a smaller residual aligned gain remains, but pose/shape/scale contributions are not isolated."
+  },
+  "coverage": {
+    "e1_improvement_due_to_lower_overall_coverage": false,
+    "official_subject_median_coverage": 0.74569,
+    "e1_subject_median_coverage": 0.74919,
+    "common_coverage_error_official_to_e1_mm": [
+      78.36,
+      36.8
+    ],
+    "failed_subjects": [
+      "p000757",
+      "p000830"
+    ]
+  },
+  "surface_loss": {
+    "exact_point_to_triangle": false,
+    "sampling": "uniform face-index sampling with random barycentric points",
+    "perfect_geometry_floor_mm_equivalent": {
+      "4096": 1.5938,
+      "8192": 0.7553,
+      "16384": 0.3344
+    },
+    "directional_translation_tests_passed": true,
+    "kinematic_pose_direction_test": "NOT_DETERMINABLE_WITH_TOY_MESH",
+    "area_weighted_replacement": "NOT_JUSTIFIED_BY_CURRENT_EVIDENCE"
+  },
+  "body_part_result": "NOT_DETERMINABLE_WITH_AVAILABLE_RELIABLE_MAPPING",
+  "next_action": "Do not launch a new formal training run until deterministic surface supervision/evaluation and exact output-block freezing are implemented and verified."
+}

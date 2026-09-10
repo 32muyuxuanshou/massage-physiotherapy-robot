@@ -1,0 +1,30 @@
+{
+  "status": "AUDITED_FROM_HISTORICAL_TRAINING_CODE",
+  "implementation": "train_rgbd_surface.py::robust_surface_loss",
+  "observation_sampling": {
+    "method": "uniform without replacement over cached person-mask depth points",
+    "requested_samples": 2048,
+    "actual_samples": "min(number of observations, 2048)"
+  },
+  "mesh_sampling": {
+    "triangle_distribution": "uniform by face index without replacement",
+    "area_weighted": false,
+    "requested_faces": 4096,
+    "actual_faces": "min(number of faces, 4096)",
+    "point_within_triangle": "Dirichlet(1,1,1) barycentric sample"
+  },
+  "nearest_operation": "torch.cdist from sampled observations to sampled mesh points, followed by amin over sampled mesh points",
+  "robust_penalty": "Huber with delta 0.03 m",
+  "direction": "one-sided observation-to-predicted-surface",
+  "seed_contract": "stable_seed(protocol seed, observation id, epoch); both observation and mesh samples therefore change across epochs",
+  "differentiability": "Piecewise differentiable through selected barycentric samples into vertices and upstream heads. Sampling indices and nearest-sample argmin are discrete.",
+  "is_exact_point_to_triangle": false,
+  "material_findings": [
+    "The training loss has a nonzero Monte Carlo floor even for perfect coplanar geometry.",
+    "On the controlled unequal-area mesh, increasing 4096 to 16384 samples reduced the mean perfect-geometry floor from 1.59 mm-equivalent to 0.33 mm-equivalent.",
+    "For a fixed +30 mm perturbation, adjacent-seed full-vertex gradient cosine rose from about 0.36 at 4096 samples to about 0.70 at 16384 samples.",
+    "Area weighting slightly reduced the floor at 4096/8192 but did not materially improve perturbed-gradient cosine in this test."
+  ],
+  "decision": "MEASUREMENT_OR_IMPLEMENTATION_ISSUE_FOR_NEXT_TRAINING",
+  "recommendation": "Before another SAM training run, freeze sampling for controlled comparisons and evaluate a higher sample count. Do not replace with area weighting solely from this toy result; validate on MHR DEV geometry first."
+}

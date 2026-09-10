@@ -1,0 +1,27 @@
+{
+  "status": "FROZEN_DESCRIPTION_OF_ACTUAL_V1_CODE",
+  "primary_metric_exact_name": "subject-equal mean of per-subject medians of per-frame observed-to-exact-triangle surface median distance",
+  "unit": "mm",
+  "direction": "lower_is_better",
+  "pipeline": [
+    "For each frame, compute one-sided distance from every fixed observed Camera-B person point to the nearest exact MHR mesh triangle.",
+    "Reduce point distances to that frame's median.",
+    "For each subject, take the median of its three frame medians.",
+    "Take the arithmetic mean across subjects, giving every subject equal weight."
+  ],
+  "historical_code_key": "point_to_triangle_mean_of_subject_frame_medians_mm",
+  "tail_contract": {
+    "subject_p90": "P90 across the subject values described above; with five subjects this is descriptive only.",
+    "within_frame_p90": "For every frame take point-distance P90, then median across frames per subject, then mean across subjects.",
+    "within_frame_p95": "For every frame take point-distance P95, then median across frames per subject, then mean across subjects."
+  },
+  "rendered_depth_contract": "Per frame median absolute Z residual on mesh-covered observed pixels; median across frames per subject; arithmetic mean across subjects. Coverage is the median of per-subject median coverage.",
+  "not_equivalent_to": [
+    "global median over all points",
+    "mean vertex error",
+    "symmetric Chamfer distance",
+    "back-only error",
+    "medical landmark accuracy"
+  ],
+  "sampling_correction": "Postmortem scoring freezes the same point indices for Official and E1-E10. Fourteen of fifteen VAL frames contain at most 25,000 points and therefore already use all points; only one VAL frame is sampling-sensitive."
+}
