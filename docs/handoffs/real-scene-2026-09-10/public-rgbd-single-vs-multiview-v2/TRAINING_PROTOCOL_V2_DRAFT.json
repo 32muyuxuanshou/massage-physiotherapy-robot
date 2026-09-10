@@ -1,0 +1,28 @@
+{
+  "status": "PRE_REGISTERED_BLOCKED_UNTIL_READINESS",
+  "readiness_gate": "NOT_READY",
+  "seed": 20260910,
+  "paired_seeds": [20260910, 20260911],
+  "input_contract": "Camera A RGB + Camera A K + identical dataset ROI",
+  "surface_budget": {
+    "total_predicted_anchors_per_update": 16384,
+    "total_observed_depth_points_per_update": 2048,
+    "normalization": "mean within each view, then mean across views"
+  },
+  "arms": {
+    "S": {"views": ["A"], "anchor_counts": [16384], "observed_point_caps": [2048]},
+    "M": {"views": ["A", "B"], "anchor_counts": [8192, 8192], "observed_point_caps": [1024, 1024]}
+  },
+  "loss": {
+    "huber_delta_m": 0.03,
+    "weights": {"surface": 1.0, "teacher_joint_2d": 0.02, "teacher_relative_3d": 0.2, "head_anchor": 0.0001}
+  },
+  "optimizer": {"type": "AdamW", "lr": 0.00002, "weight_decay": 0.0001, "gradient_clip_norm": 1.0},
+  "smoke_updates": 2,
+  "max_updates": 540,
+  "validation_every_n_updates": 60,
+  "early_stop_patience_validations": 3,
+  "update_order": "For each seed, independently shuffle all 180 frozen TRAIN rows once per cycle using SHA256(seed:update-order:cycle) into numpy PCG64; concatenate three cycles. S/M with the same seed use an identical order. Resume verifies the full-order SHA256.",
+  "selection_rule": "Within each arm select the lowest subject-equal absolute camera-space surface error on fixed VAL, subject to no severe P90/P95 or coverage reversal. Compare S/M by the median trend across paired seeds. Translation-aligned is diagnostic only.",
+  "formal_training_authorized": false
+}

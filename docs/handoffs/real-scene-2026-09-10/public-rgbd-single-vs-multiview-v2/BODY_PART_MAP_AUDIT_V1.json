@@ -1,0 +1,53 @@
+{
+  "schema": "BODY_PART_MAP_AUDIT_V1",
+  "status": "PASS_ENGINEERING_MAP_CREATED",
+  "source": {
+    "asset_path_at_audit": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/assets/mhr_model.pt",
+    "torchscript_methods_used": [
+      "get_joint_names",
+      "get_lbsw"
+    ],
+    "mesh_faces_source": "character_torch.mesh.faces"
+  },
+  "contract_checks": {
+    "all_127_joint_names_mapped_once": true,
+    "lbs_shapes_match": true,
+    "lbs_weight_sum_max_abs_error": 1.1920928955078125e-07,
+    "face_vertex_indices_in_range": true,
+    "all_vertices_assigned": true,
+    "all_faces_assigned": true
+  },
+  "topology_binding": {
+    "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+    "joint_names_sha256_compact_json_utf8": "672098f8bbe32323d8b8ca878247ad489aa48a5db866769f82ec6134cf400ce7",
+    "vertex_count": 18439,
+    "face_count": 36874,
+    "joint_count": 127,
+    "lbs_influences_per_vertex": 8
+  },
+  "counts": {
+    "vertices": {
+      "torso": 2122,
+      "arms": 1638,
+      "legs": 2224,
+      "head": 5533,
+      "hands_feet": 6922
+    },
+    "faces": {
+      "torso": 4250,
+      "arms": 3264,
+      "legs": 4432,
+      "head": 11068,
+      "hands_feet": 13860
+    }
+  },
+  "decision": {
+    "coarse_engineering_body_parts": "DETERMINABLE",
+    "upper_vs_lower_torso": "NOT_DETERMINABLE",
+    "front_vs_back_torso": "NOT_DETERMINABLE",
+    "medical_or_acupuncture_regions": "NOT_DETERMINABLE"
+  },
+  "map_json_sha256": "827d15785aa496e3f138f744f6f5513304632445aecd46acaa95164354ee7165",
+  "map_npz_sha256": "d503771b16ae9a7d948691478c611cba7eb6c86934638c7a575b697f2705ad42"
+}

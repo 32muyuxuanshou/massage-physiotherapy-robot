@@ -1,0 +1,34 @@
+{
+  "status": "FROZEN_TOPOLOGY_BOUND_ANCHORS",
+  "algorithm": "numpy PCG64 uniform face-index without replacement when topology permits; Dirichlet(1,1,1) barycentric",
+  "seed": 20260910,
+  "anchor_count": 16384,
+  "topology": {
+    "vertex_count_index_bound": 18439,
+    "face_count": 36874,
+    "faces_sha256": "0e47f537d5e48ef99092c6631963ca4c31c9ec59d1cfaa20cefc9ce41d518b84",
+    "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "official_checkpoint_sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056"
+  },
+  "arrays": {
+    "face_index": {
+      "dtype": "int64",
+      "shape": [
+        16384
+      ],
+      "sha256": "288d658dfc791fae63e81b704170b678d8e9c68f199e5b9bdb84229f3e095b0c"
+    },
+    "barycentric": {
+      "dtype": "float32",
+      "shape": [
+        16384,
+        3
+      ],
+      "sha256": "23054af1ce137268a516d30c25b1c7f27f1fbf87e59080fa1c9f060b7cdbac56"
+    }
+  },
+  "binary_file": "MHR_DETERMINISTIC_SURFACE_ANCHORS_V1.npz",
+  "binary_sha256": "e949e9f42739efd9d6fd62db9fa41aca4a6f590c63625bcae9bef435879c1971",
+  "reuse_contract": "The exact same binary and ordered anchors are used by S and M for every update, epoch and seed.",
+  "generator_sha256": "0319dace92100fdd44b3c1398cfebe11d543623a83a71f56ee30fdb33042de24"
+}

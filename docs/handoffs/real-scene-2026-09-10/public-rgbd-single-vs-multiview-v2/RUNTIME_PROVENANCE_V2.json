@@ -1,0 +1,24 @@
+{
+  "task": "RUNTIME_PROVENANCE_V2",
+  "status": "FROZEN_RUNTIME_PROVENANCE",
+  "server": "172.18.18.151:436",
+  "python": "/raid5/xuhd/sam3d_s01_pilot_20260906/venv/bin/python",
+  "torch": "2.4.0+cu121",
+  "cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 2080 Ti",
+  "sam_repo": "/raid5/xuhd/sam3d_s01_pilot_20260906/sam-3d-body",
+  "checkpoint": {
+    "path": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/model.ckpt",
+    "sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056"
+  },
+  "mhr": {
+    "path": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/assets/mhr_model.pt",
+    "sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc"
+  },
+  "runtime_sources": {
+    "/raid5/xuhd/sam3d_s01_pilot_20260906/sam-3d-body/sam_3d_body/models/heads/mhr_head.py": "1e4b5482f78b337a2c739c945f29a02f579b3aca99523f69f5436c3f1e394bf8",
+    "/raid5/xuhd/sam3d_s01_pilot_20260906/sam-3d-body/sam_3d_body/models/heads/camera_head.py": "57d8e60f1073eab798dc4910a33a5df186ab600fb5496b186c1e5b3bf4c2daf0"
+  },
+  "test_code_sha256": "3791293aff711cfec9a232a1b64eded62bbfba996efcb586d9bb042c21634961",
+  "freeze_code_sha256": "c82980862821af57849ea2b2f91eeeb13bf46eb9c6d9a6a97d97efae93faeca1"
+}

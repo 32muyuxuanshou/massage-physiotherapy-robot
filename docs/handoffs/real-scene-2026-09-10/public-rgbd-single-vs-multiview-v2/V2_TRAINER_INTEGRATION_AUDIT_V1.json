@@ -1,0 +1,71 @@
+{
+  "task": "V2_TRAINER_INTEGRATION_AUDIT_V1",
+  "status": "PASS_S_AND_M_2_UPDATE_SMOKE_NO_FORMAL_TRAINING",
+  "dry_run": {
+    "arm_S": "DRY_RUN_VALID",
+    "arm_M": "DRY_RUN_VALID"
+  },
+  "implemented": [
+    "runtime-derived pose output contract and exact non-target clamp",
+    "Official six-stage per-input reference capture before updates",
+    "S uses Camera A RGB/K/ROI and Camera A depth supervision",
+    "M uses the same Camera A RGB/K/ROI and Camera A plus synchronized Camera B depth supervision",
+    "16384 total deterministic predicted surface anchors per update in both arms",
+    "2048 total observed depth points per update in both arms",
+    "within-view mean followed by across-view mean",
+    "V1-equivalent surface, teacher 2D, pelvis-relative teacher 3D, and head-anchor components",
+    "AdamW forbidden-row restoration and optimizer-state clearing after every update",
+    "update-based max budget and checkpoint provenance hashes",
+    "SEALED and FINAL_RESERVE remain unopened",
+    "fixed-manifest VAL exact point-to-triangle evaluation",
+    "XYZ-only translation-aligned diagnostic",
+    "rendered-depth coverage",
+    "periodic validation and checkpointing",
+    "early stopping by fixed VAL primary",
+    "resume with protocol/workset/seed/update-order hash verification",
+    "deterministic cycle-shuffled update order shared by paired S/M arms"
+  ],
+  "arm_budget": {
+    "S": {
+      "anchors": {
+        "A": 16384
+      },
+      "observed_points": {
+        "A": 2048
+      }
+    },
+    "M": {
+      "anchors": {
+        "A": 8192,
+        "B": 8192
+      },
+      "observed_points": {
+        "A": 1024,
+        "B": 1024
+      }
+    }
+  },
+  "blocking_reason": null,
+  "formal_training_started": false,
+  "scientific_limit": "Exact non-target invariance requires a cached Official reference for training samples and an Official reference pass for unseen inputs.",
+  "smoke": {
+    "updates_each": 2,
+    "seed": 20260910,
+    "identical_update_order_sha256": "4623cfc7002ff80ced2ce3c79a7c64e448fb9e4de2f021e9d655e12727c22f72",
+    "fixed_val_rows": 1,
+    "exact_forbidden_outputs_both_arms": true,
+    "periodic_checkpoint_written": true,
+    "resume_from_periodic_checkpoint_passed": true,
+    "resume_completed_updates": 2
+  },
+  "formal_protocol": {
+    "max_updates": 540,
+    "validation_every_n_updates": 60,
+    "early_stop_patience_validations": 3,
+    "paired_seeds": [
+      20260910,
+      20260911
+    ],
+    "cycles": 3
+  }
+}

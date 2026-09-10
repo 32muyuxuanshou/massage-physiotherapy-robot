@@ -1,0 +1,284 @@
+{
+  "task": "POSE_CAMERA_OUTPUT_BLOCK_FREEZE_TEST_V1",
+  "status": "PASS_EXACT_OUTPUT_FREEZE",
+  "created_at": "2026-09-10T04:31:51.815640+00:00",
+  "optimizer_steps": 100,
+  "fixed_input": {
+    "kind": "real HuMMan RGB with dataset ROI and K",
+    "observation": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/nonsealed_rgbd_qa_cache_v1/sample_cache/train/p000924_a000081_f000026.npz",
+    "sha256": "dd37195ed7a5ddb3b7297cd9d8ff7b6c9ba374adf672f6d8d74d9738f2ac8e5c"
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 0.0002,
+    "weight_decay": 0.1,
+    "betas": [
+      0.9,
+      0.999
+    ]
+  },
+  "runtime_output_contract": [
+    {
+      "name": "global_rotation_6d",
+      "range": [
+        0,
+        6
+      ],
+      "dimension": 6,
+      "trainable": true
+    },
+    {
+      "name": "body_pose_continuous",
+      "range": [
+        6,
+        266
+      ],
+      "dimension": 260,
+      "trainable": true
+    },
+    {
+      "name": "shape",
+      "range": [
+        266,
+        311
+      ],
+      "dimension": 45,
+      "trainable": false
+    },
+    {
+      "name": "scale_coefficients",
+      "range": [
+        311,
+        339
+      ],
+      "dimension": 28,
+      "trainable": false
+    },
+    {
+      "name": "hands",
+      "range": [
+        339,
+        447
+      ],
+      "dimension": 108,
+      "trainable": false
+    },
+    {
+      "name": "face_expression",
+      "range": [
+        447,
+        519
+      ],
+      "dimension": 72,
+      "trainable": false
+    }
+  ],
+  "method": "freeze pose hidden layers; mask final pose Linear gradients; after every optimizer step exactly restore forbidden rows and zero same-shaped AdamW state rows; at every iterative decoder call clamp forbidden raw outputs to cached Official per-input/per-stage values; train full camera FFN",
+  "official_reference_projection_calls": 6,
+  "checkpoints": {
+    "0": {
+      "outputs": {
+        "global_rotation": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "body_pose": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "camera_raw": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "camera_translation": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "shape": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "scale": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "derived_mhr_scales": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "hand": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "face": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        }
+      },
+      "frozen_parameter_rows": {
+        "pose_final.weight": true,
+        "pose_final.bias": true
+      }
+    },
+    "1": {
+      "loss": 29.29106330871582,
+      "outputs": {
+        "global_rotation": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 0.029902935028076172
+        },
+        "body_pose": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 0.1787685751914978
+        },
+        "camera_raw": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 0.1130291223526001
+        },
+        "camera_translation": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 0.17096197605133057
+        },
+        "shape": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "scale": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "derived_mhr_scales": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "hand": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "face": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        }
+      },
+      "frozen_parameter_rows": {
+        "pose_final.weight": true,
+        "pose_final.bias": true
+      }
+    },
+    "10": {
+      "loss": 24.450891494750977,
+      "outputs": {
+        "global_rotation": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 0.14929914474487305
+        },
+        "body_pose": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 1.3827261924743652
+        },
+        "camera_raw": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 0.8693383932113647
+        },
+        "camera_translation": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 3.1468238830566406
+        },
+        "shape": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "scale": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "derived_mhr_scales": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "hand": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "face": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        }
+      },
+      "frozen_parameter_rows": {
+        "pose_final.weight": true,
+        "pose_final.bias": true
+      }
+    },
+    "100": {
+      "loss": 4.298139572143555,
+      "outputs": {
+        "global_rotation": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 3.0305557250976562
+        },
+        "body_pose": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 1.689748764038086
+        },
+        "camera_raw": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 1.1975114345550537
+        },
+        "camera_translation": {
+          "tensor_exact_equal": false,
+          "max_abs_delta": 10.960647583007812
+        },
+        "shape": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "scale": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "derived_mhr_scales": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "hand": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        },
+        "face": {
+          "tensor_exact_equal": true,
+          "max_abs_delta": 0.0
+        }
+      },
+      "frozen_parameter_rows": {
+        "pose_final.weight": true,
+        "pose_final.bias": true
+      }
+    }
+  },
+  "forbidden_fields": [
+    "shape",
+    "scale",
+    "derived_mhr_scales",
+    "hand",
+    "face"
+  ],
+  "allowed_fields": [
+    "global_rotation",
+    "body_pose",
+    "camera_raw",
+    "camera_translation"
+  ],
+  "forbidden_outputs_exact_all_checkpoints": true,
+  "forbidden_parameter_rows_exact_all_checkpoints": true,
+  "allowed_outputs_changed": {
+    "global_rotation": true,
+    "body_pose": true,
+    "camera_raw": true,
+    "camera_translation": true
+  },
+  "determinism": {
+    "torch_use_deterministic_algorithms_warn_only": true,
+    "model_mode": "eval"
+  }
+}

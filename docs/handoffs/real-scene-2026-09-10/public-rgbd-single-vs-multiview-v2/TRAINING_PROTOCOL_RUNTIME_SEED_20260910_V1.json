@@ -1,0 +1,82 @@
+{
+  "status": "FROZEN_FOR_FORMAL_TRAINING",
+  "readiness_gate": "READY_FOR_SINGLE_MULTI_AB",
+  "seed": 20260910,
+  "paired_seeds": [
+    20260910,
+    20260911
+  ],
+  "input_contract": "Camera A RGB + Camera A K + identical dataset ROI",
+  "surface_budget": {
+    "total_predicted_anchors_per_update": 16384,
+    "total_observed_depth_points_per_update": 2048,
+    "normalization": "mean within each view, then mean across views"
+  },
+  "arms": {
+    "S": {
+      "views": [
+        "A"
+      ],
+      "anchor_counts": [
+        16384
+      ],
+      "observed_point_caps": [
+        2048
+      ]
+    },
+    "M": {
+      "views": [
+        "A",
+        "B"
+      ],
+      "anchor_counts": [
+        8192,
+        8192
+      ],
+      "observed_point_caps": [
+        1024,
+        1024
+      ]
+    }
+  },
+  "loss": {
+    "huber_delta_m": 0.03,
+    "weights": {
+      "surface": 1.0,
+      "teacher_joint_2d": 0.02,
+      "teacher_relative_3d": 0.2,
+      "head_anchor": 0.0001
+    }
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 2e-05,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0
+  },
+  "smoke_updates": 2,
+  "max_updates": 540,
+  "validation_every_n_updates": 60,
+  "early_stop_patience_validations": 3,
+  "update_order": "For each seed, independently shuffle all 180 frozen TRAIN rows once per cycle using SHA256(seed:update-order:cycle) into numpy PCG64; concatenate three cycles. S/M with the same seed use an identical order. Resume verifies the full-order SHA256.",
+  "selection_rule": {
+    "per_run_checkpoint": "minimum fixed-VAL subject-equal absolute exact point-to-triangle median, eligible only if P90 and P95 are each <= 1.10x Official and median coverage is no more than 0.02 below Official",
+    "arm_comparison": "compare arithmetic mean of the two paired-seed best eligible primary metrics; M material gain requires >=2.0 mm lower than S and M<=S for both paired seeds",
+    "diagnostic": "translation-aligned result determines placement-only versus non-translation interpretation and is not used to select checkpoint",
+    "sealed_candidate": "after arm winner is frozen, use seed 20260910 best eligible checkpoint as predesignated deployment candidate; seed 20260911 is stability replication",
+    "tie": "absolute arm difference <2.0 mm => NO_MATERIAL_MULTIVIEW_GAIN; select S as simpler deployment arm"
+  },
+  "formal_training_authorized": true,
+  "tail_and_coverage_thresholds": {
+    "p90_relative_to_official_max": 1.1,
+    "p95_relative_to_official_max": 1.1,
+    "coverage_absolute_drop_from_official_max": 0.02
+  },
+  "data_budget": {
+    "train_subjects": 60,
+    "train_rows": 180,
+    "val_subjects": 12,
+    "val_rows": 36,
+    "equivalent_epochs_at_max_updates": 3.0
+  }
+}

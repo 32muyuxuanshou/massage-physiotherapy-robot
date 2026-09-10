@@ -1,0 +1,87 @@
+{
+  "task": "PUBLIC_RGBD_SINGLE_VS_MULTIVIEW_SURFACE_FINETUNING_V2",
+  "status": "READY_FOR_SINGLE_MULTI_AB",
+  "created_date": "2026-09-10",
+  "historical_start_commit": "f9084fe6e2f3049679aff3813f756e9f205c506c",
+  "checks": {
+    "A_runtime_provenance": {
+      "status": "PASS",
+      "artifact": "RUNTIME_PROVENANCE_V2.json",
+      "sha256": "75a6d0bfc899ee664f7e22df79dd3289c54562cd3cddfaf6a21dadd75f27a61f"
+    },
+    "B_subject_split": {
+      "status": "PASS",
+      "artifact": "HUMMAN_V2_SUBJECT_SPLIT_V1.json",
+      "sha256": "5a0c9e1c1b6886e00d877e9ef84bb07b40662f16543de27d48d908add561acb2"
+    },
+    "C_new_sealed_untouched": {
+      "status": "PASS_IDENTITY_ONLY",
+      "artifact": "HUMMAN_V2_SUBJECT_SPLIT_V1.json",
+      "sha256": "5a0c9e1c1b6886e00d877e9ef84bb07b40662f16543de27d48d908add561acb2"
+    },
+    "D_final_reserve_untouched": {
+      "status": "PASS_IDENTITY_ONLY",
+      "artifact": "HUMMAN_V2_FINAL_RESERVE_MANIFEST_V1.json",
+      "sha256": "c4c1bb1b2f0c28b3af06c73dc06ff136bedb9d820ee6c2b07d0ed85618e2f2db"
+    },
+    "E_exact_output_freeze": {
+      "status": "PASS_EXACT_OUTPUT_FREEZE",
+      "artifact": "POSE_CAMERA_OUTPUT_BLOCK_FREEZE_TEST_V1.json",
+      "sha256": "46a07890d75966cdce75acdd1ec4a5bdfe96b260fb561fe97af022cd6e7cbd3c"
+    },
+    "F_deterministic_anchors": {
+      "status": "PASS",
+      "artifact": "DETERMINISTIC_SURFACE_SAMPLING_VALIDATION_V1.json",
+      "sha256": "677bf614d9a5119114d86568e297c6a785a723fec24c2af68e3e5a4ee917cfb2"
+    },
+    "G_gradient_budget": {
+      "status": "PASS",
+      "artifact": "SINGLE_MULTI_GRADIENT_BUDGET_AUDIT_V1.json",
+      "sha256": "17a0eea8de29038a3aa3f4016c05026ffcbfc6125665b8f8de441cb66bc82dfc"
+    },
+    "H_pair_geometry": {
+      "status": "PASS",
+      "artifact": "MULTIVIEW_GEOMETRY_QA_V1.json",
+      "sha256": "08343dcdf486e00969f84f269220a0a168ac015bef3ab0032ceaa058a01fb907"
+    },
+    "I_fixed_evaluation": {
+      "status": "PASS",
+      "artifact": "V2_FIXED_EVALUATION_MANIFEST.json",
+      "sha256": "9270ad406356ac8ca75b5a24d4fb5cc23c5da369df11b2f0b39acd932b1bae4e"
+    },
+    "J_train_only_txyz": {
+      "status": "PASS",
+      "artifact": "SIMPLE_TRANSLATION_BASELINE_V2.json",
+      "sha256": "ba0dbee67fcffc33ddf64e3acebccf7857d75909a1df120debdcbc24cda0112c"
+    },
+    "K_subject_leakage": {
+      "status": "PASS_ZERO_INTERSECTION",
+      "artifact": "HUMMAN_V2_SUBJECT_SPLIT_V1.json",
+      "sha256": "5a0c9e1c1b6886e00d877e9ef84bb07b40662f16543de27d48d908add561acb2"
+    },
+    "L_training_budget": {
+      "status": "PASS_PREREGISTERED",
+      "artifact": "TRAINING_PROTOCOL_SINGLE_V1.json",
+      "sha256": "2523e792997e32da1bdc73ac351b07a22958fad9fc55c8a1c8ba19afc936b965"
+    },
+    "M_selection_rule": {
+      "status": "PASS_PREREGISTERED",
+      "artifact": "TRAINING_PROTOCOL_MULTI_V1.json",
+      "sha256": "312c7de528a7afac91eb1f59d8e98c8bbab2b8d86777eef758eadea922352e91"
+    },
+    "N_trainer_smoke_resume": {
+      "status": "PASS",
+      "artifact": "V2_TRAINER_INTEGRATION_AUDIT_V1.json",
+      "sha256": "cec139eeac3939de682e2913654bfcaeb9464599abc9a5061744b35fb581a679"
+    }
+  },
+  "formal_runs_authorized": [
+    "S_seed20260910",
+    "M_seed20260910",
+    "S_seed20260911",
+    "M_seed20260911"
+  ],
+  "sealed_policy": "V2 SEALED remains identity-only until the VAL winner arm and predesignated seed/checkpoint are frozen. FINAL RESERVE remains unopened.",
+  "known_cost": "Exact non-target output invariance requires an Official reference pass on the same RGB; this remains single-image inference but is not a one-pass runtime.",
+  "new_download_gb": 0
+}

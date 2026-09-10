@@ -1,0 +1,29 @@
+{
+  "status": "PASS_DETERMINISTIC_SURFACE_ANCHORS",
+  "roundtrip_exact": true,
+  "barycentric_sum_max_abs_error": 1.1920928955078125e-07,
+  "face_indices_valid": true,
+  "barycentric_nonnegative": true,
+  "cost_benchmark": [
+    {
+      "arm": "single_16384",
+      "total_anchor_budget": 16384,
+      "view_anchor_budget": 16384,
+      "views": 1,
+      "median_forward_backward_ms": 7.547945016995072,
+      "median_peak_allocated_mib": 3419.8037109375,
+      "median_vertex_gradient_norm": 0.013364627957344055
+    },
+    {
+      "arm": "multi_8192_plus_8192",
+      "total_anchor_budget": 16384,
+      "view_anchor_budget": 8192,
+      "views": 2,
+      "median_forward_backward_ms": 7.83889097510837,
+      "median_peak_allocated_mib": 3287.626953125,
+      "median_vertex_gradient_norm": 0.010611768811941147
+    }
+  ],
+  "benchmark_scope": "isolated CUDA cdist+surface interpolation+backward, synthetic vertices and observations; excludes SAM forward",
+  "feasibility": "PASS_2080TI"
+}

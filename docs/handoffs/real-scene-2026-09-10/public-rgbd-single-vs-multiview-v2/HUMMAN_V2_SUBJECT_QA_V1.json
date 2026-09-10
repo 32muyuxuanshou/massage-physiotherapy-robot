@@ -1,0 +1,1972 @@
+{
+  "status": "GEOMETRY_QA_PASS_AUTOMATED_AND_GROSS_VISUAL",
+  "scope": "SUBJECT_LEVEL_ARCHIVE_AND_EXISTING_PIXEL_QA",
+  "source_structural_inventory": "E:/项目-按摩理疗机器人/docs/handoffs/real-scene-2026-09-09/public-rgbd-surface-finetuning-pilot-v1/HUMMAN_EXISTING_ARCHIVE_INVENTORY_V1.json",
+  "archive_bindings": [
+    {
+      "file": "point_cameras.7z",
+      "bytes": 58953,
+      "sha256": "45568209120dc8b8abd728a8cfeb26f44d54b5990eae71512efc207497474924"
+    },
+    {
+      "file": "point_kinect_color_part_02.7z",
+      "bytes": 13892569135,
+      "sha256": "3d49992304f3c689e4d23841fd3232c11b6ee4ff357181b58944a6a008af81d4"
+    },
+    {
+      "file": "point_kinect_depth_part_08.7z",
+      "bytes": 20142712774,
+      "sha256": "16bac430062f5b4efd5c63baa23820d957b126add37de99e1626b979a604fefa"
+    },
+    {
+      "file": "point_kinect_depth_part_09.7z",
+      "bytes": 20317952592,
+      "sha256": "3665a6c4494a0cac5404f605fb0a80d5e0ba2a4049f9aa570c56e90899d78507"
+    },
+    {
+      "file": "point_kinect_mask.7z",
+      "bytes": 1376700892,
+      "sha256": "6f7a7a5c9b4942bc50acb22593af8c28373592438faba9aa4f8d4125f114c950"
+    },
+    {
+      "file": "smpl_params.7z",
+      "bytes": 23118862,
+      "sha256": "2cccdcee712ea7f1f5a06e7621c9f39910317955b5063339d9d131d65399a4fd"
+    }
+  ],
+  "counts": {
+    "structurally_usable_subjects": 131,
+    "historically_pixel_geometry_qa_passed": 31,
+    "new_structural_candidates": 100,
+    "new_pixel_geometry_qa_passed": 57
+  },
+  "definitions": {
+    "structurally_usable": "At least one sequence has RGB video, depth, mask, intrinsics/extrinsics and matching frame IDs in headers.",
+    "geometry_qa_passed": "Decoded RGB/depth/mask, valid registered person geometry, valid camera rotation and two-view consistency checked."
+  },
+  "historical_subject_status": [
+    {
+      "subject": "p000757",
+      "history": "V1_SEALED_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000783",
+      "history": "V1_SEALED_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000816",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000821",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000823",
+      "history": "V1_DEVELOPMENT",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000826",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000830",
+      "history": "V1_SEALED_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000831",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000837",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000842",
+      "history": "V1_VAL_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000853",
+      "history": "V1_VAL_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000859",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000861",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000874",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000878",
+      "history": "V1_SEALED_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000879",
+      "history": "V1_DEVELOPMENT",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000880",
+      "history": "V1_DEVELOPMENT",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000881",
+      "history": "V1_DEVELOPMENT",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000902",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000913",
+      "history": "V1_VAL_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000914",
+      "history": "V1_VAL_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000924",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000942",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000956",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p000973",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p001002",
+      "history": "V1_SEALED_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p001008",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p001018",
+      "history": "V1_TRAIN_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p001037",
+      "history": "V1_VAL_CONSUMED",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p001088",
+      "history": "V1_DEVELOPMENT",
+      "existing_geometry_qa": "PASS"
+    },
+    {
+      "subject": "p001110",
+      "history": "V1_DEVELOPMENT",
+      "existing_geometry_qa": "PASS"
+    }
+  ],
+  "new_nonsealed_qa_plan": [
+    {
+      "subject": "p000816",
+      "sequence": "p000816_a000126",
+      "action": "a000126",
+      "action_name": "Supine Touch Knee",
+      "frame_ids": [
+        22,
+        43,
+        64
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000821",
+      "sequence": "p000821_a000043",
+      "action": "a000043",
+      "action_name": "Glute Bridge",
+      "frame_ids": [
+        25,
+        50,
+        76
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000826",
+      "sequence": "p000826_a000219",
+      "action": "a000219",
+      "action_name": "Stacked Leg Glute Bridge L",
+      "frame_ids": [
+        23,
+        46,
+        69
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000831",
+      "sequence": "p000831_a000306",
+      "action": "a000306",
+      "action_name": "Neck Bridge Supine",
+      "frame_ids": [
+        48,
+        96,
+        145
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000837",
+      "sequence": "p000837_a000126",
+      "action": "a000126",
+      "action_name": "Supine Touch Knee",
+      "frame_ids": [
+        20,
+        40,
+        60
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000859",
+      "sequence": "p000859_a000107",
+      "action": "a000107",
+      "action_name": "Bend Over Your Legs",
+      "frame_ids": [
+        22,
+        44,
+        65
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000861",
+      "sequence": "p000861_a001444",
+      "action": "a001444",
+      "action_name": "Corpse - Side",
+      "frame_ids": [
+        9,
+        18,
+        28
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000874",
+      "sequence": "p000874_a000042",
+      "action": "a000042",
+      "action_name": "Static Glute Bridge",
+      "frame_ids": [
+        11,
+        22,
+        34
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000902",
+      "sequence": "p000902_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "frame_ids": [
+        10,
+        20,
+        31
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000924",
+      "sequence": "p000924_a000081",
+      "action": "a000081",
+      "action_name": "Four-Legged Diamond Brace",
+      "frame_ids": [
+        26,
+        52,
+        78
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000942",
+      "sequence": "p000942_a005386",
+      "action": "a005386",
+      "action_name": "Supine Flexion Right Twist Stretch",
+      "frame_ids": [
+        12,
+        24,
+        37
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000956",
+      "sequence": "p000956_a001454",
+      "action": "a001454",
+      "action_name": "Standing - Sitting Straight Leg - Right",
+      "frame_ids": [
+        88,
+        176,
+        265
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000973",
+      "sequence": "p000973_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "frame_ids": [
+        9,
+        18,
+        26
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p001008",
+      "sequence": "p001008_a005311",
+      "action": "a005311",
+      "action_name": "Left Internal Oblique Muscle Stretch",
+      "frame_ids": [
+        11,
+        22,
+        34
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p001018",
+      "sequence": "p001018_a000184",
+      "action": "a000184",
+      "action_name": "Front Shoulder Stretch",
+      "frame_ids": [
+        9,
+        18,
+        26
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "V1_FROZEN_WORKSET_REUSE",
+      "split": "TRAIN_HISTORICAL"
+    },
+    {
+      "subject": "p000978",
+      "sequence": "p000978_a000184",
+      "action": "a000184",
+      "action_name": "Front Shoulder Stretch",
+      "frame_ids": [
+        32,
+        64,
+        96
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000983",
+      "sequence": "p000983_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "frame_ids": [
+        19,
+        38,
+        56
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p001030",
+      "sequence": "p001030_a003005",
+      "action": "a003005",
+      "action_name": "Upavishtha Konasana Seated",
+      "frame_ids": [
+        7,
+        14,
+        20
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000959",
+      "sequence": "p000959_a001247",
+      "action": "a001247",
+      "action_name": "Chest Stretch",
+      "frame_ids": [
+        8,
+        17,
+        26
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000807",
+      "sequence": "p000807_a000622",
+      "action": "a000622",
+      "action_name": "Seated Calf Stretch",
+      "frame_ids": [
+        13,
+        26,
+        40
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000847",
+      "sequence": "p000847_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "frame_ids": [
+        12,
+        24,
+        37
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000972",
+      "sequence": "p000972_a005386",
+      "action": "a005386",
+      "action_name": "Supine Flexion Right Twist Stretch",
+      "frame_ids": [
+        16,
+        31,
+        46
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000938",
+      "sequence": "p000938_a000184",
+      "action": "a000184",
+      "action_name": "Front Shoulder Stretch",
+      "frame_ids": [
+        10,
+        21,
+        32
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p001028",
+      "sequence": "p001028_a005311",
+      "action": "a005311",
+      "action_name": "Left Internal Oblique Muscle Stretch",
+      "frame_ids": [
+        7,
+        14,
+        21
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000936",
+      "sequence": "p000936_a000184",
+      "action": "a000184",
+      "action_name": "Front Shoulder Stretch",
+      "frame_ids": [
+        9,
+        18,
+        26
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000805",
+      "sequence": "p000805_a001444",
+      "action": "a001444",
+      "action_name": "Corpse - Side",
+      "frame_ids": [
+        15,
+        30,
+        46
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000955",
+      "sequence": "p000955_a005738",
+      "action": "a005738",
+      "action_name": "Frog Stretch",
+      "frame_ids": [
+        12,
+        24,
+        36
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000792",
+      "sequence": "p000792_a001252",
+      "action": "a001252",
+      "action_name": "Foot Pad Stretch",
+      "frame_ids": [
+        8,
+        15,
+        22
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p001024",
+      "sequence": "p001024_a005386",
+      "action": "a005386",
+      "action_name": "Supine Flexion Right Twist Stretch",
+      "frame_ids": [
+        12,
+        24,
+        36
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p001036",
+      "sequence": "p001036_a000188",
+      "action": "a000188",
+      "action_name": "Plank Side Swing R",
+      "frame_ids": [
+        28,
+        56,
+        83
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p001048",
+      "sequence": "p001048_a003004",
+      "action": "a003004",
+      "action_name": "Bound Angle Pose",
+      "frame_ids": [
+        12,
+        24,
+        37
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000985",
+      "sequence": "p000985_a000188",
+      "action": "a000188",
+      "action_name": "Plank Side Swing R",
+      "frame_ids": [
+        20,
+        41,
+        62
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000970",
+      "sequence": "p000970_a005126",
+      "action": "a005126",
+      "action_name": "Supine Shoulder Flexion And Extension",
+      "frame_ids": [
+        23,
+        46,
+        69
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000758",
+      "sequence": "p000758_a000078",
+      "action": "a000078",
+      "action_name": "Four-Legged Brace",
+      "frame_ids": [
+        22,
+        44,
+        65
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000926",
+      "sequence": "p000926_a005801",
+      "action": "a005801",
+      "action_name": "Straddle Left Leg Lift",
+      "frame_ids": [
+        11,
+        22,
+        32
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000996",
+      "sequence": "p000996_a005386",
+      "action": "a005386",
+      "action_name": "Supine Flexion Right Twist Stretch",
+      "frame_ids": [
+        10,
+        21,
+        32
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000808",
+      "sequence": "p000808_a001306",
+      "action": "a001306",
+      "action_name": "Support Leg Raise R",
+      "frame_ids": [
+        39,
+        78,
+        116
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000764",
+      "sequence": "p000764_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "frame_ids": [
+        12,
+        24,
+        35
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000915",
+      "sequence": "p000915_a000175",
+      "action": "a000175",
+      "action_name": "Supine Front Leg Stretch L",
+      "frame_ids": [
+        12,
+        24,
+        37
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000845",
+      "sequence": "p000845_a000177",
+      "action": "a000177",
+      "action_name": "Supine Hip Stretch L",
+      "frame_ids": [
+        6,
+        11,
+        16
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p001005",
+      "sequence": "p001005_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "frame_ids": [
+        9,
+        18,
+        28
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000989",
+      "sequence": "p000989_a005401",
+      "action": "a005401",
+      "action_name": "Supine Flexion Left Twist Stretch",
+      "frame_ids": [
+        8,
+        16,
+        25
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000904",
+      "sequence": "p000904_a000176",
+      "action": "a000176",
+      "action_name": "Supine Front Leg Stretch R",
+      "frame_ids": [
+        10,
+        21,
+        32
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000839",
+      "sequence": "p000839_a000092",
+      "action": "a000092",
+      "action_name": "Support Arm",
+      "frame_ids": [
+        21,
+        42,
+        62
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p001052",
+      "sequence": "p001052_a000096",
+      "action": "a000096",
+      "action_name": "Seated Hundred Slaps",
+      "frame_ids": [
+        25,
+        50,
+        75
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000977",
+      "sequence": "p000977_a001444",
+      "action": "a001444",
+      "action_name": "Corpse - Side",
+      "frame_ids": [
+        9,
+        18,
+        26
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000802",
+      "sequence": "p000802_a000219",
+      "action": "a000219",
+      "action_name": "Stacked Leg Glute Bridge L",
+      "frame_ids": [
+        33,
+        66,
+        98
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000864",
+      "sequence": "p000864_a001312",
+      "action": "a001312",
+      "action_name": "Sumo Squat Stretch",
+      "frame_ids": [
+        8,
+        17,
+        26
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000834",
+      "sequence": "p000834_a000042",
+      "action": "a000042",
+      "action_name": "Static Glute Bridge",
+      "frame_ids": [
+        7,
+        14,
+        22
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000852",
+      "sequence": "p000852_a001415",
+      "action": "a001415",
+      "action_name": "Thunderbolt Sitting Position - Positive",
+      "frame_ids": [
+        16,
+        32,
+        48
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000828",
+      "sequence": "p000828_a000219",
+      "action": "a000219",
+      "action_name": "Stacked Leg Glute Bridge L",
+      "frame_ids": [
+        24,
+        49,
+        74
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000917",
+      "sequence": "p000917_a005738",
+      "action": "a005738",
+      "action_name": "Frog Stretch",
+      "frame_ids": [
+        7,
+        14,
+        21
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p001031",
+      "sequence": "p001031_a000082",
+      "action": "a000082",
+      "action_name": "Kneeling Diamond Brace",
+      "frame_ids": [
+        27,
+        54,
+        80
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000907",
+      "sequence": "p000907_a000175",
+      "action": "a000175",
+      "action_name": "Supine Front Leg Stretch L",
+      "frame_ids": [
+        10,
+        19,
+        28
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000771",
+      "sequence": "p000771_a000220",
+      "action": "a000220",
+      "action_name": "Stacked Leg Glute Bridge R",
+      "frame_ids": [
+        28,
+        56,
+        85
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000789",
+      "sequence": "p000789_a001415",
+      "action": "a001415",
+      "action_name": "Thunderbolt Sitting Position - Positive",
+      "frame_ids": [
+        12,
+        23,
+        34
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000794",
+      "sequence": "p000794_a001281",
+      "action": "a001281",
+      "action_name": "Sphinx Brace L",
+      "frame_ids": [
+        13,
+        26,
+        38
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000857",
+      "sequence": "p000857_a000042",
+      "action": "a000042",
+      "action_name": "Static Glute Bridge",
+      "frame_ids": [
+        25,
+        50,
+        74
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000998",
+      "sequence": "p000998_a000017",
+      "action": "a000017",
+      "action_name": "Belly Stretch",
+      "frame_ids": [
+        7,
+        14,
+        20
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p000833",
+      "sequence": "p000833_a000306",
+      "action": "a000306",
+      "action_name": "Neck Bridge Supine",
+      "frame_ids": [
+        32,
+        65,
+        98
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "TRAIN_NEW"
+    },
+    {
+      "subject": "p001004",
+      "sequence": "p001004_a005386",
+      "action": "a005386",
+      "action_name": "Supine Flexion Right Twist Stretch",
+      "frame_ids": [
+        13,
+        26,
+        38
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    },
+    {
+      "subject": "p001001",
+      "sequence": "p001001_a001392",
+      "action": "a001392",
+      "action_name": "Half Cow Noodle -R  ",
+      "frame_ids": [
+        10,
+        20,
+        29
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    },
+    {
+      "subject": "p000793",
+      "sequence": "p000793_a005311",
+      "action": "a005311",
+      "action_name": "Left Internal Oblique Muscle Stretch",
+      "frame_ids": [
+        10,
+        20,
+        31
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    },
+    {
+      "subject": "p000790",
+      "sequence": "p000790_a001285",
+      "action": "a001285",
+      "action_name": "Crunches",
+      "frame_ids": [
+        24,
+        48,
+        73
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    },
+    {
+      "subject": "p001049",
+      "sequence": "p001049_a001441",
+      "action": "a001441",
+      "action_name": "Simple Sitting Pranayama  Bing",
+      "frame_ids": [
+        82,
+        165,
+        248
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    },
+    {
+      "subject": "p000997",
+      "sequence": "p000997_a001247",
+      "action": "a001247",
+      "action_name": "Chest Stretch",
+      "frame_ids": [
+        12,
+        25,
+        38
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    },
+    {
+      "subject": "p000901",
+      "sequence": "p000901_a000223",
+      "action": "a000223",
+      "action_name": "Nodding Movement",
+      "frame_ids": [
+        30,
+        60,
+        90
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    },
+    {
+      "subject": "p000858",
+      "sequence": "p000858_a000178",
+      "action": "a000178",
+      "action_name": "Supine Hip Stretch R",
+      "frame_ids": [
+        8,
+        15,
+        22
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    },
+    {
+      "subject": "p000964",
+      "sequence": "p000964_a000078",
+      "action": "a000078",
+      "action_name": "Four-Legged Brace",
+      "frame_ids": [
+        27,
+        54,
+        80
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    },
+    {
+      "subject": "p000785",
+      "sequence": "p000785_a005516",
+      "action": "a005516",
+      "action_name": "Left Straddle Hip Stretch",
+      "frame_ids": [
+        11,
+        22,
+        32
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    },
+    {
+      "subject": "p000966",
+      "sequence": "p000966_a001444",
+      "action": "a001444",
+      "action_name": "Corpse - Side",
+      "frame_ids": [
+        8,
+        16,
+        24
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    },
+    {
+      "subject": "p000817",
+      "sequence": "p000817_a005311",
+      "action": "a005311",
+      "action_name": "Left Internal Oblique Muscle Stretch",
+      "frame_ids": [
+        11,
+        22,
+        32
+      ],
+      "camera_candidates": [
+        "kinect_008",
+        "kinect_009"
+      ],
+      "selection_basis": "ARCHIVE_HEADER_METADATA_ONLY",
+      "split": "VAL_NEW"
+    }
+  ],
+  "sealed_and_reserve_pixel_policy": "NO PIXEL/FRAME/SEQUENCE CONTENT READ BEFORE THE APPLICABLE GATE",
+  "download": {
+    "performed": false,
+    "required_now": false,
+    "reason": "Existing archives contain 100 new structural candidates."
+  },
+  "readiness_effect": "PASS_FOR_SUBJECT_POOL",
+  "server_geometry_qa_sha256": "f54e9311ac0a1c8caf95f72b7febe2347cf5d834f5647897ce0438bd9e24d14f",
+  "new_pixel_geometry_qa_passed": 57,
+  "new_pixel_geometry_qa_failed": 0,
+  "new_subject_geometry_results": [
+    {
+      "subject": "p000758",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000764",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000771",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000785",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000789",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000790",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000792",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000793",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000794",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000802",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000805",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000807",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000808",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000817",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000828",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000833",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000834",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000839",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000845",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000847",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000852",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000857",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000858",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000864",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000901",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000904",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000907",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000915",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000917",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000926",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000936",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000938",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000955",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000959",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000964",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000966",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000970",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000972",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000977",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000978",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000983",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000985",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000989",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000996",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000997",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p000998",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p001001",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p001004",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p001005",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p001024",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p001028",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p001030",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p001031",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p001036",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p001048",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p001049",
+      "split": "VAL_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    },
+    {
+      "subject": "p001052",
+      "split": "TRAIN_NEW",
+      "result": "PASS",
+      "observations": 3,
+      "usable_observations": 3,
+      "failure_reasons": []
+    }
+  ],
+  "visual_review": {
+    "status": "PASS_GROSS_VISUAL_REGISTRATION_REVIEW",
+    "reviewed_sheet_count": 14,
+    "reviewed_observation_count": 171,
+    "review_artifact": "visualizations/subject-qa/registration_contact_sheets_montage.jpg",
+    "checks": [
+      "green registered person mask follows the visible person silhouette",
+      "depth support is co-located with the visible person",
+      "both camera columns are nonblank",
+      "no gross frame-ID mismatch or catastrophic registration displacement observed"
+    ],
+    "limits": [
+      "This is a gross visual QA of all 14 contact sheets, not a medical body-part label review.",
+      "Subtle calibration residual is handled by the separate multi-view geometry QA."
+    ],
+    "sheets": [
+      {
+        "file": "registration_contact_sheet_01.jpg",
+        "sha256": "23e087391b634835d1e6935b6e693fe8a13c229ae1eaf853c18882573ac73437"
+      },
+      {
+        "file": "registration_contact_sheet_02.jpg",
+        "sha256": "ab4e9db5d319d3af8d26c8e754501c27e5bd0964da1bcd4d10bdfdc1f8820327"
+      },
+      {
+        "file": "registration_contact_sheet_03.jpg",
+        "sha256": "f0022805829f7ef1d528226c03350683ce454e4c4031e720815eef6ecc4ca723"
+      },
+      {
+        "file": "registration_contact_sheet_04.jpg",
+        "sha256": "79b3a4d1fa0970e92c7f13a7434583df42546d8341649d6efd5171cd1170c55f"
+      },
+      {
+        "file": "registration_contact_sheet_05.jpg",
+        "sha256": "c58a1d906a2ad033893f5ed0d89d7984a16585673768cb20d4b6dffd3b9d0685"
+      },
+      {
+        "file": "registration_contact_sheet_06.jpg",
+        "sha256": "8e9d688976cf3a559a2cb9508750c9c0074772376d86ec58bc283afc20d3cd67"
+      },
+      {
+        "file": "registration_contact_sheet_07.jpg",
+        "sha256": "a0e2a9f02b4d6ce5fbfdcfc058ad9c431b12feb6b2a0ff43e7d31f06e98114aa"
+      },
+      {
+        "file": "registration_contact_sheet_08.jpg",
+        "sha256": "6c72727b4eea317773c588be9095662e7ed5a7901e2b5bae07797d4d369aed49"
+      },
+      {
+        "file": "registration_contact_sheet_09.jpg",
+        "sha256": "a72787b3d31607079ac00b7e9297bd42b0e8daf6ecd654c42d1edde40e9fb498"
+      },
+      {
+        "file": "registration_contact_sheet_10.jpg",
+        "sha256": "e890017acd317692e71d837e482914b1fddae85ad4f8a7684845506fd52ed3c1"
+      },
+      {
+        "file": "registration_contact_sheet_11.jpg",
+        "sha256": "f8ad2d09aa07be06b5ce03b8950ccf747f64c35295c2c609de460823be7e2e17"
+      },
+      {
+        "file": "registration_contact_sheet_12.jpg",
+        "sha256": "fa393369f9093ae64ae2388aa41b536531833b776873c70d32727a5545a17783"
+      },
+      {
+        "file": "registration_contact_sheet_13.jpg",
+        "sha256": "c01ec8271d2b7cb01f15a1fe582b58d1f1fe294077497290b66435eb6b1fe9df"
+      },
+      {
+        "file": "registration_contact_sheet_14.jpg",
+        "sha256": "d19fb2643abc087b60fd89c9be49caea1ee9a0d2fafb5e4c0e16307442160041"
+      }
+    ]
+  }
+}

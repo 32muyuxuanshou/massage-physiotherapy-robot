@@ -1,0 +1,123 @@
+{
+  "status": "SMOKE_COMPLETED_NO_FORMAL_TRAINING",
+  "arm": "M",
+  "run_seed": 20260910,
+  "optimizer_updates": 2,
+  "history": [
+    {
+      "update": 1,
+      "id": "p000816_a000126_f000043",
+      "loss": 0.06305408477783203,
+      "surface": 0.06305408477783203,
+      "teacher2d": 1.0436096007959998e-15,
+      "teacher3d": 7.49513959333618e-15,
+      "head_anchor": 0.0
+    },
+    {
+      "update": 2,
+      "id": "p000816_a000126_f000022",
+      "loss": 0.054733261466026306,
+      "surface": 0.054731886833906174,
+      "teacher2d": 8.679919716314544e-08,
+      "teacher3d": 6.871820005471818e-06,
+      "head_anchor": 1.2246537117732714e-10,
+      "fixed_val": {
+        "contract": "fixed manifest exact point-to-triangle; oracle XYZ-only alignment is diagnostic",
+        "aggregation": {
+          "subject_count": 1,
+          "primary_subject_equal_absolute_median_mm": 61.63413173303204,
+          "subject_equal_absolute_p90_mm": 102.74666013655225,
+          "subject_equal_absolute_p95_mm": 118.06261780143643,
+          "diagnostic_translation_aligned_median_mm": 16.46137688728667,
+          "median_coverage": 0.6737349647449191,
+          "subjects": [
+            {
+              "subject_id": "p000785",
+              "absolute_median_mm": 61.63413173303204,
+              "absolute_p90_mm": 102.74666013655225,
+              "absolute_p95_mm": 118.06261780143643,
+              "translation_aligned_median_mm": 16.46137688728667,
+              "coverage": 0.6737349647449191
+            }
+          ]
+        },
+        "rows": [
+          {
+            "id": "p000785_a005516_f000011",
+            "subject_id": "p000785",
+            "absolute": {
+              "metric": "observed_to_exact_triangle_surface",
+              "sample_count": 19288,
+              "unit": "mm",
+              "mean_mm": 59.609935381749175,
+              "median_mm": 61.63413173303204,
+              "p90_mm": 102.74666013655225,
+              "p95_mm": 118.06261780143643,
+              "max_mm": 216.94111859586465
+            },
+            "forbidden_output_invariance": {
+              "shape": {
+                "tensor_exact_equal": true,
+                "max_abs_delta": 0.0
+              },
+              "scale": {
+                "tensor_exact_equal": true,
+                "max_abs_delta": 0.0
+              },
+              "hand": {
+                "tensor_exact_equal": true,
+                "max_abs_delta": 0.0
+              },
+              "face": {
+                "tensor_exact_equal": true,
+                "max_abs_delta": 0.0
+              },
+              "derived_mhr_scales": {
+                "tensor_exact_equal": true,
+                "max_abs_delta": 0.0
+              }
+            },
+            "translation_aligned_median_mm": 16.46137688728667,
+            "oracle_translation_m": [
+              0.04401990399429895,
+              -0.01337694458220964,
+              -0.07002829696280133
+            ],
+            "rendered_depth": {
+              "metric": "heldout_rendered_depth_absolute_z_residual",
+              "sample_count": 12995,
+              "unit": "mm",
+              "mean_mm": 68.84355977114552,
+              "median_mm": 61.26570701599121,
+              "p90_mm": 127.23288536071779,
+              "p95_mm": 154.55912351608274,
+              "max_mm": 332.59034156799316,
+              "observed_point_count": 19288,
+              "in_image_count": 19288,
+              "overlap_count": 12995,
+              "mesh_coverage_of_observed_points": 0.6737349647449191,
+              "signed_mean_mm": 62.43683110296199,
+              "depth_definition": "OpenCV camera +Z metric z-depth"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "seconds": 21.663201808929443,
+  "update_order_sha256": "4623cfc7002ff80ced2ce3c79a7c64e448fb9e4de2f021e9d655e12727c22f72",
+  "update_order_preview": [
+    "p000816_a000126_f000043",
+    "p000816_a000126_f000022"
+  ],
+  "exact_freeze_rows": {
+    "pose_final.weight": true,
+    "pose_final.bias": true
+  },
+  "official_reference_passes_cached": 3,
+  "total_predicted_anchors_per_update": 16384,
+  "total_observed_points_per_update": 2048,
+  "input_contract": "Camera A RGB + Camera A K + identical dataset ROI",
+  "sealed_opened": false,
+  "final_reserve_opened": false
+}

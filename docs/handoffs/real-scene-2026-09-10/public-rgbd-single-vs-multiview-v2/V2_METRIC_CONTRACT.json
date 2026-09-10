@@ -1,0 +1,40 @@
+{
+  "status": "PRE_REGISTERED",
+  "primary_a": {
+    "name": "absolute_camera_space_surface_error",
+    "alignment": "none",
+    "deployment_relevant": true,
+    "aggregation": "subject-equal median of per-frame median exact point-to-triangle distances"
+  },
+  "primary_b": {
+    "name": "translation_aligned_surface_error",
+    "alignment": "oracle XYZ translation only",
+    "diagnostic_only": true,
+    "forbidden": [
+      "rotation",
+      "scale",
+      "Procrustes",
+      "ICP"
+    ]
+  },
+  "mandatory": [
+    "mean",
+    "subject-level median",
+    "P90",
+    "P95",
+    "max",
+    "rendered-depth median",
+    "coverage",
+    "common-coverage paired error",
+    "pred_cam_t XYZ",
+    "joint output stability"
+  ],
+  "coverage_contract": "same frozen depth points, masks, camera and coverage region for every comparator",
+  "selection_rule": "lowest new-VAL subject-equal absolute metric, provided P90/P95 do not materially regress; aligned metric determines placement-only versus non-translation interpretation",
+  "baselines": [
+    "Official SAM",
+    "TRAIN-only constant Txyz",
+    "historical V1 E1"
+  ],
+  "roi_claim": "dataset-provided person ROI + RGB + K -> MHR"
+}

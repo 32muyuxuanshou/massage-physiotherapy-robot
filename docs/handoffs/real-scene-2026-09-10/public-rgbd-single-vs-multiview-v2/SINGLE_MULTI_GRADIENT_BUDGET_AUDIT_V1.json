@@ -1,0 +1,104 @@
+{
+  "status": "PASS_EQUAL_BUDGET_AND_REAL_DEV_GRADIENT_SCALE",
+  "fixed_total_surface_anchor_budget": 16384,
+  "single": {
+    "views": 1,
+    "anchors_per_view": [
+      16384
+    ],
+    "view_reduction": "mean"
+  },
+  "multi": {
+    "views": 2,
+    "anchors_per_view": [
+      8192,
+      8192
+    ],
+    "within_view_reduction": "mean",
+    "across_view_reduction": "mean"
+  },
+  "synthetic_vertex_gradient_norm_ratio_multi_over_single": 0.7940190213907022,
+  "evidence_boundary": "Contract and synthetic scale test only; a matched real DEV model-state blockwise pose/camera gradient audit remains required before READY.",
+  "real_dev_audit": {
+    "status": "PASS_REAL_DEV_GRADIENT_SAME_ORDER",
+    "samples": [
+      {
+        "id": "p000823_a000035_f000008",
+        "arms": {
+          "single": {
+            "loss": 0.12596920132637024,
+            "pose_projection_gradient_norm": 9.14179801940918,
+            "camera_projection_gradient_norm": 6.322308540344238,
+            "joint_gradient_norm": 11.115036964416504
+          },
+          "multi": {
+            "loss": 0.10897595435380936,
+            "pose_projection_gradient_norm": 8.217459678649902,
+            "camera_projection_gradient_norm": 5.64985990524292,
+            "joint_gradient_norm": 9.972339630126953
+          }
+        },
+        "ratios_multi_over_single": {
+          "pose_projection_gradient_norm": 0.8988887810913355,
+          "camera_projection_gradient_norm": 0.8936387506540918,
+          "joint_gradient_norm": 0.8971935641826686
+        }
+      },
+      {
+        "id": "p000823_a000035_f000016",
+        "arms": {
+          "single": {
+            "loss": 0.12690310180187225,
+            "pose_projection_gradient_norm": 9.222063064575195,
+            "camera_projection_gradient_norm": 6.455020904541016,
+            "joint_gradient_norm": 11.256719589233398
+          },
+          "multi": {
+            "loss": 0.10957054793834686,
+            "pose_projection_gradient_norm": 8.227215766906738,
+            "camera_projection_gradient_norm": 5.719494342803955,
+            "joint_gradient_norm": 10.019965171813965
+          }
+        },
+        "ratios_multi_over_single": {
+          "pose_projection_gradient_norm": 0.892123130073793,
+          "camera_projection_gradient_norm": 0.8860535740140473,
+          "joint_gradient_norm": 0.890131897875262
+        }
+      },
+      {
+        "id": "p000823_a000035_f000024",
+        "arms": {
+          "single": {
+            "loss": 0.13296137750148773,
+            "pose_projection_gradient_norm": 9.12992000579834,
+            "camera_projection_gradient_norm": 6.615363121032715,
+            "joint_gradient_norm": 11.274682998657227
+          },
+          "multi": {
+            "loss": 0.11505657434463501,
+            "pose_projection_gradient_norm": 8.171520233154297,
+            "camera_projection_gradient_norm": 5.850306987762451,
+            "joint_gradient_norm": 10.049867630004883
+          }
+        },
+        "ratios_multi_over_single": {
+          "pose_projection_gradient_norm": 0.8950264874133211,
+          "camera_projection_gradient_norm": 0.8843516040959469,
+          "joint_gradient_norm": 0.8913658708809628
+        }
+      }
+    ],
+    "median_ratios_multi_over_single": {
+      "pose_projection_gradient_norm": 0.8950264874133211,
+      "camera_projection_gradient_norm": 0.8860535740140473,
+      "joint_gradient_norm": 0.8913658708809628
+    },
+    "contracts": {
+      "single": "2048 observations A, 16384 anchors A",
+      "multi": "1024 observations A + 1024 observations B; 8192 anchors A + 8192 anchors B; view mean",
+      "same_RGB_input": "Camera A only"
+    },
+    "boundary": "Uses historical non-SEALED DEV solely for readiness diagnostics; no training or model update."
+  }
+}
