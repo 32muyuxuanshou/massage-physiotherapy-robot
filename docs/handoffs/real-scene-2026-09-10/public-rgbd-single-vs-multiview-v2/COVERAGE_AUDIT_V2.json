@@ -1,0 +1,37 @@
+{
+  "schema": "COVERAGE_AUDIT_V2",
+  "status": "VAL_AND_SEALED_COVERAGE_COMPLETE_COMMON_COVERAGE_NOT_PERSISTED",
+  "metric": "median rendered mesh depth overlap count divided by observed in-image point count; subject-equal on fixed V2 VAL",
+  "val_coverage": {
+    "official": 0.6951482056844435,
+    "train_only_txyz": 0.7701817824941446,
+    "historical_v1_e1": 0.7699015614698745,
+    "selected_S_seed20260910_update120": 0.7902236289913837,
+    "S_arm_best_seed_mean": 0.8055479882665072,
+    "M_arm_best_seed_mean": 0.8177719897779643
+  },
+  "selected_checkpoint_delta": {
+    "vs_official": 0.0950754233069402,
+    "vs_train_only_txyz": 0.0200418464972391,
+    "vs_historical_v1_e1": 0.0203220675215092
+  },
+  "selection_guard": "coverage may not fall more than 0.02 below Official",
+  "selected_checkpoint_guard_passed": true,
+  "common_coverage_paired_error": {
+    "status": "NOT_COMPUTED",
+    "reason": "Existing fixed evaluation reports contain per-model overlap coverage and surface error, but no persisted intersection mask shared across comparators. Separate coverage and error therefore must not be interpreted as an exact common-pixel paired test."
+  },
+  "interpretation": "Coverage improves on V2 VAL and does not explain the selected checkpoint's lower median error as simple loss of supported pixels. A strict same-pixel claim remains unavailable until the common-coverage audit is run.",
+  "new_v2_sealed": {
+    "official": 0.687303708819639,
+    "train_only_txyz": 0.6730838983038706,
+    "historical_v1_e1": 0.7067404354715675,
+    "v2_winner_s": 0.7009683776912891,
+    "winner_delta_vs_official": 0.013664668871650076,
+    "winner_delta_vs_train_only_txyz": 0.027884479387418448,
+    "winner_delta_vs_historical_v1_e1": -0.00577205778027845,
+    "subjects_higher_coverage_vs_official": 5,
+    "interpretation": "Aggregate coverage is above Official and below Historical V1 E1 by 0.0058. This rejects a gross aggregate coverage-collapse explanation but does not prove equal common-pixel support."
+  },
+  "final_reserve": "UNOPENED"
+}

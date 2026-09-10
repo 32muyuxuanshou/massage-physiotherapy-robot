@@ -1,0 +1,14 @@
+{
+  "schema": "TRAINING_CURVE_DECISION_SINGLE_V1",
+  "status": "PASS_TWO_SEEDS_COMPLETE",
+  "arm": "S",
+  "selection_metric": "V2 VAL subject-equal absolute exact point-to-triangle median (mm)",
+  "runs": [
+    {"seed": 20260910, "completed_updates": 300, "best_update": 120, "best_absolute_mm": 24.7905307459764, "stop_reason": "patience 3"},
+    {"seed": 20260911, "completed_updates": 540, "best_update": 480, "best_absolute_mm": 22.411873515655984, "stop_reason": "maximum update"}
+  ],
+  "best_seed_mean_absolute_mm": 23.60120213081619,
+  "sealed_candidate_rule": "seed 20260910 best eligible checkpoint",
+  "sealed_candidate": {"seed": 20260910, "update": 120, "sha256": "1aedfd0f2cf6819078b9aae451ea681c51239f0945180dc2459122710dc3f107"},
+  "metrics": "SINGLE_PER_VALIDATION_METRICS.json"
+}

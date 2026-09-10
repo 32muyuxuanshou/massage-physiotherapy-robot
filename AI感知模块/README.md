@@ -1,6 +1,6 @@
 # AI 感知模块
 
-> **网页端最新交付（2026-09-10）：** [公开 RGB-D Surface 微调 V1 复盘与修正门](../docs/handoffs/real-scene-2026-09-10/public-rgbd-surface-finetuning-v1-postmortem/README.md)。Gate 为 `V1_SIGNAL_CONFIRMED_BUT_ATTRIBUTION_UNRESOLVED`：固定评分保留 E1 的 Pilot 信号，但审计发现实际更新了整个 MHR pose 投影头，shape/scale/hand 均变化，且主要收益来自 root/camera translation。当前先修输出冻结与 surface-loss 合同，再做 single-view/multi-view 单变量实验。
+> **网页端最新交付（2026-09-10）：** [公开 RGB-D Single-vs-Multi Surface 微调 V2](../docs/handoffs/real-scene-2026-09-10/public-rgbd-single-vs-multiview-v2/README.md)。Pose/Camera-only exact freeze、等预算 S/M×2 seeds 和 one-shot 新 SEALED 已完成。Multi 没有达到预注册的材料性增益；Single winner 在 SEALED 上把 absolute 从 49.371 降至 30.368 mm、P90/P95 同向改善，但只有 6/12 人改善，Official 低误差 5 人全部退化。Final Gate 为 `OBJECTIVE_CONFLICT_LOW_ERROR_PROTECTION_FAILED`，不能无条件替换 Official；下一轮只测试低误差保护策略。
 
 官方SAM预训练推理、真实照片mesh叠加及项目37点传播已跑通。只贴mesh无需训练；没有完整复现论文训练与基准评测。当前计算服务器为172.18.18.151，COCO首批1,280张图片与原始人体标注已就绪；另行授权下载的官方COCO MHR标注24/24分片已验证，现有图库匹配641张图片、1,110条人体标注。其它SAM数据来源未下载。网络训练、穴位精度和标签放行状态以当前状态记录为准。
 
@@ -71,9 +71,9 @@ Combination 与 Pose 明显改善；Shape 的 P95/Max 改善，但 Mean 退化 1
 
 它可以作为下一合成阶段的定位器候选，但不是生产模型，也不能直接复用 Tiny 的可靠性模型和阈值。
 
-## 真实场景研究：训练暂停，数据阶段继续
+## 真实场景研究：V2 SEALED 完成，进入低误差保护实验
 
-当前状态统一见[2026-09-09 Surface 监督审计](../docs/handoffs/real-scene-2026-09-09/back-surface-supervision-pilot-v1/README.md)。只有贴 Mesh 时直接使用官方预训练推理，无需先训练。下一阶段要收集独立的目标背部 surface reference；在封存的受试者级 validation/test 建立前，不继续正式 contour/surface 训练。模型局部几何修正、穴位传播、网络训练是不同工作，不自动捆绑执行。
+当前状态统一见[2026-09-10 V2 最终交付](../docs/handoffs/real-scene-2026-09-10/public-rgbd-single-vs-multiview-v2/README.md)。本阶段已建立受试者隔离的 TRAIN/VAL/新 SEALED/Final Reserve，完成 Pose/Camera-only surface 微调。结果不支持 Multi-view 的材料性收益，也不支持直接替换 Official；当前最大问题是低误差对象系统退化。下一轮保持 Single 和冻结范围，只测试 protective/non-regression gating 或 loss。模型局部几何修正、穴位传播和网络训练仍是不同工作。
 
 2026-09-06的[研究资料](研究资料/真实场景关键点定位_2026-09-06/README.md)及[网页端交接](../docs/real-scene-research-2026-09-06.md)保留为历史版本，不代表暂停时的最新进度。长期精度/论文路线尚未完成，也未永久取消。
 

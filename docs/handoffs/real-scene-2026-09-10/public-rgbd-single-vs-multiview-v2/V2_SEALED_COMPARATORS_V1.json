@@ -1,0 +1,24 @@
+{
+  "status": "FROZEN_AFTER_VAL_WINNER_SELECTION",
+  "models": {
+    "OFFICIAL": {
+      "path": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/model.ckpt",
+      "sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056"
+    },
+    "TRAIN_ONLY_TXYZ": {
+      "path": "/raid5/xuhd/public_rgbd_single_vs_multiview_v2/SIMPLE_TRANSLATION_BASELINE_V2.json",
+      "sha256": "ba0dbee67fcffc33ddf64e3acebccf7857d75909a1df120debdcbc24cda0112c",
+      "fit_subject_scope": "V2_TRAIN_ONLY"
+    },
+    "HISTORICAL_V1_E1": {
+      "path": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/formal_to_epoch10_v1/official_pose_camera_epoch1.pt",
+      "sha256": "2baa8f11b51e53e19347a3a0536c7de3e6c00cc81748120e4043ac7878acd82c"
+    },
+    "V2_WINNER": {
+      "path": "/raid5/xuhd/public_rgbd_single_vs_multiview_v2/formal_runs/S_seed20260910/checkpoint_update_000120.pt",
+      "sha256": "1aedfd0f2cf6819078b9aae451ea681c51239f0945180dc2459122710dc3f107"
+    }
+  },
+  "loser_model_m_sealed_access_forbidden": true,
+  "final_reserve_access_forbidden": true
+}

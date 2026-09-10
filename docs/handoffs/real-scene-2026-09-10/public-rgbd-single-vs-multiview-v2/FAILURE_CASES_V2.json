@@ -1,0 +1,54 @@
+{
+  "schema": "FAILURE_CASES_V2",
+  "status": "SEALED_LOW_ERROR_SYSTEMATIC_REGRESSION_CONFIRMED",
+  "candidate": "S_seed20260910_update120",
+  "scope": "V2 VAL only, 12 subjects, 36 frames",
+  "subject_outcome_counts": {
+    "better_than_official_absolute": 10,
+    "worse_than_official_absolute": 2,
+    "better_than_train_only_txyz_absolute": 7,
+    "worse_than_train_only_txyz_absolute": 5,
+    "better_than_historical_v1_e1_absolute": 8,
+    "worse_than_historical_v1_e1_absolute": 4
+  },
+  "largest_or_material_failures": [
+    {"subject_id": "p001001", "candidate_absolute_mm": 33.78350916235969, "delta_vs_official_mm": 7.368976506450228, "candidate_aligned_mm": 28.048231347137104, "coverage": 0.58464, "note": "worse than Official and lowest candidate coverage"},
+    {"subject_id": "p000966", "candidate_absolute_mm": 24.744997127949766, "delta_vs_official_mm": 4.377220120005756, "candidate_aligned_mm": 11.246904754420981, "coverage": 0.7901672579827673, "note": "absolute placement worsened despite low aligned error"},
+    {"subject_id": "p001049", "candidate_absolute_mm": 66.6514742397751, "delta_vs_train_only_txyz_mm": 37.410189300355555, "candidate_aligned_mm": 10.802068326886806, "coverage": 0.7055290950507351, "note": "large residual placement failure despite strong aligned geometry"},
+    {"subject_id": "p000793", "candidate_absolute_mm": 30.2929341340486, "delta_vs_train_only_txyz_mm": 12.430890834739593, "candidate_aligned_mm": 26.64132584371478, "coverage": 0.7872438255386233, "note": "weak non-translation geometry and P95 213.280 mm"}
+  ],
+  "low_official_error_exploratory_group": {
+    "definition": "Official subject absolute median below 30 mm; post-hoc diagnostic, not a preregistered acceptance rule",
+    "subjects": [
+      {"subject_id": "p000901", "official_mm": 21.50995489608608, "candidate_mm": 15.312226222196912, "delta_mm": -6.197728673889166},
+      {"subject_id": "p000966", "official_mm": 20.36777700794401, "candidate_mm": 24.744997127949766, "delta_mm": 4.377220120005756},
+      {"subject_id": "p001001", "official_mm": 26.414532655909465, "candidate_mm": 33.78350916235969, "delta_mm": 7.368976506450228}
+    ],
+    "conclusion": "Two of three low-error subjects regress. This is too small and post-hoc to prove systematic regression, but it keeps low-error protection as a live risk."
+  },
+  "new_v2_sealed": {
+    "absolute_better_vs_official": 6,
+    "absolute_not_better_vs_official": 6,
+    "majority_improvement": false,
+    "absolute_better_vs_train_only_txyz": 8,
+    "absolute_better_vs_historical_v1_e1": 6,
+    "low_official_error_definition": "Official absolute subject median below 30 mm",
+    "low_official_error_count": 5,
+    "low_official_error_regressed_count": 5,
+    "low_error_systematic_regression": true,
+    "low_error_subjects": [
+      {"subject_id": "p000846", "official_mm": 21.593335151990875, "candidate_mm": 39.49639926760835, "delta_mm": 17.90306411561748},
+      {"subject_id": "p000894", "official_mm": 18.34459750858656, "candidate_mm": 30.334826496431923, "delta_mm": 11.990228987845363},
+      {"subject_id": "p000961", "official_mm": 13.00621017393268, "candidate_mm": 35.38936287783621, "delta_mm": 22.383152703903534},
+      {"subject_id": "p001096", "official_mm": 22.351818169974962, "candidate_mm": 23.224858220489715, "delta_mm": 0.8730400505147529},
+      {"subject_id": "p001109", "official_mm": 14.451098464162316, "candidate_mm": 15.25946858707561, "delta_mm": 0.8083701229132938}
+    ],
+    "diagnosis": "The winner reduces the mean mainly by correcting large Official failures; it does not protect already-good subjects and is not safe as an unconditional Official replacement."
+  },
+  "known_boundaries": [
+    "dataset-provided person ROI is used; raw-image detector and deployment cropping are not evaluated",
+    "sensor boundary noise exists and common-coverage paired error was not persisted",
+    "coarse torso labels are engineering LBS regions; front/back or medical regions cannot be isolated",
+    "Final Reserve remains unopened"
+  ]
+}

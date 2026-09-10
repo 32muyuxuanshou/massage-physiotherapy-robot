@@ -1,0 +1,60 @@
+{
+  "schema": "TRAINING_CURVE_DECISION_V2",
+  "status": "PASS_NONSEALED_CURVES_COMPLETE",
+  "selection_metric": "V2 VAL subject-equal absolute exact point-to-triangle median (mm)",
+  "validation_interval_updates": 60,
+  "maximum_updates": 540,
+  "early_stopping_patience_validations": 3,
+  "runs": [
+    {
+      "arm": "S",
+      "seed": 20260910,
+      "completed_updates": 300,
+      "best_update": 120,
+      "best_absolute_mm": 24.7905307459764,
+      "curve_absolute_mm": {"60": 27.177845660367343, "120": 24.7905307459764, "180": 27.635199949976368, "240": 25.66453480833294, "300": 25.140330915424784},
+      "stop_reason": "early stopping after three later validations failed to improve update 120"
+    },
+    {
+      "arm": "M",
+      "seed": 20260910,
+      "completed_updates": 540,
+      "best_update": 420,
+      "best_absolute_mm": 21.992150281860706,
+      "curve_absolute_mm": {"60": 26.249393287634934, "120": 26.131217372889424, "180": 26.44482521742695, "240": 22.583571475558173, "300": 24.183938023479616, "360": 22.71740106890761, "420": 21.992150281860706, "480": 22.955588627845497, "540": 27.249811103857795},
+      "stop_reason": "maximum update reached"
+    },
+    {
+      "arm": "S",
+      "seed": 20260911,
+      "completed_updates": 540,
+      "best_update": 480,
+      "best_absolute_mm": 22.411873515655984,
+      "curve_absolute_mm": {"60": 28.213604699680435, "120": 25.91699643895414, "180": 26.328713490930312, "240": 26.866107332380682, "300": 25.699651856339628, "360": 24.838682146656925, "420": 27.972505542689117, "480": 22.411873515655984, "540": 26.5090282095703},
+      "stop_reason": "maximum update reached"
+    },
+    {
+      "arm": "M",
+      "seed": 20260911,
+      "completed_updates": 480,
+      "best_update": 300,
+      "best_absolute_mm": 23.980575256587013,
+      "curve_absolute_mm": {"60": 28.237021458580074, "120": 25.26667290334969, "180": 24.668054226382253, "240": 25.126855027182472, "300": 23.980575256587013, "360": 25.493864302171477, "420": 25.88348880556401, "480": 25.42042014354411},
+      "stop_reason": "early stopping after three later validations failed to improve update 300"
+    }
+  ],
+  "arm_best_mean_mm": {"S": 23.60120213081619, "M": 22.98636276922386},
+  "multi_minus_single_mm": -0.6148393615923311,
+  "material_gain_rule": "M must improve paired-seed mean by at least 2 mm and be no worse than S in both seeds",
+  "material_gain_rule_passed": false,
+  "decision": "NO_MATERIAL_MULTIVIEW_GAIN_SELECT_MODEL_S",
+  "selected_checkpoint": {"arm": "S", "seed": 20260910, "update": 120, "sha256": "1aedfd0f2cf6819078b9aae451ea681c51239f0945180dc2459122710dc3f107"},
+  "reporting_defect": {
+    "present": true,
+    "description": "The four raw formal run reports omit a top-level best field. Best checkpoints above were deterministically reconstructed from history[*].fixed_val and bound by FORMAL_TRAINING_AGGREGATE_V1.json plus FORMAL_CHECKPOINT_MANIFEST_V1.json.",
+    "scientific_effect": "No metric is invented, but raw reports alone are not sufficient to bind the selected checkpoint without reconstruction."
+  },
+  "sealed_opened_during_training_or_selection": false,
+  "sealed_evaluation_completed_after_winner_freeze": true,
+  "final_reserve_opened": false
+}

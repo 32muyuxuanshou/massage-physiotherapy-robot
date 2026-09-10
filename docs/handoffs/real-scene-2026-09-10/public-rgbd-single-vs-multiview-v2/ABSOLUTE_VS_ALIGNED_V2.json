@@ -1,0 +1,38 @@
+{
+  "schema": "ABSOLUTE_VS_ALIGNED_V2",
+  "status": "VAL_AND_ONE_SHOT_V2_SEALED_COMPLETE_OBJECTIVE_CONFLICT",
+  "scope": "fixed V2 VAL, 12 unseen subjects; subject-equal aggregation",
+  "metrics": {
+    "absolute": "observed points to exact predicted triangle surface in camera coordinates",
+    "translation_aligned": "same geometry after oracle XYZ translation; diagnostic only"
+  },
+  "val": {
+    "official": {"absolute_mm": 59.90147287339233, "aligned_mm": 17.580260849922063},
+    "train_only_txyz": {"absolute_mm": 28.570380783916956, "aligned_mm": 17.580260849922063},
+    "historical_v1_e1": {"absolute_mm": 30.412813778428404, "aligned_mm": 15.084848508474769},
+    "selected_S_seed20260910_update120": {"absolute_mm": 24.7905307459764, "aligned_mm": 15.279351251047581},
+    "S_arm_best_seed_mean": {"absolute_mm": 23.60120213081619, "aligned_mm": 14.57400638792577},
+    "M_arm_best_seed_mean": {"absolute_mm": 22.98636276922386, "aligned_mm": 13.855074523352276}
+  },
+  "selected_checkpoint_deltas_mm": {
+    "vs_official": {"absolute": -35.11094212741593, "translation_aligned": -2.300909598874482},
+    "vs_train_only_txyz": {"absolute": -3.779850037940556, "translation_aligned": -2.300909598874482},
+    "vs_historical_v1_e1": {"absolute": -5.622283032452004, "translation_aligned": 0.194502743572812}
+  },
+  "interpretation": [
+    "Txyz changes placement only, so its aligned metric is analytically identical to Official.",
+    "The selected S checkpoint improves both absolute and aligned error versus Official, supporting some improvement beyond global translation on V2 VAL.",
+    "Its aligned metric is 0.195 mm worse than Historical V1 E1, so it does not establish superior non-translation geometry over that historical comparator.",
+    "Arm-best means are descriptive model-selection summaries and are not SEALED estimates."
+  ],
+  "new_v2_sealed": {
+    "official": {"absolute_mm": 49.37124637376535, "aligned_mm": 21.078853291364382},
+    "train_only_txyz": {"absolute_mm": 37.737686236935765, "aligned_mm": 21.078853291364382},
+    "historical_v1_e1": {"absolute_mm": 30.429416111792545, "aligned_mm": 20.05159283211026},
+    "v2_winner_s": {"absolute_mm": 30.368335662687098, "aligned_mm": 19.834990590721414},
+    "winner_delta_vs_official_mm": {"absolute": -19.002910711078254, "translation_aligned": -1.2438627006429677},
+    "winner_delta_vs_historical_v1_e1_mm": {"absolute": -0.06108044910544663, "translation_aligned": -0.21660224138884487},
+    "interpretation": "Mean absolute and aligned metrics improve, but only 6/12 subjects improve in absolute error and only 4/12 improve aligned error versus Official. The mean result does not establish broad per-subject robustness."
+  },
+  "final_reserve": "UNOPENED"
+}

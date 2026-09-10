@@ -1,0 +1,45 @@
+{
+  "schema": "FINAL_EXPERIMENT_DECISION_V2",
+  "status": "OBJECTIVE_CONFLICT_LOW_ERROR_PROTECTION_FAILED",
+  "research_question": "Does synchronized Camera B depth supervision materially improve single Camera A RGB+K feed-forward MHR over equal-budget single-view surface supervision?",
+  "val_decision": "NO_MATERIAL_MULTIVIEW_GAIN",
+  "selected_arm": "S",
+  "selected_checkpoint": {
+    "seed": 20260910,
+    "update": 120,
+    "absolute_mm": 24.7905307459764,
+    "checkpoint_sha256": "1aedfd0f2cf6819078b9aae451ea681c51239f0945180dc2459122710dc3f107"
+  },
+  "why": {
+    "M_minus_S_arm_best_mean_mm": -0.6148393615923311,
+    "required_material_gain_mm": 2.0,
+    "paired_seed_consistency": false,
+    "detail": "M wins seed 20260910 but loses seed 20260911; its 0.615 mm paired-seed mean advantage is below the preregistered 2 mm threshold."
+  },
+  "nonsealed_conclusions": [
+    "Pose/camera-only surface finetuning materially improves absolute V2 VAL error over Official, TRAIN-only Txyz, and Historical V1 E1 at the selected checkpoint.",
+    "Aligned error improves over Official/Txyz but is not better than Historical V1 E1, so superior non-translation geometry over the strongest historical comparator is not established.",
+    "Synchronized two-view depth supervision has no material benefit under the equal-budget two-seed protocol.",
+    "The credible LBS-derived torso map is coarse and cannot identify back surface or acupuncture regions."
+  ],
+  "next_experiment": {
+    "only_recommendation": "keep arm S and add a protective/non-regression gate or loss against Official on already-low-error samples",
+    "reason": "On one-shot V2 SEALED, only 6/12 subjects improve versus Official and all five Official-below-30-mm subjects regress. Shape/Scale, synthetic, LoRA, and more data do not directly test this observed failure first."
+  },
+  "sealed_gate": {
+    "winner_frozen_before_access": true,
+    "new_v2_sealed_result": "OBJECTIVE_CONFLICT",
+    "majority_subject_improvement": false,
+    "absolute_subjects_better_vs_official": "6/12",
+    "low_error_subject_behavior": "5/5 Official-below-30-mm subjects regressed",
+    "absolute_improvement_mm": 19.002910711078254,
+    "translation_aligned_improvement_mm": 1.2438627006429677,
+    "p90_p95_winner_mm": [74.93905835036729, 98.20264351913475],
+    "p90_p95_improvement_vs_official_mm": [40.12431928882542, 39.883029142197145],
+    "coverage_winner": 0.7009683776912891,
+    "coverage_delta_vs_official": 0.013664668871650076,
+    "final_reserve": "UNOPENED"
+  },
+  "final_gate": "OBJECTIVE_CONFLICT_LOW_ERROR_PROTECTION_FAILED_DO_NOT_REPLACE_OFFICIAL_GLOBALLY",
+  "claim_boundary": "The result supports lower mean and tail error on HuMMan dataset-ROI SEALED subjects, but not robust per-subject improvement, automatic raw-image operation, back-surface accuracy, acupuncture localization, or deployment."
+}

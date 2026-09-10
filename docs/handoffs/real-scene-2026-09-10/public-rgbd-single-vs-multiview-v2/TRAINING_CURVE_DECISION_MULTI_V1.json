@@ -1,0 +1,15 @@
+{
+  "schema": "TRAINING_CURVE_DECISION_MULTI_V1",
+  "status": "PASS_TWO_SEEDS_COMPLETE_NO_MATERIAL_GAIN",
+  "arm": "M",
+  "selection_metric": "V2 VAL subject-equal absolute exact point-to-triangle median (mm)",
+  "runs": [
+    {"seed": 20260910, "completed_updates": 540, "best_update": 420, "best_absolute_mm": 21.992150281860706, "stop_reason": "maximum update"},
+    {"seed": 20260911, "completed_updates": 480, "best_update": 300, "best_absolute_mm": 23.980575256587013, "stop_reason": "patience 3"}
+  ],
+  "best_seed_mean_absolute_mm": 22.98636276922386,
+  "delta_vs_single_mean_mm": -0.6148393615923311,
+  "material_gain_rule_passed": false,
+  "decision": "NO_MATERIAL_MULTIVIEW_GAIN",
+  "metrics": "MULTI_PER_VALIDATION_METRICS.json"
+}

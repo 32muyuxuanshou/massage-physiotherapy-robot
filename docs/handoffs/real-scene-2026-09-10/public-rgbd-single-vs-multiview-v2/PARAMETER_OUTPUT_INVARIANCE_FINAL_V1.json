@@ -1,0 +1,45 @@
+{
+  "schema": "PARAMETER_OUTPUT_INVARIANCE_FINAL_V1",
+  "status": "PASS_FORMAL_EXACT_FREEZE_SEALED_CHECKPOINT_IDENTITY_BOUND",
+  "implementation": {
+    "trainable_outputs": ["global rotation rows [0,6)", "body pose rows [6,266)", "camera FFN"],
+    "frozen_outputs": ["shape rows [266,311)", "scale coefficient rows [311,339)", "hands rows [339,447)", "face rows [447,519)"],
+    "effective_trainable_parameter_count": 1325325,
+    "optimizer": "AdamW",
+    "enforcement": "mask forbidden final-layer gradients, restore forbidden parameter rows and same-shaped optimizer state after every step, and clamp forbidden raw outputs at every decoder stage to cached Official outputs"
+  },
+  "preflight_100_step_test": {
+    "status": "PASS_EXACT_OUTPUT_FREEZE",
+    "checked_steps": [0, 1, 10, 100],
+    "shape_max_abs_delta": 0.0,
+    "scale_max_abs_delta": 0.0,
+    "derived_mhr_scales_max_abs_delta": 0.0,
+    "hand_max_abs_delta": 0.0,
+    "face_max_abs_delta": 0.0
+  },
+  "formal_runs": {
+    "count": 4,
+    "total_optimizer_updates": 1860,
+    "all_pose_forbidden_parameter_rows_exact": true,
+    "all_fixed_val_shape_tensor_exact": true,
+    "all_fixed_val_scale_tensor_exact": true,
+    "all_fixed_val_derived_mhr_scales_tensor_exact": true,
+    "all_fixed_val_hand_tensor_exact": true,
+    "all_fixed_val_face_tensor_exact": true,
+    "maximum_forbidden_output_delta": 0.0
+  },
+  "two_pass_runtime_disclosure": {
+    "required": true,
+    "passes": ["Official reference pass on the same RGB/K/ROI", "adapted pose/camera pass with six-stage forbidden-output clamping"],
+    "input_is_still_single_image": true,
+    "ordinary_single_forward": false,
+    "reason": "Exact per-input/per-stage equality is achieved by using cached Official forbidden outputs, not by parameter-row restoration alone."
+  },
+  "sealed_evaluation": {
+    "winner_checkpoint_sha256_matches_freeze_manifest": true,
+    "winner_checkpoint_sha256": "1aedfd0f2cf6819078b9aae451ea681c51239f0945180dc2459122710dc3f107",
+    "per_sample_forbidden_output_deltas_persisted_in_sealed_result": false,
+    "interpretation": "The exact-freeze implementation and checkpoint identity are bound, but V2_SEALED_EXACT_RESULTS_V1.json does not persist a separate per-sample forbidden-output delta table."
+  },
+  "scope": "HuMMan dataset-provided ROI, RGB+K; exact invariance established in preflight and all formal non-SEALED validations, with SEALED checkpoint identity verified"
+}

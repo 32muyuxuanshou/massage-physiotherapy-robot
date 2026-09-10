@@ -1,0 +1,98 @@
+{
+  "status": "PREPARED_NOT_EXECUTED_WAITING_FOR_VAL_WINNER_FREEZE",
+  "purpose": "Open V2 SEALED exactly once after MODEL_S/M winner selection is frozen on V2 VAL.",
+  "current_state": {
+    "v2_sealed_pixels_read": false,
+    "v2_sealed_pixels_materialized": false,
+    "final_reserve_opened": false,
+    "winner_available": false
+  },
+  "hard_gate": {
+    "file": "V2_WINNER_FREEZE_MANIFEST.json",
+    "required_status": "WINNER_FROZEN_ON_V2_VAL",
+    "winner_values": [
+      "MODEL_S",
+      "MODEL_M"
+    ],
+    "checkpoint_sha256_required": true,
+    "v2_sealed_opened_before_freeze_must_be": false
+  },
+  "winner_freeze_schema": {
+    "status": "WINNER_FROZEN_ON_V2_VAL",
+    "winner": "MODEL_S_OR_MODEL_M",
+    "checkpoint_path": "ABSOLUTE_SERVER_PATH",
+    "checkpoint_sha256": "64_HEX",
+    "selected_using": "V2_VAL_ONLY",
+    "selection_metric": "PRE_REGISTERED_PRIMARY",
+    "v2_sealed_opened_before_freeze": false
+  },
+  "phases": [
+    {
+      "order": 1,
+      "name": "PLAN_AFTER_WINNER",
+      "script": "code/prepare_v2_sealed_after_winner.py plan",
+      "effect": "Reads already-recorded archive metadata for 12 SEALED identities; deterministically selects one sequence and 3 frames; still does not extract pixels."
+    },
+    {
+      "order": 2,
+      "name": "MATERIALIZE_ONCE",
+      "script": "code/prepare_v2_sealed_after_winner.py materialize",
+      "effect": "Selectively extracts only 12 SEALED subjects, cam008/cam009, 3 synchronized frames; Final Reserve is excluded by assertion."
+    },
+    {
+      "order": 3,
+      "name": "GEOMETRY_QA",
+      "script": "code/qa_v2_sealed_after_winner.py",
+      "effect": "Registers Depth to RGB for cam008/cam009, creates trainer/eval-ready NPZ caches and contact sheets; requires the same winner hash."
+    },
+    {
+      "order": 4,
+      "name": "HUMAN_VISUAL_QA",
+      "effect": "Review every generated contact sheet; write status PASS_GROSS_VISUAL_REGISTRATION_REVIEW. No threshold/model selection may use SEALED."
+    },
+    {
+      "order": 5,
+      "name": "FREEZE_FIXED_EVALUATION_RULER",
+      "script": "code/freeze_v2_sealed_evaluation_manifest.py",
+      "effect": "Freezes deterministic Camera-A evaluation point indices for 12 subjects x 3 frames and binds all comparator hashes."
+    },
+    {
+      "order": 6,
+      "name": "ONE_SHOT_EVALUATION",
+      "effect": "Evaluate Official, V2-TRAIN-only Txyz, frozen historical V1 E1, and frozen V2 winner using exactly the same manifest. Do not reselect winner or tune."
+    }
+  ],
+  "subject_and_camera_contract": {
+    "subjects": 12,
+    "frames_per_subject": 3,
+    "input_camera_A": "kinect_008",
+    "geometry_QA_camera_B": "kinect_009",
+    "winner_inference_inputs": [
+      "rgb_a",
+      "K_a",
+      "bbox_a"
+    ],
+    "camera_B_not_model_input": true
+  },
+  "comparators": {
+    "OFFICIAL": "Official SAM3D Body checkpoint, hash-bound before evaluation",
+    "TRAIN_ONLY_TXYZ": "Constant XYZ fit using V2 TRAIN subjects only",
+    "HISTORICAL_V1_E1": "/raid5/xuhd/public_rgbd_surface_finetuning_pilot_v1/formal_to_epoch10_v1/official_pose_camera_epoch1.pt",
+    "V2_WINNER": "Frozen MODEL_S or MODEL_M checkpoint from V2 VAL selection"
+  },
+  "same_ruler_requirements": [
+    "same 36 Camera-A RGB/K/ROI inputs",
+    "same deterministic registered Depth point indices",
+    "same coverage and common-coverage contract",
+    "same absolute and translation-aligned metric implementations",
+    "no test-time fitting"
+  ],
+  "failure_policy": [
+    "Any checkpoint hash mismatch stops before SEALED planning/materialization.",
+    "Any Final Reserve identity overlap stops immediately.",
+    "Any geometry QA failure is reported; no subject replacement after SEALED opening.",
+    "SEALED results never alter training, threshold, sampling, metric, or winner selection."
+  ],
+  "execution_performed": false,
+  "download_performed": false
+}

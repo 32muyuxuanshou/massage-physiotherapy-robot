@@ -1,43 +1,75 @@
 # PUBLIC RGB-D Single-view vs Multi-view Surface Finetuning V2
 
-当前 Training Readiness：**`READY_FOR_SINGLE_MULTI_AB`**。正式 S/M × 2 seeds 训练已经按冻结协议启动，V2 SEALED 与 Final Reserve 仍未打开。本页先记录训练前已经完成的合同；最终模型结果将在训练和新 SEALED 门控完成后补充。
+当前状态：**V2 VAL 选模与 one-shot V2 SEALED 已完成；Final Reserve 未打开。最终 Gate 为 `OBJECTIVE_CONFLICT_LOW_ERROR_PROTECTION_FAILED`。**
 
-## 研究问题
+本阶段比较相同 Camera A RGB、K、dataset-provided person ROI 下的两个训练臂。S 只用 Camera A depth 表面监督；M 在训练时增加同步 Camera B depth。两者推理输入都只有 Camera A 单张 RGB+K 和同一个数据集 ROI。为了保证 shape、scale、hand、face 输出逐元素与 Official 相同，当前实现先做 Official reference pass，再做 adapted pass，因此是单图输入但需要两次 forward。
 
-对完全相同的单张 Camera A RGB、K 和 dataset-provided ROI，训练时增加同步 Camera B Depth 表面监督，能否在 unseen subjects 上提高第一次 MHR 输出？推理时两组都只接收 Camera A 的单张 RGB；Multi-view 只存在于训练监督。
+## 实验结论
 
-## Readiness 结果
+四个正式训练均完成，共 1,860 次 optimizer updates、约 5.11 GPU 小时。S 两个 seed 的最佳 V2 VAL absolute 分别为 24.791/22.412 mm，均值 23.601 mm；M 为 21.992/23.981 mm，均值 22.986 mm。M 平均仅好 0.615 mm，并且第二个 seed 更差，没有达到预注册的“至少 2 mm 且两个 seed 均不差”标准。因此判定 **`NO_MATERIAL_MULTIVIEW_GAIN`**，选择计算更简单的 S，冻结 `seed=20260910, update=120`，checkpoint SHA-256 为 `1aedfd0f2cf6819078b9aae451ea681c51239f0945180dc2459122710dc3f107`。
 
-- 现有归档结构池 131 人；新完成 geometry QA 57 人，171/171 同步记录通过，342 个 camera views 精确解码，14 张 contact sheet 已视觉复核。
-- Split：TRAIN 60（15 历史 V1 TRAIN + 45 新人）、VAL 12 新人、V2 SEALED 12 新人、Final Reserve 15 新人；所有主 split subject-disjoint。
-- 没有新增下载。V2 SEALED 与 Final Reserve 仅冻结身份和归档 hash，没有选择/读取帧。
-- Pose/Camera-only exact freeze 已通过 100 steps：shape、scale、derived MHR scales、hand、face 在 1/10/100 steps 最大变化均为 0；有效训练自由度 1,325,325。
-- Exact freeze 需要同一张 RGB 的 Official reference pass，并在六个 decoder 阶段钳制非目标输出。它仍是单图输入、无 fitting，但不是普通单次 forward。
-- 16,384 个 topology-bound deterministic anchors 通过；2080 Ti 上独立 surface 计算可行。
-- S 每 update：Camera A 16,384 anchors + 2,048 observations。M：A/B 各 8,192 anchors + 各 1,024 observations。总预算相同，view 内 mean 后跨 view mean。
-- 真实 DEV 梯度 M/S 范数比：pose 0.895、camera 0.886、joint 0.891，没有两倍梯度问题。
-- 固定 180 个 TRAIN A/B pairs，60 人全部通过 geometry QA；跨相机一致性 subject-macro median 9.174 mm。这不是 sensor error floor。
-- 固定 VAL：12 人、36 行，observation、point indices、K、mask 均有 hash。
-- TRAIN-only Txyz bias `[+9.724, -22.741, -98.794] mm`；新 VAL readiness 近似为 Official 61.281 mm、Txyz 30.799 mm。该值是 deterministic-anchor NN，不冒充最终 exact primary。
-- 粗粒度 MHR 工程分区已由官方 LBS weights 建立：torso、arms、legs、head、hands/feet。上/下躯干、前/后背和医学穴位区域不可确定。
+选中 S checkpoint 在固定 V2 VAL 上为 24.791 mm absolute、15.279 mm translation-aligned、P90 65.237 mm、P95 93.182 mm、coverage 0.7902。Official 为 59.901/17.580/114.589/130.134 mm、coverage 0.6951；TRAIN-only Txyz 为 28.570/17.580/69.847/86.931 mm、coverage 0.7702；Historical V1 E1 为 30.413/15.085/70.137/87.522 mm、coverage 0.7699。
 
-## 冻结训练协议
+这说明选中模型相对 Official 同时改善绝对误差 35.111 mm 和对齐误差 2.301 mm，支持 V2 VAL 上存在一部分非平移几何改善。它相对 Historical V1 E1 的 absolute 好 5.622 mm，但 aligned 差 0.195 mm，且 P95 差 5.660 mm，因此不能声称几何质量全面超过历史模型。V2 VAL 有 10/12 subjects 的 absolute 优于 Official。
 
-四个 paired runs：S/M × seeds `20260910`、`20260911`。每个 run 最多 540 optimizer updates，固定 VAL 每 60 updates，patience 3；每 180 rows 构成一个等效 epoch并按 seed 确定性重排，S/M 同 seed 的 update order hash 完全相同。
+首次打开的新 V2 SEALED 上，Official / Txyz / Historical V1 E1 / V2 winner 的 absolute 分别为 49.371 / 37.738 / 30.429 / 30.368 mm；aligned 为 21.079 / 21.079 / 20.052 / 19.835 mm。V2 winner 相对 Official 的均值 absolute 改善 19.003 mm、aligned 改善 1.244 mm，P90/P95 改善 40.124/39.883 mm，coverage 从 0.6873 升至 0.7010。然而 absolute 只有 6/12 subjects 改善，并未达到多数；Official absolute <30 mm 的 5 人全部退化。结果表明均值和尾部收益主要来自修正大误差对象，同时牺牲已经较准的对象，因此当前 S 模型不能无条件替换 Official。
 
-每个 run 在固定 VAL 上选择 subject-equal absolute exact point-to-triangle 最低的 eligible checkpoint。P90/P95 不得超过 Official 的 1.10 倍，coverage 不得比 Official 低超过 0.02。S/M 以两个 paired seeds 的 best primary 平均比较；M 至少平均改善 2 mm 且两个 seed 均不差于 S，才算 material multi-view gain。Translation-aligned 只解释 placement 与非平移 geometry，不参与选模。
+现有 coverage 指标支持“没有通过少覆盖来换取较低中位误差”，但评估产物没有保存所有 comparator 的共同交集像素，严格 common-coverage paired error 尚未计算。
 
-如果 arm winner 冻结，预先指定 seed `20260910` 的 best eligible checkpoint 作为新 SEALED 候选；seed `20260911` 只用于稳定性复现。差异不足 2 mm 时判 `NO_MATERIAL_MULTIVIEW_GAIN`，优先保留计算更简单的 S。
+四个 raw formal run reports 没有顶层 `best` 字段。最佳点由 `history[*].fixed_val` 可确定性重建，并由 `FORMAL_TRAINING_AGGREGATE_V1.json` 和 `FORMAL_CHECKPOINT_MANIFEST_V1.json` 绑定。它是报告 schema 缺陷，不能把 raw report 本身说成已经包含 authoritative top-level best。
 
-## 关键文件
+## 第 42 节的 36 个问题
 
-- [Readiness Gate](PUBLIC_RGBD_FINETUNING_V2_READINESS.json)
-- [Subject QA](HUMMAN_V2_SUBJECT_QA_V1.json) 与 [Split](HUMMAN_V2_SUBJECT_SPLIT_V1.json)
-- [Output Freeze Test](POSE_CAMERA_OUTPUT_BLOCK_FREEZE_TEST_V1.json)
-- [Deterministic Anchors](MHR_DETERMINISTIC_SURFACE_ANCHORS_V1.json)
-- [Pair Manifest](MULTIVIEW_PAIR_MANIFEST_V1.json) 与 [Geometry QA](MULTIVIEW_GEOMETRY_QA_V1.json)
-- [Gradient Budget](SINGLE_MULTI_GRADIENT_BUDGET_AUDIT_V1.json)
-- [Fixed Evaluation Manifest](V2_FIXED_EVALUATION_MANIFEST.json)
-- [Single Protocol](TRAINING_PROTOCOL_SINGLE_V1.json) 与 [Multi Protocol](TRAINING_PROTOCOL_MULTI_V1.json)
+1. **新的 QA 后有多少真正 usable subjects？** 新增 57 个完成 geometry QA 的 subjects；171/171 同步记录、342 views 通过。整个 frozen 主 split 含 99 人，其中 TRAIN 还复用 15 个已 consumed 的历史 V1 TRAIN。
+2. **哪些历史 subjects 被标记 consumed？** `p000757,p000783,p000816,p000821,p000823,p000826,p000830,p000831,p000837,p000842,p000853,p000859,p000861,p000874,p000878,p000879,p000880,p000881,p000902,p000913,p000914,p000924,p000942,p000956,p000973,p001002,p001008,p001018,p001037,p001088,p001110`。其中 15 个 V1 TRAIN 只在 V2 TRAIN 内复用；历史 DEV/VAL/SEALED 不进入新的 VAL、V2 SEALED 或 Final Reserve。
+3. **Train / Val / New SEALED / Final Reserve 各多少人？** 60 / 12 / 12 / 15，四个主 split subject-disjoint。
+4. **是否新增下载，多少 GB？** 没有，0 GB；复用已在服务器的公开 HuMMan 归档。
+5. **Pose/Camera-only 是否真正实现？** 是。有效可训练自由度 1,325,325，只允许 global rotation、body pose 和 camera FFN 更新。
+6. **Shape 是否 exact unchanged？** 是，100-step 预检和全部非 SEALED 正式验证的最大差为 0。
+7. **Scale 是否 exact unchanged？** 是，最大差 0。
+8. **Derived MHR scales 是否 unchanged？** 是，最大差 0。
+9. **Hand/face 是否 unchanged？** 是，两者最大差均为 0。
+10. **Deterministic 16,384 surface sampling 是否通过？** 是；face indices、非负 barycentric、roundtrip 都通过，barycentric sum 最大误差 `1.1920929e-7`。
+11. **Single 与 Multi 每次 update 的总 surface supervision budget 是否相同？** 是。两者均为 16,384 predicted anchors 和 2,048 observed points。
+12. **Multi 用几个 view？** 两个同步 view：A/B 各 8,192 anchors、各 1,024 observations，跨 view 取 mean。
+13. **Input 是否仍只有单 RGB？** 是，两个模型都只输入 Camera A RGB+K+同一 dataset ROI；Camera B 只提供训练监督。
+14. **两个模型 gradient budget 是否同量级？** 是。真实 DEV 的 M/S median gradient norm ratio 为 pose 0.895、camera 0.886、joint 0.891。
+15. **TRAIN-only Txyz baseline 如何？** V2 VAL absolute 28.570 mm、aligned 17.580 mm、P90 69.847 mm、P95 86.931 mm、coverage 0.7702。
+16. **Official 如何？** V2 VAL absolute 59.901 mm、aligned 17.580 mm、P90 114.589 mm、P95 130.134 mm、coverage 0.6951。
+17. **Historical V1 E1 在新 VAL / 新 SEALED 如何？** 新 VAL 为 absolute 30.413 mm、aligned 15.085 mm、P90 70.137 mm、P95 87.522 mm、coverage 0.7699；新 SEALED 为 30.429/20.052/80.470/101.812 mm、coverage 0.7067。
+18. **Single-view 新模型如何？** 两 seed best absolute 为 24.791/22.412 mm，均值 23.601 mm；冻结候选为前者。
+19. **Multi-view 新模型如何？** 两 seed best absolute 为 21.992/23.981 mm，均值 22.986 mm。
+20. **VAL winner 是谁？** 按预注册规则选择 S；具体 SEALED 候选为 S seed 20260910 update 120。
+21. **为什么？** M 只平均好 0.615 mm，小于 2 mm 门槛，而且两个 seed 的方向不一致。
+22. **New SEALED 上 winner 是否改善？** subject-equal 均值改善：absolute 从 49.371 降至 30.368 mm，aligned 从 21.079 降至 19.835 mm；但这不是多数 subject 的稳健改善。
+23. **多数 subject 是否改善？** 没有。新 SEALED 相对 Official 仅 6/12 absolute 改善，另外 6 人退化；相对 Txyz 为 8/12，相对 Historical V1 E1 为 6/12。
+24. **low-error subjects 是否仍系统退化？** 是。新 SEALED 中 Official absolute <30 mm 的 5 人全部退化，增量为 +17.903、+11.990、+22.383、+0.873、+0.808 mm。
+25. **absolute improvement 多少？** V2 VAL 相对 Official 改善 35.111 mm；新 SEALED subject-equal mean 改善 19.003 mm（38.49%）。
+26. **translation-aligned improvement 多少？** V2 VAL 相对 Official 改善 2.301 mm；新 SEALED 改善 1.244 mm。新 SEALED 相对 Historical V1 E1 仅改善 0.217 mm。
+27. **如果 absolute 涨、aligned 不涨，如何解释？** 主要是相机平移/放置改善，不能归因于身体形状或姿态几何改善。
+28. **如果 aligned 也涨，是否可说非平移 geometry 改善？** 可以在同一评估域内有限地说“存在部分非平移几何改善”，但不能扩展到未测域、背部或医学定位。
+29. **P90/P95 如何？** V2 VAL 为 65.237/93.182 mm。新 SEALED winner 为 74.939/98.203 mm，Official 为 115.063/138.086 mm，两项改善 40.124/39.883 mm；也优于 Txyz 和 Historical V1 E1。
+30. **Coverage 如何？** V2 VAL 为 0.7902。新 SEALED winner 为 0.7010，Official 为 0.6873，提升 0.0137；比 Historical V1 E1 低 0.0058。严格 common-coverage paired error 未在结果中持久化，不能声称完全相同像素支持下的配对优势。
+31. **是否存在作弊？** 没有发现 split 泄漏、SEALED 选模、额外推理 view 或输出块漂移。winner 在 SEALED 前冻结，SEALED 只评 Official/Txyz/V1/winner，Final Reserve 未打开；dataset ROI 和两次 forward 仍必须披露。
+32. **是否有可信 torso map？** 有一个 topology-bound、由官方 LBS weights 派生的粗工程 torso map，2,122 vertices / 4,250 faces，资产和 topology hash 已绑定。
+33. **能否说背部/torso 已改善？** 不能。该 map 不能区分上/下躯干、前/后表面或医学穴位；现阶段只能报告 whole-surface 指标。
+34. **Multi-view supervision 有价值、无明显增益还是有害？** 在当前等预算两 seed 协议下是 **无明显增益**。数据不足以断言普遍有害。
+35. **下一步最值得测试什么？** 唯一优先实验：固定 S 路线，加入面向 Official 低误差样本的 protective/non-regression gating 或 loss。
+36. **为什么？** 新 SEALED 已明确显示 5/5 低误差对象退化，而总体均值和尾部仍改善。保护实验直接检验这个已观察到的冲突；Shape/Scale、Synthetic、LoRA 或单纯扩大数据暂时都会混入新的变量，无法先回答能否保住已经正确的 Official 预测。
 
-历史 V1 文件没有修改。当前结果只面向 HuMMan、dataset-provided ROI、单 RGB+K inference 的工程研究，不代表治疗床俯卧裸背、DMD37、医学穴位或机器人定位已经解决。
+## 审计边界与下一门控
+
+- **ROI 边界：**训练和评估都使用 HuMMan dataset-provided person ROI、registered depth/mask 与 K；没有测试 raw-image person detector、遮挡恢复、治疗床俯卧裸背、DMD37 或机器人定位。
+- **两 pass exact freeze：**第一次 Official pass 缓存六阶段非目标输出，第二次 adapted pass 钳制这些输出；这是 exact invariance 的代价。
+- **区域结论：**LBS map 只支持粗工程分区，不能把 whole-surface 结果改写成 back/torso/acupoint 改善。
+- **SEALED 边界：**winner 在首次 V2 SEALED 访问前冻结，loser 未在 SEALED 上选模；one-shot 结果已写入。Final Reserve 继续未打开。
+
+## 关键产物
+
+- [Readiness](PUBLIC_RGBD_FINETUNING_V2_READINESS.json)、[Subject split](HUMMAN_V2_SUBJECT_SPLIT_V1.json)、[Output freeze](POSE_CAMERA_OUTPUT_BLOCK_FREEZE_TEST_V1.json)
+- [Formal aggregate](FORMAL_TRAINING_AGGREGATE_V1.json)、[Curve decision](TRAINING_CURVE_DECISION_V2.json)、[Winner freeze](V2_WINNER_FREEZE_MANIFEST.json)
+- [VAL baselines](V2_VAL_BASELINES_EXACT_V1.json)、[New SEALED](NEW_SEALED_TEST_RESULTS_V1.json)、[Absolute vs aligned](ABSOLUTE_VS_ALIGNED_V2.json)、[Coverage](COVERAGE_AUDIT_V2.json)
+- [Single metrics](SINGLE_PER_VALIDATION_METRICS.json) / [CSV](SINGLE_PER_VALIDATION_METRICS.csv) / [curve decision](TRAINING_CURVE_DECISION_SINGLE_V1.json)
+- [Multi metrics](MULTI_PER_VALIDATION_METRICS.json) / [CSV](MULTI_PER_VALIDATION_METRICS.csv) / [curve decision](TRAINING_CURVE_DECISION_MULTI_V1.json)
+- [Invariance final](PARAMETER_OUTPUT_INVARIANCE_FINAL_V1.json)、[Failure cases](FAILURE_CASES_V2.json)、[Experiment decision](FINAL_EXPERIMENT_DECISION_V2.json)
+- [Engineering body-part audit](BODY_PART_MAP_AUDIT_V1.json)、[Geometry QA](MULTIVIEW_GEOMETRY_QA_V1.json)、[Gradient budget](SINGLE_MULTI_GRADIENT_BUDGET_AUDIT_V1.json)

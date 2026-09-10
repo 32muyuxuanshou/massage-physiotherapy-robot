@@ -1,0 +1,30 @@
+{
+  "status": "PASS_GROSS_VISUAL_REGISTRATION_REVIEW",
+  "scope": "V2_SEALED_AFTER_WINNER_FREEZE",
+  "sheet_count": 3,
+  "observation_count": 36,
+  "checks": [
+    "registered person mask follows visible silhouette",
+    "depth body support co-located",
+    "both camera views nonblank",
+    "no gross frame mismatch or catastrophic registration displacement"
+  ],
+  "limits": [
+    "subtle cross-camera residual is not excluded by gross visual review"
+  ],
+  "sheets": [
+    {
+      "file": "registration_contact_sheet_01.jpg",
+      "sha256": "8f5b726d7a714ab6d351f8bdb9eb4cd50ce355ddaee9caf05dcb3d2823ccce10"
+    },
+    {
+      "file": "registration_contact_sheet_02.jpg",
+      "sha256": "3b525ccd731e1184a5e7cd34e6d22573fd1ba3f757c8f31b1819235e566e36c7"
+    },
+    {
+      "file": "registration_contact_sheet_03.jpg",
+      "sha256": "9ff7e779cdc5d5c0fa23a3393244f4ff26d40435e7fa7371c23ec57d0972b861"
+    }
+  ],
+  "final_reserve_opened": false
+}
