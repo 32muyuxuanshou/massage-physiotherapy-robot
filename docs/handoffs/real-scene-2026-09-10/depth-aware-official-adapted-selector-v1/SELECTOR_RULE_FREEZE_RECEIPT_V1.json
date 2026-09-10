@@ -1,0 +1,34 @@
+{
+  "status": "FROZEN_BEFORE_SELECTOR_SEALED_ACCESS",
+  "feature": "point_to_triangle_surface_residual",
+  "delta": "R_O-R_A",
+  "tau_mm": 15,
+  "coverage_rule": "coverage_A >= coverage_O - 0.02",
+  "minimum_camera_a_points": 2048,
+  "missing_depth": "OFFICIAL",
+  "tie": "OFFICIAL",
+  "low_evidence": "diagnostic_only",
+  "decision": "ADAPTED iff delta>15mm and coverage rule passes; otherwise OFFICIAL",
+  "dev": {
+    "n": 36,
+    "adapted_win_rate": 0.8055555555555556,
+    "pearson_delta_vs_b_gain": 0.9536707408106033,
+    "auc": 0.9556650246305419,
+    "accuracy": 0.9166666666666666,
+    "false_switch": 0,
+    "missed_rescue": 3,
+    "adapted_selected": 26,
+    "constant_accuracy": 0.8055555555555556
+  },
+  "selector_val": {
+    "n": 36,
+    "adapted_win_rate": 0.4444444444444444,
+    "pearson_delta_vs_b_gain": 0.9761185950254536,
+    "auc": 1.0,
+    "accuracy": 1.0,
+    "false_switch": 0,
+    "missed_rescue": 0,
+    "adapted_selected": 16,
+    "constant_accuracy": 0.5555555555555556
+  }
+}

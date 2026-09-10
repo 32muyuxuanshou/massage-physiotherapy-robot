@@ -1,0 +1,25 @@
+{
+  "status": "FROZEN_BEFORE_FIRST_SELECTOR_SEALED_ACCESS",
+  "selection_decision": "NO_MATERIAL_MULTIVIEW_GAIN_SELECT_MODEL_S",
+  "arm": "S",
+  "seed": 20260910,
+  "update": 120,
+  "checkpoint": {
+    "run": "S_seed20260910",
+    "update": 120,
+    "path": "/raid5/xuhd/public_rgbd_single_vs_multiview_v2/formal_runs/S_seed20260910/checkpoint_update_000120.pt",
+    "bytes": 19080362,
+    "sha256": "1aedfd0f2cf6819078b9aae451ea681c51239f0945180dc2459122710dc3f107"
+  },
+  "selection_source": "VAL_MODEL_SELECTION_V1.json",
+  "selection_source_sha256": "49e46b1d731127734e251d24a19c4be6d242bd474ee0e1d469c149371ef3f771",
+  "allowed_sealed_comparators": [
+    "Official SAM",
+    "TRAIN-only Txyz",
+    "historical V1 E1",
+    "this frozen V2 winner only"
+  ],
+  "loser_arm_sealed_access_forbidden": true,
+  "final_reserve_access_forbidden": true,
+  "source_v2_winner_manifest_sha256": "fc16079f724aac157b6f4863ee072f88241d4a6d1217778c829e4c600068270d"
+}

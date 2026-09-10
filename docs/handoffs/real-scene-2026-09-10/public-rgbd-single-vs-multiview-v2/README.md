@@ -59,6 +59,8 @@
 
 ## 审计边界与下一门控
 
+> 2026-09-10 后续审计修正：原 `evaluate_v2_sealed_exact.py` 的 SEALED Adapted pass 未应用 VAL 阶段声明的六阶段 Pose/Camera output clamp。后续在相同 12 人/36 帧、相同 checkpoint 和固定点上按严格两阶段合同重跑，winner absolute 为 30.363 mm（原 30.368 mm，变化 -0.005 mm），不改变本 handoff 的模型选择或科学结论。修正产物见下一阶段 `depth-aware-official-adapted-selector-v1/V2_SEALED_CORRECTED_TWO_PASS_RESULTS_V1.json`。原文件保留作为历史审计记录。
+
 - **ROI 边界：**训练和评估都使用 HuMMan dataset-provided person ROI、registered depth/mask 与 K；没有测试 raw-image person detector、遮挡恢复、治疗床俯卧裸背、DMD37 或机器人定位。
 - **两 pass exact freeze：**第一次 Official pass 缓存六阶段非目标输出，第二次 adapted pass 钳制这些输出；这是 exact invariance 的代价。
 - **区域结论：**LBS map 只支持粗工程分区，不能把 whole-surface 结果改写成 back/torso/acupoint 改善。
