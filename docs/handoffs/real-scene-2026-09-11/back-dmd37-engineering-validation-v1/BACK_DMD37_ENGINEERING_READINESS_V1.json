@@ -1,0 +1,16 @@
+{
+  "schema": "BACK_DMD37_ENGINEERING_READINESS_V1",
+  "status": "NOT_READY",
+  "posterior_torso_gate": "POSTERIOR_GEOMETRY_NOT_READY",
+  "mhr_topology_gate": "PASS",
+  "mhr_dmd37_atlas_gate": "BRIDGE_UNCERTAINTY_REQUIRES_REVIEW",
+  "atlas_replay_gate": "PASS_100_PERCENT_DETERMINISTIC",
+  "parameter_sensitivity_gate": "COMPLETED_CONDITIONAL_ON_DIRECT_ATLAS_CANDIDATE",
+  "synthetic_dmd37_gate": "NOT_READY",
+  "blocking_items": [
+    "Independently annotate Camera-B posterior clothed torso on the 36-frame consumed pool without Mesh overlays.",
+    "Review and pre-accept the direct official MHR-to-SMPL plus nearest-MHR-triangle single-face conversion rule.",
+    "Verify the renderer, camera, depth, visibility and metric contracts before synthetic smoke."
+  ],
+  "final_deep_reserve_untouched": true
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "POSTERIOR_TORSO_ANNOTATION_CONTRACT_V1",
+  "status": "CONTRACT_READY_ANNOTATION_NOT_YET_EXECUTED",
+  "independence": {"allowed_inputs":["original Camera-B RGB","original Camera-B depth","dataset person mask"],"forbidden_inputs":["Official mesh overlay","Adapted mesh overlay","Cheap Txyz mesh","GPU selector mesh","DMD37 points","SAM body-part prediction"]},
+  "labels": {
+    "POSTERIOR_TORSO_VISIBLE":"A contiguous visible outer-surface region on the back/posterior torso is supported by the RGB silhouette and local appearance; clothing is allowed and must be marked.",
+    "NON_POSTERIOR_BODY":"Visible person pixels are present but the region is anterior, lateral-only, limb, head, or otherwise not posterior torso.",
+    "OCCLUDED":"Posterior torso is expected from context but the relevant surface is blocked by limb, object, crop, or invalid depth.",
+    "UNCERTAIN":"The view/appearance does not support a reliable posterior-vs-non-posterior decision. Do not force a polygon."
+  },
+  "surface_semantics":"If clothing covers the body, the annotated surface is POSTERIOR_CLOTHED_TORSO outer surface, never bare-back skin or medical ground truth.",
+  "record_fields":["subject_id","sequence_id","frame_id","label","polygon_or_mask_source","clothing_state","occlusion_state","depth_validity","uncertain_regions","annotator","reviewer","timestamp","notes"],
+  "qa_gate":"At least one second independent review on a subset; disagreement becomes UNCERTAIN until resolved from pixels.",
+  "current_blocker":"The repository handoff contains sealed geometry caches and contact sheets, but no verified independent Camera-B posterior masks/regions. Running O/A/C/G scoring now would risk model self-evaluation."
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "POSTERIOR_TORSO_SAMPLE_INVENTORY_V1",
+  "status": "CANDIDATE_INVENTORY_PENDING_INDEPENDENT_RGB_REVIEW",
+  "source_split": "SYSTEM_SEALED",
+  "source_manifest": "../../../../real-scene-2026-09-10/rgbd-mesh-system-baseline-and-abstention-v1/SYSTEM_SEALED_FIXED_EVALUATION_MANIFEST_V1.json",
+  "reserve_policy": "Final Deep Reserve untouched; no new pixel access performed",
+  "counts": {"subjects": 4, "actions": 10, "frames": 36, "candidate_posterior_frames": 24, "non_posterior_or_uncertain_candidates": 12},
+  "selection_rule": "Candidate labels are derived only from frozen action/view metadata for triage. They are not independent posterior annotations and cannot be used as benchmark GT until raw Camera-B RGB, Depth and dataset mask are reviewed without mesh overlays.",
+  "candidate_groups": [
+    {"subject_ids":["p000838","p000893","p000931"],"actions":["a000017","a000084","a001135","a001415","a001422","a000681"],"frames":24,"provisional_label":"REVIEW_REQUIRED_BACK_VISIBLE_OR_POSTERIOR_CLOTHED_TORSO","reason":"Frozen metadata says back-visible, back-visible oblique, or back-visible overhead; actual pixels still need independent polygon/mask review."},
+    {"subject_ids":["p000891","p000893","p000931"],"actions":["a001199","a001444","a000219","a005386"],"frames":12,"provisional_label":"REVIEW_REQUIRED_NON_POSTERIOR_OR_PARTIAL","reason":"Metadata indicates partial overhead, side-visible, or front-side oblique; posterior torso visibility cannot be inferred safely from the label alone."}
+  ],
+  "required_next_observation": "Open each source Camera-B RGB+Depth+person mask and assign POSTERIOR_TORSO_VISIBLE, NON_POSTERIOR_BODY, OCCLUDED, or UNCERTAIN with an independent 2D region record.",
+  "claim_limit": "This inventory proves only that a finite consumed candidate pool exists. It does not establish posterior geometry accuracy, bare-back accuracy, skin GT, DMD37 accuracy, or pose support."
+}

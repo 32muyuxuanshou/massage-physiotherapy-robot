@@ -1,0 +1,11 @@
+{
+  "schema":"POSTERIOR_TORSO_FAILURE_CASES_V1",
+  "status":"BLOCKED_PENDING_PIXEL_ANNOTATION",
+  "cases":[
+    {"failure":"NO_INDEPENDENT_REGION_GT","evidence":"BACK_REGION_READINESS_AUDIT_V1 is NOT_READY_FOR_BACK_SURFACE_ACCURACY; existing map is coarse/model-linked."},
+    {"failure":"CLOTHING_DOMAIN","impact":"HuMMan posterior candidates, if confirmed, are clothed outer-surface geometry and cannot support bare-back or medical claims."},
+    {"failure":"VIEW_AMBIGUITY","impact":"front-side, side-visible, and partial-overhead metadata do not prove posterior torso visibility."},
+    {"failure":"INSUFFICIENT_DIVERSITY_FOR_UNIVERSAL_CLAIM","impact":"Current candidate pool is 4 subjects/36 frames; any result is descriptive until a larger independently annotated pool exists."}
+  ],
+  "gate":"POSTERIOR_GEOMETRY_NOT_READY"
+}

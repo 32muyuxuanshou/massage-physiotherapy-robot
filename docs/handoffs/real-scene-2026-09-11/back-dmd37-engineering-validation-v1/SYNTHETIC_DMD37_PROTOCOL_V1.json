@@ -1,0 +1,12 @@
+{
+  "schema": "SYNTHETIC_DMD37_PROTOCOL_V1",
+  "status": "FROZEN_DRAFT_BLOCKED_BY_ATLAS_GATE",
+  "tiers": ["CLEAN", "SENSOR_STRESS"],
+  "systems": ["O", "A", "C", "G"],
+  "clean_contract": "MHR-native parameter state and topology-bound DMD37 anchors produce exact RGB-D ground truth; perfect camera and depth; controlled visibility.",
+  "stress_factors": ["depth holes", "invalid boundaries", "quantization", "small depth noise", "partial occlusion", "crop", "small camera perturbation"],
+  "metrics": ["per-point 3D", "P90", "P95", "2D pixels", "translation-aligned 3D", "normal", "tangential", "visibility-conditioned"],
+  "smoke_then_scale": "100-sample smoke before any 500-1000 image benchmark",
+  "hard_gate": "Do not render or score until the MHR-native Atlas bridge is independently accepted and the renderer/camera metric contract is verified.",
+  "medical_truth": false
+}

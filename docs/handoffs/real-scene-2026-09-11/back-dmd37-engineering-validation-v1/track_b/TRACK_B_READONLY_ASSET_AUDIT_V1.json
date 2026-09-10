@@ -1,0 +1,189 @@
+{
+  "schema": "TRACK_B_READONLY_ASSET_AUDIT_V1",
+  "audit_date": "2026-09-11",
+  "status": "ASSETS_IDENTIFIED_BRIDGE_GATE_NOT_READY",
+  "scope": "Read-only provenance and compatibility audit. This file does not create or approve an MHR-native atlas.",
+  "reviewed_dmd37": {
+    "authoritative_engineering_record": "docs/handoffs/real-scene-2026-09-06/reviewed-dmd37-2026-09-07/reviewed_points.json",
+    "record_sha256": "1f71524b8e454da338eb5c382499e60f7ea0fdb1b4a578da9a9348973b0d2ca2",
+    "local_blend": "最新点位/DMD37_工程草稿_请复核后另存.blend",
+    "local_blend_bytes": 11693756,
+    "local_blend_sha256": "e0d2281fc9df814596168bb2134684e9843df35ece4fd19d14be649ee89efff3",
+    "recorded_source_sha256_matches_local_blend": true,
+    "point_count": 37,
+    "point_ids": "ENG_D01..ENG_D37",
+    "reference_codes": 19,
+    "laterality_counts": {
+      "LEFT": 18,
+      "RIGHT": 18,
+      "MIDLINE": 1
+    },
+    "medical_truth": false,
+    "real_image_accuracy_validated": false,
+    "review_provenance": "The prior handoff records the user's report that review was completed and the file was saved-as. It is an engineering review attestation, not doctor/medical validation.",
+    "blender_readonly_probe": {
+      "blender_version_used": "3.6.23",
+      "newer_file_version_warning_observed": true,
+      "target_object": "SKEL-skin-male",
+      "target_family": "SKEL",
+      "target_gender": "male",
+      "skel_version": "1.1.1",
+      "template_id": "skel-male-trunk-limb-v2.3",
+      "vertex_count": 6890,
+      "face_count": 13776,
+      "topology_signature_sha256": "dc8b3f270680f4a66d1010713a49d771850ddb0850f9151d74cb10bbc90b7733",
+      "engineering_marker_mesh_count": 37,
+      "annotation_empty_count": 37,
+      "scene_metadata_conflict": "DRAFT_NOTICE still says 'No formal save performed' although the prior handoff and matching file hash record the user's saved review. Treat this as stale scene metadata and preserve both facts in provenance."
+    },
+    "binding_checks": {
+      "all_37_ids_present_once": true,
+      "all_source_faces_match_male_skel_face_array": true,
+      "all_111_support_vertices_in_range": true,
+      "max_abs_barycentric_sum_error": 3.725290298461914e-08
+    },
+    "separate_historical_asset": {
+      "atlas": "AI感知模块/outputs/交付文件/2026-08-28_20-21-54/engineering_atlas_back20_v1.json",
+      "atlas_sha256": "2f4b92697308bc66458c4d98ee8733a0f4c799390dba51c61abf15767ddd0b6f",
+      "meaning": "Older female-SKEL E01..E20 engineering trial atlas. It is not the reviewed male-SKEL ENG_D01..ENG_D37 asset and must not replace it."
+    }
+  },
+  "sam3d_mhr_runtime": {
+    "server": "172.18.18.151",
+    "runtime_asset_path": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/assets/mhr_model.pt",
+    "checkpoint_path": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/model.ckpt",
+    "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "checkpoint_sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+    "lod": 1,
+    "lod_evidence": [
+      "SAM 3D Body mhr_head.py constructs MHR.from_files(..., lod=1) when the source MHR path is used.",
+      "The head's fixed keypoint_mapping width is 18439+127.",
+      "The loaded TorchScript has 18439 skinning rows and its face array exactly matches the official MHR LOD1 conversion mesh used by the MHR repository."
+    ],
+    "lod_asset_limitation": "The TorchScript object exposes no lod/version/model_version/mesh_lod attribute. LOD=1 is established by the wrapper source and exact topology match, not by self-describing metadata inside mhr_model.pt.",
+    "vertex_count": 18439,
+    "face_count": 36874,
+    "face_index_range": [0, 18438],
+    "faces_dtype_at_runtime": "int32",
+    "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+    "joint_count": 127,
+    "lbs_shape": [18439, 8],
+    "torchscript_methods": [
+      "forward",
+      "get_joint_names",
+      "get_lbsw",
+      "get_parameter_limits",
+      "get_parameter_names",
+      "get_parameter_transform",
+      "get_num_identity_blendshapes",
+      "get_num_face_expression_blendshapes"
+    ],
+    "source_versions": {
+      "local_sam_3d_body_commit": "b5c765a0d89d789985e186d396315e7590887b94",
+      "local_mhr_commit": "e412e12c9d7287a598f00edf19242b476b440211",
+      "sam_mhr_head_sha256": "1e4b5482f78b337a2c739c945f29a02f579b3aca99523f69f5436c3f1e394bf8"
+    },
+    "official_face_asset": {
+      "path": "AI感知模块/研究资料/真实场景关键点定位_2026-09-06/local/MHR/tools/mhr_smpl_conversion/assets/mhr_face_mask.ply",
+      "file_sha256": "db8ed4fca24a744b1e1f4ed9562f55aff837c9f270debbb34a9d1537a3ac62e1",
+      "vertex_count": 18439,
+      "face_count": 36874,
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "runtime_faces_exact_match": true
+    }
+  },
+  "historical_skel_bridge": {
+    "path": "AI感知模块/模型资源/SMPL-X_SKEL_v2.2_internal/alignment/mapping_male.npz",
+    "sha256": "18c7d28ac5dbc10b2e8df05b6a787fa853d65612ca6d4ff5c8de8c238afe3fc8",
+    "schema": "project-smplx-skel-surface-map-v1",
+    "method": "nearest-canonical-vertex-with-robust-translation",
+    "official_transfer_correspondence": false,
+    "support_vertices_checked": 111,
+    "all_support_vertices_valid": true,
+    "support_distance_mm": {
+      "mean": 8.499295,
+      "p95": 11.881169,
+      "max": 12.812636
+    },
+    "pointwise_max_support_distance_mm": {
+      "mean": 9.458031,
+      "p95": 12.223061,
+      "max": 12.812636
+    },
+    "historical_projection_evidence": "docs/handoffs/real-scene-2026-09-06/engineering_projection/projection.json",
+    "historical_projection_status": "PROJECTION_PROTOTYPE_NOT_LABEL_VALIDATED",
+    "known_limitations": [
+      "Canonical nearest-vertex distance measures geometric proximity, not anatomical or semantic correspondence.",
+      "The historical projection had no individualized SKEL fitting, no external occlusion model, no metric camera calibration and no target-point ground truth.",
+      "The earlier projection used the separate female E01..E20 atlas; it is evidence that the chain executed, not that the current male ENG_D01..ENG_D37 bridge is correct."
+    ]
+  },
+  "official_mhr_mapping_assets": {
+    "repository_commit": "e412e12c9d7287a598f00edf19242b476b440211",
+    "directory": "AI感知模块/研究资料/真实场景关键点定位_2026-09-06/local/MHR/tools/mhr_smpl_conversion/assets",
+    "mappings": [
+      {
+        "file": "mhr2smpl_mapping.npz",
+        "sha256": "4bfe2fd6abb598f38ba3a3aa5506ac45b4efb3cdaed7fe4757cfbbf20bbe6ac7",
+        "direction": "MHR surface -> 6890 SMPL vertices",
+        "target_count": 6890,
+        "source_face_index_range": [24, 36871]
+      },
+      {
+        "file": "mhr2smplx_mapping.npz",
+        "sha256": "d6d023f9f483be73cd4491d0ddf217450627263405c9bc6bf43795dfff809af1",
+        "direction": "MHR surface -> 10475 SMPL-X vertices",
+        "target_count": 10475,
+        "source_face_index_range": [11, 36871]
+      },
+      {
+        "file": "smpl2mhr_mapping.npz",
+        "sha256": "84f908ad534f470dc5db072a4aeb9ccb4f9aa4484d2bce2558cc1a346df95c98",
+        "direction": "SMPL surface -> 18439 MHR vertices",
+        "target_count": 18439,
+        "source_face_index_range": [0, 13774]
+      },
+      {
+        "file": "smplx2mhr_mapping.npz",
+        "sha256": "94742d378ccbd6058ce8aa0221d16726d1e5def45490685c223b2e87c6070f97",
+        "direction": "SMPL-X surface -> 18439 MHR vertices",
+        "target_count": 18439,
+        "source_face_index_range": [1, 20896]
+      }
+    ],
+    "numeric_integrity": "All four arrays have in-range source triangle ids and barycentric sums within 2.23e-16; tiny negative weights down to about -1.37e-13 are floating-point noise.",
+    "key_finding": "An official MHR<->SMPL mapping exists in addition to MHR<->SMPL-X. Because the reviewed SKEL skin explicitly shares the 6890-vertex SMPL topology, the direct SMPL mapping is a required comparison candidate.",
+    "single_face_binding_issue": "For all 37 reviewed points, the three source SMPL support vertices map through mhr2smpl_mapping.npz to three distinct MHR triangles. The official map therefore does not directly yield one MHR face_index plus one barycentric triplet for a DMD37 point. A project-defined surface projection or another correspondence rule is still required and must be audited."
+  },
+  "assessment_of_current_shared_draft": {
+    "files_observed": [
+      "MHR_DMD37_TOPOLOGY_CONTRACT_V1.json",
+      "DMD37_MHR_ENGINEERING_ATLAS_V1.json",
+      "DMD37_BRIDGE_AUDIT_V1.json",
+      "DMD37_ATLAS_REPLAY_TEST_V1.json"
+    ],
+    "do_not_release_current_pass": true,
+    "issues": [
+      "Topology contract says 'runtime default/full exported mesh' instead of the evidenced LOD 1 and omits the source commits/checkpoint hash.",
+      "Bridge audit says only MHR-to-SMPL-X is available, but the official repository contains four bidirectional SMPL/SMPL-X mapping assets.",
+      "The builder tests only project SKEL-to-SMPL-X nearest mapping followed by official MHR-to-SMPL-X. It does not compare the direct official MHR-to-SMPL path required by the available assets and the source's shared SMPL topology.",
+      "The 20 mm and 2 mm pass thresholds are not linked to a pre-frozen protocol or independent acceptance basis.",
+      "Replay=100% only proves that the newly selected MHR face/barycentric numbers reproduce themselves on the same rest mesh. It does not validate bridge choice.",
+      "Required canonical difference, surface/geodesic difference, side consistency, midline consistency, bilateral symmetry and anatomical-region sanity are not fully reported."
+    ]
+  },
+  "recommended_gate": "BRIDGE_UNCERTAINTY_REQUIRES_REVIEW",
+  "minimum_next_checks": [
+    "Correct the topology contract to LOD=1 and bind it to the exact runtime asset, checkpoint, face hash and source commits.",
+    "Compare at least two explicit candidates on the same MHR LOD1 rest mesh: direct official MHR-to-SMPL lifting of the reviewed 6890-topology anchors, and the historical project SKEL-to-SMPL-X plus official MHR-to-SMPL-X chain.",
+    "For each candidate, record the pre-projection composed point, chosen MHR face/barycentric, Euclidean projection residual and pairwise canonical displacement.",
+    "Compute graph-geodesic distance on the exact MHR mesh if implemented reliably; otherwise mark it unavailable rather than substituting Euclidean distance.",
+    "Run explicit subject-left/right, midline, paired symmetry and coarse posterior-region sanity checks with declared axes.",
+    "Freeze acceptance thresholds before reviewing the comparison results. Until then, keep the atlas as a candidate and do not issue PASS_DMD37_MHR_ENGINEERING_ASSET."
+  ],
+  "reproducible_commands": [
+    "Get-FileHash -Algorithm SHA256 '最新点位/DMD37_工程草稿_请复核后另存.blend'",
+    "blender -b '最新点位/DMD37_工程草稿_请复核后另存.blend' -P 'docs/handoffs/real-scene-2026-09-11/back-dmd37-engineering-validation-v1/track_b/inspect_reviewed_blend_readonly.py'",
+    "ssh -p 436 xuhd@172.18.18.151 '<venv python> -c load torchscript; read character_torch.mesh.faces and get_lbsw()'"
+  ]
+}

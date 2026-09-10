@@ -1,0 +1,2243 @@
+{
+  "schema": "DMD37_MHR_ENGINEERING_ATLAS_V1",
+  "status": "BRIDGE_UNCERTAINTY_REQUIRES_REVIEW",
+  "point_count": 37,
+  "gate_reason": "Direct official SMPL candidate is deterministic, but the single-face projection rule was not pre-frozen and the historical bridge differs materially; independent engineering review is required before release.",
+  "medical_truth": false,
+  "real_image_accuracy_validated": false,
+  "topology": {
+    "schema": "MHR_DMD37_TOPOLOGY_CONTRACT_V1",
+    "status": "PASS",
+    "mhr_version": "facebook/sam-3d-body public MHR TorchScript asset",
+    "lod": "lod=1 (verified in mhr_head runtime source)",
+    "vertex_count": 18439,
+    "face_count": 36874,
+    "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+    "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "rest_vertices_sha256_float32_c_order": "2b16a5d065c9dd8aeaf648d068a1ee2721c0068a6a0f97602be68a83a560e254",
+    "runtime_evidence": "raw/mhr_runtime_contract.json",
+    "units": "runtime native centimeters; atlas also records meters"
+  },
+  "points": [
+    {
+      "engineering_point_id": "ENG_D01",
+      "reference_code": "GV14",
+      "current_engineering_name": "大椎（工程草稿）",
+      "anatomical_side": "MIDLINE",
+      "mhr_face_index": 11886,
+      "vertex_indices": [
+        5871,
+        5764,
+        5765
+      ],
+      "barycentric": [
+        0.12311618279450975,
+        0.5658870783953192,
+        0.3109967388101711
+      ],
+      "canonical_3d_cm": [
+        0.2494929761258761,
+        143.7794485004357,
+        -9.64341748667708
+      ],
+      "canonical_3d_m": [
+        0.002494929761258761,
+        1.4377944850043571,
+        -0.0964341748667708
+      ],
+      "source_skel_point": {
+        "face_index": 6038,
+        "vertex_indices": [
+          1305,
+          2876,
+          2878
+        ],
+        "barycentric": [
+          0.741502583026886,
+          0.10504473000764847,
+          0.15345270931720734
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.03172631973249035,
+        "direct_vs_historical_smplx_bridge_mm": 13.597911893978821,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          4.671602509915829,
+          8.487709797918797,
+          4.219451453536749
+        ],
+        "historical_face_index": 11742,
+        "historical_barycentric": [
+          0.10402613597344684,
+          0.639163703486515,
+          0.2568101605400382
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D02",
+      "reference_code": "GB21",
+      "current_engineering_name": "肩井（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 12044,
+      "vertex_indices": [
+        6360,
+        6359,
+        6242
+      ],
+      "barycentric": [
+        0.5426067144386597,
+        0.07840449688273411,
+        0.37898878867860625
+      ],
+      "canonical_3d_cm": [
+        9.0877372030792,
+        143.9913750804808,
+        -10.453797428980824
+      ],
+      "canonical_3d_m": [
+        0.090877372030792,
+        1.4399137508048079,
+        -0.10453797428980824
+      ],
+      "source_skel_point": {
+        "face_index": 4705,
+        "vertex_indices": [
+          2886,
+          2881,
+          2887
+        ],
+        "barycentric": [
+          0.47571703791618347,
+          0.34715399146080017,
+          0.17712895572185516
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.5318992707565903,
+        "direct_vs_historical_smplx_bridge_mm": 13.984392534762776,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          9.557360783219337,
+          8.409412577748299,
+          9.765631519258022
+        ],
+        "historical_face_index": 11879,
+        "historical_barycentric": [
+          0.4891316646704673,
+          0.47020637736880305,
+          0.04066195796072968
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D03",
+      "reference_code": "GB21",
+      "current_engineering_name": "肩井（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 12062,
+      "vertex_indices": [
+        7293,
+        7410,
+        7409
+      ],
+      "barycentric": [
+        0.3482193421603351,
+        0.21033081807523746,
+        0.4414498397644274
+      ],
+      "canonical_3d_cm": [
+        -9.18136083694198,
+        143.86638685265996,
+        -10.504932969632424
+      ],
+      "canonical_3d_m": [
+        -0.0918136083694198,
+        1.4386638685265996,
+        -0.10504932969632425
+      ],
+      "source_skel_point": {
+        "face_index": 11593,
+        "vertex_indices": [
+          6345,
+          6346,
+          6340
+        ],
+        "barycentric": [
+          0.5865296125411987,
+          0.14096321165561676,
+          0.2725071907043457
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.4948966246796122,
+        "direct_vs_historical_smplx_bridge_mm": 13.398418103303095,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          8.135620504617691,
+          8.811207488179207,
+          6.043892819434404
+        ],
+        "historical_face_index": 11896,
+        "historical_barycentric": [
+          0.4111596193331132,
+          0.2568532898334174,
+          0.33198709083346944
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D04",
+      "reference_code": "SI10",
+      "current_engineering_name": "臑俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 12696,
+      "vertex_indices": [
+        6584,
+        6583,
+        6472
+      ],
+      "barycentric": [
+        0.0025660922624355376,
+        0.7530265873213626,
+        0.24440732041620183
+      ],
+      "canonical_3d_cm": [
+        15.366721639517271,
+        137.73073154483546,
+        -10.75796063728319
+      ],
+      "canonical_3d_m": [
+        0.15366721639517272,
+        1.3773073154483546,
+        -0.1075796063728319
+      ],
+      "source_skel_point": {
+        "face_index": 4674,
+        "vertex_indices": [
+          2948,
+          708,
+          1828
+        ],
+        "barycentric": [
+          0.12140622735023499,
+          0.46393948793411255,
+          0.41465428471565247
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.13201834941716395,
+        "direct_vs_historical_smplx_bridge_mm": 28.891597567208716,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          9.282354265451431,
+          12.812635861337185,
+          10.80674584954977
+        ],
+        "historical_face_index": 12539,
+        "historical_barycentric": [
+          0.23357428992374912,
+          0.5767936208382769,
+          0.18963208923797398
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D05",
+      "reference_code": "SI10",
+      "current_engineering_name": "臑俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 12722,
+      "vertex_indices": [
+        7529,
+        7644,
+        7643
+      ],
+      "barycentric": [
+        0.12059445730214907,
+        0.8493960191222322,
+        0.030009523575618764
+      ],
+      "canonical_3d_cm": [
+        -15.507170846588796,
+        137.8947174918337,
+        -10.685935556587365
+      ],
+      "canonical_3d_m": [
+        -0.15507170846588797,
+        1.3789471749183368,
+        -0.10685935556587366
+      ],
+      "source_skel_point": {
+        "face_index": 11561,
+        "vertex_indices": [
+          5287,
+          4196,
+          6407
+        ],
+        "barycentric": [
+          0.5422446131706238,
+          0.4186156988143921,
+          0.039139676839113235
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.08606467254377673,
+        "direct_vs_historical_smplx_bridge_mm": 29.94309923699468,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          10.372726246714592,
+          11.658231727778912,
+          9.569601155817509
+        ],
+        "historical_face_index": 12564,
+        "historical_barycentric": [
+          0.05881800379083968,
+          0.259093002808411,
+          0.6820889934007492
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D06",
+      "reference_code": "SI9",
+      "current_engineering_name": "肩贞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 13167,
+      "vertex_indices": [
+        6580,
+        6470,
+        6581
+      ],
+      "barycentric": [
+        0.10545528565988693,
+        0.29487106039576466,
+        0.5996736539443484
+      ],
+      "canonical_3d_cm": [
+        17.512832347485585,
+        134.45823559657265,
+        -10.252908446827936
+      ],
+      "canonical_3d_m": [
+        0.17512832347485585,
+        1.3445823559657264,
+        -0.10252908446827937
+      ],
+      "source_skel_point": {
+        "face_index": 6737,
+        "vertex_indices": [
+          2939,
+          2942,
+          2940
+        ],
+        "barycentric": [
+          0.39954227209091187,
+          0.2586759328842163,
+          0.3417817950248718
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.4054885286946244,
+        "direct_vs_historical_smplx_bridge_mm": 29.581520530041484,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          7.0435041561722755,
+          2.628257730975747,
+          3.0127002391964197
+        ],
+        "historical_face_index": 13000,
+        "historical_barycentric": [
+          0.04808722905722074,
+          0.02790145465373333,
+          0.924011316289046
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D07",
+      "reference_code": "SI9",
+      "current_engineering_name": "肩贞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 13213,
+      "vertex_indices": [
+        7531,
+        7647,
+        7646
+      ],
+      "barycentric": [
+        0.18294750287892447,
+        0.10424401058889038,
+        0.7128084865321851
+      ],
+      "canonical_3d_cm": [
+        -17.629241267221722,
+        134.59643201486244,
+        -10.234470570484845
+      ],
+      "canonical_3d_m": [
+        -0.17629241267221724,
+        1.3459643201486244,
+        -0.10234470570484845
+      ],
+      "source_skel_point": {
+        "face_index": 13624,
+        "vertex_indices": [
+          6399,
+          6401,
+          6400
+        ],
+        "barycentric": [
+          0.23997990787029266,
+          0.3155905306339264,
+          0.44442954659461975
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.4220717181176825,
+        "direct_vs_historical_smplx_bridge_mm": 28.12966867132504,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          4.774151369929314,
+          3.024748992174864,
+          7.795828860253096
+        ],
+        "historical_face_index": 12881,
+        "historical_barycentric": [
+          0.740272637001456,
+          0.15058210580277656,
+          0.10914525719576752
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D08",
+      "reference_code": "BL11",
+      "current_engineering_name": "大杼（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 12389,
+      "vertex_indices": [
+        6121,
+        5976,
+        6122
+      ],
+      "barycentric": [
+        0.12470722351903357,
+        0.5491866849366809,
+        0.32610609154428555
+      ],
+      "canonical_3d_cm": [
+        5.43240831139138,
+        140.5858259999411,
+        -11.46913561645256
+      ],
+      "canonical_3d_m": [
+        0.0543240831139138,
+        1.4058582599994112,
+        -0.1146913561645256
+      ],
+      "source_skel_point": {
+        "face_index": 4737,
+        "vertex_indices": [
+          2884,
+          1215,
+          732
+        ],
+        "barycentric": [
+          0.35296720266342163,
+          0.14388969540596008,
+          0.5031430721282959
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.10315422534799627,
+        "direct_vs_historical_smplx_bridge_mm": 14.592589910576754,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          8.663887158036232,
+          8.669850416481495,
+          10.139752179384232
+        ],
+        "historical_face_index": 12232,
+        "historical_barycentric": [
+          0.3247745426112132,
+          0.1322630289230339,
+          0.5429624284657529
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D09",
+      "reference_code": "BL11",
+      "current_engineering_name": "大杼（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 12398,
+      "vertex_indices": [
+        7172,
+        7171,
+        7045
+      ],
+      "barycentric": [
+        0.14286041247123682,
+        0.20905302985370425,
+        0.648086557675059
+      ],
+      "canonical_3d_cm": [
+        -5.233060909030371,
+        140.5017838097584,
+        -11.445467950793375
+      ],
+      "canonical_3d_m": [
+        -0.05233060909030371,
+        1.405017838097584,
+        -0.11445467950793375
+      ],
+      "source_skel_point": {
+        "face_index": 11626,
+        "vertex_indices": [
+          4220,
+          4698,
+          6343
+        ],
+        "barycentric": [
+          0.3759869337081909,
+          0.14277397096157074,
+          0.48123908042907715
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.12071760906762473,
+        "direct_vs_historical_smplx_bridge_mm": 14.445079444562893,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          7.177947089076042,
+          5.47515694051981,
+          5.630346946418285
+        ],
+        "historical_face_index": 12243,
+        "historical_barycentric": [
+          0.35662528375672886,
+          0.4493907179189226,
+          0.19398399832434857
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D10",
+      "reference_code": "BL12",
+      "current_engineering_name": "风门（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 12547,
+      "vertex_indices": [
+        6120,
+        5975,
+        6121
+      ],
+      "barycentric": [
+        0.16608186408092185,
+        0.7862072081987079,
+        0.047710927720370215
+      ],
+      "canonical_3d_cm": [
+        5.291216053701595,
+        138.33993974374673,
+        -11.936118098071058
+      ],
+      "canonical_3d_m": [
+        0.052912160537015945,
+        1.3833993974374672,
+        -0.11936118098071058
+      ],
+      "source_skel_point": {
+        "face_index": 4736,
+        "vertex_indices": [
+          895,
+          1214,
+          731
+        ],
+        "barycentric": [
+          0.2792496979236603,
+          0.5686134696006775,
+          0.15213684737682343
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.1035733313125735,
+        "direct_vs_historical_smplx_bridge_mm": 15.88549324819211,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          9.11179929971695,
+          8.792740292847157,
+          9.45519469678402
+        ],
+        "historical_face_index": 12388,
+        "historical_barycentric": [
+          0.3274581320938904,
+          0.11967283269406306,
+          0.5528690352120466
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D11",
+      "reference_code": "BL12",
+      "current_engineering_name": "风门（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 12556,
+      "vertex_indices": [
+        7046,
+        7047,
+        7173
+      ],
+      "barycentric": [
+        0.8151460781956774,
+        0.07710304907114152,
+        0.1077508727331811
+      ],
+      "canonical_3d_cm": [
+        -5.050684095424352,
+        138.23260286913958,
+        -11.903383174151154
+      ],
+      "canonical_3d_m": [
+        -0.05050684095424352,
+        1.3823260286913959,
+        -0.11903383174151154
+      ],
+      "source_skel_point": {
+        "face_index": 11623,
+        "vertex_indices": [
+          4221,
+          4696,
+          4382
+        ],
+        "barycentric": [
+          0.011114215478301048,
+          0.6947565674781799,
+          0.29412922263145447
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.12454507630499492,
+        "direct_vs_historical_smplx_bridge_mm": 15.80284986755023,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          6.265302654355764,
+          6.14533806219697,
+          5.704932380467653
+        ],
+        "historical_face_index": 12399,
+        "historical_barycentric": [
+          0.22632699617362287,
+          0.5254827385882999,
+          0.24819026523807727
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D12",
+      "reference_code": "BL13",
+      "current_engineering_name": "肺俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 12704,
+      "vertex_indices": [
+        6119,
+        5973,
+        5974
+      ],
+      "barycentric": [
+        0.012778753983124669,
+        0.08714607507998745,
+        0.9000751709368878
+      ],
+      "canonical_3d_cm": [
+        5.151766936523831,
+        136.04746833124585,
+        -12.291020957794304
+      ],
+      "canonical_3d_m": [
+        0.051517669365238314,
+        1.3604746833124586,
+        -0.12291020957794303
+      ],
+      "source_skel_point": {
+        "face_index": 1078,
+        "vertex_indices": [
+          727,
+          896,
+          728
+        ],
+        "barycentric": [
+          0.30738621950149536,
+          0.3978891670703888,
+          0.29472461342811584
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.7474034703074095,
+        "direct_vs_historical_smplx_bridge_mm": 16.26819268413042,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          8.03953967988491,
+          8.563746698200703,
+          7.733380887657404
+        ],
+        "historical_face_index": 12546,
+        "historical_barycentric": [
+          0.13826609544834856,
+          0.30714361408822727,
+          0.5545902904634241
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D13",
+      "reference_code": "BL13",
+      "current_engineering_name": "肺俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 12713,
+      "vertex_indices": [
+        6942,
+        7048,
+        7047
+      ],
+      "barycentric": [
+        0.10381615830994007,
+        0.13296847719247595,
+        0.763215364497584
+      ],
+      "canonical_3d_cm": [
+        -4.869255378758194,
+        135.9144289798478,
+        -12.231338948806199
+      ],
+      "canonical_3d_m": [
+        -0.04869255378758194,
+        1.359144289798478,
+        -0.12231338948806199
+      ],
+      "source_skel_point": {
+        "face_index": 7965,
+        "vertex_indices": [
+          4216,
+          4381,
+          4217
+        ],
+        "barycentric": [
+          0.4642767310142517,
+          0.25907763838768005,
+          0.27664563059806824
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.5612931123923041,
+        "direct_vs_historical_smplx_bridge_mm": 16.245065253741345,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          5.455866456031799,
+          5.2283527329564095,
+          5.51868649199605
+        ],
+        "historical_face_index": 12556,
+        "historical_barycentric": [
+          0.5307077672731141,
+          0.4547262431343331,
+          0.014565989592552791
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D14",
+      "reference_code": "BL14",
+      "current_engineering_name": "厥阴俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 12863,
+      "vertex_indices": [
+        5972,
+        5866,
+        5973
+      ],
+      "barycentric": [
+        0.14345021365991129,
+        0.20609291728335333,
+        0.6504568690567354
+      ],
+      "canonical_3d_cm": [
+        4.943073994351598,
+        133.30010822032838,
+        -12.426216324654781
+      ],
+      "canonical_3d_m": [
+        0.04943073994351598,
+        1.3330010822032838,
+        -0.12426216324654782
+      ],
+      "source_skel_point": {
+        "face_index": 4818,
+        "vertex_indices": [
+          2998,
+          2950,
+          3006
+        ],
+        "barycentric": [
+          0.2862894535064697,
+          0.6117830276489258,
+          0.10192755609750748
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.5919656092473645,
+        "direct_vs_historical_smplx_bridge_mm": 17.210908587852487,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          7.615440990775824,
+          7.574267685413361,
+          8.005710318684578
+        ],
+        "historical_face_index": 12707,
+        "historical_barycentric": [
+          0.48913630030961336,
+          0.07928213960930428,
+          0.43158156008108234
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D15",
+      "reference_code": "BL14",
+      "current_engineering_name": "厥阴俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 12868,
+      "vertex_indices": [
+        7049,
+        7048,
+        6943
+      ],
+      "barycentric": [
+        0.1926732802751011,
+        0.4992191038987975,
+        0.30810761582610147
+      ],
+      "canonical_3d_cm": [
+        -4.673246928003764,
+        133.1406352807723,
+        -12.359975439346563
+      ],
+      "canonical_3d_m": [
+        -0.046732469280037645,
+        1.331406352807723,
+        -0.12359975439346563
+      ],
+      "source_skel_point": {
+        "face_index": 11706,
+        "vertex_indices": [
+          6457,
+          6409,
+          6456
+        ],
+        "barycentric": [
+          0.25958913564682007,
+          0.6476593017578125,
+          0.09275154769420624
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.36108966837027145,
+        "direct_vs_historical_smplx_bridge_mm": 16.992949714671624,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          4.953207448124886,
+          5.4339449852705,
+          5.789738148450851
+        ],
+        "historical_face_index": 12713,
+        "historical_barycentric": [
+          0.19903513857156907,
+          0.5410198828369346,
+          0.25994497859149635
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D16",
+      "reference_code": "BL15",
+      "current_engineering_name": "心俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 13020,
+      "vertex_indices": [
+        5864,
+        5865,
+        5972
+      ],
+      "barycentric": [
+        0.16498734599838782,
+        0.15692735690534568,
+        0.6780852970962665
+      ],
+      "canonical_3d_cm": [
+        4.785984061875826,
+        130.59143594945039,
+        -12.323686370576013
+      ],
+      "canonical_3d_m": [
+        0.04785984061875826,
+        1.305914359494504,
+        -0.12323686370576013
+      ],
+      "source_skel_point": {
+        "face_index": 4792,
+        "vertex_indices": [
+          2931,
+          2998,
+          2932
+        ],
+        "barycentric": [
+          0.7374830842018127,
+          0.19294452667236328,
+          0.06957240402698517
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.45535767543738365,
+        "direct_vs_historical_smplx_bridge_mm": 17.766588688957565,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          8.709478192031384,
+          7.615440990775824,
+          8.417883887887001
+        ],
+        "historical_face_index": 12863,
+        "historical_barycentric": [
+          0.47499254818805425,
+          0.3313219389359188,
+          0.19368551287602695
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D17",
+      "reference_code": "BL15",
+      "current_engineering_name": "心俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 13027,
+      "vertex_indices": [
+        6945,
+        7049,
+        6944
+      ],
+      "barycentric": [
+        0.2095439204460344,
+        0.619190360875766,
+        0.17126571867819965
+      ],
+      "canonical_3d_cm": [
+        -4.608124214042712,
+        130.47681296378207,
+        -12.291820752332868
+      ],
+      "canonical_3d_m": [
+        -0.046081242140427116,
+        1.3047681296378206,
+        -0.12291820752332867
+      ],
+      "source_skel_point": {
+        "face_index": 11680,
+        "vertex_indices": [
+          6457,
+          6390,
+          6391
+        ],
+        "barycentric": [
+          0.1368228644132614,
+          0.844643235206604,
+          0.018533872440457344
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.2742031890422433,
+        "direct_vs_historical_smplx_bridge_mm": 17.64417650973971,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          4.953207448124886,
+          7.7151949517428875,
+          7.284061051905155
+        ],
+        "historical_face_index": 12868,
+        "historical_barycentric": [
+          0.5150760013052094,
+          0.06739599098847499,
+          0.41752800770631565
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D18",
+      "reference_code": "BL43",
+      "current_engineering_name": "膏肓（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 12859,
+      "vertex_indices": [
+        6238,
+        6118,
+        6119
+      ],
+      "barycentric": [
+        0.21514197272936192,
+        0.30757123439622575,
+        0.4772867928744123
+      ],
+      "canonical_3d_cm": [
+        9.212242614905314,
+        133.43332942951142,
+        -12.540873364769492
+      ],
+      "canonical_3d_m": [
+        0.09212242614905314,
+        1.3343332942951143,
+        -0.12540873364769492
+      ],
+      "source_skel_point": {
+        "face_index": 4729,
+        "vertex_indices": [
+          2970,
+          2971,
+          2934
+        ],
+        "barycentric": [
+          0.3343275487422943,
+          0.26614248752593994,
+          0.39952996373176575
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.5709723889432996,
+        "direct_vs_historical_smplx_bridge_mm": 18.677049435242303,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          7.10845785215497,
+          8.107293397188187,
+          5.465284921228886
+        ],
+        "historical_face_index": 12703,
+        "historical_barycentric": [
+          0.5227294876935835,
+          0.2556449602361169,
+          0.22162555207029963
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D19",
+      "reference_code": "BL43",
+      "current_engineering_name": "膏肓（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 12873,
+      "vertex_indices": [
+        7175,
+        7297,
+        7174
+      ],
+      "barycentric": [
+        0.3257039558583714,
+        0.13606732429465795,
+        0.5382287198469706
+      ],
+      "canonical_3d_cm": [
+        -9.040381336515512,
+        133.3061199016726,
+        -12.566018271088186
+      ],
+      "canonical_3d_m": [
+        -0.09040381336515513,
+        1.3330611990167258,
+        -0.12566018271088186
+      ],
+      "source_skel_point": {
+        "face_index": 11618,
+        "vertex_indices": [
+          6393,
+          6429,
+          6430
+        ],
+        "barycentric": [
+          0.324113130569458,
+          0.20944838225841522,
+          0.46643850207328796
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.75649960526409,
+        "direct_vs_historical_smplx_bridge_mm": 18.702656535957914,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          3.3522448502480984,
+          5.052051041275263,
+          4.551111254841089
+        ],
+        "historical_face_index": 12716,
+        "historical_barycentric": [
+          0.5977067712628547,
+          0.17301393303891954,
+          0.2292792956982258
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D20",
+      "reference_code": "SI11",
+      "current_engineering_name": "天宗（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 12700,
+      "vertex_indices": [
+        6356,
+        6355,
+        6238
+      ],
+      "barycentric": [
+        0.03080654076863154,
+        0.32551528656471757,
+        0.643678172666651
+      ],
+      "canonical_3d_cm": [
+        11.439203158204872,
+        135.5141375222097,
+        -12.15404296964547
+      ],
+      "canonical_3d_m": [
+        0.11439203158204872,
+        1.3551413752220969,
+        -0.1215404296964547
+      ],
+      "source_skel_point": {
+        "face_index": 4955,
+        "vertex_indices": [
+          2966,
+          735,
+          2967
+        ],
+        "barycentric": [
+          0.34538403153419495,
+          0.12457859516143799,
+          0.5300373435020447
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.3769109787859306,
+        "direct_vs_historical_smplx_bridge_mm": 19.44262182196724,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          7.2174700908362865,
+          9.833795949816704,
+          7.250132970511913
+        ],
+        "historical_face_index": 12700,
+        "historical_barycentric": [
+          0.7443501386187072,
+          0.053858608997107385,
+          0.2017912523841854
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D21",
+      "reference_code": "SI11",
+      "current_engineering_name": "天宗（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 12718,
+      "vertex_indices": [
+        7297,
+        7414,
+        7413
+      ],
+      "barycentric": [
+        0.6752520812767917,
+        0.2939681784442418,
+        0.030779740278966516
+      ],
+      "canonical_3d_cm": [
+        -11.376129240293846,
+        135.48567921037952,
+        -12.173223644972264
+      ],
+      "canonical_3d_m": [
+        -0.11376129240293846,
+        1.354856792103795,
+        -0.12173223644972264
+      ],
+      "source_skel_point": {
+        "face_index": 11844,
+        "vertex_indices": [
+          6425,
+          4223,
+          6426
+        ],
+        "barycentric": [
+          0.4987724721431732,
+          0.10881756246089935,
+          0.3924099802970886
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.35090691747301983,
+        "direct_vs_historical_smplx_bridge_mm": 19.509191518022227,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          6.69711222872138,
+          8.653075434267521,
+          4.770374856889248
+        ],
+        "historical_face_index": 12718,
+        "historical_barycentric": [
+          0.22632949106228528,
+          0.02997511336156059,
+          0.7436953955761542
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D22",
+      "reference_code": "BL17",
+      "current_engineering_name": "膈俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 13184,
+      "vertex_indices": [
+        5862,
+        5863,
+        5970
+      ],
+      "barycentric": [
+        0.1796594787771586,
+        0.08118646666096642,
+        0.739154054561875
+      ],
+      "canonical_3d_cm": [
+        4.567773058628074,
+        125.29793516378683,
+        -11.413974170221913
+      ],
+      "canonical_3d_m": [
+        0.04567773058628074,
+        1.2529793516378682,
+        -0.11413974170221913
+      ],
+      "source_skel_point": {
+        "face_index": 4979,
+        "vertex_indices": [
+          2849,
+          3025,
+          750
+        ],
+        "barycentric": [
+          0.17445319890975952,
+          0.09200862050056458,
+          0.7335381507873535
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.01163416505200588,
+        "direct_vs_historical_smplx_bridge_mm": 23.038948708342176,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          11.743453331291676,
+          10.421419516205788,
+          10.536090470850468
+        ],
+        "historical_face_index": 13186,
+        "historical_barycentric": [
+          0.2997040193015611,
+          0.11542468590333765,
+          0.5848712947951012
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D23",
+      "reference_code": "BL17",
+      "current_engineering_name": "膈俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 13367,
+      "vertex_indices": [
+        6947,
+        7051,
+        6946
+      ],
+      "barycentric": [
+        0.20390111394301216,
+        0.7614721991843292,
+        0.034626686872658664
+      ],
+      "canonical_3d_cm": [
+        -4.623403441658229,
+        125.23288106448256,
+        -11.4030825331248
+      ],
+      "canonical_3d_m": [
+        -0.04623403441658229,
+        1.2523288106448256,
+        -0.114030825331248
+      ],
+      "source_skel_point": {
+        "face_index": 11868,
+        "vertex_indices": [
+          4240,
+          6475,
+          6311
+        ],
+        "barycentric": [
+          0.7021557688713074,
+          0.1117759421467781,
+          0.18606826663017273
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.00025840450334835383,
+        "direct_vs_historical_smplx_bridge_mm": 23.274598458669573,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          9.712020866572857,
+          9.905494749546051,
+          11.080832220613956
+        ],
+        "historical_face_index": 13193,
+        "historical_barycentric": [
+          0.3153853510026924,
+          0.6010432839264869,
+          0.08357136507082072
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D24",
+      "reference_code": "BL18",
+      "current_engineering_name": "肝俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 13541,
+      "vertex_indices": [
+        5860,
+        5968,
+        5967
+      ],
+      "barycentric": [
+        0.08043605837341006,
+        0.5189282727854218,
+        0.4006356688411682
+      ],
+      "canonical_3d_cm": [
+        4.480182719239931,
+        119.80369531220234,
+        -10.189460573544348
+      ],
+      "canonical_3d_m": [
+        0.04480182719239931,
+        1.1980369531220234,
+        -0.10189460573544348
+      ],
+      "source_skel_point": {
+        "face_index": 990,
+        "vertex_indices": [
+          765,
+          767,
+          768
+        ],
+        "barycentric": [
+          0.04176720604300499,
+          0.3530498743057251,
+          0.6051828861236572
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.009279433185527756,
+        "direct_vs_historical_smplx_bridge_mm": 23.432012543613116,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          12.326209805905819,
+          11.82439923286438,
+          11.937939561903477
+        ],
+        "historical_face_index": 13358,
+        "historical_barycentric": [
+          0.47829619475130747,
+          0.3739613783520103,
+          0.14774242689668216
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D25",
+      "reference_code": "BL18",
+      "current_engineering_name": "肝俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 13711,
+      "vertex_indices": [
+        7054,
+        7179,
+        7053
+      ],
+      "barycentric": [
+        0.4935346020564723,
+        0.014796405785697474,
+        0.49166899215783016
+      ],
+      "canonical_3d_cm": [
+        -4.705509247226681,
+        119.74232207572459,
+        -10.218494802232694
+      ],
+      "canonical_3d_m": [
+        -0.04705509247226681,
+        1.197423220757246,
+        -0.10218494802232694
+      ],
+      "source_skel_point": {
+        "face_index": 8232,
+        "vertex_indices": [
+          4254,
+          4695,
+          4255
+        ],
+        "barycentric": [
+          0.6586116552352905,
+          0.048478078097105026,
+          0.29291024804115295
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.27480933816735925,
+        "direct_vs_historical_smplx_bridge_mm": 23.528675435220183,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          11.064951308071613,
+          10.983683168888092,
+          10.841526091098785
+        ],
+        "historical_face_index": 13548,
+        "historical_barycentric": [
+          0.03418498023326311,
+          0.49557131892507833,
+          0.47024370084165856
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D26",
+      "reference_code": "BL19",
+      "current_engineering_name": "胆俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 13700,
+      "vertex_indices": [
+        5967,
+        5966,
+        5859
+      ],
+      "barycentric": [
+        0.47567289614432673,
+        0.4868019749722751,
+        0.03752512888339807
+      ],
+      "canonical_3d_cm": [
+        4.527167155338819,
+        117.39663927270482,
+        -9.626791896686616
+      ],
+      "canonical_3d_m": [
+        0.04527167155338819,
+        1.1739663927270483,
+        -0.09626791896686615
+      ],
+      "source_skel_point": {
+        "face_index": 4973,
+        "vertex_indices": [
+          2826,
+          2838,
+          768
+        ],
+        "barycentric": [
+          0.7224429249763489,
+          0.01808609627187252,
+          0.25947099924087524
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.0009558997674533345,
+        "direct_vs_historical_smplx_bridge_mm": 22.556724572955,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          11.216151528060436,
+          11.570855975151062,
+          11.937939561903477
+        ],
+        "historical_face_index": 13541,
+        "historical_barycentric": [
+          0.06375760641850625,
+          0.4316513231513016,
+          0.5045910704301921
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D27",
+      "reference_code": "BL19",
+      "current_engineering_name": "胆俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 13843,
+      "vertex_indices": [
+        7181,
+        7054,
+        7055
+      ],
+      "barycentric": [
+        0.08368321010634161,
+        0.46628721971878934,
+        0.4500295701748691
+      ],
+      "canonical_3d_cm": [
+        -4.802584391318911,
+        117.32724951145411,
+        -9.6348898921872
+      ],
+      "canonical_3d_m": [
+        -0.04802584391318911,
+        1.1732724951145412,
+        -0.096348898921872
+      ],
+      "source_skel_point": {
+        "face_index": 11174,
+        "vertex_indices": [
+          6287,
+          4694,
+          4254
+        ],
+        "barycentric": [
+          0.7374897003173828,
+          0.11225990206003189,
+          0.1502504199743271
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.3450892643096245,
+        "direct_vs_historical_smplx_bridge_mm": 22.781469496797527,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          10.345038026571274,
+          10.427889414131641,
+          11.064951308071613
+        ],
+        "historical_face_index": 13711,
+        "historical_barycentric": [
+          0.5687954183967459,
+          0.0694382499416783,
+          0.36176633166157585
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D28",
+      "reference_code": "BL20",
+      "current_engineering_name": "脾俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 13833,
+      "vertex_indices": [
+        5965,
+        5859,
+        5966
+      ],
+      "barycentric": [
+        0.6595107498586956,
+        0.02276980369546377,
+        0.31771944644584066
+      ],
+      "canonical_3d_cm": [
+        4.496098273042482,
+        114.97112862167711,
+        -9.129832735403134
+      ],
+      "canonical_3d_m": [
+        0.04496098273042482,
+        1.149711286216771,
+        -0.09129832735403134
+      ],
+      "source_skel_point": {
+        "face_index": 4303,
+        "vertex_indices": [
+          1249,
+          2837,
+          2826
+        ],
+        "barycentric": [
+          0.8715870976448059,
+          0.010946221649646759,
+          0.11746667325496674
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.04222928301482387,
+        "direct_vs_historical_smplx_bridge_mm": 21.475630080490234,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          10.095134377479553,
+          10.53091324865818,
+          11.216151528060436
+        ],
+        "historical_face_index": 13700,
+        "historical_barycentric": [
+          0.3310637224949932,
+          0.6246295758412244,
+          0.04430670166378241
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D29",
+      "reference_code": "BL20",
+      "current_engineering_name": "脾俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 13841,
+      "vertex_indices": [
+        7182,
+        7055,
+        7056
+      ],
+      "barycentric": [
+        0.07440847976384857,
+        0.30274690694515444,
+        0.6228446132909969
+      ],
+      "canonical_3d_cm": [
+        -4.714518281128488,
+        114.86108685514964,
+        -9.130883022218486
+      ],
+      "canonical_3d_m": [
+        -0.04714518281128487,
+        1.1486108685514964,
+        -0.09130883022218486
+      ],
+      "source_skel_point": {
+        "face_index": 12248,
+        "vertex_indices": [
+          4733,
+          6288,
+          4734
+        ],
+        "barycentric": [
+          0.0033259496558457613,
+          0.11089395731687546,
+          0.8857800960540771
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.2515948074420248,
+        "direct_vs_historical_smplx_bridge_mm": 21.65528117694942,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          7.412250619381666,
+          9.12465713918209,
+          8.894430473446846
+        ],
+        "historical_face_index": 13843,
+        "historical_barycentric": [
+          0.07810288137243804,
+          0.31049096671380627,
+          0.6114061519137557
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D30",
+      "reference_code": "BL21",
+      "current_engineering_name": "胃俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 13969,
+      "vertex_indices": [
+        5964,
+        5858,
+        5965
+      ],
+      "barycentric": [
+        0.8752469634316273,
+        0.004897750533609766,
+        0.11985528603476286
+      ],
+      "canonical_3d_cm": [
+        4.486800259945479,
+        112.60840439695279,
+        -9.053221146978082
+      ],
+      "canonical_3d_m": [
+        0.04486800259945479,
+        1.1260840439695279,
+        -0.09053221146978081
+      ],
+      "source_skel_point": {
+        "face_index": 4967,
+        "vertex_indices": [
+          3018,
+          3019,
+          1248
+        ],
+        "barycentric": [
+          0.02968508005142212,
+          0.05366526171565056,
+          0.9166496396064758
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.05463373841038268,
+        "direct_vs_historical_smplx_bridge_mm": 19.83935345348722,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          9.321763180196285,
+          10.22612676024437,
+          8.802899159491062
+        ],
+        "historical_face_index": 13833,
+        "historical_barycentric": [
+          0.8488550595411353,
+          0.05894220815110023,
+          0.09220273230776459
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D31",
+      "reference_code": "BL21",
+      "current_engineering_name": "胃俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 13976,
+      "vertex_indices": [
+        7056,
+        7057,
+        7183
+      ],
+      "barycentric": [
+        0.06983215058933634,
+        0.9071784243892208,
+        0.022989425021442862
+      ],
+      "canonical_3d_cm": [
+        -4.547371304413233,
+        112.4955336657881,
+        -9.05864149388613
+      ],
+      "canonical_3d_m": [
+        -0.045473713044132336,
+        1.124955336657881,
+        -0.0905864149388613
+      ],
+      "source_skel_point": {
+        "face_index": 12039,
+        "vertex_indices": [
+          4731,
+          6474,
+          4732
+        ],
+        "barycentric": [
+          0.8762605786323547,
+          0.11435014754533768,
+          0.009389265440404415
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.2504962595438846,
+        "direct_vs_historical_smplx_bridge_mm": 19.639221372996005,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          7.556002587080002,
+          8.303346112370491,
+          6.660200655460358
+        ],
+        "historical_face_index": 13839,
+        "historical_barycentric": [
+          0.025097410087601926,
+          0.9076544302092893,
+          0.06724815970310881
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D32",
+      "reference_code": "BL22",
+      "current_engineering_name": "三焦俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 14196,
+      "vertex_indices": [
+        5962,
+        5963,
+        6109
+      ],
+      "barycentric": [
+        0.23293908170830674,
+        0.7137317267042608,
+        0.05332919158743249
+      ],
+      "canonical_3d_cm": [
+        4.544263059359589,
+        110.12242463570291,
+        -9.495228921010561
+      ],
+      "canonical_3d_m": [
+        0.04544263059359589,
+        1.1012242463570292,
+        -0.09495228921010561
+      ],
+      "source_skel_point": {
+        "face_index": 4969,
+        "vertex_indices": [
+          2914,
+          2913,
+          3018
+        ],
+        "barycentric": [
+          0.15434131026268005,
+          0.15705855190753937,
+          0.6886001229286194
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.19698415094752755,
+        "direct_vs_historical_smplx_bridge_mm": 20.95112038982647,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          10.647157207131386,
+          12.197273783385754,
+          9.321763180196285
+        ],
+        "historical_face_index": 14085,
+        "historical_barycentric": [
+          0.13023951235915043,
+          0.08376424555965074,
+          0.7859962420811988
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D33",
+      "reference_code": "BL22",
+      "current_engineering_name": "三焦俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 14207,
+      "vertex_indices": [
+        7059,
+        7184,
+        7058
+      ],
+      "barycentric": [
+        0.28229461240927134,
+        0.003938961148820952,
+        0.7137664264419077
+      ],
+      "canonical_3d_cm": [
+        -4.428213831131207,
+        110.04550914810162,
+        -9.519409940550837
+      ],
+      "canonical_3d_m": [
+        -0.04428213831131207,
+        1.100455091481016,
+        -0.09519409940550837
+      ],
+      "source_skel_point": {
+        "face_index": 11858,
+        "vertex_indices": [
+          6474,
+          6373,
+          6372
+        ],
+        "barycentric": [
+          0.6500384211540222,
+          0.16143633425235748,
+          0.1885252445936203
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.15959160309188425,
+        "direct_vs_historical_smplx_bridge_mm": 20.610414949337454,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          8.303346112370491,
+          12.067418545484543,
+          10.359938256442547
+        ],
+        "historical_face_index": 14091,
+        "historical_barycentric": [
+          0.12514999353672662,
+          0.199625652956961,
+          0.6752243535063124
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D34",
+      "reference_code": "BL23",
+      "current_engineering_name": "肾俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 14317,
+      "vertex_indices": [
+        6108,
+        5961,
+        5962
+      ],
+      "barycentric": [
+        0.16057997098455512,
+        0.8103229069649314,
+        0.029097122050513513
+      ],
+      "canonical_3d_cm": [
+        4.607467606717806,
+        107.4295432562167,
+        -10.500703305410362
+      ],
+      "canonical_3d_m": [
+        0.046074676067178064,
+        1.074295432562167,
+        -0.10500703305410361
+      ],
+      "source_skel_point": {
+        "face_index": 4627,
+        "vertex_indices": [
+          1779,
+          1782,
+          2914
+        ],
+        "barycentric": [
+          0.3626592755317688,
+          0.2969425320625305,
+          0.3403981924057007
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.07117138007525667,
+        "direct_vs_historical_smplx_bridge_mm": 21.518702763548777,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          8.804249577224255,
+          10.710307396948338,
+          10.647157207131386
+        ],
+        "historical_face_index": 14198,
+        "historical_barycentric": [
+          0.3659107217519497,
+          0.5878698841084536,
+          0.04621939413959662
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D35",
+      "reference_code": "BL23",
+      "current_engineering_name": "肾俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 14327,
+      "vertex_indices": [
+        7060,
+        7185,
+        7059
+      ],
+      "barycentric": [
+        0.8380144147777846,
+        0.06063190513809651,
+        0.10135368008411891
+      ],
+      "canonical_3d_cm": [
+        -4.372310077359576,
+        107.40259320208185,
+        -10.51797910142266
+      ],
+      "canonical_3d_m": [
+        -0.043723100773595765,
+        1.0740259320208185,
+        -0.10517979101422659
+      ],
+      "source_skel_point": {
+        "face_index": 11515,
+        "vertex_indices": [
+          5244,
+          6372,
+          5245
+        ],
+        "barycentric": [
+          0.348635196685791,
+          0.3203749656677246,
+          0.3309898376464844
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.05255257238559568,
+        "direct_vs_historical_smplx_bridge_mm": 21.324037724560018,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          8.786332793533802,
+          10.359938256442547,
+          10.2593544870615
+        ],
+        "historical_face_index": 14204,
+        "historical_barycentric": [
+          0.13369351817692277,
+          0.5349033017038678,
+          0.33140318011920944
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D36",
+      "reference_code": "BL25",
+      "current_engineering_name": "大肠俞（工程草稿）",
+      "anatomical_side": "LEFT",
+      "mhr_face_index": 14717,
+      "vertex_indices": [
+        6101,
+        5956,
+        6102
+      ],
+      "barycentric": [
+        0.15998102731827135,
+        0.8010560932834639,
+        0.03896287939826471
+      ],
+      "canonical_3d_cm": [
+        4.318256644788538,
+        101.91116994051231,
+        -12.711376727378317
+      ],
+      "canonical_3d_m": [
+        0.04318256644788538,
+        1.019111699405123,
+        -0.12711376727378318
+      ],
+      "source_skel_point": {
+        "face_index": 5105,
+        "vertex_indices": [
+          3098,
+          3099,
+          3097
+        ],
+        "barycentric": [
+          0.15761277079582214,
+          0.6968755722045898,
+          0.14551162719726562
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.29027591752911375,
+        "direct_vs_historical_smplx_bridge_mm": 17.51118855947604,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          9.355953894555569,
+          9.407959878444672,
+          10.291076265275478
+        ],
+        "historical_face_index": 14579,
+        "historical_barycentric": [
+          0.13673797755969214,
+          0.4329663694694102,
+          0.4302956529708977
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    },
+    {
+      "engineering_point_id": "ENG_D37",
+      "reference_code": "BL25",
+      "current_engineering_name": "大肠俞（工程草稿）",
+      "anatomical_side": "RIGHT",
+      "mhr_face_index": 14867,
+      "vertex_indices": [
+        7192,
+        7065,
+        7066
+      ],
+      "barycentric": [
+        0.09803860359069505,
+        0.8542806360985152,
+        0.047680760310789716
+      ],
+      "canonical_3d_cm": [
+        -4.160580367877118,
+        101.99711074732421,
+        -12.684127657240557
+      ],
+      "canonical_3d_m": [
+        -0.041605803678771175,
+        1.019971107473242,
+        -0.12684127657240557
+      ],
+      "source_skel_point": {
+        "face_index": 11994,
+        "vertex_indices": [
+          6521,
+          6522,
+          6523
+        ],
+        "barycentric": [
+          0.12954990565776825,
+          0.6356720328330994,
+          0.23477807641029358
+        ]
+      },
+      "bridge_method": "reviewed SKEL/SMPL-identical face anchor -> official mhr2smpl barycentric correspondence -> exact nearest MHR triangle",
+      "bridge_quality": {
+        "direct_composed_to_mhr_surface_mm": 0.23361495969536145,
+        "direct_vs_historical_smplx_bridge_mm": 17.07600206892727,
+        "historical_skel_to_smplx_vertex_distance_mm": [
+          10.870782658457756,
+          9.407579898834229,
+          9.758424945175648
+        ],
+        "historical_face_index": 14726,
+        "historical_barycentric": [
+          0.1338214054895644,
+          0.38226683711678483,
+          0.48391175739365083
+        ]
+      },
+      "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "medical_truth": false,
+      "real_medical_validated": false
+    }
+  ]
+}
