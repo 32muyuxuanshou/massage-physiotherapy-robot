@@ -32,7 +32,17 @@
 - 模型、MHR、anchor、评价器、SAM3D 源码树和环境指纹已冻结。
 - 可视化按正式 manifest 全量审计并生成确定性 montage，不按结果挑图。
 
-状态仍是 `HOLD_FOR_WEB_REVIEW`。本提交没有读取 fresh subject 的模型结果，也没有启动 Smoke 或 Full Batch。
+## V2.2 预执行修复
+
+- Smoke 改为调用实际存在的 `choose_frames()`，并在写入 manifest 时保存帧目录名。
+- Sub06 冻结为官方存在的 `backpack_back / stool_sit / yogaball_play`。
+- rendered-depth 聚合从每个 K1/K2/K3 相机节点读取，预执行测试要求恰好生成 15 条记录。
+- point-to-triangle outlier audit 固定报告 P99、max、超过 500 mm 的数量和比例；只审计，不删点、不改 Txyz。
+- Runner 要求 Camera QA 覆盖正式 manifest 的每个 sequence、三个 held-out camera 和点云重叠检查。
+- Runner 启动时重新计算 checkpoint、config、MHR、anchors、评价器和 SAM3D 源码树哈希，不一致即报 `ASSET_FREEZE_MISMATCH`。
+- 3D viewer 旁增加 front/side/top 静态 PNG；Txyz 图改成 Tx/Ty/Tz 三轴显示。
+
+`preflight_v22.py` 已在纯模拟目录通过，包括正式 sequence 解析、QA 缺失拒绝、资产篡改拒绝、rendered-depth/outlier 聚合数量检查。状态仍是 `HOLD_FOR_WEB_REVIEW`，没有读取 fresh subject 模型结果，也没有启动 Smoke 或 Full Batch。
 
 ## 执行顺序（网页端审查批准后）
 

@@ -9,7 +9,7 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--manifest',type=Path,required=True);p.add_argument('--root',type=Path,required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args();rows=json.loads(a.manifest.read_text())['rows'];checks=[]
  inf_req=['camA_rgb_original.png','camA_official_overlay.png','camA_txyz_overlay.png','camA_triptych.png','camA_txyz_vector.png'];ev_req=['rgb_original.png','official_from_A_overlay.png','txyz_from_A_overlay.png','triptych.png','residual_official.png','residual_txyz.png','residual_comparison.png']
  for r in rows:
-  sid=Path(r['subject'])/r['sequence']/r['frame'];groups={'inference':[a.root/'visualizations/inference'/sid/x for x in inf_req],'geometry_3d':[a.root/'visualizations/geometry_3d'/sid/'viewer.html'],'metrics_summary':[a.root/'visualizations/metrics_summary'/sid/'metrics_summary.png']}
+  sid=Path(r['subject'])/r['sequence']/r['frame'];groups={'inference':[a.root/'visualizations/inference'/sid/x for x in inf_req],'geometry_3d':[a.root/'visualizations/geometry_3d'/sid/x for x in ['viewer.html','front.png','side.png','top.png']],'metrics_summary':[a.root/'visualizations/metrics_summary'/sid/'metrics_summary.png']}
   for k in ['K1','K2','K3']:groups[k]=[a.root/'visualizations/evaluation'/sid/k/x for x in ev_req]
   checks.append({'spec':r,'groups':{g:[{'path':str(x.relative_to(a.root)),'exists':x.is_file(),'bytes':x.stat().st_size if x.is_file() else None,'sha256':sha(x) if x.is_file() else None} for x in fs] for g,fs in groups.items()}})
  inf=[a.root/'visualizations/inference'/Path(r['subject'])/r['sequence']/r['frame']/'camA_triptych.png' for r in rows];montage(inf,a.root/'visualizations/montages/inference_all.png')

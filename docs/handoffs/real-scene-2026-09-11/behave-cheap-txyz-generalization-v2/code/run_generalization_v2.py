@@ -1,9 +1,10 @@
 """Execute the frozen V2 batch after manifest and camera-QA approval."""
-import argparse,csv,hashlib,json,sys,time
+import argparse,collections,csv,hashlib,json,sys,time
 from pathlib import Path
 import cv2,numpy as np,torch
 from scipy.spatial import cKDTree
 from behave_v2_io import read_camera,transform_between
+from preflight_contracts import assert_qa_coverage,verify_assets
 
 N_ANCHORS=16384;ITER=6;TRIM=.20;STEP=.05;TOTAL=.17788820176363325
 def depth_points(depth,mask,table):
@@ -20,7 +21,7 @@ def sample_points(p,key,n=5000):
  rng=np.random.default_rng(int(hashlib.sha256(key.encode()).hexdigest()[:16],16));return p[np.sort(rng.choice(len(p),n,False))]
 def summary(d):
  d=np.asarray(d)*1000
- return {'count':len(d),'mean_mm':float(d.mean()),'median_mm':float(np.median(d)),'p90_mm':float(np.percentile(d,90)),'p95_mm':float(np.percentile(d,95)),'max_mm':float(d.max()),'coverage_50mm':float(np.mean(d<50))}
+ return {'count':len(d),'mean_mm':float(d.mean()),'median_mm':float(np.median(d)),'p90_mm':float(np.percentile(d,90)),'p95_mm':float(np.percentile(d,95)),'p99_mm':float(np.percentile(d,99)),'max_mm':float(d.max()),'coverage_50mm':float(np.mean(d<50)),'above_500mm_count':int(np.sum(d>500)),'above_500mm_ratio':float(np.mean(d>500))}
 def project(v,K,dist):return cv2.projectPoints(v[:,None],np.zeros(3),np.zeros(3),K,dist)[0].reshape(-1,2)
 def render(rgb,v,f,K,dist):
  uv=project(v,K,dist);tri=v[f];order=np.argsort(tri[:,:,2].mean(1))[::-1];mesh=rgb.copy();H,W=rgb.shape[:2]
@@ -54,11 +55,19 @@ def viewer(path,points,vo,vc,title):
  def take(x):return x[np.linspace(0,len(x)-1,min(2500,len(x)),dtype=int)]
  p,o,c=map(take,[points,vo,vc]);path.parent.mkdir(parents=True,exist_ok=True)
  path.write_text(f'''<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script><div id="v" style="width:100vw;height:96vh"></div><script>Plotly.newPlot('v',[{{name:'Depth',type:'scatter3d',mode:'markers',x:{p[:,0].tolist()},y:{p[:,1].tolist()},z:{p[:,2].tolist()},marker:{{size:1,color:'gray'}}}},{{name:'Official',type:'scatter3d',mode:'markers',x:{o[:,0].tolist()},y:{o[:,1].tolist()},z:{o[:,2].tolist()},marker:{{size:1,color:'red'}}}},{{name:'Txyz',type:'scatter3d',mode:'markers',x:{c[:,0].tolist()},y:{c[:,1].tolist()},z:{c[:,2].tolist()},marker:{{size:1,color:'blue'}}}}],{{title:{json.dumps(title)},scene:{{aspectmode:'data'}}}})</script>''')
+def static_geometry(root,points,vo,vc):
+ for name,(ax,ay) in {'front':(0,1),'side':(2,1),'top':(0,2)}.items():
+  canvas=np.full((700,700,3),248,np.uint8);sets=[(sample_points(points,name+'p',3000),(120,120,120)),(sample_points(vo,name+'o',3000),(210,55,55)),(sample_points(vc,name+'c',3000),(45,90,220))];allp=np.vstack([x for x,_ in sets]);lo,hi=np.percentile(allp[:,[ax,ay]],[1,99],axis=0);span=np.maximum(hi-lo,1e-6)
+  for xyz,color in sets:
+   uv=((xyz[:,[ax,ay]]-lo)/span*620+40).astype(int);uv[:,1]=699-uv[:,1];good=np.all((uv>=0)&(uv<700),axis=1)
+   for x,y in uv[good]:cv2.circle(canvas,(x,y),1,color,-1)
+  save(root/f'{name}.png',canvas)
 def main():
  p=argparse.ArgumentParser()
  for n in ['manifest','sequences','calibs','sam-repo','checkpoint','mhr','anchors','camera-qa','out']:p.add_argument('--'+n,type=Path,required=True)
- a=p.parse_args();qa=json.loads(a.camera_qa.read_text());assert qa['status']=='PASS';man=json.loads(a.manifest.read_text());assert man['status']=='FROZEN_BEFORE_MODEL_RUN'
- sys.path[:0]=[str(a.sam_repo),'/raid5/xuhd/rgbd_mesh_system_v1'];from sam_3d_body import load_sam_3d_body,SAM3DBodyEstimator;from sam_3d_body.data.utils.prepare_batch import prepare_batch;from sam_3d_body.utils import recursive_to;from surface_metrics import point_to_triangle_distances,render_depth
+ for n in ['model-config','surface-metrics','asset-freeze']:p.add_argument('--'+n,type=Path,required=True)
+ a=p.parse_args();qa=json.loads(a.camera_qa.read_text());assert qa['status']=='PASS';man=json.loads(a.manifest.read_text());assert man['status']=='FROZEN_BEFORE_MODEL_RUN';assert_qa_coverage(man,qa);verify_assets(a)
+ sys.path[:0]=[str(a.sam_repo),str(a.surface_metrics.parent)];from sam_3d_body import load_sam_3d_body,SAM3DBodyEstimator;from sam_3d_body.data.utils.prepare_batch import prepare_batch;from sam_3d_body.utils import recursive_to;from surface_metrics import point_to_triangle_distances,render_depth
  model,cfg=load_sam_3d_body(str(a.checkpoint),device='cuda',mhr_path=str(a.mhr));model.eval();est=SAM3DBodyEstimator(model,cfg);faces=model.head_pose.faces.cpu().numpy().astype(np.int64);az=np.load(a.anchors);fi,bc=az['face_index'],az['barycentric'].astype(float);rows=[];torch.cuda.reset_peak_memory_stats()
  for spec in man['rows']:
   sid=f"{spec['subject']}/{spec['sequence']}/{spec['frame']}";frame=a.sequences/spec['sequence']/spec['frame'];cams=[read_camera(a.calibs,spec['sequence'],k) for k in range(4)];rgbs=[];depths=[];masks=[];points=[]
@@ -67,7 +76,11 @@ def main():
   y,x=np.where(masks[0]>127);bbox=np.array([[max(0,x.min()-25),max(0,y.min()-25),min(rgbs[0].shape[1]-1,x.max()+25),min(rgbs[0].shape[0]-1,y.max()+25)]],np.float32);batch=recursive_to(prepare_batch(rgbs[0],est.transform,bbox,None,None),'cuda');batch['cam_int']=torch.as_tensor(cams[0]['K'][None],device='cuda').to(batch['img']);torch.cuda.synchronize();t0=time.perf_counter();model._initialize_batch(batch)
   with torch.inference_mode():pred=model.forward_step(batch,decoder_type='body')['mhr']
   torch.cuda.synchronize();sam_ms=(time.perf_counter()-t0)*1000;vo=(pred['pred_vertices']+pred['pred_cam_t'][:,None])[0].cpu().numpy();anchors=(vo[faces[fi]]*bc[:,:,None]).sum(1);t0=time.perf_counter();raw,trace=fit_txyz(points[0],anchors);t_ms=(time.perf_counter()-t0)*1000;fallback=np.linalg.norm(raw)>TOTAL;applied=np.zeros(3) if fallback else raw;vc=vo+applied
-  inf=a.out/'visualizations/inference'/sid;oa,ta=render(rgbs[0],vo,faces,cams[0]['K'],cams[0]['dist']),render(rgbs[0],vc,faces,cams[0]['K'],cams[0]['dist']);footer=f"Tx={raw[0]*1000:+.1f} Ty={raw[1]*1000:+.1f} Tz={raw[2]*1000:+.1f} |T|={np.linalg.norm(raw)*1000:.1f} mm";save(inf/'camA_rgb_original.png',rgbs[0]);save(inf/'camA_official_overlay.png',oa);save(inf/'camA_txyz_overlay.png',ta);save(inf/'camA_triptych.png',panel([rgbs[0],oa,ta],['Camera A RGB','Official SAM3D','Camera-A Txyz'],footer));vec=np.full((300,700,3),248,np.uint8);cv2.arrowedLine(vec,(350,220),(int(350+raw[0]*1000),int(220-raw[1]*1000)),(30,90,210),4);cv2.putText(vec,footer,(20,45),0,.65,(25,35,50),2,cv2.LINE_AA);save(inf/'camA_txyz_vector.png',vec);viewer(a.out/'visualizations/geometry_3d'/sid/'viewer.html',points[0],vo,vc,sid)
+  inf=a.out/'visualizations/inference'/sid;oa,ta=render(rgbs[0],vo,faces,cams[0]['K'],cams[0]['dist']),render(rgbs[0],vc,faces,cams[0]['K'],cams[0]['dist']);footer=f"Tx={raw[0]*1000:+.1f} Ty={raw[1]*1000:+.1f} Tz={raw[2]*1000:+.1f} |T|={np.linalg.norm(raw)*1000:.1f} mm";save(inf/'camA_rgb_original.png',rgbs[0]);save(inf/'camA_official_overlay.png',oa);save(inf/'camA_txyz_overlay.png',ta);save(inf/'camA_triptych.png',panel([rgbs[0],oa,ta],['Camera A RGB','Official SAM3D','Camera-A Txyz'],footer))
+  vec=np.full((340,700,3),248,np.uint8);scale=2.;colors=[(210,70,50),(50,160,70),(40,90,220)]
+  for j,(label,value,color) in enumerate(zip(('Tx','Ty','Tz'),raw*1000,colors)):
+   y=100+j*75;cv2.line(vec,(350,y),(350+int(value*scale),y),color,10);cv2.circle(vec,(350+int(value*scale),y),8,color,-1);cv2.putText(vec,f'{label} {value:+.1f} mm',(20,y+8),0,.65,color,2,cv2.LINE_AA)
+  cv2.putText(vec,footer,(20,40),0,.65,(25,35,50),2,cv2.LINE_AA);save(inf/'camA_txyz_vector.png',vec);geo=a.out/'visualizations/geometry_3d'/sid;viewer(geo/'viewer.html',points[0],vo,vc,sid);static_geometry(geo,points[0],vo,vc)
   delta=vc-vo;translation_qa={'max_vertex_delta_deviation_m':float(np.abs(delta-delta.mean(0)).max()),'faces_identical':True,'pose_shape_scale_rotation_recomputed':False,'pass':bool(np.abs(delta-delta.mean(0)).max()<1e-7)}
   rec={'spec':spec,'Txyz_m':raw.tolist(),'applied_Txyz_m':applied.tolist(),'fallback':fallback,'translation_only_qa':translation_qa,'runtime_sam_ms':sam_ms,'runtime_txyz_ms':t_ms,'cameras':{}}
   for k in [1,2,3]:

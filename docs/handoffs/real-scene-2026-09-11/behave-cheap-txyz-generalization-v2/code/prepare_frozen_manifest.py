@@ -6,7 +6,7 @@ SUBJECT_PLAN={
  3:{'date':'Date03','actions':{'backpack':'backpack_back','stool':'stool_sit','yogaball':'yogaball_play'}},
  4:{'date':'Date03','actions':{'backpack':'backpack_back','stool':'stool_sit','yogaball':'yogaball_play'}},
  5:{'date':'Date03','actions':{'backpack':'backpack','stool':'stool','yogaball':'yogaball'}},
- 6:{'date':'Date05','actions':{'backpack':'backpack','stool':'stool','yogaball':'yogaball'}},
+ 6:{'date':'Date05','actions':{'backpack':'backpack_back','stool':'stool_sit','yogaball':'yogaball_play'}},
  7:{'date':'Date06','actions':{'backpack':'backpack_back','stool':'stool_sit','yogaball':'yogaball_play'}}}
 FRACTIONS=[.25,.50,.75]
 REQUIRED=[f'k{k}.{x}' for k in range(4) for x in ['color.jpg','depth.png','person_mask.jpg']]
