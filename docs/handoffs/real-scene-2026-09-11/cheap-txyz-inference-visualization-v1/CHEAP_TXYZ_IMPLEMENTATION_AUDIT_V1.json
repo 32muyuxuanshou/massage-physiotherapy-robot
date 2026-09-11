@@ -1,0 +1,21 @@
+{
+  "schema": "CHEAP_TXYZ_IMPLEMENTATION_AUDIT_V1",
+  "status": "MATCHES_FROZEN_V1",
+  "formula": "V_corrected = V_official + Txyz",
+  "depth_enters_sam3d_network": false,
+  "surface_sample_count": 16384,
+  "surface_samples": "topology-bound deterministic MHR barycentric anchors",
+  "correspondence": "observed Camera-A person points to nearest translated surface anchor",
+  "robust_estimator": "discard upper 20 percent correspondence distances then coordinate-wise median residual",
+  "maximum_iterations": 6,
+  "per_iteration_component_bound_m": 0.05,
+  "final_translation_norm_bound_m": 0.17788820176363325,
+  "fallback": "CORRECTION_OUT_OF_RANGE returns unmodified Official mesh",
+  "valid_depth": "finite positive registered person depth inside dataset person mask/ROI",
+  "depth_input_unit": "HuMMan raw uint16 millimetres; observed points and internal correction use metres",
+  "mesh_unit": "metres",
+  "camera_coordinates": {"Tx_positive": "camera right", "Ty_positive": "camera down", "Tz_positive": "away from camera/forward", "convention": "OpenCV pinhole x-right y-down z-forward"},
+  "registration_contract": "RGB, color mask, K and the registered observed point cloud refer to Camera-A color coordinates",
+  "camera_b_use": "held-out evaluation only; no Camera-B RGB inference and no Camera-B depth correction",
+  "forbidden_changes_verified": ["rotation", "pose", "shape", "scale", "skeleton", "local vertices", "checkpoint", "frozen thresholds"]
+}

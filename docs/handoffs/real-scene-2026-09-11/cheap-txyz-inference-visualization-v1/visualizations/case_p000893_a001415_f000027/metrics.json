@@ -1,0 +1,174 @@
+{
+  "id": "p000893_a001415_f000027",
+  "subject_id": "p000893",
+  "sequence": "a001415",
+  "frame": 27,
+  "pose_family": "a001415",
+  "source_path": "/raid5/xuhd/rgbd_mesh_system_v1/system_sealed_geometry_qa/sample_cache/system_sealed/p000893_a001415_f000027.npz",
+  "source_sha256": "f32aae68bbcdc93697ad71befebe87011f05ec0abe50cf9000358bb1f68443dc",
+  "Txyz_m": [
+    0.004917356799289726,
+    0.010434560534093418,
+    -0.08135246393410518
+  ],
+  "applied_Txyz_m": [
+    0.004917356799289726,
+    0.010434560534093418,
+    -0.08135246393410518
+  ],
+  "Tnorm_m": 0.08216619645317084,
+  "iterations": [
+    {
+      "iteration": 1,
+      "step_m": [
+        1.3588874363805459e-05,
+        0.007393516146817297,
+        -0.05
+      ],
+      "translation_m": [
+        1.3588874363805459e-05,
+        0.007393516146817297,
+        -0.05
+      ],
+      "matched": 18733,
+      "kept": 14986,
+      "trim_threshold_m": 0.09004350615662211
+    },
+    {
+      "iteration": 2,
+      "step_m": [
+        0.0004337563457935678,
+        0.002450106349068698,
+        -0.022641801111689785
+      ],
+      "translation_m": [
+        0.00044734522015737327,
+        0.009843622495885995,
+        -0.07264180111168979
+      ],
+      "matched": 18733,
+      "kept": 14986,
+      "trim_threshold_m": 0.047349105000196894
+    },
+    {
+      "iteration": 3,
+      "step_m": [
+        0.0012701123148787553,
+        0.0004328287568320377,
+        -0.005666775685537528
+      ],
+      "translation_m": [
+        0.0017174575350361286,
+        0.010276451252718033,
+        -0.07830857679722732
+      ],
+      "matched": 18733,
+      "kept": 14986,
+      "trim_threshold_m": 0.031466498306971166
+    },
+    {
+      "iteration": 4,
+      "step_m": [
+        0.00121106188350098,
+        6.334648616679317e-05,
+        -0.00201710157319801
+      ],
+      "translation_m": [
+        0.0029285194185371087,
+        0.010339797738884826,
+        -0.08032567837042533
+      ],
+      "matched": 18733,
+      "kept": 14986,
+      "trim_threshold_m": 0.028241730781502765
+    },
+    {
+      "iteration": 5,
+      "step_m": [
+        0.0010905336028785573,
+        6.0558470356575356e-05,
+        -0.000742604164500893
+      ],
+      "translation_m": [
+        0.004019053021415666,
+        0.010400356209241401,
+        -0.08106828253492622
+      ],
+      "matched": 18733,
+      "kept": 14986,
+      "trim_threshold_m": 0.0271037581331874
+    },
+    {
+      "iteration": 6,
+      "step_m": [
+        0.0008983037778740599,
+        3.42043248520163e-05,
+        -0.0002841813991789621
+      ],
+      "translation_m": [
+        0.004917356799289726,
+        0.010434560534093418,
+        -0.08135246393410518
+      ],
+      "matched": 18733,
+      "kept": 14986,
+      "trim_threshold_m": 0.026841623542603384
+    }
+  ],
+  "valid_depth_points": 18733,
+  "trimmed_point_count_last": 3747,
+  "fallback_reason": null,
+  "official_A": {
+    "metric": "observed_to_exact_triangle_surface",
+    "sample_count": 5000,
+    "unit": "mm",
+    "mean_mm": 76.1481907232542,
+    "median_mm": 74.35428858713755,
+    "p90_mm": 107.91344760538962,
+    "p95_mm": 119.98269317732833,
+    "max_mm": 142.32226793216702
+  },
+  "corrected_A": {
+    "metric": "observed_to_exact_triangle_surface",
+    "sample_count": 5000,
+    "unit": "mm",
+    "mean_mm": 13.542235863668484,
+    "median_mm": 8.104897759855067,
+    "p90_mm": 38.09855743448402,
+    "p95_mm": 43.352542139793975,
+    "max_mm": 78.96153868762865
+  },
+  "official_B": {
+    "metric": "observed_to_exact_triangle_surface",
+    "sample_count": 5000,
+    "unit": "mm",
+    "mean_mm": 55.46887252399101,
+    "median_mm": 56.95008067785234,
+    "p90_mm": 95.30590889156859,
+    "p95_mm": 111.93664450184225,
+    "max_mm": 148.91781476753417
+  },
+  "corrected_B": {
+    "metric": "observed_to_exact_triangle_surface",
+    "sample_count": 5000,
+    "unit": "mm",
+    "mean_mm": 13.554370070266572,
+    "median_mm": 9.695961319253732,
+    "p90_mm": 32.65065750993782,
+    "p95_mm": 42.49415438179663,
+    "max_mm": 123.24308554255897
+  },
+  "official_B_coverage": 0.6535272356167878,
+  "corrected_B_coverage": 0.8298136357837851,
+  "runtime_sam_ms": 347.4925779737532,
+  "runtime_txyz_ms": 104.74170802626759,
+  "runtime_total_ms": 452.2342860000208,
+  "depth_raw_mm": {
+    "min_valid": 1.0,
+    "median": 2813.0,
+    "p95": 3956.0,
+    "max_valid": 6705.0
+  },
+  "fallback": false,
+  "outcome_class": "USEFUL_CORRECTION"
+}

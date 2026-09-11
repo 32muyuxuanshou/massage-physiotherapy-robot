@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "contract": "OpenCV world2cam p_cam=p_world@R.T+T; inverse p_world=(p_cam-T)@R",
+  "tolerance_m": 1e-06,
+  "source_cache": "/raid5/xuhd/rgbd_mesh_system_v1/system_sealed_geometry_qa/sample_cache/system_sealed/p000838_a000084_f000023.npz",
+  "tests": {
+    "synthetic_roundtrip_max_m": 3.9171299298645934e-07,
+    "camera_center_to_origin_max_m": 4.988961643803691e-08,
+    "known_depth_point_roundtrip_max_m": 2.845944604423778e-07,
+    "a_world_b_world_a_max_m": 3.6798072611254895e-07,
+    "rotation_a_orthonormal_max": 1.227958492009598e-07,
+    "rotation_b_orthonormal_max": 2.1943358530229773e-07
+  },
+  "camera_b_model_inference": false
+}

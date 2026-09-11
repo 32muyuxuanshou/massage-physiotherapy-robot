@@ -1,0 +1,21 @@
+{
+  "schema": "SMOKE_RESULTS_V1",
+  "status": "SMOKE_PASS",
+  "frames": 10,
+  "subjects": 4,
+  "poses": 10,
+  "checks": {
+    "rgb": true,
+    "depth_units": true,
+    "rgb_depth_alignment": true,
+    "intrinsics": true,
+    "official_coordinates": true,
+    "translation_direction": true,
+    "person_mask": true,
+    "common_heatmap_scale_0_100mm": true,
+    "3d_viewer_coordinates": true,
+    "camera_ab_transform": true
+  },
+  "fallback_count": 1,
+  "manual_visual_review": "PASS; all ten overlay and A/B residual contact sheets reviewed"
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "CUSTOM_RGBD_INPUT_CONTRACT_V1",
+  "rgb": {"shape": "H x W x 3", "dtype": "uint8", "channel_order": "RGB"},
+  "depth": {"shape": "H x W", "accepted_dtype": ["uint16", "float32"], "required_unit_metadata": true, "internal_unit": "metre", "invalid_values": [0, "NaN"]},
+  "intrinsics": {"shape": "3 x 3", "model": "pinhole", "formula": ["X=(u-cx)Z/fx", "Y=(v-cy)Z/fy", "Z=Z"]},
+  "person_mask": {"shape": "H x W", "dtype": ["bool", "uint8"], "meaning": "one target person"},
+  "registration": "RGB, depth, mask and K must describe the same registered color-camera pixels; otherwise provide a registration stage before this demo.",
+  "camera_coordinates": {"x": "right", "y": "down", "z": "forward", "handedness": "OpenCV camera convention"},
+  "output_mesh_unit": "metre",
+  "required_inputs": ["RGB", "Depth", "K", "person mask or frozen ROI"],
+  "target_domain_status": "TARGET_DOMAIN_NOT_VALIDATED"
+}
