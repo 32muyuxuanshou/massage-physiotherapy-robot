@@ -1,0 +1,13 @@
+{
+  "status": "FROZEN_BEFORE_RESULTS",
+  "primary": "subject-equal aggregate across K1/K2/K3",
+  "pass_requirements": {
+    "subject_equal_median": "relative improvement >=10% OR absolute improvement >=3 mm",
+    "subjects_improved": ">=80%",
+    "cameras_improved": ">=2 of 3",
+    "overall_p95": "no degradation >5%",
+    "low_error_protection": "if >=10 low-error frames, meaningful degradation rate <=20%"
+  },
+  "engineering_thresholds_mm": {"low_error_official_median":30,"meaningful_degradation":5,"high_error_official_median":60,"coverage":50},
+  "allowed_gates": ["PASS_BEHAVE_CHEAP_TXYZ_GENERALIZATION_V2","PASS_POSITIVE_SIGNAL_BUT_INCONSISTENT","FAIL_TXYZ_GENERALIZATION","PIPELINE_BLOCKED"]
+}

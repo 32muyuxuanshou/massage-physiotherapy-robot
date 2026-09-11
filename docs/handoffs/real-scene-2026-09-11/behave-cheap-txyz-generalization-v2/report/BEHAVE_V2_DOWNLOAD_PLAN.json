@@ -1,0 +1,31 @@
+{
+  "status": "FROZEN_FOR_REVIEW_NOT_EXECUTED",
+  "units": "bytes",
+  "existing_consumed_subject": "Sub01",
+  "packages": [
+    {"date":"Date02","bytes":17881182670,"subjects":["Sub02"]},
+    {"date":"Date03","bytes":44885833363,"subjects":["Sub03","Sub04","Sub05"]},
+    {"date":"Date04","bytes":14405837686,"subjects":["Sub05"]},
+    {"date":"Date05","bytes":17245753259,"subjects":["Sub05","Sub06"]},
+    {"date":"Date06","bytes":14769911745,"subjects":["Sub07"]},
+    {"date":"Date07","bytes":28125794584,"subjects":["Sub04","Sub05","Sub08"]}
+  ],
+  "minimum_from_scratch": {
+    "fresh_subjects_at_least_4": {"dates":["Date06","Date07"],"bytes":42895706329,"subjects":["Sub04","Sub05","Sub07","Sub08"]},
+    "fresh_subjects_at_least_5": {"dates":["Date05","Date06","Date07"],"bytes":60141459588,"subjects":["Sub04","Sub05","Sub06","Sub07","Sub08"]}
+  },
+  "current_server_state": {
+    "Date01": "complete; consumed Sub01",
+    "Date06": "complete before review-only instruction",
+    "Date03": "stopped; approximately 30 GB range parts retained",
+    "new_execution_after_review_instruction": false
+  },
+  "recommended_after_approval": {
+    "dates": ["Date03","Date05","Date06"],
+    "fresh_subjects": ["Sub03","Sub04","Sub05","Sub06","Sub07"],
+    "reason": "uses sunk Date03 transfer and minimizes remaining transfer; report total complete-package footprint separately from remaining bytes"
+  },
+  "source": "HTTP Content-Length from official datasets.d2.mpi-inf.mpg.de ZIP endpoints; subject sets from ZIP central directories",
+  "raw_videos": false,
+  "object_scans": false
+}
