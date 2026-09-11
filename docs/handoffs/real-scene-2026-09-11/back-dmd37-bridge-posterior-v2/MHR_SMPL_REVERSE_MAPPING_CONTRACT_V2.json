@@ -1,0 +1,56 @@
+{
+  "schema": "MHR_SMPL_REVERSE_MAPPING_CONTRACT_V2",
+  "status": "PASS_ASSET_AND_NUMERIC_INTEGRITY",
+  "contract_sha256": "9dab4850794feb2c2b8a24ff68d4fe6c1dbce234123bc13b58cf30ecd006d36d",
+  "meaning": "Official surface mappings are approximate bidirectional barycentric samplers, not a bijection or semantic SKEL-to-MHR map.",
+  "mhr2smpl": {
+    "file": "AI感知模块/研究资料/真实场景关键点定位_2026-09-06/local/MHR/tools/mhr_smpl_conversion/assets/mhr2smpl_mapping.npz",
+    "sha256": "4bfe2fd6abb598f38ba3a3aa5506ac45b4efb3cdaed7fe4757cfbbf20bbe6ac7",
+    "source": "MHR LOD1 triangles",
+    "target": "6890 SMPL vertices",
+    "triangle_ids_shape": [
+      6890
+    ],
+    "barycentric_shape": [
+      6890,
+      3
+    ],
+    "triangle_id_range": [
+      24,
+      36871
+    ],
+    "max_abs_barycentric_sum_error": 2.220446049250313e-16
+  },
+  "smpl2mhr": {
+    "file": "AI感知模块/研究资料/真实场景关键点定位_2026-09-06/local/MHR/tools/mhr_smpl_conversion/assets/smpl2mhr_mapping.npz",
+    "sha256": "84f908ad534f470dc5db072a4aeb9ccb4f9aa4484d2bce2558cc1a346df95c98",
+    "source": "13776 SMPL triangles",
+    "target": "18439 MHR LOD1 vertices",
+    "triangle_ids_shape": [
+      18439
+    ],
+    "barycentric_shape": [
+      18439,
+      3
+    ],
+    "triangle_id_range": [
+      0,
+      13774
+    ],
+    "max_abs_barycentric_sum_error": 2.220446049250313e-16
+  },
+  "cycle_test": {
+    "procedure": "Lift all 6890 SMPL vertices from the MHR rest surface with mhr2smpl; reconstruct all 18439 MHR vertices from that lifted SMPL surface with smpl2mhr; replay each candidate's fixed MHR face/barycentric binding on the reconstructed vertices and compare with its point on the original MHR rest mesh.",
+    "dmd37_error_mm": {
+      "mean": 0.5342916458951747,
+      "median": 0.4800203472428475,
+      "p95": 1.0905338079115896,
+      "max": 1.2634757987644254
+    },
+    "gate_pass": true
+  },
+  "limitations": [
+    "Cycle consistency can pass even when a semantic correspondence is wrong.",
+    "The direct DMD37 anchor composition generally spans three distinct MHR source triangles and still needs a declared one-time surface projection to become a single MHR face binding."
+  ]
+}

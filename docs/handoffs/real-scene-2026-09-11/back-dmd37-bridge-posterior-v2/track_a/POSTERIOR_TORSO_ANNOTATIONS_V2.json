@@ -1,0 +1,21 @@
+{
+  "schema":"POSTERIOR_TORSO_ANNOTATIONS_V2",
+  "status":"BLIND_RGB_REVIEW_COMPLETE_REGION_MASK_PENDING",
+  "source":"Camera-B=kinect_009 from already-consumed SYSTEM_SEALED workset; RGB, depth and dataset mask inspected without mesh/model overlays",
+  "counts":{"subjects":4,"frames":36,"POSTERIOR_TORSO_VISIBLE":24,"NON_POSTERIOR_BODY":9,"OCCLUDED":0,"UNCERTAIN":3},
+  "frame_groups":[
+    {"subject_id":"p000838","action_ids":["a000017","a000084","a001422"],"frames":9,"label":"POSTERIOR_TORSO_VISIBLE","review_note":"RGB shows posterior trunk in seated/prone-support/quadruped views; clothing outer surface."},
+    {"subject_id":"p000891","action_id":"a001199","frames":3,"label":"POSTERIOR_TORSO_VISIBLE","review_note":"Forward-leaning RGB shows posterior torso, partly oblique."},
+    {"subject_id":"p000891","action_id":"a005386","frames":3,"label":"NON_POSTERIOR_BODY","review_note":"Supine/front-side view; posterior torso not visible."},
+    {"subject_id":"p000893","action_ids":["a000084","a001135","a001415"],"frames":9,"label":"POSTERIOR_TORSO_VISIBLE","review_note":"Quadruped, kneeling-forward, and seated-kneel RGB show posterior trunk."},
+    {"subject_id":"p000893","action_id":"a001444","frames":3,"label":"NON_POSTERIOR_BODY","review_note":"Supine side view; posterior torso not independently visible."},
+    {"subject_id":"p000931","action_id":"a000017","frames":3,"label":"POSTERIOR_TORSO_VISIBLE","review_note":"Prone-like support RGB shows posterior trunk."},
+    {"subject_id":"p000931","action_id":"a000219","frames":3,"label":"NON_POSTERIOR_BODY","review_note":"Supine glute-bridge view; posterior trunk not visible."},
+    {"subject_id":"p000931","action_id":"a000681","frames":3,"label":"UNCERTAIN","review_note":"Child-pose RGB has posterior clothing but torso is heavily folded/partly occluded; do not force region."}
+  ],
+  "depth_mask_qa":{"frames":36,"mask_nonzero":true,"depth_valid_fraction_on_mask_min":1.0,"depth_valid_fraction_on_mask_max":1.0,"source":"server workset kinect_mask/kinect_depth"},
+  "independent_review":"Primary review from raw RGB contact sheets; no O/A/C/G, DMD37, error map, or mesh visualization was opened. A second independent reviewer has not yet completed the same labels.",
+  "gate":"NOT_READY_FOR_POSTERIOR_BENCHMARK",
+  "blockers":["No per-frame posterior polygon/mask has been drawn; person mask is not equivalent to posterior torso mask.","Second independent reviewer QA is pending."],
+  "claim_limit":"Labels support candidate selection only. They do not establish posterior surface accuracy, bare-back accuracy, medical truth, or DMD37 accuracy."
+}

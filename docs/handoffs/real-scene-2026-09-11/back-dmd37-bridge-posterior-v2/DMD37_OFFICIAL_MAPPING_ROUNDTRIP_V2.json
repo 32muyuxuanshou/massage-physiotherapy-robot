@@ -1,0 +1,166 @@
+{
+  "schema": "DMD37_OFFICIAL_MAPPING_ROUNDTRIP_V2",
+  "status": "PASS",
+  "contract_sha256": "9dab4850794feb2c2b8a24ff68d4fe6c1dbce234123bc13b58cf30ecd006d36d",
+  "definition": "Lift all 6890 SMPL vertices from the MHR rest surface with mhr2smpl; reconstruct all 18439 MHR vertices from that lifted SMPL surface with smpl2mhr; replay each candidate's fixed MHR face/barycentric binding on the reconstructed vertices and compare with its point on the original MHR rest mesh.",
+  "error_mm": {
+    "mean": 0.5342916458951747,
+    "median": 0.4800203472428475,
+    "p95": 1.0905338079115896,
+    "max": 1.2634757987644254
+  },
+  "points": [
+    {
+      "point_id": "ENG_D01",
+      "error_mm": 0.17019849461248754
+    },
+    {
+      "point_id": "ENG_D02",
+      "error_mm": 1.2545482775692895
+    },
+    {
+      "point_id": "ENG_D03",
+      "error_mm": 1.2634757987644254
+    },
+    {
+      "point_id": "ENG_D04",
+      "error_mm": 0.21695144404086525
+    },
+    {
+      "point_id": "ENG_D05",
+      "error_mm": 0.1705210123262606
+    },
+    {
+      "point_id": "ENG_D06",
+      "error_mm": 0.5594034070829568
+    },
+    {
+      "point_id": "ENG_D07",
+      "error_mm": 0.559628665569351
+    },
+    {
+      "point_id": "ENG_D08",
+      "error_mm": 0.3420901897818165
+    },
+    {
+      "point_id": "ENG_D09",
+      "error_mm": 0.3284643264751351
+    },
+    {
+      "point_id": "ENG_D10",
+      "error_mm": 0.4992726147841181
+    },
+    {
+      "point_id": "ENG_D11",
+      "error_mm": 0.4171937831406152
+    },
+    {
+      "point_id": "ENG_D12",
+      "error_mm": 0.922001037386299
+    },
+    {
+      "point_id": "ENG_D13",
+      "error_mm": 0.8178914684116625
+    },
+    {
+      "point_id": "ENG_D14",
+      "error_mm": 0.7600045138249183
+    },
+    {
+      "point_id": "ENG_D15",
+      "error_mm": 0.6520325108011459
+    },
+    {
+      "point_id": "ENG_D16",
+      "error_mm": 1.0495301904971657
+    },
+    {
+      "point_id": "ENG_D17",
+      "error_mm": 0.9915665299416994
+    },
+    {
+      "point_id": "ENG_D18",
+      "error_mm": 0.9268951739083443
+    },
+    {
+      "point_id": "ENG_D19",
+      "error_mm": 0.9880759974465534
+    },
+    {
+      "point_id": "ENG_D20",
+      "error_mm": 0.43479545492079796
+    },
+    {
+      "point_id": "ENG_D21",
+      "error_mm": 0.41479775066559377
+    },
+    {
+      "point_id": "ENG_D22",
+      "error_mm": 0.6239804180366963
+    },
+    {
+      "point_id": "ENG_D23",
+      "error_mm": 0.5208907736362272
+    },
+    {
+      "point_id": "ENG_D24",
+      "error_mm": 0.30075293491669064
+    },
+    {
+      "point_id": "ENG_D25",
+      "error_mm": 0.294779438557212
+    },
+    {
+      "point_id": "ENG_D26",
+      "error_mm": 0.13299325096280024
+    },
+    {
+      "point_id": "ENG_D27",
+      "error_mm": 0.15716984339152645
+    },
+    {
+      "point_id": "ENG_D28",
+      "error_mm": 0.5076511862104092
+    },
+    {
+      "point_id": "ENG_D29",
+      "error_mm": 0.3730428677886062
+    },
+    {
+      "point_id": "ENG_D30",
+      "error_mm": 0.32583384561669254
+    },
+    {
+      "point_id": "ENG_D31",
+      "error_mm": 0.35778987938468154
+    },
+    {
+      "point_id": "ENG_D32",
+      "error_mm": 0.19138466333616172
+    },
+    {
+      "point_id": "ENG_D33",
+      "error_mm": 0.20164968092671268
+    },
+    {
+      "point_id": "ENG_D34",
+      "error_mm": 0.4800203472428475
+    },
+    {
+      "point_id": "ENG_D35",
+      "error_mm": 0.38789997311647195
+    },
+    {
+      "point_id": "ENG_D36",
+      "error_mm": 0.5961620665168739
+    },
+    {
+      "point_id": "ENG_D37",
+      "error_mm": 0.5774510865293554
+    }
+  ],
+  "thresholds_mm": {
+    "per_point_max": 5.0,
+    "all_37_p95_max": 3.0
+  }
+}

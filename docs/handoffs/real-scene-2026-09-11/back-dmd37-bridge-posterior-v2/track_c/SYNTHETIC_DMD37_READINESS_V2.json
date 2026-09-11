@@ -1,0 +1,38 @@
+{
+  "schema": "SYNTHETIC_DMD37_READINESS_V2",
+  "status": "SYNTHETIC_DMD37_NOT_READY",
+  "track": "C",
+  "formal_benchmark_generated": false,
+  "atlas_release_gate": {
+    "status": "BLOCKED",
+    "required": "PASS_DMD37_MHR_ENGINEERING_ATLAS_RELEASE",
+    "current": "BRIDGE_UNCERTAINTY_REQUIRES_REVIEW",
+    "evidence": "../back-dmd37-engineering-validation-v1/DMD37_MHR_ENGINEERING_ATLAS_V1.json"
+  },
+  "checks": {
+    "A_released_mhr_dmd37_atlas_hash_frozen": {"status": "BLOCKED", "reason": "candidate Atlas is not released"},
+    "B_mhr_params_to_mesh_deterministic": {"status": "READY_PENDING_ATLAS", "evidence": "../back-dmd37-engineering-validation-v1/raw/mhr_runtime_contract.json; deterministic replay V1"},
+    "C_camera_projection_contract": {"status": "PASS_READINESS", "evidence": "AI感知模块/标注工具/blender_addons/modules/training_export_core/camera_geometry.py", "contract": "pinhole OpenCV coordinates and top-left pixels"},
+    "D_rendered_depth_z_contract": {"status": "PASS_READINESS", "evidence": "AI感知模块/标注工具/blender_addons/modules/training_export_core/depth_raycast.py", "contract": "pixel-centre first-surface camera Z in metres"},
+    "E_rgb_depth_mask_alignment": {"status": "PASS_READINESS", "evidence": "AI感知模块/标注工具/blender_addons/modules/training_export_core/render_buffers.py", "contract": "same camera/frame/resolution; alignment metadata emitted"},
+    "F_visibility_contract_frozen": {"status": "PASS_READINESS", "evidence": "AI感知模块/标注工具/blender_addons/modules/training_export_core/visibility.py", "contract": "projection/front-face/ray ownership reason codes"},
+    "G_dmd37_gt_generation_replay": {"status": "BLOCKED", "reason": "released Atlas unavailable; no synthetic GT generated"},
+    "H_OACG_same_rendered_sample": {"status": "READY_BY_PROTOCOL_ONLY", "contract": "O/A/C/G consume identical RGB, depth, mask and camera metadata; no benchmark run"},
+    "I_evaluation_metrics_frozen": {"status": "PASS_READINESS", "evidence": "SYNTHETIC_DMD37_PROTOCOL_V2.json"}
+  },
+  "implementation_evidence": {
+    "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "mhr_lod": "lod=1",
+    "mhr_vertices": 18439,
+    "mhr_faces": 36874,
+    "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+    "renderer_code_sha256": {
+      "render_buffers.py": "57d2a6341acb390971d20844a8ad473c202492dbdaffe52a2935855f6b26989",
+      "camera_geometry.py": "f707ab9014a7b8069718e344674c1a2e4a75ae79824d73f0c2e10cb52a27b6d1",
+      "depth_raycast.py": "2ce1461bb4cb06ac41d1608d57ff5a6568c12693b0f322b3dec35960a60a7248",
+      "visibility.py": "d6c748621b5ca22a304b3f62cc496eeeb7415cd0d8a70e4b4461fa5691c0daff"
+    }
+  },
+  "not_executed": ["sample_count", "pose families rendered", "shape count", "camera count", "O/A/C/G clean metrics"],
+  "claim_boundary": "Readiness of contracts and reusable tools only; no synthetic DMD37 accuracy claim and no Atlas release claim."
+}

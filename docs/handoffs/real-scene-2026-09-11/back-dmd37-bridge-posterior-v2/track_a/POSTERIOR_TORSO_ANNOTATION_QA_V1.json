@@ -1,0 +1,21 @@
+{
+  "schema":"POSTERIOR_TORSO_ANNOTATION_QA_V1",
+  "status":"REJECTED_QA",
+  "input":"POSTERIOR_TORSO_POLYGONS_V2 first-pass conservative ROI polygons",
+  "review_mode":"Independent second review of RGB+polygon QA sheets; no mesh, DMD37, error maps, or model outputs shown.",
+  "reviewed_frames":24,
+  "rejected_frames":24,
+  "rejection_reasons":[
+    "Wide ROI includes non-torso body pixels such as arms, hips, and legs in quadruped/kneeling/prone views.",
+    "RGB-only boundary does not reliably separate posterior torso from anterior chest or lateral abdomen in oblique views.",
+    "A person-mask intersection cannot solve semantic torso-vs-limb partition and therefore cannot be treated as posterior GT."
+  ],
+  "evidence_sheets":[
+    "../visualizations/posterior_blind_rgb_polygon_sheet_01.jpg",
+    "../visualizations/posterior_blind_rgb_polygon_sheet_02.jpg",
+    "../visualizations/posterior_blind_rgb_polygon_sheet_03.jpg"
+  ],
+  "decision":"Do not run posterior O/A/C/G benchmark. Do not tune polygon heuristics until a human annotator can draw and review a true torso boundary or a separate validated torso segmentation source is supplied.",
+  "gate":"POSTERIOR_GEOMETRY_NOT_READY",
+  "claim_limit":"No posterior geometry ranking, clothed torso accuracy, bare-back accuracy, DMD37 accuracy, or medical conclusion is supported."
+}

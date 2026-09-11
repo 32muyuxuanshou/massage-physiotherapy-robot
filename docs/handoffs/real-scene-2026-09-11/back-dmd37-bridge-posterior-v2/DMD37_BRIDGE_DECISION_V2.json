@@ -1,0 +1,69 @@
+{
+  "schema": "DMD37_BRIDGE_DECISION_V2",
+  "status": "BRIDGE_UNCERTAINTY_REQUIRES_REVIEW",
+  "acceptance_contract": "DMD37_BRIDGE_ACCEPTANCE_CONTRACT_V2.json",
+  "acceptance_contract_sha256": "9dab4850794feb2c2b8a24ff68d4fe6c1dbce234123bc13b58cf30ecd006d36d",
+  "numeric_result": "DMD37_BRIDGE_NUMERIC_AUDIT_V2.json",
+  "gates": {
+    "topology_and_mapping_integrity": "PASS",
+    "direct_support_locality": "FAIL",
+    "official_mapping_roundtrip": "PASS",
+    "direct_vs_historical_disagreement": "FAIL",
+    "side_midline_posterior_region_symmetry": "PASS",
+    "declared_order_gate": "FAIL_CONTRACT_ASSUMPTION_EXPOSED",
+    "nonblind_canonical_visual_sanity": "PASS",
+    "blind_canonical_visual_review": "INCONCLUSIVE"
+  },
+  "key_metrics_mm": {
+    "direct_support_diameter": {
+      "p95": 33.286538580366496,
+      "max": 34.71553952816172,
+      "frozen_max_threshold": 30.0,
+      "points_over_threshold": 14
+    },
+    "direct_composed_to_surface": {
+      "p95": 0.623053181459387,
+      "max": 0.7564996052640862,
+      "frozen_max_threshold": 2.0
+    },
+    "official_mapping_roundtrip": {
+      "p95": 1.0905338079115896,
+      "max": 1.2634757987644254,
+      "frozen_p95_threshold": 3.0,
+      "frozen_max_threshold": 5.0
+    },
+    "direct_vs_historical_euclidean": {
+      "mean": 19.91690279767503,
+      "p95": 29.02958215977526,
+      "max": 29.94309923699469,
+      "frozen_p95_threshold": 10.0,
+      "frozen_max_threshold": 15.0
+    },
+    "direct_vs_historical_normal_component": {
+      "mean": 1.0544040521865772,
+      "p95": 2.868540453318386,
+      "max": 6.413317942867894
+    },
+    "direct_vs_historical_tangential_component": {
+      "mean": 19.858801548491005,
+      "p95": 28.925383928387532,
+      "max": 29.930807236334346
+    },
+    "edge_graph_geodesic_upper_bound": {
+      "mean": 24.672159539156485,
+      "p95": 37.96293064830192,
+      "max": 45.55146742742824
+    }
+  },
+  "interpretation": [
+    "The official MHR<->SMPL asset pair is locally cycle-consistent at these points, so file corruption or a gross reverse-map failure is not the main issue.",
+    "The direct official-SMPL and historical project-SMPL-X routes disagree by about 20 mm on average and almost 30 mm at the tail. Nearly all of that difference is tangential along the body surface, which is the dangerous direction for an engineering acupoint atlas.",
+    "Both routes pass gross side, midline, posterior cross-section, coarse body region and bilateral symmetry checks. Gross visual plausibility therefore cannot resolve the correspondence choice.",
+    "The frozen row-order rule incorrectly treated BL43 as the next caudal row after BL15. Both candidates expose the same failure. This is a contract semantic defect and cannot be retroactively removed to create a PASS; it should be corrected in a future contract revision with an explicit anatomical row grouping.",
+    "The canonical-only image has a nonblind engineering sanity pass. No eligible blind reviewer completed a review, so blind evidence remains inconclusive."
+  ],
+  "selected_bridge": null,
+  "next_action": "Obtain an independent canonical correspondence adjudication for the high-disagreement points, preferably using explicit SMPL and SMPL-X canonical surfaces with landmark/region constraints. Freeze a corrected V3 row grouping and adjudication protocol before viewing those results; then select one bridge and rerun deterministic replay.",
+  "medical_truth": false,
+  "real_medical_validated": false
+}

@@ -1,0 +1,116 @@
+{
+  "schema": "DMD37_BRIDGE_ACCEPTANCE_CONTRACT_V2",
+  "status": "FROZEN_BEFORE_V2_CANDIDATE_COMPUTATION_OR_REVIEW",
+  "frozen_at": "2026-09-11T10:48:05+08:00",
+  "scope": "Engineering stability of transferring the user-reviewed male-SKEL DMD37 reference to the exact SAM 3D Body MHR LOD1 rest topology. This is not medical validation.",
+  "inputs": {
+    "reviewed_dmd37_sha256": "1f71524b8e454da338eb5c382499e60f7ea0fdb1b4a578da9a9348973b0d2ca2",
+    "reviewed_blend_sha256": "e0d2281fc9df814596168bb2134684e9843df35ece4fd19d14be649ee89efff3",
+    "source_topology": {
+      "family": "male SKEL skin sharing the 6890-vertex SMPL topology",
+      "vertex_count": 6890,
+      "face_count": 13776,
+      "topology_signature_sha256": "dc8b3f270680f4a66d1010713a49d771850ddb0850f9151d74cb10bbc90b7733"
+    },
+    "target_topology": {
+      "family": "MHR",
+      "lod": 1,
+      "vertex_count": 18439,
+      "face_count": 36874,
+      "faces_sha256_int32_c_order": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+      "asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc"
+    },
+    "official_mapping_hashes": {
+      "mhr2smpl": "4bfe2fd6abb598f38ba3a3aa5506ac45b4efb3cdaed7fe4757cfbbf20bbe6ac7",
+      "smpl2mhr": "84f908ad534f470dc5db072a4aeb9ccb4f9aa4484d2bce2558cc1a346df95c98",
+      "mhr2smplx": "d6d023f9f483be73cd4491d0ddf217450627263405c9bc6bf43795dfff809af1",
+      "smplx2mhr": "94742d378ccbd6058ce8aa0221d16726d1e5def45490685c223b2e87c6070f97"
+    },
+    "historical_project_skel_to_smplx_sha256": "18c7d28ac5dbc10b2e8df05b6a787fa853d65612ca6d4ff5c8de8c238afe3fc8"
+  },
+  "candidate_definitions": {
+    "DIRECT_SMPL": "Apply each reviewed 6890-topology face/barycentric anchor to the official SMPL-on-MHR surface produced by mhr2smpl_mapping, then project that composed point once to the exact MHR LOD1 triangle surface.",
+    "HISTORICAL_SMPLX": "Apply the existing project male-SKEL-to-SMPL-X nearest-vertex map, lift those SMPL-X vertices through official mhr2smplx_mapping, compose by the reviewed barycentric weights, then project once to the exact MHR LOD1 triangle surface.",
+    "projection_rule": "Global exact closest point over all target triangles; persist chosen face, its exact vertex indices and barycentric weights. No point-specific manual reselection."
+  },
+  "mandatory_numeric_checks": {
+    "topology_and_provenance": {
+      "gate": "All source and target hashes/counts must match exactly; all 37 source face vertex triplets must match the frozen source face array; all official mapping indices and barycentric values must be numerically valid."
+    },
+    "direct_support_locality": {
+      "metrics": [
+        "three pairwise Euclidean distances among the official MHR-lifted support points for each reviewed source triangle",
+        "diameter of those three support points",
+        "distance from their barycentric composition to the selected MHR surface"
+      ],
+      "thresholds_mm": {
+        "per_point_support_diameter_max": 30.0,
+        "composed_to_mhr_surface_max": 2.0
+      },
+      "rationale": "The three supports originate from one source triangle and must stay local. Thirty millimetres permits topology discretization differences but rejects a nonlocal fold or body-part jump; two millimetres limits the extra project-defined surface snap."
+    },
+    "official_mapping_roundtrip": {
+      "procedure": "Lift all 6890 SMPL vertices from the MHR rest surface with mhr2smpl; reconstruct all 18439 MHR vertices from that lifted SMPL surface with smpl2mhr; replay each candidate's fixed MHR face/barycentric binding on the reconstructed vertices and compare with its point on the original MHR rest mesh.",
+      "thresholds_mm": {
+        "per_point_max": 5.0,
+        "all_37_p95_max": 3.0
+      },
+      "rationale": "This measures the available official map pair's local cycle consistency without claiming semantic invertibility. It is a diagnostic gate, not medical evidence."
+    },
+    "candidate_disagreement": {
+      "required_metrics": [
+        "per-point DIRECT_SMPL versus HISTORICAL_SMPLX Euclidean distance",
+        "mean, median, p95 and max",
+        "normal and tangential components using the DIRECT_SMPL target face normal",
+        "mesh graph-geodesic distance when a reliable implementation is available"
+      ],
+      "decision_thresholds_mm": {
+        "euclidean_p95_max_for_automatic_bridge_acceptance": 10.0,
+        "euclidean_max_for_automatic_bridge_acceptance": 15.0
+      },
+      "geodesic_policy": "Report exact/declared graph-geodesic method and value. If it cannot be computed reliably on the frozen topology, mark GEODESIC_UNAVAILABLE and do not substitute Euclidean distance under the geodesic name."
+    },
+    "laterality_midline_order_symmetry": {
+      "coordinate_convention": "Canonical MHR rest coordinates in centimetres: +X subject-left, -X subject-right; dorsal/posterior is predominantly -Z. Axes must be verified from paired labels and canonical mesh before applying the checks.",
+      "thresholds_mm": {
+        "left_min_x": 5.0,
+        "right_max_x": -5.0,
+        "midline_abs_x_max": 10.0,
+        "bilateral_pair_abs_y_difference_max": 20.0,
+        "bilateral_pair_abs_z_difference_max": 20.0,
+        "bilateral_pair_abs_x_magnitude_difference_max": 25.0
+      },
+      "order_gate": "For the 14 declared bilateral BL rows (BL11, BL12, BL13, BL14, BL15, BL43, BL17, BL18, BL19, BL20, BL21, BL22, BL23, BL25) in source-record order, every consecutive centre must be lower in canonical Y by at least 0 mm; shoulder/scapular SI/GB points are excluded from this row-order gate and audited separately.",
+      "side_gate": "All 18 LEFT, 18 RIGHT and the one MIDLINE point must pass their declared X-side threshold.",
+      "symmetry_gate": "Every bilateral pair must pass all three pair-difference thresholds. Report failures individually; do not average them away."
+    },
+    "posterior_region_sanity": {
+      "numeric_gate": "Each selected point must lie on a connected MHR body surface face and on the posterior half of its local canonical cross-section. Local cross-section is target vertices within +/-25 mm in X and +/-25 mm in Y; candidate Z must be no greater than that neighborhood's median Z. If fewer than 20 vertices exist, expand both windows to +/-40 mm and record the fallback.",
+      "normal_diagnostic": "Report target face normal Z. Do not fail shoulder-edge points solely from normal Z because the surface can face laterally.",
+      "coarse_region_gate": "Every selected face must be torso or arms under the frozen LBS engineering map; any legs/head/hands-feet assignment fails region sanity. The LBS map is engineering-only and not an acupuncture map."
+    }
+  },
+  "canonical_visual_review": {
+    "artifact": "Render candidate identities under randomized neutral labels, with no method name, historical score or threshold shown to the reviewer. Include posterior, left-oblique and right-oblique canonical views.",
+    "review_questions": [
+      "Are all markers on the visible exterior body surface?",
+      "Are left/right and midline placements coherent?",
+      "Do bilateral rows preserve plausible symmetry and cranial-to-caudal order?",
+      "Is there any obvious jump to head, limb, anterior torso or another disconnected region?",
+      "If two candidates are shown, is either visibly preferable or are they indistinguishable?"
+    ],
+    "blindness_rule": "A reviewer who has seen candidate identities or historical comparison outputs cannot be recorded as blinded. Their review is CANONICAL_ONLY_NONBLIND. A separate reviewer with no method/result context may be recorded as BLINDED_CANONICAL_ONLY. If no such reviewer is available, blind visual evidence is INCONCLUSIVE rather than simulated.",
+    "visual_gate": "No obvious wrong-surface/body-region/laterality failure. Visual preference alone cannot override a failed numeric gate."
+  },
+  "final_decision": {
+    "PASS_DMD37_MHR_ENGINEERING_ASSET": "All mandatory topology, locality, roundtrip, disagreement, side, midline, order, symmetry, posterior-region and visual-sanity gates pass. This means deterministic engineering stability only.",
+    "BRIDGE_UNCERTAINTY_REQUIRES_REVIEW": "Any mandatory gate fails, a required comparison is missing, or the evidence is inconclusive in a way that can change the selected bridge.",
+    "medical_truth": false,
+    "real_medical_validated": false
+  },
+  "sensitivity_scope": {
+    "allowed_after_bridge_pass": "Parameter-to-engineering-point propagation on fixed MHR topology, decomposed into global rigid motion, pose, identity shape/scale and surface correspondence sensitivity.",
+    "correction": "Rigid global translation moves every MHR-bound point by exactly the translation norm in absolute coordinates and by zero after applying the same translation alignment; it does not test anatomical correspondence. Global rotation displacement depends on rotation centre and point radius. Pose/shape/scale results are model-parameter sensitivity, not image-model error, real-scene error, skin deformation accuracy or medical acupoint accuracy.",
+    "blocked_until_bridge_pass": "Do not interpret DMD37 sensitivity rankings or choose a mesh teacher from them while the bridge remains uncertain."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "DMD37_BRIDGE_REVIEW_FAILURE_V2",
+  "status": "BRIDGE_UNCERTAINTY_REQUIRES_REVIEW",
+  "acceptance_contract_sha256": "9dab4850794feb2c2b8a24ff68d4fe6c1dbce234123bc13b58cf30ecd006d36d",
+  "failed_gates": [
+    {
+      "gate": "DIRECT_SUPPORT_LOCALITY",
+      "reason": "Fourteen of 37 points exceed the frozen 30 mm support-diameter limit; P95 is 33.2865 mm and max is 34.7155 mm. The separate composed-to-surface snap remains below its 2 mm limit."
+    },
+    {
+      "gate": "DIRECT_VS_HISTORICAL_DISAGREEMENT",
+      "reason": "Euclidean disagreement is 19.9169 mm mean, 29.0296 mm P95 and 29.9431 mm max, exceeding the frozen 10/15 mm P95/max limits. The difference is predominantly tangential."
+    },
+    {
+      "gate": "DECLARED_ROW_ORDER",
+      "reason": "Both candidates fail only BL15-to-BL43 because the frozen contract incorrectly treated BL43 as the next caudal row. This is a protocol grouping defect and cannot be deleted after results to create a PASS."
+    }
+  ],
+  "passed_checks": [
+    "Exact source and target topology/hash checks",
+    "Official MHR-to-SMPL-to-MHR local roundtrip: 1.0905 mm P95 and 1.2635 mm max",
+    "All side and midline checks",
+    "All posterior cross-section checks",
+    "All coarse torso/arms region checks",
+    "All bilateral symmetry thresholds",
+    "Partially blinded canonical-only gross visual sanity"
+  ],
+  "inconclusive_checks": [
+    "No fully blinded canonical reviewer completed the review.",
+    "Gross canonical appearance cannot adjudicate the 20-30 mm mostly tangential bridge difference."
+  ],
+  "selected_bridge": null,
+  "release_blocked": true,
+  "medical_truth": false
+}

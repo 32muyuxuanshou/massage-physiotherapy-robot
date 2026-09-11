@@ -1,0 +1,14 @@
+{
+  "status":"NOT_READY",
+  "protocol":"track_a/POSTERIOR_TORSO_BLIND_ANNOTATION_PROTOCOL_V2.json",
+  "checked_local_repository":true,
+  "raw_camera_b_rgb_found":true,
+  "raw_camera_b_depth_found":true,
+  "dataset_person_mask_found":true,
+  "available_evidence":["server workset /raid5/xuhd/rgbd_mesh_system_v1/system_sealed_workset with kinect_009 RGB/depth/mask for all 36 frames","raw RGB-only contact sheets reviewed","depth-mask QA: valid fraction on mask 1.0 for all 36 frames"],
+  "reason":"Raw inputs are available and a first blind RGB review is complete, but a posterior-specific polygon/mask and second independent reviewer are still missing.",
+  "benchmark_executed":false,
+  "mesh_self_evaluation_prevented":true,
+  "next_required_action":"Obtain a true posterior-torso annotation pass with explicit torso/limb/anterior boundaries and independent QA. Do not run O/A/C/G and do not open Final Deep Reserve.",
+  "claim_limit":"No posterior geometry ranking, back-surface accuracy, bare-back accuracy, DMD37 accuracy, or medical conclusion is supported by this status."
+}

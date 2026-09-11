@@ -1,0 +1,47 @@
+{
+  "schema": "DMD37_SENSITIVITY_SCOPE_CORRECTION_V2",
+  "status": "FROZEN_SCOPE_BRIDGE_BLOCKED",
+  "bridge_contract_sha256": "9dab4850794feb2c2b8a24ff68d4fe6c1dbce234123bc13b58cf30ecd006d36d",
+  "corrections": [
+    {
+      "topic": "translation",
+      "correct_scope": "A global translation of 10/20/50 mm moves every fixed MHR-bound DMD37 point by exactly 10/20/50 mm in absolute coordinates. If the same translation is removed by alignment, the residual is exactly zero up to numerical precision.",
+      "interpretation_limit": "This is an analytic coordinate property, not learned robustness, anatomical correspondence or image-model performance."
+    },
+    {
+      "topic": "global_rotation",
+      "correct_scope": "Displacement depends on the declared rotation centre and each point's radius. The centre, axis convention and whether translation is re-aligned must be fixed in the protocol.",
+      "interpretation_limit": "Rotation sensitivity cannot be compared across studies that rotate about different centres."
+    },
+    {
+      "topic": "pose",
+      "correct_scope": "Pose sensitivity measures how fixed topology bindings move under named, real MHR parameter blocks. It must use get_parameter_names/limits or the frozen SAM MHR parameter contract rather than guessed joint indices.",
+      "interpretation_limit": "It is MHR kinematic/model sensitivity, not SAM RGB prediction error or real soft-tissue accuracy."
+    },
+    {
+      "topic": "shape_and_scale",
+      "correct_scope": "Shape and skeleton scale perturbations must remain within the actual MHR identity parameter contract and should report both absolute displacement and displacement after a declared rigid alignment.",
+      "interpretation_limit": "Latent coefficient magnitude is not a physical millimetre label and does not prove patient-specific anatomy."
+    },
+    {
+      "topic": "normal_tangential",
+      "correct_scope": "Decompose displacement using the target point's replayed MHR face normal, with the face and topology hash fixed. Report signed normal and tangential magnitude separately.",
+      "interpretation_limit": "Tangential displacement is especially sensitive to bridge semantics; current direct-versus-historical disagreement is predominantly tangential."
+    },
+    {
+      "topic": "synthetic_benchmark",
+      "correct_scope": "Synthetic DMD37 error can test recovery of points generated from a chosen fixed engineering atlas under known MHR states and cameras.",
+      "interpretation_limit": "It cannot validate the bridge used to define that atlas, real posterior skin deformation, real-image domain robustness or medical acupoint accuracy."
+    }
+  ],
+  "current_blocker": "The V2 bridge comparison fails the pre-frozen candidate-disagreement gate, so a single MHR-native DMD37 asset is not selected.",
+  "allowed_now": [
+    "Run purely analytic translation/rotation unit checks labelled as coordinate diagnostics.",
+    "If parameter sensitivity must proceed for pipeline development, run both DIRECT_SMPL and HISTORICAL_SMPLX candidates and report the between-bridge spread separately."
+  ],
+  "not_allowed_now": [
+    "Rank DMD37 points as anatomically fragile from one unaccepted bridge.",
+    "Choose O/A/C/G as DMD37 teacher from synthetic sensitivity alone.",
+    "Call any result real-scene, skin-surface or medical accuracy."
+  ]
+}

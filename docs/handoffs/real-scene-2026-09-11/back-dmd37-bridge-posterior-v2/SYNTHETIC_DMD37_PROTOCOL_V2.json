@@ -1,0 +1,30 @@
+{
+  "schema": "SYNTHETIC_DMD37_PROTOCOL_V2",
+  "status": "FROZEN_READINESS_ONLY_ATLAS_GATE_BLOCKED",
+  "scope": "Track C preparation; no formal DMD37 benchmark result",
+  "atlas_gate": "REQUIRED_PASS_DMD37_MHR_ENGINEERING_ATLAS_RELEASE",
+  "gt_contract": {
+    "source": "MHR-native params -> MHR evaluated mesh -> released MHR DMD37 Atlas",
+    "bridge_forbidden_in_gt": true,
+    "medical_truth": false,
+    "real_person_accuracy_validated": false
+  },
+  "render_contract": {
+    "backend": "Blender 4.5 Eevee single-sample RGB plus pixel-centre scene ray geometry buffers",
+    "camera": "perspective pinhole; OpenCV +X right, +Y down, +Z forward; top-left pixels",
+    "depth": "float32 metres, camera-space Z of first visible scene surface; background 0",
+    "alignment": "same camera, frame, evaluated geometry and resolution; RGB/Depth/Mask dimensions identical",
+    "visibility": "in_front + in_frame + front_facing + scene.ray_cast ownership; explicit reason codes",
+    "unsupported_without_new_validation": ["transparent materials", "volume", "motion blur", "depth of field", "coplanar ties", "sensor distortion/noise"]
+  },
+  "pose_seed_policy": {
+    "source": "consumed HuMMan / existing real MHR states",
+    "controlled_variations": ["head rotation", "arm placement", "mild torso rotation", "camera", "small shape variation"],
+    "families": ["STANDING_BACK", "SEATED", "FORWARD_LEANING_SEATED", "KNEEL", "HORIZONTAL", "PRONE_LIKE", "SIDE_LYING_LIKE", "MILD_TORSO_ROTATION"],
+    "prone_like_is_not_treatment_bed_contact": true
+  },
+  "systems": ["O", "A", "C", "G"],
+  "metrics_frozen": ["per_point_3d", "sample_subject_median", "mean", "P90", "P95", "max", "2d_pixel", "translation_aligned_3d", "baseline_normal_component", "baseline_tangential_component", "per_pose", "per_shape", "per_camera", "visibility_conditioned"],
+  "execution_order": ["Atlas Release PASS", "contract/replay verification", "100-sample clean smoke", "500-1000 clean benchmark", "single-factor sensor stress"],
+  "forbidden_now": ["render formal 37-point GT benchmark", "train O/A/C/G", "sensor stress", "pseudo-label production", "medical or real-person accuracy claim"]
+}

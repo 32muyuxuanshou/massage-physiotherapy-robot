@@ -1,0 +1,13 @@
+{
+  "schema":"POSTERIOR_TORSO_BLIND_ANNOTATION_PROTOCOL_V2",
+  "status":"FROZEN_BEFORE_PIXEL_ACCESS",
+  "scope":{"split":"SYSTEM_SEALED","subjects":4,"frames":36,"final_deep_reserve_access":false},
+  "allowed_inputs":["original Camera-B RGB","original Camera-B depth","dataset person mask","frame and camera metadata needed to locate the source"],
+  "forbidden_inputs":["Official/Adapted/C/G mesh","DMD37 points or atlas","mesh projections","error maps","model body-part predictions","HuMMan fitted mesh as a region guide"],
+  "labels":{"POSTERIOR_TORSO_VISIBLE":"visible posterior torso outer surface, including clothing","NON_POSTERIOR_BODY":"visible person pixels without posterior torso","OCCLUDED":"posterior torso expected but surface blocked/cropped/invalid","UNCERTAIN":"independent decision not reliable"},
+  "annotation_unit":"per-frame 2D mask or polygon in Camera-B image coordinates; keep person-mask intersection and record depth-valid fraction",
+  "clothing_state":["CLOTHED","BARE_APPEARANCE_UNCONFIRMED","UNKNOWN"],
+  "qa":"Second reviewer independently labels a stratified subset; disagreements are preserved and resolved only from RGB/Depth/mask evidence. No model output may be revealed during either review.",
+  "release_gate":"Only frames with POSTERIOR_TORSO_VISIBLE or explicitly documented partial visible region may enter posterior benchmark; clothing semantics remain POSTERIOR_CLOTHED_TORSO, never bare-back GT.",
+  "failure_gate":"If raw Camera-B RGB/Depth/person mask cannot be located or the visible boundary cannot be independently identified, emit NOT_READY and do not score O/A/C/G."
+}

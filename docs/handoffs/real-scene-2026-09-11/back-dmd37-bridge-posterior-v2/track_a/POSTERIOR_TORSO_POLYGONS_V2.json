@@ -1,0 +1,16 @@
+{
+  "schema":"POSTERIOR_TORSO_POLYGONS_V2",
+  "status":"FIRST_PASS_CONSERVATIVE_POLYGONS",
+  "coordinate_system":"Camera-B kinect_009 RGB pixels, 1920x1080",
+  "source_restriction":"Only raw RGB plus dataset person-mask/depth alignment was used; no mesh, DMD37, prediction, or error visualization.",
+  "polygon_policy":"Conservative visible clothing surface only. Polygon is shrunk at shoulder/waist/limb occlusion boundaries; excluded pixels are UNCERTAIN rather than extrapolated.",
+  "groups":[
+    {"subject_id":"p000838","actions":["a000017","a000084","a001422"],"frame_count":9,"polygon_template":"per_frame_manual_reviewed_torso_bbox_polygon","normalized_regions":[[0.40,0.25],[0.60,0.25],[0.66,0.58],[0.57,0.70],[0.42,0.70],[0.34,0.55]],"notes":"a000017 seated/leaning; a000084 quadruped; a001422 seated. Templates are starting polygons and require second reviewer pixel QA."},
+    {"subject_id":"p000891","action":"a001199","frame_count":3,"polygon_template":"per_frame_manual_reviewed_torso_bbox_polygon","normalized_regions":[[0.40,0.28],[0.62,0.28],[0.67,0.53],[0.57,0.67],[0.42,0.64],[0.34,0.48]],"notes":"Forward-leaning torso visible obliquely; polygon deliberately excludes limbs and uncertain lower edge."},
+    {"subject_id":"p000893","actions":["a000084","a001135","a001415"],"frame_count":9,"polygon_template":"per_frame_manual_reviewed_torso_bbox_polygon","normalized_regions":[[0.40,0.25],[0.61,0.25],[0.66,0.57],[0.57,0.69],[0.42,0.69],[0.34,0.52]],"notes":"Quadruped/kneeling/seated-kneel; conservative central posterior clothing only."},
+    {"subject_id":"p000931","action":"a000017","frame_count":3,"polygon_template":"per_frame_manual_reviewed_torso_bbox_polygon","normalized_regions":[[0.38,0.27],[0.63,0.27],[0.68,0.55],[0.57,0.68],[0.42,0.68],[0.32,0.52]],"notes":"Prone-like support; excludes forearms, head, hips and ambiguous contact boundary."}
+  ],
+  "excluded_frames":[{"subject_id":"p000931","action":"a000681","frames":3,"label":"UNCERTAIN","reason":"Child’s Pose posterior torso folded/partially occluded; no polygon forced."}],
+  "qa_status":"SECOND_INDEPENDENT_REVIEW_REQUIRED",
+  "claim_limit":"These polygons are engineering visible-region annotations for clothed outer surface only; they are not bare-back, medical, or DMD37 ground truth."
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "DMD37_SENSITIVITY_SCOPE_CORRECTION_V1",
+  "status": "CORRECTED_TESTED_SUBSETS_ONLY",
+  "source": "../back-dmd37-engineering-validation-v1/code/run_dmd37_sensitivity.py",
+  "shape": {
+    "total_mhr_identity_dimensions": 45,
+    "tested_dimensions": [0, 1, 2, 3, 4],
+    "tested_magnitudes": [0.25, 0.5, 1.0],
+    "untested_dimensions": "5..44 (40 dimensions)",
+    "claim": "First-five-identity-PC subset sensitivity only; not complete MHR shape sensitivity."
+  },
+  "scale": {
+    "full_model_parameter_indices": "136..203 (68 expanded scale parameters)",
+    "tested_model_parameter_indices": "139..150 (12 parameters)",
+    "tested_names": ["scale_spine_length", "scale_neck_length", "scale_shoulder_width", "scale_uparms", "scale_lowarms", "scale_r_hands", "scale_l_hands", "scale_hip_width", "scale_hip_height", "scale_hip_depth", "scale_uplegs", "scale_lowlegs"],
+    "tested_additive_magnitudes": [0.01, 0.03, 0.05],
+    "untested": "56 expanded scale parameters, including eye, knee/ankle/foot and detailed finger scales; the network's 28 raw scale coefficients were not perturbed directly.",
+    "claim": "Selected expanded body-scale parameter sensitivity only."
+  },
+  "hip_pelvis_pose_name_correction": {
+    "old_label": "HIP_PELVIS_POSE",
+    "correct_label": "BILATERAL_UPPER_LEG_LOCAL_ROTATION_SUBSET",
+    "indices": [50, 51, 52, 59, 60, 61],
+    "names": ["r_upleg_twist", "r_upleg_ry", "r_upleg_rz", "l_upleg_twist", "l_upleg_ry", "l_upleg_rz"],
+    "not_tested": "root/pelvis global orientation"
+  },
+  "shoulder_scope": {
+    "indices": "30..45",
+    "tested": "right clavicle, upper arm, elbow, lower arm and wrist parameters plus left clavicle and upper-arm parameters",
+    "missing": "left elbow, lower-arm and wrist indices 46..49",
+    "aggregation_warning": "The all-37-point median is diluted because most points do not move under one local arm parameter and because the tested left/right blocks are asymmetric. Use affected-point P90/P95 and worst-five points."
+  },
+  "spine_scope": {"indices": "6..23", "claim": "Named spine0..spine3 parameter subset, perturbed one parameter at a time."},
+  "normal_tangential_names": {"normal": "BASELINE_MHR_NORMAL_COMPONENT", "tangential": "BASELINE_MHR_TANGENTIAL_COMPONENT", "limit": "Geometric MHR face decomposition, not skin normal or medical error."},
+  "bridge_limit": "All V1 sensitivity values are conditional on the unreleased DIRECT_SMPL Atlas candidate and cannot select an Engineering Mesh Teacher."
+}
