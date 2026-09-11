@@ -1,0 +1,14 @@
+{
+  "status": "FROZEN_BEFORE_RESULTS",
+  "frame_metric": "median across K1/K2/K3 for each statistic",
+  "subject_metric": "median across all formal frames of that subject",
+  "subject_equal_overall": "arithmetic mean of the five per-subject values",
+  "camera_metric": "per subject median across frames, then equal-weight arithmetic mean across subjects",
+  "p95_gate": "subject-equal Txyz P95 must be <= 1.05 times subject-equal Official P95",
+  "coverage": "point-to-exact-triangle distance <=50 mm; same sampled observation points for Official/Txyz",
+  "low_error_frame": "frame-level Official median across K1/K2/K3 <30 mm",
+  "meaningful_low_error_degradation": "frame-level Txyz median minus Official median >5 mm",
+  "high_error_frame": "frame-level Official median across K1/K2/K3 >=60 mm",
+  "primary_metric": "observed person depth points to exact mesh triangle surface",
+  "rendered_depth_secondary": "sensor depth and mask nearest-neighbor remapped from distorted color domain to pinhole K domain; mesh z-buffer rendered with the same pinhole K; paired common support also reported"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "READY_FOR_REVIEW_NOT_EXECUTED",
+  "fixes": {
+    "subject_date_sequence_mapping": "explicit Sub03/, avoiding cross-date glob and Sub05 ambiguity",
+    "smoke_governance": "model-level smoke restricted to consumed Sub01; fresh subjects only structural/calibration QA before formal run",
+    "camera_geometry": "date-specific K0-K3 plus numerical comparison against official KinectTransform and world point-cloud overlap sanity",
+    "rendered_depth": "undistort registered sensor depth/mask with nearest-neighbor remap before pinhole render comparison",
+    "aggregation": "frame, subject, subject-equal, camera, P95, low/high thresholds frozen and implemented",
+    "assets": "checkpoint, config, MHR, anchors, metric code, source tree and environment frozen",
+    "visualizations": "per-frame Txyz vector and metrics summary added; deterministic all-frame montage and count/hash audit implemented"
+  },
+  "model_execution": false,
+  "download_resumed": false
+}

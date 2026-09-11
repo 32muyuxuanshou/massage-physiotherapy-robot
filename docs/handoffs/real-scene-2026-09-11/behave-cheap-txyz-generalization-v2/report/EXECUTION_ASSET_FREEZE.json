@@ -1,0 +1,14 @@
+{
+  "status": "FROZEN_BEFORE_SMOKE_OR_FRESH_MODEL_RUN",
+  "server": "172.18.18.151:436",
+  "assets": {
+    "official_checkpoint": {"sha256":"3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056"},
+    "model_config": {"sha256":"65012d0d0aac35ce59b70dbb0f5a9afa327641f64e11ab6a407fcdb1211af87a"},
+    "mhr_model": {"sha256":"352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc"},
+    "surface_anchors": {"count":16384,"sha256":"e949e9f42739efd9d6fd62db9fa41aca4a6f590c63625bcae9bef435879c1971"},
+    "surface_metrics_py": {"sha256":"619b32af927ae466203a2e48bf44389511d28cddb32dff7c4d36d551a9194d81"},
+    "sam3d_source": {"git_metadata":false,"python_yaml_tree_hash":"bad709dbb3e0a678d5b52312bd76bf166fa7a8c506b520321b937beb98035471"}
+  },
+  "environment": {"python":"3.10.20","torch":"2.4.0+cu121","cuda_runtime":"12.1","cudnn":90100,"gpu":"NVIDIA GeForce RTX 2080 Ti","numpy":"1.26.4","scipy":"1.15.3","opencv":"4.11.0","platform":"Linux 3.10.0-1160.59.1.el7.x86_64"},
+  "note": "SAM3D source checkout has no .git metadata; deterministic hash covers sorted *.py/*.yaml file hashes."
+}

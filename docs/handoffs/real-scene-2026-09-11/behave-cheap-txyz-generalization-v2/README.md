@@ -22,12 +22,24 @@
 
 推荐审查选择：使用已经发生的下载进度，完成 Date03 + 新增 Date05，与已完成 Date06 组合，得到 Sub03/04/05/06/07 五个 fresh subjects；Sub01 只进入 Smoke/Regression，不进入 fresh-only 主结论。
 
-## 执行顺序（审查通过后）
+## V2.1 预执行修复
+
+- 正式 manifest 使用明确的 subject→date→sequence 表；Sub05 固定 Date03 的 `backpack/stool/yogaball`，不再跨日期模糊搜索。
+- `prepare_smoke_manifest.py` 只允许已消费的 Date01/Sub01 进入模型级 Smoke；Sub03–07 只做文件、Depth/Mask 与标定检查。
+- Camera QA 逐点对照 BEHAVE 官方 `KinectTransform`，并检查四相机人体点云进入 world 后的重叠。
+- rendered-depth 先将 sensor Depth/Mask 最近邻去畸变，再与 pinhole z-buffer 比较。
+- 聚合公式、相对 5% P95 Gate、各类审计输出均已在看结果前写入代码。
+- 模型、MHR、anchor、评价器、SAM3D 源码树和环境指纹已冻结。
+- 可视化按正式 manifest 全量审计并生成确定性 montage，不按结果挑图。
+
+状态仍是 `HOLD_FOR_WEB_REVIEW`。本提交没有读取 fresh subject 的模型结果，也没有启动 Smoke 或 Full Batch。
+
+## 执行顺序（网页端审查批准后）
 
 1. 完成获批下载并校验 SHA256/ZIP；
 2. 运行 `prepare_frozen_manifest.py`，只按 metadata、文件完整性和等距帧规则冻结 manifest；
-3. 运行所有日期 K0↔K1/K2/K3 round-trip geometry QA；
-4. 跑 2 subjects × 2 actions × 1 frame Smoke，只允许修 loader/标定/renderer/输出 bug；
+3. 运行所有日期的官方实现数值对照、round-trip 和点云重叠 QA；
+4. 只对已消费的 Sub01 跑 2 actions × 1 frame 模型 Smoke；
 5. Smoke PASS 后固化 manifest 和代码哈希，再运行约 45 个 fresh frames；
 6. 生成逐 subject、逐 camera、low-error、high-error、rendered-depth 与可视化数量审计；
 7. 按预先冻结 Gate 判定 PASS / inconsistent / fail。
@@ -35,4 +47,3 @@
 ## 不在本阶段做的事
 
 不训练、不微调、不改变 Txyz 参数、不评价 DMD37、不上传 BEHAVE 真人图像。当前代码仅做静态语法检查，不能称为 pipeline execution verified。
-
