@@ -1,0 +1,38 @@
+{
+  "schema": "BEHAVE_MINIMAL_RGBD_MESH_V1",
+  "frozen_model": true,
+  "training": false,
+  "camera_A": 0,
+  "camera_B": 1,
+  "camera_B_used_for_fit": false,
+  "fit_dofs": "global translation Txyz only",
+  "fit": {
+    "surface_anchors": 16384,
+    "iterations": 6,
+    "trim_fraction": 0.2,
+    "component_step_bound_m": 0.05,
+    "total_fallback_bound_m": 0.18
+  },
+  "model_inputs": "Camera A RGB, person-mask-derived bbox, Camera A intrinsics",
+  "fit_inputs": "Camera A person-masked registered depth only",
+  "evaluation_inputs": "Camera B RGB/depth/intrinsics/extrinsics only",
+  "checkpoint_files": [
+    {
+      "path": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/model.ckpt",
+      "bytes": 1691205237,
+      "sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056"
+    },
+    {
+      "path": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/model_config.yaml",
+      "bytes": 1466,
+      "sha256": "65012d0d0aac35ce59b70dbb0f5a9afa327641f64e11ab6a407fcdb1211af87a"
+    },
+    {
+      "path": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/assets/mhr_model.pt",
+      "bytes": 696110248,
+      "sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc"
+    }
+  ],
+  "sam_repo_commit": "6a069fa5e8dc83c453994488e732397f83e7e41e",
+  "behave_loader_repo_commit": "85664832b43008d70a9bc5f5ba3bb2aa173bc077"
+}

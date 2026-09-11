@@ -1,0 +1,22 @@
+{
+  "gate": "PASS_BEHAVE_MINIMAL_RGBD_MESH_CLOSED_LOOP_WITH_LIMITATIONS",
+  "basis": [
+    "Official frozen SAM3D inference succeeded for 3/3 Camera-A frames",
+    "Camera-A-only Txyz fit succeeded without fallback for 3/3",
+    "same meshes evaluated on held-out Camera B; median surface error improved for 3/3"
+  ],
+  "answers": {
+    "directly_usable": true,
+    "stable_improvement": "observed on all 3 selected frames, insufficient to claim population stability",
+    "improvement_type": "primarily absolute translation; pose, shape, hands and object-contact geometry are unchanged",
+    "degradation": "none in this selected 3-frame pilot",
+    "recommended_next": "harden ROI/person-depth handling and expand BEHAVE within a small subject/sequence-balanced dev set before product-domain RGB-D"
+  },
+  "evidence_boundary": [
+    "one subject, three selected frames",
+    "real indoor RGB-D human-object interaction, not treatment-bed bare back",
+    "not DMD37 or medical accuracy evidence",
+    "not a product readiness result"
+  ],
+  "public_delivery_note": "BEHAVE license prohibits redistribution; RGB-derived visualizations remain on authorized server and are represented publicly only by hashes/manifests."
+}
