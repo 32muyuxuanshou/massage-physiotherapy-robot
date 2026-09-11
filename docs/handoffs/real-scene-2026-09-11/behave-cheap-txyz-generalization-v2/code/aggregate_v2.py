@@ -17,10 +17,19 @@ def write_csv(path, rows):
     if rows:
         with path.open("w", newline="", encoding="utf-8") as handle:
             writer = csv.DictWriter(handle, fieldnames=list(rows[0])); writer.writeheader(); writer.writerows(rows)
+def row_id(row):
+    spec=row['spec'] if 'spec' in row else row
+    return spec['subject'],spec['sequence'],spec['frame']
+def validate_complete_formal_run(rows,manifest):
+    if manifest.get('role')!='FRESH_FORMAL_GENERALIZATION' or not manifest.get('fresh_only'):raise RuntimeError('PIPELINE_BLOCKED_NONFORMAL_MANIFEST')
+    expected={row_id(row) for row in manifest['rows']};actual={row_id(row) for row in rows};subjects={item[0] for item in expected};sequences={item[1] for item in expected}
+    valid=(len(manifest['rows'])==45 and len(expected)==45 and subjects=={'Sub03','Sub04','Sub05','Sub06','Sub07'} and len(sequences)==15 and actual==expected and len(rows)==45)
+    cameras=all(set(row.get('cameras',{}))==set(CAMS) for row in rows)
+    if not valid or not cameras:raise RuntimeError(f'PIPELINE_BLOCKED_INCOMPLETE_FORMAL_RUN expected={len(expected)} actual={len(actual)} subjects={sorted(subjects)} sequences={len(sequences)} cameras_complete={cameras}')
 
 def main():
-    parser = argparse.ArgumentParser(); parser.add_argument("--results", type=Path, required=True); parser.add_argument("--out", type=Path, required=True)
-    args = parser.parse_args(); rows = json.loads(args.results.read_text(encoding="utf-8")); args.out.mkdir(parents=True, exist_ok=True)
+    parser = argparse.ArgumentParser(); parser.add_argument("--results", type=Path, required=True); parser.add_argument("--manifest",type=Path,required=True); parser.add_argument("--out", type=Path, required=True)
+    args = parser.parse_args(); rows = json.loads(args.results.read_text(encoding="utf-8")); manifest=json.loads(args.manifest.read_text(encoding="utf-8"));validate_complete_formal_run(rows,manifest);args.out.mkdir(parents=True, exist_ok=True)
     aggregate = {kind: {key: equal(rows, kind, key) for key in METRICS} for kind in ("official", "txyz")}
     subjects = {subject: aggregate["txyz"]["median_mm"]["per_subject"][subject] < value for subject, value in aggregate["official"]["median_mm"]["per_subject"].items()}
     cameras = {}
@@ -61,6 +70,10 @@ def main():
     degraded = sum(item["delta_mm"] > 5 for item in low); degradation_rate = None if len(low) < 10 else degraded / len(low)
     official, txyz = aggregate["official"]["median_mm"]["overall_equal_weight_mean"], aggregate["txyz"]["median_mm"]["overall_equal_weight_mean"]
     official_p95, txyz_p95 = aggregate["official"]["p95_mm"]["overall_equal_weight_mean"], aggregate["txyz"]["p95_mm"]["overall_equal_weight_mean"]
+    raw=np.asarray([row['Txyz_m'] for row in rows])*1000;norm=np.linalg.norm(raw,axis=1)
+    translation_summary={axis:{'median_mm':float(np.median(raw[:,i])),'p90_abs_mm':float(np.percentile(np.abs(raw[:,i]),90))} for i,axis in enumerate(('Tx','Ty','Tz'))}
+    translation_summary['norm']={'median_mm':float(np.median(norm)),'p90_mm':float(np.percentile(norm,90))};translation_summary['fallback_count']=sum(bool(row['fallback']) for row in rows)
+    runtime_summary={key:{'p50_ms':float(np.percentile([row[key] for row in rows],50)),'p90_ms':float(np.percentile([row[key] for row in rows],90))} for key in ('runtime_sam_ms','runtime_txyz_ms','runtime_total_ms')}
     checks = {"median_improvement": (official-txyz)>=3 or (official-txyz)/official>=.10, "subjects_improved": sum(subjects.values())/len(subjects)>=.80, "cameras_improved": sum(cameras[cam]["txyz"]<cameras[cam]["official"] for cam in CAMS)>=2, "p95_not_worse_over_relative_5_percent": txyz_p95<=1.05*official_p95, "low_error_protection": len(low)<10 or degradation_rate<=.20}
     gate = "PASS_BEHAVE_CHEAP_TXYZ_GENERALIZATION_V2" if all(checks.values()) else ("PASS_POSITIVE_SIGNAL_BUT_INCONSISTENT" if checks["median_improvement"] else "FAIL_TXYZ_GENERALIZATION")
     contract = {"frame": "median across K1/K2/K3", "subject": "median across frozen frames", "subject_equal_overall": "arithmetic mean of five subject values", "p95_gate": "Txyz <= 1.05 * Official (relative 5%)", "low_high": "frame median across K1/K2/K3"}
@@ -73,7 +86,7 @@ def main():
                                  "p99_mm":metric["p99_mm"],"max_mm":metric["max_mm"],
                                  "above_500mm_count":metric["above_500mm_count"],
                                  "above_500mm_ratio":metric["above_500mm_ratio"]})
-    outputs = {"system_summary_v2.json": {"contract": contract, "aggregates": aggregate, "camera": cameras, "subjects_improved": subjects, "outcomes": outcomes}, "LOW_ERROR_PROTECTION_V2.json": {"official_threshold_mm":30,"meaningful_degradation_mm":5,"descriptive_only":len(low)<10,"count":len(low),"meaningfully_degraded":degraded,"rate":degradation_rate,"rows":low}, "HIGH_ERROR_RESCUE_V2.json":{"official_threshold_mm":60,"count":len(high),"improved":sum(item["delta_mm"]<0 for item in high),"rows":high}, "MULTICAMERA_FRAME_OUTCOME_V2.json":{"counts":outcomes,"rows":[{"spec":row["spec"],"outcome":row["multicamera_outcome"]} for row in rows]}, "TXYZ_TRANSLATION_ONLY_QA_V2.json":{"policy":"report all raw/applied corrections; no result filtering","rows":translations}, "BEHAVE_RENDERED_DEPTH_EVAL_V2.json":{"domain":"undistorted pinhole sensor depth/mask","rows":rendered}, "BEHAVE_DEPTH_OUTLIER_AUDIT_V2.json":{"metric":"point-to-triangle observed-point distance","threshold_mm":500,"policy":"report only; never filter or modify Txyz","rows":outliers}, "failure_cases_v2.json":{"selection":"all txyz >= official frame aggregates","rows":failures}, "final_decision_v2.json":{"gate":gate,"conditions":checks,"contract":contract}}
+    outputs = {"system_summary_v2.json": {"contract": contract, "aggregates": aggregate, "camera": cameras, "subjects_improved": subjects, "outcomes": outcomes,"translation":translation_summary,"runtime":runtime_summary}, "LOW_ERROR_PROTECTION_V2.json": {"official_threshold_mm":30,"meaningful_degradation_mm":5,"descriptive_only":len(low)<10,"count":len(low),"meaningfully_degraded":degraded,"rate":degradation_rate,"rows":low}, "HIGH_ERROR_RESCUE_V2.json":{"official_threshold_mm":60,"count":len(high),"improved":sum(item["delta_mm"]<0 for item in high),"rows":high}, "MULTICAMERA_FRAME_OUTCOME_V2.json":{"counts":outcomes,"rows":[{"spec":row["spec"],"outcome":row["multicamera_outcome"]} for row in rows]}, "TXYZ_TRANSLATION_ONLY_QA_V2.json":{"policy":"report all raw/applied corrections; no result filtering","summary":translation_summary,"rows":translations}, "BEHAVE_RENDERED_DEPTH_EVAL_V2.json":{"domain":"undistorted pinhole sensor depth/mask","rows":rendered}, "BEHAVE_DEPTH_OUTLIER_AUDIT_V2.json":{"metric":"point-to-triangle observed-point distance","threshold_mm":500,"policy":"report only; never filter or modify Txyz","rows":outliers}, "failure_cases_v2.json":{"selection":"all txyz >= official frame aggregates","rows":failures}, "runtime_summary_v2.json":runtime_summary,"final_decision_v2.json":{"gate":gate,"conditions":checks,"contract":contract}}
     for name, payload in outputs.items(): (args.out/name).write_text(json.dumps(payload, indent=2)+"\n", encoding="utf-8")
 
 if __name__ == "__main__": main()

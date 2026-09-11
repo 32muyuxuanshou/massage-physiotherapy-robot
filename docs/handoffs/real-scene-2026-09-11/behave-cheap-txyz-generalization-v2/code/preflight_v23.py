@@ -6,11 +6,11 @@ import cv2
 import numpy as np
 
 from prepare_frozen_manifest import SUBJECT_PLAN, choose_frames, find_action
-from preflight_contracts import assert_qa_coverage, file_sha, source_tree_sha, verify_assets
+from preflight_contracts import assert_qa_coverage, classify_outcome, file_sha, source_tree_sha, validate_runner_manifest, verify_assets
 
-def fake_sequence(root, name):
+def fake_sequence(root, name, frame_count=3):
     sequence=root/name
-    for frame_id in (1,2,3):
+    for frame_id in range(1,frame_count+1):
         frame=sequence/f"t{frame_id:04d}.000";frame.mkdir(parents=True)
         for camera in range(4):
             cv2.imwrite(str(frame/f"k{camera}.color.jpg"),np.zeros((4,4,3),np.uint8))
@@ -26,6 +26,11 @@ def main():
         for action in ('backpack_back','stool_sit'):fake_sequence(sequences,f"Date01_Sub01_{action}")
         for subject in SUBJECT_PLAN:
             for alias in ('backpack','stool','yogaball'):assert len(choose_frames(find_action(sequences,subject,alias)))==3
+        smoke_path=root/'smoke.json';subprocess.run([sys.executable,str(Path(__file__).with_name('prepare_smoke_manifest.py')),'--sequences',str(sequences),'--out',str(smoke_path)],check=True);validate_runner_manifest(json.loads(smoke_path.read_text()))
+        short=fake_sequence(sequences,'Date99_Sub99_short',4)
+        try:choose_frames(short);raise AssertionError('duplicate frame indices were accepted')
+        except RuntimeError as error:assert 'DATA_INSUFFICIENT_FOR_FROZEN_SAMPLING' in str(error)
+        assert classify_outcome([0.,0.,0.],True)=='FALLBACK_OFFICIAL'
         manifest={'status':'FROZEN_BEFORE_MODEL_RUN','rows':[{'sequence':f"{plan['date']}_Sub{subject:02d}_{next(iter(plan['actions'].values()))}"} for subject,plan in SUBJECT_PLAN.items()]}
         qa={'status':'PASS','rows':[]}
         for item in manifest['rows']:
@@ -43,16 +48,17 @@ def main():
         asset_args=SimpleNamespace(**paths,sam_repo=sam_repo,asset_freeze=freeze_path);verify_assets(asset_args);paths['anchors'].write_text('changed')
         try:verify_assets(asset_args);raise AssertionError('changed asset was accepted')
         except RuntimeError as error:assert 'ASSET_FREEZE_MISMATCH' in str(error)
-        rows=[]
+        rows=[];formal_rows=[]
         metric={'median_mm':40,'p90_mm':60,'p95_mm':70,'p99_mm':510,'max_mm':900,'coverage_50mm':.6,'above_500mm_count':2,'above_500mm_ratio':.02}
         corrected={**metric,'median_mm':34,'p95_mm':68}
         for subject in ('Sub03','Sub04','Sub05','Sub06','Sub07'):
-            cameras={cam:{'official':metric,'txyz':corrected,'rendered_depth_pinhole_undistorted_sensor':{'official':metric,'txyz':corrected}} for cam in ('K1','K2','K3')}
-            rows.append({'spec':{'subject':subject,'sequence':'synthetic','frame':'t0002.000'},'multicamera_outcome':'ALL_3_IMPROVED','translation_only_qa':{'pass':True},'cameras':cameras})
-        results=root/'results.json';results.write_text(json.dumps(rows));out=root/'report'
-        subprocess.run([sys.executable,str(Path(__file__).with_name('aggregate_v2.py')),'--results',str(results),'--out',str(out)],check=True)
-        rendered=json.loads((out/'BEHAVE_RENDERED_DEPTH_EVAL_V2.json').read_text())['rows'];outliers=json.loads((out/'BEHAVE_DEPTH_OUTLIER_AUDIT_V2.json').read_text())['rows']
-        assert len(rendered)==15 and len(outliers)==30 and (out/'per_frame_per_camera_metrics.csv').is_file()
-    print('PURE_CODE_PREFLIGHT_V2_2_PASS')
+            for action in ('backpack','stool','yogaball'):
+                for frame_id in (1,2,3):
+                    spec={'subject':subject,'sequence':f'{subject}_{action}','frame':f't{frame_id:04d}.000'};formal_rows.append(spec);cameras={cam:{'official':metric,'txyz':corrected,'rendered_depth_pinhole_undistorted_sensor':{'official':metric,'txyz':corrected}} for cam in ('K1','K2','K3')}
+                    rows.append({'spec':spec,'Txyz_m':[.001,.002,.003],'fallback':False,'runtime_sam_ms':10,'runtime_txyz_ms':20,'runtime_total_ms':30,'multicamera_outcome':'ALL_3_IMPROVED','translation_only_qa':{'pass':True},'cameras':cameras})
+        manifest_path=root/'formal.json';manifest_path.write_text(json.dumps({'role':'FRESH_FORMAL_GENERALIZATION','fresh_only':True,'rows':formal_rows}));results=root/'results.json';results.write_text(json.dumps(rows));out=root/'report';cmd=[sys.executable,str(Path(__file__).with_name('aggregate_v2.py')),'--results',str(results),'--manifest',str(manifest_path),'--out',str(out)]
+        subprocess.run(cmd,check=True);rendered=json.loads((out/'BEHAVE_RENDERED_DEPTH_EVAL_V2.json').read_text())['rows'];outliers=json.loads((out/'BEHAVE_DEPTH_OUTLIER_AUDIT_V2.json').read_text())['rows'];assert len(rendered)==135 and len(outliers)==270 and (out/'per_frame_per_camera_metrics.csv').is_file()
+        results.write_text(json.dumps(rows[:-1]));blocked=subprocess.run(cmd,capture_output=True,text=True);assert blocked.returncode!=0 and 'PIPELINE_BLOCKED_INCOMPLETE_FORMAL_RUN' in blocked.stderr
+    print('PURE_CODE_PREFLIGHT_V2_3_PASS')
 
 if __name__=='__main__':main()

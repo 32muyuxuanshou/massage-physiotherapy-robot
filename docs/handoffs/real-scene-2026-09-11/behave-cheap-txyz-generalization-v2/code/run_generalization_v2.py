@@ -4,14 +4,14 @@ from pathlib import Path
 import cv2,numpy as np,torch
 from scipy.spatial import cKDTree
 from behave_v2_io import read_camera,transform_between
-from preflight_contracts import assert_qa_coverage,verify_assets
+from preflight_contracts import assert_qa_coverage,classify_outcome,validate_runner_manifest,verify_assets
 
 N_ANCHORS=16384;ITER=6;TRIM=.20;STEP=.05;TOTAL=.17788820176363325
 def depth_points(depth,mask,table):
  good=(depth>0)&(mask>127);r=np.dstack([table,np.ones(table.shape[:2],table.dtype)])
  return r[good].astype(float)*depth[good,None].astype(float)/1000.
 def fit_txyz(points,anchors):
- t=np.zeros(3);pts=points[np.linspace(0,len(points)-1,min(25000,len(points)),dtype=int)];trace=[]
+ t=np.zeros(3);pts=points;trace=[]
  for i in range(ITER):
   dist,near=cKDTree(anchors+t).query(pts,workers=-1);keep=dist<=np.quantile(dist,1-TRIM)
   step=np.clip(np.median(pts[keep]-(anchors+t)[near[keep]],axis=0),-STEP,STEP);t+=step;trace.append({'iteration':i+1,'step_m':step.tolist(),'t_m':t.tolist()})
@@ -66,7 +66,7 @@ def main():
  p=argparse.ArgumentParser()
  for n in ['manifest','sequences','calibs','sam-repo','checkpoint','mhr','anchors','camera-qa','out']:p.add_argument('--'+n,type=Path,required=True)
  for n in ['model-config','surface-metrics','asset-freeze']:p.add_argument('--'+n,type=Path,required=True)
- a=p.parse_args();qa=json.loads(a.camera_qa.read_text());assert qa['status']=='PASS';man=json.loads(a.manifest.read_text());assert man['status']=='FROZEN_BEFORE_MODEL_RUN';assert_qa_coverage(man,qa);verify_assets(a)
+ a=p.parse_args();qa=json.loads(a.camera_qa.read_text());assert qa['status']=='PASS';man=json.loads(a.manifest.read_text());validate_runner_manifest(man);assert_qa_coverage(man,qa);verify_assets(a)
  sys.path[:0]=[str(a.sam_repo),str(a.surface_metrics.parent)];from sam_3d_body import load_sam_3d_body,SAM3DBodyEstimator;from sam_3d_body.data.utils.prepare_batch import prepare_batch;from sam_3d_body.utils import recursive_to;from surface_metrics import point_to_triangle_distances,render_depth
  model,cfg=load_sam_3d_body(str(a.checkpoint),device='cuda',mhr_path=str(a.mhr));model.eval();est=SAM3DBodyEstimator(model,cfg);faces=model.head_pose.faces.cpu().numpy().astype(np.int64);az=np.load(a.anchors);fi,bc=az['face_index'],az['barycentric'].astype(float);rows=[];torch.cuda.reset_peak_memory_stats()
  for spec in man['rows']:
@@ -82,10 +82,10 @@ def main():
    y=100+j*75;cv2.line(vec,(350,y),(350+int(value*scale),y),color,10);cv2.circle(vec,(350+int(value*scale),y),8,color,-1);cv2.putText(vec,f'{label} {value:+.1f} mm',(20,y+8),0,.65,color,2,cv2.LINE_AA)
   cv2.putText(vec,footer,(20,40),0,.65,(25,35,50),2,cv2.LINE_AA);save(inf/'camA_txyz_vector.png',vec);geo=a.out/'visualizations/geometry_3d'/sid;viewer(geo/'viewer.html',points[0],vo,vc,sid);static_geometry(geo,points[0],vo,vc)
   delta=vc-vo;translation_qa={'max_vertex_delta_deviation_m':float(np.abs(delta-delta.mean(0)).max()),'faces_identical':True,'pose_shape_scale_rotation_recomputed':False,'pass':bool(np.abs(delta-delta.mean(0)).max()<1e-7)}
-  rec={'spec':spec,'Txyz_m':raw.tolist(),'applied_Txyz_m':applied.tolist(),'fallback':fallback,'translation_only_qa':translation_qa,'runtime_sam_ms':sam_ms,'runtime_txyz_ms':t_ms,'cameras':{}}
+  rec={'spec':spec,'Txyz_m':raw.tolist(),'applied_Txyz_m':applied.tolist(),'fallback':fallback,'translation_only_qa':translation_qa,'runtime_sam_ms':sam_ms,'runtime_txyz_ms':t_ms,'runtime_total_ms':sam_ms+t_ms,'cameras':{}}
   for k in [1,2,3]:
    ob,tb=transform_between(vo,cams[0],cams[k]),transform_between(vc,cams[0],cams[k]);po=sample_points(points[k],sid+f'K{k}');mo=summary(point_to_triangle_distances(po,ob,faces));mt=summary(point_to_triangle_distances(po,tb,faces));ud,um=undistort_depth_mask(depths[k],masks[k],cams[k]['K'],cams[k]['dist']);do=render_depth(ob,faces,cams[k]['K'],*ud.shape);dt=render_depth(tb,faces,cams[k]['K'],*ud.shape);sensor=ud/1000.;rd=rendered_pair(sensor,do,dt,um);ho,co=residual_png(sensor,do,um);ht,ct=residual_png(sensor,dt,um);ev=a.out/f'visualizations/evaluation/{sid}/K{k}';oo,tt=render(rgbs[k],ob,faces,cams[k]['K'],cams[k]['dist']),render(rgbs[k],tb,faces,cams[k]['K'],cams[k]['dist']);save(ev/'rgb_original.png',rgbs[k]);save(ev/'official_from_A_overlay.png',oo);save(ev/'txyz_from_A_overlay.png',tt);save(ev/'triptych.png',panel([rgbs[k],oo,tt],[f'Held-out K{k}',f'Official from A',f'Txyz from A']));save(ev/'residual_official.png',ho);save(ev/'residual_txyz.png',ht);save(ev/'residual_comparison.png',np.hstack([ho,ht]));rec['cameras'][f'K{k}']={'official':mo,'txyz':mt,'rendered_depth_pinhole_undistorted_sensor':rd,'median_delta_mm':mt['median_mm']-mo['median_mm']}
-  deltas=[rec['cameras'][f'K{k}']['median_delta_mm'] for k in [1,2,3]];n=sum(x<0 for x in deltas);rec['multicamera_outcome']='ALL_3_IMPROVED' if n==3 else ('2_OF_3_IMPROVED' if n==2 else ('1_OF_3_IMPROVED' if n==1 else 'ALL_3_DEGRADED'));sl=[footer]+[f"K{k}: {rec['cameras'][f'K{k}']['official']['median_mm']:.1f}->{rec['cameras'][f'K{k}']['txyz']['median_mm']:.1f} mm; P95 {rec['cameras'][f'K{k}']['official']['p95_mm']:.1f}->{rec['cameras'][f'K{k}']['txyz']['p95_mm']:.1f}" for k in [1,2,3]]+[rec['multicamera_outcome']];canvas=np.full((250,1200,3),248,np.uint8)
+  deltas=[rec['cameras'][f'K{k}']['median_delta_mm'] for k in [1,2,3]];rec['multicamera_outcome']=classify_outcome(deltas,fallback);sl=[footer]+[f"K{k}: {rec['cameras'][f'K{k}']['official']['median_mm']:.1f}->{rec['cameras'][f'K{k}']['txyz']['median_mm']:.1f} mm; P95 {rec['cameras'][f'K{k}']['official']['p95_mm']:.1f}->{rec['cameras'][f'K{k}']['txyz']['p95_mm']:.1f}" for k in [1,2,3]]+[rec['multicamera_outcome']];canvas=np.full((250,1200,3),248,np.uint8)
   for j,line in enumerate(sl):cv2.putText(canvas,line,(20,42+j*42),0,.65,(25,35,50),2,cv2.LINE_AA)
   save(a.out/'visualizations/metrics_summary'/sid/'metrics_summary.png',canvas);rows.append(rec);(a.out/'raw').mkdir(parents=True,exist_ok=True);(a.out/'raw'/f"{spec['sequence']}_{spec['frame'].replace('.','_')}.json").write_text(json.dumps(rec,indent=2)+'\n');print(sid,rec['multicamera_outcome'],flush=True)
  (a.out/'report').mkdir(parents=True,exist_ok=True);(a.out/'report/per_frame_results.json').write_text(json.dumps(rows,indent=2)+'\n');(a.out/'report/runtime.json').write_text(json.dumps({'peak_cuda_allocated_mb':torch.cuda.max_memory_allocated()/2**20},indent=2)+'\n')

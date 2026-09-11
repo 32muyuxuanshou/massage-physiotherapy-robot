@@ -24,6 +24,7 @@ def choose_frames(sequence):
         if good: valid.append(f)
     if len(valid)<3: raise RuntimeError(f'{sequence}: fewer than 3 structurally complete frames')
     ids=[round(q*(len(valid)-1)) for q in FRACTIONS]
+    if len(set(ids))!=3:raise RuntimeError(f'DATA_INSUFFICIENT_FOR_FROZEN_SAMPLING {sequence}: indices={ids}')
     return [valid[i] for i in ids]
 def find_action(root,subject,alias):
     plan=SUBJECT_PLAN[subject];seq=Path(root)/f"{plan['date']}_Sub{subject:02d}_{plan['actions'][alias]}"
@@ -36,6 +37,6 @@ def main():
         for action in ['backpack','stool','yogaball']:
             seq=find_action(a.sequences,subject,action)
             for frame in choose_frames(seq): rows.append({'subject':f'Sub{subject:02d}','fresh':True,'sequence':seq.name,'date':seq.name[:6],'action_label':action,'frame':frame.name,'camera_A':'K0','heldout':['K1','K2','K3'],'selection':'structural completeness + fixed 25/50/75 percent; no model/error inspection'})
-    payload={'status':'FROZEN_BEFORE_MODEL_RUN','fresh_only':True,'consumed_smoke_subject':'Sub01','rows':rows,'subjects':len(set(x['subject'] for x in rows)),'sequences':len(set(x['sequence'] for x in rows)),'frames':len(rows),'subject_plan':SUBJECT_PLAN,'selection_contract':{'aliases':['backpack','stool','yogaball'],'fractions':FRACTIONS,'required_files':REQUIRED,'data_qa':'all four masks nonempty and each mask contains valid depth'}}
+    payload={'status':'FROZEN_BEFORE_MODEL_RUN','role':'FRESH_FORMAL_GENERALIZATION','fresh_only':True,'consumed_smoke_subject':'Sub01','rows':rows,'subjects':len(set(x['subject'] for x in rows)),'sequences':len(set(x['sequence'] for x in rows)),'frames':len(rows),'subject_plan':SUBJECT_PLAN,'selection_contract':{'aliases':['backpack','stool','yogaball'],'fractions':FRACTIONS,'required_files':REQUIRED,'data_qa':'all four masks nonempty and each mask contains valid depth'}}
     a.out.parent.mkdir(parents=True,exist_ok=True);a.out.write_text(json.dumps(payload,indent=2)+'\n');print(sha(a.out),len(rows))
 if __name__=='__main__':main()

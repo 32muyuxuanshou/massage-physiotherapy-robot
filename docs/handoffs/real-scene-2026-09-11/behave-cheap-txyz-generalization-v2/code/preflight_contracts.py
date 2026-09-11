@@ -19,3 +19,13 @@ def assert_qa_coverage(manifest,qa):
     for sequence in {row['sequence'] for row in manifest['rows']}:
         rows=grouped.get(sequence,[]);targets={row['target'] for row in rows if row.get('target') and row.get('pass')};overlap=any(row.get('world_person_cloud_overlap') and row.get('pass') for row in rows)
         if targets!={'K1','K2','K3'} or not overlap:raise RuntimeError(f'CAMERA_QA_COVERAGE_MISSING {sequence}: targets={targets}, overlap={overlap}')
+def validate_runner_manifest(manifest):
+    if manifest.get('status')!='FROZEN_BEFORE_MODEL_RUN':raise RuntimeError('MANIFEST_NOT_FROZEN')
+    if manifest.get('role') not in {'CONSUMED_SMOKE_ONLY','FRESH_FORMAL_GENERALIZATION'}:raise RuntimeError('MANIFEST_ROLE_INVALID')
+def classify_outcome(deltas,fallback,epsilon=1e-9):
+    if fallback:return 'FALLBACK_OFFICIAL'
+    signs=[-1 if value < -epsilon else (1 if value > epsilon else 0) for value in deltas];improved=signs.count(-1);degraded=signs.count(1)
+    if improved==3:return 'ALL_3_IMPROVED'
+    if degraded==3:return 'ALL_3_DEGRADED'
+    if improved==0 and degraded==0:return 'ALL_3_UNCHANGED'
+    return f'{improved}_IMPROVED_{signs.count(0)}_UNCHANGED_{degraded}_DEGRADED'

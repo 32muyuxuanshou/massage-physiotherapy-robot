@@ -9,5 +9,5 @@ def main():
         hits=sorted(args.sequences.glob(f"Date01_Sub01_{action}"))
         if len(hits)!=1: raise RuntimeError(f"expected one consumed Sub01 smoke sequence for {action}; got {hits}")
         frames=choose_frames(hits[0]); rows.append({"subject":"Sub01","date":"Date01","sequence":hits[0].name,"action":action,"frame":frames[1].name,"role":"CONSUMED_SMOKE_ONLY"})
-    args.out.write_text(json.dumps({"formal_generalization":False,"must_not_enter_fresh_aggregation":True,"rows":rows},indent=2)+"\n",encoding="utf-8")
+    args.out.write_text(json.dumps({"status":"FROZEN_BEFORE_MODEL_RUN","role":"CONSUMED_SMOKE_ONLY","formal_generalization":False,"must_not_enter_fresh_aggregation":True,"rows":rows},indent=2)+"\n",encoding="utf-8")
 if __name__=="__main__": main()

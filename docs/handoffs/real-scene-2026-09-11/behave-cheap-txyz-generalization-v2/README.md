@@ -44,6 +44,17 @@
 
 `preflight_v22.py` 已在纯模拟目录通过，包括正式 sequence 解析、QA 缺失拒绝、资产篡改拒绝、rendered-depth/outlier 聚合数量检查。状态仍是 `HOLD_FOR_WEB_REVIEW`，没有读取 fresh subject 模型结果，也没有启动 Smoke 或 Full Batch。
 
+## V2.3 启动修复
+
+- Smoke manifest 现在带冻结状态和 `CONSUMED_SMOKE_ONLY` role；正式汇总明确拒绝该 role。
+- Txyz 恢复历史 System C 的全量 Camera-A 人体深度点，不再使用 25,000 点近似。
+- fallback 优先分类为 `FALLBACK_OFFICIAL`；非 fallback 按 improved/unchanged/degraded 三态分类。
+- 汇总器必须同时读取冻结正式 manifest，并严格验证 5 subjects、15 sequences、45 unique frames 与每帧 K1/K2/K3 完整。
+- 25/50/75% 若不能产生三个不同帧，直接报 `DATA_INSUFFICIENT_FOR_FROZEN_SAMPLING`。
+- 最终报告增加 Tx/Ty/Tz/|T|、fallback 数量以及 SAM/Txyz/总耗时的 P50/P90。
+
+`preflight_v23.py` 已覆盖 Smoke role、fallback 分类、重复帧拒绝和缺少一个正式结果时阻止 Gate。用户已授权修完后直接启动服务器流程。
+
 ## 执行顺序（网页端审查批准后）
 
 1. 完成获批下载并校验 SHA256/ZIP；
