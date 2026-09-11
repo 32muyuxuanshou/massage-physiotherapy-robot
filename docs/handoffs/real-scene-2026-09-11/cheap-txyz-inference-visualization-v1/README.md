@@ -80,3 +80,13 @@ Final Gate：`PASS_CHEAP_TXYZ_INFERENCE_VISUALIZATION`。这个 PASS 表示单�
 下一步唯一建议：冻结现有 Txyz，不再在 HuMMan 调参，直接采集一小批产品 RGB-D 数据，包含治疗床、裸背/衣物、侧卧/俯卧/坐姿、机器人或治疗师遮挡以及真实传感器噪声；同样保留独立 Camera B 或其他几何真值用于评价。
 
 
+
+## Solid-mesh real-scene showcase
+
+The final visualization target is a complete shaded MHR surface composited over the original RGB scene, matching the presentation style of SAM 3D Body rather than a sparse vertex overlay.
+
+- `FINAL_CORRECTED_MESH_SHOWCASE.png`: three corrected meshes in varied poses.
+- `FINAL_OFFICIAL_VS_CORRECTED_SHOWCASE.png`: official frozen output versus depth-translation-corrected output.
+- `code/render_final_showcase.py`: reproducible triangle-surface compositor. It scales HuMMan's 1920x1080 calibration to the exported 960x540 RGB frames before rasterization.
+
+The solid rendering confirms overall body placement while making remaining hand, foot, and occlusion-boundary errors visible. The images are engineering visualizations of the current frozen-model pipeline, not evidence that those local errors have been solved.
