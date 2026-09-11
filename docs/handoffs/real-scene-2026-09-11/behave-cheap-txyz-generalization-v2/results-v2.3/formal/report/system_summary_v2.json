@@ -1,0 +1,155 @@
+{
+  "contract": {
+    "frame": "median across K1/K2/K3",
+    "subject": "median across frozen frames",
+    "subject_equal_overall": "arithmetic mean of five subject values",
+    "p95_gate": "Txyz <= 1.05 * Official (relative 5%)",
+    "low_high": "frame median across K1/K2/K3"
+  },
+  "aggregates": {
+    "official": {
+      "median_mm": {
+        "per_subject": {
+          "Sub03": 21.48869938177446,
+          "Sub04": 26.969840149540026,
+          "Sub05": 39.791884800316566,
+          "Sub06": 31.09291062802381,
+          "Sub07": 36.530625362663756
+        },
+        "overall_equal_weight_mean": 31.174792064463723
+      },
+      "p90_mm": {
+        "per_subject": {
+          "Sub03": 55.06251879926539,
+          "Sub04": 70.42671972774745,
+          "Sub05": 87.46173500461896,
+          "Sub06": 73.45854360129202,
+          "Sub07": 97.25964210379819
+        },
+        "overall_equal_weight_mean": 76.7338318473444
+      },
+      "p95_mm": {
+        "per_subject": {
+          "Sub03": 76.18077926421027,
+          "Sub04": 81.00105762108981,
+          "Sub05": 104.50937167680394,
+          "Sub06": 96.74505921005236,
+          "Sub07": 114.48130703034292
+        },
+        "overall_equal_weight_mean": 94.58351496049985
+      },
+      "coverage_50mm": {
+        "per_subject": {
+          "Sub03": 0.8716,
+          "Sub04": 0.8048,
+          "Sub05": 0.6156,
+          "Sub06": 0.7624,
+          "Sub07": 0.637
+        },
+        "overall_equal_weight_mean": 0.73828
+      }
+    },
+    "txyz": {
+      "median_mm": {
+        "per_subject": {
+          "Sub03": 19.132239206260003,
+          "Sub04": 11.557387841321514,
+          "Sub05": 16.534041199679066,
+          "Sub06": 20.491232085091834,
+          "Sub07": 21.292810103902745
+        },
+        "overall_equal_weight_mean": 17.801542087251033
+      },
+      "p90_mm": {
+        "per_subject": {
+          "Sub03": 58.80385752758831,
+          "Sub04": 35.011615233876995,
+          "Sub05": 40.78238333153102,
+          "Sub06": 68.25921716804014,
+          "Sub07": 71.66252203759932
+        },
+        "overall_equal_weight_mean": 54.90391905972716
+      },
+      "p95_mm": {
+        "per_subject": {
+          "Sub03": 81.83759733901135,
+          "Sub04": 46.92671853419119,
+          "Sub05": 50.42398594013995,
+          "Sub06": 83.98694925301166,
+          "Sub07": 93.11913191344448
+        },
+        "overall_equal_weight_mean": 71.25887659595972
+      },
+      "coverage_50mm": {
+        "per_subject": {
+          "Sub03": 0.8774,
+          "Sub04": 0.955,
+          "Sub05": 0.9474,
+          "Sub06": 0.8092,
+          "Sub07": 0.7786
+        },
+        "overall_equal_weight_mean": 0.8735199999999999
+      }
+    }
+  },
+  "camera": {
+    "K1": {
+      "official": 33.043678086588855,
+      "txyz": 16.181615092566982
+    },
+    "K2": {
+      "official": 32.66224134641608,
+      "txyz": 21.537618376612528
+    },
+    "K3": {
+      "official": 29.908272298226297,
+      "txyz": 18.875242034679765
+    }
+  },
+  "subjects_improved": {
+    "Sub03": true,
+    "Sub04": true,
+    "Sub05": true,
+    "Sub06": true,
+    "Sub07": true
+  },
+  "outcomes": {
+    "ALL_3_IMPROVED": 36,
+    "2_IMPROVED_0_UNCHANGED_1_DEGRADED": 5,
+    "1_IMPROVED_0_UNCHANGED_2_DEGRADED": 3,
+    "ALL_3_DEGRADED": 1
+  },
+  "translation": {
+    "Tx": {
+      "median_mm": -2.3699477937298985,
+      "p90_abs_mm": 19.433109689147216
+    },
+    "Ty": {
+      "median_mm": -0.05540466207946959,
+      "p90_abs_mm": 13.116110087249801
+    },
+    "Tz": {
+      "median_mm": -51.47240313466605,
+      "p90_abs_mm": 115.26909173098741
+    },
+    "norm": {
+      "median_mm": 52.83974153095735,
+      "p90_mm": 119.91880610804837
+    },
+    "fallback_count": 0
+  },
+  "runtime": {
+    "runtime_sam_ms": {
+      "p50_ms": 320.61437296215445,
+      "p90_ms": 360.54487518267706
+    },
+    "runtime_txyz_ms": {
+      "p50_ms": 321.5052229934372,
+      "p90_ms": 527.7148951776326
+    },
+    "runtime_total_ms": {
+      "p50_ms": 654.7610289999284,
+      "p90_ms": 885.521197959315
+    }
+  }
+}

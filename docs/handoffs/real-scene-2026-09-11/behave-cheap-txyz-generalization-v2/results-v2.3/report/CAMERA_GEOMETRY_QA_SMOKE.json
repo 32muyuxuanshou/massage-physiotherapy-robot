@@ -1,0 +1,160 @@
+{
+  "status": "PASS",
+  "unit_contract": "camera points and translations in metres; depth PNG converted mm->m",
+  "rows": [
+    {
+      "sequence": "Date01_Sub01_backpack_back",
+      "date": "Date01",
+      "source": "K0",
+      "target": "K1",
+      "roundtrip_max_m": 2.275957200481571e-15,
+      "vs_official_KinectTransform_max_m": 0.0,
+      "source_origin_in_target_m": [
+        2.2539315675489444,
+        0.03200895521449765,
+        1.958908043069554
+      ],
+      "synthetic_target_z_m": [
+        2.175976168698003,
+        2.5878024626186606,
+        2.3184460194728764
+      ],
+      "pass": true
+    },
+    {
+      "sequence": "Date01_Sub01_backpack_back",
+      "date": "Date01",
+      "source": "K0",
+      "target": "K2",
+      "roundtrip_max_m": 8.43769498715119e-15,
+      "vs_official_KinectTransform_max_m": 7.993605777301127e-15,
+      "source_origin_in_target_m": [
+        0.011353441258796861,
+        0.05811598650050404,
+        4.592330097632091
+      ],
+      "synthetic_target_z_m": [
+        3.597993001505505,
+        2.621696759335749,
+        1.5848359824774754
+      ],
+      "pass": true
+    },
+    {
+      "sequence": "Date01_Sub01_backpack_back",
+      "date": "Date01",
+      "source": "K0",
+      "target": "K3",
+      "roundtrip_max_m": 5.551115123125783e-15,
+      "vs_official_KinectTransform_max_m": 5.329070518200751e-15,
+      "source_origin_in_target_m": [
+        -2.4570381470341567,
+        -0.02530124124326374,
+        2.3763921496396208
+      ],
+      "synthetic_target_z_m": [
+        2.295449249415168,
+        2.0148738178281467,
+        2.433301870938231
+      ],
+      "pass": true
+    },
+    {
+      "sequence": "Date01_Sub01_backpack_back",
+      "frame": "t0027.000",
+      "world_person_cloud_overlap": [
+        {
+          "pair": "K0-K1",
+          "symmetric_median_m": 0.042987822553294766
+        },
+        {
+          "pair": "K0-K2",
+          "symmetric_median_m": 0.11928580308750517
+        },
+        {
+          "pair": "K0-K3",
+          "symmetric_median_m": 0.027772520110788998
+        }
+      ],
+      "pass": true,
+      "threshold_note": "0.20 m is a broad calibration sanity gate, not an accuracy metric"
+    },
+    {
+      "sequence": "Date01_Sub01_stool_sit",
+      "date": "Date01",
+      "source": "K0",
+      "target": "K1",
+      "roundtrip_max_m": 2.275957200481571e-15,
+      "vs_official_KinectTransform_max_m": 0.0,
+      "source_origin_in_target_m": [
+        2.2539315675489444,
+        0.03200895521449765,
+        1.958908043069554
+      ],
+      "synthetic_target_z_m": [
+        2.175976168698003,
+        2.5878024626186606,
+        2.3184460194728764
+      ],
+      "pass": true
+    },
+    {
+      "sequence": "Date01_Sub01_stool_sit",
+      "date": "Date01",
+      "source": "K0",
+      "target": "K2",
+      "roundtrip_max_m": 8.43769498715119e-15,
+      "vs_official_KinectTransform_max_m": 7.993605777301127e-15,
+      "source_origin_in_target_m": [
+        0.011353441258796861,
+        0.05811598650050404,
+        4.592330097632091
+      ],
+      "synthetic_target_z_m": [
+        3.597993001505505,
+        2.621696759335749,
+        1.5848359824774754
+      ],
+      "pass": true
+    },
+    {
+      "sequence": "Date01_Sub01_stool_sit",
+      "date": "Date01",
+      "source": "K0",
+      "target": "K3",
+      "roundtrip_max_m": 5.551115123125783e-15,
+      "vs_official_KinectTransform_max_m": 5.329070518200751e-15,
+      "source_origin_in_target_m": [
+        -2.4570381470341567,
+        -0.02530124124326374,
+        2.3763921496396208
+      ],
+      "synthetic_target_z_m": [
+        2.295449249415168,
+        2.0148738178281467,
+        2.433301870938231
+      ],
+      "pass": true
+    },
+    {
+      "sequence": "Date01_Sub01_stool_sit",
+      "frame": "t0027.000",
+      "world_person_cloud_overlap": [
+        {
+          "pair": "K0-K1",
+          "symmetric_median_m": 0.02810450707095139
+        },
+        {
+          "pair": "K0-K2",
+          "symmetric_median_m": 0.11566769573067329
+        },
+        {
+          "pair": "K0-K3",
+          "symmetric_median_m": 0.05872048557884839
+        }
+      ],
+      "pass": true,
+      "threshold_note": "0.20 m is a broad calibration sanity gate, not an accuracy metric"
+    }
+  ]
+}

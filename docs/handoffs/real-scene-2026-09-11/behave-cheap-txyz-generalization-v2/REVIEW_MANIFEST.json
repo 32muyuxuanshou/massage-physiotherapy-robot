@@ -1,8 +1,8 @@
 {
-  "status": "APPROVED_BY_USER_TO_EXECUTE_V2_3",
+  "status": "COMPLETED_PASS_BEHAVE_CHEAP_TXYZ_GENERALIZATION_V2",
   "generated_at": "2026-09-11",
-  "execution_performed": false,
-  "pure_code_preflight": "PASS",
+  "execution_performed": true,
+  "formal_frames": 45,
   "files": [
     {
       "path": "code/aggregate_v2.py",
@@ -16,8 +16,8 @@
     },
     {
       "path": "code/camera_geometry_qa.py",
-      "bytes": 2564,
-      "sha256": "000ce75ca9c2ba3634aa570659228621bdc942c199de7b44b9a6b88745054c9a"
+      "bytes": 2570,
+      "sha256": "b399dc2e444e7d8af0d30963a61ee2f7b177d4ea5b8e61aee159586e7a8fc36f"
     },
     {
       "path": "code/preflight_contracts.py",
@@ -41,8 +41,8 @@
     },
     {
       "path": "code/run_generalization_v2.py",
-      "bytes": 11919,
-      "sha256": "c13a683aedbe643f7af5c291997c8cbf167d6cd429dbad9d0d533acc9f34f6d9"
+      "bytes": 11925,
+      "sha256": "599ff0faad4194737adf8088f82bbbd94dd4f4cb1ec74d1521cda1d6a9f652ba"
     },
     {
       "path": "code/visualization_audit_v2.py",
@@ -51,8 +51,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5365,
-      "sha256": "594282e7cf3e1231b6dc85392c91412eac9a216fd9ae91979365c21340a54f8b"
+      "bytes": 5714,
+      "sha256": "7aa366f9fb3c4648a506e29d01b6d6c704e7851f56e29f0fda19efc75aac7d93"
     },
     {
       "path": "report/BEHAVE_V2_AGGREGATION_CONTRACT.json",
@@ -93,6 +93,141 @@
       "path": "report/PREEXECUTION_FIX_V2_3.json",
       "bytes": 736,
       "sha256": "48df4702938964d61302d9611cc3ac2177af61b4443baac775ab8decd75b9765"
+    },
+    {
+      "path": "results-v2.3/formal.log",
+      "bytes": 10849,
+      "sha256": "61581bbceaf66fd187bcbb6ff0731dfeae2b2ef557f81a477d2ed57a0b13b0e2"
+    },
+    {
+      "path": "results-v2.3/formal/report/BEHAVE_DEPTH_OUTLIER_AUDIT_V2.json",
+      "bytes": 166145,
+      "sha256": "184ee47c35c4490ec8b1fdaacf64bd98458725ae94369c5c427256d740b31f76"
+    },
+    {
+      "path": "results-v2.3/formal/report/BEHAVE_RENDERED_DEPTH_EVAL_V2.json",
+      "bytes": 299493,
+      "sha256": "b6011b04576059dd49def260619482dbc8e030c7975bc34ab7a3daeec4731ea1"
+    },
+    {
+      "path": "results-v2.3/formal/report/failure_cases_v2.json",
+      "bytes": 1458,
+      "sha256": "c21849ec3ef4d2a78fbaa6629656a1d3c421b00e1da0900640875f769e8183cb"
+    },
+    {
+      "path": "results-v2.3/formal/report/final_decision_v2.json",
+      "bytes": 538,
+      "sha256": "5501ecce7639e000aafa80bc65a6ae9a50941ac234ae35bd363cb85ddbb58e9a"
+    },
+    {
+      "path": "results-v2.3/formal/report/HIGH_ERROR_RESCUE_V2.json",
+      "bytes": 597,
+      "sha256": "f166123b91b0e9643ed97caf94d3f49a49f4abc6d6df8a991f772302798088cd"
+    },
+    {
+      "path": "results-v2.3/formal/report/LOW_ERROR_PROTECTION_V2.json",
+      "bytes": 5315,
+      "sha256": "48b5e3dd592d54ed904c7f1fb5c393fa029dc135ffd3e1d31ec546236cf4eb3f"
+    },
+    {
+      "path": "results-v2.3/formal/report/MULTICAMERA_FRAME_OUTCOME_V2.json",
+      "bytes": 21286,
+      "sha256": "c8caf3ee81bad5f42c24c7a23353a2d665e10a91d66939f454f4f3ba6dda4763"
+    },
+    {
+      "path": "results-v2.3/formal/report/per_camera_metrics.csv",
+      "bytes": 191,
+      "sha256": "59574a6f87d09ace8022ec80a507720103e88dfe8f9a70f4e9cd8d410847c8ef"
+    },
+    {
+      "path": "results-v2.3/formal/report/per_frame_per_camera_metrics.csv",
+      "bytes": 28013,
+      "sha256": "7a4bb1194bd810444095d02b994ff8c65c32cbc6097f9902c7cccd008321695a"
+    },
+    {
+      "path": "results-v2.3/formal/report/per_frame_results.json",
+      "bytes": 439715,
+      "sha256": "1a0a38df72fe802068eadc3c7c6b0839b16e948693ccb07d88d29a7c010e8081"
+    },
+    {
+      "path": "results-v2.3/formal/report/per_subject_metrics.csv",
+      "bytes": 836,
+      "sha256": "9edbad51faf38cb4d00dda9e1549cb58e9a0e66d55021724b2fc1f678ac8f14d"
+    },
+    {
+      "path": "results-v2.3/formal/report/runtime_summary_v2.json",
+      "bytes": 283,
+      "sha256": "64a5b962245fa035779e8b67972a3b67a7719b3f0297301e554cc5902b301c6c"
+    },
+    {
+      "path": "results-v2.3/formal/report/runtime.json",
+      "bytes": 49,
+      "sha256": "c0b7c9dc0124dbadfb0b1c1b74a1d48312ffe477e24941b5695ab7b45c1d61ee"
+    },
+    {
+      "path": "results-v2.3/formal/report/server_visualization_manifest_v2.json",
+      "bytes": 423533,
+      "sha256": "926f3884ad46a2cfcc41affc660e60d147283738cdc3147fb36898e06db77df3"
+    },
+    {
+      "path": "results-v2.3/formal/report/SHA256SUMS.txt",
+      "bytes": 2237,
+      "sha256": "d46f892818af3becebf87f1668e6da27e49b0ef30b30c68c3aa9303ff4d39bc4"
+    },
+    {
+      "path": "results-v2.3/formal/report/system_summary_v2.json",
+      "bytes": 4046,
+      "sha256": "fc9186212403a9ebc7b87cc977dc4d71e406a240baf8f5bb1d06ae3397dc8990"
+    },
+    {
+      "path": "results-v2.3/formal/report/TXYZ_TRANSLATION_ONLY_QA_V2.json",
+      "bytes": 27352,
+      "sha256": "968ecb666b160a6628928435338f4e39014fec088acf370dee93e9475e1e387e"
+    },
+    {
+      "path": "results-v2.3/report/BEHAVE_V2_FROZEN_TEST_MANIFEST.json",
+      "bytes": 18772,
+      "sha256": "301024c6e949b377c4b23d968fb03929f4d7853635393805f54773e73c452c27"
+    },
+    {
+      "path": "results-v2.3/report/BEHAVE_V2_SMOKE_MANIFEST.json",
+      "bytes": 577,
+      "sha256": "68d63b1f5d2e66ec16b3b7d338dbcd450dc643e9eb81aeeafd804b7eecfd789f"
+    },
+    {
+      "path": "results-v2.3/report/CAMERA_GEOMETRY_QA_FORMAL.json",
+      "bytes": 31202,
+      "sha256": "95e1785fa228cbbcbf47d3cc96080b93e79eaf3040240fcb2e14b0efc84b4e37"
+    },
+    {
+      "path": "results-v2.3/report/CAMERA_GEOMETRY_QA_SMOKE.json",
+      "bytes": 4261,
+      "sha256": "44bd85a7154daf67c57a80e47637884daac970684f11cc2a978bd818822643c0"
+    },
+    {
+      "path": "results-v2.3/RESULTS.md",
+      "bytes": 2452,
+      "sha256": "84ef611f1cdbd7d1dcc663183adc0ab12a7c7b14da18a18b687998f06cef48d3"
+    },
+    {
+      "path": "results-v2.3/smoke.log",
+      "bytes": 8298,
+      "sha256": "cc7e069360397f06dea028b11ceb8a59c215d83816a5431eec940464801f8e6a"
+    },
+    {
+      "path": "results-v2.3/smoke/report/per_frame_results.json",
+      "bytes": 19245,
+      "sha256": "979c7f6e640bc0be1bec42ab6118ee37a78fb5ac5d47eb042a9d4f23f3f608b1"
+    },
+    {
+      "path": "results-v2.3/smoke/report/runtime.json",
+      "bytes": 49,
+      "sha256": "c0b7c9dc0124dbadfb0b1c1b74a1d48312ffe477e24941b5695ab7b45c1d61ee"
+    },
+    {
+      "path": "results-v2.3/smoke/report/server_visualization_manifest_v2.json",
+      "bytes": 18624,
+      "sha256": "4dc1d377f273b3f344d55785a36c871b453b8603003db5ce79d81f737db2bf0c"
     }
   ]
 }

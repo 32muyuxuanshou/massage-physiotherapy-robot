@@ -55,6 +55,10 @@
 
 `preflight_v23.py` 已覆盖 Smoke role、fallback 分类、重复帧拒绝和缺少一个正式结果时阻止 Gate。用户已授权修完后直接启动服务器流程。
 
+## V2.3 执行结果
+
+正式 45/45 帧已经完成，最终冻结 Gate 为 `PASS_BEHAVE_CHEAP_TXYZ_GENERALIZATION_V2`。完整数字、manifest、Camera QA、逐帧结果和可视化文件审计见 `results-v2.3/`。受 BEHAVE 数据许可限制，含数据集 RGB 的图片保留在服务器，Git 交付数值报告、哈希和可视化清单。
+
 ## 执行顺序（网页端审查批准后）
 
 1. 完成获批下载并校验 SHA256/ZIP；

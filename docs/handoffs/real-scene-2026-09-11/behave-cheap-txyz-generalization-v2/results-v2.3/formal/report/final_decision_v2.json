@@ -1,0 +1,17 @@
+{
+  "gate": "PASS_BEHAVE_CHEAP_TXYZ_GENERALIZATION_V2",
+  "conditions": {
+    "median_improvement": true,
+    "subjects_improved": true,
+    "cameras_improved": true,
+    "p95_not_worse_over_relative_5_percent": true,
+    "low_error_protection": true
+  },
+  "contract": {
+    "frame": "median across K1/K2/K3",
+    "subject": "median across frozen frames",
+    "subject_equal_overall": "arithmetic mean of five subject values",
+    "p95_gate": "Txyz <= 1.05 * Official (relative 5%)",
+    "low_high": "frame median across K1/K2/K3"
+  }
+}

@@ -1,0 +1,429 @@
+{
+  "status": "PASS",
+  "frames": 2,
+  "expected_inference_packages": 2,
+  "expected_evaluation_packages_per_camera": 2,
+  "expected_geometry_packages": 2,
+  "checks": [
+    {
+      "spec": {
+        "subject": "Sub01",
+        "date": "Date01",
+        "sequence": "Date01_Sub01_backpack_back",
+        "action": "backpack_back",
+        "frame": "t0026.000",
+        "role": "CONSUMED_SMOKE_ONLY"
+      },
+      "groups": {
+        "inference": [
+          {
+            "path": "visualizations/inference/Sub01/Date01_Sub01_backpack_back/t0026.000/camA_rgb_original.png",
+            "exists": true,
+            "bytes": 2512730,
+            "sha256": "9fe0249f0bbfd640f506a53a08ea484fc76421e027eb440a7db8a2b7285550e0"
+          },
+          {
+            "path": "visualizations/inference/Sub01/Date01_Sub01_backpack_back/t0026.000/camA_official_overlay.png",
+            "exists": true,
+            "bytes": 2614332,
+            "sha256": "c676ef58909d11dfe5af0820ef127ec8a7b23bbc4de1750794dee5e3e419a1ff"
+          },
+          {
+            "path": "visualizations/inference/Sub01/Date01_Sub01_backpack_back/t0026.000/camA_txyz_overlay.png",
+            "exists": true,
+            "bytes": 2612437,
+            "sha256": "2136ae90d4d755182547aa70039115cddc0c2be77b4ebc2708eb0f921d9134e1"
+          },
+          {
+            "path": "visualizations/inference/Sub01/Date01_Sub01_backpack_back/t0026.000/camA_triptych.png",
+            "exists": true,
+            "bytes": 1125921,
+            "sha256": "93b270f534c2685534b39d5cfe3e97b7af0d04b6a51041b87eaaeccd9deaecb4"
+          },
+          {
+            "path": "visualizations/inference/Sub01/Date01_Sub01_backpack_back/t0026.000/camA_txyz_vector.png",
+            "exists": true,
+            "bytes": 25443,
+            "sha256": "a144de7385729345619b821a98a32fd68d4f714bbac4bd111e36841fae4eb830"
+          }
+        ],
+        "geometry_3d": [
+          {
+            "path": "visualizations/geometry_3d/Sub01/Date01_Sub01_backpack_back/t0026.000/viewer.html",
+            "exists": true,
+            "bytes": 429604,
+            "sha256": "d88b5e2dad6b22e3b084dde68143f7d9ccccff7abb24d6cfe62078d273f9ffb9"
+          },
+          {
+            "path": "visualizations/geometry_3d/Sub01/Date01_Sub01_backpack_back/t0026.000/front.png",
+            "exists": true,
+            "bytes": 85522,
+            "sha256": "7291f8627859aabf11127e0b7e5a3ad96c791d6e0a7c45b587674ad73212885b"
+          },
+          {
+            "path": "visualizations/geometry_3d/Sub01/Date01_Sub01_backpack_back/t0026.000/side.png",
+            "exists": true,
+            "bytes": 75905,
+            "sha256": "587b08c658f3b965e4707666dce8cfbaa4c0695cc3776117af9b30f36c45890c"
+          },
+          {
+            "path": "visualizations/geometry_3d/Sub01/Date01_Sub01_backpack_back/t0026.000/top.png",
+            "exists": true,
+            "bytes": 91017,
+            "sha256": "98a94550dbeae86adb909ba6acf20bd1b5dad7ec66432b7d39e7f2d505806b58"
+          }
+        ],
+        "metrics_summary": [
+          {
+            "path": "visualizations/metrics_summary/Sub01/Date01_Sub01_backpack_back/t0026.000/metrics_summary.png",
+            "exists": true,
+            "bytes": 57660,
+            "sha256": "817faa8527d562069b8b49bab85fc1dde238651f8c4da4058e2b3a5624253bd9"
+          }
+        ],
+        "K1": [
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K1/rgb_original.png",
+            "exists": true,
+            "bytes": 2177455,
+            "sha256": "acb3fc1e8fc7e640b1aaed18bb190151188fb23258de3c66214f3ef42e09efdf"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K1/official_from_A_overlay.png",
+            "exists": true,
+            "bytes": 2473878,
+            "sha256": "ca712e8d541f7be7bd908ac74504548b49a933df4a2aca3165e2906873658618"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K1/txyz_from_A_overlay.png",
+            "exists": true,
+            "bytes": 2472671,
+            "sha256": "5d2e98808e63df35119aa58cf8e80affa040dfcb6dc2c7fd56fa4fa91920872c"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K1/triptych.png",
+            "exists": true,
+            "bytes": 1014236,
+            "sha256": "552f21b499b804d45035b5428c70bfc379d7d22812fdee8e9ae52a15e54cd12e"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K1/residual_official.png",
+            "exists": true,
+            "bytes": 250496,
+            "sha256": "0d289a8047bfd336808c2f9fe86c6b4ccbdc302c82fdfff3616e8bd1fce61ca8"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K1/residual_txyz.png",
+            "exists": true,
+            "bytes": 257225,
+            "sha256": "56bdecbe747a55dbba874ef106d10d9ab9bf1ba8b573ac24be6706a84b972b39"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K1/residual_comparison.png",
+            "exists": true,
+            "bytes": 500435,
+            "sha256": "c67dc4e6e9029db16c181753b9540e59e96d744d827c5e9d3207f51353e493d4"
+          }
+        ],
+        "K2": [
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K2/rgb_original.png",
+            "exists": true,
+            "bytes": 1772146,
+            "sha256": "38af49c7be64537fcbca1495346bf1c22c027a90a84f67758e7f4d347ac590ab"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K2/official_from_A_overlay.png",
+            "exists": true,
+            "bytes": 2006671,
+            "sha256": "342aabef7be4800ed2057e02b006314aabe76fe8a4670413330602df15699d33"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K2/txyz_from_A_overlay.png",
+            "exists": true,
+            "bytes": 2011293,
+            "sha256": "b4c42203cc38e52c618d4abccb99d8882276c381f58c41dcfd77ce793ac8207e"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K2/triptych.png",
+            "exists": true,
+            "bytes": 880142,
+            "sha256": "caf39f079542c72a123f358838344c92b769776e538ec155163874303b53a2d6"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K2/residual_official.png",
+            "exists": true,
+            "bytes": 190052,
+            "sha256": "9badfdbd9cb75de95d1cd676ffc3d89b9b950171660dd3e3d54b4a8d93bd6bcc"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K2/residual_txyz.png",
+            "exists": true,
+            "bytes": 191866,
+            "sha256": "ac0e5ca8cdf9464bee3c8f6ea0665c85d55c41141b5d8ca1e42ac2ec6df796e1"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K2/residual_comparison.png",
+            "exists": true,
+            "bytes": 375633,
+            "sha256": "e7d0286443df22f19cf5edd9fa1f051121f5361a7061a086a36399f1b579a23d"
+          }
+        ],
+        "K3": [
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K3/rgb_original.png",
+            "exists": true,
+            "bytes": 2519873,
+            "sha256": "652f73dd97c13972d954fb03ad073eda65640054721f6e0249bc3fb22b910ab4"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K3/official_from_A_overlay.png",
+            "exists": true,
+            "bytes": 2670331,
+            "sha256": "f97270dd41a331e38693b5f202f82c23fd50ec426fb1e6a6232d7d1ee248a915"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K3/txyz_from_A_overlay.png",
+            "exists": true,
+            "bytes": 2669448,
+            "sha256": "f7e2007c5d31d8512f5f4145cef1fbfe0332e6500bd270c9e3316df66f40cecd"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K3/triptych.png",
+            "exists": true,
+            "bytes": 1079964,
+            "sha256": "e1d637c4aec3e1e51e87ec5387576702e6b38d604961dfb2060a45595aabe2cc"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K3/residual_official.png",
+            "exists": true,
+            "bytes": 109651,
+            "sha256": "dba35227e2392c44e4dbd9fbf0e0d430199dddef1c3b448a4171f46868f6981f"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K3/residual_txyz.png",
+            "exists": true,
+            "bytes": 117299,
+            "sha256": "4a4eadb8f015295f7cb3b08da41ee11e0a256e4adfc47012a63ef7ad3ed2927b"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_backpack_back/t0026.000/K3/residual_comparison.png",
+            "exists": true,
+            "bytes": 219592,
+            "sha256": "96e7073ddd701f91f526e55174b669def40797a4228eca8702d26ba0639af23a"
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "subject": "Sub01",
+        "date": "Date01",
+        "sequence": "Date01_Sub01_stool_sit",
+        "action": "stool_sit",
+        "frame": "t0027.000",
+        "role": "CONSUMED_SMOKE_ONLY"
+      },
+      "groups": {
+        "inference": [
+          {
+            "path": "visualizations/inference/Sub01/Date01_Sub01_stool_sit/t0027.000/camA_rgb_original.png",
+            "exists": true,
+            "bytes": 2596671,
+            "sha256": "ecdf70374dfd6d229f2725c10fc71fbbc9cd6df9d938fb864cd3006ea1adeb6d"
+          },
+          {
+            "path": "visualizations/inference/Sub01/Date01_Sub01_stool_sit/t0027.000/camA_official_overlay.png",
+            "exists": true,
+            "bytes": 2836689,
+            "sha256": "73d0f49642bbdd0693abf7bdef203b065ca02827f57b63907dd3fcee44eeaa39"
+          },
+          {
+            "path": "visualizations/inference/Sub01/Date01_Sub01_stool_sit/t0027.000/camA_txyz_overlay.png",
+            "exists": true,
+            "bytes": 2836088,
+            "sha256": "04064863f4f26b4ec96f7d541cfadb9a59c72bf5f433c2392d325856315f5368"
+          },
+          {
+            "path": "visualizations/inference/Sub01/Date01_Sub01_stool_sit/t0027.000/camA_triptych.png",
+            "exists": true,
+            "bytes": 1174673,
+            "sha256": "0f6d4a4b0ed2789bf1baaf0ee1a9c90a1dc1633b36504a7c249a6d1b60830eb9"
+          },
+          {
+            "path": "visualizations/inference/Sub01/Date01_Sub01_stool_sit/t0027.000/camA_txyz_vector.png",
+            "exists": true,
+            "bytes": 23493,
+            "sha256": "6d9862c270cd3744e1de63c4c63449cbba7946e8694a2b3d7c9e68af825af62b"
+          }
+        ],
+        "geometry_3d": [
+          {
+            "path": "visualizations/geometry_3d/Sub01/Date01_Sub01_stool_sit/t0027.000/viewer.html",
+            "exists": true,
+            "bytes": 430726,
+            "sha256": "5b62d0e01e322f1b85b29179182b2289253f69f186b3ce81a1a63ce180048514"
+          },
+          {
+            "path": "visualizations/geometry_3d/Sub01/Date01_Sub01_stool_sit/t0027.000/front.png",
+            "exists": true,
+            "bytes": 87233,
+            "sha256": "1c6e97274abe177461e96f8b1f08f8251dac40b9a7f39786afbd6d3a15268f8c"
+          },
+          {
+            "path": "visualizations/geometry_3d/Sub01/Date01_Sub01_stool_sit/t0027.000/side.png",
+            "exists": true,
+            "bytes": 75875,
+            "sha256": "b390bf31bab89f943031f9e900e39169b561f5daa199db1cb0a5cf5c5dac8585"
+          },
+          {
+            "path": "visualizations/geometry_3d/Sub01/Date01_Sub01_stool_sit/t0027.000/top.png",
+            "exists": true,
+            "bytes": 79234,
+            "sha256": "58643c195e698a1f9177562db8c973e3bb4ba58f37b8defe6aa144aef8a86cce"
+          }
+        ],
+        "metrics_summary": [
+          {
+            "path": "visualizations/metrics_summary/Sub01/Date01_Sub01_stool_sit/t0027.000/metrics_summary.png",
+            "exists": true,
+            "bytes": 61733,
+            "sha256": "622df1d48393dd6697e38b4441cb70487fa6d72588348641b45d4ddd27f50b25"
+          }
+        ],
+        "K1": [
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K1/rgb_original.png",
+            "exists": true,
+            "bytes": 2152147,
+            "sha256": "554e7d6c7cbc81f7f9390d892120333cb71d7d161517cf11410b33cead6bdc51"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K1/official_from_A_overlay.png",
+            "exists": true,
+            "bytes": 2303346,
+            "sha256": "a17b804fd068c38de7d863cc9275ea71a2ce53568084b2c8f7c1e994d150e55b"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K1/txyz_from_A_overlay.png",
+            "exists": true,
+            "bytes": 2304165,
+            "sha256": "c0974597f6a941f8df27e6122f10e27c349a0162fad506082f834ec1a6044429"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K1/triptych.png",
+            "exists": true,
+            "bytes": 983202,
+            "sha256": "81238eed6f9e94a0ffc3d9e7396f2107bd5337ba59f68e23f1f109e0272b99d6"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K1/residual_official.png",
+            "exists": true,
+            "bytes": 122643,
+            "sha256": "22a4cb2a62c7d0d514bf11a6e795dd87c9efd83c1c2b5822814dc30a8c2a3016"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K1/residual_txyz.png",
+            "exists": true,
+            "bytes": 122397,
+            "sha256": "c1cbe0a7de783b894e08be2f65acac0d37ab994311df6527dbbeb8734ca31328"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K1/residual_comparison.png",
+            "exists": true,
+            "bytes": 236920,
+            "sha256": "4ae10ffff499c0a6c20c6099712bc59d8d18717aa370385f1154a0ffc17ac4b2"
+          }
+        ],
+        "K2": [
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K2/rgb_original.png",
+            "exists": true,
+            "bytes": 1759533,
+            "sha256": "49c0fba5543fd1d3a56a43b93cc31b8218a4d72ef0afdeed4bf95eb65861020d"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K2/official_from_A_overlay.png",
+            "exists": true,
+            "bytes": 1896174,
+            "sha256": "ae42a69953ffd432fe0eef1bd62027f12ee49d3406bc6876f0af6f9100ef3ab0"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K2/txyz_from_A_overlay.png",
+            "exists": true,
+            "bytes": 1894786,
+            "sha256": "326bb64df727648d90aa3cc688353a427438844e21802775c8b571f4733cf1a6"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K2/triptych.png",
+            "exists": true,
+            "bytes": 851489,
+            "sha256": "280bb22cb746c6abb71504c08fc244472147006d98346296a51ba72d1187f430"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K2/residual_official.png",
+            "exists": true,
+            "bytes": 115124,
+            "sha256": "6ea2192332bdf45963f3f12845cde6f984200a17908a88c28c8ede51b30ba256"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K2/residual_txyz.png",
+            "exists": true,
+            "bytes": 113674,
+            "sha256": "46f981dab91498d390066a27f757b54b647a94a022895bc0b6b83f84ca330f3e"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K2/residual_comparison.png",
+            "exists": true,
+            "bytes": 220835,
+            "sha256": "40d9e12c7682869f9bb62d8f4ddf06565c0e75a3e3c188df3953b015f6a99346"
+          }
+        ],
+        "K3": [
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K3/rgb_original.png",
+            "exists": true,
+            "bytes": 2482203,
+            "sha256": "c1b1453d29e21ab82119316e588e9ce65c6b2badf440c1e0253cb34d135c8137"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K3/official_from_A_overlay.png",
+            "exists": true,
+            "bytes": 2622523,
+            "sha256": "3451d14b5526dc5dbf05e4c515adef58fb03a13a5d6a5a86b66863dac9ff2962"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K3/txyz_from_A_overlay.png",
+            "exists": true,
+            "bytes": 2622738,
+            "sha256": "8e664fa20ae5aff869ee6a74c58cc6197157e7e9ee9c9282a8cf2c912226b8dd"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K3/triptych.png",
+            "exists": true,
+            "bytes": 1069703,
+            "sha256": "5b9352f8dbe5202e52c74d44cd3776650143141bdf6bc6710c6afa4643f1140a"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K3/residual_official.png",
+            "exists": true,
+            "bytes": 135451,
+            "sha256": "ba753baf2aca6791cae8f451450b48b3df8405e8b3467e901fa65a8c1ad85593"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K3/residual_txyz.png",
+            "exists": true,
+            "bytes": 135453,
+            "sha256": "9858013632dc2d40371e184510b729fc86c1bbc2a1a2a982dae0170729411e0a"
+          },
+          {
+            "path": "visualizations/evaluation/Sub01/Date01_Sub01_stool_sit/t0027.000/K3/residual_comparison.png",
+            "exists": true,
+            "bytes": 262774,
+            "sha256": "b5088d1ab1b46cb403b1fa6fad6e8973c77ca34af91235b617466a345fd359a1"
+          }
+        ]
+      }
+    }
+  ]
+}
