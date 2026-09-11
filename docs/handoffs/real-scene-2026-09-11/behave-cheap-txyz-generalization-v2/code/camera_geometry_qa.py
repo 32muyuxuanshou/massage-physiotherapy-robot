@@ -14,7 +14,7 @@ def main():
   official=KinectTransform(str(seqroot))
   for target in [1,2,3]:
    q=transform_between(points,cams[0],cams[target]);back=transform_between(q,cams[target],cams[0]);err=float(np.abs(back-points).max());origin=transform_between(np.zeros((1,3)),cams[0],cams[target])[0];official_q=official.world2local(official.local2world(points,0),target);official_err=float(np.abs(q-official_q).max())
-   rows.append({'sequence':seq,'date':cams[0]['date'],'source':'K0','target':f'K{target}','roundtrip_max_m':err,'vs_official_KinectTransform_max_m':official_err,'source_origin_in_target_m':origin.tolist(),'synthetic_target_z_m':q[:,2].tolist(),'pass':err<1e-9 and official_err<1e-9 and np.isfinite(q).all()})
+   rows.append({'sequence':seq,'date':cams[0]['date'],'source':'K0','target':f'K{target}','roundtrip_max_m':err,'vs_official_KinectTransform_max_m':official_err,'source_origin_in_target_m':origin.tolist(),'synthetic_target_z_m':q[:,2].tolist(),'pass':bool(err<1e-9 and official_err<1e-9 and np.isfinite(q).all())})
   frames=sorted(seqroot.glob('t*'));frame=frames[len(frames)//2];world=[]
   for k in range(4):
    dep=cv2.imread(str(frame/f'k{k}.depth.png'),-1);mask=cv2.imread(str(frame/f'k{k}.person_mask.jpg'),0);good=(dep>0)&(mask>127);ray=np.dstack([cams[k]['pointcloud_table'],np.ones(dep.shape)]);pc=ray[good]*dep[good,None]/1000.;pc=pc[::max(1,len(pc)//5000)][:5000];world.append(local_to_world(pc,cams[k]))
