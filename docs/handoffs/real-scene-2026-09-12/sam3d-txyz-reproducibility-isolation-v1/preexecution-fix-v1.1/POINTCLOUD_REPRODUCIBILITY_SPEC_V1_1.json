@@ -1,0 +1,12 @@
+{
+  "fresh_processes": 5,
+  "runner": "repro_fix/pointcloud_repro_runner.py",
+  "gate": "byte-identical points hashes",
+  "records": [
+    "raw and decoded depth hash",
+    "raw and decoded mask hash",
+    "table file and loaded-array hash",
+    "points metadata/hash"
+  ],
+  "failure": "POINTCLOUD_RECONSTRUCTION_NONDETERMINISTIC"
+}

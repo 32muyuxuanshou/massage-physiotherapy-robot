@@ -1,0 +1,20 @@
+{
+  "runner": "repro_fix/model_load_auditor.py",
+  "fresh_process": true,
+  "uses_real_model_object": true,
+  "records": [
+    "named_parameters",
+    "named_buffers",
+    "requires_grad",
+    "dtype",
+    "shape",
+    "value hash",
+    "missing/unexpected keys",
+    "three aggregate fingerprints"
+  ],
+  "hard_block": [
+    "missing forward-used trainable parameter without stable initialization proof",
+    "model-state fingerprint change",
+    "unexplained unexpected trainable key"
+  ]
+}

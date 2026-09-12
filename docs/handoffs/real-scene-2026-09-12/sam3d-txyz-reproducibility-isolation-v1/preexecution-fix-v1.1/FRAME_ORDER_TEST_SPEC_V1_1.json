@@ -1,0 +1,48 @@
+{
+  "seed": 20260912,
+  "sentinels": [
+    {
+      "frame_id": "Sub07/Date06_Sub07_stool_sit/t0038.000",
+      "selection_role": "known 0/3 failure"
+    },
+    {
+      "frame_id": "Sub03/Date03_Sub03_backpack_back/t0036.000",
+      "selection_role": "largest prior parity mismatch"
+    },
+    {
+      "frame_id": "Sub05/Date03_Sub05_stool/t0050.000",
+      "selection_role": "large |T| GROUP_A"
+    },
+    {
+      "frame_id": "Sub03/Date03_Sub03_backpack_back/t0014.000",
+      "selection_role": "small |T| GROUP_A distinct"
+    },
+    {
+      "frame_id": "Sub06/Date05_Sub06_backpack_back/t0015.000",
+      "selection_role": "different Date"
+    },
+    {
+      "frame_id": "Sub04/Date03_Sub04_yogaball_play/t0010.000",
+      "selection_role": "different subject"
+    },
+    {
+      "frame_id": "Sub07/Date06_Sub07_yogaball_play/t0028.000",
+      "selection_role": "different action"
+    }
+  ],
+  "unique_required": 7,
+  "orders": [
+    "ORDER_ORIGINAL",
+    "ORDER_REVERSED",
+    "ORDER_RANDOM_FIXED_SEED"
+  ],
+  "compare": [
+    "prepared tensor hash",
+    "model state hash",
+    "vertices",
+    "cam_t",
+    "anchors"
+  ],
+  "failure": "FRAME_ORDER_DEPENDENCE",
+  "selected_before_new_reproducibility_output": true
+}

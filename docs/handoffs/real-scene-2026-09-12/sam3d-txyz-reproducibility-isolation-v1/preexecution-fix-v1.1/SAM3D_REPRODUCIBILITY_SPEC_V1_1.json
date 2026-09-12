@@ -1,0 +1,29 @@
+{
+  "runner": "repro_fix/sam_repro_runner.py",
+  "canonical": "RECONSTRUCTED_REPLAY_RUN_A",
+  "fresh_process_runs": [
+    "RUN_B",
+    "RUN_C",
+    "RUN_D",
+    "RUN_E"
+  ],
+  "input_hashes": [
+    "raw RGB",
+    "decoded RGB",
+    "raw mask",
+    "decoded mask",
+    "bbox binary",
+    "prepared tensor bytes"
+  ],
+  "output_hashes": [
+    "vertices",
+    "pred_cam_t",
+    "anchors"
+  ],
+  "comparisons": [
+    "vertex max/median/P95 displacement",
+    "cam_t xyz/norm delta",
+    "anchor max/median/P95 displacement"
+  ],
+  "canonical_reselection_prohibited": true
+}

@@ -1,0 +1,19 @@
+{
+  "same_process_runs": 20,
+  "fresh_process_runs": 20,
+  "runner": "repro_fix/txyz_fresh_process_runner.py",
+  "baseline_workers": -1,
+  "diagnostic_workers": 1,
+  "diagnostic_not_baseline": true,
+  "comparison": "contiguous ndarray bytes SHA256",
+  "per_iteration": [
+    "nearest hash",
+    "distance hash",
+    "keep hash",
+    "retained residual hash",
+    "step hash",
+    "raw trim threshold",
+    "counts",
+    "array metadata"
+  ]
+}

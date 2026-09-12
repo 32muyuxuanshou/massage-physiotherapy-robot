@@ -1,0 +1,396 @@
+{
+  "frozen_before_reproducibility_output": true,
+  "outcome_fields_forbidden": [
+    "K1",
+    "K2",
+    "K3",
+    "GROUP_A",
+    "GROUP_B",
+    "GROUP_C",
+    "GROUP_D",
+    "failure_label"
+  ],
+  "statistics": [
+    "min",
+    "max",
+    "range",
+    "mean",
+    "SD",
+    "median",
+    "MAD",
+    "between-frame SD",
+    "within/between noise ratio",
+    "ICC(A,1)",
+    "boolean flip rate"
+  ],
+  "icc_formula": "McGraw-Wong two-way random absolute agreement single measure: (MSR-MSE)/(MSR+(k-1)MSE+k(MSC-MSE)/n)",
+  "types": {
+    "DISTANCE_MM": {
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "RATIO_0_1": {
+      "stable": {
+        "max_abs_range": 1e-06,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.0001,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "COUNT": {
+      "stable": {
+        "max_abs_range": 0,
+        "max_noise_ratio": 0,
+        "min_icc_a1": 1
+      },
+      "caution": {
+        "max_abs_range": 1,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      }
+    },
+    "VECTOR_MM": {
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "BOOLEAN": {
+      "stable": {
+        "max_flip_rate": 0
+      }
+    },
+    "HASH_IDENTITY": {
+      "stable": {
+        "identity_rate": 1
+      }
+    }
+  },
+  "features": {
+    "tx_mm": {
+      "type": "DISTANCE_MM",
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "ty_mm": {
+      "type": "DISTANCE_MM",
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "tz_mm": {
+      "type": "DISTANCE_MM",
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "translation_norm_mm": {
+      "type": "DISTANCE_MM",
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "iteration_step_vectors_mm": {
+      "type": "VECTOR_MM",
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "iteration_step_norms_mm": {
+      "type": "DISTANCE_MM",
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "convergence_ratio": {
+      "type": "RATIO_0_1",
+      "stable": {
+        "max_abs_range": 1e-06,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.0001,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "direction_consistency": {
+      "type": "RATIO_0_1",
+      "stable": {
+        "max_abs_range": 1e-06,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.0001,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "oscillation": {
+      "type": "BOOLEAN",
+      "stable": {
+        "max_flip_rate": 0
+      }
+    },
+    "fallback": {
+      "type": "BOOLEAN",
+      "stable": {
+        "max_flip_rate": 0
+      }
+    },
+    "raw_residual_median_mm": {
+      "type": "DISTANCE_MM",
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "residual_mad_mm": {
+      "type": "DISTANCE_MM",
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "residual_p90_mm": {
+      "type": "DISTANCE_MM",
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "residual_p95_mm": {
+      "type": "DISTANCE_MM",
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "trim_threshold_mm": {
+      "type": "DISTANCE_MM",
+      "stable": {
+        "max_abs_range": 0.001,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.01,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "retained_count": {
+      "type": "COUNT",
+      "stable": {
+        "max_abs_range": 0,
+        "max_noise_ratio": 0,
+        "min_icc_a1": 1
+      },
+      "caution": {
+        "max_abs_range": 1,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      }
+    },
+    "raw_correspondence_count": {
+      "type": "COUNT",
+      "stable": {
+        "max_abs_range": 0,
+        "max_noise_ratio": 0,
+        "min_icc_a1": 1
+      },
+      "caution": {
+        "max_abs_range": 1,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      }
+    },
+    "valid_depth_pixels": {
+      "type": "COUNT",
+      "stable": {
+        "max_abs_range": 0,
+        "max_noise_ratio": 0,
+        "min_icc_a1": 1
+      },
+      "caution": {
+        "max_abs_range": 1,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      }
+    },
+    "depth_support_fraction": {
+      "type": "RATIO_0_1",
+      "stable": {
+        "max_abs_range": 1e-06,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.0001,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "depth_hole_ratio": {
+      "type": "RATIO_0_1",
+      "stable": {
+        "max_abs_range": 1e-06,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.0001,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "support_left_right_balance": {
+      "type": "RATIO_0_1",
+      "stable": {
+        "max_abs_range": 1e-06,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.0001,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "support_top_bottom_balance": {
+      "type": "RATIO_0_1",
+      "stable": {
+        "max_abs_range": 1e-06,
+        "max_noise_ratio": 0.01,
+        "min_icc_a1": 0.99
+      },
+      "caution": {
+        "max_abs_range": 0.0001,
+        "max_noise_ratio": 0.1,
+        "min_icc_a1": 0.9
+      }
+    },
+    "nearest_hash": {
+      "type": "HASH_IDENTITY",
+      "stable": {
+        "identity_rate": 1
+      }
+    },
+    "keep_hash": {
+      "type": "HASH_IDENTITY",
+      "stable": {
+        "identity_rate": 1
+      }
+    },
+    "pointcloud_hash": {
+      "type": "HASH_IDENTITY",
+      "stable": {
+        "identity_rate": 1
+      }
+    },
+    "anchor_hash": {
+      "type": "HASH_IDENTITY",
+      "stable": {
+        "identity_rate": 1
+      }
+    },
+    "model_state_hash": {
+      "type": "HASH_IDENTITY",
+      "stable": {
+        "identity_rate": 1
+      }
+    }
+  },
+  "usage": {
+    "STABLE": "eligible",
+    "CAUTION": "display only",
+    "UNSTABLE": "prohibited"
+  }
+}

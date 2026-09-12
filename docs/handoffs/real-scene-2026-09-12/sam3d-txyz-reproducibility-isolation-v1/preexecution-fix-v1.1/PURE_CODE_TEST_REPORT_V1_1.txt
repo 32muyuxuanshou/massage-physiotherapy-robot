@@ -1,0 +1,51 @@
+PREEXECUTION_FIX_REPRODUCIBILITY_ISOLATION_V1_1
+Generated: 2026-09-12 Asia/Shanghai
+Scope: pure-code, mock, import and preflight verification only
+Formal 45-frame experiment executed: NO
+V2.3 modified: NO
+Cheap Txyz modified: NO
+
+PYTHON STATIC COMPILE: PASS
+PURE-CODE TESTS: 30/30 PASS
+PREFLIGHT: PASS_PURE_CODE_PREFLIGHT
+RUN A FREEZE VERIFICATION: PASS_RUN_A_FREEZE_VERIFICATION
+SENTINELS: 7/7 UNIQUE
+
+TEST OUTPUT
+test_01_hash_actual_bytes (test_repro_fix.Tests.test_01_hash_actual_bytes) ... ok
+test_02_hash_dtype (test_repro_fix.Tests.test_02_hash_dtype) ... ok
+test_03_hash_layout_metadata (test_repro_fix.Tests.test_03_hash_layout_metadata) ... ok
+test_04_icc_perfect (test_repro_fix.Tests.test_04_icc_perfect) ... ok
+test_05_icc_is_computed (test_repro_fix.Tests.test_05_icc_is_computed) ... ok
+test_06_between_variation (test_repro_fix.Tests.test_06_between_variation) ... ok
+test_07_noise_ratio (test_repro_fix.Tests.test_07_noise_ratio) ... ok
+test_08_stable (test_repro_fix.Tests.test_08_stable) ... ok
+test_09_caution (test_repro_fix.Tests.test_09_caution) ... ok
+test_10_unstable (test_repro_fix.Tests.test_10_unstable) ... ok
+test_11_boolean_flip (test_repro_fix.Tests.test_11_boolean_flip) ... ok
+test_12_hash_identity (test_repro_fix.Tests.test_12_hash_identity) ... ok
+test_13_outcome_leakage_block (test_repro_fix.Tests.test_13_outcome_leakage_block) ... ok
+test_14_unit_contracts_differ (test_repro_fix.Tests.test_14_unit_contracts_differ) ... ok
+test_15_txyz_trace_hashes (test_repro_fix.Tests.test_15_txyz_trace_hashes) ... ok
+test_16_workers_branches (test_repro_fix.Tests.test_16_workers_branches) ... ok
+test_17_txyz_fresh_process (test_repro_fix.Tests.test_17_txyz_fresh_process) ... ok
+test_18_model_object_classification (test_repro_fix.Tests.test_18_model_object_classification) ... ok
+test_19_trainable_hard_block (test_repro_fix.Tests.test_19_trainable_hard_block) ... ok
+test_20_model_fingerprint (test_repro_fix.Tests.test_20_model_fingerprint) ... ok
+test_21_pointcloud_decoded_hashes (test_repro_fix.Tests.test_21_pointcloud_decoded_hashes) ... ok
+test_22_pointcloud_fresh_process (test_repro_fix.Tests.test_22_pointcloud_fresh_process) ... ok
+test_23_sam_tensor_data_hash (test_repro_fix.Tests.test_23_sam_tensor_data_hash) ... ok
+test_24_sam_output_schema (test_repro_fix.Tests.test_24_sam_output_schema) ... ok
+test_25_sentinel_unique (test_repro_fix.Tests.test_25_sentinel_unique) ... ok
+test_26_orders (test_repro_fix.Tests.test_26_orders) ... ok
+test_27_run_a_freeze (test_repro_fix.Tests.test_27_run_a_freeze) ... ok
+test_28_run_a_mutation_detected (test_repro_fix.Tests.test_28_run_a_mutation_detected) ... ok
+test_29_dataset_mask_boundary_retained (test_repro_fix.Tests.test_29_dataset_mask_boundary_retained) ... ok
+test_30_back_fail_closed (test_repro_fix.Tests.test_30_back_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 1.265s
+
+OK
+
+FINAL GATE: HOLD_FOR_WEB_REVIEW_SAM3D_TXYZ_REPRODUCIBILITY_ISOLATION_V1_1
