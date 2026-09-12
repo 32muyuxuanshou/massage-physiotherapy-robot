@@ -1,0 +1,20 @@
+{
+  "assets": [
+    "sam_source_hash",
+    "checkpoint_sha256",
+    "mhr_sha256",
+    "model_config_sha256"
+  ],
+  "load_fields": [
+    "missing_keys",
+    "unexpected_keys"
+  ],
+  "missing_key_classes": [
+    "TRAINABLE_PARAMETER",
+    "BUFFER",
+    "STATIC_MHR_ASSET",
+    "OTHER"
+  ],
+  "hard_blocker": "any randomly initialized trainable parameter or varying parameter/buffer fingerprint",
+  "strict_false_warning_must_be_captured": true
+}

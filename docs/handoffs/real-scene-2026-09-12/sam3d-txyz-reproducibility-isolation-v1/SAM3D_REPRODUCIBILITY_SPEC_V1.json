@@ -1,0 +1,24 @@
+{
+  "runs": [
+    "RECONSTRUCTED_REPLAY_RUN_A",
+    "RUN_B",
+    "RUN_C",
+    "RUN_D",
+    "RUN_E"
+  ],
+  "fresh_model_process_each": true,
+  "frames": 45,
+  "record": [
+    "bbox",
+    "prepared_tensor_metadata_hash",
+    "pred_vertices",
+    "pred_cam_t",
+    "anchors"
+  ],
+  "compare": [
+    "vertex max/median/p95 displacement",
+    "cam_t delta",
+    "anchor max/median/p95 displacement"
+  ],
+  "canonical_policy": "Run A remains canonical regardless of proximity to V2.3"
+}

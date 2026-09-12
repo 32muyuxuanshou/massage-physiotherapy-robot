@@ -1,0 +1,214 @@
+{
+  "frozen_before_outcome_analysis": true,
+  "statuses": [
+    "STABLE",
+    "CAUTION",
+    "UNSTABLE"
+  ],
+  "requirements": [
+    "within-frame range",
+    "within-frame SD",
+    "between-frame variation",
+    "ICC_or_equivalent",
+    "boolean flip rate"
+  ],
+  "use": {
+    "STABLE": "candidate failure audit",
+    "CAUTION": "display only",
+    "UNSTABLE": "excluded"
+  },
+  "features": {
+    "tx_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "ty_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "tz_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "translation_norm_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "iteration_step_vectors_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "iteration_step_norms_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "convergence_ratio": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "direction_consistency": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "oscillation": {
+      "unit": "bool",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "raw_residual_median_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "trimmed_residual_median_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "residual_mad_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "residual_p90_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "residual_p95_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "trim_threshold_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "retained_count": {
+      "unit": "count",
+      "exact_requirement": true,
+      "absolute_tolerance": 0,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "raw_correspondence_count": {
+      "unit": "count",
+      "exact_requirement": true,
+      "absolute_tolerance": 0,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "valid_depth_pixels": {
+      "unit": "count",
+      "exact_requirement": true,
+      "absolute_tolerance": 0,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "depth_support_fraction": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "depth_hole_ratio": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "depth_range_mm": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "support_left_right_balance": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "support_top_bottom_balance": {
+      "unit": "mm_or_native",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    },
+    "fallback": {
+      "unit": "bool",
+      "exact_requirement": false,
+      "absolute_tolerance": 0.001,
+      "caution_tolerance": 0.01,
+      "max_flip_rate": 0,
+      "status_rule": "STABLE within tolerance; CAUTION within caution tolerance; otherwise UNSTABLE"
+    }
+  }
+}

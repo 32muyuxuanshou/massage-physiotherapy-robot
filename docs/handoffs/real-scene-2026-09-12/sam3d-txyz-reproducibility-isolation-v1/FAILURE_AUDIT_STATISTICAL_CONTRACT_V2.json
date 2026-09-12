@@ -1,0 +1,34 @@
+{
+  "groups": {
+    "A": 3,
+    "B": 2,
+    "C": 1,
+    "D": 0
+  },
+  "continuous_outcomes": [
+    "mean held-out delta mm",
+    "median held-out delta mm",
+    "worst-camera delta mm",
+    "best-camera delta mm",
+    "number cameras improved"
+  ],
+  "delta": "Txyz median error - Official median error; negative improves",
+  "levels": [
+    "frame",
+    "sequence",
+    "subject"
+  ],
+  "iid_frames": false,
+  "inference": "descriptive exploratory hypothesis-generating",
+  "matched_rule": [
+    "same subject",
+    "same sequence",
+    "GROUP_A nearest frame index",
+    "smaller index tie break",
+    "GROUP_B fallback"
+  ],
+  "provenance": {
+    "K0": "deployment features only",
+    "K1/K2/K3": "offline outcomes only; prohibited from deployment features"
+  }
+}

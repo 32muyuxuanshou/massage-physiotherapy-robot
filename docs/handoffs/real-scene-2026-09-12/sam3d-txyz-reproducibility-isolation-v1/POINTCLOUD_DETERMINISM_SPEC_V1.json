@@ -1,0 +1,17 @@
+{
+  "processes": 5,
+  "formula": "good=(depth>0)&(mask>127); [table,1]*depth/1000",
+  "input_hashes": [
+    "depth",
+    "mask",
+    "calibration",
+    "pointcloud_table"
+  ],
+  "output": [
+    "shape",
+    "dtype",
+    "order",
+    "sha256"
+  ],
+  "gate": "byte-identical points in 5/5 fresh processes"
+}
