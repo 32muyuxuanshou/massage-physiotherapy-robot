@@ -1,5 +1,5 @@
 {
-  "candidate_feature_count": 27,
+  "candidate_feature_count": 30,
   "by_availability": {
     "AVAILABLE_NOW": [
       "tx_mm",
@@ -25,7 +25,10 @@
       "residual_mad_mm",
       "residual_p90_mm",
       "residual_p95_mm",
-      "inlier_ratio"
+      "inlier_ratio",
+      "trim_threshold_mm",
+      "retained_count",
+      "raw_correspondence_count"
     ],
     "REQUIRES_K0_DATA_READ": [
       "valid_depth_pixels",
@@ -42,12 +45,12 @@
   "counts": {
     "AVAILABLE_NOW": 8,
     "DERIVABLE_FROM_EXISTING_FILES": 1,
-    "REQUIRES_TXYZ_REPLAY": 11,
+    "REQUIRES_TXYZ_REPLAY": 14,
     "REQUIRES_K0_DATA_READ": 6,
     "NOT_AVAILABLE": 1
   },
   "heldout_labels": [
     "heldout_n_cameras_improved"
   ],
-  "formal_requirement": "all REQUIRES_K0_DATA_READ and REQUIRES_TXYZ_REPLAY values must be present for all 45 exact frame IDs"
+  "formal_requirement": "all K0-read and Txyz-replay fields present for the exact 45 IDs; 45/45 translation and fallback parity required"
 }

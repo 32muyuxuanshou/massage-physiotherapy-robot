@@ -11,3 +11,5 @@ Back-only metrics require an approved frozen MHR back vertex and face definition
 Formal outputs, once separately approved, belong in a new `formal_audit/` directory. BEHAVE RGB stays on the server; public Git may contain numbers, non-identifying plots, manifests and hashes.
 
 Formal execution is authorized only by the exact CLI token `GO_POST_TXYZ_RESIDUAL_FAILURE_AUDIT_V1`. Dry-run and formal execution are mutually exclusive. V2.3 is protected by a complete recursive file-tree snapshot, and frame identity must exactly match the V2.3 frozen manifest and per-frame result set.
+
+Replay evidence is accepted only when point and anchor NPZ hashes and their K0/Official provenance validate at execution time. Every replay translation must have maximum component difference `<1e-6 m` from its V2.3 `Txyz_m`, and fallback must match exactly. The gate is 45/45: one mismatch invalidates the formal audit. Runtime asset verification covers the formal manifest, original V2.3 Txyz source, anchor asset and Date03/05/06 camera calibration bundle before replay evidence is consumed.

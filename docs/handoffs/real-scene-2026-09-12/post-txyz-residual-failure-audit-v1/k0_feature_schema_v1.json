@@ -289,6 +289,39 @@
       "availability_status": "REQUIRES_K0_DATA_READ"
     },
     {
+      "name": "trim_threshold_mm",
+      "description": "Final 80th-percentile correspondence trim threshold",
+      "unit": "mm",
+      "source_camera": "K0",
+      "source_file": "Txyz replay hook",
+      "deployment_available": true,
+      "uses_heldout_information": false,
+      "requires_replay": true,
+      "availability_status": "REQUIRES_TXYZ_REPLAY"
+    },
+    {
+      "name": "retained_count",
+      "description": "Final retained correspondence count",
+      "unit": "count",
+      "source_camera": "K0",
+      "source_file": "Txyz replay hook",
+      "deployment_available": true,
+      "uses_heldout_information": false,
+      "requires_replay": true,
+      "availability_status": "REQUIRES_TXYZ_REPLAY"
+    },
+    {
+      "name": "raw_correspondence_count",
+      "description": "Final raw correspondence count",
+      "unit": "count",
+      "source_camera": "K0",
+      "source_file": "Txyz replay hook",
+      "deployment_available": true,
+      "uses_heldout_information": false,
+      "requires_replay": true,
+      "availability_status": "REQUIRES_TXYZ_REPLAY"
+    },
+    {
       "name": "object_overlap_proxy",
       "description": "Reliable object contamination proxy",
       "unit": "ratio",

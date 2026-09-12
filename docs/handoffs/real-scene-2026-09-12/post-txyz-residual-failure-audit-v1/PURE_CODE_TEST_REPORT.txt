@@ -14,9 +14,14 @@ test_complete_mock_passes (test_mock_preflight.TestMockPreflight.test_complete_m
 test_identity_mismatch_fails (test_mock_preflight.TestMockPreflight.test_identity_mismatch_fails) ... ok
 test_any_tree_mutation_detected (test_read_only_tree_v23.TestReadOnlyTree.test_any_tree_mutation_detected) ... ok
 test_mutation_detected (test_read_only_v23.TestReadOnly.test_mutation_detected) ... ok
+test_matching_translation_and_fallback_pass (test_replay_parity.TestParity.test_matching_translation_and_fallback_pass) ... ok
+test_translation_or_fallback_mismatch_fails (test_replay_parity.TestParity.test_translation_or_fallback_mismatch_fails) ... ok
+test_hash_and_provenance_are_required (test_replay_provenance.TestReplayProvenance.test_hash_and_provenance_are_required) ... ok
+test_list_and_bool_features_are_summarized (test_residual_summary.TestSummary.test_list_and_bool_features_are_summarized) ... ok
+test_all_frozen_assets_verified_and_mutation_rejected (test_runtime_assets.TestRuntimeAssets.test_all_frozen_assets_verified_and_mutation_rejected) ... ok
 test_frozen_six_iteration_trace_and_features (test_txyz_replay_instrumentation.TestReplay.test_frozen_six_iteration_trace_and_features) ... ok
 
 ----------------------------------------------------------------------
-Ran 17 tests in 0.043s
+Ran 22 tests in 0.097s
 
 OK

@@ -1,14 +1,27 @@
 {
-  "status":"PREEXECUTION_SNAPSHOT_AND_FUTURE_RUNTIME_REQUIREMENTS",
-  "inherited_from_v23":"../real-scene-2026-09-11/behave-cheap-txyz-generalization-v2/report/EXECUTION_ASSET_FREEZE.json",
-  "runtime_reverification_required_after_review":true,
-  "assets":{
-    "official_checkpoint_sha256":"3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
-    "mhr_model_sha256":"352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
-    "surface_anchors_sha256":"e949e9f42739efd9d6fd62db9fa41aca4a6f590c63625bcae9bef435879c1971",
-    "surface_metrics_sha256":"619b32af927ae466203a2e48bf44389511d28cddb32dff7c4d36d551a9194d81",
-    "sam3d_source_tree_sha256":"acee6c74273608b7d4b5882a9d144cc0df25799be9dc27517f59254b10a17bee"
+  "status": "PREEXECUTION_V1_2_FROZEN_RUNTIME_GATE",
+  "inherited_from_v23": "../real-scene-2026-09-11/behave-cheap-txyz-generalization-v2/report/EXECUTION_ASSET_FREEZE.json",
+  "runtime_reverification_required_after_review": true,
+  "assets": {
+    "official_checkpoint_sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+    "mhr_model_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "surface_anchors_sha256": "e949e9f42739efd9d6fd62db9fa41aca4a6f590c63625bcae9bef435879c1971",
+    "surface_metrics_sha256": "619b32af927ae466203a2e48bf44389511d28cddb32dff7c4d36d551a9194d81",
+    "sam3d_source_tree_sha256": "acee6c74273608b7d4b5882a9d144cc0df25799be9dc27517f59254b10a17bee"
   },
-  "additional_runtime_checks":["frozen V2.3 formal manifest hash","Cheap Txyz implementation hash","Date03/Date05/Date06 camera calibration hashes","formal audit manifest hash"],
-  "preexecution_limit":"Server-only model/data assets were not reopened in this code-only phase; formal CLI must fail before replay if hashes differ."
+  "additional_runtime_checks": [
+    "frozen V2.3 formal manifest hash",
+    "Cheap Txyz implementation hash",
+    "Date03/Date05/Date06 camera calibration hashes",
+    "formal audit manifest hash"
+  ],
+  "preexecution_limit": "Server-only model/data assets were not reopened in this code-only phase; formal CLI must fail before replay if hashes differ.",
+  "formal_runtime_gate": {
+    "formal_manifest_sha256": "504abc897814c8020722692148e134b53e0d9b2f9ea3df7c145ce94cc8411eb1",
+    "txyz_implementation_sha256": "599ff0faad4194737adf8088f82bbbd94dd4f4cb1ec74d1521cda1d6a9f652ba",
+    "surface_anchors_sha256": "e949e9f42739efd9d6fd62db9fa41aca4a6f590c63625bcae9bef435879c1971",
+    "camera_calibration_bundle_sha256": "e85dcb7fe9307b946b53298a85e59136560157ac58182d69aa8a72e649f84c893"
+  },
+  "camera_calibration_hash_contract": "SHA256 of concatenated sorted lines '<file_sha256>  ./<relative_path>\\n' for 4 intrinsics calibration.json, 4 pointcloud_table.npy, and Date03/05/06 K0-K3 config.json (20 files)",
+  "formal_gate_behavior": "Any mismatch raises ASSET_FREEZE_MISMATCH before formal output."
 }
