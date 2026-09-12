@@ -1,23 +1,22 @@
-POST_TXYZ_RESIDUAL_AND_FAILURE_AUDIT_V1
-PRE-EXECUTION PURE-CODE TEST REPORT
+test_absent_definition_blocks (test_back_region_fail_closed.TestBack.test_absent_definition_blocks) ... ok
+test_dry_run_blocks_execution (test_cli_authorization.TestAuthorization.test_dry_run_blocks_execution) ... ok
+test_exact_token_allows (test_cli_authorization.TestAuthorization.test_exact_token_allows) ... ok
+test_formal_requires_exact_token (test_cli_authorization.TestAuthorization.test_formal_requires_exact_token) ... ok
+test_automatic_conclusion_rejected (test_failure_taxonomy.TestTaxonomy.test_automatic_conclusion_rejected) ... ok
+test_empty_requires_review (test_failure_taxonomy.TestTaxonomy.test_empty_requires_review) ... ok
+test_heldout_deployment_rejected (test_feature_provenance.TestProvenance.test_heldout_deployment_rejected) ... ok
+test_all_groups (test_frame_outcomes.TestOutcomes.test_all_groups) ... ok
+test_reads_depth_and_mask (test_k0_data_features.TestK0Data.test_reads_depth_and_mask) ... ok
+test_k0_allowed (test_leakage_whitelist.TestWhitelist.test_k0_allowed) ... ok
+test_unknown_deployment_camera_rejected (test_leakage_whitelist.TestWhitelist.test_unknown_deployment_camera_rejected) ... ok
+test_missing_is_explicit (test_missing_features.TestMissing.test_missing_is_explicit) ... ok
+test_complete_mock_passes (test_mock_preflight.TestMockPreflight.test_complete_mock_passes) ... ok
+test_identity_mismatch_fails (test_mock_preflight.TestMockPreflight.test_identity_mismatch_fails) ... ok
+test_any_tree_mutation_detected (test_read_only_tree_v23.TestReadOnlyTree.test_any_tree_mutation_detected) ... ok
+test_mutation_detected (test_read_only_v23.TestReadOnly.test_mutation_detected) ... ok
+test_frozen_six_iteration_trace_and_features (test_txyz_replay_instrumentation.TestReplay.test_frozen_six_iteration_trace_and_features) ... ok
 
-Tests: 8
-Result: PASS
+----------------------------------------------------------------------
+Ran 17 tests in 0.043s
 
-Covered:
-- GROUP_D/C/B/A classification from 0/1/2/3 held-out improvements
-- held-out deployment-feature leakage rejection
-- missing feature remains explicit unavailable/replay-required
-- absent back region fails closed
-- automatic causal conclusion rejection
-- V2.3 mutation detection
-- complete 45-frame/5-subject/15-sequence mock preflight
-- known Date06_Sub07_stool_sit/t0038.000 retention
-
-No SAM3D run.
-No Txyz replay.
-No formal 45-frame audit.
-No V2.3 file modification.
-
-PURE_CODE_POST_TXYZ_AUDIT_PREFLIGHT_PASS
-HOLD_FOR_WEB_REVIEW_POST_TXYZ_AUDIT_V1
+OK

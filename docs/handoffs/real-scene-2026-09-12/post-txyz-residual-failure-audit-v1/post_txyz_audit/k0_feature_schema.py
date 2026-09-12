@@ -1,4 +1,4 @@
-VALID_AVAILABILITY={"AVAILABLE_NOW","DERIVABLE_FROM_EXISTING_FILES","REQUIRES_REPLAY","NOT_AVAILABLE"}
+VALID_AVAILABILITY={"AVAILABLE_NOW","DERIVABLE_FROM_EXISTING_FILES","REQUIRES_K0_DATA_READ","REQUIRES_TXYZ_REPLAY","NOT_AVAILABLE"}
 
 def validate_feature(feature):
     required={"name","description","unit","source_camera","source_file","deployment_available","uses_heldout_information","requires_replay","availability_status"}

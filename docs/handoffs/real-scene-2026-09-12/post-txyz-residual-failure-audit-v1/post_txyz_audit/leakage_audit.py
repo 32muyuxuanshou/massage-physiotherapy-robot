@@ -1,7 +1,7 @@
 def audit(features):
     violations=[]
     for feature in features:
-        if feature.get("deployment_available") and (feature.get("uses_heldout_information") or feature.get("source_camera") in {"K1","K2","K3","K1_K2_K3"}):violations.append(feature["name"])
+        if feature.get("deployment_available") and (feature.get("uses_heldout_information") or feature.get("source_camera")!="K0"):violations.append(feature["name"])
     return {"status":"PASS" if not violations else "FAIL_HELDOUT_LEAKAGE","violations":violations}
 
 def assert_no_leakage(features):
