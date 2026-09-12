@@ -1,0 +1,49 @@
+{
+  "candidate_feature_count": 27,
+  "by_availability": {
+    "AVAILABLE_NOW": [
+      "tx_mm",
+      "ty_mm",
+      "tz_mm",
+      "translation_norm_mm",
+      "fallback",
+      "sam_runtime_ms",
+      "txyz_runtime_ms",
+      "total_runtime_ms"
+    ],
+    "DERIVABLE_FROM_EXISTING_FILES": [
+      "heldout_n_cameras_improved"
+    ],
+    "REQUIRES_REPLAY": [
+      "iteration_step_norms_mm",
+      "iteration_convergence_ratio",
+      "last_step_norm_mm",
+      "step_direction_consistency",
+      "oscillation_indicator",
+      "valid_depth_pixels",
+      "depth_support_fraction",
+      "depth_hole_ratio",
+      "depth_range_mm",
+      "raw_residual_median_mm",
+      "trimmed_residual_median_mm",
+      "residual_mad_mm",
+      "residual_p90_mm",
+      "residual_p95_mm",
+      "inlier_ratio",
+      "support_left_right_balance",
+      "support_top_bottom_balance"
+    ],
+    "NOT_AVAILABLE": [
+      "object_overlap_proxy"
+    ]
+  },
+  "counts": {
+    "AVAILABLE_NOW": 8,
+    "DERIVABLE_FROM_EXISTING_FILES": 1,
+    "REQUIRES_REPLAY": 17,
+    "NOT_AVAILABLE": 1
+  },
+  "heldout_labels": [
+    "heldout_n_cameras_improved"
+  ]
+}

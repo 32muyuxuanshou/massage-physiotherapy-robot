@@ -1,0 +1,8 @@
+{
+  "schema":"POST_TXYZ_FAILURE_TAXONOMY_V1",
+  "types":["DEPTH_SUPPORT_LOW","DEPTH_CONTAMINATION","OBJECT_INTERACTION","CORRESPONDENCE_FAILURE","REGISTRATION_INSTABILITY","EXTREME_TRANSLATION","OFFICIAL_POSE_ERROR","OFFICIAL_SHAPE_ERROR","LOCAL_SURFACE_ERROR","MULTIPLE_FACTORS","UNKNOWN"],
+  "candidate_schema":{"type":"one of types","evidence":"nonempty list","confidence":"LOW|MEDIUM|HIGH"},
+  "automatic_causal_conclusion":false,
+  "requires_visual_review":true,
+  "claim_limit":"Hypothesis-generating diagnosis only; no learned or validated failure predictor."
+}
