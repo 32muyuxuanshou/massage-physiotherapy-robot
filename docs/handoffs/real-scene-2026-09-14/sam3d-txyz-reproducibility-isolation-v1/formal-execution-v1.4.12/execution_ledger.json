@@ -1,0 +1,148 @@
+{
+  "status": "PASS_REPRODUCIBILITY_ISOLATION_EXECUTION",
+  "process_start_environment": {
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "PYTHONHASHSEED": "20260912",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "REPRO_ISOLATION_MASTER_ACTIVE": "1",
+    "REPRO_ISOLATION_GO_TOKEN_SHA256": "2bc1e71943ef597fcbbb3088f92abacc777803823208773d02a1eac0911f117b"
+  },
+  "ledger": [
+    {
+      "stage": "reviewed_delivery_integrity_pre",
+      "status": "PASS_REVIEWED_DELIVERY_INTEGRITY"
+    },
+    {
+      "stage": "runtime_assets",
+      "status": "PASS_RUNTIME_ASSET_FREEZE"
+    },
+    {
+      "stage": "run_a_actual_assets",
+      "status": "PASS_RUN_A_ACTUAL_ASSET_FREEZE",
+      "points_verified": 45,
+      "anchors_verified": 45
+    },
+    {
+      "stage": "input_snapshot",
+      "status": "PASS_INPUT_SNAPSHOT_CREATED"
+    },
+    {
+      "stage": "pointcloud_manifest_freeze",
+      "status": "PASS_POINTCLOUD_FORMAL_BINDING",
+      "frame_count": 45
+    },
+    {
+      "stage": "model_load_unseeded",
+      "status": "PASS_MODEL_LOAD_REPRODUCIBILITY",
+      "seconds": 226.83942461013794,
+      "output": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/model_unseeded.json"
+    },
+    {
+      "stage": "model_load_controlled",
+      "status": "PASS_MODEL_LOAD_REPRODUCIBILITY",
+      "seconds": 244.9429304599762,
+      "output": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/model_controlled.json"
+    },
+    {
+      "stage": "pointcloud",
+      "status": "POINTCLOUD_REPRODUCIBILITY_PASS",
+      "seconds": 75.49171829223633,
+      "output": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/pointcloud.json"
+    },
+    {
+      "stage": "txyz_same",
+      "status": "PASS_TXYZ_EXACT_INPUT_DETERMINISM",
+      "seconds": 467.48270535469055,
+      "output": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/txyz_same.json"
+    },
+    {
+      "stage": "txyz_fresh",
+      "status": "PASS_TXYZ_EXACT_INPUT_DETERMINISM",
+      "seconds": 776.3108429908752,
+      "output": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/txyz_fresh.json"
+    },
+    {
+      "stage": "sam_controlled",
+      "status": "PASS_SAM_CONTROLLED_COHORT_EXECUTION",
+      "seconds": 7346.2980697155,
+      "output": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/sam/coordinator.json"
+    },
+    {
+      "stage": "sam_analysis",
+      "status": "PASS_SAM_REPRODUCIBILITY_ANALYSIS",
+      "seconds": 7.639958143234253,
+      "output": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/sam/analysis.json"
+    },
+    {
+      "stage": "sam_cohort_txyz",
+      "status": "PASS_SAM_COHORT_TXYZ_EXECUTION",
+      "seconds": 148.91115880012512,
+      "output": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/sam_cohort_txyz.json"
+    },
+    {
+      "stage": "frame_order",
+      "status": "PROCESS_FAILED",
+      "returncode": 1
+    },
+    {
+      "stage": "reviewed_delivery_integrity_resume_pre",
+      "status": "PASS_REVIEWED_DELIVERY_INTEGRITY"
+    },
+    {
+      "stage": "runtime_assets",
+      "status": "PASS_RUNTIME_ASSET_FREEZE"
+    },
+    {
+      "stage": "run_a_actual_assets",
+      "status": "PASS_RUN_A_ACTUAL_ASSET_FREEZE",
+      "points_verified": 45,
+      "anchors_verified": 45
+    },
+    {
+      "stage": "resume_completed_artifacts",
+      "status": "PASS_RESUME_COMPLETED_ARTIFACT_FREEZE"
+    },
+    {
+      "stage": "frame_order",
+      "status": "PASS_FRAME_ORDER_EXECUTION",
+      "seconds": 790.951073884964,
+      "output": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/frame_order/execution_summary.json"
+    },
+    {
+      "stage": "frame_order_analysis",
+      "status": "FRAME_ORDER_DEPENDENCE",
+      "seconds": 0.5704894065856934,
+      "output": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/frame_order/analysis.json"
+    },
+    {
+      "stage": "reviewed_delivery_integrity_resume_pre",
+      "status": "PASS_REVIEWED_DELIVERY_INTEGRITY"
+    },
+    {
+      "stage": "runtime_assets",
+      "status": "PASS_RUNTIME_ASSET_FREEZE"
+    },
+    {
+      "stage": "run_a_actual_assets",
+      "status": "PASS_RUN_A_ACTUAL_ASSET_FREEZE",
+      "points_verified": 45,
+      "anchors_verified": 45
+    },
+    {
+      "stage": "resume_completed_artifacts",
+      "status": "PASS_RESUME_COMPLETED_ARTIFACT_FREEZE",
+      "resume_from": "feature_stability"
+    },
+    {
+      "stage": "feature_stability",
+      "status": "PASS_FEATURE_STABILITY_CHARACTERIZATION",
+      "seconds": 0.5963668823242188,
+      "output": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/feature_stability.json"
+    },
+    {
+      "stage": "post_execution_integrity",
+      "status": "PASS_POST_EXECUTION_INTEGRITY"
+    }
+  ]
+}

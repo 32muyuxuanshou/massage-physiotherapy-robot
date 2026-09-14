@@ -1,0 +1,1211 @@
+{
+  "run_id": "ORDER_ORIGINAL",
+  "fresh_process": true,
+  "mode": "CONTROLLED",
+  "seed": 20260912,
+  "seed_applied": true,
+  "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+  "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+  "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b",
+  "environment_fingerprint": {
+    "mode": "CONTROLLED",
+    "requested_seed": 20260912,
+    "seed_applied": true,
+    "python": "3.10.20",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "pytorch": "2.4.0+cu121",
+    "torch_cuda": "12.1",
+    "cuda_runtime": "12.1",
+    "cudnn": 90100,
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_compute_capability": [
+      7,
+      5
+    ],
+    "driver": "525.116.04",
+    "opencv": "4.11.0",
+    "timm": "1.0.15",
+    "torch_deterministic": true,
+    "torch_deterministic_warn_only": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "float32_matmul_precision": "highest",
+    "cublas_workspace_config": ":4096:8",
+    "cuda_visible_devices": null,
+    "omp_threads": "1",
+    "mkl_threads": "1",
+    "pythonhashseed": "20260912",
+    "random_seed": 20260912,
+    "numpy_seed": 20260912,
+    "torch_seed": 20260912,
+    "cuda_seed": 20260912,
+    "scipy_workers": -1
+  },
+  "rows": [
+    {
+      "frame_id": "Sub07/Date06_Sub07_stool_sit/t0038.000",
+      "raw_rgb_file_sha256": "b248d01f5930419ddc877d95f2ea3c76606bf601f443d4060a3c2b2033d9ce7b",
+      "decoded_rgb": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048,
+          3
+        ],
+        "strides": [
+          6144,
+          3,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "cc746e7311c6f171ba2b3e8cb5bcff0d593c999e76a9c69e9114ea752a018cb1"
+      },
+      "raw_mask_file_sha256": "69d818b0c50d9d9b92a42c461a5d8b61edeff5142edd98cac9573bd5232cfb03",
+      "decoded_mask": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048
+        ],
+        "strides": [
+          2048,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "285818f09c8b408b13da9396de4bf6518a1175e12c94982a3d42cc27e286c7b2"
+      },
+      "bbox_values": [
+        [
+          864.0,
+          706.0,
+          1242.0,
+          1395.0
+        ]
+      ],
+      "bbox": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          4
+        ],
+        "strides": [
+          16,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "eecb8e7c5bca2e89f96283178e39de71c307a19efd85e98fd4e2a1dbe32ff6ae"
+      },
+      "prepared_tensor": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          1,
+          3,
+          512,
+          512
+        ],
+        "strides": [
+          3145728,
+          3145728,
+          1048576,
+          2048,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "5c9caf38399855a49f865a3ac727e2d2f5e5b9cf54cea6616a97d8fcef910071",
+        "device": "cuda:0"
+      },
+      "cam_int_values": [
+        [
+          976.2120971679688,
+          0.0,
+          1017.9580078125
+        ],
+        [
+          0.0,
+          976.0467529296875,
+          787.3128662109375
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "cam_int": {
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "91fd4ace120678fbcdbcd398dc70926f31166f3f7fe10095c94da13ef34e4137"
+      },
+      "model_state_before_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "model_state_after_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "arrays_npz": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/frame_order/ORDER_ORIGINAL/Sub07__Date06_Sub07_stool_sit__t0038.000.npz",
+      "arrays_npz_sha256": "e8a2c638d6b79a97f51c2d0791c57ee6189277824abed9bdf1c2373f468a512a",
+      "pred_vertices": {
+        "dtype": "float32",
+        "shape": [
+          18439,
+          3
+        ],
+        "strides": [
+          12,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "d857ce4f0136542600aee9b9ae44317032fecf13b873ff167e542cab24362653"
+      },
+      "pred_cam_t": {
+        "dtype": "float32",
+        "shape": [
+          3
+        ],
+        "strides": [
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "1dd2ec241f65143d1a9836fc09701c3e3b66b65c3817cbd05c8b1488b5b50a7a",
+        "values": [
+          0.1959158182144165,
+          1.5775939226150513,
+          2.163975715637207
+        ]
+      },
+      "anchors": {
+        "dtype": "float64",
+        "shape": [
+          16384,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "4bc2b806c0da033de9f964d96385ecf59e7b174af901c791770c80eb7374f1af"
+      }
+    },
+    {
+      "frame_id": "Sub03/Date03_Sub03_backpack_back/t0036.000",
+      "raw_rgb_file_sha256": "bdfee2154dadd1b86ad784b0b6ffb44c76119730e59d6376d21f7418619c3769",
+      "decoded_rgb": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048,
+          3
+        ],
+        "strides": [
+          6144,
+          3,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "1a5d7e1e31724590eeb74abbeec8b78cbcd11f1fee92836586a5df11ffcb6af9"
+      },
+      "raw_mask_file_sha256": "ae401cd82f0baaff5896ad045ba87efb5389dd76ca482e57ac7bba1f62db3fcf",
+      "decoded_mask": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048
+        ],
+        "strides": [
+          2048,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "e22db1885c0ee67a248cc9e0361bba76c6ea9afdbe822ab8ac250eee247fac8f"
+      },
+      "bbox_values": [
+        [
+          768.0,
+          456.0,
+          1087.0,
+          1514.0
+        ]
+      ],
+      "bbox": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          4
+        ],
+        "strides": [
+          16,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "358e3ebf3310dbb3f8a5dfd176e39aa77bb9c926ddbb4138664991084832dee5"
+      },
+      "prepared_tensor": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          1,
+          3,
+          512,
+          512
+        ],
+        "strides": [
+          3145728,
+          3145728,
+          1048576,
+          2048,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "2262a99ad125b0c5409896314fb87fddd2fff4df172a414d47c20348cabb8836",
+        "device": "cuda:0"
+      },
+      "cam_int_values": [
+        [
+          976.2120971679688,
+          0.0,
+          1017.9580078125
+        ],
+        [
+          0.0,
+          976.0467529296875,
+          787.3128662109375
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "cam_int": {
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "91fd4ace120678fbcdbcd398dc70926f31166f3f7fe10095c94da13ef34e4137"
+      },
+      "model_state_before_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "model_state_after_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "arrays_npz": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/frame_order/ORDER_ORIGINAL/Sub03__Date03_Sub03_backpack_back__t0036.000.npz",
+      "arrays_npz_sha256": "18f79d1bcd9eafb79bf096f7a9914a7dd3951dd6f313fb6751f643c937af64e7",
+      "pred_vertices": {
+        "dtype": "float32",
+        "shape": [
+          18439,
+          3
+        ],
+        "strides": [
+          12,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "4463ff5f622e5d209e6fa2423479a330c7ae4e73368d978453f3f8e2e75324f1"
+      },
+      "pred_cam_t": {
+        "dtype": "float32",
+        "shape": [
+          3
+        ],
+        "strides": [
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "2033572478f32e5ef31b8e14e64e782ee07059542463d186ec38192cc8c43f9b",
+        "values": [
+          -0.25847020745277405,
+          1.1948018074035645,
+          1.7050538063049316
+        ]
+      },
+      "anchors": {
+        "dtype": "float64",
+        "shape": [
+          16384,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "de161919ffbab6895eea1d8459bad6a6e89983e980291ae7f462e19ccc11486e"
+      }
+    },
+    {
+      "frame_id": "Sub05/Date03_Sub05_stool/t0050.000",
+      "raw_rgb_file_sha256": "3c5e045ed4c2cb4fcb116a462393f20c32c9f60b5b082678c0cdf471a765b882",
+      "decoded_rgb": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048,
+          3
+        ],
+        "strides": [
+          6144,
+          3,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "331b60ed763bca689d03793358ea12fb89deae94ae586f84fe942448e0a241ed"
+      },
+      "raw_mask_file_sha256": "82766a5128133551c693e92dbeba074fdee3d9998b4830c01cd0465d69fb235a",
+      "decoded_mask": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048
+        ],
+        "strides": [
+          2048,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "6883b44929568de018ddbadf1e07809947b9e4664bc35b2f71835cccf157e5e3"
+      },
+      "bbox_values": [
+        [
+          953.0,
+          563.0,
+          1229.0,
+          1221.0
+        ]
+      ],
+      "bbox": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          4
+        ],
+        "strides": [
+          16,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "030347c1965357b40d74116ffc24b1c280f5230311a6def9dce264baa616e066"
+      },
+      "prepared_tensor": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          1,
+          3,
+          512,
+          512
+        ],
+        "strides": [
+          3145728,
+          3145728,
+          1048576,
+          2048,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "1c0469dd5660b6e1eb3481d5459a209a9050a1e8981d9d0d08a170e51a6ed511",
+        "device": "cuda:0"
+      },
+      "cam_int_values": [
+        [
+          976.2120971679688,
+          0.0,
+          1017.9580078125
+        ],
+        [
+          0.0,
+          976.0467529296875,
+          787.3128662109375
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "cam_int": {
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "91fd4ace120678fbcdbcd398dc70926f31166f3f7fe10095c94da13ef34e4137"
+      },
+      "model_state_before_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "model_state_after_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "arrays_npz": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/frame_order/ORDER_ORIGINAL/Sub05__Date03_Sub05_stool__t0050.000.npz",
+      "arrays_npz_sha256": "fa23549bdcc5d2aac318b4588e83385411ac56a5558acb90638e124d60630bd9",
+      "pred_vertices": {
+        "dtype": "float32",
+        "shape": [
+          18439,
+          3
+        ],
+        "strides": [
+          12,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "9c2adb757a7882653d83b80cf652aa5da959faac7ce92bca08d7db1b2ae6f23c"
+      },
+      "pred_cam_t": {
+        "dtype": "float32",
+        "shape": [
+          3
+        ],
+        "strides": [
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "25d8112f63b4740ce4e06f222812cca09b9611b03fe15bcbc131c1d388e2d0ea",
+        "values": [
+          0.23630423843860626,
+          1.2038354873657227,
+          2.758676528930664
+        ]
+      },
+      "anchors": {
+        "dtype": "float64",
+        "shape": [
+          16384,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "1c430fd28e6256d542936c332ba1b84265b86162ea1979e4d6fb8e676c68ba1d"
+      }
+    },
+    {
+      "frame_id": "Sub03/Date03_Sub03_backpack_back/t0014.000",
+      "raw_rgb_file_sha256": "05843e1412f5a53240df610e289a28cfa3d322a2ab4086959a896ca3bdedc8d7",
+      "decoded_rgb": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048,
+          3
+        ],
+        "strides": [
+          6144,
+          3,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "b7eb5131f55e85918d335ff86dbf1627d74e5b653dbe7284ef3ea054361d7744"
+      },
+      "raw_mask_file_sha256": "31d726e17e871e009ffd314bb8957e7ae471c76bfc68a7416eb74e1d1ad48cf1",
+      "decoded_mask": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048
+        ],
+        "strides": [
+          2048,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "7940a9cbe2fbb30f09e2b5a133e64c3fc94334bb61e32239b9e2bc76428f692e"
+      },
+      "bbox_values": [
+        [
+          755.0,
+          768.0,
+          1255.0,
+          1432.0
+        ]
+      ],
+      "bbox": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          4
+        ],
+        "strides": [
+          16,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "0b57dad7aa016bfc6b8899407d7ad70ef4fd627517cd140e1ae488d1e1d630d6"
+      },
+      "prepared_tensor": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          1,
+          3,
+          512,
+          512
+        ],
+        "strides": [
+          3145728,
+          3145728,
+          1048576,
+          2048,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "d0f5f30aa58a5b06e2f934b9eefb19ea2470ea1ad2cf53b6267ba5108136d00f",
+        "device": "cuda:0"
+      },
+      "cam_int_values": [
+        [
+          976.2120971679688,
+          0.0,
+          1017.9580078125
+        ],
+        [
+          0.0,
+          976.0467529296875,
+          787.3128662109375
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "cam_int": {
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "91fd4ace120678fbcdbcd398dc70926f31166f3f7fe10095c94da13ef34e4137"
+      },
+      "model_state_before_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "model_state_after_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "arrays_npz": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/frame_order/ORDER_ORIGINAL/Sub03__Date03_Sub03_backpack_back__t0014.000.npz",
+      "arrays_npz_sha256": "5409f40d365d11e20249bc1de7cc37446c5173e370f0a9482d7189f5246931ba",
+      "pred_vertices": {
+        "dtype": "float32",
+        "shape": [
+          18439,
+          3
+        ],
+        "strides": [
+          12,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "bcccde3428fb4c755ea59ba1359867242ff9444964750d0c8e2d00950324b921"
+      },
+      "pred_cam_t": {
+        "dtype": "float32",
+        "shape": [
+          3
+        ],
+        "strides": [
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "80735e451243f58ffed95e79b6d66f6a632c123b19b46f60f891f19b3baf1e2b",
+        "values": [
+          -0.18185915052890778,
+          1.4770172834396362,
+          1.7685011625289917
+        ]
+      },
+      "anchors": {
+        "dtype": "float64",
+        "shape": [
+          16384,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "449db6e68ca4108e91efe3c2e368f5cbe4d3a3d070fa4045f8e744592831aba0"
+      }
+    },
+    {
+      "frame_id": "Sub06/Date05_Sub06_backpack_back/t0015.000",
+      "raw_rgb_file_sha256": "a1f9bd829c8b4dc6e070573cfd3a25d32782aec6fd8854363cbce5c3c2cd067c",
+      "decoded_rgb": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048,
+          3
+        ],
+        "strides": [
+          6144,
+          3,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "9b0ba0f79f8af074e2bf0eb0bd815128864cae41b7524b44c169a75257430147"
+      },
+      "raw_mask_file_sha256": "3684e62348b46bf96f69025168c3f91dfede01c08972439dd45bff419ca36e8d",
+      "decoded_mask": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048
+        ],
+        "strides": [
+          2048,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "7db8cf11ab0f3bac4e4d8474d0c165bcc63afc67e229e0c33a756ce171c94328"
+      },
+      "bbox_values": [
+        [
+          1242.0,
+          453.0,
+          1587.0,
+          1410.0
+        ]
+      ],
+      "bbox": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          4
+        ],
+        "strides": [
+          16,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "245d1dfe3d89c0a8b536f31e36cd20049aa05a533c83f2f1e2fabb51c3a140c3"
+      },
+      "prepared_tensor": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          1,
+          3,
+          512,
+          512
+        ],
+        "strides": [
+          3145728,
+          3145728,
+          1048576,
+          2048,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "49d1d184aac47d8788f7dbc837cd86a33be1584d493f3defd9a1cdb879a26f85",
+        "device": "cuda:0"
+      },
+      "cam_int_values": [
+        [
+          976.2120971679688,
+          0.0,
+          1017.9580078125
+        ],
+        [
+          0.0,
+          976.0467529296875,
+          787.3128662109375
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "cam_int": {
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "91fd4ace120678fbcdbcd398dc70926f31166f3f7fe10095c94da13ef34e4137"
+      },
+      "model_state_before_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "model_state_after_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "arrays_npz": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/frame_order/ORDER_ORIGINAL/Sub06__Date05_Sub06_backpack_back__t0015.000.npz",
+      "arrays_npz_sha256": "f8fc72f5b496607eaa71e870ae41fbc1365b7da8193995e540c3b91a2f18cb4e",
+      "pred_vertices": {
+        "dtype": "float32",
+        "shape": [
+          18439,
+          3
+        ],
+        "strides": [
+          12,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "a957374ca43fa8752c5256b704259529f11461aa2e37b8b0d578d181bfd70453"
+      },
+      "pred_cam_t": {
+        "dtype": "float32",
+        "shape": [
+          3
+        ],
+        "strides": [
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "65c2c9f15abbecbcd6772ecd425bdb552cebffb8d5f4bb87e86c1860a131d948",
+        "values": [
+          0.7632001042366028,
+          1.167518973350525,
+          1.9493658542633057
+        ]
+      },
+      "anchors": {
+        "dtype": "float64",
+        "shape": [
+          16384,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "5f1515be0f96a78d3ae6c38ac81c7f807c5aa5cf2fccaf728f795a00b627bd8e"
+      }
+    },
+    {
+      "frame_id": "Sub04/Date03_Sub04_yogaball_play/t0010.000",
+      "raw_rgb_file_sha256": "33bc0f24c219ec2fd51e57c21ef1da1e6800c1a1b523deb351580918bcf7bd9b",
+      "decoded_rgb": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048,
+          3
+        ],
+        "strides": [
+          6144,
+          3,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "8c0d29397f9ff721c8322d2fdd7df315203c3a39b8dd505c6607758dc4554793"
+      },
+      "raw_mask_file_sha256": "9155399b9b9473a02c12c7ceef1ab83c05a10cab908305cc43c37a1ffa3db043",
+      "decoded_mask": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048
+        ],
+        "strides": [
+          2048,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "5de55e15bed401ed8f79039329205d54ce078e8b7b7d113174b089a499cf29c4"
+      },
+      "bbox_values": [
+        [
+          724.0,
+          366.0,
+          1202.0,
+          1374.0
+        ]
+      ],
+      "bbox": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          4
+        ],
+        "strides": [
+          16,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "a4e2c8929e12e4ec730ad5dd9806782a7be1c27b473ad0e57e8835f9da6abd95"
+      },
+      "prepared_tensor": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          1,
+          3,
+          512,
+          512
+        ],
+        "strides": [
+          3145728,
+          3145728,
+          1048576,
+          2048,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "13789b1625a4d8ef77e97fe594a554be6078637bad99da890cb83c6f3443397a",
+        "device": "cuda:0"
+      },
+      "cam_int_values": [
+        [
+          976.2120971679688,
+          0.0,
+          1017.9580078125
+        ],
+        [
+          0.0,
+          976.0467529296875,
+          787.3128662109375
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "cam_int": {
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "91fd4ace120678fbcdbcd398dc70926f31166f3f7fe10095c94da13ef34e4137"
+      },
+      "model_state_before_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "model_state_after_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "arrays_npz": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/frame_order/ORDER_ORIGINAL/Sub04__Date03_Sub04_yogaball_play__t0010.000.npz",
+      "arrays_npz_sha256": "c49b0a01bcb53a2d179cc4dae84e182e0adbb10e4c9ab69007381cb68646f2fe",
+      "pred_vertices": {
+        "dtype": "float32",
+        "shape": [
+          18439,
+          3
+        ],
+        "strides": [
+          12,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "506153038739e2132352a156f0ad18ce695fcdc03b72566aedefa16a0b59c9d4"
+      },
+      "pred_cam_t": {
+        "dtype": "float32",
+        "shape": [
+          3
+        ],
+        "strides": [
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "f8edaa9301612bbc4f12841e73d714da80adb273f9a9af70d23c55be318c7d76",
+        "values": [
+          -0.40555405616760254,
+          1.182925820350647,
+          2.339540481567383
+        ]
+      },
+      "anchors": {
+        "dtype": "float64",
+        "shape": [
+          16384,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "71bc185d2f2fd809596d0c3a82d99bca04767fa2e26a58c7cfe307c80e1bfa75"
+      }
+    },
+    {
+      "frame_id": "Sub07/Date06_Sub07_yogaball_play/t0028.000",
+      "raw_rgb_file_sha256": "e37584aafa1e7e513dccbf0bf613f51102554d33f873646cd2448ac82122be4e",
+      "decoded_rgb": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048,
+          3
+        ],
+        "strides": [
+          6144,
+          3,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "d869bff4d4bd4573d8993269462531e2805da921b66766a4b02a52b5d7ee51d3"
+      },
+      "raw_mask_file_sha256": "291b55a175c88ace6bb2e118d46b836e94a73b3d275e17a43726fc80ec961c5a",
+      "decoded_mask": {
+        "dtype": "uint8",
+        "shape": [
+          1536,
+          2048
+        ],
+        "strides": [
+          2048,
+          1
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "eb2a41d5bd3336953abea8f02f472d7e29db50b98061780d2be8f2818117dbcb"
+      },
+      "bbox_values": [
+        [
+          879.0,
+          686.0,
+          1245.0,
+          1286.0
+        ]
+      ],
+      "bbox": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          4
+        ],
+        "strides": [
+          16,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "0095308d8712cfe873687ddf3368bbe077a994df316a78154cfa9d72b47beeb7"
+      },
+      "prepared_tensor": {
+        "dtype": "float32",
+        "shape": [
+          1,
+          1,
+          3,
+          512,
+          512
+        ],
+        "strides": [
+          3145728,
+          3145728,
+          1048576,
+          2048,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "532a044bd3e89e9b4301298bce0c84ad6703641cd54e9fb632f7b040a5f3b7b2",
+        "device": "cuda:0"
+      },
+      "cam_int_values": [
+        [
+          976.2120971679688,
+          0.0,
+          1017.9580078125
+        ],
+        [
+          0.0,
+          976.0467529296875,
+          787.3128662109375
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "cam_int": {
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "91fd4ace120678fbcdbcd398dc70926f31166f3f7fe10095c94da13ef34e4137"
+      },
+      "model_state_before_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "model_state_after_frame": {
+        "model_state_sha256": "1384a01a5cd692841abc67a25d6ab58d6a7319cff2de89f2f98d258109d5229a",
+        "trainable_parameter_aggregate_sha256": "04467a6ccea218a5780dc95e20e5f4104e75ae2a544e7ca03fe42c6946cef44b",
+        "buffer_aggregate_sha256": "563e7e6b82a3cd8d4373f33781e759867866265ae67dc67fa37b6fe5f4075d7b"
+      },
+      "arrays_npz": "/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results/frame_order/ORDER_ORIGINAL/Sub07__Date06_Sub07_yogaball_play__t0028.000.npz",
+      "arrays_npz_sha256": "6dd7250af2538f546b1a63f990b7abb0ba8456475f6af4c606ce3d040dda5a19",
+      "pred_vertices": {
+        "dtype": "float32",
+        "shape": [
+          18439,
+          3
+        ],
+        "strides": [
+          12,
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "441b767141b3cb89beef3c69f7b79cae2901d281704efaae01c948a49176c756"
+      },
+      "pred_cam_t": {
+        "dtype": "float32",
+        "shape": [
+          3
+        ],
+        "strides": [
+          4
+        ],
+        "c_contiguous": true,
+        "f_contiguous": true,
+        "sha256": "da0feb8132c1fccccf06c98ae9ab129ec865292c976cfe2982c9538dd6518fa7",
+        "values": [
+          -0.2039213329553604,
+          1.2659411430358887,
+          2.667672634124756
+        ]
+      },
+      "anchors": {
+        "dtype": "float64",
+        "shape": [
+          16384,
+          3
+        ],
+        "strides": [
+          24,
+          8
+        ],
+        "c_contiguous": true,
+        "f_contiguous": false,
+        "sha256": "2863a70d85b446dd75728e2d978f2df6dc020ac82d4ac59ce463e0533efbe429"
+      }
+    }
+  ]
+}
