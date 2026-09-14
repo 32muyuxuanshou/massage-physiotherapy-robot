@@ -1,0 +1,49 @@
+{
+  "canonical": "d0ce44c reconstructed Run A",
+  "seed_modes": [
+    "UNSEEDED_DIAGNOSTIC",
+    "CONTROLLED"
+  ],
+  "model_fingerprints": [
+    "full_state",
+    "trainable",
+    "buffer"
+  ],
+  "drift_metrics": {
+    "vertices": [
+      "mean",
+      "median",
+      "P90",
+      "P95",
+      "max"
+    ],
+    "anchors": [
+      "median",
+      "P90",
+      "P95",
+      "max"
+    ],
+    "cam_t": [
+      "dx",
+      "dy",
+      "dz",
+      "norm"
+    ]
+  },
+  "formal_execution_authorized": false,
+  "fresh_process_runs": [
+    "RUN_B",
+    "RUN_C",
+    "RUN_D",
+    "RUN_E"
+  ],
+  "complete_input_identity": [
+    "raw_rgb",
+    "decoded_rgb",
+    "mask",
+    "bbox",
+    "prepared_tensor",
+    "cam_int"
+  ],
+  "canonical_reselection_prohibited": true
+}

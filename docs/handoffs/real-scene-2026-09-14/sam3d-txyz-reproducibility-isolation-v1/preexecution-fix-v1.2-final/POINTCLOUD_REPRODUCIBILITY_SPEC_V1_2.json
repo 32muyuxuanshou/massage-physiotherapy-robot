@@ -1,0 +1,15 @@
+{
+  "formal_execution_authorized": false,
+  "fresh_processes": 5,
+  "gate": "POINTCLOUD_REPRODUCIBILITY_PASS",
+  "all_fields_required": [
+    "raw_depth_sha256",
+    "decoded_depth.sha256/dtype/shape",
+    "raw_mask_sha256",
+    "decoded_mask.sha256/dtype/shape",
+    "pointcloud_table_file_sha256",
+    "pointcloud_table.sha256/dtype/shape",
+    "points.sha256/dtype/shape/order"
+  ],
+  "failure": "POINTCLOUD_RECONSTRUCTION_NONDETERMINISTIC"
+}
