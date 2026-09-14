@@ -108,6 +108,7 @@ class Tests(unittest.TestCase):
   a={'vertices':np.zeros((2,3)),'cam_t':np.zeros(3),'anchors':np.zeros((2,3))};b={k:v.copy() for k,v in a.items()};b['cam_t'][2]=.003;self.assertEqual(compare_arrays(a,b)['cam_t']['norm_mm'],3)
  def test_41_frame_order_manifest_preserves_order(self):
   rows=[{'frame_id':x} for x in 'abc'];self.assertEqual([x['frame_id'] for x in make_order_manifest(rows,['c','a','b'])['rows']],['c','a','b'])
+  formal=[{'subject':'S','sequence':'Q','frame':'F'}];self.assertEqual(make_order_manifest(formal,['S/Q/F'])['rows'],formal)
  def test_42_frame_order_same_process_design(self):self.assertIn('one loaded model',json.loads((ROOT/'FRAME_ORDER_TEST_SPEC_V1_2.json').read_text())['execution_design'])
  def test_43_frame_order_dependence(self):
   arr={'vertices':np.zeros((1,3)),'cam_t':np.zeros(3),'anchors':np.zeros((1,3))};row=lambda a:{'prepared_tensor_hash':'i','cam_int_hash':'k','model_state_before':{'model_state_sha256':'m'},'model_state_after':{'model_state_sha256':'m'},'arrays':a};changed={k:v.copy() for k,v in arr.items()};changed['vertices'][0,0]=.001;r=compare_order_runs({'A':{'f':row(arr)},'B':{'f':row(changed)}});self.assertEqual(r['status'],'FRAME_ORDER_DEPENDENCE')

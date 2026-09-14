@@ -36,12 +36,23 @@ def commands(config,out,input_snapshot,pointcloud_manifest):
 
 def execute_stages(stage_commands,env,runner=None):
  ledger=[];runner=runner or (lambda cmd:subprocess.run(cmd,check=False,env=env).returncode)
- for stage in STAGES:
+ for stage in stage_commands:
   cmd,output=stage_commands[stage];started=time.time();code=runner(cmd)
   if code!=0:ledger.append({'stage':stage,'status':'PROCESS_FAILED','returncode':code});return ledger
   result=json.loads(Path(output).read_text());status=result.get('status');ledger.append({'stage':stage,'status':status,'seconds':time.time()-started,'output':str(output)})
   if status not in PASS[stage]:return ledger
  return ledger
+
+def output_tree_hashes(root):
+ root=Path(root);return {str(path.relative_to(root)).replace('\\','/'):file_sha(path) for path in sorted(root.rglob('*')) if path.is_file()}
+
+def validate_resume(out,config):
+ previous=json.loads((out/'execution_ledger.json').read_text());expected=STAGES[:STAGES.index('frame_order')];observed={row['stage']:row['status'] for row in previous['ledger']}
+ if any(observed.get(stage) not in PASS[stage] for stage in expected):raise RuntimeError('RESUME_COMPLETED_STAGE_CONTRACT_FAILED')
+ paths=config['paths'];snapshot=out/'controlled_input_snapshot.json';pointcloud=out/'pointcloud_manifest_frozen.json'
+ verify_input_snapshot(json.loads(snapshot.read_text()),paths['formal_manifest'],paths['sequences']);verify_pointcloud_manifest(json.loads(pointcloud.read_text()),paths['formal_manifest'],paths['sequences'],paths['calibration_root'])
+ hashes=output_tree_hashes(out);(out/'resume_completed_artifacts_sha256.json').write_text(json.dumps({'status':'PASS_RESUME_COMPLETED_ARTIFACT_FREEZE','files':hashes},indent=2)+'\n')
+ return previous['ledger'],snapshot,pointcloud
 
 def require_clean_output_root(out):
  out=Path(out).resolve();delivery=Path(__file__).parents[1].resolve()
@@ -58,12 +69,12 @@ def write_stop(out,ledger,settings=None):
  payload={'status':'STOPPED_BY_FAIL_CLOSED_GATE','process_start_environment':settings,'ledger':ledger};(out/'execution_ledger.json').write_text(json.dumps(payload,indent=2)+'\n')
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--config',type=Path,required=True);p.add_argument('--go-token',required=True);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--config',type=Path,required=True);p.add_argument('--go-token',required=True);p.add_argument('--resume-failed-run',action='store_true');a=p.parse_args()
  if a.go_token!=GO_TOKEN:raise RuntimeError('FORMAL_GO_TOKEN_REQUIRED')
- config=json.loads(a.config.read_text());out=require_clean_output_root(config['output_root']);paths=config['paths'];ledger=[]
+ config=json.loads(a.config.read_text());out=Path(config['output_root']).resolve() if a.resume_failed_run else require_clean_output_root(config['output_root']);paths=config['paths'];ledger=[]
  try:reviewed=verify_reviewed_delivery()
  except Exception as error:reviewed={'status':'REVIEWED_DELIVERY_INTEGRITY_FAILED','error':str(error)}
- (out/'reviewed_delivery_integrity_pre.json').write_text(json.dumps(reviewed,indent=2)+'\n');ledger.append({'stage':'reviewed_delivery_integrity_pre','status':reviewed['status']})
+ integrity_name='reviewed_delivery_integrity_resume_pre.json' if a.resume_failed_run else 'reviewed_delivery_integrity_pre.json';(out/integrity_name).write_text(json.dumps(reviewed,indent=2)+'\n');ledger.append({'stage':'reviewed_delivery_integrity_resume_pre' if a.resume_failed_run else 'reviewed_delivery_integrity_pre','status':reviewed['status']})
  if reviewed['status']!='PASS_REVIEWED_DELIVERY_INTEGRITY':write_stop(out,ledger);return
  try:asset=verify_assets(paths,json.loads(Path(paths['asset_freeze']).read_text()))
  except Exception as error:asset={'status':'ASSET_FREEZE_VERIFICATION_ERROR','error':str(error)}
@@ -71,10 +82,13 @@ def main():
  if asset['status']!='PASS_RUNTIME_ASSET_FREEZE':write_stop(out,ledger);return
  try:run_a=verify_run_a(json.loads(Path(paths['run_a_freeze']).read_text()),paths['replay_manifest']);(out/'run_a_actual_asset_verification.json').write_text(json.dumps(run_a,indent=2)+'\n');ledger.append({'stage':'run_a_actual_assets','status':run_a['status'],'points_verified':run_a['points_verified'],'anchors_verified':run_a['anchors_verified']})
  except Exception as error:ledger.append({'stage':'run_a_actual_assets','status':'RUN_A_ACTUAL_ASSET_HASH_MISMATCH','error':str(error)});write_stop(out,ledger);return
- snapshot=out/'controlled_input_snapshot.json';snapshot.write_text(json.dumps(build_input_snapshot(paths['formal_manifest'],paths['sequences']),indent=2)+'\n');ledger.append({'stage':'input_snapshot','status':'PASS_INPUT_SNAPSHOT_CREATED'})
- pointcloud_snapshot=out/'pointcloud_manifest_frozen.json';pointcloud_snapshot.write_text(json.dumps(build_pointcloud_manifest(paths['formal_manifest'],paths['sequences'],paths['calibration_root']),indent=2)+'\n');binding=verify_pointcloud_manifest(json.loads(pointcloud_snapshot.read_text()),paths['formal_manifest'],paths['sequences'],paths['calibration_root']);ledger.append({'stage':'pointcloud_manifest_freeze','status':binding['status'],'frame_count':binding['frame_count']})
- start_hashes={'input_snapshot_sha256':file_sha(snapshot),'pointcloud_manifest_sha256':file_sha(pointcloud_snapshot)};env,settings=child_environment(config);stage_ledger=execute_stages(commands(config,out,snapshot,pointcloud_snapshot),env);ledger.extend(stage_ledger)
- if len(stage_ledger)!=len(STAGES) or any(row['status'] not in PASS[row['stage']] for row in stage_ledger):write_stop(out,ledger,settings);return
+ if a.resume_failed_run:
+  prior_ledger,snapshot,pointcloud_snapshot=validate_resume(out,config);ledger=prior_ledger+ledger;ledger.append({'stage':'resume_completed_artifacts','status':'PASS_RESUME_COMPLETED_ARTIFACT_FREEZE'})
+ else:
+  snapshot=out/'controlled_input_snapshot.json';snapshot.write_text(json.dumps(build_input_snapshot(paths['formal_manifest'],paths['sequences']),indent=2)+'\n');ledger.append({'stage':'input_snapshot','status':'PASS_INPUT_SNAPSHOT_CREATED'})
+  pointcloud_snapshot=out/'pointcloud_manifest_frozen.json';pointcloud_snapshot.write_text(json.dumps(build_pointcloud_manifest(paths['formal_manifest'],paths['sequences'],paths['calibration_root']),indent=2)+'\n');binding=verify_pointcloud_manifest(json.loads(pointcloud_snapshot.read_text()),paths['formal_manifest'],paths['sequences'],paths['calibration_root']);ledger.append({'stage':'pointcloud_manifest_freeze','status':binding['status'],'frame_count':binding['frame_count']})
+ start_hashes={'input_snapshot_sha256':file_sha(snapshot),'pointcloud_manifest_sha256':file_sha(pointcloud_snapshot)};env,settings=child_environment(config);all_commands=commands(config,out,snapshot,pointcloud_snapshot);selected=STAGES[STAGES.index('frame_order'):] if a.resume_failed_run else STAGES;stage_ledger=execute_stages({stage:all_commands[stage] for stage in selected},env);ledger.extend(stage_ledger)
+ if len(stage_ledger)!=len(selected) or any(row['status'] not in PASS[row['stage']] for row in stage_ledger):write_stop(out,ledger,settings);return
  try:post=post_execution_integrity(config,snapshot,pointcloud_snapshot,start_hashes)
  except Exception as error:post={'status':'POST_EXECUTION_INTEGRITY_FAILED','error':str(error)}
  (out/'post_execution_integrity.json').write_text(json.dumps(post,indent=2)+'\n');ledger.append({'stage':'post_execution_integrity','status':post['status']});complete=post['status']=='PASS_POST_EXECUTION_INTEGRITY';payload={'status':'PASS_REPRODUCIBILITY_ISOLATION_EXECUTION' if complete else 'STOPPED_BY_FAIL_CLOSED_GATE','process_start_environment':settings,'ledger':ledger};(out/'execution_ledger.json').write_text(json.dumps(payload,indent=2)+'\n')

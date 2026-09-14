@@ -2,9 +2,10 @@ import argparse,json,subprocess,sys
 from pathlib import Path
 from .frame_order_runner import validate,build_orders
 from .execution_guard import require_master_authorization
+from .formal_identity import frame_id
 
 def make_order_manifest(source_rows,order):
- by_id={x['frame_id']:x for x in source_rows};return {'rows':[by_id[x] for x in order]}
+ by_id={frame_id(x):x for x in source_rows};return {'rows':[by_id[x] for x in order]}
 def command_for_order(a,name,manifest,output):
  cmd=[sys.executable,'-m','repro_fix.sam_repro_runner','--worker','--run-id',name,'--mode','CONTROLLED','--seed',str(a.seed),'--manifest',str(manifest),'--output',str(output),'--arrays-dir',str(a.output_dir/name)]
  for field in ('sequences','calibs','sam_repo','checkpoint','mhr','anchor_asset','v23_code','input_snapshot'):cmd += ['--'+field.replace('_','-'),str(getattr(a,field))]
