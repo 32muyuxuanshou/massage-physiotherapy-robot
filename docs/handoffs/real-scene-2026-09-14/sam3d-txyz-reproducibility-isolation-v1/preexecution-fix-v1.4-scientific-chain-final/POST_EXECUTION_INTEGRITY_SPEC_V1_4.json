@@ -1,0 +1,13 @@
+{
+  "required_after_all_scientific_stages": true,
+  "checks": [
+    "runtime checkpoint, MHR, surface anchors, SAM source, V2.3 helper, formal manifest, calibration, frozen V2.3 Txyz and reproducibility code tree",
+    "45 actual Run A points NPZ hashes",
+    "45 actual Run A anchors NPZ hashes",
+    "45 controlled K0 RGB and mask source hashes",
+    "derived pointcloud manifest exact frame, path and file-hash identity",
+    "start/end hashes of controlled input snapshot and derived pointcloud manifest"
+  ],
+  "pass_status": "PASS_POST_EXECUTION_INTEGRITY",
+  "failure_behavior": "final execution status remains STOPPED_BY_FAIL_CLOSED_GATE"
+}

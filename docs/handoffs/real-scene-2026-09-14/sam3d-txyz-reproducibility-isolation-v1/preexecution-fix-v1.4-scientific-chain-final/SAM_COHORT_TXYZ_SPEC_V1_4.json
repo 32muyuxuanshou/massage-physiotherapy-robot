@@ -1,0 +1,11 @@
+{
+  "question": "Does controlled SAM rerun anchor variation change frozen Txyz failure-diagnostic features?",
+  "frames": 45,
+  "primary_runs": ["RUN_B", "RUN_C", "RUN_D", "RUN_E", "RUN_F"],
+  "historical_reference": "RUN_A reconstructed points and anchors; reported separately and excluded from primary classification",
+  "controlled_input": "the same verified historical K0 points for A through F within each frame",
+  "varied_input": "only the anchors produced by controlled SAM runs B through F",
+  "algorithm": "six-iteration frozen Cheap Txyz; diagnostics added without changing nearest-neighbor, trim, median-step, clip or fallback logic",
+  "feature_stability_input": "B-F Txyz traces",
+  "outcome_fields_forbidden": true
+}

@@ -1,0 +1,19 @@
+{
+  "historical_run_a": {
+    "source_commit": "d0ce44c",
+    "available": ["points_npz", "anchors_npz", "points_sha256", "anchors_sha256"],
+    "actual_file_verification_required": true,
+    "unavailable": ["full_vertices", "pred_cam_t", "prepared_tensor", "cam_int", "model_state", "historical_v23_six_iteration_trace"],
+    "permitted_comparison": "anchors_only_and_reconstructed_txyz_reference",
+    "canonical_reselection_prohibited": true
+  },
+  "new_controlled_cohort": {
+    "runs": ["RUN_B", "RUN_C", "RUN_D", "RUN_E", "RUN_F"],
+    "comparison": "all_pairwise",
+    "complete_input_identity": ["raw_rgb_file", "decoded_rgb", "raw_mask_file", "decoded_mask", "bbox", "prepared_tensor", "cam_int"],
+    "output_fields": ["vertices", "pred_cam_t", "anchors"],
+    "state_fields": ["model_state", "environment_fingerprint"]
+  },
+  "primary_feature_stability_claim": "stability characterization of frozen Txyz diagnostics under B-F controlled SAM rerun anchor variation on identical K0 points",
+  "historical_reference_claim": "Run A provides a reconstructed reference only; no identity claim is made for unsaved 2026-09-11 internals"
+}

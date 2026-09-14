@@ -1,0 +1,51 @@
+{
+  "review_verdict": "ALL_FOUR_BLOCKERS_AND_THREE_RELATED_PROTECTIONS_CONFIRMED",
+  "base_commit": "08e5d8791d56f7a623bb9fdad09dcac6e69163ec",
+  "formal_execution_performed": false,
+  "fixes": [
+    {
+      "finding": "Run A freeze trusted manifest hashes",
+      "verdict": "CORRECT",
+      "resolution": "reopen and SHA256 all 45 points NPZ and all 45 anchors NPZ before and after execution",
+      "files": ["repro_fix/run_a_freeze.py", "repro_fix/run_reproducibility_isolation_v1.py"]
+    },
+    {
+      "finding": "pointcloud manifest was independent of formal 45",
+      "verdict": "CORRECT",
+      "resolution": "remove external config input; derive, freeze and verify exact frame/path/hash identity from formal manifest",
+      "files": ["repro_fix/formal_identity.py", "repro_fix/pointcloud_manifest.py", "repro_fix/pointcloud_repro_runner.py"]
+    },
+    {
+      "finding": "feature stability did not propagate SAM rerun anchors through Txyz",
+      "verdict": "CORRECT",
+      "resolution": "add B-F anchors to frozen Txyz on identical K0 points; keep A as reference only",
+      "files": ["repro_fix/sam_cohort_txyz_runner.py", "SAM_COHORT_TXYZ_SPEC_V1_4.json"]
+    },
+    {
+      "finding": "feature contract and extractor were not one-to-one",
+      "verdict": "CORRECT",
+      "resolution": "implement all 27 registered fields and exact coverage gate",
+      "files": ["FEATURE_STABILITY_CONTRACT_V1_4.json", "repro_fix/txyz_fresh_process_runner.py", "repro_fix/k0_data_features.py", "repro_fix/feature_stability_runner.py"]
+    },
+    {
+      "finding": "SAM analyzer omitted stored raw/decoded RGB, mask and bbox identity",
+      "verdict": "CORRECT",
+      "resolution": "include all seven input identity fields in pairwise hard gate",
+      "files": ["repro_fix/sam_repro_analyzer_v2.py", "SAM3D_REPRODUCIBILITY_SPEC_V1_4.json"]
+    },
+    {
+      "finding": "assets were verified only before execution",
+      "verdict": "CORRECT",
+      "resolution": "repeat full runtime, Run A, input and pointcloud integrity checks after execution",
+      "files": ["repro_fix/run_reproducibility_isolation_v1.py", "POST_EXECUTION_INTEGRITY_SPEC_V1_4.json"]
+    },
+    {
+      "finding": "output root could contain stale evidence",
+      "verdict": "CORRECT",
+      "resolution": "reject any nonempty output root before the first write",
+      "files": ["repro_fix/run_reproducibility_isolation_v1.py", "EXECUTION_CONFIG_SCHEMA_V1_4.json"]
+    }
+  ],
+  "additional_contract_correction": "support_left_right_balance and support_top_bottom_balance are signed [-1,1] ratios, so V1.4 uses SIGNED_RATIO_M1_1",
+  "delivery_status": "HOLD_FOR_WEB_REVIEW_SAM3D_TXYZ_REPRODUCIBILITY_ISOLATION_V1_4_SCIENTIFIC_CHAIN_FINAL"
+}

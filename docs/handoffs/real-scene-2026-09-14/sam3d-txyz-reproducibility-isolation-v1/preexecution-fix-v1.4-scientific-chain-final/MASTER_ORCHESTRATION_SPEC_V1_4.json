@@ -1,0 +1,25 @@
+{
+  "formal_entry": "python -m repro_fix.run_reproducibility_isolation_v1",
+  "go_token": "GO_SAM3D_TXYZ_REPRODUCIBILITY_ISOLATION_V1",
+  "clean_output_root_required": true,
+  "fail_closed": true,
+  "ordered_stages": [
+    "runtime_assets",
+    "run_a_actual_assets",
+    "input_snapshot",
+    "pointcloud_manifest_freeze",
+    "model_load_unseeded",
+    "model_load_controlled",
+    "pointcloud",
+    "txyz_same",
+    "txyz_fresh",
+    "sam_controlled",
+    "sam_analysis",
+    "sam_cohort_txyz",
+    "frame_order",
+    "frame_order_analysis",
+    "feature_stability",
+    "post_execution_integrity"
+  ],
+  "formal_execution_authorized_in_this_delivery": false
+}

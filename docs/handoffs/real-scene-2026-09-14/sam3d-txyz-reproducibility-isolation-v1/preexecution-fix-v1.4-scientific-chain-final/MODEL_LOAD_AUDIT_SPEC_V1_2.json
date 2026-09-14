@@ -1,0 +1,19 @@
+{
+  "modes": {
+    "CONTROLLED": {
+      "purpose": "same-seed forward reproducibility",
+      "seed_applied": true
+    },
+    "UNSEEDED_DIAGNOSTIC": {
+      "purpose": "detect random initialization of missing trainable parameters",
+      "seed_applied": false
+    }
+  },
+  "hard_block": "MODEL_LOAD_REPRODUCIBILITY_HARD_BLOCK",
+  "fingerprints": [
+    "model_state",
+    "trainable",
+    "buffer"
+  ],
+  "inspect_real_model_object": true
+}

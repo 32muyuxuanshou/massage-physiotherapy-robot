@@ -1,0 +1,18 @@
+{
+  "historical_run_a": {
+    "comparison_fields": ["anchors"],
+    "actual_asset_gate": ["45 points NPZ SHA256", "45 anchors NPZ SHA256"],
+    "unavailable_fields": ["vertices", "pred_cam_t", "prepared_tensor", "cam_int", "model_state", "environment_fingerprint"],
+    "replacement_prohibited": true
+  },
+  "new_controlled_cohort": {
+    "runs": ["RUN_B", "RUN_C", "RUN_D", "RUN_E", "RUN_F"],
+    "comparison": "all ten run pairs for every frame",
+    "numeric_fields": ["vertices", "anchors", "pred_cam_t"],
+    "identity_fields": ["raw_rgb_file", "decoded_rgb", "raw_mask_file", "decoded_mask", "bbox", "prepared_tensor", "cam_int", "model_state", "environment_fingerprint"]
+  },
+  "per_frame_state": ["model_state_before_frame", "model_state_after_frame"],
+  "downstream_chain": "each B-F anchor array is passed through frozen Txyz with identical verified K0 points",
+  "input_snapshot": "created before any new SAM inference and reverified after all formal stages",
+  "formal_execution_authorized": false
+}

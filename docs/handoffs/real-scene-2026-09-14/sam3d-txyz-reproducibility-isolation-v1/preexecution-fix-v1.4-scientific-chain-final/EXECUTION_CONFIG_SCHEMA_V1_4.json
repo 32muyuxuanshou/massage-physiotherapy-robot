@@ -1,0 +1,7 @@
+{
+  "required": ["seed", "output_root", "paths", "process_start_environment"],
+  "required_paths": ["asset_freeze", "run_a_freeze", "replay_manifest", "formal_manifest", "sequences", "calibs", "sam3d_repo", "official_checkpoint", "mhr_model", "surface_anchors", "surface_metrics", "txyz_implementation", "v23_code", "frame_order_spec", "feature_contract", "calibration_root", "calibration_relative_files", "repro_code_root"],
+  "removed_external_input": "pointcloud_manifest is generated from formal_manifest, sequences and calibration_root by the master",
+  "process_start_fields": ["CUBLAS_WORKSPACE_CONFIG", "PYTHONHASHSEED", "OMP_NUM_THREADS", "MKL_NUM_THREADS"],
+  "output_root_contract": "path must not exist or must be empty"
+}

@@ -1,0 +1,9 @@
+{
+  "source": "the already frozen 45-frame formal manifest",
+  "construction": "master derives K0 depth, K0 person mask, K0 pointcloud table and K0 intrinsic calibration paths",
+  "frame_identity": "exactly the same 45 frame IDs as the formal manifest",
+  "path_identity": ["depth", "mask", "pointcloud_table", "calibration"],
+  "hash_identity": ["depth_sha256", "mask_sha256", "pointcloud_table_sha256", "calibration_sha256"],
+  "external_pointcloud_manifest_allowed": false,
+  "verification": "each of five fresh-process workers verifies frozen file hashes before decoding"
+}

@@ -1,0 +1,33 @@
+{
+  "seed": 20260912,
+  "output_root": "REQUIRED_NEW_OR_EMPTY_SERVER_OUTPUT_PATH",
+  "process_start_environment": {"CUBLAS_WORKSPACE_CONFIG": ":4096:8", "PYTHONHASHSEED": "20260912", "OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"},
+  "paths": {
+    "asset_freeze": "RUNTIME_ASSET_FREEZE_V1_4.json",
+    "run_a_freeze": "RUN_A_ASSET_FREEZE_V1.json",
+    "replay_manifest": "REQUIRED_D0CE44C_REPLAY_MANIFEST",
+    "formal_manifest": "REQUIRED_V23_FORMAL_MANIFEST",
+    "sequences": "REQUIRED_BEHAVE_SEQUENCES_ROOT",
+    "calibs": "REQUIRED_BEHAVE_CALIBRATION_ROOT",
+    "sam3d_repo": "REQUIRED_FROZEN_SAM3D_REPO",
+    "official_checkpoint": "REQUIRED_OFFICIAL_CHECKPOINT",
+    "mhr_model": "REQUIRED_MHR_MODEL",
+    "surface_anchors": "REQUIRED_16384_ANCHOR_ASSET",
+    "surface_metrics": "REQUIRED_FROZEN_SURFACE_METRICS",
+    "txyz_implementation": "REQUIRED_FROZEN_V23_TXYZ_IMPLEMENTATION",
+    "v23_code": "REQUIRED_FROZEN_V23_HELPER_CODE",
+    "frame_order_spec": "FRAME_ORDER_TEST_SPEC_V1_2.json",
+    "feature_contract": "FEATURE_STABILITY_CONTRACT_V1_4.json",
+    "calibration_root": "REQUIRED_CALIBRATION_BUNDLE_ROOT",
+    "repro_code_root": "ABSOLUTE_PATH_TO_THIS_DELIVERY/repro_fix",
+    "calibration_relative_files": [
+      "intrinsics/0/calibration.json", "intrinsics/0/pointcloud_table.npy",
+      "intrinsics/1/calibration.json", "intrinsics/1/pointcloud_table.npy",
+      "intrinsics/2/calibration.json", "intrinsics/2/pointcloud_table.npy",
+      "intrinsics/3/calibration.json", "intrinsics/3/pointcloud_table.npy",
+      "Date03/config/0/config.json", "Date03/config/1/config.json", "Date03/config/2/config.json", "Date03/config/3/config.json",
+      "Date05/config/0/config.json", "Date05/config/1/config.json", "Date05/config/2/config.json", "Date05/config/3/config.json",
+      "Date06/config/0/config.json", "Date06/config/1/config.json", "Date06/config/2/config.json", "Date06/config/3/config.json"
+    ]
+  }
+}

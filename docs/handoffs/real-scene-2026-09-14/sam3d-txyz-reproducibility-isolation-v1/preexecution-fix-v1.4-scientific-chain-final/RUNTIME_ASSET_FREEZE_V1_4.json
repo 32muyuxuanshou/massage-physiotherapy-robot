@@ -1,0 +1,25 @@
+{
+  "status": "PREEXECUTION_V1_4_FROZEN_RUNTIME_GATE",
+  "inherited_external_assets_from": "../preexecution-fix-v1.3-integration-final/RUNTIME_ASSET_FREEZE_V1_3.json",
+  "runtime_reverification_required_before_and_after_formal_execution": true,
+  "assets": {
+    "official_checkpoint_sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+    "mhr_model_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "surface_anchors_sha256": "e949e9f42739efd9d6fd62db9fa41aca4a6f590c63625bcae9bef435879c1971",
+    "surface_metrics_sha256": "619b32af927ae466203a2e48bf44389511d28cddb32dff7c4d36d551a9194d81",
+    "sam3d_source_tree_sha256": "acee6c74273608b7d4b5882a9d144cc0df25799be9dc27517f59254b10a17bee",
+    "v23_helper_code_sha256": "c9a2e4ead57bb04a75cd57b702a03de8a693d9b97d2170cd3ecaef82fa614e5b"
+  },
+  "formal_runtime_gate": {
+    "formal_manifest_sha256": "504abc897814c8020722692148e134b53e0d9b2f9ea3df7c145ce94cc8411eb1",
+    "txyz_implementation_sha256": "599ff0faad4194737adf8088f82bbbd94dd4f4cb1ec74d1521cda1d6a9f652ba",
+    "surface_anchors_sha256": "e949e9f42739efd9d6fd62db9fa41aca4a6f590c63625bcae9bef435879c1971",
+    "camera_calibration_bundle_sha256": "e85dcb7fe9307b946b53298a85e59136560157ac58182d69aa8a72e649f84c893",
+    "repro_code_tree_sha256": "36e2954f03f864767080ba8ac7afe1453399a1a23c33ed3a15257ce88cecb6d3"
+  },
+  "repro_code_hash_contract": "runtime_asset_verifier.tree_sha(repro_code_root, ('*.py',)); includes the orchestrator, Run A verifier, pointcloud binding, SAM/Txyz runners, feature extractor and post-integrity code",
+  "camera_calibration_hash_contract": "SHA256 of concatenated sorted lines '<file_sha256>  ./<relative_path>\\n' for 4 intrinsics calibration.json, 4 pointcloud_table.npy, and Date03/05/06 K0-K3 config.json (20 files)",
+  "formal_gate_behavior": "Any mismatch before execution stops all scientific stages; any mismatch after execution prevents PASS_REPRODUCIBILITY_ISOLATION_EXECUTION.",
+  "execution_start_snapshots": ["45 K0 RGB/mask files", "derived 45-frame pointcloud inputs"],
+  "run_a_actual_asset_gate": "45 points NPZ and 45 anchors NPZ are reopened and hashed before and after execution"
+}
