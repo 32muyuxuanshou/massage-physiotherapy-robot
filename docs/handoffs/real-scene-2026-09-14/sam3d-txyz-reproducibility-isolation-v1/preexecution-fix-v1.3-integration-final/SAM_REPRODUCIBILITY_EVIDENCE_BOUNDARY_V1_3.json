@@ -1,0 +1,15 @@
+{
+  "historical_run_a": {
+    "source_commit": "d0ce44c",
+    "available": ["points_npz", "anchors_npz", "points_sha256", "anchors_sha256"],
+    "unavailable": ["full_vertices", "pred_cam_t", "prepared_tensor", "cam_int", "model_state", "historical_v23_six_iteration_trace"],
+    "permitted_comparison": "anchors_only",
+    "canonical_reselection_prohibited": true
+  },
+  "new_controlled_cohort": {
+    "runs": ["RUN_B", "RUN_C", "RUN_D", "RUN_E", "RUN_F"],
+    "comparison": "all_pairwise",
+    "fields": ["vertices", "pred_cam_t", "anchors", "prepared_tensor", "cam_int", "model_state", "environment_fingerprint"]
+  },
+  "maximum_claim": "stability of reconstructed Run A diagnostic features; not identity with unsaved historical V2.3 internals"
+}

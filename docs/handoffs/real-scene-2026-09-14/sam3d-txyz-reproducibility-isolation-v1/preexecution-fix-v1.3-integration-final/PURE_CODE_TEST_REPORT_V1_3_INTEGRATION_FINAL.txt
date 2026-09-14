@@ -1,0 +1,99 @@
+PREEXECUTION_FIX_REPRO_ISOLATION_V1_3_INTEGRATION_FINAL
+Date: 2026-09-14 Asia/Shanghai
+Scope: code, schema, mock and synthetic subprocess tests only
+Review findings accepted: 5/5
+Python compile: PASS
+Pure/mock tests: 75/75 PASS
+Integration preflight: PASS_INTEGRATION_PREFLIGHT_V1_3
+Run A freeze static verification: PASS_RUN_A_FREEZE_VERIFICATION
+Historical Run A scope: ANCHORS_ONLY
+New complete cohort: RUN_B/RUN_C/RUN_D/RUN_E/RUN_F
+Legacy full-schema Run A analyzer: FAIL_CLOSED
+Direct formal child execution: FAIL_CLOSED
+Master orchestration: FAIL_CLOSED
+Formal 45-frame experiment executed: NO
+V2.3 modified: NO
+Cheap Txyz modified: NO
+
+test_01_historical_boundary_is_anchor_only (test_integration_v13.Integration.test_01_historical_boundary_is_anchor_only) ... ok
+test_02_historical_analyzer_real_schema (test_integration_v13.Integration.test_02_historical_analyzer_real_schema) ... ok
+test_03_new_cohort_pairwise_full_outputs (test_integration_v13.Integration.test_03_new_cohort_pairwise_full_outputs) ... ok
+test_04_frame_order_adapter_reads_real_json_npz (test_integration_v13.Integration.test_04_frame_order_adapter_reads_real_json_npz) ... ok
+test_05_frame_state_before_after_present (test_integration_v13.Integration.test_05_frame_state_before_after_present) ... ok
+test_06_parent_environment_fixed (test_integration_v13.Integration.test_06_parent_environment_fixed) ... ok
+test_07_master_stage_order (test_integration_v13.Integration.test_07_master_stage_order) ... ok
+test_08_master_runs_all_passed_stages (test_integration_v13.Integration.test_08_master_runs_all_passed_stages) ... ok
+test_09_master_stops_on_gate_failure (test_integration_v13.Integration.test_09_master_stops_on_gate_failure) ... ok
+test_10_asset_verifier_pass_and_mismatch (test_integration_v13.Integration.test_10_asset_verifier_pass_and_mismatch) ... ok
+test_11_input_snapshot_hashes_rgb_mask (test_integration_v13.Integration.test_11_input_snapshot_hashes_rgb_mask) ... ok
+test_12_new_cohort_is_b_through_f (test_integration_v13.Integration.test_12_new_cohort_is_b_through_f) ... ok
+test_13_environment_embedded_in_sam (test_integration_v13.Integration.test_13_environment_embedded_in_sam) ... ok
+test_14_model_auditor_requires_master_gate (test_integration_v13.Integration.test_14_model_auditor_requires_master_gate) ... ok
+test_15_unsaved_history_boundary_in_readme (test_integration_v13.Integration.test_15_unsaved_history_boundary_in_readme) ... ok
+test_16_direct_formal_child_is_blocked (test_integration_v13.Integration.test_16_direct_formal_child_is_blocked) ... ok
+test_17_master_environment_authorizes_children (test_integration_v13.Integration.test_17_master_environment_authorizes_children) ... ok
+test_01_hash_actual_bytes (test_repro_fix.Tests.test_01_hash_actual_bytes) ... ok
+test_02_hash_dtype (test_repro_fix.Tests.test_02_hash_dtype) ... ok
+test_03_hash_layout_metadata (test_repro_fix.Tests.test_03_hash_layout_metadata) ... ok
+test_04_icc_perfect (test_repro_fix.Tests.test_04_icc_perfect) ... ok
+test_05_icc_is_computed (test_repro_fix.Tests.test_05_icc_is_computed) ... ok
+test_06_between_variation (test_repro_fix.Tests.test_06_between_variation) ... ok
+test_07_noise_ratio (test_repro_fix.Tests.test_07_noise_ratio) ... ok
+test_08_stable (test_repro_fix.Tests.test_08_stable) ... ok
+test_09_caution (test_repro_fix.Tests.test_09_caution) ... ok
+test_10_unstable (test_repro_fix.Tests.test_10_unstable) ... ok
+test_11_boolean_flip (test_repro_fix.Tests.test_11_boolean_flip) ... ok
+test_12_hash_identity (test_repro_fix.Tests.test_12_hash_identity) ... ok
+test_13_outcome_leakage_block (test_repro_fix.Tests.test_13_outcome_leakage_block) ... ok
+test_14_unit_contracts_differ (test_repro_fix.Tests.test_14_unit_contracts_differ) ... ok
+test_15_txyz_trace_hashes (test_repro_fix.Tests.test_15_txyz_trace_hashes) ... ok
+test_16_workers_branches (test_repro_fix.Tests.test_16_workers_branches) ... ok
+test_17_txyz_fresh_process (test_repro_fix.Tests.test_17_txyz_fresh_process) ... ok
+test_18_model_object_classification (test_repro_fix.Tests.test_18_model_object_classification) ... ok
+test_19_trainable_hard_block (test_repro_fix.Tests.test_19_trainable_hard_block) ... ok
+test_20_model_fingerprint (test_repro_fix.Tests.test_20_model_fingerprint) ... ok
+test_21_pointcloud_decoded_hashes (test_repro_fix.Tests.test_21_pointcloud_decoded_hashes) ... ok
+test_22_pointcloud_fresh_process (test_repro_fix.Tests.test_22_pointcloud_fresh_process) ... ok
+test_23_sam_tensor_data_hash (test_repro_fix.Tests.test_23_sam_tensor_data_hash) ... ok
+test_24_sam_output_schema (test_repro_fix.Tests.test_24_sam_output_schema) ... ok
+test_25_sentinel_unique (test_repro_fix.Tests.test_25_sentinel_unique) ... ok
+test_26_orders (test_repro_fix.Tests.test_26_orders) ... ok
+test_27_run_a_freeze (test_repro_fix.Tests.test_27_run_a_freeze) ... ok
+test_28_run_a_mutation_detected (test_repro_fix.Tests.test_28_run_a_mutation_detected) ... ok
+test_29_dataset_mask_boundary_retained (test_repro_fix.Tests.test_29_dataset_mask_boundary_retained) ... ok
+test_30_back_fail_closed (test_repro_fix.Tests.test_30_back_fail_closed) ... ok
+test_31_vector_component_path (test_repro_fix.Tests.test_31_vector_component_path) ... ok
+test_32_vector_norm_path (test_repro_fix.Tests.test_32_vector_norm_path) ... ok
+test_33_vector_worst_component (test_repro_fix.Tests.test_33_vector_worst_component) ... ok
+test_34_same_process_twenty (test_repro_fix.Tests.test_34_same_process_twenty) ... ok
+test_35_same_process_loaded_once (test_repro_fix.Tests.test_35_same_process_loaded_once) ... ok
+test_36_first_divergence_none (test_repro_fix.Tests.test_36_first_divergence_none) ... ok
+test_37_first_divergence_found (test_repro_fix.Tests.test_37_first_divergence_found) ... ok
+test_38_vertex_drift (test_repro_fix.Tests.test_38_vertex_drift) ... ok
+test_39_anchor_drift (test_repro_fix.Tests.test_39_anchor_drift) ... ok
+test_40_camt_drift (test_repro_fix.Tests.test_40_camt_drift) ... ok
+test_41_frame_order_manifest_preserves_order (test_repro_fix.Tests.test_41_frame_order_manifest_preserves_order) ... ok
+test_42_frame_order_same_process_design (test_repro_fix.Tests.test_42_frame_order_same_process_design) ... ok
+test_43_frame_order_dependence (test_repro_fix.Tests.test_43_frame_order_dependence) ... ok
+test_44_model_state_mutation (test_repro_fix.Tests.test_44_model_state_mutation) ... ok
+test_45_seed_applied (test_repro_fix.Tests.test_45_seed_applied) ... ok
+test_46_seed_repeats_numpy (test_repro_fix.Tests.test_46_seed_repeats_numpy) ... ok
+test_47_seed_modes_separate (test_repro_fix.Tests.test_47_seed_modes_separate) ... ok
+test_48_cam_int_hash (test_repro_fix.Tests.test_48_cam_int_hash) ... ok
+test_49_complete_sam_input (test_repro_fix.Tests.test_49_complete_sam_input) ... ok
+test_50_sam_model_fingerprints (test_repro_fix.Tests.test_50_sam_model_fingerprints) ... ok
+test_51_pointcloud_full_gate_pass (test_repro_fix.Tests.test_51_pointcloud_full_gate_pass) ... ok
+test_52_pointcloud_depth_gate (test_repro_fix.Tests.test_52_pointcloud_depth_gate) ... ok
+test_53_pointcloud_mask_gate (test_repro_fix.Tests.test_53_pointcloud_mask_gate) ... ok
+test_54_pointcloud_table_gate (test_repro_fix.Tests.test_54_pointcloud_table_gate) ... ok
+test_55_pointcloud_points_gate (test_repro_fix.Tests.test_55_pointcloud_points_gate) ... ok
+test_56_formal_authorization_frozen_false (test_repro_fix.Tests.test_56_formal_authorization_frozen_false) ... ok
+test_57_legacy_complete_run_a_analyzer_blocked (test_repro_fix.Tests.test_57_legacy_complete_run_a_analyzer_blocked) ... ok
+test_58_preexecution_blocks_formal_runner (test_repro_fix.Tests.test_58_preexecution_blocks_formal_runner) ... ok
+
+----------------------------------------------------------------------
+Ran 75 tests in 1.485s
+
+OK
+
+Current Gate: HOLD_FOR_WEB_REVIEW_SAM3D_TXYZ_REPRODUCIBILITY_ISOLATION_V1_3_INTEGRATION_FINAL

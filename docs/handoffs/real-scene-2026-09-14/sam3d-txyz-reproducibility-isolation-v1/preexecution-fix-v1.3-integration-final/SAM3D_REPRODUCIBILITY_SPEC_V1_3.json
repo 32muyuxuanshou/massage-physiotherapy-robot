@@ -1,0 +1,16 @@
+{
+  "historical_run_a": {
+    "comparison_fields": ["anchors"],
+    "unavailable_fields": ["vertices", "pred_cam_t", "prepared_tensor", "cam_int", "model_state", "environment_fingerprint"],
+    "replacement_prohibited": true
+  },
+  "new_controlled_cohort": {
+    "runs": ["RUN_B", "RUN_C", "RUN_D", "RUN_E", "RUN_F"],
+    "comparison": "all ten run pairs for every frame",
+    "numeric_fields": ["vertices", "anchors", "pred_cam_t"],
+    "identity_fields": ["prepared_tensor", "cam_int", "model_state", "environment_fingerprint"]
+  },
+  "per_frame_state": ["model_state_before_frame", "model_state_after_frame"],
+  "input_snapshot": "created before any new SAM inference and required by all cohort and frame-order runs",
+  "formal_execution_authorized": false
+}

@@ -1,0 +1,10 @@
+{
+  "processes": 3,
+  "orders": ["ORDER_ORIGINAL", "ORDER_REVERSED", "ORDER_RANDOM_FIXED_SEED"],
+  "frames_per_process": 7,
+  "model_loads_per_process": 1,
+  "adapter": "frame_order_analyzer.load_order_run reads official runner JSON and arrays_npz",
+  "per_frame_model_state": ["before", "after"],
+  "result_precedence": ["INPUT_IDENTITY_MISMATCH", "MODEL_STATE_MUTATION", "FRAME_ORDER_DEPENDENCE", "PASS_NO_FRAME_ORDER_DEPENDENCE"],
+  "formal_execution_authorized": false
+}

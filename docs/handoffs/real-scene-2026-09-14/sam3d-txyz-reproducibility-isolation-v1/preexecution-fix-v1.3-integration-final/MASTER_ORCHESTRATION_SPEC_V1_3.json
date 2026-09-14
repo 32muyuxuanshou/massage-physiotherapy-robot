@@ -1,0 +1,7 @@
+{
+  "formal_entry": "python -m repro_fix.run_reproducibility_isolation_v1",
+  "go_token": "GO_SAM3D_TXYZ_REPRODUCIBILITY_ISOLATION_V1",
+  "fail_closed": true,
+  "ordered_stages": ["runtime_assets", "run_a_freeze", "input_snapshot", "model_load_unseeded", "model_load_controlled", "pointcloud", "txyz_same", "txyz_fresh", "sam_controlled", "sam_analysis", "frame_order", "frame_order_analysis", "feature_stability"],
+  "formal_execution_authorized_in_this_delivery": false
+}
