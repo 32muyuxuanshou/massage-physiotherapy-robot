@@ -1,0 +1,15 @@
+{
+  "gate": "REVIEWED_DELIVERY_INTEGRITY",
+  "reviewed_tag": "sam3d-txyz-repro-v1.4.1",
+  "required_before_first_scientific_stage": true,
+  "required_after_last_scientific_stage": true,
+  "checks": [
+    "Git HEAD equals the commit referenced by the fixed reviewed tag",
+    "delivery directory has no tracked, staged or untracked changes",
+    "delivery path is inside the detected Git worktree"
+  ],
+  "covered_assets": "all files below preexecution-fix-v1.4-scientific-chain-final, including Python, JSON contracts, freezes, tests, reports and FILES_MANIFEST.json",
+  "pass_status": "PASS_REVIEWED_DELIVERY_INTEGRITY",
+  "failure_behavior": "stop before scientific stages or deny final PASS",
+  "server_requirement": "checkout the reviewed tagged commit, fetch tag sam3d-txyz-repro-v1.4.1, and place output_root outside the reviewed delivery directory"
+}

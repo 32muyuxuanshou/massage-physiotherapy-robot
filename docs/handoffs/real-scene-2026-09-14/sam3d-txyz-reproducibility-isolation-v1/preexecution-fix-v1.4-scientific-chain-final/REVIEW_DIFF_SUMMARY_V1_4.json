@@ -47,5 +47,12 @@
     }
   ],
   "additional_contract_correction": "support_left_right_balance and support_top_bottom_balance are signed [-1,1] ratios, so V1.4 uses SIGNED_RATIO_M1_1",
-  "delivery_status": "HOLD_FOR_WEB_REVIEW_SAM3D_TXYZ_REPRODUCIBILITY_ISOLATION_V1_4_SCIENTIFIC_CHAIN_FINAL"
+  "v1_4_1_integrity_patch": {
+    "finding": "reviewed JSON scientific contracts were not bound to the reviewed Git identity",
+    "verdict": "CORRECT",
+    "resolution": "fixed version tag plus exact HEAD and clean delivery-directory checks before and after formal execution",
+    "scientific_logic_changed": false,
+    "files": ["REVIEWED_DELIVERY_INTEGRITY_SPEC_V1_4_1.json", "repro_fix/reviewed_delivery_integrity.py", "repro_fix/run_reproducibility_isolation_v1.py"]
+  },
+  "delivery_status": "HOLD_FOR_WEB_REVIEW_REVIEWED_DELIVERY_INTEGRITY_V1_4_1"
 }

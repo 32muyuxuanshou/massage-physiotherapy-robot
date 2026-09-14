@@ -1,8 +1,10 @@
 # PREEXECUTION_FIX_REPRO_ISOLATION_V1_4_SCIENTIFIC_CHAIN_FINAL
 
-Status: `HOLD_FOR_WEB_REVIEW_SAM3D_TXYZ_REPRODUCIBILITY_ISOLATION_V1_4_SCIENTIFIC_CHAIN_FINAL`.
+Status: `HOLD_FOR_WEB_REVIEW_REVIEWED_DELIVERY_INTEGRITY_V1_4_1`.
 
 This is a complete review snapshot based on V1.3. It repairs the four final scientific-chain blockers and the three related execution protections identified in the review of commit `08e5d87`. It contains code, contracts, tests, preflight evidence and file hashes. It does not contain or claim a formal experiment result.
+
+V1.4.1 adds the one execution-integrity patch requested after commit `9061f0d`. The master now requires Git `HEAD` to equal the commit referenced by the fixed tag `sam3d-txyz-repro-v1.4.1`, and requires this entire delivery directory to have no tracked, staged or untracked changes. The same check runs again inside post-execution integrity. This binds the reviewed Python, all JSON scientific contracts, freezes, reports and `FILES_MANIFEST.json` without changing any algorithm, feature, threshold, sample or statistic.
 
 ## Review assessment
 
@@ -23,19 +25,23 @@ Run A is therefore used as an anchors-only SAM comparison and a separately repor
 
 ## Formal execution chain
 
-The only recognized formal entry remains `python -m repro_fix.run_reproducibility_isolation_v1` with the exact GO token. The output directory must be new or empty. The fail-closed sequence is:
+The only recognized formal entry remains `python -m repro_fix.run_reproducibility_isolation_v1` with the exact GO token. The output directory must be outside this reviewed delivery and must be new or empty. The fail-closed sequence is:
 
-1. Verify external runtime assets and the delivered reproducibility code tree.
-2. Reopen and hash all 45 Run A points NPZ and 45 anchors NPZ files.
-3. Freeze 45 K0 RGB/mask inputs.
-4. Derive and freeze the 45-frame K0 point-cloud manifest.
-5. Run model-load, point-cloud, exact-input Txyz, controlled SAM and SAM pairwise gates.
-6. Pass B-F anchors through frozen Txyz with identical K0 points.
-7. Run frame-order execution and analysis.
-8. Characterize every registered diagnostic feature across B-F.
-9. Reverify runtime assets, Run A files, controlled inputs, formal manifest, point-cloud binding and start/end snapshot hashes.
+1. Verify the complete reviewed delivery against the fixed Git tag and clean path-scoped worktree.
+2. Verify external runtime assets and the delivered reproducibility code tree.
+3. Reopen and hash all 45 Run A points NPZ and 45 anchors NPZ files.
+4. Freeze 45 K0 RGB/mask inputs.
+5. Derive and freeze the 45-frame K0 point-cloud manifest.
+6. Run model-load, point-cloud, exact-input Txyz, controlled SAM and SAM pairwise gates.
+7. Pass B-F anchors through frozen Txyz with identical K0 points.
+8. Run frame-order execution and analysis.
+9. Characterize every registered diagnostic feature across B-F.
+10. Reverify runtime assets, Run A files, controlled inputs, formal manifest, point-cloud binding and start/end snapshot hashes.
+11. Reverify the reviewed Git commit and clean delivery directory before granting final PASS.
 
 Any nonzero child process, unexpected stage status, feature-contract coverage gap or post-execution integrity mismatch stops the chain.
+
+The V1.4.1 verification suite contains 88 tests. It includes the requested mutation checks for the feature contract, frame-order spec and Run A freeze, a normal reviewed-delivery PASS case, a wrong-HEAD rejection, and an output-inside-delivery rejection.
 
 ## Diagnostic definitions
 

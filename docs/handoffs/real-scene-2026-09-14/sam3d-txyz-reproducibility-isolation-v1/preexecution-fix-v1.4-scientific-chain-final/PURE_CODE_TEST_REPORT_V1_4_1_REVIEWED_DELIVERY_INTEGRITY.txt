@@ -73,6 +73,11 @@ test_55_pointcloud_points_gate (test_repro_fix.Tests.test_55_pointcloud_points_g
 test_56_formal_authorization_frozen_false (test_repro_fix.Tests.test_56_formal_authorization_frozen_false) ... ok
 test_57_legacy_complete_run_a_analyzer_blocked (test_repro_fix.Tests.test_57_legacy_complete_run_a_analyzer_blocked) ... ok
 test_58_preexecution_blocks_formal_runner (test_repro_fix.Tests.test_58_preexecution_blocks_formal_runner) ... ok
+test_01_normal_reviewed_delivery_passes (test_reviewed_delivery_integrity_v141.ReviewedDeliveryIntegrityV141.test_01_normal_reviewed_delivery_passes) ... ok
+test_02_modified_feature_contract_rejected (test_reviewed_delivery_integrity_v141.ReviewedDeliveryIntegrityV141.test_02_modified_feature_contract_rejected) ... ok
+test_03_modified_frame_order_spec_rejected (test_reviewed_delivery_integrity_v141.ReviewedDeliveryIntegrityV141.test_03_modified_frame_order_spec_rejected) ... ok
+test_04_modified_run_a_freeze_rejected (test_reviewed_delivery_integrity_v141.ReviewedDeliveryIntegrityV141.test_04_modified_run_a_freeze_rejected) ... ok
+test_05_head_other_than_reviewed_tag_rejected (test_reviewed_delivery_integrity_v141.ReviewedDeliveryIntegrityV141.test_05_head_other_than_reviewed_tag_rejected) ... ok
 test_01_run_a_actual_npz_mutation_stops (test_scientific_chain_v14.ScientificChainV14.test_01_run_a_actual_npz_mutation_stops) ... ok
 test_02_pointcloud_manifest_is_derived_and_bound (test_scientific_chain_v14.ScientificChainV14.test_02_pointcloud_manifest_is_derived_and_bound) ... ok
 test_03_txyz_trace_has_all_numeric_diagnostics (test_scientific_chain_v14.ScientificChainV14.test_03_txyz_trace_has_all_numeric_diagnostics) ... ok
@@ -80,8 +85,9 @@ test_04_sam_bf_anchor_chain_and_contract_coverage (test_scientific_chain_v14.Sci
 test_05_contract_coverage_fails_closed (test_scientific_chain_v14.ScientificChainV14.test_05_contract_coverage_fails_closed) ... ok
 test_06_sam_complete_input_identity_catches_raw_mask (test_scientific_chain_v14.ScientificChainV14.test_06_sam_complete_input_identity_catches_raw_mask) ... ok
 test_07_output_root_must_be_clean (test_scientific_chain_v14.ScientificChainV14.test_07_output_root_must_be_clean) ... ok
+test_08_output_root_must_be_outside_reviewed_delivery (test_scientific_chain_v14.ScientificChainV14.test_08_output_root_must_be_outside_reviewed_delivery) ... ok
 
 ----------------------------------------------------------------------
-Ran 82 tests in 3.429s
+Ran 88 tests in 5.214s
 
 OK

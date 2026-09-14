@@ -5,6 +5,7 @@ from .hashing import file_sha
 from .input_source_snapshot import build as build_input_snapshot,verify as verify_input_snapshot
 from .pointcloud_manifest import build as build_pointcloud_manifest,verify as verify_pointcloud_manifest
 from .run_a_freeze import verify as verify_run_a
+from .reviewed_delivery_integrity import verify as verify_reviewed_delivery
 from .runtime_asset_verifier import verify_assets
 
 GO_TOKEN='GO_SAM3D_TXYZ_REPRODUCIBILITY_ISOLATION_V1'
@@ -43,12 +44,15 @@ def execute_stages(stage_commands,env,runner=None):
  return ledger
 
 def require_clean_output_root(out):
- out=Path(out)
+ out=Path(out).resolve();delivery=Path(__file__).parents[1].resolve()
+ try:out.relative_to(delivery)
+ except ValueError:pass
+ else:raise RuntimeError('OUTPUT_ROOT_MUST_BE_OUTSIDE_REVIEWED_DELIVERY')
  if out.exists() and any(out.iterdir()):raise RuntimeError('OUTPUT_ROOT_MUST_BE_NEW_OR_EMPTY')
  out.mkdir(parents=True,exist_ok=True);return out
 
 def post_execution_integrity(config,input_snapshot,pointcloud_snapshot,start_hashes):
- p=config['paths'];freeze=json.loads(Path(p['asset_freeze']).read_text());runtime=verify_assets(p,freeze);run_a=verify_run_a(json.loads(Path(p['run_a_freeze']).read_text()),p['replay_manifest']);inputs=verify_input_snapshot(json.loads(Path(input_snapshot).read_text()),p['formal_manifest'],p['sequences']);pointcloud=verify_pointcloud_manifest(json.loads(Path(pointcloud_snapshot).read_text()),p['formal_manifest'],p['sequences'],p['calibration_root']);observed={'input_snapshot_sha256':file_sha(input_snapshot),'pointcloud_manifest_sha256':file_sha(pointcloud_snapshot)};mismatches=[{'field':key,'expected':value,'observed':observed[key]} for key,value in start_hashes.items() if observed[key]!=value];status='PASS_POST_EXECUTION_INTEGRITY' if runtime['status']=='PASS_RUNTIME_ASSET_FREEZE' and not mismatches else 'POST_EXECUTION_INTEGRITY_FAILED';return {'status':status,'runtime_assets':runtime,'run_a_actual_assets':run_a,'controlled_inputs':inputs,'pointcloud_formal_binding':pointcloud,'start_end_snapshot_hashes':{'expected':start_hashes,'observed':observed,'mismatches':mismatches}}
+ p=config['paths'];reviewed=verify_reviewed_delivery();freeze=json.loads(Path(p['asset_freeze']).read_text());runtime=verify_assets(p,freeze);run_a=verify_run_a(json.loads(Path(p['run_a_freeze']).read_text()),p['replay_manifest']);inputs=verify_input_snapshot(json.loads(Path(input_snapshot).read_text()),p['formal_manifest'],p['sequences']);pointcloud=verify_pointcloud_manifest(json.loads(Path(pointcloud_snapshot).read_text()),p['formal_manifest'],p['sequences'],p['calibration_root']);observed={'input_snapshot_sha256':file_sha(input_snapshot),'pointcloud_manifest_sha256':file_sha(pointcloud_snapshot)};mismatches=[{'field':key,'expected':value,'observed':observed[key]} for key,value in start_hashes.items() if observed[key]!=value];status='PASS_POST_EXECUTION_INTEGRITY' if reviewed['status']=='PASS_REVIEWED_DELIVERY_INTEGRITY' and runtime['status']=='PASS_RUNTIME_ASSET_FREEZE' and not mismatches else 'POST_EXECUTION_INTEGRITY_FAILED';return {'status':status,'reviewed_delivery':reviewed,'runtime_assets':runtime,'run_a_actual_assets':run_a,'controlled_inputs':inputs,'pointcloud_formal_binding':pointcloud,'start_end_snapshot_hashes':{'expected':start_hashes,'observed':observed,'mismatches':mismatches}}
 
 def write_stop(out,ledger,settings=None):
  payload={'status':'STOPPED_BY_FAIL_CLOSED_GATE','process_start_environment':settings,'ledger':ledger};(out/'execution_ledger.json').write_text(json.dumps(payload,indent=2)+'\n')
@@ -57,6 +61,10 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--config',type=Path,required=True);p.add_argument('--go-token',required=True);a=p.parse_args()
  if a.go_token!=GO_TOKEN:raise RuntimeError('FORMAL_GO_TOKEN_REQUIRED')
  config=json.loads(a.config.read_text());out=require_clean_output_root(config['output_root']);paths=config['paths'];ledger=[]
+ try:reviewed=verify_reviewed_delivery()
+ except Exception as error:reviewed={'status':'REVIEWED_DELIVERY_INTEGRITY_FAILED','error':str(error)}
+ (out/'reviewed_delivery_integrity_pre.json').write_text(json.dumps(reviewed,indent=2)+'\n');ledger.append({'stage':'reviewed_delivery_integrity_pre','status':reviewed['status']})
+ if reviewed['status']!='PASS_REVIEWED_DELIVERY_INTEGRITY':write_stop(out,ledger);return
  try:asset=verify_assets(paths,json.loads(Path(paths['asset_freeze']).read_text()))
  except Exception as error:asset={'status':'ASSET_FREEZE_VERIFICATION_ERROR','error':str(error)}
  (out/'runtime_asset_verification.json').write_text(json.dumps(asset,indent=2)+'\n');ledger.append({'stage':'runtime_assets','status':asset['status']})

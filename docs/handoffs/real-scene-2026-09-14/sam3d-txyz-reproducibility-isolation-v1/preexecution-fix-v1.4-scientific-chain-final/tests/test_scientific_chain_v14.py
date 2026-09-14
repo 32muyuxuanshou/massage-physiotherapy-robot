@@ -60,4 +60,7 @@ class ScientificChainV14(unittest.TestCase):
    root=Path(tmp)/'output';root.mkdir();(root/'old.json').write_text('{}')
    with self.assertRaisesRegex(RuntimeError,'OUTPUT_ROOT_MUST_BE_NEW_OR_EMPTY'):require_clean_output_root(root)
 
+ def test_08_output_root_must_be_outside_reviewed_delivery(self):
+  with self.assertRaisesRegex(RuntimeError,'OUTPUT_ROOT_MUST_BE_OUTSIDE_REVIEWED_DELIVERY'):require_clean_output_root(ROOT/'formal-output-must-not-be-created')
+
 if __name__=='__main__':unittest.main()

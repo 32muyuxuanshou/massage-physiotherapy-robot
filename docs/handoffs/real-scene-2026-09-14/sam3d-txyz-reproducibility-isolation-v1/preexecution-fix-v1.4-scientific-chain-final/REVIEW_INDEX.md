@@ -2,6 +2,10 @@
 
 Start with [README_PREEXECUTION_REPRO_FIX_V1_4_SCIENTIFIC_CHAIN_FINAL.md](README_PREEXECUTION_REPRO_FIX_V1_4_SCIENTIFIC_CHAIN_FINAL.md).
 
+## V1.4.1 single integrity patch
+
+Review `REVIEWED_DELIVERY_INTEGRITY_SPEC_V1_4_1.json`, `repro_fix/reviewed_delivery_integrity.py`, the pre/post calls in `repro_fix/run_reproducibility_isolation_v1.py`, and `tests/test_reviewed_delivery_integrity_v141.py`. No scientific logic changed from commit `9061f0d`.
+
 ## Four blocking fixes
 
 1. Actual Run A assets: `repro_fix/run_a_freeze.py`, `RUN_A_ASSET_FREEZE_V1.json`, `tests/test_scientific_chain_v14.py::test_01_run_a_actual_npz_mutation_stops`.
@@ -21,14 +25,15 @@ Start with [README_PREEXECUTION_REPRO_FIX_V1_4_SCIENTIFIC_CHAIN_FINAL.md](README
 - `EXECUTION_CONFIG_SCHEMA_V1_4.json`
 - `EXECUTION_CONFIG_TEMPLATE_V1_4.json`
 - `RUNTIME_ASSET_FREEZE_V1_4.json`
+- `REVIEWED_DELIVERY_INTEGRITY_SPEC_V1_4_1.json`
 - `SAM_REPRODUCIBILITY_EVIDENCE_BOUNDARY_V1_4.json`
 - `SAM3D_REPRODUCIBILITY_SPEC_V1_4.json`
 - inherited model-load, point-cloud, exact-input Txyz, environment and frame-order contracts included in this directory
 
 ## Verification evidence
 
-- `PURE_CODE_TEST_REPORT_V1_4_SCIENTIFIC_CHAIN_FINAL.txt`
-- `PREFLIGHT_RESULT_V1_4_SCIENTIFIC_CHAIN_FINAL.json`
+- `PURE_CODE_TEST_REPORT_V1_4_1_REVIEWED_DELIVERY_INTEGRITY.txt`
+- `PREFLIGHT_RESULT_V1_4_1_REVIEWED_DELIVERY_INTEGRITY.json`
 - `FILES_MANIFEST.json`
 - `REVIEW_DIFF_SUMMARY_V1_4.json`
 

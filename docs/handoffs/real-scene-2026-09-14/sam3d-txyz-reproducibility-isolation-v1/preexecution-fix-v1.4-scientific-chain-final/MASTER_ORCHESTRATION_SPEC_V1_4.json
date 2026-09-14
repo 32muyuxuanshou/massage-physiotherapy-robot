@@ -4,6 +4,7 @@
   "clean_output_root_required": true,
   "fail_closed": true,
   "ordered_stages": [
+    "reviewed_delivery_integrity_pre",
     "runtime_assets",
     "run_a_actual_assets",
     "input_snapshot",
@@ -19,7 +20,7 @@
     "frame_order",
     "frame_order_analysis",
     "feature_stability",
-    "post_execution_integrity"
+    "post_execution_integrity_including_reviewed_delivery"
   ],
   "formal_execution_authorized_in_this_delivery": false
 }
