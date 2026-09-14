@@ -1,7 +1,7 @@
 import argparse,json,subprocess
 from pathlib import Path
 
-REVIEWED_TAG='sam3d-txyz-repro-v1.4.2'
+REVIEWED_TAG='sam3d-txyz-repro-v1.4.3'
 
 def git(repo,*args,check=True):
  result=subprocess.run(['git',*args],cwd=str(repo),text=True,encoding='utf-8',errors='strict',capture_output=True,check=False)
@@ -17,7 +17,7 @@ def verify(delivery_root=None,repo_root=None,reviewed_tag=REVIEWED_TAG):
  if head!=tag_commit:raise RuntimeError(f'REVIEWED_DELIVERY_COMMIT_MISMATCH:HEAD={head}:TAG={tag_commit}')
  tracked_diff=git(repo,'diff','--quiet',tag_commit,'HEAD','--',relative,check=False)
  if tracked_diff.returncode!=0:raise RuntimeError('REVIEWED_DELIVERY_COMMITTED_TREE_MISMATCH')
- status=git(repo,'status','--porcelain=v1','--untracked-files=all','--',relative).stdout.splitlines()
+ status=git(repo,'status','--porcelain','--untracked-files=all','--',relative).stdout.splitlines()
  if status:raise RuntimeError('REVIEWED_DELIVERY_WORKTREE_DIRTY:'+json.dumps(status,separators=(',',':')))
  return {'status':'PASS_REVIEWED_DELIVERY_INTEGRITY','reviewed_tag':reviewed_tag,'reviewed_commit':tag_commit,'head_commit':head,'delivery_relative_path':relative,'working_tree_clean':True,'commit_identity_exact':True}
 
