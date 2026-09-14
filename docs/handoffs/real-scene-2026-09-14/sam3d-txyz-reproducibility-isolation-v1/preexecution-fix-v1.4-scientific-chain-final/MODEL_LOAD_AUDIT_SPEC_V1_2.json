@@ -15,5 +15,6 @@
     "trainable",
     "buffer"
   ],
-  "inspect_real_model_object": true
+  "inspect_real_model_object": true,
+  "aggregate_gate": "PASS only when complete model-state, trainable-parameter, and buffer fingerprints are identical across all five fresh processes; loader-reported main-checkpoint missing keys remain in evidence because frozen mhr_model.pt is a separate TorchScript source"
 }
