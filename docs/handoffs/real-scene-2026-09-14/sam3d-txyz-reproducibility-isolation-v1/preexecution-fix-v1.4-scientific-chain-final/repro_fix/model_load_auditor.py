@@ -6,7 +6,11 @@ from .environment_fingerprint import apply_reproducibility_environment
 from .execution_guard import require_master_authorization
 import argparse,subprocess,sys
 def tensor_record(key,tensor):
- a=tensor.detach().cpu().contiguous().numpy();r=array_record(a);r['key']=key;return r
+ t=tensor.detach().cpu().contiguous()
+ if str(t.dtype)=='torch.bfloat16':
+  a=t.view(__import__('torch').uint16).numpy();r=array_record(a);r.update({'dtype':'bfloat16','shape':list(t.shape),'strides':[x*2 for x in t.stride()]})
+ else:a=t.numpy();r=array_record(a)
+ r['key']=key;return r
 def audit_model(model,missing_keys,unexpected_keys,forward_used_trainable=None):
  params=dict(model.named_parameters());buffers=dict(model.named_buffers());state=dict(model.state_dict());missing=[]
  for key in missing_keys:
