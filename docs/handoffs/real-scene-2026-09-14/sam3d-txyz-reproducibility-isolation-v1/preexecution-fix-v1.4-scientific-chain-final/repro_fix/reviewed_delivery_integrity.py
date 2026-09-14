@@ -1,10 +1,10 @@
 import argparse,json,subprocess
 from pathlib import Path
 
-REVIEWED_TAG='sam3d-txyz-repro-v1.4.1'
+REVIEWED_TAG='sam3d-txyz-repro-v1.4.2'
 
 def git(repo,*args,check=True):
- result=subprocess.run(['git','-C',str(repo),*args],text=True,encoding='utf-8',errors='strict',capture_output=True,check=False)
+ result=subprocess.run(['git',*args],cwd=str(repo),text=True,encoding='utf-8',errors='strict',capture_output=True,check=False)
  if check and result.returncode!=0:raise RuntimeError(f'REVIEWED_DELIVERY_GIT_COMMAND_FAILED:{" ".join(args)}:{result.stderr.strip()}')
  return result
 
