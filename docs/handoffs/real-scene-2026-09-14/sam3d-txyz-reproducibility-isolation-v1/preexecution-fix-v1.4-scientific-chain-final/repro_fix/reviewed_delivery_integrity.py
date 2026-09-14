@@ -1,7 +1,7 @@
 import argparse,json,subprocess
 from pathlib import Path
 
-REVIEWED_TAG='sam3d-txyz-repro-v1.4.10'
+REVIEWED_TAG='sam3d-txyz-repro-v1.4.11'
 
 def git(repo,*args,check=True):
  result=subprocess.run(['git',*args],cwd=str(repo),text=True,encoding='utf-8',errors='strict',capture_output=True,check=False)

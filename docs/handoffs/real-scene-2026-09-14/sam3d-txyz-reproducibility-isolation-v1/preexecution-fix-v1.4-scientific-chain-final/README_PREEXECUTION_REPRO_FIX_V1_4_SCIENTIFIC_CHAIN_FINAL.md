@@ -4,7 +4,7 @@ Status: `HOLD_FOR_WEB_REVIEW_REVIEWED_DELIVERY_INTEGRITY_V1_4_1`.
 
 This is a complete review snapshot based on V1.3. It repairs the four final scientific-chain blockers and the three related execution protections identified in the review of commit `08e5d87`. It contains code, contracts, tests, preflight evidence and file hashes. It does not contain or claim a formal experiment result.
 
-V1.4.8 adds the one execution-integrity patch requested after commit `9061f0d`. The master now requires Git `HEAD` to equal the commit referenced by the fixed tag `sam3d-txyz-repro-v1.4.10`, and requires this entire delivery directory to have no tracked, staged or untracked changes. The same check runs again inside post-execution integrity. This binds the reviewed Python, all JSON scientific contracts, freezes, reports and `FILES_MANIFEST.json` without changing any algorithm, feature, threshold, sample or statistic.
+V1.4.8 adds the one execution-integrity patch requested after commit `9061f0d`. The master now requires Git `HEAD` to equal the commit referenced by the fixed tag `sam3d-txyz-repro-v1.4.11`, and requires this entire delivery directory to have no tracked, staged or untracked changes. The same check runs again inside post-execution integrity. This binds the reviewed Python, all JSON scientific contracts, freezes, reports and `FILES_MANIFEST.json` without changing any algorithm, feature, threshold, sample or statistic.
 
 ## Review assessment
 
