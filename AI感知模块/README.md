@@ -1,10 +1,10 @@
 # AI 感知模块
 
-> **网页端最新交付（2026-09-10）：** [公开 RGB-D Single-vs-Multi Surface 微调 V2](../docs/handoffs/real-scene-2026-09-10/public-rgbd-single-vs-multiview-v2/README.md)。Pose/Camera-only exact freeze、等预算 S/M×2 seeds 和 one-shot 新 SEALED 已完成。Multi 没有达到预注册的材料性增益；Single winner 在 SEALED 上把 absolute 从 49.371 降至 30.368 mm、P90/P95 同向改善，但只有 6/12 人改善，Official 低误差 5 人全部退化。Final Gate 为 `OBJECTIVE_CONFLICT_LOW_ERROR_PROTECTION_FAILED`，不能无条件替换 Official；下一轮只测试低误差保护策略。
+> **项目现役状态（2026-09-15）：** 统一见[项目当前状态](../docs/CURRENT_STATUS.md)。最新正式交付是 [SAM3D → Txyz 复现实验 V1.4.12](../docs/handoffs/real-scene-2026-09-14/sam3d-txyz-reproducibility-isolation-v1/formal-execution-v1.4.12/README.md)，Gate 为 `PASS_REPRODUCIBILITY_ISOLATION_EXECUTION`。固定输入、环境、seed和帧顺序下SAM与Txyz已通过正式复现；后背语义、DMD37→MHR桥接、合成DMD37及RTMPose微调仍未放行。
 
-官方SAM预训练推理、真实照片mesh叠加及项目37点传播已跑通。只贴mesh无需训练；没有完整复现论文训练与基准评测。当前计算服务器为172.18.18.151，COCO首批1,280张图片与原始人体标注已就绪；另行授权下载的官方COCO MHR标注24/24分片已验证，现有图库匹配641张图片、1,110条人体标注。其它SAM数据来源未下载。网络训练、穴位精度和标签放行状态以当前状态记录为准。
+官方SAM预训练推理和真实照片Mesh叠加已跑通。只贴Mesh无需训练；没有完整复现论文训练与基准评测。既有COCO与MHR标注属于历史数据准备，不代表DMD37标签已经放行。网络训练、穴位精度和标签状态以当前状态页为准。
 
-本模块包含正式SKEL标注工具、历史合成工程验证和独立的真实图像/MHR研究；正式Atlas与用户Blend保持保护。近期实验、服务器路径、数据清单和未完成事项均索引在暂停记录中，历史逐轮说明保留于内部实验目录。
+本模块包含正式SKEL标注工具、历史合成工程验证和独立的真实图像/MHR研究；正式Atlas与用户Blend保持保护。近期实验、服务器路径、数据状态和未完成事项统一索引在项目当前状态页，历史逐轮说明保留于内部实验目录。
 
 ## 医生标注软件
 
@@ -71,9 +71,9 @@ Combination 与 Pose 明显改善；Shape 的 P95/Max 改善，但 Mean 退化 1
 
 它可以作为下一合成阶段的定位器候选，但不是生产模型，也不能直接复用 Tiny 的可靠性模型和阈值。
 
-## 真实场景研究：V2 SEALED 完成，进入低误差保护实验
+## 真实场景研究：SAM3D → Txyz 正式复现完成
 
-当前状态统一见[2026-09-10 V2 最终交付](../docs/handoffs/real-scene-2026-09-10/public-rgbd-single-vs-multiview-v2/README.md)。本阶段已建立受试者隔离的 TRAIN/VAL/新 SEALED/Final Reserve，完成 Pose/Camera-only surface 微调。结果不支持 Multi-view 的材料性收益，也不支持直接替换 Official；当前最大问题是低误差对象系统退化。下一轮保持 Single 和冻结范围，只测试 protective/non-regression gating 或 loss。模型局部几何修正、穴位传播和网络训练仍是不同工作。
+当前状态统一见[项目当前状态](../docs/CURRENT_STATUS.md)。V1.4.12正式复现实验已经完成：固定顺序的SAM B–F cohort与Txyz重复运行稳定，27项下游特征全部为`STABLE`；帧顺序测试记录到最大约0.001 mm的浮点顺序效应。下一主实验是在该冻结链上恢复post-Txyz residual failure audit。DMD37线路仍需先完成V3表面对应裁决；模型局部几何修正、穴位传播和网络训练仍是不同工作。
 
 2026-09-06的[研究资料](研究资料/真实场景关键点定位_2026-09-06/README.md)及[网页端交接](../docs/real-scene-research-2026-09-06.md)保留为历史版本，不代表暂停时的最新进度。长期精度/论文路线尚未完成，也未永久取消。
 

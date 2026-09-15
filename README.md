@@ -1,9 +1,9 @@
 # 按摩理疗机器人
 
-> **网页端最新交付（2026-09-10）：** [公开 RGB-D Single-vs-Multi Surface 微调 V2](docs/handoffs/real-scene-2026-09-10/public-rgbd-single-vs-multiview-v2/README.md)。正式 S/M×2 seeds 和 one-shot 新 SEALED 已完成。Multi 平均只比 Single 好 0.615 mm 且跨 seed 不一致，判定 `NO_MATERIAL_MULTIVIEW_GAIN`；冻结的 Single winner 在 SEALED 上降低总体 absolute/尾部误差，但仅 6/12 人改善、5/5 低误差对象退化。Final Gate 为 `OBJECTIVE_CONFLICT_LOW_ERROR_PROTECTION_FAILED`，当前模型不直接替换 Official，下一轮只验证 low-error protective/non-regression 策略。
+> **项目现役状态（2026-09-15）：** 统一见[项目当前状态](docs/CURRENT_STATUS.md)。最新正式交付是 [SAM3D → Txyz 复现实验 V1.4.12](docs/handoffs/real-scene-2026-09-14/sam3d-txyz-reproducibility-isolation-v1/formal-execution-v1.4.12/README.md)，Gate 为 `PASS_REPRODUCIBILITY_ISOLATION_EXECUTION`。固定帧顺序下 SAM 与 Txyz 可精确复现；另发现最大约 0.001 mm 的浮点帧顺序效应。后背语义、DMD37→MHR桥接、合成DMD37和RTMPose微调仍未放行。
 项目源码、工程文档与交付资料的统一版本管理入口。
 
-> **最新研究边界：** 原模型/第2轮/第10轮的旧 fitted-only 结果不支持主指标提升；修正版 Visible A/B V2 已完成 10 轮，epoch5 的 NME 为 0.034273，epoch10 的 PCK05 为 0.812213。当前证据只到 COCO 来源二维关节 validation，不能宣称 Mesh surface、DMD37 或医学准确性。
+> **研究边界：** HuMMan/BEHAVE 指标是 Depth observation 到 Mesh 的单向距离聚合，不是完整人体双向表面误差或穴位误差。现有结果不能外推到治疗床、裸背、产品相机、临床有效性或机器人安全。
 
 公开仓库：[massage-physiotherapy-robot](https://github.com/32muyuxuanshou/massage-physiotherapy-robot)。
 交付下载：[Releases](https://github.com/32muyuxuanshou/massage-physiotherapy-robot/releases)。
@@ -13,6 +13,7 @@
 
 | 内容 | 路径 |
 | --- | --- |
+| 项目现役研究状态 | [当前状态](docs/CURRENT_STATUS.md) |
 | 理疗机器人客户端 | [工程代码](理疗机器人客户端/工程代码/) |
 | AI 感知与医生标注工具 | [模块说明](AI感知模块/README.md) |
 | 真实场景研究与网页端交接（2026-09-06） | [完整交接文档](docs/real-scene-research-2026-09-06.md) |
