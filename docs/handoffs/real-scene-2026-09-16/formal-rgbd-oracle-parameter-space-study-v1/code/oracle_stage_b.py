@@ -68,7 +68,7 @@ def main():
  decision='STRONG_GO' if go else 'AMBIGUOUS' if amb else 'NO_GO'
  deltas=[]
  for x in frame_summary:
-  if x['method']=='O1':continue
+  if x['method'] not in ('O2','O3','O4'):continue
   b=next(y for y in frame_summary if y['frame_id']==x['frame_id'] and y['method']=='O1');k0=next(y for y in rows if y['frame_id']==x['frame_id'] and y['camera']=='K0' and y['method']==x['method']);k0b=next(y for y in rows if y['frame_id']==x['frame_id'] and y['camera']=='K0' and y['method']=='O1');deltas.append({**x,'heldout_delta_mm':x['absolute_median_mm']-b['absolute_median_mm'],'aligned_delta_mm':x['aligned_median_mm']-b['aligned_median_mm'],'k0_delta_mm':k0['absolute_median_mm']-k0b['absolute_median_mm']})
  (a.out/'top_improvements.json').write_text(json.dumps(sorted(deltas,key=lambda x:x['heldout_delta_mm'])[:10],indent=2)+'\n');(a.out/'top_degradations.json').write_text(json.dumps(sorted(deltas,key=lambda x:x['heldout_delta_mm'],reverse=True)[:10],indent=2)+'\n');(a.out/'k0_overfit_cases.json').write_text(json.dumps(sorted([x for x in deltas if x['k0_delta_mm']<0 and x['heldout_delta_mm']>0],key=lambda x:x['heldout_delta_mm'],reverse=True)[:10],indent=2)+'\n')
  final={'status':'PASS_STAGE_B_HELDOUT_EVALUATION','decision':decision,'strong_go_methods':go,'overall':overall,'comparisons':comparisons,'scope':'dataset-mask-assisted BEHAVE; K1/K2/K3 read only after Stage A manifest existed','regional_metrics':'NOT_YET_AVAILABLE'};(a.out/'FINAL_CHARACTERIZATION.json').write_text(json.dumps(final,indent=2)+'\n');print(json.dumps(final,indent=2))
