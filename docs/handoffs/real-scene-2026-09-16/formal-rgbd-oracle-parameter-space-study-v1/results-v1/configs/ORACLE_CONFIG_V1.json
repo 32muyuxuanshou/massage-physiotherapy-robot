@@ -1,0 +1,17 @@
+{
+  "seed": 20260916,
+  "iterations": 25,
+  "observed_points": 1024,
+  "anchor_stride": 2,
+  "trim": 0.2,
+  "huber_beta_m": 0.02,
+  "lr_translation": 0.003,
+  "lr_pose": 0.001,
+  "lr_shape": 0.003,
+  "lambda_translation": 0.01,
+  "lambda_pose": 0.01,
+  "lambda_shape": 0.02,
+  "early_stopping": "none; fixed budget",
+  "correspondence": "K0 observed point to current differentiable MHR surface anchors; nearest indices refreshed every iteration",
+  "heldout_access": "forbidden in Stage A"
+}
