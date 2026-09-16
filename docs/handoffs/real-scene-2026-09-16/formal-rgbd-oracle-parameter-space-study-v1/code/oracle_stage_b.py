@@ -22,10 +22,11 @@ def median(v):return float(np.median(list(v)))
 def main():
  p=argparse.ArgumentParser()
  for n in ('config','formal-manifest','stage-a-manifest','out'):p.add_argument('--'+n,type=Path,required=True)
+ p.add_argument('--subject')
  a=p.parse_args();cfg=json.loads(a.config.read_text());paths=cfg['paths'];sys.path[:0]=[str(Path(paths['v23_code'])),str(Path(paths['surface_metrics']).parent)]
  from behave_v2_io import read_camera,transform_between
  from surface_metrics import point_to_triangle_distances
- formal=json.loads(a.formal_manifest.read_text())['rows'];stage=json.loads(a.stage_a_manifest.read_text());by={x['frame_id']:x for x in stage['rows']};rows=[];a.out.mkdir(parents=True,exist_ok=True)
+ formal=json.loads(a.formal_manifest.read_text())['rows'];formal=[x for x in formal if not a.subject or x['subject']==a.subject];stage=json.loads(a.stage_a_manifest.read_text());by={x['frame_id']:x for x in stage['rows']};rows=[];a.out.mkdir(parents=True,exist_ok=True)
  for spec in formal:
   fid=f"{spec['subject']}/{spec['sequence']}/{spec['frame']}";src=by[fid];assets={g:np.load(src['methods'][g]['asset']) for g in ('O2','O3','O4')};faces=assets['O2']['faces'];meshes={'O0':assets['O2']['official_vertices'],'O1':assets['O2']['o1_vertices'],**{g:assets[g]['vertices'] for g in ('O2','O3','O4')}};frame=Path(paths['sequences'])/spec['sequence']/spec['frame'];cams=[read_camera(Path(paths['calibs']),spec['sequence'],k) for k in range(4)]
   for k in range(4):
