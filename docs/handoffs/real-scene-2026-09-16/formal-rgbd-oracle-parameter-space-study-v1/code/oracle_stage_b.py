@@ -11,10 +11,15 @@ def depth_points(depth,mask,table):
 def sample(x,key,n=5000):
  if len(x)<=n:return x
  import hashlib;r=np.random.default_rng(int(hashlib.sha256(key.encode()).hexdigest()[:16],16));return x[np.sort(r.choice(len(x),n,False))]
-def fit_translation(points,vertices,faces,iterations=6,trim=.2,step=.05):
- anchors=vertices[faces].mean(1);t=np.zeros(3)
+def fit_translation(points,vertices,faces,iterations=8,step=.1):
+ """Historical frozen XYZ-only aligned diagnostic (do not use for optimization)."""
+ del faces
+ t=np.zeros(3)
  for _ in range(iterations):
-  dist,near=cKDTree(anchors+t).query(points,workers=-1);keep=dist<=np.quantile(dist,1-trim);t+=np.clip(np.median(points[keep]-(anchors+t)[near[keep]],0),-step,step)
+  _,near=cKDTree(vertices+t).query(points,workers=-1)
+  shift=np.median(points-(vertices+t)[near],0)
+  t+=np.clip(shift,-step,step)
+  if np.linalg.norm(shift)<1e-5:break
  return t
 def summarize(x):
  x=np.asarray(x)*1000;return {'median_mm':float(np.median(x)),'mean_mm':float(x.mean()),'p90_mm':float(np.percentile(x,90)),'p95_mm':float(np.percentile(x,95)),'coverage_50mm':float(np.mean(x<50))}
