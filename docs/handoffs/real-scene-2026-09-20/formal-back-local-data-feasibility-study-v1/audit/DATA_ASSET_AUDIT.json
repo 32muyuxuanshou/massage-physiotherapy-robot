@@ -1,0 +1,47 @@
+{
+  "schema": "DATA_ASSET_AUDIT_V1",
+  "status": "COMPLETED_FROM_DISK",
+  "behave": {
+    "sequences": "AVAILABLE",
+    "selected_subjects": [
+      "Sub03",
+      "Sub04",
+      "Sub05"
+    ],
+    "rgb_depth_mask": "AVAILABLE",
+    "intrinsics_extrinsics": "AVAILABLE",
+    "official_multiview_smpl_fit": "AVAILABLE",
+    "official_fit_example": "/raid5/xuhd/behave_rgbd_mesh_v1/data/sequences/Date03_Sub03_backpack_back/t0014.000/person/fit02/person_fit.ply",
+    "existing_sam_o1_o2": "AVAILABLE_IN_PRIOR_DELIVERIES"
+  },
+  "humman": {
+    "selected_subjects": [
+      "p000823",
+      "p001088"
+    ],
+    "rgb_depth_mask": "AVAILABLE",
+    "intrinsics_extrinsics": "AVAILABLE",
+    "smpl_parameter_archives": "AVAILABLE",
+    "extracted_smpl_parameter_files": [
+      "/raid5/xuhd/back_local_feasibility_v1/references/humman_smpl_params/p000823_a000035/smpl_params.npz",
+      "/raid5/xuhd/back_local_feasibility_v1/references/humman_smpl_params/p001088_a000203/smpl_params.npz"
+    ],
+    "smpl_body_model_files": "MISSING_LICENSED_ASSET",
+    "textured_mesh_or_scan": "NOT_CHECKED_NOT_REQUIRED_FOR_SMOKE",
+    "3d_keypoints": "NOT_CHECKED_NOT_REQUIRED_FOR_SMOKE"
+  },
+  "mhr_conversion": {
+    "official_upstream": "AVAILABLE_AT_https://github.com/facebookresearch/MHR/tree/main/tools/mhr_smpl_conversion",
+    "local_tool": "MISSING",
+    "required_official_smpl_body_model": "MISSING_LICENSED_ASSET",
+    "conversion_smoke": "BLOCKED",
+    "conversion_error": "NOT_COMPUTABLE"
+  },
+  "frozen_model_assets": {
+    "sam_repo": "/raid5/xuhd/sam3d_s01_pilot_20260906/sam-3d-body",
+    "checkpoint": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/model.ckpt",
+    "checkpoint_sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+    "mhr_asset": "/raid5/xuhd/sam3d_s01_pilot_20260906/weights/assets/mhr_model.pt",
+    "mhr_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc"
+  }
+}

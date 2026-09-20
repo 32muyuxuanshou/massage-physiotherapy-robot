@@ -1,0 +1,15 @@
+{
+  "schema": "PREEXECUTION_TESTS_V1",
+  "overall": "HOLD",
+  "tests": {
+    "TEST_1_three_crops": "PASS_BEHAVE_AND_HUMMAN_SMOKE",
+    "TEST_2_crop_rgb_depth_projection": "PASS",
+    "TEST_3_official_smpl_to_mhr": "BLOCKED_MISSING_LICENSED_SMPL_BODY_MODEL_AND_LOCAL_CONVERTER",
+    "TEST_4_conversion_surface_error": "BLOCKED_BY_TEST_3",
+    "TEST_5_official_sam_three_inputs": "NOT_RUN_GATE_STOP",
+    "TEST_6_cheap_txyz_crop_depth": "NOT_RUN_GATE_STOP",
+    "TEST_7_t_pose_oracle_crop_depth": "NOT_RUN_GATE_STOP",
+    "TEST_8_heldout_exclusion": "PASS_BY_FROZEN_SUBSET_CONTRACT"
+  },
+  "gate_reason": "The prompt requires TEST 3 and TEST 4 before entering the feasibility subset. Running model metrics without a ready regional/reference contract would not answer the scientific question."
+}
