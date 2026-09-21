@@ -127,7 +127,9 @@ def main():
                 evals[method]=cams_eval
             row={'spec':spec,'condition':cond,'crop_box':list(box),'input_points':len(pts),'methods':evals,'txyz_m':txyz.tolist(),'txyz_trace':trace,'txyz_fallback':bool(np.linalg.norm(txyz)>TOTAL_TXYZ),'o2_final_loss':history[-1],'o2_initial_loss':history[0],'o2_translation_delta_m':(d['pred_cam_t'].detach()[0].cpu().numpy()-base['pred_cam_t'].detach()[0].cpu().numpy()).tolist(),'o2_global_rot':d['global_rot'].detach()[0].cpu().numpy().tolist(),'o2_body_pose':d['body_pose'].detach()[0].cpu().numpy().tolist()}
             out_frame=args.out/'raw'/spec['subject']/spec['sequence']/spec['frame']; out_frame.mkdir(parents=True,exist_ok=True)
-            np.savez_compressed(out_frame/f'{cond}_vertices.npz',Official=vo,Txyz=vt,T_pose=vp,faces=faces,cam_t=d['pred_cam_t'].detach()[0].cpu().numpy())
+            pred_cam=pred['pred_cam_t'].detach()[0].cpu().numpy(); txyz_cam=pred_cam+np.asarray(applied); pose_cam=d['pred_cam_t'].detach()[0].cpu().numpy()
+            base_rot=base['global_rot'].detach()[0].cpu().numpy(); base_body=base['body_pose'].detach()[0].cpu().numpy(); pose_rot=d['global_rot'].detach()[0].cpu().numpy(); pose_body=d['body_pose'].detach()[0].cpu().numpy()
+            np.savez_compressed(out_frame/f'{cond}_vertices.npz',Official=vo,Txyz=vt,T_pose=vp,faces=faces,Official_cam_t=pred_cam,Txyz_cam_t=txyz_cam,T_pose_cam_t=pose_cam,Official_global_rot=base_rot,Txyz_global_rot=base_rot,T_pose_global_rot=pose_rot,Official_body_pose=base_body,Txyz_body_pose=base_body,T_pose_body_pose=pose_body)
             (out_frame/f'{cond}.json').write_text(json.dumps(row,indent=2)+'\n'); rows.append(row); print(si+1,len(specs),sid,cond,flush=True)
     (args.out/'report').mkdir(exist_ok=True); (args.out/'report'/'per_frame_results.json').write_text(json.dumps(rows,indent=2)+'\n'); (args.out/'report'/'reference_coordinate_audit.json').write_text(json.dumps(ref_audit,indent=2)+'\n')
     print(json.dumps({'status':'COMPLETE','frames':len(specs),'conditions':3,'methods':3,'out':str(args.out)}))
