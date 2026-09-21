@@ -1,0 +1,3391 @@
+{
+  "schema": "ATTRIBUTION_BENCHMARK_V1",
+  "status": "COMPLETE",
+  "aggregation": "K1/K2/K3 -> frame -> subject",
+  "frame_count": 18,
+  "conditions": [
+    "FULL",
+    "UPPER",
+    "LOCAL_TORSO"
+  ],
+  "methods": [
+    "Official",
+    "Txyz",
+    "T_only",
+    "T_globalrot",
+    "T_bodypose",
+    "T+Pose"
+  ],
+  "primary": [
+    {
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 30.770017106350174,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "FULL",
+          "method": "Official",
+          "heldout_median_mm": 30.770017106350174
+        },
+        {
+          "subject": "Sub04",
+          "condition": "FULL",
+          "method": "Official",
+          "heldout_median_mm": 30.20644380112408
+        },
+        {
+          "subject": "Sub05",
+          "condition": "FULL",
+          "method": "Official",
+          "heldout_median_mm": 43.72022682526077
+        }
+      ]
+    },
+    {
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 16.571690104851555,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "FULL",
+          "method": "Txyz",
+          "heldout_median_mm": 19.332672453120026
+        },
+        {
+          "subject": "Sub04",
+          "condition": "FULL",
+          "method": "Txyz",
+          "heldout_median_mm": 12.778149064155963
+        },
+        {
+          "subject": "Sub05",
+          "condition": "FULL",
+          "method": "Txyz",
+          "heldout_median_mm": 16.571690104851555
+        }
+      ]
+    },
+    {
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 14.321235319948595,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "FULL",
+          "method": "T_only",
+          "heldout_median_mm": 18.82952986385135
+        },
+        {
+          "subject": "Sub04",
+          "condition": "FULL",
+          "method": "T_only",
+          "heldout_median_mm": 11.898343332705444
+        },
+        {
+          "subject": "Sub05",
+          "condition": "FULL",
+          "method": "T_only",
+          "heldout_median_mm": 14.321235319948595
+        }
+      ]
+    },
+    {
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.187283602193698,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "FULL",
+          "method": "T_globalrot",
+          "heldout_median_mm": 18.526678397922133
+        },
+        {
+          "subject": "Sub04",
+          "condition": "FULL",
+          "method": "T_globalrot",
+          "heldout_median_mm": 11.912325600014603
+        },
+        {
+          "subject": "Sub05",
+          "condition": "FULL",
+          "method": "T_globalrot",
+          "heldout_median_mm": 14.187283602193698
+        }
+      ]
+    },
+    {
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 14.061741283453557,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "FULL",
+          "method": "T_bodypose",
+          "heldout_median_mm": 18.407417027820287
+        },
+        {
+          "subject": "Sub04",
+          "condition": "FULL",
+          "method": "T_bodypose",
+          "heldout_median_mm": 9.732903572654031
+        },
+        {
+          "subject": "Sub05",
+          "condition": "FULL",
+          "method": "T_bodypose",
+          "heldout_median_mm": 14.061741283453557
+        }
+      ]
+    },
+    {
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.933824214234,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "FULL",
+          "method": "T+Pose",
+          "heldout_median_mm": 18.689765340758075
+        },
+        {
+          "subject": "Sub04",
+          "condition": "FULL",
+          "method": "T+Pose",
+          "heldout_median_mm": 9.578726793421438
+        },
+        {
+          "subject": "Sub05",
+          "condition": "FULL",
+          "method": "T+Pose",
+          "heldout_median_mm": 13.933824214234
+        }
+      ]
+    },
+    {
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 29.2252257174293,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "UPPER",
+          "method": "Official",
+          "heldout_median_mm": 32.982066682368
+        },
+        {
+          "subject": "Sub04",
+          "condition": "UPPER",
+          "method": "Official",
+          "heldout_median_mm": 15.604942439848001
+        },
+        {
+          "subject": "Sub05",
+          "condition": "UPPER",
+          "method": "Official",
+          "heldout_median_mm": 29.2252257174293
+        }
+      ]
+    },
+    {
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 15.466532862628036,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "UPPER",
+          "method": "Txyz",
+          "heldout_median_mm": 23.081565148053734
+        },
+        {
+          "subject": "Sub04",
+          "condition": "UPPER",
+          "method": "Txyz",
+          "heldout_median_mm": 13.000696138826154
+        },
+        {
+          "subject": "Sub05",
+          "condition": "UPPER",
+          "method": "Txyz",
+          "heldout_median_mm": 15.466532862628036
+        }
+      ]
+    },
+    {
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 16.288617802706714,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "UPPER",
+          "method": "T_only",
+          "heldout_median_mm": 24.247776114418247
+        },
+        {
+          "subject": "Sub04",
+          "condition": "UPPER",
+          "method": "T_only",
+          "heldout_median_mm": 12.762737949538256
+        },
+        {
+          "subject": "Sub05",
+          "condition": "UPPER",
+          "method": "T_only",
+          "heldout_median_mm": 16.288617802706714
+        }
+      ]
+    },
+    {
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 15.236198602035893,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "UPPER",
+          "method": "T_globalrot",
+          "heldout_median_mm": 22.9115178388954
+        },
+        {
+          "subject": "Sub04",
+          "condition": "UPPER",
+          "method": "T_globalrot",
+          "heldout_median_mm": 12.392863034980074
+        },
+        {
+          "subject": "Sub05",
+          "condition": "UPPER",
+          "method": "T_globalrot",
+          "heldout_median_mm": 15.236198602035893
+        }
+      ]
+    },
+    {
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 14.567736273037717,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "UPPER",
+          "method": "T_bodypose",
+          "heldout_median_mm": 19.428325220497854
+        },
+        {
+          "subject": "Sub04",
+          "condition": "UPPER",
+          "method": "T_bodypose",
+          "heldout_median_mm": 11.220909555359999
+        },
+        {
+          "subject": "Sub05",
+          "condition": "UPPER",
+          "method": "T_bodypose",
+          "heldout_median_mm": 14.567736273037717
+        }
+      ]
+    },
+    {
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.296925112861423,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "UPPER",
+          "method": "T+Pose",
+          "heldout_median_mm": 19.41435484598579
+        },
+        {
+          "subject": "Sub04",
+          "condition": "UPPER",
+          "method": "T+Pose",
+          "heldout_median_mm": 11.412812869308542
+        },
+        {
+          "subject": "Sub05",
+          "condition": "UPPER",
+          "method": "T+Pose",
+          "heldout_median_mm": 14.296925112861423
+        }
+      ]
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 32.264707885147764,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "LOCAL_TORSO",
+          "method": "Official",
+          "heldout_median_mm": 73.56821374170747
+        },
+        {
+          "subject": "Sub04",
+          "condition": "LOCAL_TORSO",
+          "method": "Official",
+          "heldout_median_mm": 23.737101055478604
+        },
+        {
+          "subject": "Sub05",
+          "condition": "LOCAL_TORSO",
+          "method": "Official",
+          "heldout_median_mm": 32.264707885147764
+        }
+      ]
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 22.07024154311175,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "LOCAL_TORSO",
+          "method": "Txyz",
+          "heldout_median_mm": 51.82749663057055
+        },
+        {
+          "subject": "Sub04",
+          "condition": "LOCAL_TORSO",
+          "method": "Txyz",
+          "heldout_median_mm": 16.121983673509106
+        },
+        {
+          "subject": "Sub05",
+          "condition": "LOCAL_TORSO",
+          "method": "Txyz",
+          "heldout_median_mm": 22.07024154311175
+        }
+      ]
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 22.421911470816006,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "LOCAL_TORSO",
+          "method": "T_only",
+          "heldout_median_mm": 31.684406648257372
+        },
+        {
+          "subject": "Sub04",
+          "condition": "LOCAL_TORSO",
+          "method": "T_only",
+          "heldout_median_mm": 14.641640114891587
+        },
+        {
+          "subject": "Sub05",
+          "condition": "LOCAL_TORSO",
+          "method": "T_only",
+          "heldout_median_mm": 22.421911470816006
+        }
+      ]
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 22.86683483059529,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "LOCAL_TORSO",
+          "method": "T_globalrot",
+          "heldout_median_mm": 30.197735383604257
+        },
+        {
+          "subject": "Sub04",
+          "condition": "LOCAL_TORSO",
+          "method": "T_globalrot",
+          "heldout_median_mm": 14.619978645376984
+        },
+        {
+          "subject": "Sub05",
+          "condition": "LOCAL_TORSO",
+          "method": "T_globalrot",
+          "heldout_median_mm": 22.86683483059529
+        }
+      ]
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 21.584887404530683,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "LOCAL_TORSO",
+          "method": "T_bodypose",
+          "heldout_median_mm": 29.533119293017112
+        },
+        {
+          "subject": "Sub04",
+          "condition": "LOCAL_TORSO",
+          "method": "T_bodypose",
+          "heldout_median_mm": 14.633136863720924
+        },
+        {
+          "subject": "Sub05",
+          "condition": "LOCAL_TORSO",
+          "method": "T_bodypose",
+          "heldout_median_mm": 21.584887404530683
+        }
+      ]
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 20.87961311371782,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "LOCAL_TORSO",
+          "method": "T+Pose",
+          "heldout_median_mm": 28.433258440862716
+        },
+        {
+          "subject": "Sub04",
+          "condition": "LOCAL_TORSO",
+          "method": "T+Pose",
+          "heldout_median_mm": 14.674059596192201
+        },
+        {
+          "subject": "Sub05",
+          "condition": "LOCAL_TORSO",
+          "method": "T+Pose",
+          "heldout_median_mm": 20.87961311371782
+        }
+      ]
+    }
+  ],
+  "subject_rows": [
+    {
+      "subject": "Sub03",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 30.770017106350174
+    },
+    {
+      "subject": "Sub04",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 30.20644380112408
+    },
+    {
+      "subject": "Sub05",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 43.72022682526077
+    },
+    {
+      "subject": "Sub03",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 19.332672453120026
+    },
+    {
+      "subject": "Sub04",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 12.778149064155963
+    },
+    {
+      "subject": "Sub05",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 16.571690104851555
+    },
+    {
+      "subject": "Sub03",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 18.82952986385135
+    },
+    {
+      "subject": "Sub04",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 11.898343332705444
+    },
+    {
+      "subject": "Sub05",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 14.321235319948595
+    },
+    {
+      "subject": "Sub03",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 18.526678397922133
+    },
+    {
+      "subject": "Sub04",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 11.912325600014603
+    },
+    {
+      "subject": "Sub05",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.187283602193698
+    },
+    {
+      "subject": "Sub03",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 18.407417027820287
+    },
+    {
+      "subject": "Sub04",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 9.732903572654031
+    },
+    {
+      "subject": "Sub05",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 14.061741283453557
+    },
+    {
+      "subject": "Sub03",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 18.689765340758075
+    },
+    {
+      "subject": "Sub04",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 9.578726793421438
+    },
+    {
+      "subject": "Sub05",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.933824214234
+    },
+    {
+      "subject": "Sub03",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 32.982066682368
+    },
+    {
+      "subject": "Sub04",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 15.604942439848001
+    },
+    {
+      "subject": "Sub05",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 29.2252257174293
+    },
+    {
+      "subject": "Sub03",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 23.081565148053734
+    },
+    {
+      "subject": "Sub04",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 13.000696138826154
+    },
+    {
+      "subject": "Sub05",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 15.466532862628036
+    },
+    {
+      "subject": "Sub03",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 24.247776114418247
+    },
+    {
+      "subject": "Sub04",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 12.762737949538256
+    },
+    {
+      "subject": "Sub05",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 16.288617802706714
+    },
+    {
+      "subject": "Sub03",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 22.9115178388954
+    },
+    {
+      "subject": "Sub04",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 12.392863034980074
+    },
+    {
+      "subject": "Sub05",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 15.236198602035893
+    },
+    {
+      "subject": "Sub03",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 19.428325220497854
+    },
+    {
+      "subject": "Sub04",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 11.220909555359999
+    },
+    {
+      "subject": "Sub05",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 14.567736273037717
+    },
+    {
+      "subject": "Sub03",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 19.41435484598579
+    },
+    {
+      "subject": "Sub04",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.412812869308542
+    },
+    {
+      "subject": "Sub05",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.296925112861423
+    },
+    {
+      "subject": "Sub03",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 73.56821374170747
+    },
+    {
+      "subject": "Sub04",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 23.737101055478604
+    },
+    {
+      "subject": "Sub05",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 32.264707885147764
+    },
+    {
+      "subject": "Sub03",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 51.82749663057055
+    },
+    {
+      "subject": "Sub04",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 16.121983673509106
+    },
+    {
+      "subject": "Sub05",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 22.07024154311175
+    },
+    {
+      "subject": "Sub03",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 31.684406648257372
+    },
+    {
+      "subject": "Sub04",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 14.641640114891587
+    },
+    {
+      "subject": "Sub05",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 22.421911470816006
+    },
+    {
+      "subject": "Sub03",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 30.197735383604257
+    },
+    {
+      "subject": "Sub04",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.619978645376984
+    },
+    {
+      "subject": "Sub05",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 22.86683483059529
+    },
+    {
+      "subject": "Sub03",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 29.533119293017112
+    },
+    {
+      "subject": "Sub04",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 14.633136863720924
+    },
+    {
+      "subject": "Sub05",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 21.584887404530683
+    },
+    {
+      "subject": "Sub03",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 28.433258440862716
+    },
+    {
+      "subject": "Sub04",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.674059596192201
+    },
+    {
+      "subject": "Sub05",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 20.87961311371782
+    }
+  ],
+  "frame_rows": [
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 34.60317755910049
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 24.166196785197933
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 25.176320039532815
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 23.877717451718404
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 20.78604850063728
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 21.121714555140507
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.16624786342373
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 26.274589997837268
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 29.862165388946657
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 28.853251565433983
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 19.317582669416435
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 18.30839503099199
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 71.3312796519483
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 59.00592028129462
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 23.64452540006488
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 20.968056022613982
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 17.481813175900363
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.27563192197039
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 19.267772946638487
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 18.21362349812561
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 18.818064836688453
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 17.836789186603582
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 17.280554887082708
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 16.55182997994425
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.25443284418782
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 22.935178641791545
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 20.518195643237213
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 21.180880621865146
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 19.539067771579276
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 20.520314660979594
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 75.80514783146666
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 65.47616987986075
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 37.3577072020563
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 35.40014953533222
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 35.779172183428464
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 33.51400378054066
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 68.74978169008664
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 50.10217722979391
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 19.373787369275405
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 19.216567609240684
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 26.460265187556224
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 25.491127199838665
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 90.937195359584
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 74.24936755006452
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 34.02326773072204
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 34.13364010344928
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 32.68393462363454
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 37.16508287464637
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 93.34333595180857
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 90.08126711721542
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 58.51287386854509
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 56.1205915292865
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 60.25106981937756
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 60.83519853910604
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 13.66296848321259
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 13.996758769433168
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 14.927917600858152
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.93214512275588
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 15.377465175280484
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.749499126935163
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 20.91570613262316
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 21.886752295745172
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 23.46489730892658
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.712153340518409
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 15.31091011061659
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.136955797513165
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 36.890695988996875
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 22.624331169509972
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 26.011106094458448
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 24.995321231876297
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 23.28706640260576
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 23.352513101184773
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 30.165114034882176
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 20.451721408114437
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 18.394461993321364
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 17.02535556821409
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 16.267324470220544
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.652700958410719
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 15.137261462652713
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 14.306532157242668
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 14.933262073623109
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.223636778243055
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 13.567761166753918
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.667712828738072
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 18.522706676640425
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 15.43376945584135
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 16.806395507821712
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 17.410065018842555
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 17.990414908184633
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 17.836464903046505
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 31.37492017781817
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 16.64315858704396
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 18.84099489101424
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 20.660626140000108
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 19.534279168557863
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 20.8277007015719
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 30.797885501312265
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 23.227951654315927
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 25.030654919909914
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 24.642155055925652
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 25.33762436190769
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 24.907832588778767
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 79.67521263592555
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 44.64907297984648
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 42.80333868702817
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 41.97591306297723
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 42.42376474586359
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 41.38678068799169
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 14.558367285621122
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 8.385816499057533
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 8.411372026433922
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 7.43084556325592
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 8.764915224537972
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 7.754803031732453
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 16.204095947094288
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 12.72219210636212
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 13.688370260493638
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 12.664472357660182
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 10.936575740231032
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.365871934178735
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 25.37625767384729
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 16.6852069336037
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 14.433937540698217
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 15.858722180194322
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 14.898598271325588
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.960979122100388
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 27.7168387734819
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 11.217618461238676
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 11.074352771511638
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 11.054919689095634
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 8.769595927641605
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 8.897098264035439
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 10.879880631160145
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 11.422054305659351
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 11.324365483403167
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 11.778448499209151
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 10.616036864115388
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 10.67935083733031
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 12.907930439946794
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 12.638140325293627
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 14.785267030555573
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.337608113774552
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 13.152179590980932
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.202555680543703
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 17.697419768471537
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 14.156585837303087
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 13.0075927906991
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 12.769731510933571
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 10.791711361198526
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 10.260355322807436
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 15.005788932601714
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 14.860891580407625
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 16.42481445072952
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 16.1588251027801
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 13.551912018111576
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.745363609113912
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 69.09388331420931
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 71.94079053769158
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 90.57349815346058
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 90.86508025964706
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 92.67584678652221
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 90.86316497329379
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 32.696048828766266
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 13.515611821101862
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 12.72233389389925
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 13.420403397480758
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 10.696211217666455
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 10.887593475937901
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.51084311975339
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 13.695937998926993
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 13.936929261162025
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 12.121253712299964
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 11.505243370488966
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.45975380443835
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 12.480539121255058
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 12.85279536432655
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 13.74386261647289
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.11544252847971
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 14.483221120467675
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.448952108948777
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 42.42566431704128
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 12.040686307210064
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 10.56314493754209
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 10.579631047065348
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 8.530885752728993
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 8.24231188451467
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 12.97256417283102
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 10.649684232300125
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 11.220160753440876
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 10.677351477879093
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 9.277445264115052
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 9.399823397902402
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 48.88916014501184
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 27.96436934466577
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 15.276449860089791
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.902349176979415
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 14.783052606974172
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.387140070284012
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 33.82944153388623
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 14.833361633730771
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 13.184147469871862
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 15.139207956520178
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 12.466554218646072
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.608421013199305
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 22.29971716144373
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 13.279200171290185
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 11.837105638582873
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.112188860649674
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 11.99874160812701
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.381232910300135
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 22.097944437109916
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 15.558760413414515
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 14.498013199227602
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 11.224866038318506
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 12.146795705622369
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.115028481220849
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 54.72666193563324
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 17.2341421740553
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 14.116896472603079
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.484409768777008
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 14.197940496927185
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.287949754394166
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 56.62253404732796
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 19.845375597339974
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 19.23543751792915
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 19.553364982691896
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 19.31048033009482
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 19.46120976562615
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 34.038664796539685
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 27.405363000472335
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 26.898392289190614
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 24.18118774086527
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 24.34900685529003
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 23.8821745849984
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 39.06537354003433
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 19.116630176568954
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 15.555254245766116
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.192997418693533
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 16.346498813012186
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.591223251734633
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 23.393125461666763
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 13.192464128961998
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 16.634918373995497
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.194963319120806
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 18.241897597380003
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.472852562583423
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 33.90971824274825
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 15.217761042616015
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 22.377679695761973
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 22.65176059824349
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 24.209874759797003
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 20.384117690180595
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 23.110197061822397
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 12.636122776901697
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 13.209570813963307
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 13.379738102355873
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 14.622128734977611
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.70272319446097
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 14.408471577263573
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 14.290608610755896
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 14.655203163173162
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 13.51972165019587
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 12.139063980454756
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.65091941752227
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 21.123320467628506
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 15.967902470377911
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 15.617933386719866
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 15.45253851896577
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 16.1284848089183
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.97854121570493
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 48.3750801104872
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 20.42802362786624
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 11.723498274723443
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 11.181078680697267
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 12.460808664625738
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.387945430465207
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 15.787014405937164
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 13.193845418162311
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 12.818791828966237
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 13.584517700539394
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 13.222366219990992
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.231544691495767
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 30.619697527547277
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 20.5889906781901
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 19.820918208613477
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 19.26440331789317
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 14.385428879571858
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.234526020772625
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 31.334996730081905
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 11.220968839393974
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 14.52557416729411
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.181569785693862
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 13.92554206997993
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.16492523400703
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.05732597319184
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 16.642457114500175
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 15.942317231417933
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 16.27743388495098
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 15.663160818786316
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.36230553422708
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 35.54791133621609
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 23.551492408033393
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 22.961547997508156
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 24.093143619754954
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 22.941524583348766
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 21.951155837662785
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 61.32538478867531
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 15.909238035647807
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "FULL",
+      "method": "T_only",
+      "heldout_median_mm": 17.449732893000473
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "FULL",
+      "method": "T_globalrot",
+      "heldout_median_mm": 14.680520882973624
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "FULL",
+      "method": "T_bodypose",
+      "heldout_median_mm": 12.967617425065274
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.366197626538517
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.62258885339928
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 16.86358720843156
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "UPPER",
+      "method": "T_only",
+      "heldout_median_mm": 18.181619424997677
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "UPPER",
+      "method": "T_globalrot",
+      "heldout_median_mm": 16.444872802060758
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "UPPER",
+      "method": "T_bodypose",
+      "heldout_median_mm": 13.472311727289119
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.770935166144822
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 25.43383226937748
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 25.781857488566857
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_only",
+      "heldout_median_mm": 22.46614324587004
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_globalrot",
+      "heldout_median_mm": 23.08190906294709
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T_bodypose",
+      "heldout_median_mm": 20.228250225712603
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 21.375108537255045
+    }
+  ]
+}
