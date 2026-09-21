@@ -1,6 +1,6 @@
 {
   "task": "FORMAL_BACK_LOCAL_MODEL_EVALUATION_CONTINUATION_V1",
-  "status": "COMPLETE_V2",
+  "status": "COMPLETE_V3",
   "primary_dataset": "BEHAVE",
   "subjects": [
     "Sub03",
@@ -36,5 +36,11 @@
   "visualization_note": "Metric plot and crop contact sheets are included; raw per-method mesh overlays were not retained by this run.",
   "aligned_metric": "not computed; raw outputs did not retain post-hoc translation-aligned vertices",
   "next_decision": "Withdraw previous interpretations; baseline input parity diagnostic before any formal rerun. See EXECUTION_AUDIT.md.",
-  "scientific_validity": "INVALID_FOR_CONTROLLED_SCIENTIFIC_COMPARISON"
+  "scientific_validity": "VALID_CORRECTED_CONTRACT",
+  "v3_archive": "formal_eval_v3_shards + aggregated_v3",
+  "fallback_count": "0/54",
+  "aggregation": "K1/K2/K3 -> frame -> sequence -> subject",
+  "heldout_sampling": "identical deterministic samples per frame/camera across methods",
+  "final_vertices": "saved per condition as raw/*/*/*/*_vertices.npz",
+  "final_parameters": "cam_t in NPZ; translation delta/global_rot/body_pose in raw JSON"
 }
