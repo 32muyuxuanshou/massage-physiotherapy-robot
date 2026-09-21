@@ -48,3 +48,9 @@ aggregate_formal.py takes frame medians directly within each subject and omits t
 ## Recommended next diagnostic, not executed here
 
 Use one preselected FULL frame to replay the historical original-RGB/bbox/K path and compare it with a uniform-scale or letterbox crop path. Capture the actual prepared image, bbox center/scale, original image size, intrinsics, CLIFF condition, pred_cam_t and vertices. Validate old baseline recovery first. Restore the frozen O2 configuration, use identical evaluation points across methods, restore sequence aggregation, and retain parameters/vertices before another formal batch. Keep the same timestamps and K0/held-out split. No training decision is warranted by this run.
+
+## Single-frame replay evidence
+
+The replay was run on the server with the same checkpoint and MHR asset, without a batch rerun. On `Date03_Sub03_stool_sit/t0015.000`, historical-style input gave K0 median 34.95 mm and current FULL crop gave 30.62 mm; their median vertex difference was 19.35 mm. On catastrophic `Date03_Sub03_yogaball_play/t0036.000`, historical-style input gave 59.64 mm, while current FULL crop gave 531.48 mm; median vertex difference was 565.00 mm. The second frame confirms that the current crop/resize path can trigger the failure, but the first frame shows it is not a uniform offset.
+
+For the catastrophic frame, old-style bbox scale was 1033.75 with original intrinsics, while current crop produced effective `fx=1262.17`, `fy=583.80`, bbox scale 851.67 and `pred_cam_t.z` 2.308 m versus 1.798 m. This is strong evidence of an input/camera-conditioning interaction. It still does not isolate whether the dominant cause is aspect-ratio distortion, altered bbox scale, or both. The two diagnostic JSON files are `BASELINE_DIAGNOSTIC_t0015.json` and `BASELINE_DIAGNOSTIC_t0036.json`.
