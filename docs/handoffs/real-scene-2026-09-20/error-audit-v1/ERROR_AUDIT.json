@@ -1,0 +1,3587 @@
+{
+  "status": "ANALYZED_EXISTING_OUTPUTS_ONLY",
+  "aggregation": "median cameras -> median frames per sequence -> median sequences per subject -> median subjects",
+  "interpretation": "Post-hoc descriptive comparisons, non-exclusive signs, no new acceptance threshold; positive gain means lower error. Branch contrasts include reoptimized translation, not isolated anatomical causality.",
+  "missing_evidence": [
+    "attribution K0 metrics and vertices",
+    "per-point residual coordinates / anatomical regions",
+    "crop-only K0 evaluation metric",
+    "clinical point ground truth"
+  ],
+  "counts": {
+    "subjects": 3,
+    "sequences": 9,
+    "timestamps": 18,
+    "condition_rows": 54,
+    "attribution_camera_method_rows": 972,
+    "formal_camera_method_rows": 648,
+    "visual_files_linked": 36
+  },
+  "summary": {
+    "FULL": {
+      "frame_count": 18,
+      "txyz_fallback": 0,
+      "txyz_gain_mm": {
+        "positive_count": 17,
+        "negative_count": 1,
+        "median_paired_frame_gain_mm": 17.573412386267975,
+        "min_mm": -0.3337902862205784,
+        "max_mm": 45.416146753027505
+      },
+      "t_only_incremental_gain_mm": {
+        "positive_count": 10,
+        "negative_count": 8,
+        "median_paired_frame_gain_mm": 0.4682718084648245,
+        "min_mm": -3.304605327900136,
+        "max_mm": 30.728389860518504
+      },
+      "body_branch_vs_t_only_gain_mm": {
+        "positive_count": 10,
+        "negative_count": 8,
+        "median_paired_frame_gain_mm": 0.6588126742699849,
+        "min_mm": -7.0864778182808195,
+        "max_mm": 4.482115467935198
+      },
+      "rotation_branch_vs_t_only_gain_mm": {
+        "positive_count": 11,
+        "negative_count": 7,
+        "median_paired_frame_gain_mm": 0.19754051990012478,
+        "min_mm": -1.9550604866483159,
+        "max_mm": 2.7692120100268482
+      },
+      "joint_incremental_gain_mm": {
+        "positive_count": 14,
+        "negative_count": 4,
+        "median_paired_frame_gain_mm": 2.7871053824125473,
+        "min_mm": -4.18454211452794,
+        "max_mm": 24.611050029955244
+      },
+      "formal_v3_k0_better_heldout_worse": 4,
+      "formal_v3_loss_better_heldout_worse": 4
+    },
+    "UPPER": {
+      "frame_count": 18,
+      "txyz_fallback": 0,
+      "txyz_gain_mm": {
+        "positive_count": 16,
+        "negative_count": 2,
+        "median_paired_frame_gain_mm": 8.2307958562914,
+        "min_mm": -0.9710461631220113,
+        "max_mm": 36.777158449987986
+      },
+      "t_only_incremental_gain_mm": {
+        "positive_count": 7,
+        "negative_count": 11,
+        "median_paired_frame_gain_mm": -0.4675355367790086,
+        "min_mm": -3.5875753911093895,
+        "max_mm": 40.22609981934248
+      },
+      "body_branch_vs_t_only_gain_mm": {
+        "positive_count": 13,
+        "negative_count": 5,
+        "median_paired_frame_gain_mm": 1.352417006978344,
+        "min_mm": -1.6069792233845064,
+        "max_mm": 10.544582719530222
+      },
+      "rotation_branch_vs_t_only_gain_mm": {
+        "positive_count": 11,
+        "negative_count": 7,
+        "median_paired_frame_gain_mm": 0.46565456977302233,
+        "min_mm": -2.275083222066801,
+        "max_mm": 8.752743968408172
+      },
+      "joint_incremental_gain_mm": {
+        "positive_count": 15,
+        "negative_count": 3,
+        "median_paired_frame_gain_mm": 1.4975697503439909,
+        "min_mm": -2.2803884336214253,
+        "max_mm": 37.08428467541815
+      },
+      "formal_v3_k0_better_heldout_worse": 3,
+      "formal_v3_loss_better_heldout_worse": 3
+    },
+    "LOCAL_TORSO": {
+      "frame_count": 18,
+      "txyz_fallback": 0,
+      "txyz_gain_mm": {
+        "positive_count": 15,
+        "negative_count": 3,
+        "median_paired_frame_gain_mm": 7.662176268155472,
+        "min_mm": -2.846907223482276,
+        "max_mm": 35.02613965607907
+      },
+      "t_only_incremental_gain_mm": {
+        "positive_count": 12,
+        "negative_count": 6,
+        "median_paired_frame_gain_mm": 0.6790084400509304,
+        "min_mm": -18.632707615768993,
+        "max_mm": 35.36139488122974
+      },
+      "body_branch_vs_t_only_gain_mm": {
+        "positive_count": 11,
+        "negative_count": 7,
+        "median_paired_frame_gain_mm": 0.4364855971400994,
+        "min_mm": -2.102348633061638,
+        "max_mm": 6.162712224164515
+      },
+      "rotation_branch_vs_t_only_gain_mm": {
+        "positive_count": 11,
+        "negative_count": 7,
+        "median_paired_frame_gain_mm": 0.41087979994569857,
+        "min_mm": -1.4247846394961048,
+        "max_mm": 3.2731471609090956
+      },
+      "joint_incremental_gain_mm": {
+        "positive_count": 11,
+        "negative_count": 7,
+        "median_paired_frame_gain_mm": 2.4932600516790506,
+        "min_mm": -18.922374435602208,
+        "max_mm": 43.730288359324234
+      },
+      "formal_v3_k0_better_heldout_worse": 5,
+      "formal_v3_loss_better_heldout_worse": 7
+    }
+  },
+  "formal_hierarchy": [
+    {
+      "condition": "FULL",
+      "method": "Official",
+      "evidence": "sensor",
+      "primary": 30.770052661921596,
+      "subjects": {
+        "Sub03": {
+          "value": 30.770052661921596,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 26.935588691655553,
+            "Date03_Sub03_stool_sit": 41.206374075095866,
+            "Date03_Sub03_yogaball_play": 30.770052661921596
+          }
+        },
+        "Sub04": {
+          "value": 25.196578256708634,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 21.13758387705328,
+            "Date03_Sub04_stool_sit": 25.196578256708634,
+            "Date03_Sub04_yogaball_play": 38.12756509108015
+          }
+        },
+        "Sub05": {
+          "value": 46.33018519883534,
+          "sequences": {
+            "Date03_Sub05_backpack": 46.8960303452771,
+            "Date03_Sub05_stool": 35.74243653167631,
+            "Date03_Sub05_yogaball": 46.33018519883534
+          }
+        }
+      }
+    },
+    {
+      "condition": "FULL",
+      "method": "Official",
+      "evidence": "reference",
+      "primary": 34.03776381606811,
+      "subjects": {
+        "Sub03": {
+          "value": 34.03776381606811,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 28.324620098614794,
+            "Date03_Sub03_stool_sit": 34.03776381606811,
+            "Date03_Sub03_yogaball_play": 38.88875351909148
+          }
+        },
+        "Sub04": {
+          "value": 33.7995676031861,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 21.405773018976795,
+            "Date03_Sub04_stool_sit": 33.7995676031861,
+            "Date03_Sub04_yogaball_play": 43.37978387575319
+          }
+        },
+        "Sub05": {
+          "value": 48.693822128644044,
+          "sequences": {
+            "Date03_Sub05_backpack": 74.6397830953175,
+            "Date03_Sub05_stool": 48.693822128644044,
+            "Date03_Sub05_yogaball": 42.74612695140652
+          }
+        }
+      }
+    },
+    {
+      "condition": "FULL",
+      "method": "Txyz",
+      "evidence": "sensor",
+      "primary": 16.532288950672914,
+      "subjects": {
+        "Sub03": {
+          "value": 21.189845886029204,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 21.189845886029204,
+            "Date03_Sub03_stool_sit": 32.04955518672561,
+            "Date03_Sub03_yogaball_play": 18.547502028813224
+          }
+        },
+        "Sub04": {
+          "value": 13.437095478869931,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 9.801679524476722,
+            "Date03_Sub04_stool_sit": 13.835962410760278,
+            "Date03_Sub04_yogaball_play": 13.437095478869931
+          }
+        },
+        "Sub05": {
+          "value": 16.532288950672914,
+          "sequences": {
+            "Date03_Sub05_backpack": 18.175387734911308,
+            "Date03_Sub05_stool": 16.532288950672914,
+            "Date03_Sub05_yogaball": 13.565051182530414
+          }
+        }
+      }
+    },
+    {
+      "condition": "FULL",
+      "method": "Txyz",
+      "evidence": "reference",
+      "primary": 16.77663137271244,
+      "subjects": {
+        "Sub03": {
+          "value": 25.068581645491385,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 25.068581645491385,
+            "Date03_Sub03_stool_sit": 24.27195303195048,
+            "Date03_Sub03_yogaball_play": 26.71010565931811
+          }
+        },
+        "Sub04": {
+          "value": 16.77663137271244,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 11.519451453830253,
+            "Date03_Sub04_stool_sit": 16.77663137271244,
+            "Date03_Sub04_yogaball_play": 19.888751841059932
+          }
+        },
+        "Sub05": {
+          "value": 14.902840208112517,
+          "sequences": {
+            "Date03_Sub05_backpack": 19.026264679050456,
+            "Date03_Sub05_stool": 14.902840208112517,
+            "Date03_Sub05_yogaball": 12.413054154431073
+          }
+        }
+      }
+    },
+    {
+      "condition": "FULL",
+      "method": "T+Pose",
+      "evidence": "sensor",
+      "primary": 13.718641190023241,
+      "subjects": {
+        "Sub03": {
+          "value": 18.835051100043295,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 18.835051100043295,
+            "Date03_Sub03_stool_sit": 20.119984804539598,
+            "Date03_Sub03_yogaball_play": 18.240257595985234
+          }
+        },
+        "Sub04": {
+          "value": 10.41943684792019,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 8.37045128599338,
+            "Date03_Sub04_stool_sit": 10.573867896651326,
+            "Date03_Sub04_yogaball_play": 10.41943684792019
+          }
+        },
+        "Sub05": {
+          "value": 13.718641190023241,
+          "sequences": {
+            "Date03_Sub05_backpack": 14.870419052327472,
+            "Date03_Sub05_stool": 12.551326628327775,
+            "Date03_Sub05_yogaball": 13.718641190023241
+          }
+        }
+      }
+    },
+    {
+      "condition": "FULL",
+      "method": "T+Pose",
+      "evidence": "reference",
+      "primary": 14.276461473519817,
+      "subjects": {
+        "Sub03": {
+          "value": 18.8852258187066,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 18.8852258187066,
+            "Date03_Sub03_stool_sit": 12.370069553120755,
+            "Date03_Sub03_yogaball_play": 22.88373137214936
+          }
+        },
+        "Sub04": {
+          "value": 14.276461473519817,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 11.538164223917114,
+            "Date03_Sub04_stool_sit": 14.276461473519817,
+            "Date03_Sub04_yogaball_play": 18.61928409317691
+          }
+        },
+        "Sub05": {
+          "value": 11.32795337977482,
+          "sequences": {
+            "Date03_Sub05_backpack": 14.380344547126873,
+            "Date03_Sub05_stool": 11.32795337977482,
+            "Date03_Sub05_yogaball": 10.900197289103975
+          }
+        }
+      }
+    },
+    {
+      "condition": "UPPER",
+      "method": "Official",
+      "evidence": "sensor",
+      "primary": 35.210287851050246,
+      "subjects": {
+        "Sub03": {
+          "value": 35.210287851050246,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 35.210287851050246,
+            "Date03_Sub03_stool_sit": 55.92647349820893,
+            "Date03_Sub03_yogaball_play": 22.967598346990833
+          }
+        },
+        "Sub04": {
+          "value": 17.636060604910856,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 13.54197171624997,
+            "Date03_Sub04_stool_sit": 25.258306715763197,
+            "Date03_Sub04_yogaball_play": 17.636060604910856
+          }
+        },
+        "Sub05": {
+          "value": 35.339947133124895,
+          "sequences": {
+            "Date03_Sub05_backpack": 40.00799793195577,
+            "Date03_Sub05_stool": 15.097738058784813,
+            "Date03_Sub05_yogaball": 35.339947133124895
+          }
+        }
+      }
+    },
+    {
+      "condition": "UPPER",
+      "method": "Official",
+      "evidence": "reference",
+      "primary": 35.70713378594931,
+      "subjects": {
+        "Sub03": {
+          "value": 35.70713378594931,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 35.70713378594931,
+            "Date03_Sub03_stool_sit": 39.84762393484523,
+            "Date03_Sub03_yogaball_play": 35.22244854634933
+          }
+        },
+        "Sub04": {
+          "value": 25.148130248572574,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 17.185847115280822,
+            "Date03_Sub04_stool_sit": 38.04826295983514,
+            "Date03_Sub04_yogaball_play": 25.148130248572574
+          }
+        },
+        "Sub05": {
+          "value": 37.504560603033454,
+          "sequences": {
+            "Date03_Sub05_backpack": 43.57825120057065,
+            "Date03_Sub05_stool": 16.493978994985223,
+            "Date03_Sub05_yogaball": 37.504560603033454
+          }
+        }
+      }
+    },
+    {
+      "condition": "UPPER",
+      "method": "Txyz",
+      "evidence": "sensor",
+      "primary": 16.518918572466887,
+      "subjects": {
+        "Sub03": {
+          "value": 24.604769452060914,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 24.604769452060914,
+            "Date03_Sub03_stool_sit": 48.06816122002145,
+            "Date03_Sub03_yogaball_play": 18.76721472107995
+          }
+        },
+        "Sub04": {
+          "value": 12.073582242714345,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 12.073582242714345,
+            "Date03_Sub04_stool_sit": 14.27844721826336,
+            "Date03_Sub04_yogaball_play": 11.964392130163114
+          }
+        },
+        "Sub05": {
+          "value": 16.518918572466887,
+          "sequences": {
+            "Date03_Sub05_backpack": 16.518918572466887,
+            "Date03_Sub05_stool": 13.742379296972004,
+            "Date03_Sub05_yogaball": 16.7529869879599
+          }
+        }
+      }
+    },
+    {
+      "condition": "UPPER",
+      "method": "Txyz",
+      "evidence": "reference",
+      "primary": 18.164502287610333,
+      "subjects": {
+        "Sub03": {
+          "value": 26.903163318790046,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 24.68931350210574,
+            "Date03_Sub03_stool_sit": 34.79003137833343,
+            "Date03_Sub03_yogaball_play": 26.903163318790046
+          }
+        },
+        "Sub04": {
+          "value": 18.164502287610333,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 15.508072225670924,
+            "Date03_Sub04_stool_sit": 18.164502287610333,
+            "Date03_Sub04_yogaball_play": 23.512728090551768
+          }
+        },
+        "Sub05": {
+          "value": 13.69932636298148,
+          "sequences": {
+            "Date03_Sub05_backpack": 14.434106032617361,
+            "Date03_Sub05_stool": 13.114048493291623,
+            "Date03_Sub05_yogaball": 13.69932636298148
+          }
+        }
+      }
+    },
+    {
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "evidence": "sensor",
+      "primary": 14.060739146560982,
+      "subjects": {
+        "Sub03": {
+          "value": 19.414326723508267,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 19.414326723508267,
+            "Date03_Sub03_stool_sit": 25.66218516955396,
+            "Date03_Sub03_yogaball_play": 18.791038302826514
+          }
+        },
+        "Sub04": {
+          "value": 11.314231604959812,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 11.12768006151521,
+            "Date03_Sub04_stool_sit": 12.102572702157639,
+            "Date03_Sub04_yogaball_play": 11.314231604959812
+          }
+        },
+        "Sub05": {
+          "value": 14.060739146560982,
+          "sequences": {
+            "Date03_Sub05_backpack": 17.338619895427932,
+            "Date03_Sub05_stool": 13.002347442570006,
+            "Date03_Sub05_yogaball": 14.060739146560982
+          }
+        }
+      }
+    },
+    {
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "evidence": "reference",
+      "primary": 14.036630977359916,
+      "subjects": {
+        "Sub03": {
+          "value": 16.212126077372,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 15.988787961745349,
+            "Date03_Sub03_stool_sit": 16.212126077372,
+            "Date03_Sub03_yogaball_play": 26.430455915802735
+          }
+        },
+        "Sub04": {
+          "value": 14.036630977359916,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 12.756509211341465,
+            "Date03_Sub04_stool_sit": 14.036630977359916,
+            "Date03_Sub04_yogaball_play": 22.353717181196888
+          }
+        },
+        "Sub05": {
+          "value": 12.844632696997456,
+          "sequences": {
+            "Date03_Sub05_backpack": 12.844632696997456,
+            "Date03_Sub05_stool": 12.845366241252277,
+            "Date03_Sub05_yogaball": 11.482757620234043
+          }
+        }
+      }
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "evidence": "sensor",
+      "primary": 35.49353186756951,
+      "subjects": {
+        "Sub03": {
+          "value": 65.1170352417718,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 73.56817919073325,
+            "Date03_Sub03_stool_sit": 65.1170352417718,
+            "Date03_Sub03_yogaball_play": 49.098959596490374
+          }
+        },
+        "Sub04": {
+          "value": 35.49353186756951,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 19.142101085569216,
+            "Date03_Sub04_stool_sit": 40.78716832932522,
+            "Date03_Sub04_yogaball_play": 35.49353186756951
+          }
+        },
+        "Sub05": {
+          "value": 30.490895001650692,
+          "sequences": {
+            "Date03_Sub05_backpack": 33.97414844598216,
+            "Date03_Sub05_stool": 25.87134742633896,
+            "Date03_Sub05_yogaball": 30.490895001650692
+          }
+        }
+      }
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "evidence": "reference",
+      "primary": 32.849810504136585,
+      "subjects": {
+        "Sub03": {
+          "value": 73.51389666472198,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 73.51389666472198,
+            "Date03_Sub03_stool_sit": 50.049643562436486,
+            "Date03_Sub03_yogaball_play": 79.95064531965846
+          }
+        },
+        "Sub04": {
+          "value": 28.312849190792654,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 24.535385851155645,
+            "Date03_Sub04_stool_sit": 28.312849190792654,
+            "Date03_Sub04_yogaball_play": 54.18193472592678
+          }
+        },
+        "Sub05": {
+          "value": 32.849810504136585,
+          "sequences": {
+            "Date03_Sub05_backpack": 33.89954187469336,
+            "Date03_Sub05_stool": 27.791734336098088,
+            "Date03_Sub05_yogaball": 32.849810504136585
+          }
+        }
+      }
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "evidence": "sensor",
+      "primary": 21.761550515281485,
+      "subjects": {
+        "Sub03": {
+          "value": 56.35281915884205,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 62.24105415283606,
+            "Date03_Sub03_stool_sit": 56.35281915884205,
+            "Date03_Sub03_yogaball_play": 30.041431070236765
+          }
+        },
+        "Sub04": {
+          "value": 21.761550515281485,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 14.661661521124504,
+            "Date03_Sub04_stool_sit": 42.396850298600086,
+            "Date03_Sub04_yogaball_play": 21.761550515281485
+          }
+        },
+        "Sub05": {
+          "value": 21.311700953833203,
+          "sequences": {
+            "Date03_Sub05_backpack": 21.311700953833203,
+            "Date03_Sub05_stool": 18.27845626203004,
+            "Date03_Sub05_yogaball": 24.66658237094658
+          }
+        }
+      }
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "evidence": "reference",
+      "primary": 29.470166798594192,
+      "subjects": {
+        "Sub03": {
+          "value": 60.887450366307235,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 64.89212347941107,
+            "Date03_Sub03_stool_sit": 41.97712074745739,
+            "Date03_Sub03_yogaball_play": 60.887450366307235
+          }
+        },
+        "Sub04": {
+          "value": 29.470166798594192,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 20.32513210169269,
+            "Date03_Sub04_stool_sit": 29.470166798594192,
+            "Date03_Sub04_yogaball_play": 36.8239971889071
+          }
+        },
+        "Sub05": {
+          "value": 23.646115831073885,
+          "sequences": {
+            "Date03_Sub05_backpack": 23.646115831073885,
+            "Date03_Sub05_stool": 22.26018467363234,
+            "Date03_Sub05_yogaball": 25.15270349437032
+          }
+        }
+      }
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "evidence": "sensor",
+      "primary": 21.663258605858505,
+      "subjects": {
+        "Sub03": {
+          "value": 29.611601933479356,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 24.37927306759956,
+            "Date03_Sub03_stool_sit": 41.96529581314703,
+            "Date03_Sub03_yogaball_play": 29.611601933479356
+          }
+        },
+        "Sub04": {
+          "value": 14.071979130453107,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 14.071979130453107,
+            "Date03_Sub04_stool_sit": 53.1653365143174,
+            "Date03_Sub04_yogaball_play": 12.750958861019228
+          }
+        },
+        "Sub05": {
+          "value": 21.663258605858505,
+          "sequences": {
+            "Date03_Sub05_backpack": 22.141782711249782,
+            "Date03_Sub05_stool": 15.093413081299396,
+            "Date03_Sub05_yogaball": 21.663258605858505
+          }
+        }
+      }
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "evidence": "reference",
+      "primary": 25.34975975294664,
+      "subjects": {
+        "Sub03": {
+          "value": 31.495088545748484,
+          "sequences": {
+            "Date03_Sub03_backpack_back": 23.733993415547282,
+            "Date03_Sub03_stool_sit": 31.495088545748484,
+            "Date03_Sub03_yogaball_play": 58.23290726889453
+          }
+        },
+        "Sub04": {
+          "value": 25.34975975294664,
+          "sequences": {
+            "Date03_Sub04_backpack_back": 17.204303314463495,
+            "Date03_Sub04_stool_sit": 34.080020950993294,
+            "Date03_Sub04_yogaball_play": 25.34975975294664
+          }
+        },
+        "Sub05": {
+          "value": 19.37488793377037,
+          "sequences": {
+            "Date03_Sub05_backpack": 19.37488793377037,
+            "Date03_Sub05_stool": 18.472484557011704,
+            "Date03_Sub05_yogaball": 21.594570967932714
+          }
+        }
+      }
+    }
+  ],
+  "rows": [
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 34.60317755910049,
+        "Txyz": 24.166196785197933,
+        "T_only": 25.176320039532815,
+        "T_globalrot": 23.877717451718404,
+        "T_bodypose": 20.78604850063728,
+        "T+Pose": 21.121714555140507
+      },
+      "txyz_gain_mm": 10.436980773902555,
+      "t_only_incremental_gain_mm": -1.0101232543348821,
+      "body_branch_vs_t_only_gain_mm": 4.3902715388955365,
+      "rotation_branch_vs_t_only_gain_mm": 1.2986025878144112,
+      "joint_incremental_gain_mm": 3.044482230057426,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 13.51573853393348,
+      "joint_camera_medians_mm": {
+        "K1": 23.359345536217603,
+        "K2": 16.457208649173786,
+        "K3": 21.121714555140507
+      },
+      "joint_camera_p95_mm": {
+        "K1": 232.99788504048934,
+        "K2": 93.60175651687625,
+        "K3": 79.40066549864235
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -6.372351239691298,
+      "formal_v3_heldout_delta_mm": -3.069051627354927,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 0.00019406239623265265,
+        "Txyz": 7.968968829530354e-05,
+        "T+Pose": 0.024649086985796487
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0014.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0014.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 35.16624786342373,
+        "Txyz": 26.274589997837268,
+        "T_only": 29.862165388946657,
+        "T_globalrot": 28.853251565433983,
+        "T_bodypose": 19.317582669416435,
+        "T+Pose": 18.30839503099199
+      },
+      "txyz_gain_mm": 8.89165786558646,
+      "t_only_incremental_gain_mm": -3.5875753911093895,
+      "body_branch_vs_t_only_gain_mm": 10.544582719530222,
+      "rotation_branch_vs_t_only_gain_mm": 1.0089138235126747,
+      "joint_incremental_gain_mm": 7.966194966845279,
+      "local_minus_full_mm": {
+        "Official": 0.5630703043232401,
+        "Txyz": 2.108393212639335,
+        "T_only": 4.685845349413842,
+        "T_globalrot": 4.975534113715579,
+        "T_bodypose": -1.4684658312208434,
+        "T+Pose": -2.8133195241485183
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 12.848907416323017,
+      "joint_camera_medians_mm": {
+        "K1": 37.971450187922734,
+        "K2": 18.148837787015275,
+        "K3": 18.30839503099199
+      },
+      "joint_camera_p95_mm": {
+        "K1": 256.65787099044417,
+        "K2": 85.083493945738,
+        "K3": 91.54492508490998
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -7.727108018079333,
+      "formal_v3_heldout_delta_mm": -7.966141866567305,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 0.00025523078716815917,
+        "Txyz": 0.000142234500536631,
+        "T+Pose": 8.913422256284775e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0014.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0014.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 71.3312796519483,
+        "Txyz": 59.00592028129462,
+        "T_only": 23.64452540006488,
+        "T_globalrot": 20.968056022613982,
+        "T_bodypose": 17.481813175900363,
+        "T+Pose": 15.27563192197039
+      },
+      "txyz_gain_mm": 12.325359370653672,
+      "t_only_incremental_gain_mm": 35.36139488122974,
+      "body_branch_vs_t_only_gain_mm": 6.162712224164515,
+      "rotation_branch_vs_t_only_gain_mm": 2.6764693774508963,
+      "joint_incremental_gain_mm": 43.730288359324234,
+      "local_minus_full_mm": {
+        "Official": 36.728102092847806,
+        "Txyz": 34.83972349609669,
+        "T_only": -1.531794639467936,
+        "T_globalrot": -2.909661429104421,
+        "T_bodypose": -3.304235324736915,
+        "T+Pose": -5.846082633170116
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 81.7435136592999,
+      "joint_camera_medians_mm": {
+        "K1": 47.61678110941766,
+        "K2": 15.27563192197039,
+        "K3": 11.180173952000814
+      },
+      "joint_camera_p95_mm": {
+        "K1": 277.02356678627376,
+        "K2": 131.50882834171182,
+        "K3": 114.36697079657581
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -24.462087178529842,
+      "formal_v3_heldout_delta_mm": -43.730351933262995,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 1.8652746760494665e-05,
+        "Txyz": 5.748297461138918e-06,
+        "T+Pose": 6.932223622335698e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0014.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0014.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 19.267772946638487,
+        "Txyz": 18.21362349812561,
+        "T_only": 18.818064836688453,
+        "T_globalrot": 17.836789186603582,
+        "T_bodypose": 17.280554887082708,
+        "T+Pose": 16.55182997994425
+      },
+      "txyz_gain_mm": 1.0541494485128773,
+      "t_only_incremental_gain_mm": -0.6044413385628431,
+      "body_branch_vs_t_only_gain_mm": 1.5375099496057452,
+      "rotation_branch_vs_t_only_gain_mm": 0.9812756500848714,
+      "joint_incremental_gain_mm": 1.6617935181813586,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 12.142427129500343,
+      "joint_camera_medians_mm": {
+        "K1": 13.988309628924338,
+        "K2": 23.86496318981813,
+        "K3": 16.55182997994425
+      },
+      "joint_camera_p95_mm": {
+        "K1": 47.96684748500036,
+        "K2": 69.18521206033944,
+        "K3": 65.81061511546991
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -4.5297900319044135,
+      "formal_v3_heldout_delta_mm": -1.640537944616888,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 3.2815175899258975e-05,
+        "Txyz": 4.8821576843494086e-05,
+        "T+Pose": 0.021206751987627115
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0036.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0036.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 35.25443284418782,
+        "Txyz": 22.935178641791545,
+        "T_only": 20.518195643237213,
+        "T_globalrot": 21.180880621865146,
+        "T_bodypose": 19.539067771579276,
+        "T+Pose": 20.520314660979594
+      },
+      "txyz_gain_mm": 12.319254202396273,
+      "t_only_incremental_gain_mm": 2.4169829985543316,
+      "body_branch_vs_t_only_gain_mm": 0.979127871657937,
+      "rotation_branch_vs_t_only_gain_mm": -0.662684978627933,
+      "joint_incremental_gain_mm": 2.414863980811951,
+      "local_minus_full_mm": {
+        "Official": 15.98665989754933,
+        "Txyz": 4.721555143665935,
+        "T_only": 1.70013080654876,
+        "T_globalrot": 3.3440914352615643,
+        "T_bodypose": 2.258512884496568,
+        "T+Pose": 3.968484681035342
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 21.030254397141185,
+      "joint_camera_medians_mm": {
+        "K1": 20.04685075000864,
+        "K2": 31.937808890017138,
+        "K3": 20.520314660979594
+      },
+      "joint_camera_p95_mm": {
+        "K1": 142.38453838696321,
+        "K2": 177.78874283073011,
+        "K3": 163.008722336418
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -5.873946680006711,
+      "formal_v3_heldout_delta_mm": -2.414743590537988,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 0.0001502252761156342,
+        "Txyz": 8.750100644761005e-05,
+        "T+Pose": 3.2889267515656684e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0036.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0036.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 75.80514783146666,
+        "Txyz": 65.47616987986075,
+        "T_only": 37.3577072020563,
+        "T_globalrot": 35.40014953533222,
+        "T_bodypose": 35.779172183428464,
+        "T+Pose": 33.51400378054066
+      },
+      "txyz_gain_mm": 10.328977951605907,
+      "t_only_incremental_gain_mm": 28.11846267780445,
+      "body_branch_vs_t_only_gain_mm": 1.5785350186278322,
+      "rotation_branch_vs_t_only_gain_mm": 1.9575576667240782,
+      "joint_incremental_gain_mm": 31.962166099320086,
+      "local_minus_full_mm": {
+        "Official": 56.53737488482817,
+        "Txyz": 47.262546381735135,
+        "T_only": 18.539642365367843,
+        "T_globalrot": 17.563360348728636,
+        "T_bodypose": 18.498617296345756,
+        "T+Pose": 16.96217380059641
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 82.19956393142144,
+      "joint_camera_medians_mm": {
+        "K1": 33.51400378054066,
+        "K2": 57.98409860771255,
+        "K3": 26.97511351577579
+      },
+      "joint_camera_p95_mm": {
+        "K1": 213.13293822642547,
+        "K2": 248.46282785318903,
+        "K3": 234.00427501877468
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -10.010432702652142,
+      "formal_v3_heldout_delta_mm": -31.993210237210008,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 5.044920169439138e-05,
+        "Txyz": 2.3892814212445046e-05,
+        "T+Pose": 0.031020245075708885
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0036.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_backpack_back__t0036.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 68.74978169008664,
+        "Txyz": 50.10217722979391,
+        "T_only": 19.373787369275405,
+        "T_globalrot": 19.216567609240684,
+        "T_bodypose": 26.460265187556224,
+        "T+Pose": 25.491127199838665
+      },
+      "txyz_gain_mm": 18.647604460292726,
+      "t_only_incremental_gain_mm": 30.728389860518504,
+      "body_branch_vs_t_only_gain_mm": -7.0864778182808195,
+      "rotation_branch_vs_t_only_gain_mm": 0.15721976003472093,
+      "joint_incremental_gain_mm": 24.611050029955244,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 42.376021944537136,
+      "joint_camera_medians_mm": {
+        "K1": 15.761392217456148,
+        "K2": 28.424186419598875,
+        "K3": 25.491127199838665
+      },
+      "joint_camera_p95_mm": {
+        "K1": 278.01000105333316,
+        "K2": 97.8956801675083,
+        "K3": 95.89571783680333
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -11.495106576466755,
+      "formal_v3_heldout_delta_mm": -24.61177524851189,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 2.574371919195073e-06,
+        "Txyz": 0.00013943194214505183,
+        "T+Pose": 0.0005857866145007051
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0015.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0015.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 90.937195359584,
+        "Txyz": 74.24936755006452,
+        "T_only": 34.02326773072204,
+        "T_globalrot": 34.13364010344928,
+        "T_bodypose": 32.68393462363454,
+        "T+Pose": 37.16508287464637
+      },
+      "txyz_gain_mm": 16.687827809519476,
+      "t_only_incremental_gain_mm": 40.22609981934248,
+      "body_branch_vs_t_only_gain_mm": 1.3393331070874979,
+      "rotation_branch_vs_t_only_gain_mm": -0.11037237272724099,
+      "joint_incremental_gain_mm": 37.08428467541815,
+      "local_minus_full_mm": {
+        "Official": 22.18741366949736,
+        "Txyz": 24.14719032027061,
+        "T_only": 14.649480361446635,
+        "T_globalrot": 14.917072494208597,
+        "T_bodypose": 6.223669436078318,
+        "T+Pose": 11.673955674807708
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 57.468111145698835,
+      "joint_camera_medians_mm": {
+        "K1": 35.182398450667655,
+        "K2": 51.141748795524634,
+        "K3": 37.16508287464637
+      },
+      "joint_camera_p95_mm": {
+        "K1": 467.5336001299531,
+        "K2": 471.8753651381634,
+        "K3": 553.9922290358953
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -12.220284859381408,
+      "formal_v3_heldout_delta_mm": -37.11845806828535,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 2.0284055267438816e-05,
+        "Txyz": 8.838540520628158e-05,
+        "T+Pose": 0.0340850074619965
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0015.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0015.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 93.34333595180857,
+        "Txyz": 90.08126711721542,
+        "T_only": 58.51287386854509,
+        "T_globalrot": 56.1205915292865,
+        "T_bodypose": 60.25106981937756,
+        "T+Pose": 60.83519853910604
+      },
+      "txyz_gain_mm": 3.2620688345931512,
+      "t_only_incremental_gain_mm": 31.568393248670326,
+      "body_branch_vs_t_only_gain_mm": -1.7381959508324698,
+      "rotation_branch_vs_t_only_gain_mm": 2.3922823392585926,
+      "joint_incremental_gain_mm": 29.24606857810938,
+      "local_minus_full_mm": {
+        "Official": 24.593554261721934,
+        "Txyz": 39.97908988742151,
+        "T_only": 39.13908649926969,
+        "T_globalrot": 36.904023920045816,
+        "T_bodypose": 33.79080463182134,
+        "T+Pose": 35.34407133926737
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 49.11382587072894,
+      "joint_camera_medians_mm": {
+        "K1": 46.99131139315634,
+        "K2": 60.83519853910604,
+        "K3": 70.54080747632025
+      },
+      "joint_camera_p95_mm": {
+        "K1": 498.3473554127882,
+        "K2": 507.8858978902892,
+        "K3": 591.1044015222888
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -17.5305177803764,
+      "formal_v3_heldout_delta_mm": -29.246678856632435,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 0.00010642218327916453,
+        "Txyz": 5.562977170825434e-05,
+        "T+Pose": 0.0005546487513470311
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0015.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0015.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 13.66296848321259,
+        "Txyz": 13.996758769433168,
+        "T_only": 14.927917600858152,
+        "T_globalrot": 14.93214512275588,
+        "T_bodypose": 15.377465175280484,
+        "T+Pose": 14.749499126935163
+      },
+      "txyz_gain_mm": -0.3337902862205784,
+      "t_only_incremental_gain_mm": -0.9311588314249839,
+      "body_branch_vs_t_only_gain_mm": -0.44954757442233273,
+      "rotation_branch_vs_t_only_gain_mm": -0.004227521897728792,
+      "joint_incremental_gain_mm": -0.7527403575019953,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 4.908521553321928,
+      "joint_camera_medians_mm": {
+        "K1": 9.37448824172098,
+        "K2": 15.075532410447959,
+        "K3": 14.749499126935163
+      },
+      "joint_camera_p95_mm": {
+        "K1": 49.330410056566485,
+        "K2": 46.83350447692344,
+        "K3": 64.4089933402978
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -2.542580811373977,
+      "formal_v3_heldout_delta_mm": 0.7526344841398576,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 4.597479419388151e-06,
+        "Txyz": 3.494228201006422e-05,
+        "T+Pose": 7.093108012767857e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0038.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0038.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 20.91570613262316,
+        "Txyz": 21.886752295745172,
+        "T_only": 23.46489730892658,
+        "T_globalrot": 14.712153340518409,
+        "T_bodypose": 15.31091011061659,
+        "T+Pose": 14.136955797513165
+      },
+      "txyz_gain_mm": -0.9710461631220113,
+      "t_only_incremental_gain_mm": -1.578145013181409,
+      "body_branch_vs_t_only_gain_mm": 8.153987198309991,
+      "rotation_branch_vs_t_only_gain_mm": 8.752743968408172,
+      "joint_incremental_gain_mm": 7.749796498232007,
+      "local_minus_full_mm": {
+        "Official": 7.252737649410571,
+        "Txyz": 7.889993526312004,
+        "T_only": 8.53697970806843,
+        "T_globalrot": -0.2199917822374715,
+        "T_bodypose": -0.06655506466389483,
+        "T+Pose": -0.6125433294219977
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 28.555462988894664,
+      "joint_camera_medians_mm": {
+        "K1": 14.136955797513165,
+        "K2": 19.295183481649275,
+        "K3": 10.098085166211566
+      },
+      "joint_camera_p95_mm": {
+        "K1": 70.04514353072419,
+        "K2": 111.94771470131766,
+        "K3": 121.47778729640947
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -5.341424131974213,
+      "formal_v3_heldout_delta_mm": -7.693494032649623,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 6.578826596737031e-05,
+        "Txyz": 0.0001142088279983966,
+        "T+Pose": 0.05641667441038223
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0038.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0038.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 36.890695988996875,
+        "Txyz": 22.624331169509972,
+        "T_only": 26.011106094458448,
+        "T_globalrot": 24.995321231876297,
+        "T_bodypose": 23.28706640260576,
+        "T+Pose": 23.352513101184773
+      },
+      "txyz_gain_mm": 14.266364819486903,
+      "t_only_incremental_gain_mm": -3.386774924948476,
+      "body_branch_vs_t_only_gain_mm": 2.7240396918526883,
+      "rotation_branch_vs_t_only_gain_mm": 1.0157848625821515,
+      "joint_incremental_gain_mm": -0.7281819316748006,
+      "local_minus_full_mm": {
+        "Official": 23.227727505784287,
+        "Txyz": 8.627572400076804,
+        "T_only": 11.083188493600296,
+        "T_globalrot": 10.063176109120416,
+        "T_bodypose": 7.909601227325275,
+        "T+Pose": 8.60301397424961
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 17.485760984506115,
+      "joint_camera_medians_mm": {
+        "K1": 25.193684542663444,
+        "K2": 23.352513101184773,
+        "K3": 11.141283529062957
+      },
+      "joint_camera_p95_mm": {
+        "K1": 143.80372857683764,
+        "K2": 127.88106518306618,
+        "K3": 121.69398680734103
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -2.01760703637445,
+      "formal_v3_heldout_delta_mm": 0.47163216524239004,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 6.787944511899013e-05,
+        "Txyz": 1.5598812993289357e-05,
+        "T+Pose": 0.25656536524540385
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0038.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_stool_sit__t0038.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 30.165114034882176,
+        "Txyz": 20.451721408114437,
+        "T_only": 18.394461993321364,
+        "T_globalrot": 17.02535556821409,
+        "T_bodypose": 16.267324470220544,
+        "T+Pose": 15.652700958410719
+      },
+      "txyz_gain_mm": 9.713392626767739,
+      "t_only_incremental_gain_mm": 2.057259414793073,
+      "body_branch_vs_t_only_gain_mm": 2.1271375231008207,
+      "rotation_branch_vs_t_only_gain_mm": 1.369106425107276,
+      "joint_incremental_gain_mm": 4.799020449703718,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 24.17676644339495,
+      "joint_camera_medians_mm": {
+        "K1": 9.160159704913411,
+        "K2": 16.315749858579814,
+        "K3": 15.652700958410719
+      },
+      "joint_camera_p95_mm": {
+        "K1": 71.05691692963772,
+        "K2": 148.25145027450574,
+        "K3": 127.1459905285677
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -4.9177998929595805,
+      "formal_v3_heldout_delta_mm": -4.799097183552327,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 2.439020120093005e-05,
+        "Txyz": 0.00011239317504418977,
+        "T+Pose": 3.5659326435677485e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0014.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0014.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 15.137261462652713,
+        "Txyz": 14.306532157242668,
+        "T_only": 14.933262073623109,
+        "T_globalrot": 14.223636778243055,
+        "T_bodypose": 13.567761166753918,
+        "T+Pose": 12.667712828738072
+      },
+      "txyz_gain_mm": 0.8307293054100455,
+      "t_only_incremental_gain_mm": -0.626729916380441,
+      "body_branch_vs_t_only_gain_mm": 1.3655009068691903,
+      "rotation_branch_vs_t_only_gain_mm": 0.7096252953800537,
+      "joint_incremental_gain_mm": 1.6388193285045958,
+      "local_minus_full_mm": {
+        "Official": -15.027852572229463,
+        "Txyz": -6.14518925087177,
+        "T_only": -3.461199919698256,
+        "T_globalrot": -2.8017187899710336,
+        "T_bodypose": -2.6995633034666255,
+        "T+Pose": -2.9849881296726473
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 33.552553768741234,
+      "joint_camera_medians_mm": {
+        "K1": 12.451808478739618,
+        "K2": 14.992440816489513,
+        "K3": 12.667712828738072
+      },
+      "joint_camera_p95_mm": {
+        "K1": 57.62748574575866,
+        "K2": 55.75198014476128,
+        "K3": 72.480039679293
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -6.8814002792336595,
+      "formal_v3_heldout_delta_mm": -1.6321942186541136,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 4.645771608835503e-05,
+        "Txyz": 3.9653501513470246e-05,
+        "T+Pose": 0.006585456348968677
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0014.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0014.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 18.522706676640425,
+        "Txyz": 15.43376945584135,
+        "T_only": 16.806395507821712,
+        "T_globalrot": 17.410065018842555,
+        "T_bodypose": 17.990414908184633,
+        "T+Pose": 17.836464903046505
+      },
+      "txyz_gain_mm": 3.0889372207990746,
+      "t_only_incremental_gain_mm": -1.3726260519803617,
+      "body_branch_vs_t_only_gain_mm": -1.1840194003629207,
+      "rotation_branch_vs_t_only_gain_mm": -0.6036695110208434,
+      "joint_incremental_gain_mm": -2.4026954472051543,
+      "local_minus_full_mm": {
+        "Official": -11.642407358241751,
+        "Txyz": -5.017951952273087,
+        "T_only": -1.5880664854996525,
+        "T_globalrot": 0.38470945062846695,
+        "T_bodypose": 1.723090437964089,
+        "T+Pose": 2.1837639446357855
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 41.88126883541046,
+      "joint_camera_medians_mm": {
+        "K1": 16.524664440631117,
+        "K2": 19.74307976824619,
+        "K3": 17.836464903046505
+      },
+      "joint_camera_p95_mm": {
+        "K1": 64.59275025407254,
+        "K2": 73.60799365899294,
+        "K3": 71.78388843546176
+      },
+      "formal_v3_k0_full_person_median_delta_mm": 0.9733042919296153,
+      "formal_v3_heldout_delta_mm": 2.4026107203699976,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 4.4852189049038316e-05,
+        "Txyz": 3.817140763473503e-06,
+        "T+Pose": 8.090969439322748e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0014.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0014.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 31.37492017781817,
+        "Txyz": 16.64315858704396,
+        "T_only": 18.84099489101424,
+        "T_globalrot": 20.660626140000108,
+        "T_bodypose": 19.534279168557863,
+        "T+Pose": 20.8277007015719
+      },
+      "txyz_gain_mm": 14.731761590774209,
+      "t_only_incremental_gain_mm": -2.1978363039702806,
+      "body_branch_vs_t_only_gain_mm": -0.6932842775436221,
+      "rotation_branch_vs_t_only_gain_mm": -1.8196312489858677,
+      "joint_incremental_gain_mm": -4.18454211452794,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 14.157968648032815,
+      "joint_camera_medians_mm": {
+        "K1": 20.8277007015719,
+        "K2": 22.744859580895973,
+        "K3": 12.642618828638415
+      },
+      "joint_camera_p95_mm": {
+        "K1": 69.27823957315246,
+        "K2": 96.4653067474287,
+        "K3": 56.41907845488382
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -2.5590422648291398,
+      "formal_v3_heldout_delta_mm": 4.184608317896348,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 4.672094164703822e-05,
+        "Txyz": 1.1669293005667214e-05,
+        "T+Pose": 7.787266141434657e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0036.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0036.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 30.797885501312265,
+        "Txyz": 23.227951654315927,
+        "T_only": 25.030654919909914,
+        "T_globalrot": 24.642155055925652,
+        "T_bodypose": 25.33762436190769,
+        "T+Pose": 24.907832588778767
+      },
+      "txyz_gain_mm": 7.569933846996339,
+      "t_only_incremental_gain_mm": -1.802703265593987,
+      "body_branch_vs_t_only_gain_mm": -0.30696944199777576,
+      "rotation_branch_vs_t_only_gain_mm": 0.3884998639842614,
+      "joint_incremental_gain_mm": -1.6798809344628403,
+      "local_minus_full_mm": {
+        "Official": -0.5770346765059031,
+        "Txyz": 6.584793067271967,
+        "T_only": 6.189660028895673,
+        "T_globalrot": 3.9815289159255443,
+        "T_bodypose": 5.803345193349827,
+        "T+Pose": 4.080131887206868
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 22.70926461354147,
+      "joint_camera_medians_mm": {
+        "K1": 24.907832588778767,
+        "K2": 26.50711503714802,
+        "K3": 19.012884601418484
+      },
+      "joint_camera_p95_mm": {
+        "K1": 102.03501275477346,
+        "K2": 164.78125883973652,
+        "K3": 75.18747561606023
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -5.579690348269562,
+      "formal_v3_heldout_delta_mm": 1.6798413821472415,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 9.618773277253467e-05,
+        "Txyz": 1.4715897183492643e-05,
+        "T+Pose": 5.426821278220473e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0036.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0036.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 79.67521263592555,
+        "Txyz": 44.64907297984648,
+        "T_only": 42.80333868702817,
+        "T_globalrot": 41.97591306297723,
+        "T_bodypose": 42.42376474586359,
+        "T+Pose": 41.38678068799169
+      },
+      "txyz_gain_mm": 35.02613965607907,
+      "t_only_incremental_gain_mm": 1.8457342928183067,
+      "body_branch_vs_t_only_gain_mm": 0.37957394116457976,
+      "rotation_branch_vs_t_only_gain_mm": 0.8274256240509459,
+      "joint_incremental_gain_mm": 3.2622922918547914,
+      "local_minus_full_mm": {
+        "Official": 48.30029245810738,
+        "Txyz": 28.00591439280252,
+        "T_only": 23.962343796013933,
+        "T_globalrot": 21.31528692297712,
+        "T_bodypose": 22.88948557730573,
+        "T+Pose": 20.55907998641979
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 16.66095605270765,
+      "joint_camera_medians_mm": {
+        "K1": 41.38678068799169,
+        "K2": 110.43706111783774,
+        "K3": 40.96742082567982
+      },
+      "joint_camera_p95_mm": {
+        "K1": 197.23990696304992,
+        "K2": 240.9822002619064,
+        "K3": 194.5424744164547
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -4.580467490151072,
+      "formal_v3_heldout_delta_mm": -3.2622689938848097,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 4.497177427253973e-05,
+        "Txyz": 1.5887644934764467e-05,
+        "T+Pose": 3.918561491644823e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0036.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub03__Date03_Sub03_yogaball_play__t0036.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 14.558367285621122,
+        "Txyz": 8.385816499057533,
+        "T_only": 8.411372026433922,
+        "T_globalrot": 7.43084556325592,
+        "T_bodypose": 8.764915224537972,
+        "T+Pose": 7.754803031732453
+      },
+      "txyz_gain_mm": 6.172550786563589,
+      "t_only_incremental_gain_mm": -0.025555527376388554,
+      "body_branch_vs_t_only_gain_mm": -0.35354319810405066,
+      "rotation_branch_vs_t_only_gain_mm": 0.980526463178002,
+      "joint_incremental_gain_mm": 0.6310134673250802,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 15.835586656135128,
+      "joint_camera_medians_mm": {
+        "K1": 5.607885012396027,
+        "K2": 12.658361737506663,
+        "K3": 7.754803031732453
+      },
+      "joint_camera_p95_mm": {
+        "K1": 24.72664185029372,
+        "K2": 182.30556311384643,
+        "K3": 40.028856486030186
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -3.2920842923471385,
+      "formal_v3_heldout_delta_mm": -0.526108174352327,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 1.2562380598879486e-05,
+        "Txyz": 6.380896342683684e-05,
+        "T+Pose": 0.10484148400932636
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0015.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0015.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 16.204095947094288,
+        "Txyz": 12.72219210636212,
+        "T_only": 13.688370260493638,
+        "T_globalrot": 12.664472357660182,
+        "T_bodypose": 10.936575740231032,
+        "T+Pose": 11.365871934178735
+      },
+      "txyz_gain_mm": 3.4819038407321674,
+      "t_only_incremental_gain_mm": -0.9661781541315175,
+      "body_branch_vs_t_only_gain_mm": 2.7517945202626066,
+      "rotation_branch_vs_t_only_gain_mm": 1.0238979028334558,
+      "joint_incremental_gain_mm": 1.356320172183386,
+      "local_minus_full_mm": {
+        "Official": 1.645728661473166,
+        "Txyz": 4.336375607304587,
+        "T_only": 5.276998234059716,
+        "T_globalrot": 5.2336267944042625,
+        "T_bodypose": 2.171660515693059,
+        "T+Pose": 3.6110689024462816
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 14.219897041021895,
+      "joint_camera_medians_mm": {
+        "K1": 9.034923355882945,
+        "K2": 23.948079970472527,
+        "K3": 11.365871934178735
+      },
+      "joint_camera_p95_mm": {
+        "K1": 41.532977421358815,
+        "K2": 193.5581657051375,
+        "K3": 67.51897835955444
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -5.998421692932016,
+      "formal_v3_heldout_delta_mm": -1.1519544773948418,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 3.124085914407715e-05,
+        "Txyz": 0.002960669864405574,
+        "T+Pose": 0.20732636465294974
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0015.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0015.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 25.37625767384729,
+        "Txyz": 16.6852069336037,
+        "T_only": 14.433937540698217,
+        "T_globalrot": 15.858722180194322,
+        "T_bodypose": 14.898598271325588,
+        "T+Pose": 14.960979122100388
+      },
+      "txyz_gain_mm": 8.691050740243593,
+      "t_only_incremental_gain_mm": 2.2512693929054812,
+      "body_branch_vs_t_only_gain_mm": -0.46466073062737046,
+      "rotation_branch_vs_t_only_gain_mm": -1.4247846394961048,
+      "joint_incremental_gain_mm": 1.7242278115033098,
+      "local_minus_full_mm": {
+        "Official": 10.81789038822617,
+        "Txyz": 8.299390434546165,
+        "T_only": 6.022565514264295,
+        "T_globalrot": 8.427876616938402,
+        "T_bodypose": 6.133683046787615,
+        "T+Pose": 7.2061760903679355
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 3.6311937362720226,
+      "joint_camera_medians_mm": {
+        "K1": 8.885967549306956,
+        "K2": 33.9795619295911,
+        "K3": 14.960979122100388
+      },
+      "joint_camera_p95_mm": {
+        "K1": 41.7503888485323,
+        "K2": 213.86909277498492,
+        "K3": 72.92580678430723
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -2.737514947782163,
+      "formal_v3_heldout_delta_mm": -1.7241632931340973,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 1.7084100960573778e-06,
+        "Txyz": 2.7807360432063888e-06,
+        "T+Pose": 6.173763316930092e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0015.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0015.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 27.7168387734819,
+        "Txyz": 11.217618461238676,
+        "T_only": 11.074352771511638,
+        "T_globalrot": 11.054919689095634,
+        "T_bodypose": 8.769595927641605,
+        "T+Pose": 8.897098264035439
+      },
+      "txyz_gain_mm": 16.499220312243224,
+      "t_only_incremental_gain_mm": 0.14326568972703768,
+      "body_branch_vs_t_only_gain_mm": 2.3047568438700328,
+      "rotation_branch_vs_t_only_gain_mm": 0.019433082416004055,
+      "joint_incremental_gain_mm": 2.320520197203237,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 13.236290554373017,
+      "joint_camera_medians_mm": {
+        "K1": 6.67651226604713,
+        "K2": 17.73243761356696,
+        "K3": 8.897098264035439
+      },
+      "joint_camera_p95_mm": {
+        "K1": 58.67431484238565,
+        "K2": 51.04958386413901,
+        "K3": 49.75404089037055
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -3.303191875084215,
+      "formal_v3_heldout_delta_mm": -2.3363483026143577,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 5.0867377058949614e-05,
+        "Txyz": 1.2102379340461766e-05,
+        "T+Pose": 0.015840207790461136
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0037.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0037.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 10.879880631160145,
+        "Txyz": 11.422054305659351,
+        "T_only": 11.324365483403167,
+        "T_globalrot": 11.778448499209151,
+        "T_bodypose": 10.616036864115388,
+        "T+Pose": 10.67935083733031
+      },
+      "txyz_gain_mm": -0.5421736744992067,
+      "t_only_incremental_gain_mm": 0.09768882225618469,
+      "body_branch_vs_t_only_gain_mm": 0.7083286192877782,
+      "rotation_branch_vs_t_only_gain_mm": -0.45408301580598476,
+      "joint_incremental_gain_mm": 0.7427034683290419,
+      "local_minus_full_mm": {
+        "Official": -16.836958142321755,
+        "Txyz": 0.20443584442067575,
+        "T_only": 0.25001271189152874,
+        "T_globalrot": 0.7235288101135176,
+        "T_bodypose": 1.8464409364737833,
+        "T+Pose": 1.7822525732948709
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 3.058177026120732,
+      "joint_camera_medians_mm": {
+        "K1": 9.969896381423936,
+        "K2": 25.469550700147515,
+        "K3": 10.67935083733031
+      },
+      "joint_camera_p95_mm": {
+        "K1": 58.235640494191735,
+        "K2": 79.3858797688971,
+        "K3": 56.1634566537351
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -3.0800874216142784,
+      "formal_v3_heldout_delta_mm": -0.7398498850034265,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 1.9048953490141685e-06,
+        "Txyz": 4.259645718818206e-05,
+        "T+Pose": 0.002810986868427179
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0037.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0037.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 12.907930439946794,
+        "Txyz": 12.638140325293627,
+        "T_only": 14.785267030555573,
+        "T_globalrot": 14.337608113774552,
+        "T_bodypose": 13.152179590980932,
+        "T+Pose": 13.202555680543703
+      },
+      "txyz_gain_mm": 0.2697901146531674,
+      "t_only_incremental_gain_mm": -2.1471267052619467,
+      "body_branch_vs_t_only_gain_mm": 1.6330874395746413,
+      "rotation_branch_vs_t_only_gain_mm": 0.44765891678102143,
+      "joint_incremental_gain_mm": -0.5644153552500768,
+      "local_minus_full_mm": {
+        "Official": -14.808908333535106,
+        "Txyz": 1.420521864054951,
+        "T_only": 3.7109142590439355,
+        "T_globalrot": 3.282688424678918,
+        "T_bodypose": 4.382583663339327,
+        "T+Pose": 4.305457416508265
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 2.9789380320918375,
+      "joint_camera_medians_mm": {
+        "K1": 11.911119953589619,
+        "K2": 31.57932822660096,
+        "K3": 13.202555680543703
+      },
+      "joint_camera_p95_mm": {
+        "K1": 65.90992831164245,
+        "K2": 98.93522425079466,
+        "K3": 67.51508523389771
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -0.8659096623800124,
+      "formal_v3_heldout_delta_mm": 0.5447985117913028,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 1.2348934253836319e-05,
+        "Txyz": 2.1435912273659596e-05,
+        "T+Pose": 0.019638279371047673
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0037.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_backpack_back__t0037.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 17.697419768471537,
+        "Txyz": 14.156585837303087,
+        "T_only": 13.0075927906991,
+        "T_globalrot": 12.769731510933571,
+        "T_bodypose": 10.791711361198526,
+        "T+Pose": 10.260355322807436
+      },
+      "txyz_gain_mm": 3.54083393116845,
+      "t_only_incremental_gain_mm": 1.1489930466039873,
+      "body_branch_vs_t_only_gain_mm": 2.2158814295005733,
+      "rotation_branch_vs_t_only_gain_mm": 0.23786127976552862,
+      "joint_incremental_gain_mm": 3.8962305144956506,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 20.4131324268007,
+      "joint_camera_medians_mm": {
+        "K1": 10.087780520026907,
+        "K2": 11.83567388292164,
+        "K3": 10.260355322807436
+      },
+      "joint_camera_p95_mm": {
+        "K1": 40.22822968809154,
+        "K2": 34.87645249786706,
+        "K3": 36.474668889871836
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -2.8320376311928026,
+      "formal_v3_heldout_delta_mm": -3.896262853947233,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 8.439165044293873e-05,
+        "Txyz": 1.1548324735599635e-05,
+        "T+Pose": 4.388777631803009e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0015.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0015.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 15.005788932601714,
+        "Txyz": 14.860891580407625,
+        "T_only": 16.42481445072952,
+        "T_globalrot": 16.1588251027801,
+        "T_bodypose": 13.551912018111576,
+        "T+Pose": 12.745363609113912
+      },
+      "txyz_gain_mm": 0.14489735219408928,
+      "t_only_incremental_gain_mm": -1.5639228703218961,
+      "body_branch_vs_t_only_gain_mm": 2.872902432617945,
+      "rotation_branch_vs_t_only_gain_mm": 0.26598934794942153,
+      "joint_incremental_gain_mm": 2.1155279712937123,
+      "local_minus_full_mm": {
+        "Official": -2.691630835869823,
+        "Txyz": 0.7043057431045376,
+        "T_only": 3.417221660030421,
+        "T_globalrot": 3.389093591846528,
+        "T_bodypose": 2.7602006569130495,
+        "T+Pose": 2.485008286306476
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 18.01476283067205,
+      "joint_camera_medians_mm": {
+        "K1": 12.620528486126698,
+        "K2": 21.639767418779293,
+        "K3": 12.745363609113912
+      },
+      "joint_camera_p95_mm": {
+        "K1": 85.0710354390323,
+        "K2": 98.86185002835549,
+        "K3": 45.089380869317
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -8.485874191491686,
+      "formal_v3_heldout_delta_mm": -2.1156307678171995,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 5.7459405383042395e-05,
+        "Txyz": 0.00012416618613109165,
+        "T+Pose": 2.136966264387752e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0015.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0015.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 69.09388331420931,
+        "Txyz": 71.94079053769158,
+        "T_only": 90.57349815346058,
+        "T_globalrot": 90.86508025964706,
+        "T_bodypose": 92.67584678652221,
+        "T+Pose": 90.86316497329379
+      },
+      "txyz_gain_mm": -2.846907223482276,
+      "t_only_incremental_gain_mm": -18.632707615768993,
+      "body_branch_vs_t_only_gain_mm": -2.102348633061638,
+      "rotation_branch_vs_t_only_gain_mm": -0.29158210618648184,
+      "joint_incremental_gain_mm": -18.922374435602208,
+      "local_minus_full_mm": {
+        "Official": 51.396463545737774,
+        "Txyz": 57.7842047003885,
+        "T_only": 77.56590536276147,
+        "T_globalrot": 78.09534874871349,
+        "T_bodypose": 81.88413542532369,
+        "T+Pose": 80.60280965048635
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 63.83520370020911,
+      "joint_camera_medians_mm": {
+        "K1": 90.86316497329379,
+        "K2": 151.53497500217742,
+        "K3": 74.77972680282603
+      },
+      "joint_camera_p95_mm": {
+        "K1": 268.45454821299995,
+        "K2": 287.816691315075,
+        "K3": 223.22444989118193
+      },
+      "formal_v3_k0_full_person_median_delta_mm": 1.0817521366463012,
+      "formal_v3_heldout_delta_mm": 18.92240494354887,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 2.1539102249334974e-05,
+        "Txyz": 4.154900871355949e-05,
+        "T+Pose": 1.1041062052186135e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0015.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0015.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 32.696048828766266,
+        "Txyz": 13.515611821101862,
+        "T_only": 12.72233389389925,
+        "T_globalrot": 13.420403397480758,
+        "T_bodypose": 10.696211217666455,
+        "T+Pose": 10.887593475937901
+      },
+      "txyz_gain_mm": 19.180437007664402,
+      "t_only_incremental_gain_mm": 0.7932779272026114,
+      "body_branch_vs_t_only_gain_mm": 2.026122676232795,
+      "rotation_branch_vs_t_only_gain_mm": -0.6980695035815074,
+      "joint_incremental_gain_mm": 2.6280183451639605,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 4.740449246398395,
+      "joint_camera_medians_mm": {
+        "K1": 9.249556987112122,
+        "K2": 13.766887993516704,
+        "K3": 10.887593475937901
+      },
+      "joint_camera_p95_mm": {
+        "K1": 39.312918172025995,
+        "K2": 36.87158081780145,
+        "K3": 32.70692702155131
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -2.5706617019617193,
+      "formal_v3_heldout_delta_mm": -2.627926174270671,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 0.00039647547097843017,
+        "Txyz": 0.00026128855965623643,
+        "T+Pose": 0.00016911766636695802
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0038.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0038.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 35.51084311975339,
+        "Txyz": 13.695937998926993,
+        "T_only": 13.936929261162025,
+        "T_globalrot": 12.121253712299964,
+        "T_bodypose": 11.505243370488966,
+        "T+Pose": 11.45975380443835
+      },
+      "txyz_gain_mm": 21.814905120826396,
+      "t_only_incremental_gain_mm": -0.2409912622350312,
+      "body_branch_vs_t_only_gain_mm": 2.4316858906730587,
+      "rotation_branch_vs_t_only_gain_mm": 1.8156755488620604,
+      "joint_incremental_gain_mm": 2.2361841944886436,
+      "local_minus_full_mm": {
+        "Official": 2.8147942909871233,
+        "Txyz": 0.1803261778251315,
+        "T_only": 1.214595367262774,
+        "T_globalrot": -1.2991496851807938,
+        "T_bodypose": 0.8090321528225104,
+        "T+Pose": 0.5721603285004484
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 10.857119903905536,
+      "joint_camera_medians_mm": {
+        "K1": 11.45975380443835,
+        "K2": 16.00923673997341,
+        "K3": 9.558566063922822
+      },
+      "joint_camera_p95_mm": {
+        "K1": 46.03840485252689,
+        "K2": 71.03201951159618,
+        "K3": 38.963320642071274
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -1.7818305007559179,
+      "formal_v3_heldout_delta_mm": -2.236118264394239,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 3.883857667119628e-05,
+        "Txyz": 5.930899403239209e-05,
+        "T+Pose": 6.621100371972943e-06
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0038.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0038.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 12.480539121255058,
+        "Txyz": 12.85279536432655,
+        "T_only": 13.74386261647289,
+        "T_globalrot": 14.11544252847971,
+        "T_bodypose": 14.483221120467675,
+        "T+Pose": 15.448952108948777
+      },
+      "txyz_gain_mm": -0.37225624307149197,
+      "t_only_incremental_gain_mm": -0.8910672521463407,
+      "body_branch_vs_t_only_gain_mm": -0.7393585039947848,
+      "rotation_branch_vs_t_only_gain_mm": -0.37157991200681906,
+      "joint_incremental_gain_mm": -2.5961567446222276,
+      "local_minus_full_mm": {
+        "Official": -20.21550970751121,
+        "Txyz": -0.6628164567753121,
+        "T_only": 1.02152872257364,
+        "T_globalrot": 0.6950391309989516,
+        "T_bodypose": 3.78700990280122,
+        "T+Pose": 4.561358633010876
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 17.544012882041336,
+      "joint_camera_medians_mm": {
+        "K1": 11.913409956091346,
+        "K2": 20.906439752727874,
+        "K3": 15.448952108948777
+      },
+      "joint_camera_p95_mm": {
+        "K1": 52.80143380924419,
+        "K2": 91.09113910099043,
+        "K3": 48.260214518296245
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -1.309677310605327,
+      "formal_v3_heldout_delta_mm": 2.6145674878857648,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 6.42377116832904e-05,
+        "Txyz": 0.00015624419075876972,
+        "T+Pose": 0.01856698745429597
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0038.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_stool_sit__t0038.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 42.42566431704128,
+        "Txyz": 12.040686307210064,
+        "T_only": 10.56314493754209,
+        "T_globalrot": 10.579631047065348,
+        "T_bodypose": 8.530885752728993,
+        "T+Pose": 8.24231188451467
+      },
+      "txyz_gain_mm": 30.384978009831215,
+      "t_only_incremental_gain_mm": 1.477541369667975,
+      "body_branch_vs_t_only_gain_mm": 2.032259184813096,
+      "rotation_branch_vs_t_only_gain_mm": -0.016486109523258463,
+      "joint_incremental_gain_mm": 3.798374422695394,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 16.763059797313105,
+      "joint_camera_medians_mm": {
+        "K1": 8.24231188451467,
+        "K2": 10.501817277926767,
+        "K3": 7.564808907374492
+      },
+      "joint_camera_p95_mm": {
+        "K1": 24.5163905513544,
+        "K2": 38.94022314480494,
+        "K3": 69.73294954062797
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -2.918602676898586,
+      "formal_v3_heldout_delta_mm": -3.8101982053917496,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 3.570664968322035e-05,
+        "Txyz": 8.907697933047132e-05,
+        "T+Pose": 0.011734705717024951
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0010.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0010.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 12.97256417283102,
+        "Txyz": 10.649684232300125,
+        "T_only": 11.220160753440876,
+        "T_globalrot": 10.677351477879093,
+        "T_bodypose": 9.277445264115052,
+        "T+Pose": 9.399823397902402
+      },
+      "txyz_gain_mm": 2.322879940530896,
+      "t_only_incremental_gain_mm": -0.5704765211407512,
+      "body_branch_vs_t_only_gain_mm": 1.942715489325824,
+      "rotation_branch_vs_t_only_gain_mm": 0.5428092755617833,
+      "joint_incremental_gain_mm": 1.2498608343977224,
+      "local_minus_full_mm": {
+        "Official": -29.45310014421026,
+        "Txyz": -1.3910020749099399,
+        "T_only": 0.6570158158987862,
+        "T_globalrot": 0.09772043081374449,
+        "T_bodypose": 0.7465595113860584,
+        "T+Pose": 1.1575115133877318
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 8.028640218279016,
+      "joint_camera_medians_mm": {
+        "K1": 8.155524850152526,
+        "K2": 11.380912333660934,
+        "K3": 9.399823397902402
+      },
+      "joint_camera_p95_mm": {
+        "K1": 31.41633397087906,
+        "K2": 53.1488722659129,
+        "K3": 57.74221850387346
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -1.8039132708882253,
+      "formal_v3_heldout_delta_mm": -0.4025240459888817,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 9.627762911890159e-05,
+        "Txyz": 4.9514047258725213e-05,
+        "T+Pose": 0.847287274361582
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0010.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0010.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 48.88916014501184,
+        "Txyz": 27.96436934466577,
+        "T_only": 15.276449860089791,
+        "T_globalrot": 14.902349176979415,
+        "T_bodypose": 14.783052606974172,
+        "T+Pose": 14.387140070284012
+      },
+      "txyz_gain_mm": 20.924790800346074,
+      "t_only_incremental_gain_mm": 12.687919484575978,
+      "body_branch_vs_t_only_gain_mm": 0.493397253115619,
+      "rotation_branch_vs_t_only_gain_mm": 0.3741006831103757,
+      "joint_incremental_gain_mm": 13.577229274381757,
+      "local_minus_full_mm": {
+        "Official": 6.463495827970561,
+        "Txyz": 15.923683037455705,
+        "T_only": 4.713304922547701,
+        "T_globalrot": 4.322718129914067,
+        "T_bodypose": 6.2521668542451785,
+        "T+Pose": 6.144828185769342
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 27.65814335077469,
+      "joint_camera_medians_mm": {
+        "K1": 11.142426267761053,
+        "K2": 14.387140070284012,
+        "K3": 14.509282528664365
+      },
+      "joint_camera_p95_mm": {
+        "K1": 199.09172865989234,
+        "K2": 73.34586473840358,
+        "K3": 259.4134811610734
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -12.131967702984538,
+      "formal_v3_heldout_delta_mm": -13.577171074348845,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 2.6563655616484994e-05,
+        "Txyz": 9.941318658945875e-06,
+        "T+Pose": 4.8258714253179846e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0010.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0010.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 33.82944153388623,
+        "Txyz": 14.833361633730771,
+        "T_only": 13.184147469871862,
+        "T_globalrot": 15.139207956520178,
+        "T_bodypose": 12.466554218646072,
+        "T+Pose": 12.608421013199305
+      },
+      "txyz_gain_mm": 18.99607990015546,
+      "t_only_incremental_gain_mm": 1.6492141638589093,
+      "body_branch_vs_t_only_gain_mm": 0.7175932512257894,
+      "rotation_branch_vs_t_only_gain_mm": -1.9550604866483159,
+      "joint_incremental_gain_mm": 2.2249406205314664,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 8.455626696085838,
+      "joint_camera_medians_mm": {
+        "K1": 9.825096438942268,
+        "K2": 12.608421013199305,
+        "K3": 39.66133649202778
+      },
+      "joint_camera_p95_mm": {
+        "K1": 31.074416209348968,
+        "K2": 52.254543495987086,
+        "K3": 437.3619514732179
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -1.9180736106189373,
+      "formal_v3_heldout_delta_mm": -2.225119056507733,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 6.003788246999875e-05,
+        "Txyz": 5.393981969703532e-05,
+        "T+Pose": 0.0001244961565696201
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0034.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0034.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 22.29971716144373,
+        "Txyz": 13.279200171290185,
+        "T_only": 11.837105638582873,
+        "T_globalrot": 14.112188860649674,
+        "T_bodypose": 11.99874160812701,
+        "T+Pose": 12.381232910300135
+      },
+      "txyz_gain_mm": 9.020516990153546,
+      "t_only_incremental_gain_mm": 1.442094532707312,
+      "body_branch_vs_t_only_gain_mm": -0.16163596954413784,
+      "rotation_branch_vs_t_only_gain_mm": -2.275083222066801,
+      "joint_incremental_gain_mm": 0.8979672609900504,
+      "local_minus_full_mm": {
+        "Official": -11.529724372442502,
+        "Txyz": -1.554161462440586,
+        "T_only": -1.3470418312889887,
+        "T_globalrot": -1.0270190958705037,
+        "T_bodypose": -0.4678126105190614,
+        "T+Pose": -0.22718810289917002
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 1.7957743083516196,
+      "joint_camera_medians_mm": {
+        "K1": 11.657908349059653,
+        "K2": 12.381232910300135,
+        "K3": 40.12154517275443
+      },
+      "joint_camera_p95_mm": {
+        "K1": 34.597610806632176,
+        "K2": 84.04468853544199,
+        "K3": 464.1650155816727
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -2.7474901661935,
+      "formal_v3_heldout_delta_mm": -0.8977970044177255,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 6.384682392024388e-05,
+        "Txyz": 5.062921682252863e-05,
+        "T+Pose": 0.00011962735550241632
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0034.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0034.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 22.097944437109916,
+        "Txyz": 15.558760413414515,
+        "T_only": 14.498013199227602,
+        "T_globalrot": 11.224866038318506,
+        "T_bodypose": 12.146795705622369,
+        "T+Pose": 11.115028481220849
+      },
+      "txyz_gain_mm": 6.539184023695402,
+      "t_only_incremental_gain_mm": 1.0607472141869128,
+      "body_branch_vs_t_only_gain_mm": 2.3512174936052332,
+      "rotation_branch_vs_t_only_gain_mm": 3.2731471609090956,
+      "joint_incremental_gain_mm": 4.443731932193666,
+      "local_minus_full_mm": {
+        "Official": -11.731497096776316,
+        "Txyz": 0.7253987796837436,
+        "T_only": 1.31386572935574,
+        "T_globalrot": -3.9143419182016714,
+        "T_bodypose": -0.3197585130237037,
+        "T+Pose": -1.493392531978456
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 9.183992786072322,
+      "joint_camera_medians_mm": {
+        "K1": 10.606225913918818,
+        "K2": 11.115028481220849,
+        "K3": 40.209279279265914
+      },
+      "joint_camera_p95_mm": {
+        "K1": 36.696774019242675,
+        "K2": 65.10518259502031,
+        "K3": 437.4317143398697
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -6.585564110458698,
+      "formal_v3_heldout_delta_mm": -4.444012234175668,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 1.428332712549718e-05,
+        "Txyz": 1.878619865358644e-05,
+        "T+Pose": 0.0002990881806557155
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0034.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub04__Date03_Sub04_yogaball_play__t0034.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 54.72666193563324,
+        "Txyz": 17.2341421740553,
+        "T_only": 14.116896472603079,
+        "T_globalrot": 14.484409768777008,
+        "T_bodypose": 14.197940496927185,
+        "T+Pose": 14.287949754394166
+      },
+      "txyz_gain_mm": 37.49251976157794,
+      "t_only_incremental_gain_mm": 3.1172457014522212,
+      "body_branch_vs_t_only_gain_mm": -0.08104402432410573,
+      "rotation_branch_vs_t_only_gain_mm": -0.3675132961739287,
+      "joint_incremental_gain_mm": 2.946192419661134,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 31.423281776628244,
+      "joint_camera_medians_mm": {
+        "K1": 11.839749503008747,
+        "K2": 20.529909615397585,
+        "K3": 14.287949754394166
+      },
+      "joint_camera_p95_mm": {
+        "K1": 55.38649550532355,
+        "K2": 49.41575665701788,
+        "K3": 45.810082817309464
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -5.641688298775142,
+      "formal_v3_heldout_delta_mm": -3.0044513500532872,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 4.456258686502679e-06,
+        "Txyz": 5.969514063508541e-06,
+        "T+Pose": 0.05826489990621653
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0035.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0035.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 56.62253404732796,
+        "Txyz": 19.845375597339974,
+        "T_only": 19.23543751792915,
+        "T_globalrot": 19.553364982691896,
+        "T_bodypose": 19.31048033009482,
+        "T+Pose": 19.46120976562615
+      },
+      "txyz_gain_mm": 36.777158449987986,
+      "t_only_incremental_gain_mm": 0.6099380794108242,
+      "body_branch_vs_t_only_gain_mm": -0.07504281216566966,
+      "rotation_branch_vs_t_only_gain_mm": -0.3179274647627466,
+      "joint_incremental_gain_mm": 0.38416583171382257,
+      "local_minus_full_mm": {
+        "Official": 1.8958721116947217,
+        "Txyz": 2.6112334232846734,
+        "T_only": 5.1185410453260705,
+        "T_globalrot": 5.068955213914888,
+        "T_bodypose": 5.112539833167634,
+        "T+Pose": 5.173260011231985
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 31.887979117396736,
+      "joint_camera_medians_mm": {
+        "K1": 16.826808522255718,
+        "K2": 28.19914525042571,
+        "K3": 19.46120976562615
+      },
+      "joint_camera_p95_mm": {
+        "K1": 198.41174090095595,
+        "K2": 240.06282794624838,
+        "K3": 174.13780254564153
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -4.681769652171694,
+      "formal_v3_heldout_delta_mm": -0.43751725011236076,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 6.457257660485993e-05,
+        "Txyz": 0.0001269441535178828,
+        "T+Pose": 0.05347836255205607
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0035.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0035.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 34.038664796539685,
+        "Txyz": 27.405363000472335,
+        "T_only": 26.898392289190614,
+        "T_globalrot": 24.18118774086527,
+        "T_bodypose": 24.34900685529003,
+        "T+Pose": 23.8821745849984
+      },
+      "txyz_gain_mm": 6.63330179606735,
+      "t_only_incremental_gain_mm": 0.5069707112817206,
+      "body_branch_vs_t_only_gain_mm": 2.5493854339005857,
+      "rotation_branch_vs_t_only_gain_mm": 2.717204548325345,
+      "joint_incremental_gain_mm": 3.5231884154739355,
+      "local_minus_full_mm": {
+        "Official": -20.687997139093554,
+        "Txyz": 10.171220826417034,
+        "T_only": 12.781495816587535,
+        "T_globalrot": 9.696777972088261,
+        "T_bodypose": 10.151066358362844,
+        "T+Pose": 9.594224830604233
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 18.023458564317632,
+      "joint_camera_medians_mm": {
+        "K1": 19.237368160825127,
+        "K2": 26.528931131753215,
+        "K3": 23.8821745849984
+      },
+      "joint_camera_p95_mm": {
+        "K1": 155.0632621041682,
+        "K2": 192.35243222742614,
+        "K3": 136.17490687513003
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -8.277146004949344,
+      "formal_v3_heldout_delta_mm": -3.506039386923611,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 5.5526533593308613e-05,
+        "Txyz": 0.00010022483553839834,
+        "T+Pose": 0.017249253385863028
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0035.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0035.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 39.06537354003433,
+        "Txyz": 19.116630176568954,
+        "T_only": 15.555254245766116,
+        "T_globalrot": 14.192997418693533,
+        "T_bodypose": 16.346498813012186,
+        "T+Pose": 15.591223251734633
+      },
+      "txyz_gain_mm": 19.948743363465375,
+      "t_only_incremental_gain_mm": 3.5613759308028374,
+      "body_branch_vs_t_only_gain_mm": -0.7912445672460695,
+      "rotation_branch_vs_t_only_gain_mm": 1.3622568270725832,
+      "joint_incremental_gain_mm": 3.5254069248343214,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 28.79768978829914,
+      "joint_camera_medians_mm": {
+        "K1": 21.556489985377006,
+        "K2": 15.591223251734633,
+        "K3": 13.73282071558573
+      },
+      "joint_camera_p95_mm": {
+        "K1": 54.94130009503099,
+        "K2": 39.36392085632309,
+        "K3": 50.43143952899202
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -7.239199623845543,
+      "formal_v3_heldout_delta_mm": -3.6054860151143835,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 2.075862794015393e-05,
+        "Txyz": 9.088712424443202e-06,
+        "T+Pose": 0.08007000156763766
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0101.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0101.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 23.393125461666763,
+        "Txyz": 13.192464128961998,
+        "T_only": 16.634918373995497,
+        "T_globalrot": 14.194963319120806,
+        "T_bodypose": 18.241897597380003,
+        "T+Pose": 15.472852562583423
+      },
+      "txyz_gain_mm": 10.200661332704765,
+      "t_only_incremental_gain_mm": -3.442454245033499,
+      "body_branch_vs_t_only_gain_mm": -1.6069792233845064,
+      "rotation_branch_vs_t_only_gain_mm": 2.439955054874691,
+      "joint_incremental_gain_mm": -2.2803884336214253,
+      "local_minus_full_mm": {
+        "Official": -15.672248078367566,
+        "Txyz": -5.924166047606956,
+        "T_only": 1.0796641282293802,
+        "T_globalrot": 0.0019659004272725156,
+        "T_bodypose": 1.895398784367817,
+        "T+Pose": -0.11837068915120952
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 32.86198617382266,
+      "joint_camera_medians_mm": {
+        "K1": 21.86968533171008,
+        "K2": 15.472852562583423,
+        "K3": 15.445112106878096
+      },
+      "joint_camera_p95_mm": {
+        "K1": 75.4469717557892,
+        "K2": 99.85405968127877,
+        "K3": 110.06434435231206
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -7.535181156591147,
+      "formal_v3_heldout_delta_mm": 2.0769198960344557,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 0.00027178234021363323,
+        "Txyz": 0.00012436278531957612,
+        "T+Pose": 0.20334417480165
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0101.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0101.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 33.90971824274825,
+        "Txyz": 15.217761042616015,
+        "T_only": 22.377679695761973,
+        "T_globalrot": 22.65176059824349,
+        "T_bodypose": 24.209874759797003,
+        "T+Pose": 20.384117690180595
+      },
+      "txyz_gain_mm": 18.691957200132233,
+      "t_only_incremental_gain_mm": -7.159918653145958,
+      "body_branch_vs_t_only_gain_mm": -1.8321950640350302,
+      "rotation_branch_vs_t_only_gain_mm": -0.2740809024815185,
+      "joint_incremental_gain_mm": -5.16635664756458,
+      "local_minus_full_mm": {
+        "Official": -5.155655297286081,
+        "Txyz": -3.898869133952939,
+        "T_only": 6.8224254499958565,
+        "T_globalrot": 8.458763179549958,
+        "T_bodypose": 7.863375946784817,
+        "T+Pose": 4.792894438445963
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 37.82264547160602,
+      "joint_camera_medians_mm": {
+        "K1": 28.291227012511534,
+        "K2": 19.122625814969297,
+        "K3": 20.384117690180595
+      },
+      "joint_camera_p95_mm": {
+        "K1": 115.57368253734971,
+        "K2": 142.04256395372363,
+        "K3": 154.01269608265648
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -8.0074694663714,
+      "formal_v3_heldout_delta_mm": 5.166202901756769,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 0.000141673857207536,
+        "Txyz": 0.00017763974251394643,
+        "T+Pose": 2.3893934702812203e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0101.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_backpack__t0101.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 23.110197061822397,
+        "Txyz": 12.636122776901697,
+        "T_only": 13.209570813963307,
+        "T_globalrot": 13.379738102355873,
+        "T_bodypose": 14.622128734977611,
+        "T+Pose": 13.70272319446097
+      },
+      "txyz_gain_mm": 10.4740742849207,
+      "t_only_incremental_gain_mm": -0.5734480370616097,
+      "body_branch_vs_t_only_gain_mm": -1.4125579210143044,
+      "rotation_branch_vs_t_only_gain_mm": -0.170167288392566,
+      "joint_incremental_gain_mm": -1.0666004175592736,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 23.539761397315573,
+      "joint_camera_medians_mm": {
+        "K1": 16.316795226413475,
+        "K2": 13.70272319446097,
+        "K3": 11.965822405532368
+      },
+      "joint_camera_p95_mm": {
+        "K1": 41.70580932303192,
+        "K2": 43.15236266585741,
+        "K3": 50.25653271180394
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -0.795938450044245,
+      "formal_v3_heldout_delta_mm": 1.0783804319582408,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 0.00039041442600051823,
+        "Txyz": 0.00022753764340421867,
+        "T+Pose": 0.012007552042371472
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_stool__t0019.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_stool__t0019.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 14.408471577263573,
+        "Txyz": 14.290608610755896,
+        "T_only": 14.655203163173162,
+        "T_globalrot": 13.51972165019587,
+        "T_bodypose": 12.139063980454756,
+        "T+Pose": 12.65091941752227
+      },
+      "txyz_gain_mm": 0.11786296650767625,
+      "t_only_incremental_gain_mm": -0.364594552417266,
+      "body_branch_vs_t_only_gain_mm": 2.5161391827184065,
+      "rotation_branch_vs_t_only_gain_mm": 1.135481512977293,
+      "joint_incremental_gain_mm": 1.639689193233627,
+      "local_minus_full_mm": {
+        "Official": -8.701725484558825,
+        "Txyz": 1.6544858338541992,
+        "T_only": 1.4456323492098555,
+        "T_globalrot": 0.13998354783999645,
+        "T_bodypose": -2.4830647545228555,
+        "T+Pose": -1.0518037769387014
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 16.843042239968792,
+      "joint_camera_medians_mm": {
+        "K1": 13.885551873039049,
+        "K2": 12.366404056192405,
+        "K3": 12.65091941752227
+      },
+      "joint_camera_p95_mm": {
+        "K1": 70.01706699168736,
+        "K2": 65.01513445518441,
+        "K3": 70.30004128451908
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -4.4045158600907826,
+      "formal_v3_heldout_delta_mm": -1.6393286472478223,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 4.013661958879311e-05,
+        "Txyz": 2.3158317983273946e-05,
+        "T+Pose": 0.0003837043037879795
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_stool__t0019.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_stool__t0019.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 21.123320467628506,
+        "Txyz": 15.967902470377911,
+        "T_only": 15.617933386719866,
+        "T_globalrot": 15.45253851896577,
+        "T_bodypose": 16.1284848089183,
+        "T+Pose": 15.97854121570493
+      },
+      "txyz_gain_mm": 5.155417997250595,
+      "t_only_incremental_gain_mm": 0.3499690836580456,
+      "body_branch_vs_t_only_gain_mm": -0.5105514221984357,
+      "rotation_branch_vs_t_only_gain_mm": 0.1653948677540953,
+      "joint_incremental_gain_mm": -0.010638745327018029,
+      "local_minus_full_mm": {
+        "Official": -1.986876594193891,
+        "Txyz": 3.3317796934762143,
+        "T_only": 2.408362572756559,
+        "T_globalrot": 2.0728004166098977,
+        "T_bodypose": 1.5063560739406903,
+        "T+Pose": 2.2758180212439587
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 7.894760512141916,
+      "joint_camera_medians_mm": {
+        "K1": 14.18621881459391,
+        "K2": 15.97854121570493,
+        "K3": 27.27394948683795
+      },
+      "joint_camera_p95_mm": {
+        "K1": 69.55573547392333,
+        "K2": 64.38587401813649,
+        "K3": 59.67929066264861
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -8.30182283635573,
+      "formal_v3_heldout_delta_mm": 0.010145231602722404,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 6.32668208702114e-05,
+        "Txyz": 7.198769831973095e-05,
+        "T+Pose": 0.0004215260259758935
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_stool__t0019.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_stool__t0019.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 48.3750801104872,
+        "Txyz": 20.42802362786624,
+        "T_only": 11.723498274723443,
+        "T_globalrot": 11.181078680697267,
+        "T_bodypose": 12.460808664625738,
+        "T+Pose": 11.387945430465207
+      },
+      "txyz_gain_mm": 27.947056482620958,
+      "t_only_incremental_gain_mm": 8.704525353142795,
+      "body_branch_vs_t_only_gain_mm": -0.7373103899022944,
+      "rotation_branch_vs_t_only_gain_mm": 0.5424195940261765,
+      "joint_incremental_gain_mm": 9.040078197401032,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 17.73874654448083,
+      "joint_camera_medians_mm": {
+        "K1": 11.387945430465207,
+        "K2": 14.226480612067355,
+        "K3": 9.4309083975869
+      },
+      "joint_camera_p95_mm": {
+        "K1": 38.95124447417146,
+        "K2": 47.877624239181095,
+        "K3": 40.12461010974249
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -5.379620983106754,
+      "formal_v3_heldout_delta_mm": -9.040305076648517,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 1.3694530970553842e-05,
+        "Txyz": 0.0002039589344846604,
+        "T+Pose": 2.292031300044073e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_stool__t0050.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_stool__t0050.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 15.787014405937164,
+        "Txyz": 13.193845418162311,
+        "T_only": 12.818791828966237,
+        "T_globalrot": 13.584517700539394,
+        "T_bodypose": 13.222366219990992,
+        "T+Pose": 13.231544691495767
+      },
+      "txyz_gain_mm": 2.5931689877748525,
+      "t_only_incremental_gain_mm": 0.37505358919607446,
+      "body_branch_vs_t_only_gain_mm": -0.4035743910247547,
+      "rotation_branch_vs_t_only_gain_mm": -0.7657258715731565,
+      "joint_incremental_gain_mm": -0.03769927333345535,
+      "local_minus_full_mm": {
+        "Official": -32.58806570455003,
+        "Txyz": -7.234178209703927,
+        "T_only": 1.0952935542427937,
+        "T_globalrot": 2.4034390198421267,
+        "T_bodypose": 0.761557555365254,
+        "T+Pose": 1.84359926103056
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 5.463838346298767,
+      "joint_camera_medians_mm": {
+        "K1": 13.231544691495767,
+        "K2": 17.71736117216396,
+        "K3": 9.320493482878945
+      },
+      "joint_camera_p95_mm": {
+        "K1": 89.69573042281542,
+        "K2": 89.36660849478152,
+        "K3": 46.74767577676401
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -0.4323349135761916,
+      "formal_v3_heldout_delta_mm": 0.15926493844382428,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 5.0002250697289696e-05,
+        "Txyz": 0.0002814067078187321,
+        "T+Pose": 0.12184707181818766
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_stool__t0050.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_stool__t0050.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 30.619697527547277,
+        "Txyz": 20.5889906781901,
+        "T_only": 19.820918208613477,
+        "T_globalrot": 19.26440331789317,
+        "T_bodypose": 14.385428879571858,
+        "T+Pose": 14.234526020772625
+      },
+      "txyz_gain_mm": 10.030706849357177,
+      "t_only_incremental_gain_mm": 0.768072469576623,
+      "body_branch_vs_t_only_gain_mm": 5.435489329041619,
+      "rotation_branch_vs_t_only_gain_mm": 0.5565148907203081,
+      "joint_incremental_gain_mm": 6.354464657417475,
+      "local_minus_full_mm": {
+        "Official": -17.75538258293992,
+        "Txyz": 0.16096705032386183,
+        "T_only": 8.097419933890034,
+        "T_globalrot": 8.083324637195902,
+        "T_bodypose": 1.9246202149461205,
+        "T+Pose": 2.8465805903074184
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 15.227657604182351,
+      "joint_camera_medians_mm": {
+        "K1": 14.234526020772625,
+        "K2": 20.32202012094954,
+        "K3": 10.888715310569285
+      },
+      "joint_camera_p95_mm": {
+        "K1": 84.49458472801729,
+        "K2": 84.91305511947182,
+        "K3": 60.358591479825904
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -1.6217732757243688,
+      "formal_v3_heldout_delta_mm": -6.380231593064007,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 0.0002598756769920385,
+        "Txyz": 5.2612206253854765e-05,
+        "T+Pose": 0.025819547852785618
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_stool__t0050.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_stool__t0050.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 31.334996730081905,
+        "Txyz": 11.220968839393974,
+        "T_only": 14.52557416729411,
+        "T_globalrot": 14.181569785693862,
+        "T_bodypose": 13.92554206997993,
+        "T+Pose": 14.16492523400703
+      },
+      "txyz_gain_mm": 20.11402789068793,
+      "t_only_incremental_gain_mm": -3.304605327900136,
+      "body_branch_vs_t_only_gain_mm": 0.6000320973141804,
+      "rotation_branch_vs_t_only_gain_mm": 0.34400438160024827,
+      "joint_incremental_gain_mm": -2.943956394613057,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 38.63809566598211,
+      "joint_camera_medians_mm": {
+        "K1": 11.625562954624055,
+        "K2": 14.593810254982682,
+        "K3": 14.16492523400703
+      },
+      "joint_camera_p95_mm": {
+        "K1": 33.954299983665734,
+        "K2": 41.72830506188065,
+        "K3": 46.59959696821357
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -7.706410235124084,
+      "formal_v3_heldout_delta_mm": 2.9439080510142865,
+      "formal_v3_k0_better_heldout_worse": true,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": true,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 2.838256203574474e-05,
+        "Txyz": 0.000108617496247021,
+        "T+Pose": 0.00015696109501739386
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0019.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0019.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 35.05732597319184,
+        "Txyz": 16.642457114500175,
+        "T_only": 15.942317231417933,
+        "T_globalrot": 16.27743388495098,
+        "T_bodypose": 15.663160818786316,
+        "T+Pose": 15.36230553422708
+      },
+      "txyz_gain_mm": 18.414868858691662,
+      "t_only_incremental_gain_mm": 0.7001398830822421,
+      "body_branch_vs_t_only_gain_mm": 0.2791564126316164,
+      "rotation_branch_vs_t_only_gain_mm": -0.3351166535330474,
+      "joint_incremental_gain_mm": 1.2801515802730954,
+      "local_minus_full_mm": {
+        "Official": 3.7223292431099324,
+        "Txyz": 5.421488275106201,
+        "T_only": 1.416743064123823,
+        "T_globalrot": 2.0958640992571187,
+        "T_bodypose": 1.737618748806387,
+        "T+Pose": 1.1973803002200487
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 18.06269870628794,
+      "joint_camera_medians_mm": {
+        "K1": 15.30933738417366,
+        "K2": 17.54625179364446,
+        "K3": 15.36230553422708
+      },
+      "joint_camera_p95_mm": {
+        "K1": 45.76926882618491,
+        "K2": 50.14433412060742,
+        "K3": 53.42089940977327
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -8.752493538463462,
+      "formal_v3_heldout_delta_mm": -1.2929526644682596,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 2.0904059375936868e-05,
+        "Txyz": 5.207868854384401e-05,
+        "T+Pose": 0.01285316288370808
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0019.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0019.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 35.54791133621609,
+        "Txyz": 23.551492408033393,
+        "T_only": 22.961547997508156,
+        "T_globalrot": 24.093143619754954,
+        "T_bodypose": 22.941524583348766,
+        "T+Pose": 21.951155837662785
+      },
+      "txyz_gain_mm": 11.996418928182695,
+      "t_only_incremental_gain_mm": 0.5899444105252378,
+      "body_branch_vs_t_only_gain_mm": 0.020023414159389574,
+      "rotation_branch_vs_t_only_gain_mm": -1.1315956222467989,
+      "joint_incremental_gain_mm": 1.600336570370608,
+      "local_minus_full_mm": {
+        "Official": 4.212914606134184,
+        "Txyz": 12.33052356863942,
+        "T_only": 8.435973830214046,
+        "T_globalrot": 9.911573834061093,
+        "T_bodypose": 9.015982513368836,
+        "T+Pose": 7.7862306036557545
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 51.818579546401615,
+      "joint_camera_medians_mm": {
+        "K1": 18.90022993207416,
+        "K2": 36.78706884097347,
+        "K3": 21.951155837662785
+      },
+      "joint_camera_p95_mm": {
+        "K1": 48.481347285779044,
+        "K2": 128.23402851598263,
+        "K3": 110.86586430475256
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -9.882195562625327,
+      "formal_v3_heldout_delta_mm": -1.5999087468809563,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 0.0001252531860416184,
+        "Txyz": 0.00014427047267062676,
+        "T+Pose": 0.00028355301698113067
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0019.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0019.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "FULL",
+      "attribution_heldout_mm": {
+        "Official": 61.32538478867531,
+        "Txyz": 15.909238035647807,
+        "T_only": 17.449732893000473,
+        "T_globalrot": 14.680520882973624,
+        "T_bodypose": 12.967617425065274,
+        "T+Pose": 12.366197626538517
+      },
+      "txyz_gain_mm": 45.416146753027505,
+      "t_only_incremental_gain_mm": -1.540494857352666,
+      "body_branch_vs_t_only_gain_mm": 4.482115467935198,
+      "rotation_branch_vs_t_only_gain_mm": 2.7692120100268482,
+      "joint_incremental_gain_mm": 3.54304040910929,
+      "local_minus_full_mm": {
+        "Official": 0.0,
+        "Txyz": 0.0,
+        "T_only": 0.0,
+        "T_globalrot": 0.0,
+        "T_bodypose": 0.0,
+        "T+Pose": 0.0
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 13.763811077502687,
+      "joint_camera_medians_mm": {
+        "K1": 12.204345853794944,
+        "K2": 20.69026342807434,
+        "K3": 12.366197626538517
+      },
+      "joint_camera_p95_mm": {
+        "K1": 67.34378882920385,
+        "K2": 62.56661420710846,
+        "K3": 43.42508477754802
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -5.1725714804797756,
+      "formal_v3_heldout_delta_mm": -2.636728036028634,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 1.7261475505847557e-05,
+        "Txyz": 4.107515296780662e-06,
+        "T+Pose": 0.9063164805959527
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0051.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0051.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "UPPER",
+      "attribution_heldout_mm": {
+        "Official": 35.62258885339928,
+        "Txyz": 16.86358720843156,
+        "T_only": 18.181619424997677,
+        "T_globalrot": 16.444872802060758,
+        "T_bodypose": 13.472311727289119,
+        "T+Pose": 12.770935166144822
+      },
+      "txyz_gain_mm": 18.759001644967718,
+      "t_only_incremental_gain_mm": -1.3180322165661167,
+      "body_branch_vs_t_only_gain_mm": 4.709307697708558,
+      "rotation_branch_vs_t_only_gain_mm": 1.73674662293692,
+      "joint_incremental_gain_mm": 4.092652042286739,
+      "local_minus_full_mm": {
+        "Official": -25.70279593527603,
+        "Txyz": 0.9543491727837541,
+        "T_only": 0.7318865319972048,
+        "T_globalrot": 1.764351919087133,
+        "T_bodypose": 0.5046943022238448,
+        "T+Pose": 0.4047375396063053
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 29.345662127574688,
+      "joint_camera_medians_mm": {
+        "K1": 12.770935166144822,
+        "K2": 21.70475399154575,
+        "K3": 11.734950544495163
+      },
+      "joint_camera_p95_mm": {
+        "K1": 74.86120510056195,
+        "K2": 90.32718804089757,
+        "K3": 55.57907655478789
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -7.151042753035981,
+      "formal_v3_heldout_delta_mm": -4.091543018329578,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 4.1464400695190307e-05,
+        "Txyz": 1.826832339091311e-05,
+        "T+Pose": 0.0010907556337702573
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0051.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0051.000_K1_conditions.png"
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "LOCAL_TORSO",
+      "attribution_heldout_mm": {
+        "Official": 25.43383226937748,
+        "Txyz": 25.781857488566857,
+        "T_only": 22.46614324587004,
+        "T_globalrot": 23.08190906294709,
+        "T_bodypose": 20.228250225712603,
+        "T+Pose": 21.375108537255045
+      },
+      "txyz_gain_mm": -0.34802521918937757,
+      "t_only_incremental_gain_mm": 3.315714242696817,
+      "body_branch_vs_t_only_gain_mm": 2.2378930201574363,
+      "rotation_branch_vs_t_only_gain_mm": -0.615765817077051,
+      "joint_incremental_gain_mm": 4.406748951311812,
+      "local_minus_full_mm": {
+        "Official": -35.89155251929783,
+        "Txyz": 9.87261945291905,
+        "T_only": 5.016410352869567,
+        "T_globalrot": 8.401388179973466,
+        "T_bodypose": 7.260632800647329,
+        "T+Pose": 9.008910910716528
+      },
+      "txyz_fallback": false,
+      "joint_translation_delta_mm": 15.376641129098587,
+      "joint_camera_medians_mm": {
+        "K1": 17.511676415790802,
+        "K2": 33.276898989838855,
+        "K3": 21.375108537255045
+      },
+      "joint_camera_p95_mm": {
+        "K1": 100.93552152990318,
+        "K2": 127.1642855813575,
+        "K3": 115.0868185345034
+      },
+      "formal_v3_k0_full_person_median_delta_mm": -4.446699620538899,
+      "formal_v3_heldout_delta_mm": -4.406738783295189,
+      "formal_v3_k0_better_heldout_worse": false,
+      "formal_v3_optimization_loss_decreased": true,
+      "formal_v3_loss_better_heldout_worse": false,
+      "formal_v3_vs_attribution_abs_difference_mm": {
+        "Official": 7.885547822539252e-05,
+        "Txyz": 4.088423442283329e-05,
+        "T+Pose": 3.0716217800375034e-05
+      },
+      "visuals_from_formal_v3_not_attribution_rerun": [
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0051.000_FULL_K0K1K2K3.png",
+        "visual_v3/Sub05__Date03_Sub05_yogaball__t0051.000_K1_conditions.png"
+      ]
+    }
+  ]
+}
