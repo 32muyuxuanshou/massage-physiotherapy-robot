@@ -1,3 +1,5 @@
+> **AUDIT CORRECTION: INVALID_FOR_CONTROLLED_SCIENTIFIC_COMPARISON.** The prior scientific interpretations are withdrawn. See [execution audit](../EXECUTION_AUDIT.md) for preprocessing, optimizer, evaluation-sampling and aggregation deviations. Raw results below are historical debugging evidence only.
+
 # FORMAL_BACK_LOCAL_MODEL_EVALUATION_CONTINUATION_V1
 
 ## Execution status

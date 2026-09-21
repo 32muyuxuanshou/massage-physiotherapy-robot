@@ -2,10 +2,22 @@
   "task": "FORMAL_BACK_LOCAL_MODEL_EVALUATION_CONTINUATION_V1",
   "status": "COMPLETE_V2",
   "primary_dataset": "BEHAVE",
-  "subjects": ["Sub03", "Sub04", "Sub05"],
+  "subjects": [
+    "Sub03",
+    "Sub04",
+    "Sub05"
+  ],
   "timestamps": 18,
-  "conditions": ["FULL", "UPPER", "LOCAL_TORSO"],
-  "methods": ["Official", "Txyz", "T+Pose"],
+  "conditions": [
+    "FULL",
+    "UPPER",
+    "LOCAL_TORSO"
+  ],
+  "methods": [
+    "Official",
+    "Txyz",
+    "T+Pose"
+  ],
   "raw_result_count": 54,
   "evidence_priority": "K1/K2/K3 held-out sensor depth to predicted mesh; person_fit.ply supporting only",
   "k0_policy": "K0 input and optimization only; K1/K2/K3 held out",
@@ -14,10 +26,15 @@
   "discarded_attempt": "The first single-card attempt was discarded after an independently detected camera transform direction bug; its metrics are not included.",
   "reported_contract": "camera_to_world = points @ R.T + t; world_to_camera = (points - t) @ R",
   "execution_server": "172.18.18.151:436",
-  "execution_gpus": [4, 5, 6],
+  "execution_gpus": [
+    4,
+    5,
+    6
+  ],
   "server_output_root": "/raid5/xuhd/back_local_feasibility_v1",
   "archive_sha256": "dec78a817e253f650943aa4994fb35a2a5661ccb3a4f89d0dda4d5b889725249",
   "visualization_note": "Metric plot and crop contact sheets are included; raw per-method mesh overlays were not retained by this run.",
   "aligned_metric": "not computed; raw outputs did not retain post-hoc translation-aligned vertices",
-  "next_decision": "Do not start fine-tuning from this result alone; inspect T+Pose failures and rerun with retained vertices if overlays are required."
+  "next_decision": "Withdraw previous interpretations; baseline input parity diagnostic before any formal rerun. See EXECUTION_AUDIT.md.",
+  "scientific_validity": "INVALID_FOR_CONTROLLED_SCIENTIFIC_COMPARISON"
 }
