@@ -1,0 +1,4005 @@
+{
+  "schema": "FORMAL_BACK_LOCAL_MODEL_EVALUATION_V3",
+  "status": "COMPLETE",
+  "aggregation": "K1/K2/K3 -> frame -> sequence -> subject",
+  "frame_count": 18,
+  "sequence_count": 9,
+  "subject_count": 3,
+  "primary_table": [
+    {
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 30.77007764913179,
+      "coverage_50mm": 0.7048000000000001,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "FULL",
+          "method": "Official",
+          "heldout_median_mm": 30.77007764913179,
+          "coverage_50mm": 0.7048000000000001,
+          "k0_median_mm": 25.10091029426681
+        },
+        {
+          "subject": "Sub04",
+          "condition": "FULL",
+          "method": "Official",
+          "heldout_median_mm": 25.196593782587044,
+          "coverage_50mm": 0.8057000000000001,
+          "k0_median_mm": 38.38628855976426
+        },
+        {
+          "subject": "Sub05",
+          "condition": "FULL",
+          "method": "Official",
+          "heldout_median_mm": 46.33011948863753,
+          "coverage_50mm": 0.5556,
+          "k0_median_mm": 87.50307883921805
+        }
+      ]
+    },
+    {
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 16.532151585499484,
+      "coverage_50mm": 0.9452,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "FULL",
+          "method": "Txyz",
+          "heldout_median_mm": 21.18988620238646,
+          "coverage_50mm": 0.7924,
+          "k0_median_mm": 17.042243999105953
+        },
+        {
+          "subject": "Sub04",
+          "condition": "FULL",
+          "method": "Txyz",
+          "heldout_median_mm": 13.437093356087308,
+          "coverage_50mm": 0.9591,
+          "k0_median_mm": 9.806540137618871
+        },
+        {
+          "subject": "Sub05",
+          "condition": "FULL",
+          "method": "Txyz",
+          "heldout_median_mm": 16.532151585499484,
+          "coverage_50mm": 0.9452,
+          "k0_median_mm": 13.216171271377686
+        }
+      ]
+    },
+    {
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.265090806709763,
+      "coverage_50mm": 0.9562999999999999,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "FULL",
+          "method": "T+Pose",
+          "heldout_median_mm": 18.867879937205636,
+          "coverage_50mm": 0.8649,
+          "k0_median_mm": 10.023470721125767
+        },
+        {
+          "subject": "Sub04",
+          "condition": "FULL",
+          "method": "T+Pose",
+          "heldout_median_mm": 10.425291808259809,
+          "coverage_50mm": 0.9562999999999999,
+          "k0_median_mm": 6.875685401910384
+        },
+        {
+          "subject": "Sub05",
+          "condition": "FULL",
+          "method": "T+Pose",
+          "heldout_median_mm": 13.265090806709763,
+          "coverage_50mm": 0.9639,
+          "k0_median_mm": 7.571176878283408
+        }
+      ]
+    },
+    {
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.210340338865,
+      "coverage_50mm": 0.6565,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "UPPER",
+          "method": "Official",
+          "heldout_median_mm": 35.210340338865,
+          "coverage_50mm": 0.6372,
+          "k0_median_mm": 28.99778554609047
+        },
+        {
+          "subject": "Sub04",
+          "condition": "UPPER",
+          "method": "Official",
+          "heldout_median_mm": 17.63618786178079,
+          "coverage_50mm": 0.8791,
+          "k0_median_mm": 21.37099738603951
+        },
+        {
+          "subject": "Sub05",
+          "condition": "UPPER",
+          "method": "Official",
+          "heldout_median_mm": 35.339949676699085,
+          "coverage_50mm": 0.6565,
+          "k0_median_mm": 54.04788228322005
+        }
+      ]
+    },
+    {
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 16.518870475801705,
+      "coverage_50mm": 0.8732,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "UPPER",
+          "method": "Txyz",
+          "heldout_median_mm": 24.604833444267495,
+          "coverage_50mm": 0.7491000000000001,
+          "k0_median_mm": 17.160394522179566
+        },
+        {
+          "subject": "Sub04",
+          "condition": "UPPER",
+          "method": "Txyz",
+          "heldout_median_mm": 12.07210715519472,
+          "coverage_50mm": 0.9029,
+          "k0_median_mm": 12.034880462081022
+        },
+        {
+          "subject": "Sub05",
+          "condition": "UPPER",
+          "method": "Txyz",
+          "heldout_median_mm": 16.518870475801705,
+          "coverage_50mm": 0.8732,
+          "k0_median_mm": 14.34018253850694
+        }
+      ]
+    },
+    {
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.933587250078048,
+      "coverage_50mm": 0.9053,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "UPPER",
+          "method": "T+Pose",
+          "heldout_median_mm": 19.449966144186742,
+          "coverage_50mm": 0.8182,
+          "k0_median_mm": 10.911045757521029
+        },
+        {
+          "subject": "Sub04",
+          "condition": "UPPER",
+          "method": "T+Pose",
+          "heldout_median_mm": 11.32890273049815,
+          "coverage_50mm": 0.9202999999999999,
+          "k0_median_mm": 7.606537489917352
+        },
+        {
+          "subject": "Sub05",
+          "condition": "UPPER",
+          "method": "T+Pose",
+          "heldout_median_mm": 13.933587250078048,
+          "coverage_50mm": 0.9053,
+          "k0_median_mm": 8.400622574122544
+        }
+      ]
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 35.493636355128544,
+      "coverage_50mm": 0.6316999999999999,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "LOCAL_TORSO",
+          "method": "Official",
+          "heldout_median_mm": 65.11708219691724,
+          "coverage_50mm": 0.4691,
+          "k0_median_mm": 37.40657010169851
+        },
+        {
+          "subject": "Sub04",
+          "condition": "LOCAL_TORSO",
+          "method": "Official",
+          "heldout_median_mm": 35.493636355128544,
+          "coverage_50mm": 0.6316999999999999,
+          "k0_median_mm": 24.604957573528935
+        },
+        {
+          "subject": "Sub05",
+          "condition": "LOCAL_TORSO",
+          "method": "Official",
+          "heldout_median_mm": 30.490922161789683,
+          "coverage_50mm": 0.7157,
+          "k0_median_mm": 32.756091671498325
+        }
+      ]
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 21.76158367697756,
+      "coverage_50mm": 0.7797000000000001,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "LOCAL_TORSO",
+          "method": "Txyz",
+          "heldout_median_mm": 56.35284534200585,
+          "coverage_50mm": 0.5352,
+          "k0_median_mm": 29.476702909819338
+        },
+        {
+          "subject": "Sub04",
+          "condition": "LOCAL_TORSO",
+          "method": "Txyz",
+          "heldout_median_mm": 21.76158367697756,
+          "coverage_50mm": 0.8334999999999999,
+          "k0_median_mm": 19.829464774481053
+        },
+        {
+          "subject": "Sub05",
+          "condition": "LOCAL_TORSO",
+          "method": "Txyz",
+          "heldout_median_mm": 21.311681094079805,
+          "coverage_50mm": 0.7797000000000001,
+          "k0_median_mm": 19.01330564071674
+        }
+      ]
+    },
+    {
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 21.663217834882694,
+      "coverage_50mm": 0.7999,
+      "subjects": [
+        {
+          "subject": "Sub03",
+          "condition": "LOCAL_TORSO",
+          "method": "T+Pose",
+          "heldout_median_mm": 29.613892062532845,
+          "coverage_50mm": 0.7013,
+          "k0_median_mm": 16.83618425724766
+        },
+        {
+          "subject": "Sub04",
+          "condition": "LOCAL_TORSO",
+          "method": "T+Pose",
+          "heldout_median_mm": 14.065827030887867,
+          "coverage_50mm": 0.8973,
+          "k0_median_mm": 10.567075517558788
+        },
+        {
+          "subject": "Sub05",
+          "condition": "LOCAL_TORSO",
+          "method": "T+Pose",
+          "heldout_median_mm": 21.663217834882694,
+          "coverage_50mm": 0.7999,
+          "k0_median_mm": 11.013922776237365
+        }
+      ]
+    }
+  ],
+  "frame_rows": [
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 34.60340553656163,
+      "coverage_50mm": 0.6452,
+      "k0_median_mm": 29.757533661172822,
+      "txyz_norm_mm": 22.999109246435523,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.003298718641152859,
+        -0.005210511450431277,
+        0.012092397364810603
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 24.16623521098757,
+      "coverage_50mm": 0.698,
+      "k0_median_mm": 23.49650424255218,
+      "txyz_norm_mm": 22.999109246435523,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.003298718641152859,
+        -0.005210511450431277,
+        0.012092397364810603
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 21.16272883624984,
+      "coverage_50mm": 0.746,
+      "k0_median_mm": 17.06935782867111,
+      "txyz_norm_mm": 22.999109246435523,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.003298718641152859,
+        -0.005210511450431277,
+        0.012092397364810603
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.16620219612432,
+      "coverage_50mm": 0.633,
+      "k0_median_mm": 29.931272790258564,
+      "txyz_norm_mm": 32.52251154174545,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.003109561145351658,
+        0.012466756072960106,
+        -0.0003912193817405818
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 26.27446009188357,
+      "coverage_50mm": 0.7486,
+      "k0_median_mm": 18.646303407708167,
+      "txyz_norm_mm": 32.52251154174545,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.003109561145351658,
+        0.012466756072960106,
+        -0.0003912193817405818
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 18.379596700636505,
+      "coverage_50mm": 0.8502,
+      "k0_median_mm": 10.940734188755734,
+      "txyz_norm_mm": 32.52251154174545,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.003109561145351658,
+        0.012466756072960106,
+        -0.0003912193817405818
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 71.33130283785636,
+      "coverage_50mm": 0.3562,
+      "k0_median_mm": 49.7186584956449,
+      "txyz_norm_mm": 31.541888091925546,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.008617164160885954,
+        0.035636564069178256,
+        0.07306015922864173
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 59.005989636356546,
+      "coverage_50mm": 0.4168,
+      "k0_median_mm": 41.58902293557431,
+      "txyz_norm_mm": 31.541888091925546,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.008617164160885954,
+        0.035636564069178256,
+        0.07306015922864173
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.275543495368098,
+      "coverage_50mm": 0.8422,
+      "k0_median_mm": 17.126904224866102,
+      "txyz_norm_mm": 31.541888091925546,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.008617164160885954,
+        0.035636564069178256,
+        0.07306015922864173
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 19.267872546818687,
+      "coverage_50mm": 0.8846,
+      "k0_median_mm": 13.539865906072476,
+      "txyz_norm_mm": 5.571739274560873,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0018587792543032222,
+        -0.012032741818896797,
+        0.00013641771147843151
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 18.213537193785356,
+      "coverage_50mm": 0.8868,
+      "k0_median_mm": 12.96090177734063,
+      "txyz_norm_mm": 5.571739274560873,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0018587792543032222,
+        -0.012032741818896797,
+        0.00013641771147843151
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 16.57303103816143,
+      "coverage_50mm": 0.8836,
+      "k0_median_mm": 8.431066563926318,
+      "txyz_norm_mm": 5.571739274560873,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0018587792543032222,
+        -0.012032741818896797,
+        0.00013641771147843151
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.25447848160569,
+      "coverage_50mm": 0.6414,
+      "k0_median_mm": 21.024527278395492,
+      "txyz_norm_mm": 30.341718043927095,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0014155736956086573,
+        -0.007529326608994857,
+        0.019585029657422703
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 22.93520679665142,
+      "coverage_50mm": 0.7496,
+      "k0_median_mm": 15.276663038878048,
+      "txyz_norm_mm": 30.341718043927095,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0014155736956086573,
+        -0.007529326608994857,
+        0.019585029657422703
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 20.52033558773698,
+      "coverage_50mm": 0.7862,
+      "k0_median_mm": 9.402689880628937,
+      "txyz_norm_mm": 30.341718043927095,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0014155736956086573,
+        -0.007529326608994857,
+        0.019585029657422703
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 75.80514783146666,
+      "coverage_50mm": 0.317,
+      "k0_median_mm": 26.621695608146474,
+      "txyz_norm_mm": 17.546108322893748,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0006330249329587478,
+        -0.042415850859558235,
+        0.07040779731936486
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 65.47618979559697,
+      "coverage_50mm": 0.3788,
+      "k0_median_mm": 22.435961055721435,
+      "txyz_norm_mm": 17.546108322893748,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0006330249329587478,
+        -0.042415850859558235,
+        0.07040779731936486
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 33.51404013605007,
+      "coverage_50mm": 0.6624,
+      "k0_median_mm": 12.464896929720716,
+      "txyz_norm_mm": 17.546108322893748,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0006330249329587478,
+        -0.042415850859558235,
+        0.07040779731936486
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 68.74984082108512,
+      "coverage_50mm": 0.3248,
+      "k0_median_mm": 34.383737334491116,
+      "txyz_norm_mm": 42.32808355373522,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.010281767266925201,
+        0.004886258980897784,
+        0.040818724438719034
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 50.10228985592373,
+      "coverage_50mm": 0.4986,
+      "k0_median_mm": 22.240566322411993,
+      "txyz_norm_mm": 42.32808355373522,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.010281767266925201,
+        0.004886258980897784,
+        0.040818724438719034
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 25.490413466823497,
+      "coverage_50mm": 0.7788,
+      "k0_median_mm": 10.745514177687532,
+      "txyz_norm_mm": 42.32808355373522,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.010281767266925201,
+        0.004886258980897784,
+        0.040818724438719034
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 90.93717377589127,
+      "coverage_50mm": 0.2796,
+      "k0_median_mm": 38.95051720942155,
+      "txyz_norm_mm": 29.898687172269145,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.008859297400302002,
+        -0.002450751963393394,
+        0.05671909862379043
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 74.24961421164943,
+      "coverage_50mm": 0.2972,
+      "k0_median_mm": 29.246345310461574,
+      "txyz_norm_mm": 29.898687172269145,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.008859297400302002,
+        -0.002450751963393394,
+        0.05671909862379043
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 37.164871407856246,
+      "coverage_50mm": 0.572,
+      "k0_median_mm": 17.112921405296085,
+      "txyz_norm_mm": 29.898687172269145,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.008859297400302002,
+        -0.002450751963393394,
+        0.05671909862379043
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 93.34355752210666,
+      "coverage_50mm": 0.2842,
+      "k0_median_mm": 45.466248112678386,
+      "txyz_norm_mm": 31.823812945178073,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.005924510379126335,
+        -0.026154051092405428,
+        0.041146522606121616
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 90.08129399933642,
+      "coverage_50mm": 0.3016,
+      "k0_median_mm": 40.69578604280073,
+      "txyz_norm_mm": 31.823812945178073,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.005924510379126335,
+        -0.026154051092405428,
+        0.041146522606121616
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 60.835167380289114,
+      "coverage_50mm": 0.3974,
+      "k0_median_mm": 23.164850113308127,
+      "txyz_norm_mm": 31.823812945178073,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.005924510379126335,
+        -0.026154051092405428,
+        0.041146522606121616
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 13.662892613580272,
+      "coverage_50mm": 0.9512,
+      "k0_median_mm": 15.818083254042504,
+      "txyz_norm_mm": 17.65020491979398,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.002799163519810466,
+        -0.0020428717297937826,
+        0.003476488355820706
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 13.996873001074562,
+      "coverage_50mm": 0.9542,
+      "k0_median_mm": 11.843921675799912,
+      "txyz_norm_mm": 17.65020491979398,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.002799163519810466,
+        -0.0020428717297937826,
+        0.003476488355820706
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.749414006447847,
+      "coverage_50mm": 0.951,
+      "k0_median_mm": 9.301427264564001,
+      "txyz_norm_mm": 17.65020491979398,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.002799163519810466,
+        -0.0020428717297937826,
+        0.003476488355820706
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 20.91573950411331,
+      "coverage_50mm": 0.7814,
+      "k0_median_mm": 19.04505388275939,
+      "txyz_norm_mm": 11.21500382084967,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.005274608069274239,
+        -0.02124387931691718,
+        0.017765716211054716
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 21.886949064221653,
+      "coverage_50mm": 0.8094,
+      "k0_median_mm": 17.967023838695425,
+      "txyz_norm_mm": 11.21500382084967,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.005274608069274239,
+        -0.02124387931691718,
+        0.017765716211054716
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.193427750153848,
+      "coverage_50mm": 0.8722,
+      "k0_median_mm": 12.62572466986786,
+      "txyz_norm_mm": 11.21500382084967,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.005274608069274239,
+        -0.02124387931691718,
+        0.017765716211054716
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 36.89060687172781,
+      "coverage_50mm": 0.654,
+      "k0_median_mm": 29.346892090718637,
+      "txyz_norm_mm": 33.13313185613824,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.005638596826386677,
+        0.0030960216906998905,
+        0.01673686942735131
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 22.624396684675283,
+      "coverage_50mm": 0.7688,
+      "k0_median_mm": 18.257619776837945,
+      "txyz_norm_mm": 33.13313185613824,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.005638596826386677,
+        0.0030960216906998905,
+        0.01673686942735131
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 23.326800874438526,
+      "coverage_50mm": 0.737,
+      "k0_median_mm": 16.24407179275407,
+      "txyz_norm_mm": 33.13313185613824,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.005638596826386677,
+        0.0030960216906998905,
+        0.01673686942735131
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 30.16523401638411,
+      "coverage_50mm": 0.7004,
+      "k0_median_mm": 20.657405026603165,
+      "txyz_norm_mm": 23.795095197449218,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.00803643956426714,
+        0.006374590187526952,
+        0.021892639093307853
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 20.451656162635896,
+      "coverage_50mm": 0.8032,
+      "k0_median_mm": 13.782394170686118,
+      "txyz_norm_mm": 23.795095197449218,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.00803643956426714,
+        0.006374590187526952,
+        0.021892639093307853
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.652680222957217,
+      "coverage_50mm": 0.846,
+      "k0_median_mm": 8.864466619545656,
+      "txyz_norm_mm": 23.795095197449218,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.00803643956426714,
+        0.006374590187526952,
+        0.021892639093307853
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 15.137365376143926,
+      "coverage_50mm": 0.9172,
+      "k0_median_mm": 20.823762287704604,
+      "txyz_norm_mm": 8.635873199441539,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.002966291131483112,
+        0.02810564495235801,
+        0.016099523619994116
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 14.306487826352685,
+      "coverage_50mm": 0.9256,
+      "k0_median_mm": 19.339213883564017,
+      "txyz_norm_mm": 8.635873199441539,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.002966291131483112,
+        0.02810564495235801,
+        0.016099523619994116
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.071373644687323,
+      "coverage_50mm": 0.9284,
+      "k0_median_mm": 12.42025057409959,
+      "txyz_norm_mm": 8.635873199441539,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.002966291131483112,
+        0.02810564495235801,
+        0.016099523619994116
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 18.52273020753787,
+      "coverage_50mm": 0.8828,
+      "k0_median_mm": 23.605003982460882,
+      "txyz_norm_mm": 20.696638270405188,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.004605341992352963,
+        0.04158799720281259,
+        0.0018101803135959216
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 15.433623114206409,
+      "coverage_50mm": 0.9022,
+      "k0_median_mm": 16.264669859929835,
+      "txyz_norm_mm": 20.696638270405188,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.004605341992352963,
+        0.04158799720281259,
+        0.0018101803135959216
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0014.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 17.841005326166297,
+      "coverage_50mm": 0.8588,
+      "k0_median_mm": 17.245064129054608,
+      "txyz_norm_mm": 20.696638270405188,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.004605341992352963,
+        0.04158799720281259,
+        0.0018101803135959216
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 31.374921281879466,
+      "coverage_50mm": 0.7092,
+      "k0_median_mm": 60.09292479645798,
+      "txyz_norm_mm": 72.89314412103815,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.005287488937263191,
+        -0.011589250309512744,
+        -0.005782590069753457
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 16.64317623324041,
+      "coverage_50mm": 0.877,
+      "k0_median_mm": 11.250312790008254,
+      "txyz_norm_mm": 72.89314412103815,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.005287488937263191,
+        -0.011589250309512744,
+        -0.005782590069753457
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 20.828196101876593,
+      "coverage_50mm": 0.9122,
+      "k0_median_mm": 8.666430398188574,
+      "txyz_norm_mm": 72.89314412103815,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.005287488937263191,
+        -0.011589250309512744,
+        -0.005782590069753457
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 30.7979462898315,
+      "coverage_50mm": 0.6602,
+      "k0_median_mm": 74.12777756387506,
+      "txyz_norm_mm": 86.44043746908282,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0019262376953911586,
+        -0.022262049344980106,
+        -0.004050434459553998
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 23.227943528299953,
+      "coverage_50mm": 0.8024,
+      "k0_median_mm": 14.981575160795115,
+      "txyz_norm_mm": 86.44043746908282,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0019262376953911586,
+        -0.022262049344980106,
+        -0.004050434459553998
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 24.90784773083837,
+      "coverage_50mm": 0.8348,
+      "k0_median_mm": 9.401840940942467,
+      "txyz_norm_mm": 86.44043746908282,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0019262376953911586,
+        -0.022262049344980106,
+        -0.004050434459553998
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 79.67528889626448,
+      "coverage_50mm": 0.3536,
+      "k0_median_mm": 49.94374083767235,
+      "txyz_norm_mm": 55.58309455438485,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0038799024517155445,
+        -0.013556479441449998,
+        0.008874468247781264
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 44.64909868487068,
+      "coverage_50mm": 0.5276,
+      "k0_median_mm": 21.007822477604815,
+      "txyz_norm_mm": 55.58309455438485,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0038799024517155445,
+        -0.013556479441449998,
+        0.008874468247781264
+      ]
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "frame": "t0036.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 41.38677879889939,
+      "coverage_50mm": 0.5438,
+      "k0_median_mm": 16.42730438544071,
+      "txyz_norm_mm": 55.58309455438485,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0038799024517155445,
+        -0.013556479441449998,
+        0.008874468247781264
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 14.558338184553225,
+      "coverage_50mm": 0.951,
+      "k0_median_mm": 22.5564553945039,
+      "txyz_norm_mm": 25.367067112685778,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.007015364402160398,
+        0.01244452582893918,
+        -0.006211071436837967
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 8.386996629023587,
+      "coverage_50mm": 0.973,
+      "k0_median_mm": 10.323695940727191,
+      "txyz_norm_mm": 25.367067112685778,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.007015364402160398,
+        0.01244452582893918,
+        -0.006211071436837967
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 7.787009872245064,
+      "coverage_50mm": 0.9722,
+      "k0_median_mm": 7.122322462077978,
+      "txyz_norm_mm": 25.367067112685778,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.007015364402160398,
+        0.01244452582893918,
+        -0.006211071436837967
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 16.20406084004547,
+      "coverage_50mm": 0.8584,
+      "k0_median_mm": 17.15915239688242,
+      "txyz_norm_mm": 17.76453405979069,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.00298685869003517,
+        -0.013666474102016046,
+        -0.005269246609688416
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 12.722142141343898,
+      "coverage_50mm": 0.895,
+      "k0_median_mm": 14.601712636657378,
+      "txyz_norm_mm": 17.76453405979069,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.00298685869003517,
+        -0.013666474102016046,
+        -0.005269246609688416
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.687609147805063,
+      "coverage_50mm": 0.9006,
+      "k0_median_mm": 8.710604660361234,
+      "txyz_norm_mm": 17.76453405979069,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.00298685869003517,
+        -0.013666474102016046,
+        -0.005269246609688416
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 25.37621033408301,
+      "coverage_50mm": 0.7378,
+      "k0_median_mm": 24.600345214076633,
+      "txyz_norm_mm": 34.51594321910876,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0033486357738057443,
+        8.299568210179409e-05,
+        -0.0007448738303426072
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 16.685253290168212,
+      "coverage_50mm": 0.834,
+      "k0_median_mm": 15.065202589049724,
+      "txyz_norm_mm": 34.51594321910876,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0033486357738057443,
+        8.299568210179409e-05,
+        -0.0007448738303426072
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.948865107135882,
+      "coverage_50mm": 0.8738,
+      "k0_median_mm": 12.335673275066949,
+      "txyz_norm_mm": 34.51594321910876,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0033486357738057443,
+        8.299568210179409e-05,
+        -0.0007448738303426072
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 27.716810091117388,
+      "coverage_50mm": 0.7956,
+      "k0_median_mm": 48.955395142506475,
+      "txyz_norm_mm": 59.40896828656984,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.005999456661426247,
+        -0.00842354525211264,
+        -0.009008731010576643
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 11.2175717742317,
+      "coverage_50mm": 0.9396,
+      "k0_median_mm": 9.945450572233582,
+      "txyz_norm_mm": 59.40896828656984,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.005999456661426247,
+        -0.00842354525211264,
+        -0.009008731010576643
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 8.810256974031152,
+      "coverage_50mm": 0.9404,
+      "k0_median_mm": 6.62904834174279,
+      "txyz_norm_mm": 59.40896828656984,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.005999456661426247,
+        -0.00842354525211264,
+        -0.009008731010576643
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 10.879888896356743,
+      "coverage_50mm": 0.8998,
+      "k0_median_mm": 9.893131384602524,
+      "txyz_norm_mm": 6.580300566145437,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0007839226189123236,
+        -0.0030976272418785644,
+        -0.0006511157982727056
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 11.422072169045542,
+      "coverage_50mm": 0.9108,
+      "k0_median_mm": 9.468048287504665,
+      "txyz_norm_mm": 6.580300566145437,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0007839226189123236,
+        -0.0030976272418785644,
+        -0.0006511157982727056
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 10.641348055477906,
+      "coverage_50mm": 0.94,
+      "k0_median_mm": 6.50247031947347,
+      "txyz_norm_mm": 6.580300566145437,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0007839226189123236,
+        -0.0030976272418785644,
+        -0.0006511157982727056
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 12.908080039865034,
+      "coverage_50mm": 0.894,
+      "k0_median_mm": 9.935291227093316,
+      "txyz_norm_mm": 5.3961706361089705,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0012648032570926476,
+        0.0015440362522463058,
+        0.0022878748275880767
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 12.638122518718923,
+      "coverage_50mm": 0.9012,
+      "k0_median_mm": 9.664325942991052,
+      "txyz_norm_mm": 5.3961706361089705,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0012648032570926476,
+        0.0015440362522463058,
+        0.0022878748275880767
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "frame": "t0037.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.18278895463985,
+      "coverage_50mm": 0.9208,
+      "k0_median_mm": 8.798477760050627,
+      "txyz_norm_mm": 5.3961706361089705,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0012648032570926476,
+        0.0015440362522463058,
+        0.0022878748275880767
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 17.697302921789145,
+      "coverage_50mm": 0.932,
+      "k0_median_mm": 32.26008365358966,
+      "txyz_norm_mm": 37.28680205628872,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0023306000737005478,
+        -0.017642032617513737,
+        0.010001671060029915
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 14.15651744871482,
+      "coverage_50mm": 0.9766,
+      "k0_median_mm": 10.193284710087175,
+      "txyz_norm_mm": 37.28680205628872,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0023306000737005478,
+        -0.017642032617513737,
+        0.010001671060029915
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 10.259722508674496,
+      "coverage_50mm": 0.9832,
+      "k0_median_mm": 7.3613024923953,
+      "txyz_norm_mm": 37.28680205628872,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0023306000737005478,
+        -0.017642032617513737,
+        0.010001671060029915
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 15.005679224831454,
+      "coverage_50mm": 0.8592,
+      "k0_median_mm": 21.797813861278996,
+      "txyz_norm_mm": 8.122179883185487,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0029288891476749596,
+        -0.014480015094788135,
+        0.010309286036078724
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 14.860950143188393,
+      "coverage_50mm": 0.8404,
+      "k0_median_mm": 21.72619782978117,
+      "txyz_norm_mm": 8.122179883185487,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0029288891476749596,
+        -0.014480015094788135,
+        0.010309286036078724
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.745418533132867,
+      "coverage_50mm": 0.8692,
+      "k0_median_mm": 13.24036811931407,
+      "txyz_norm_mm": 8.122179883185487,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0029288891476749596,
+        -0.014480015094788135,
+        0.010309286036078724
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 69.09387124724002,
+      "coverage_50mm": 0.3436,
+      "k0_median_mm": 36.37619599188416,
+      "txyz_norm_mm": 12.728217627610643,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.002639471984090147,
+        -0.04803305887335019,
+        -0.0419615207075994
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 71.94085052272666,
+      "coverage_50mm": 0.3348,
+      "k0_median_mm": 35.94235628547074,
+      "txyz_norm_mm": 12.728217627610643,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.002639471984090147,
+        -0.04803305887335019,
+        -0.0419615207075994
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0015.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 90.8631224113281,
+      "coverage_50mm": 0.258,
+      "k0_median_mm": 37.02406736311458,
+      "txyz_norm_mm": 12.728217627610643,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.002639471984090147,
+        -0.04803305887335019,
+        -0.0419615207075994
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 32.69588464338494,
+      "coverage_50mm": 0.6794,
+      "k0_median_mm": 44.51249346593886,
+      "txyz_norm_mm": 59.64579653830403,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0036032460806836447,
+        -0.0007168318796286766,
+        -0.0029957432004188433
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 13.515619934358538,
+      "coverage_50mm": 0.9584,
+      "k0_median_mm": 9.419795565150567,
+      "txyz_norm_mm": 59.64579653830403,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0036032460806836447,
+        -0.0007168318796286766,
+        -0.0029957432004188433
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 10.88760207359233,
+      "coverage_50mm": 0.9858,
+      "k0_median_mm": 6.849093976192988,
+      "txyz_norm_mm": 59.64579653830403,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0036032460806836447,
+        -0.0007168318796286766,
+        -0.0029957432004188433
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.51091686232144,
+      "coverage_50mm": 0.638,
+      "k0_median_mm": 52.22299762491169,
+      "txyz_norm_mm": 69.89230405387036,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.004957015608152468,
+        0.005876587504542341,
+        -0.0076663507861627345
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 13.695985237875005,
+      "coverage_50mm": 0.9426,
+      "k0_median_mm": 9.928893994597818,
+      "txyz_norm_mm": 69.89230405387036,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.004957015608152468,
+        0.005876587504542341,
+        -0.0076663507861627345
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.459724194717534,
+      "coverage_50mm": 0.9586,
+      "k0_median_mm": 8.14676006248229,
+      "txyz_norm_mm": 69.89230405387036,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.004957015608152468,
+        0.005876587504542341,
+        -0.0076663507861627345
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 12.480596518029174,
+      "coverage_50mm": 0.8726,
+      "k0_median_mm": 12.833719155173707,
+      "txyz_norm_mm": 7.54936667263412,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.005232086800060556,
+        -0.01042801382028169,
+        0.012833982467908456
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 12.85293435773885,
+      "coverage_50mm": 0.8802,
+      "k0_median_mm": 11.604169394263124,
+      "txyz_norm_mm": 7.54936667263412,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.005232086800060556,
+        -0.01042801382028169,
+        0.012833982467908456
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "frame": "t0038.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.433098362835956,
+      "coverage_50mm": 0.942,
+      "k0_median_mm": 10.31913142403714,
+      "txyz_norm_mm": 7.54936667263412,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.005232086800060556,
+        -0.01042801382028169,
+        0.012833982467908456
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 42.42570821888343,
+      "coverage_50mm": 0.5804,
+      "k0_median_mm": 79.92348129305452,
+      "txyz_norm_mm": 94.98326160835612,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.01659513266122281,
+        0.0019177437497566174,
+        0.0013878284252939466
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 12.04082701820321,
+      "coverage_50mm": 0.9642,
+      "k0_median_mm": 9.638061322272598,
+      "txyz_norm_mm": 94.98326160835612,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.01659513266122281,
+        0.0019177437497566174,
+        0.0013878284252939466
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 8.242330174798884,
+      "coverage_50mm": 0.9654,
+      "k0_median_mm": 6.704686261618241,
+      "txyz_norm_mm": 94.98326160835612,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.01659513266122281,
+        0.0019177437497566174,
+        0.0013878284252939466
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 12.97259247324919,
+      "coverage_50mm": 0.9238,
+      "k0_median_mm": 16.30765508128721,
+      "txyz_norm_mm": 14.972645950532682,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0017459312736332055,
+        0.009659256562346341,
+        -0.0007936953345155651
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 10.649574563170606,
+      "coverage_50mm": 0.9226,
+      "k0_median_mm": 10.643349082774899,
+      "txyz_norm_mm": 14.972645950532682,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0017459312736332055,
+        0.009659256562346341,
+        -0.0007936953345155651
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 10.276519253464672,
+      "coverage_50mm": 0.9464,
+      "k0_median_mm": 8.944274314194743,
+      "txyz_norm_mm": 14.972645950532682,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0017459312736332055,
+        0.009659256562346341,
+        -0.0007936953345155651
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 48.88912932501496,
+      "coverage_50mm": 0.5104,
+      "k0_median_mm": 81.21163743104547,
+      "txyz_norm_mm": 82.83529685453684,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.024091618586571772,
+        -0.0015525847794490844,
+        -0.013496373975816045
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 27.96439681858708,
+      "coverage_50mm": 0.8218,
+      "k0_median_mm": 24.758020732089328,
+      "txyz_norm_mm": 82.83529685453684,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.024091618586571772,
+        -0.0015525847794490844,
+        -0.013496373975816045
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0010.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.387227457093811,
+      "coverage_50mm": 0.8856,
+      "k0_median_mm": 12.62623691303434,
+      "txyz_norm_mm": 82.83529685453684,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.024091618586571772,
+        -0.0015525847794490844,
+        -0.013496373975816045
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 33.82936195551629,
+      "coverage_50mm": 0.6846,
+      "k0_median_mm": 60.025685464463365,
+      "txyz_norm_mm": 66.32582420335189,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0014806079157517749,
+        0.005879613854286259,
+        -0.0058940078771763105
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 14.833359693971406,
+      "coverage_50mm": 0.954,
+      "k0_median_mm": 8.693407672573397,
+      "txyz_norm_mm": 66.32582420335189,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0014806079157517749,
+        0.005879613854286259,
+        -0.0058940078771763105
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.608253441720734,
+      "coverage_50mm": 0.947,
+      "k0_median_mm": 6.775657547647836,
+      "txyz_norm_mm": 66.32582420335189,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0014806079157517749,
+        0.005879613854286259,
+        -0.0058940078771763105
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 22.299783250312387,
+      "coverage_50mm": 0.9172,
+      "k0_median_mm": 26.43433969079181,
+      "txyz_norm_mm": 28.482774498772105,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.00020133388618720494,
+        0.00045136804398393515,
+        -0.0017264147459710166
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 13.27923084659362,
+      "coverage_50mm": 0.9158,
+      "k0_median_mm": 8.887191781114375,
+      "txyz_norm_mm": 28.482774498772105,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.00020133388618720494,
+        0.00045136804398393515,
+        -0.0017264147459710166
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.381286207531627,
+      "coverage_50mm": 0.8972,
+      "k0_median_mm": 6.1398394392708004,
+      "txyz_norm_mm": 28.482774498772105,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.00020133388618720494,
+        0.00045136804398393515,
+        -0.0017264147459710166
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 22.098143385242132,
+      "coverage_50mm": 0.753,
+      "k0_median_mm": 19.28806810731522,
+      "txyz_norm_mm": 20.755494323348437,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0029507543841984507,
+        0.00866934578140155,
+        -0.0006913095606839725
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 15.558770535368033,
+      "coverage_50mm": 0.8452,
+      "k0_median_mm": 14.900908816872775,
+      "txyz_norm_mm": 20.755494323348437,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0029507543841984507,
+        0.00866934578140155,
+        -0.0006913095606839725
+      ]
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "frame": "t0034.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.11492091824826,
+      "coverage_50mm": 0.9144,
+      "k0_median_mm": 8.315510383063458,
+      "txyz_norm_mm": 20.755494323348437,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0029507543841984507,
+        0.00866934578140155,
+        -0.0006913095606839725
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 54.726687420269876,
+      "coverage_50mm": 0.4702,
+      "k0_median_mm": 115.81992821582648,
+      "txyz_norm_mm": 131.3792139800762,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.01260977314059969,
+        -0.027953435494781464,
+        0.006936428595355704
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 17.234293730970386,
+      "coverage_50mm": 0.9324,
+      "k0_median_mm": 12.7266063212575,
+      "txyz_norm_mm": 131.3792139800762,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.01260977314059969,
+        -0.027953435494781464,
+        0.006936428595355704
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.229674217660627,
+      "coverage_50mm": 0.953,
+      "k0_median_mm": 7.084843714862852,
+      "txyz_norm_mm": 131.3792139800762,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.01260977314059969,
+        -0.027953435494781464,
+        0.006936428595355704
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 56.62251973652661,
+      "coverage_50mm": 0.432,
+      "k0_median_mm": 84.79925063377357,
+      "txyz_norm_mm": 104.41603018021951,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0028091577533820855,
+        -0.028828100941222345,
+        0.013592753415773373
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 19.845273984973623,
+      "coverage_50mm": 0.7832,
+      "k0_median_mm": 12.977384573672136,
+      "txyz_norm_mm": 104.41603018021951,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0028091577533820855,
+        -0.028828100941222345,
+        0.013592753415773373
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 19.42344549411533,
+      "coverage_50mm": 0.7824,
+      "k0_median_mm": 8.293744468629772,
+      "txyz_norm_mm": 104.41603018021951,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0028091577533820855,
+        -0.028828100941222345,
+        0.013592753415773373
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 34.03882019323778,
+      "coverage_50mm": 0.706,
+      "k0_median_mm": 28.51929730330221,
+      "txyz_norm_mm": 19.327931732824435,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.007764526401144944,
+        -0.005073244626873308,
+        0.015490468397448609
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 27.405404872067457,
+      "coverage_50mm": 0.734,
+      "k0_median_mm": 18.606373627702112,
+      "txyz_norm_mm": 19.327931732824435,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.007764526401144944,
+        -0.005073244626873308,
+        0.015490468397448609
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0035.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 23.899149561195237,
+      "coverage_50mm": 0.7772,
+      "k0_median_mm": 10.329108326240618,
+      "txyz_norm_mm": 19.327931732824435,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.007764526401144944,
+        -0.005073244626873308,
+        0.015490468397448609
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 39.06536394679988,
+      "coverage_50mm": 0.618,
+      "k0_median_mm": 71.5310616201507,
+      "txyz_norm_mm": 84.80381977683878,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.019441230442826474,
+        -0.02016578743504316,
+        -0.005876619846719056
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 19.116625432169844,
+      "coverage_50mm": 0.9548,
+      "k0_median_mm": 15.296730400594988,
+      "txyz_norm_mm": 84.80381977683878,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.019441230442826474,
+        -0.02016578743504316,
+        -0.005876619846719056
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.511172813954687,
+      "coverage_50mm": 0.9496,
+      "k0_median_mm": 8.057510041703964,
+      "txyz_norm_mm": 84.80381977683878,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.019441230442826474,
+        -0.02016578743504316,
+        -0.005876619846719056
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 23.393120832457903,
+      "coverage_50mm": 0.8294,
+      "k0_median_mm": 23.296513932666528,
+      "txyz_norm_mm": 23.68256862747218,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.02267368840613787,
+        -0.023402442024961667,
+        0.004565336177805079
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 13.192466966629787,
+      "coverage_50mm": 0.8018,
+      "k0_median_mm": 15.702980503341745,
+      "txyz_norm_mm": 23.68256862747218,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.02267368840613787,
+        -0.023402442024961667,
+        0.004565336177805079
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.496716035886323,
+      "coverage_50mm": 0.8466,
+      "k0_median_mm": 8.507500679615315,
+      "txyz_norm_mm": 23.68256862747218,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.02267368840613787,
+        -0.023402442024961667,
+        0.004565336177805079
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 33.90963747566836,
+      "coverage_50mm": 0.6806,
+      "k0_median_mm": 31.100131448570128,
+      "txyz_norm_mm": 32.452110594379064,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.036781867548844105,
+        -0.008163940886188437,
+        0.003314195358675054
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 15.217957316092154,
+      "coverage_50mm": 0.7578,
+      "k0_median_mm": 19.70633275630145,
+      "txyz_norm_mm": 32.452110594379064,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.036781867548844105,
+        -0.008163940886188437,
+        0.003314195358675054
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "frame": "t0101.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 20.384228068718336,
+      "coverage_50mm": 0.756,
+      "k0_median_mm": 11.698737226234112,
+      "txyz_norm_mm": 32.452110594379064,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.036781867548844105,
+        -0.008163940886188437,
+        0.003314195358675054
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 23.110167116849052,
+      "coverage_50mm": 0.8396,
+      "k0_median_mm": 35.92071407087614,
+      "txyz_norm_mm": 37.32120564743104,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0009487889988033793,
+        -0.004049990132326098,
+        -0.02317389858063823
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 12.63618493004387,
+      "coverage_50mm": 0.9282,
+      "k0_median_mm": 15.873627694006043,
+      "txyz_norm_mm": 37.32120564743104,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0009487889988033793,
+        -0.004049990132326098,
+        -0.02317389858063823
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.703531297706538,
+      "coverage_50mm": 0.964,
+      "k0_median_mm": 15.054226592607058,
+      "txyz_norm_mm": 37.32120564743104,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0009487889988033793,
+        -0.004049990132326098,
+        -0.02317389858063823
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 14.408614184721985,
+      "coverage_50mm": 0.894,
+      "k0_median_mm": 17.89677588851179,
+      "txyz_norm_mm": 5.919719929185597,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0018351233242151765,
+        0.00015777017438978191,
+        -0.016741867562376722
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 14.290394100309928,
+      "coverage_50mm": 0.8986,
+      "k0_median_mm": 15.982420304064348,
+      "txyz_norm_mm": 5.919719929185597,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0018351233242151765,
+        0.00015777017438978191,
+        -0.016741867562376722
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.651165204373015,
+      "coverage_50mm": 0.9206,
+      "k0_median_mm": 11.577967251339714,
+      "txyz_norm_mm": 5.919719929185597,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0018351233242151765,
+        0.00015777017438978191,
+        -0.016741867562376722
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 21.12353646127393,
+      "coverage_50mm": 0.8804,
+      "k0_median_mm": 32.0042726436599,
+      "txyz_norm_mm": 20.00657810312714,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0018400283478415998,
+        0.00519161513517763,
+        -0.005655925621710356
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 15.967907540455187,
+      "coverage_50mm": 0.8398,
+      "k0_median_mm": 29.958599145992164,
+      "txyz_norm_mm": 20.00657810312714,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0018400283478415998,
+        0.00519161513517763,
+        -0.005655925621710356
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.978530150643785,
+      "coverage_50mm": 0.9038,
+      "k0_median_mm": 21.65721984357623,
+      "txyz_norm_mm": 20.00657810312714,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0018400283478415998,
+        0.00519161513517763,
+        -0.005655925621710356
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 48.37500203502579,
+      "coverage_50mm": 0.5176,
+      "k0_median_mm": 124.88329984504907,
+      "txyz_norm_mm": 150.86873511741803,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.017173087872984216,
+        0.005043665887994653,
+        -0.0016545966013183921
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 20.4281182409551,
+      "coverage_50mm": 0.9622,
+      "k0_median_mm": 10.558714848749327,
+      "txyz_norm_mm": 150.86873511741803,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.017173087872984216,
+        0.005043665887994653,
+        -0.0016545966013183921
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.197095447811883,
+      "coverage_50mm": 0.9674,
+      "k0_median_mm": 5.200623812349253,
+      "txyz_norm_mm": 150.86873511741803,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.017173087872984216,
+        0.005043665887994653,
+        -0.0016545966013183921
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 15.786794366830868,
+      "coverage_50mm": 0.9054,
+      "k0_median_mm": 17.833825806384027,
+      "txyz_norm_mm": 20.919617342691954,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0026307772337179347,
+        -0.004697724468993858,
+        -3.890294936548244e-05
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 13.19407777488798,
+      "coverage_50mm": 0.9078,
+      "k0_median_mm": 6.625993652947022,
+      "txyz_norm_mm": 20.919617342691954,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0026307772337179347,
+        -0.004697724468993858,
+        -3.890294936548244e-05
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.204722843747946,
+      "coverage_50mm": 0.89,
+      "k0_median_mm": 6.2150325642614,
+      "txyz_norm_mm": 20.919617342691954,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.0026307772337179347,
+        -0.004697724468993858,
+        -3.890294936548244e-05
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 30.619506118607895,
+      "coverage_50mm": 0.747,
+      "k0_median_mm": 40.68894175891026,
+      "txyz_norm_mm": 47.60408923818938,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.013319792520351814,
+        -0.009063878645650059,
+        -6.502956735099374e-05
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 20.588854621362977,
+      "coverage_50mm": 0.8906,
+      "k0_median_mm": 8.06801213544132,
+      "txyz_norm_mm": 47.60408923818938,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.013319792520351814,
+        -0.009063878645650059,
+        -6.502956735099374e-05
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "frame": "t0050.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.112385197246834,
+      "coverage_50mm": 0.8876,
+      "k0_median_mm": 6.470854097733596,
+      "txyz_norm_mm": 47.60408923818938,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.013319792520351814,
+        -0.009063878645650059,
+        -6.502956735099374e-05
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 31.33494639483537,
+      "coverage_50mm": 0.7054,
+      "k0_median_mm": 61.97893510103579,
+      "txyz_norm_mm": 76.45574234579614,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.00041308695818180474,
+        -0.03666544409024186,
+        -0.0121813600955889
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 11.220864486810108,
+      "coverage_50mm": 0.9506,
+      "k0_median_mm": 15.213162260430124,
+      "txyz_norm_mm": 76.45574234579614,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.00041308695818180474,
+        -0.03666544409024186,
+        -0.0121813600955889
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.164835332687622,
+      "coverage_50mm": 0.9948,
+      "k0_median_mm": 7.506777893271998,
+      "txyz_norm_mm": 76.45574234579614,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        0.00041308695818180474,
+        -0.03666544409024186,
+        -0.0121813600955889
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.05733830535772,
+      "coverage_50mm": 0.6716,
+      "k0_median_mm": 65.86486825089956,
+      "txyz_norm_mm": 72.80884291352142,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0020234953300241956,
+        -0.011909455650221501,
+        -0.01338346164847204
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 16.642341882500062,
+      "coverage_50mm": 0.8756,
+      "k0_median_mm": 17.907465513167462,
+      "txyz_norm_mm": 72.80884291352142,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0020234953300241956,
+        -0.011909455650221501,
+        -0.01338346164847204
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.3499073933902,
+      "coverage_50mm": 0.9488,
+      "k0_median_mm": 9.157525225063644,
+      "txyz_norm_mm": 72.80884291352142,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0020234953300241956,
+        -0.011909455650221501,
+        -0.01338346164847204
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 35.54799363969613,
+      "coverage_50mm": 0.6554,
+      "k0_median_mm": 39.38671710483238,
+      "txyz_norm_mm": 47.79782483218836,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.015313943980418313,
+        -0.04220668275669959,
+        -0.025869907492166
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 23.55150851829569,
+      "coverage_50mm": 0.7826,
+      "k0_median_mm": 21.55804565002972,
+      "txyz_norm_mm": 47.79782483218836,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.015313943980418313,
+        -0.04220668275669959,
+        -0.025869907492166
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0019.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 21.95128438824355,
+      "coverage_50mm": 0.7796,
+      "k0_median_mm": 11.675943473150777,
+      "txyz_norm_mm": 47.79782483218836,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.015313943980418313,
+        -0.04220668275669959,
+        -0.025869907492166
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 61.32529258243969,
+      "coverage_50mm": 0.4058,
+      "k0_median_mm": 113.02722257740031,
+      "txyz_norm_mm": 128.65201326059764,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.002622452835882888,
+        -0.008873198254006454,
+        -0.010190033070601512
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 15.909216663745132,
+      "coverage_50mm": 0.948,
+      "k0_median_mm": 10.480315488336174,
+      "txyz_norm_mm": 128.65201326059764,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.002622452835882888,
+        -0.008873198254006454,
+        -0.010190033070601512
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.365346280731904,
+      "coverage_50mm": 0.933,
+      "k0_median_mm": 5.516588755659918,
+      "txyz_norm_mm": 128.65201326059764,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.002622452835882888,
+        -0.008873198254006454,
+        -0.010190033070601512
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.62256104804045,
+      "coverage_50mm": 0.6414,
+      "k0_median_mm": 77.09419966206144,
+      "txyz_norm_mm": 89.70818644182474,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0020258940478927456,
+        -0.024649539197929782,
+        -0.016647982733546396
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 16.863575312531673,
+      "coverage_50mm": 0.8708,
+      "k0_median_mm": 13.21534305230184,
+      "txyz_norm_mm": 89.70818644182474,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0020258940478927456,
+        -0.024649539197929782,
+        -0.016647982733546396
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.517267106765896,
+      "coverage_50mm": 0.9176,
+      "k0_median_mm": 6.173395632719169,
+      "txyz_norm_mm": 89.70818644182474,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.0020258940478927456,
+        -0.024649539197929782,
+        -0.016647982733546396
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 25.433850683883236,
+      "coverage_50mm": 0.776,
+      "k0_median_mm": 26.12546623816427,
+      "txyz_norm_mm": 40.43578410202545,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.004028148756788252,
+        0.014802252428530505,
+        0.001052667684675157
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 25.781917251998003,
+      "coverage_50mm": 0.7768,
+      "k0_median_mm": 12.630358297313215,
+      "txyz_norm_mm": 40.43578410202545,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.004028148756788252,
+        0.014802252428530505,
+        0.001052667684675157
+      ]
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "frame": "t0051.000",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 21.375151281521838,
+      "coverage_50mm": 0.8202,
+      "k0_median_mm": 8.183714750617149,
+      "txyz_norm_mm": 40.43578410202545,
+      "txyz_fallback": false,
+      "o2_translation_delta_m": [
+        -0.004028148756788252,
+        0.014802252428530505,
+        0.001052667684675157
+      ]
+    }
+  ],
+  "sequence_rows": [
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 26.93563904169016,
+      "coverage_50mm": 0.7649,
+      "k0_median_mm": 21.64869978362265
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 41.20636671733269,
+      "coverage_50mm": 0.638,
+      "k0_median_mm": 25.10091029426681
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 30.77007764913179,
+      "coverage_50mm": 0.7048000000000001,
+      "k0_median_mm": 40.375164911530575
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 21.13757413783531,
+      "coverage_50mm": 0.8733,
+      "k0_median_mm": 35.75592526850519
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 25.196593782587044,
+      "coverage_50mm": 0.8057000000000001,
+      "k0_median_mm": 38.38628855976426
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 38.12753508719986,
+      "coverage_50mm": 0.6325000000000001,
+      "k0_median_mm": 69.97458337875895
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 46.89602568353487,
+      "coverage_50mm": 0.5441,
+      "k0_median_mm": 93.67549491798859
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 35.74258457593742,
+      "coverage_50mm": 0.6786,
+      "k0_median_mm": 80.4020069579626
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 46.33011948863753,
+      "coverage_50mm": 0.5556,
+      "k0_median_mm": 87.50307883921805
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 21.18988620238646,
+      "coverage_50mm": 0.7924,
+      "k0_median_mm": 18.228703009946408
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 32.049581428499145,
+      "coverage_50mm": 0.7264,
+      "k0_median_mm": 17.042243999105953
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 18.547416197938155,
+      "coverage_50mm": 0.8401000000000001,
+      "k0_median_mm": 12.516353480347185
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 9.802284201627643,
+      "coverage_50mm": 0.9562999999999999,
+      "k0_median_mm": 10.134573256480387
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 13.83606869153668,
+      "coverage_50mm": 0.9675,
+      "k0_median_mm": 9.806540137618871
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 13.437093356087308,
+      "coverage_50mm": 0.9591,
+      "k0_median_mm": 9.165734497422998
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 18.175459581570117,
+      "coverage_50mm": 0.9436,
+      "k0_median_mm": 14.011668360926244
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 16.532151585499484,
+      "coverage_50mm": 0.9452,
+      "k0_median_mm": 13.216171271377686
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 13.56504057527762,
+      "coverage_50mm": 0.9493,
+      "k0_median_mm": 12.84673887438315
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 18.867879937205636,
+      "coverage_50mm": 0.8148,
+      "k0_median_mm": 12.750212196298714
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 20.119913736635674,
+      "coverage_50mm": 0.8649,
+      "k0_median_mm": 10.023470721125767
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 18.240438162416904,
+      "coverage_50mm": 0.8791,
+      "k0_median_mm": 8.765448508867115
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 8.298633423138108,
+      "coverage_50mm": 0.9562999999999999,
+      "k0_median_mm": 6.875685401910384
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 10.573662291133413,
+      "coverage_50mm": 0.9844999999999999,
+      "k0_median_mm": 7.105198234294144
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 10.425291808259809,
+      "coverage_50mm": 0.9561999999999999,
+      "k0_median_mm": 6.740171904633039
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.870423515807657,
+      "coverage_50mm": 0.9513,
+      "k0_median_mm": 7.571176878283408
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.450313372759211,
+      "coverage_50mm": 0.9657,
+      "k0_median_mm": 10.127425202478156
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.265090806709763,
+      "coverage_50mm": 0.9639,
+      "k0_median_mm": 6.511683324465958
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.210340338865,
+      "coverage_50mm": 0.6372,
+      "k0_median_mm": 25.47790003432703
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 55.926456640002286,
+      "coverage_50mm": 0.5305,
+      "k0_median_mm": 28.99778554609047
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 22.967655832987713,
+      "coverage_50mm": 0.7887,
+      "k0_median_mm": 47.475769925789834
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 13.541974868201107,
+      "coverage_50mm": 0.8791,
+      "k0_median_mm": 13.526141890742473
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 25.258298043576445,
+      "coverage_50mm": 0.7485999999999999,
+      "k0_median_mm": 37.01040574309535
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 17.63618786178079,
+      "coverage_50mm": 0.9205,
+      "k0_median_mm": 21.37099738603951
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 40.007820284492254,
+      "coverage_50mm": 0.6307,
+      "k0_median_mm": 54.04788228322005
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 15.097704275776426,
+      "coverage_50mm": 0.8996999999999999,
+      "k0_median_mm": 17.86530084744791
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.339949676699085,
+      "coverage_50mm": 0.6565,
+      "k0_median_mm": 71.47953395648051
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 24.604833444267495,
+      "coverage_50mm": 0.7491000000000001,
+      "k0_median_mm": 16.961483223293108
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 48.06828163793554,
+      "coverage_50mm": 0.5533,
+      "k0_median_mm": 23.6066845745785
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 18.76721567732632,
+      "coverage_50mm": 0.864,
+      "k0_median_mm": 17.160394522179566
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 12.07210715519472,
+      "coverage_50mm": 0.9029,
+      "k0_median_mm": 12.034880462081022
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 14.278467690531699,
+      "coverage_50mm": 0.8915,
+      "k0_median_mm": 15.827545912189494
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 11.964402704882113,
+      "coverage_50mm": 0.9192,
+      "k0_median_mm": 9.765270431944636
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 16.518870475801705,
+      "coverage_50mm": 0.7925,
+      "k0_median_mm": 14.34018253850694
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 13.742235937598954,
+      "coverage_50mm": 0.9032,
+      "k0_median_mm": 11.304206978505686
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 16.752958597515867,
+      "coverage_50mm": 0.8732,
+      "k0_median_mm": 15.561404282734651
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 19.449966144186742,
+      "coverage_50mm": 0.8182,
+      "k0_median_mm": 10.171712034692336
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 25.67914957900505,
+      "coverage_50mm": 0.7221,
+      "k0_median_mm": 14.869323037581973
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 18.98961068776285,
+      "coverage_50mm": 0.8815999999999999,
+      "k0_median_mm": 10.911045757521029
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.164478601641484,
+      "coverage_50mm": 0.9202999999999999,
+      "k0_median_mm": 7.606537489917352
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.1025713639252,
+      "coverage_50mm": 0.9138999999999999,
+      "k0_median_mm": 10.69356409089818
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.32890273049815,
+      "coverage_50mm": 0.9218,
+      "k0_median_mm": 7.542056876732772
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 17.460080765000825,
+      "coverage_50mm": 0.8145,
+      "k0_median_mm": 8.400622574122544
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.92794402406048,
+      "coverage_50mm": 0.9053,
+      "k0_median_mm": 8.896499907800557
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.933587250078048,
+      "coverage_50mm": 0.9332,
+      "k0_median_mm": 7.665460428891406
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 73.5682253346615,
+      "coverage_50mm": 0.3366,
+      "k0_median_mm": 38.17017705189569
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 65.11708219691724,
+      "coverage_50mm": 0.4691,
+      "k0_median_mm": 37.40657010169851
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 49.099009551901176,
+      "coverage_50mm": 0.6182000000000001,
+      "k0_median_mm": 36.77437241006662
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 19.14214518697402,
+      "coverage_50mm": 0.8159000000000001,
+      "k0_median_mm": 17.267818220584974
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 40.787233882634595,
+      "coverage_50mm": 0.6081000000000001,
+      "k0_median_mm": 24.604957573528935
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 35.493636355128544,
+      "coverage_50mm": 0.6316999999999999,
+      "k0_median_mm": 50.24985276918035
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 33.97422883445307,
+      "coverage_50mm": 0.6933,
+      "k0_median_mm": 29.809714375936167
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 25.87152128994091,
+      "coverage_50mm": 0.8137,
+      "k0_median_mm": 36.34660720128508
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 30.490922161789683,
+      "coverage_50mm": 0.7157,
+      "k0_median_mm": 32.756091671498325
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 62.241089715976756,
+      "coverage_50mm": 0.39780000000000004,
+      "k0_median_mm": 32.01249199564788
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 56.35284534200585,
+      "coverage_50mm": 0.5352,
+      "k0_median_mm": 29.476702909819338
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 30.041360899538546,
+      "coverage_50mm": 0.7149,
+      "k0_median_mm": 18.636246168767325
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 14.661687904443568,
+      "coverage_50mm": 0.8675999999999999,
+      "k0_median_mm": 12.364764266020387
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 42.396892440232754,
+      "coverage_50mm": 0.6074999999999999,
+      "k0_median_mm": 23.77326283986693
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 21.76158367697756,
+      "coverage_50mm": 0.8334999999999999,
+      "k0_median_mm": 19.829464774481053
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 21.311681094079805,
+      "coverage_50mm": 0.7459,
+      "k0_median_mm": 19.15635319200178
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 18.27838108090908,
+      "coverage_50mm": 0.8652,
+      "k0_median_mm": 19.01330564071674
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 24.666712885146847,
+      "coverage_50mm": 0.7797000000000001,
+      "k0_median_mm": 17.094201973671467
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_backpack_back",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 24.394791815709084,
+      "coverage_50mm": 0.7523,
+      "k0_median_mm": 14.79590057729341
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_stool_sit",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 42.08098412736382,
+      "coverage_50mm": 0.5671999999999999,
+      "k0_median_mm": 19.7044609530311
+    },
+    {
+      "subject": "Sub03",
+      "sequence": "Date03_Sub03_yogaball_play",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 29.613892062532845,
+      "coverage_50mm": 0.7013,
+      "k0_median_mm": 16.83618425724766
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_backpack_back",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.065827030887867,
+      "coverage_50mm": 0.8973,
+      "k0_median_mm": 10.567075517558788
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_stool_sit",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 53.14811038708203,
+      "coverage_50mm": 0.6,
+      "k0_median_mm": 23.67159939357586
+    },
+    {
+      "subject": "Sub04",
+      "sequence": "Date03_Sub04_yogaball_play",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 12.751074187671035,
+      "coverage_50mm": 0.9,
+      "k0_median_mm": 10.470873648048899
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_backpack",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 22.141688814956787,
+      "coverage_50mm": 0.7666,
+      "k0_median_mm": 11.013922776237365
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_stool",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 15.04545767394531,
+      "coverage_50mm": 0.8956999999999999,
+      "k0_median_mm": 14.064036970654913
+    },
+    {
+      "subject": "Sub05",
+      "sequence": "Date03_Sub05_yogaball",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 21.663217834882694,
+      "coverage_50mm": 0.7999,
+      "k0_median_mm": 9.929829111883963
+    }
+  ],
+  "subject_rows": [
+    {
+      "subject": "Sub03",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 30.77007764913179,
+      "coverage_50mm": 0.7048000000000001,
+      "k0_median_mm": 25.10091029426681
+    },
+    {
+      "subject": "Sub04",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 25.196593782587044,
+      "coverage_50mm": 0.8057000000000001,
+      "k0_median_mm": 38.38628855976426
+    },
+    {
+      "subject": "Sub05",
+      "condition": "FULL",
+      "method": "Official",
+      "heldout_median_mm": 46.33011948863753,
+      "coverage_50mm": 0.5556,
+      "k0_median_mm": 87.50307883921805
+    },
+    {
+      "subject": "Sub03",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 21.18988620238646,
+      "coverage_50mm": 0.7924,
+      "k0_median_mm": 17.042243999105953
+    },
+    {
+      "subject": "Sub04",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 13.437093356087308,
+      "coverage_50mm": 0.9591,
+      "k0_median_mm": 9.806540137618871
+    },
+    {
+      "subject": "Sub05",
+      "condition": "FULL",
+      "method": "Txyz",
+      "heldout_median_mm": 16.532151585499484,
+      "coverage_50mm": 0.9452,
+      "k0_median_mm": 13.216171271377686
+    },
+    {
+      "subject": "Sub03",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 18.867879937205636,
+      "coverage_50mm": 0.8649,
+      "k0_median_mm": 10.023470721125767
+    },
+    {
+      "subject": "Sub04",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 10.425291808259809,
+      "coverage_50mm": 0.9562999999999999,
+      "k0_median_mm": 6.875685401910384
+    },
+    {
+      "subject": "Sub05",
+      "condition": "FULL",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.265090806709763,
+      "coverage_50mm": 0.9639,
+      "k0_median_mm": 7.571176878283408
+    },
+    {
+      "subject": "Sub03",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.210340338865,
+      "coverage_50mm": 0.6372,
+      "k0_median_mm": 28.99778554609047
+    },
+    {
+      "subject": "Sub04",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 17.63618786178079,
+      "coverage_50mm": 0.8791,
+      "k0_median_mm": 21.37099738603951
+    },
+    {
+      "subject": "Sub05",
+      "condition": "UPPER",
+      "method": "Official",
+      "heldout_median_mm": 35.339949676699085,
+      "coverage_50mm": 0.6565,
+      "k0_median_mm": 54.04788228322005
+    },
+    {
+      "subject": "Sub03",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 24.604833444267495,
+      "coverage_50mm": 0.7491000000000001,
+      "k0_median_mm": 17.160394522179566
+    },
+    {
+      "subject": "Sub04",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 12.07210715519472,
+      "coverage_50mm": 0.9029,
+      "k0_median_mm": 12.034880462081022
+    },
+    {
+      "subject": "Sub05",
+      "condition": "UPPER",
+      "method": "Txyz",
+      "heldout_median_mm": 16.518870475801705,
+      "coverage_50mm": 0.8732,
+      "k0_median_mm": 14.34018253850694
+    },
+    {
+      "subject": "Sub03",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 19.449966144186742,
+      "coverage_50mm": 0.8182,
+      "k0_median_mm": 10.911045757521029
+    },
+    {
+      "subject": "Sub04",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 11.32890273049815,
+      "coverage_50mm": 0.9202999999999999,
+      "k0_median_mm": 7.606537489917352
+    },
+    {
+      "subject": "Sub05",
+      "condition": "UPPER",
+      "method": "T+Pose",
+      "heldout_median_mm": 13.933587250078048,
+      "coverage_50mm": 0.9053,
+      "k0_median_mm": 8.400622574122544
+    },
+    {
+      "subject": "Sub03",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 65.11708219691724,
+      "coverage_50mm": 0.4691,
+      "k0_median_mm": 37.40657010169851
+    },
+    {
+      "subject": "Sub04",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 35.493636355128544,
+      "coverage_50mm": 0.6316999999999999,
+      "k0_median_mm": 24.604957573528935
+    },
+    {
+      "subject": "Sub05",
+      "condition": "LOCAL_TORSO",
+      "method": "Official",
+      "heldout_median_mm": 30.490922161789683,
+      "coverage_50mm": 0.7157,
+      "k0_median_mm": 32.756091671498325
+    },
+    {
+      "subject": "Sub03",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 56.35284534200585,
+      "coverage_50mm": 0.5352,
+      "k0_median_mm": 29.476702909819338
+    },
+    {
+      "subject": "Sub04",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 21.76158367697756,
+      "coverage_50mm": 0.8334999999999999,
+      "k0_median_mm": 19.829464774481053
+    },
+    {
+      "subject": "Sub05",
+      "condition": "LOCAL_TORSO",
+      "method": "Txyz",
+      "heldout_median_mm": 21.311681094079805,
+      "coverage_50mm": 0.7797000000000001,
+      "k0_median_mm": 19.01330564071674
+    },
+    {
+      "subject": "Sub03",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 29.613892062532845,
+      "coverage_50mm": 0.7013,
+      "k0_median_mm": 16.83618425724766
+    },
+    {
+      "subject": "Sub04",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 14.065827030887867,
+      "coverage_50mm": 0.8973,
+      "k0_median_mm": 10.567075517558788
+    },
+    {
+      "subject": "Sub05",
+      "condition": "LOCAL_TORSO",
+      "method": "T+Pose",
+      "heldout_median_mm": 21.663217834882694,
+      "coverage_50mm": 0.7999,
+      "k0_median_mm": 11.013922776237365
+    }
+  ],
+  "txyz_fallback_count": 0,
+  "txyz_total_count": 162
+}
