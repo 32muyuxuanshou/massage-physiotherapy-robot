@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-21",
+  "purpose": "RGB-D human mesh recovery under partial visibility and geometry-based acupoint localization",
+  "local_papers": [
+    {
+      "id": "2403.12473v1",
+      "title": "PostoMETRO: Pose Token Enhanced Mesh Transformer for Robust 3D Human Mesh Recovery",
+      "source": "https://arxiv.org/abs/2403.12473",
+      "pdf": "2403.12473v1.pdf",
+      "extracted_text": "2403.12473v1.extract.txt",
+      "role": "pose-token and joint/vertex-token design"
+    },
+    {
+      "id": "2307.16377v2",
+      "title": "JOTR: 3D Joint Contrastive Learning with Transformers for Occluded Human Mesh Recovery",
+      "source": "https://arxiv.org/abs/2307.16377",
+      "pdf": "2307.16377v2.pdf",
+      "extracted_text": "2307.16377v2.extract.txt",
+      "role": "occlusion-aware 2D/3D fusion and joint structure supervision"
+    },
+    {
+      "id": "2110.08729v1",
+      "title": "VoteHMR: Occlusion-Aware Voting Network for Robust 3D Human Mesh Recovery from Partial Point Clouds",
+      "source": "https://arxiv.org/abs/2110.08729",
+      "pdf": "2110.08729v1.pdf",
+      "extracted_text": "2110.08729v1.extract.txt",
+      "role": "partial point evidence, voting and kinematic completion"
+    },
+    {
+      "id": "1911.07383v1",
+      "title": "Towards Robust RGB-D Human Mesh Recovery",
+      "source": "https://arxiv.org/abs/1911.07383",
+      "pdf": "1911.07383v1.pdf",
+      "extracted_text": "1911.07383v1.extract.txt",
+      "role": "RGB-D fusion, depth ranking and weak SMPL constraints"
+    },
+    {
+      "id": "2303.16160v1",
+      "title": "OSX: One-Stage 3D Whole-Body Mesh Recovery with Component Aware Transformer",
+      "source": "https://arxiv.org/abs/2303.16160",
+      "pdf": "2303.16160v1.pdf",
+      "extracted_text": "2303.16160v1.extract.txt",
+      "role": "global body plus local part decoding and real-life whole-body data"
+    }
+  ],
+  "verified_acupoint_sources": [
+    {
+      "title": "Positioning Standardized Acupuncture Points on the Whole Body Based on X-Ray Computed Tomography Images",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3929431/",
+      "role": "3D CT body/bone model, anatomical landmarks, proportional bone measurement and formulas"
+    },
+    {
+      "title": "Standardization on the location of Fengshi (GB 31)",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/29797916/",
+      "role": "evidence that proportional and surface-landmark methods can disagree"
+    },
+    {
+      "title": "Structure-guided deep learning for back acupoint localization via bone-measuring constraints",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12417426/",
+      "role": "landmark detection, subject-specific cun scale and structure-constrained learning"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "description": "2018 Baliao study mentioned by the user",
+      "status": "title, authors, venue and DOI not yet independently verified",
+      "policy": "do not cite as confirmed evidence until primary source is resolved"
+    }
+  ],
+  "scope_note": "The downloaded papers are a research library. They are not evidence that the proposed model has been trained or that the proposed acupoint formulas are clinically validated."
+}

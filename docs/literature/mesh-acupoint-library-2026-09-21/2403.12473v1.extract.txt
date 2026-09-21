@@ -1,0 +1,899 @@
+                                         PostoMETRO: Pose Token Enhanced Mesh Transformer for Robust 3D Human
+                                                                   Mesh Recovery
+
+                                                        Wendi Yang1,2, *    Zihang Jiang1,2, *   Shang Zhao1,2    S. Kevin Zhou1,2,†
+                                                         1
+                                                        School of Biomedical Engineering & Suzhou Institute for Advanced Research,
+                                                                       University of Science and Technology of China
+                                                   2
+                                                     Center for Medical Imaging, Robotics, Analytic Computing & Learning (MIRACLE),
+arXiv:2403.12473v1 [cs.CV] 19 Mar 2024
+
+
+
+
+                                                  Suzhou Institute for Advanced Research, University of Science and Technology of China
+                                                                                              yangwendi@mail.ustc.edu.cn
+                                                                                {jzh0103, shangzhao, skevinzhou}@ustc.edu.cn
+
+
+
+                                                                     Abstract
+                                            With the recent advancements in single-image-based hu-                          2D Pose
+                                                                                                                             Li6ing                                              Pose-to-Mesh
+                                         man mesh recovery, there is a growing interest in enhanc-                                                                     Decoder
+                                         ing its performance in certain extreme scenarios, such as
+                                         occlusion, while maintaining overall model accuracy. Al-                                          3D Pose
+
+                                         though obtaining accurately annotated 3D human poses un-
+                                                                                                                            (a). 2D Pose to 3D Pose/Mesh
+                                         der occlusion is challenging, there is still a wealth of rich
+                                         and precise 2D pose annotations that can be leveraged.                                1   2   … K-1 K
+
+                                         However, existing works mostly focus on directly leverag-                                 Codebook
+                                                                                                                                                         Tokeniza?on
+                                         ing 2D pose coordinates to estimate 3D pose and mesh. In
+                                         this paper, we present PostoMETRO (Pose token enhanced                              2D Pose             5   …   97
+
+                                                                                                                              Query
+                                                                                                                                              Pose Tokens              Decoder
+                                         MEsh TRansfOrmer), which integrates occlusion-resilient                                                                                 Token-to-Mesh
+                                                                                                                                                     …
+                                         2D pose representation into transformers in a token-wise
+                                                                                                                                              Image Tokens
+                                         manner. Utilizing a specialized pose tokenizer, we efficiently
+                                         condense 2D pose data to a compact sequence of pose to-                             (b). 2D Pose as Pose Token
+                                         kens and feed them to the transformer together with the im-
+                                         age tokens. This process not only ensures a rich depiction          Figure 1. (a) Traditional approach of utilizing 2D pose information
+                                                                                                             by converting it into 3D pose and subsequently generating a 3D
+                                         of texture from the image but also fosters a robust integra-
+                                                                                                             mesh. (b) Transforming 2D pose into a sequence of tokens and
+                                         tion of pose and image information. Subsequently, these             integrating it with image tokens to generate a 3D mesh.
+                                         combined tokens are queried by vertex and joint tokens to
+                                         decode 3D coordinates of mesh vertices and human joints.            sion, due to the growing number of downstream tasks, such
+                                         Facilitated by the robust pose token representation and the         as virtual humans, VR, and AR. Among these, due to the in-
+                                         effective combination, we are able to produce more precise          herent challenges of camera calibration in outdoor scenes,
+                                         3D coordinates, even under extreme scenarios like occlu-            the 3DHPSE task under a monocular camera has received
+                                         sion. Experiments on both standard and occlusion-specific           extensive research attention. However, accompanying this
+                                         benchmarks demonstrate the effectiveness of PostoMETRO.             are the challenging issues specific to monocular scenes,
+                                         Qualitative results further illustrate the clarity of how 2D        such as depth ambiguity and occlusion problems.
+                                         pose can help 3D reconstruction. Code will be made avail-
+                                                                                                                One way of handling 3DHPSE task is to glean 2D
+                                         able.
+                                                                                                             clues on images, such as 2D human pose [6] and mesh-
+                                         1. Introduction                                                     aligned 2D human texture [19, 51], to reconstruct 3D hu-
+                                                                                                             man mesh by advanced neural networks [10, 20]. Despite
+                                         The 3D human pose and shape estimation (3DHPSE) task
+                                                                                                             the high accuracy these paradigms demonstrate on some in-
+                                         has been increasingly valued in the field of computer vi-
+                                                                                                             door datasets [15], their performance drastically drops in
+                                           * These authors contributed equally to this work                  the presence of severe occlusion. This scenario spoils the
+                                           † Corresponding author                                            alignment between human mesh vertices and image pixels,
+breaking the pixel-wise dependency needed for decoding           code a human mesh from image and pose tokens, following
+3D coordinates on the human mesh. To mitigate the im-            the prior practice [5, 29], we pre-define human mesh ver-
+pact of such image-mesh misalignment issue caused by oc-         tices and joints as tokens, a transformer-based decoder is
+clusion, many works [6, 7, 17, 22, 23] propose to incorpo-       used to accomplish interaction among these predefined to-
+rate occlusion-robust prior knowledge in order to enhance        kens, image tokens, and pose tokens. A lightweight linear
+model performance. A common practice to counteract the           layer is used to transform point information from feature
+negative effects of occlusion is to utilize the parameter-       level to 3D coordinates. The overall pipeline is in Fig. 2.
+ized model SMPL [32], since the SMPL model encodes hu-               We benchmark our model on 3DPW [45], 3DPW-
+man pose and shape priors into compact features and hence        OCC [54], 3DPW-PC [41] and 3DOH [54]. Our experi-
+can produce plausible results when occlusion happens. Al-        ments show that our model yields state-of-the-art results,
+though lots of works [17, 22, 23] attempt to recover hu-         proving the proficiency and adaptability of our model on
+man mesh by regressing SMPL parameters, incorporating            datasets involving object-occlusion, person-occlusion, and
+SMPL prior knowledge from its feature space into a non-          non-occlusion scenarios. Finally, we offer ablation studies
+parametric model is still a research challenge. The common       and qualitative results, which demonstrate the effectiveness
+approach of existing SOTA methods [6, 7] is to utilize 2D        of our occlusion-robust 2D pose integration strategy. Our
+poses with a focus on incorporating occlusion-robust clues       main contributions are summarized as follows:
+like 2D human pose. This is done by obtaining an interme-        • We propose PostoMETRO, a novel framework to incor-
+diate 3D human representation, i.e., 3D pose, which is then         porate 2D pose into transformers to help 3D human mesh
+utilized for robust 3D human mesh estimation as shown in            estimation, which is done by transforming 2D pose as
+Fig. 1 (a). Unlike SMPL-based methods, they do not store            pose tokens.
+human pose prior knowledge in a high-dimensional feature         • Our method demonstrates occlusion-robustness and
+space but in 2D coordinates. Although such hand-crafted             strong pixel-aligned accuracy on both standard bench-
+2D-to-3D methods achieve good controllability and demon-            marks and occlusion-specific benchmarks.
+strate comparable performances, these processes still face       • Our approach can generalize to different occlusion sce-
+challenges. For instance, inherent uncertainty, i.e., depth         narios including object-occlusion and person-occlusion
+ambiguity in z-axis and inaccuracy in x,y-axis, exists in ob-       without any dedicated design.
+taining the 3D pose for constructing the 3D mesh, which
+may lead to significant errors when recovering the human         2. Related Work
+mesh from such intermediate representations.
+                                                                 2.1. 3D Human Pose and Shape Estimation
+   Inspired by aforementioned ideas, in this paper, we
+present PostoMETRO, a novel paradigm to improve the              To estimate 3D human body, early works [3, 24, 37, 44]
+performance of non-parametric model under occlusion sce-         adopt optimization and use 2D keypoints and human sil-
+narios, which is done by encoding occlusion-robust prior         houette to output parameters of parametric models [2, 32,
+knowledge into the model in a cost-effective way. We ob-         37, 47]. SMPLify [3] was the first method to fit the
+serve that the explicit utilization of human 2D pose to get      SMPL [32] model to the given 2D keypoints. These meth-
+3D mesh suffers from erroneous intermediate 3D pose. In          ods are slow and not robust as the optimization procedure is
+light of recent progress in compressing 2D human body            usually time-consuming and sensitive to initialization. Re-
+poses down to structural representation [11] and the remark-     cently, learning-based methods [5, 6, 17, 22, 23, 29, 51]
+able performance of the models leveraging the SMPL model         have gained wide attention since they can reconstruct hu-
+as a prior knowledge source, we directly compress 2D hu-         man model parameters directly from a single image. [17,
+man pose into compact token-wise feature by using a VQ-          22, 23, 51] propose to use image features to directly regress
+VAE, represented in Fig. 1 (b). It is worth noting that during   the SMPL parameters. To facilitate training, extra supervi-
+this process, a 2D pose is compressed into another repre-        sory signals are used, e.g., 2D keypoints [17] and human
+sentation in a data-driven manner and no manual design is        body segmentation map [22]. Kolotouros et al. [23] com-
+required. Such transformation enables the compression of         bine 2D keypoints and SMPLify model to achieve extra su-
+2D poses into the feature space for end-to-end utilization,      pervision.
+without going through any erroneous intermediate repre-             While model-based approaches have made remarkable
+sentation. Combining pose tokens with image tokens en-           progress in 3D human mesh reconstruction, their perfor-
+coded by CNNs [14, 46], we then use a transformer-based          mances are constrained by pre-defined body models, mak-
+encoder to further facilitate the interaction between fine-      ing it challenging to extend them to other applications. To
+grained image and pose tokens. To avoid the model being          tackle this, some works [5, 6, 29] proposed to use advanced
+misled by inaccurate 2D poses, we further incorporate the        neural network architecture [10, 20] to handle 3DHPSE
+uncertainty from the 2D poses as part of pose tokens. To de-     problem without relying on SMPL [32]. Choi et al. [6] uti-
+lize GCN [20] to regress human mesh by predicting 3D co-        lems since we focus on single-person scenarios. Recently,
+ordinates of mesh vertices. Lin et al. [29] leverage strong     VQ-VAE [43] has been widely used for explicitly encoding
+capability of vision transformer encoder [10] to model long-    pose prior in learnable embedding [11–13, 52]. However,
+range dependency among human mesh vertices. Cho et              most of them [12, 13, 52] focus on using such representa-
+al. [5] enhance the transformer architecture by transitioning   tion for motion generation, which may not demand the same
+from an encoder-only to an encoder-decoder framework.           level of precision as discrimination tasks. Closely related to
+                                                                our work, Geng et al. [11] propose to represent 2D poses us-
+2.2. Occlusion Handling
+                                                                ing entries from VQ-VAE. However, their study is confined
+Solving the occlusion problem on single image can be very       to 2D human pose regression, constrained by the substan-
+challenging. This is because one cannot utilize clues from      tial gap between 2D and 3D. Consequently, their approach
+other views to disambiguate the uncertainty of target object,   cannot be directly applied to 3DHPSE tasks.
+and the occluders can vary from random object to real per-
+son. One straightforward way to handle occlusion is to rely
+                                                                3. Method
+on data augmentation during training to synthesize occlu-
+sion [22, 27]. However, due to the texture difference be-       3.1. Preliminary: Pose Tokenizer
+tween synthetic data and real occluders, such methods can
+not fully guarantee the performance of model in the real        Following the progress in the field of natural language pro-
+world. Zhang et al. [54] propose to cast an occlusion dis-      cessing [9] and image processing [39], we transform 2D
+ambiguation problem into an image-inpainting problem us-        pose into discrete token sequence by learning a ”pose tok-
+ing UV maps, but their work needs high-quality saliency         enizer”. More specifically, a cropped human image X ∈
+maps and UV maps. Kocabas et al. [22] propose to infer          RC×H×W is fed into the pose tokenizer, resulting in a
+unseen parts from visible parts, but this approach also re-     sequence of human pose tokens Z = [z1 , . . . , zN ]T ∈
+lies on the model’s capability to capture the high-quality      RN ×dp corresponding to the target human, where each to-
+visible parts. Similar to our work, Choi et al. [7] propose     ken feature zi is extracted from codebook C ∈ RV ×dp =
+to leverage 2D human pose to mitigate the influence of oc-      [c1 , ..., cV ]T .
+clusion. However, their approach only focuses on solving            We learn the pose tokenizer using a vector quantised-
+person-occlusion while our approach is suitable for object-     variational autoencoder (VQ-VAE) following [11]. To fa-
+occlusion and person-occlusion at the same time.                cilitate training, a two-stage training scheme is adopted.
+                                                                In stage one, an MLP-Mixer [42] based pose encoder is
+2.3. Structral Pose Representation                              employed to compress 2D coordinates P ∈ RJ×2 into a
+Leveraging 2D pose in 3DHPSE task has always been main-         discrete token sequence T = [t1 , . . . , tN ] ∈ RN ×dp . A
+stream, but most works [16, 17, 23, 36] either just use 2D      nearest-neighbor look-up is used to quantise each token ti
+pose as extra supervisory signal or to estimate accurate        into token zi in a codebook C. Subsequently, an MLP-
+SMPL parameters to help training. Choi et al. [7] adopt         Mixer [42] based decoder is employed to decode the quan-
+2D pose to calibrate CNN and extract fine-grained fea-          tised token sequence Z back to 2D poses P̂ ∈ RJ×2 . Expo-
+ture to improve model performance under person-occlusion        nential moving average (EMA) is used to update the code-
+scenarios. However, due to the uncertain 3D pose used           book due to the non-differentiable problem. In stage two, a
+to get 3D mesh, the estimated human body can be erro-           classifier is trained to take a human image X ∈ RC×H×W
+neous. Recently, transforming 2D poses into sequences of        as input and output L̂ ∈ RN ×V representing the likelihood
+tokens has become popular due to the powerful token-level       of each token belonging to each entry zi in the codebook C.
+modeling ability of the transformer. Lin et al. [30] lever-     To explicitly model the uncertainty of 2D pose, we further
+age large-scale MoCap dataset [34] to generate 2D pose          extract the biggest logits from likelihood L̂ as pose con-
+heatmaps and then pretrain transformers to recover human        fidence SP ∈ RN ×1 . Ground truth label L ∈ RN can
+mesh by 2D pose token transformed from heatmaps. Their          be obtained through the pose encoder trained in stage one
+approach, i.e., MPT, neglects the inherent 2D-to-3D ambi-       and hence cross-entropy loss can be employed. Pose token
+guity since they only use 2D pose token as input, while our     sequence T̂P ∈ RN ×dp is computed by multiplication be-
+approach uses image token to compensate 2D-to-3D ambi-          tween L̂ and C. Pose tokenizer is trained on in-the-wild 2D
+guity. Besides that, the scale of our pretraining datasets is   pose datasets like [31] in order to be occlusion-robust since
+more lightweight than that of MPT. Qiu et al. [38] com-         occlusion scenarios are universal in outdoor conditions. Re-
+bine token-level pose representation with image token to        fer to [11] for more training and implementation details of
+refine SMPL parameters. However, their approach aims for        the pose tokenizer.
+multi-person scenarios so that the pose token might con-            We set the length of pose token sequence N to 34 and the
+tain pose information of multiple individuals, which brings     number of entries in the codebook C to 2048. It is important
+complexities, while our approach does not have such prob-       to emphasize that the number of tokens in the sequence does
+ 🔥                                                          3D Coordinates
+                                                              Regressor
+                                                                                                                                                                                …                …
+
+                             Transformer                      Transformer                    …              …
+
+                              Encoder-2                        Decoder-2                  Joint            Coarse-Mesh
+                                                                                       Coordinates         Coordinates
+                                                                                                                                                                          ×𝐿"
+                             Dimensionality                  Dimensionality                          ❄ Mesh                                      …        …
+                               Reduc2on                        Reduc2on                              Upsampler                                                                      FFN
+
+                                                                                                                …
+                             Transformer                      Transformer                                                                                                           Norm
+                                                                                                            Fine-Mesh
+                              Encoder-1                        Decoder-1                                   Coordinates
+                                                                                                                                    ×𝐿!
+                                                                                                                                                                               Mul?-Head
+                                                                                                                                                                             Cross-ADen?on
+                                                                                                                                           FFN                                  V   K    Q
+                                    …             …            …               …
+
+                  Cam Token        Image Tokens         Joint Tokens   Vertex Tokens                                                       Norm
+                                                                                                                                                                                    Norm
+
+                             Modulator    Modulator
+                       CNN                                                                                                              Mul?-Head                             Mul?-Head
+                                                                                                                                       Self-ADen?on                          Self-ADen?on
+                                                                                                                                       V   K   Q                                V    K       Q
+ ❄
+                                                                                                                                                                                    Norm
+             Pose                                 …                                                                                        Norm
+           Tokenizer                                                      Decoder
+                                                                                                                                                              Posi%onal                              Adjacency
+                                          Pose Tokens                                                                                                         Encodings                              Matrix
+                                                                                           Reconstructed
+                             (a) Overall Pipeline ofUnused
+                             Codebook                      During Training
+                                                      PostMETRO                                Pose                                        …          …                     …                    …
+
+                                                                                                                         Cam Token Image Tokens Pose Tokens           Joint Tokens Vertex Tokens
+
+                             (a) Overall Pipeline of PostMETRO                                                                   (b) Transformer Encoder-Decoder Architecture
+
+Figure 2. Overall pipeline of PostoMETRO (a) and architecture of transformer encoder-decoder (b). Before training transformers, we
+learn a “pose tokenizer” in VQ-VAE fashion, where a human image will be tokenized to discrete pose tokens, which can be reconstructed
+to a 2D pose by a decoder, according to the learned codebook. During training transformers, we freeze pose tokenizer and mesh upsampler
+and train transformers by concatenating pose token to camera token and image tokens as input for transformer encoders. For transformer
+decoders, learnable joint tokens and vertex tokens are fed as input. Following [5, 19], dimensionality reduction and adjacency matrix are
+used for effectiveness. Note that pose confidence for 2D pose is omitted for simplicity.
+
+not correspond to the number of human joints. In our work,                                                  their combination, resulting in a modulated sequence TP ∈
+we adopt the publicly available1 pose tokenizer as described                                                RN ×d . Detailed architecture of our MLP-Mixer-based layer
+in [11]; note that decoder is not used since we focus on 3D                                                 is provided in the supplementary material.
+human mesh recovery instead of 2D pose prediction.                                                          Transformer Encoder First, a 1 × 1 convolution is used as
+3.2. Overall pipeline                                                                                       the image feature modulator to reduce the channel dimen-
+                                                                                                            sion of feature map XI , from di to a smaller dimension d.
+The overall pipeline of PostoMETRO is depicted in Fig. 2                                                    We flatten and transpose the reduced feature map and ob-
+(a). Our proposed method leverages two transformers to                                                      tain image token sequence TI ∈ Rhw×d . Transformer en-
+regress human mesh from single image. Transformer en-                                                       coder of PostoMETRO takes image tokens along with learn-
+coders are used to enable message passing between the cam-                                                  able camera token TC ∈ R1×d and modulated pose tokens
+era token, image tokens, and pose tokens. The decoders ex-                                                  TP ∈ RN ×d as input, depicted in Fig. 2 (b). After that,
+tract useful information from the encoder, output joints to-                                                transformer encoder outputs camera feature and image-pose
+kens and vertex tokens, which will be decoded to human                                                      feature TIP ∈ R(hw+N )×d . The obtained image-pose fea-
+mesh. The encoder-decoder architecture is illustrated in                                                    ture will be used as key and value in transformer decoder,
+Fig. 2 (b). An extra dimensionality reduction operation is                                                  while the camera feature will be solely decoded by a lin-
+conducted between transformers to reduce computations.                                                      ear layer (not shown in Fig. 2), resulting in a scaling factor
+Feature Extraction Given a cropped human image X ∈                                                          s ∈ R and a translation vector t ∈ R2 , which can be used
+RC×H×W , a CNN backbone is employed to extract feature                                                      for loss computation.
+map XI ∈ Rdi ×h×w , note that di represents size of the
+                                                                                                            Transformer Decoder Transformer decoder of Pos-
+channel dimension and h × w represents the spatial size.
+                                                       H                                                    toMETRO takes both joint tokens TJ ∈ RK×d and vertex
+Typical values we use are di = 2048 and h × w = 32        ×
+W                                                                                                           tokens TV ∈ RQ×d as input. Following [5, 19], we ap-
+    . We concatenate pose token T̂P and pose confidence S P .
+ 32                                                                                                         ply an attention mask derived from the adjacency matrix of
+Then, we utilize 4 MLP-Mixer-based [42] layers as the pose
+                                                                                                            human mesh vertices in the self-attention module. The out-
+feature modulator to adjust the channel dimension size of
+                                                                                                            put joint feature and vertex feature are then projected into
+     1 https://github.com/Gengzigang/PCT                                                                    3D coordinates by a linear 3D coordinates regressor. As
+shown in Fig. 2 (a), a pre-defined mesh upsampler [40]          4. Experiments
+U ∈ RM ×Q is further applied to upsample the coarse mesh
+vertices Vc ∈ RQ×3 to fine mesh vertices Vf ∈ RM ×3 , i.e.,     4.1. Experimental Setup
+Vf = U Vc . Typical values we use are K = 14, Q = 431           Datasets. Following prior works [4, 5, 29], we adopt
+and M = 6890.                                                   Human3.6M [15], UP-3D [24], MuCo-3DHP [35] as
+                                                                3D datasets and pseudo-ground-truth SMPL annotated
+3.3. Loss Design
+                                                                COCO [31] and MPII [1] as 2D datasets for training our
+As a non-parametric method, the loss function we employ to      model. For fair comparison, when testing on 3DPW-
+train PostoMETRO incorporates three types of supervisory        OCC [54], 3DPW-PC [41] and 3DPW-ALL [45], we do
+signals: 3D vertex loss Lv , 3D joints loss L3D , and 2D        not fine-tune our model on any split of 3DPW [45] dataset.
+joints loss L2D .                                               When testing on 3DOH [54], we fine-tune our model
+    To penalize the difference between 3D coordinates of        on 3DOH training set following [22, 26]. When testing
+predicted human body mesh vertices and corresponding            on 3DPW-TEST [45] split, we fine-tune our model with
+ground truth, L1 loss is adopted and Lv could be repre-         3DPW-TRAIN [45] split like [5, 28–30] to comprehen-
+sented as follows:                                              sively examine the performance gap of the model compared
+                           M                                    to the existing state-of-the-art methods. For each input im-
+                        1 X i
+                  Lv =        ∥V̂ − V i ∥1 ,           (1)      age, the region containing target human is cropped using
+                       M i=1
+                                                                annotated bounding boxes and resized to 256 × 256. We
+where V̂ i denotes the predicted ith vertex, and V i repre-     only apply color jittering, random rotation and scaling to
+sents the corresponding ground truth. M denotes the total       cropped images as data augmentation.
+number of human mesh vertices.                                  Implementation Details. All the experiments are imple-
+   Following [5, 29], L3D is also used to penalize the er-      mented with PyTorch. We train our model on NVIDIA
+ror of human joints in 3D space. It is worth noting that in     RTX3090 GPUs for 30 epochs. The total batch size is 128
+our experiments, predicted 3D coordinates of human joints       when using ResNet-50 and 96 when using HRNet-W48.
+come from two different sources: J¯3D which is obtained by      AdamW optimizer is adopted with its momentum factors
+decoding the joint token using linear layer and Jˆ3D which is   set to 0.9 and 0.999. The learning rate is set to 2 × 10−5
+obtained by applying pre-computed joint regression matrix       during fine-tuning on the 3DPW-TRAIN split, and is set to
+MJ on human mesh V̂ , i.e., Jˆ3D = MJ V̂ . This loss can be     1 × 10−4 by default otherwise. Note that in all tables, if not
+represented as follows:                                         otherwise stated, the results of our methods are obtained af-
+                                                                ter fine-tuning on the training set.
+               K
+           1 X ˆi                                               Evaluation Metrics. We adopt three commonly used met-
+  L3D =                   i
+                 (∥J3D − J3D ∥1 + ∥J¯3D
+                                     i     i
+                                        − J3D ∥1 ),      (2)    rics: mean per vertex position error (MPVPE), mean per
+           K i=1
+                                                                joint position error (MPJPE) and Procrustes-aligned mean
+where J3D denotes the ground truth 3D coordinates of hu-        per joint position error (PA-MPJPE). MPVPE measures
+man joints. K denotes the total number of human joints.         the alignment between predicted human mesh vertices and
+   To further assure the alignment between 2D image clue        its ground truth, while MPJPE and PA-MPJPE measure
+and 3D human joints and leverage the abundant accurate          the accuracy of the recovered 3D human poses.
+2D key-points annotation in multiple datasets [1, 15, 24, 31,
+35, 45], [17, 23] proposed to applying 2D joints loss L2D       4.2. Main Results
+to supervise model. Following them, we apply orthogonal         Quantitative Results. To validate the effectiveness of
+projection operation Π(·) on 3D joints J¯3D , Jˆ3D to obtain    our model under different settings, we test our model on
+2D joints J¯2D , Jˆ2D coordinates by using camera parameters    different datasets, i.e., 3DPW-TEST, 3DPW-OCC [54],
+{s, t} decoded from camera token as follows:                    3DOH [54] and 3DPW-PC [41].
+        Jˆ2D = sΠ(Jˆ3D ) + t, J¯2D = sΠ(J¯3D ) + t;       (3)      We first report the performance of our model compared
+hence the 2D loss can be represented as follows:                to other baselines on the 3DPW-TEST split in Tab. 1.
+               K                                                We fine-tune our model on 3DPW-TRAIN split follow-
+           1 X ˆi                                               ing prior works [5, 19, 28, 29]. As can be seen, our
+  L2D =                   i
+                 (∥J2D − J2D ∥1 + ∥J¯2D
+                                     i     i
+                                        − J2D ∥1 ).      (4)
+           K i=1                                                model with an HRNet-W48 backbone achieves SOTA per-
+   To summarize, our overall loss can be represented as :       formance on 3DPW-TEST dataset, with 76.8mm MPVPE,
+                                                                67.7mm MPJPE and 39.8mm PA-MPJPE. Despite that our
+           Ltotal = α1 Lv + α2 L3D + α3 L2D ,            (5)    proposed method is indeed inferior to MPT [30] and Vir-
+where α1 , α2 , α3 are all weight terms, which are empiri-      tualMarker [33] on MPJPE, it still beats all SOTA methods
+cally set to 1000, 1000 and 100, respectively.                  by a noticeable margin on each MPVPE and PA-MPJPE,
+                     Methods                      Backbone                       3DPW-TEST
+                                                                   MPVPE(↓)       MPJPE(↓)       PA-MPJPE(↓)
+                           †
+                     HMR [17]                    ResNet-50             -            130.0            81.3
+                     SPIN† [23]                  ResNet-50           116.4          96.9             59.2
+                     VIBE [21]                   ResNet-50           99.1           82.9             51.9
+                     3DCrowdNet† [7]             ResNet-50           98.3           81.7             51.5
+                     ROMP [41]                   ResNet-50           94.7           79.7             49.7
+                     HybrIK [25]                 ResNet-34           86.5           74.1             45.0
+                     VisDB [49]                  ResNet-50           83.5           72.1             44.1
+                     INT-2 [48]                  ResNet-50           87.9           75.6             42.0
+                     Ours(w/o pose tokens)       ResNet-50             82.5        72.4              44.4
+                     Ours                        ResNet-50         78.0(↓5.5%) 68.4(↓5.5%)       40.8(↓8.1%)
+                     Pose2Mesh [6]       HRNet-W48                   105.3           89.5            56.3
+                     PARE [22]           HRNet-W32                   88.6            74.5            46.5
+                     METRO [29]          HRNet-W64                   88.2            77.1            47.9
+                     MeshGraphormer [28] HRNet-W64                    87.7           74.7            45.6
+                     FastMETRO [5]       HRNet-W64                   84.1            72.5            44.6
+                     PSVT [38]           HRNet-W32                   84.0            73.1            43.5
+                     CLIFF [27]          HRNet-W48                   81.2            69.0            43.0
+                     MPT [30]            HigherHRNet                  79.4           65.9            42.8
+                     VirtualMarker [33]  HRNet-W48                   77.9            67.5            41.3
+                     NIKI [26]           HRNet-W48                   81.6            71.3            40.6
+                     Ours(w/o pose tokens)      HRNet-W48              78.6        68.9              41.5
+                     Ours                       HRNet-W48          76.8(↓2.3%) 67.7(↓1.7%)       39.8(↓4.1%)
+Table 1. Performance on 3DPW [45]. Backbones are denoted for fair comparison. Results in bold indicate the best performance. Note that
+†
+  denotes the performance without fine-tuning on the 3DPW train-split. Text in blue indicates the performance improvement compared
+with w/o pose tokens baseline.
+
+                  Methods                                3DPW-OCC                                3DOH
+                                           MPVPE(↓) MPJPE(↓) PA-MPJPE(↓) MPJPE(↓) PA-MPJPE(↓)
+                  Zhang et al. [54]             -            -            72.2             -            58.5
+                  SPIN [23]                   121.6         95.6          60.8           104.3          68.3
+                  HybrIK [25]                 111.9         90.8          58.8           40.4           31.2
+                  HMR-EFT [16]                111.3         94.4          60.9           75.2           53.1
+                  PARE [22]                   107.9         90.5          56.6           60.9           42.7
+                  NIKI [26]                   107.6         85.5          53.5           38.8           28.7
+                  Ours (ResNet-50)*           93.5          84.0          50.0           39.2           28.7
+                  Ours (HRNet-W48)*           90.1          79.7          49.0           35.4           26.8
+Table 2. Performance on 3DPW-OCC [54] and 3DOH [54]. Note that all methods are tested without any fine-tuning on 3DPW dataset.
+Results in bold indicate the best performance. * means extra datasets used compared to PARE [22]. Note that we fine-tune our model on
+3DOH only when testing on 3DOH.
+
+showing the capability of reconstructing human mesh on                still demonstrates superior results. Specifically, our method
+the in-the-wild dataset. It’s worth noting that MPT bene-             outperforms those with special designs for extreme cases
+fits from a much larger pre-training dataset, which could             including truncation and occlusion, like VisDB [49] and
+explain the performance gap. For more details on dataset              3DCrowdNet [7].
+scale comparison, please see the supplementary materials.
+It is also worth noting that even when substituting our back-            To stay fair, we would like to point out some key
+bone to a more light-weighted one, i.e., ResNet-50, com-              distinctions between our baseline model, called Fast-
+pared to other methods using the same backbone, our model             METRO, and our variant without pose tokens. Although
+                                                                      both models share the same architecture, there’s a notable
+ (a) Input Image   (b) 2D Pose   (c) FastMETRO      (d) Ours      (a) Input Image   (b) 2D Pose   (c) FastMETRO       (d) Ours
+
+Figure 3. Qualitative results on 3DPW (rows 1-3) and OCHuman (rows 4-5) datasets. From left to right: (a) Input image, (b) 2D Pose
+decoded from pose tokens, (c) FastMETRO [5] results, (d) Our results.
+
+
+ Methods                            3DPW-PC                        markable. When using ResNet-50, by simply adding pose
+                                                                   tokens, PostoMETRO outperforms our w/o pose tokens
+                      MPVPE(↓)     MPJPE(↓)      PA-MPJPE(↓)
+                                                                   variant by 5.5%, 5.5%, and 8.1% on MPVPE, MPJPE and
+ VIBE                      -           -            103.5          PA-MPJPE, respectively. Despite the decrease in the ex-
+ SPIN [23]               157.6       129.6           82.6          tent of improvement when using HRNet-W48, comparing
+ PyMaf [51]              154.3       126.7           81.3
+                                                                   with such a strong baseline, achieving such enhancement
+ ROMP [41]               147.5       115.6           75.8
+                                                                   remains non-trivial, particularly with a 4.1% performance
+ OCHMR [18]              145.9       112.2           75.2
+                                                                   gain on PA-MPJPE.
+ Ours (ResNet-50)        113.4        97.8          62.4
+                                                                      We also conduct experiments on occlusion datasets, i.e.
+ Ours (HRNet-W48)        110.9        95.3          61.0
+                                                                   3DPW-OCC, 3DOH and 3DPW-PC. On 3DPW-OCC, our
+Table 3. Performance on 3DPW-PC [41]. Note that all methods
+                                                                   method with HRNet-W48 backbone shows superior per-
+are tested without any fine-tuning on 3DPW dataset. Results in     formance and beats other SOTA methods, including those
+bold indicate the best performance.                                targeted for occlusion scenarios, such as PARE [22] and
+                                                                   NIKI [26], by scoring 90.1mm on MPVPE, 79.7mm on
+difference in their results. The reasons are mainly three-         MPJPE and 49.0mm on PA-MPJPE. On 3DOH, a similar
+fold: 1. The resolution of images increases from 224 × 224         level of superiority can also be observed. These consis-
+to 256 × 256. 2. The datasets we used are refined with more        tent results on different datasets reveal the robustness of
+pseudo-ground-truth SMPL annotations. 3. We use back-              our model under the challenge of object occlusion, which
+bones pretrained on COCO [31] rather than ImageNet [8].            further indicates the effectiveness of integrating occlusion-
+For more details, please refer to supplementary material.          robust 2D pose tokens into transformer architecture. On
+We highlight that despite the above points bringing extra          3DPW-PC, our proposed methods still show competitive re-
+improvements, the effectiveness of pose tokens is still re-        sults, outperforming other SOTA methods including those
+                  Method                Training time     Inference time                   3DPW-TEST
+                                                                            MPVPE(↓)        MPJPE(↓)      PA-MPJPE(↓)
+             METRO [29]                ∼1400 GPU hrs         15.8FPS            88.2           77.1            47.9
+          MeshGraphormer [28]          ∼1300 GPU hrs         15.0FPS            87.7           74.7            45.6
+            FastMETRO [5]              ∼330GPU hrs           17.0FPS            84.1           72.5            44.6
+            Ours (ResNet-50)           ∼340 GPU hrs          18.7FPS            78.0           68.4            40.8
+           Ours (HRNet-W48)            ∼390 GPU hrs          11.5FPS            76.8           67.7            39.8
+
+Table 4. Training and Inference time compared with other baselines. Our proposed method shows competitive efficiency while improving
+performance.
+
+
+        Image       Pose               3DPW-OCC                         3DPW-PC                       3DPW-ALL
+       Tokens     Tokens     MPJPE(↓)       PA-MPJPE(↓)       MPJPE(↓)      PA-MPJPE(↓)       MPJPE(↓)      PA-MPJPE(↓)
+                     ✓          90.2             56.4           104.1            65.7            93.3             54.5
+          ✓                     92.1             56.3           111.0            71.0            91.9             53.2
+          ✓          ✓          84.0             50.0            97.8            62.4            83.1             48.2
+
+Table 5. Quantitative comparisons on 3DPW-OCC [54], 3DPW-PC [41] and 3DPW-ALL [45]. Note that we use ResNet-50 as our
+backbone. Results are obtained without fine-tuning on 3DPW-TRAIN split and those in bold indicate the best performance.
+
+
+proposed to handle person-occlusion like OCHMR [18] by               sults in Tab. 5 show that, despite the naive fusion strat-
+a large margin. Interestingly, despite that we do not manu-          egy, our proposed pose token enhanced model outperforms
+ally design any intricate components for different occlusion         baselines by a large margin on each split. On the 3DPW-
+scenarios (i.e., object-occlusion and person-occlusion), our         OCC dataset, using only image or pose tokens yields infe-
+method still outperforms those hand-crafted ones [18, 22,            rior results. However, combining both as input for the trans-
+26, 49] and can handle different types of occlusion equally          former encoder significantly improves performance, lower-
+well.                                                                ing MPJPE and PA-MPJPE to 84.0mm and 50.0mm, re-
+Training/Inference Time. We compare PostoMETRO                       spectively. These results prove that unifying these two el-
+with METRO [29], MeshGraphormer [28] and Fast-                       ements as input can strengthen the robustness to occlusion
+METRO [5]. We set the training parameters (e.g., epochs)             and benefit 3D human mesh recovery task. On the 3DPW-
+as described in the original works[5, 28, 29]. The train-            PC dataset, using only pose tokens outperforms models that
+ing (including pretraining) and inference times are shown in         rely solely on image tokens. Despite not being tailored
+Table 4. PostoMETRO shows competitive efficiency while               for person-occlusion scenarios, pose tokens are more ef-
+improving performance.                                               fective than 2D image clues. Combining pose and image
+Qualitative Results. We qualitatively evaluate Fast-                 tokens further improves results, reducing MPJPE and PA-
+METRO [5] and our PostoMETRO on 3DPW [45] and                        MPJPE to 97.8mm and 62.4mm. This consistent enhance-
+OCHuman [53]. As in Fig. 3, we observe that our Pos-                 ment across various occlusion datasets highlights the gen-
+toMETRO captures information about occluded body parts,              eral applicability of our method over manually designed,
+such as limbs, as highlighted in the red rectangles. Com-            occlusion-specific approaches [7, 22]. Moreover, a steady
+pared to FastMETRO, PostoMETRO handles challenging                   error decrement can also be seen on 3DPW-ALL dataset,
+cases in various scenarios by combining the knowledge of             suggesting that incorporating pose tokens and image tokens
+accurate 2D pose into 3D mesh transformer in a token-wise            as input leads to consistent and remarkable improvement
+manner. This highlights the significant advantage of lever-          across all three dataset splits, which indicates that pose
+aging the spatial relationships encapsulated within 2D pose          token plays a vital role in enhancing the model’s ability
+tokens for enhanced 3D mesh reconstruction.                          on 3D human mesh recovery task. Additionally, we test
+                                                                     how well PostoMETRO performs in non-occluded scenar-
+4.3. Ablation Studies                                                ios. Our method still shows superior performance even
+                                                                     in these cases. We present experimental results in non-
+Effect of Different Tokens. To analyze the influence of
+                                                                     occlusion scenarios in the supplementary materials.
+pose tokens, we train our model with different types of to-
+kens, i.e., image tokens and pose tokens, and evaluate each          Accuracy of Pose Tokens. For the purpose of exploring
+variant on 3DPW-OCC, 3DPW-PC and 3DPW-ALL. Re-                       the upper limits of the token-wise 2D pose’s assistance in
+                                                                                                                     Occlusion Sensitivity Per Joint
+  Backbone Use GT                     3DPW-TEST                                                 150                        PostMETRO w/o Pose Tokens           PostMETRO
+
+
+
+
+                                                                     Average Joint Error (mm)
+                           MPVPE(↓) MPJPE(↓) PA-MPJPE(↓)                                        125
+                                                                                                100
+  ResNet-50      ✗            78.0      68.4          40.8
+  ResNet-50      ✓            65.9      57.7          31.3                                       75
+                                                                                                 50
+Table 6. Performance on 3DPW [45] when using or not using                                        25
+ground truth 2D pose tokens. Results in bold indicate the best                                        Head   Ankle    Knee          Hip        Wrist   Elbow      Shoulder
+performance.                                                             Figure 4. Per joint occlusion sensitivity analysis in Pos-
+                                                                         toMETRO with or without joint tokens.
+ Image tokens        Pose tokens            3DPW-TEST
+                                     MPJPE(↓)      PA-MPJPE(↓)           multiplication across channel dimensions, the MLP-Mixer
+     linear               linear        87.0            51.0             uses shared weights for all channels to process data on
+     linear               mixer         84.9            48.9             the spatial dimension. This approach enhances the integra-
+     mixer                mixer         85.4            50.0             tion of pose tokens by improving the mixing of informa-
+                                                                         tion among human joints. However, given the variability
+Table 7. Ablation of the modulator selection. Results are obtained
+                                                                         in the positioning of human body parts within images, em-
+without fine-tuning on 3DPW-TRAIN split.                                 ploying fixed, shared weights for spatial operations can de-
+                                                                         grade the quality of the image features. This explains why
+                                                                         switching from a linear modulator to a mixer modulator re-
+              Num. Blocks            3DPW-TEST                           sults in inferior performance on image features. Results in
+                                     PA-MPJPE(↓)                         Tab. 8 show that increasing the number of mixer blocks de-
+                                                                         creases the error, with the optimal performance achieved at
+                      1                 50.1                             4 blocks. However, further increments deteriorate model
+                      2                 49.6                             performance, possibly due to optimization challenges.
+                      4                 48.9
+                                                                         Occlusion Sensitivity. We further follow [22, 26] to con-
+                      8                 49.6
+                                                                         duct the occlusion sensitivity analysis. Fig. 4 shows the
+                                                                         per-joint breakdown of the mean 3D error from the occlu-
+Table 8. Ablation of mixer block number in pose feature modu-
+lator. Results are obtained without fine-tuning on 3DPW-TRAIN            sion sensitivity analysis for PostoMETRO with or without
+split.                                                                   pose tokens on the 3DPW test split. Combining image to-
+                                                                         kens and pose tokens, our proposed method improves ro-
+the 3DHPSE task, we feed the tokens generated from the                   bustness to occlusion in terms of all joints. More occlusion
+ground truth 2D pose by the pose encoder into the trans-                 analyses are provided in the supplementary material.
+former. When using a classifier to predict pose tokens,
+pose confidence is generated, but it does not exist when us-             5. Conclusion
+ing ground truth pose since pose encoder does not output
+confidence. Therefore, we use a very high score (fixed at                In this paper, we introduce PostoMETRO, a novel frame-
+10 in the experiments) and concatenate it with the ground                work incorporating 2D poses and images for 3D hu-
+truth pose tokens for fine-tuning. The experimental results              man mesh reconstruction. Unlike previous methods, Pos-
+in Tab. 6 demonstrate a significant improvement in perfor-               toMETRO compresses occlusion-robust 2D poses to the to-
+mance when utilizing ground truth pose tokens. When set-                 ken level and accomplishes 3D human mesh reconstruc-
+ting ResNet-50 as backbone, by using ground-truth 2D pose                tion task by integrating pose tokens with image tokens as
+tokens, our method scores 65.9mm, 57.7mm and 31.3mm                      its input. This approach embeds prior knowledge of 2D
+on MPVPE, MPJPE, PA-MPJPE respectively, highlighting                     poses in a data-driven manner, without relying on any man-
+the substantial benefit of accurate 2D pose in the process of            ual design. Extensive experiments demonstrate that Pos-
+3D human mesh recovery, further implying the strong po-                  toMETRO achieves significant improvements across var-
+tential of our proposed methods.                                         ious datasets, including scenarios with object-occlusion,
+Ablation of Mixer layers. We ablate the usage of MLP-                    person-occlusion, and non-occlusion, which often require
+Mixer, including where to use it and how deep it should                  different design approaches. Moreover, our ablation studies
+be. As shown in Tab. 7, the best results are obtained when               highlight the superiority of using multiple kinds of tokens to
+MLP-Mixer(mixer) is only adapted for pose tokens, while                  reconstruct human mesh, and show significant performance
+only a simple 1 × 1 convolution layer(linear) is used for                gains when using ground truth 2D pose tokens, indicating
+image tokens. In addition to performing standard matrix                  the great potential of PostoMETRO.
+References                                                            [12] Kehong Gong, Dongze Lian, Heng Chang, Chuan Guo, Zi-
+                                                                           hang Jiang, Xinxin Zuo, Michael Bi Mi, and Xinchao Wang.
+ [1] Mykhaylo Andriluka, Leonid Pishchulin, Peter Gehler, and              Tm2d: Bimodality driven 3d dance generation via music-text
+     Bernt Schiele. 2d human pose estimation: New benchmark                integration. In Proceedings of the IEEE/CVF International
+     and state of the art analysis. In Proceedings of the IEEE Con-        Conference on Computer Vision, pages 9942–9952, 2023. 3
+     ference on computer Vision and Pattern Recognition, pages        [13] Chuan Guo, Xinxin Zuo, Sen Wang, and Li Cheng. Tm2t:
+     3686–3693, 2014. 5, 13                                                Stochastic and tokenized modeling for the reciprocal genera-
+ [2] Dragomir Anguelov, Praveen Srinivasan, Daphne Koller, Se-             tion of 3d human motions and texts. In European Conference
+     bastian Thrun, Jim Rodgers, and James Davis. Scape: shape             on Computer Vision, pages 580–597. Springer, 2022. 3
+     completion and animation of people. In ACM SIGGRAPH              [14] Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+     2005 Papers, pages 408–416. 2005. 2                                   Deep residual learning for image recognition. In Proceed-
+ [3] Federica Bogo, Angjoo Kanazawa, Christoph Lassner, Peter              ings of the IEEE conference on computer vision and pattern
+     Gehler, Javier Romero, and Michael J Black. Keep it smpl:             recognition, pages 770–778, 2016. 2
+     Automatic estimation of 3d human pose and shape from a           [15] Catalin Ionescu, Dragos Papava, Vlad Olaru, and Cristian
+     single image. In Computer Vision–ECCV 2016: 14th Euro-                Sminchisescu. Human3. 6m: Large scale datasets and pre-
+     pean Conference, Amsterdam, The Netherlands, October 11-              dictive methods for 3d human sensing in natural environ-
+     14, 2016, Proceedings, Part V 14, pages 561–578. Springer,            ments. IEEE transactions on pattern analysis and machine
+     2016. 2                                                               intelligence, 36(7):1325–1339, 2013. 1, 5, 13
+ [4] Hanbyel Cho and Junmo Kim. Generative approach for               [16] Hanbyul Joo, Natalia Neverova, and Andrea Vedaldi. Ex-
+     probabilistic human mesh recovery using diffusion models.             emplar fine-tuning for 3d human model fitting towards in-
+     In Proceedings of the IEEE/CVF International Conference               the-wild 3d human pose estimation. In 2021 International
+     on Computer Vision (ICCV) Workshops, pages 4183–4188,                 Conference on 3D Vision (3DV), pages 42–52. IEEE, 2021.
+     2023. 5                                                               3, 6
+ [5] Junhyeong Cho, Kim Youwang, and Tae-Hyun Oh. Cross-              [17] Angjoo Kanazawa, Michael J Black, David W Jacobs, and
+     attention of disentangled modalities for 3d human mesh                Jitendra Malik. End-to-end recovery of human shape and
+     recovery with transformers. In ECCV, pages 342–359.                   pose. In Proceedings of the IEEE conference on computer
+     Springer, 2022. 2, 3, 4, 5, 6, 7, 8, 14, 17, 18, 19                   vision and pattern recognition, pages 7122–7131, 2018. 2,
+ [6] Hongsuk Choi, Gyeongsik Moon, and Kyoung Mu Lee.                      3, 5, 6
+     Pose2mesh: Graph convolutional network for 3d human pose         [18] Rawal Khirodkar, Shashank Tripathi, and Kris Kitani. Oc-
+     and mesh recovery from a 2d human pose. In Computer                   cluded human mesh recovery.            In Proceedings of the
+     Vision–ECCV 2020: 16th European Conference, Glasgow,                  IEEE/CVF conference on computer vision and pattern
+     UK, August 23–28, 2020, Proceedings, Part VII 16, pages               recognition, pages 1715–1725, 2022. 7, 8
+     769–787. Springer, 2020. 1, 2, 6                                 [19] Jeonghwan Kim, Mi-Gyeong Gwon, Hyunwoo Park, Hyuk-
+                                                                           min Kwon, Gi-Mun Um, and Wonjun Kim. Sampling is mat-
+ [7] Hongsuk Choi, Gyeongsik Moon, JoonKyu Park, and Ky-
+                                                                           ter: Point-guided 3d human mesh reconstruction. In CVPR,
+     oung Mu Lee. Learning to estimate robust 3d human
+                                                                           pages 12880–12889, 2023. 1, 4, 5
+     mesh from in-the-wild crowded scenes. In Proceedings of
+                                                                      [20] Thomas N Kipf and Max Welling. Semi-supervised classi-
+     the IEEE/CVF Conference on Computer Vision and Pattern
+                                                                           fication with graph convolutional networks. arXiv preprint
+     Recognition, pages 1475–1484, 2022. 2, 3, 6, 8
+                                                                           arXiv:1609.02907, 2016. 1, 2, 3
+ [8] Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li,
+                                                                      [21] Muhammed Kocabas, Nikos Athanasiou, and Michael J
+     and Li Fei-Fei. Imagenet: A large-scale hierarchical image
+                                                                           Black. Vibe: Video inference for human body pose and
+     database. In 2009 IEEE conference on computer vision and
+                                                                           shape estimation. In Proceedings of the IEEE/CVF con-
+     pattern recognition, pages 248–255. Ieee, 2009. 7
+                                                                           ference on computer vision and pattern recognition, pages
+ [9] Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina                5253–5263, 2020. 6
+     Toutanova.       Bert: Pre-training of deep bidirectional        [22] Muhammed Kocabas, Chun-Hao P Huang, Otmar Hilliges,
+     transformers for language understanding. arXiv preprint               and Michael J Black. Pare: Part attention regressor for 3d
+     arXiv:1810.04805, 2018. 3                                             human body estimation. In Proceedings of the IEEE/CVF
+[10] Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov,                International Conference on Computer Vision, pages 11127–
+     Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner,                   11137, 2021. 2, 3, 5, 6, 7, 8, 9, 13, 14
+     Mostafa Dehghani, Matthias Minderer, Georg Heigold, Syl-         [23] Nikos Kolotouros, Georgios Pavlakos, Michael J Black, and
+     vain Gelly, et al. An image is worth 16x16 words: Trans-              Kostas Daniilidis. Learning to reconstruct 3d human pose
+     formers for image recognition at scale. arXiv preprint                and shape via model-fitting in the loop. In Proceedings of
+     arXiv:2010.11929, 2020. 1, 2, 3                                       the IEEE/CVF international conference on computer vision,
+[11] Zigang Geng, Chunyu Wang, Yixuan Wei, Ze Liu, Houqiang                pages 2252–2261, 2019. 2, 3, 5, 6, 7
+     Li, and Han Hu. Human pose as compositional tokens. In           [24] Christoph Lassner, Javier Romero, Martin Kiefel, Federica
+     Proceedings of the IEEE/CVF Conference on Computer Vi-                Bogo, Michael J Black, and Peter V Gehler. Unite the peo-
+     sion and Pattern Recognition, pages 660–671, 2023. 2, 3, 4,           ple: Closing the loop between 3d and 2d human representa-
+     13, 14                                                                tions. In Proceedings of the IEEE conference on computer
+     vision and pattern recognition, pages 6050–6059, 2017. 2,     [37] Georgios Pavlakos, Vasileios Choutas, Nima Ghorbani,
+     5, 13                                                              Timo Bolkart, Ahmed AA Osman, Dimitrios Tzionas, and
+[25] Jiefeng Li, Chao Xu, Zhicun Chen, Siyuan Bian, Lixin Yang,         Michael J Black. Expressive body capture: 3d hands,
+     and Cewu Lu. Hybrik: A hybrid analytical-neural inverse            face, and body from a single image. In Proceedings of
+     kinematics solution for 3d human pose and shape estimation.        the IEEE/CVF conference on computer vision and pattern
+     In Proceedings of the IEEE/CVF conference on computer vi-          recognition, pages 10975–10985, 2019. 2
+     sion and pattern recognition, pages 3383–3393, 2021. 6        [38] Zhongwei Qiu, Qiansheng Yang, Jian Wang, Haocheng
+[26] Jiefeng Li, Siyuan Bian, Qi Liu, Jiasheng Tang, Fan Wang,          Feng, Junyu Han, Errui Ding, Chang Xu, Dongmei Fu, and
+     and Cewu Lu. Niki: Neural inverse kinematics with invert-          Jingdong Wang. Psvt: End-to-end multi-person 3d pose and
+     ible neural networks for 3d human pose and shape estima-           shape estimation with progressive video transformers. In
+     tion. In Proceedings of the IEEE/CVF Conference on Com-            Proceedings of the IEEE/CVF Conference on Computer Vi-
+     puter Vision and Pattern Recognition, pages 12933–12942,           sion and Pattern Recognition, pages 21254–21263, 2023. 3,
+     2023. 5, 6, 7, 8, 9, 14                                            6
+[27] Zhihao Li, Jianzhuang Liu, Zhensong Zhang, Songcen Xu,        [39] Aditya Ramesh, Mikhail Pavlov, Gabriel Goh, Scott Gray,
+     and Youliang Yan. Cliff: Carrying location information             Chelsea Voss, Alec Radford, Mark Chen, and Ilya Sutskever.
+     in full frames into human pose and shape estimation. In            Zero-shot text-to-image generation. In International Confer-
+     European Conference on Computer Vision, pages 590–606.             ence on Machine Learning, pages 8821–8831. PMLR, 2021.
+     Springer, 2022. 3, 6                                               3
+[28] Kevin Lin, Lijuan Wang, and Zicheng Liu.              Mesh    [40] Anurag Ranjan, Timo Bolkart, Soubhik Sanyal, and
+     graphormer. In ICCV, pages 12939–12948, 2021. 5, 6, 8              Michael J Black. Generating 3d faces using convolutional
+[29] Kevin Lin, Lijuan Wang, and Zicheng Liu. End-to-end hu-            mesh autoencoders. In Proceedings of the European confer-
+     man pose and mesh reconstruction with transformers. In             ence on computer vision (ECCV), pages 704–720, 2018. 5
+     CVPR, pages 1954–1963, 2021. 2, 3, 5, 6, 8                    [41] Yu Sun, Qian Bao, Wu Liu, Yili Fu, Michael J Black, and Tao
+[30] Kevin Lin, Chung-Ching Lin, Lin Liang, Zicheng Liu, and            Mei. Monocular, one-stage, regression of multiple 3d people.
+     Lijuan Wang. Mpt: Mesh pre-training with transformers              In Proceedings of the IEEE/CVF international conference on
+     for human pose and mesh reconstruction. arXiv preprint             computer vision, pages 11179–11188, 2021. 2, 5, 6, 7, 8
+     arXiv:2211.13357, 2022. 3, 5, 6, 13, 14                       [42] Ilya O Tolstikhin, Neil Houlsby, Alexander Kolesnikov, Lu-
+[31] Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays,           cas Beyer, Xiaohua Zhai, Thomas Unterthiner, Jessica Yung,
+     Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence         Andreas Steiner, Daniel Keysers, Jakob Uszkoreit, et al.
+     Zitnick. Microsoft coco: Common objects in context. In             Mlp-mixer: An all-mlp architecture for vision. Advances
+     Computer Vision–ECCV 2014: 13th European Conference,               in neural information processing systems, 34:24261–24272,
+     Zurich, Switzerland, September 6-12, 2014, Proceedings,            2021. 3, 4
+     Part V 13, pages 740–755. Springer, 2014. 3, 5, 7, 13         [43] Aaron Van Den Oord, Oriol Vinyals, et al. Neural discrete
+[32] Matthew Loper, Naureen Mahmood, Javier Romero, Ger-                representation learning. Advances in neural information pro-
+     ard Pons-Moll, and Michael J. Black. SMPL: A skinned               cessing systems, 30, 2017. 3
+     multi-person linear model. ACM Trans. Graphics (Proc.         [44] Gul Varol, Duygu Ceylan, Bryan Russell, Jimei Yang, Ersin
+     SIGGRAPH Asia), 34(6):248:1–248:16, 2015. 2, 13                    Yumer, Ivan Laptev, and Cordelia Schmid. Bodynet: Volu-
+[33] Xiaoxuan Ma, Jiajun Su, Chunyu Wang, Wentao Zhu, and               metric inference of 3d human body shapes. In Proceedings of
+     Yizhou Wang. 3d human mesh estimation from virtual mark-           the European conference on computer vision (ECCV), pages
+     ers. In Proceedings of the IEEE/CVF Conference on Com-             20–36, 2018. 2
+     puter Vision and Pattern Recognition (CVPR), pages 534–       [45] Timo Von Marcard, Roberto Henschel, Michael J Black,
+     543, 2023. 5, 6                                                    Bodo Rosenhahn, and Gerard Pons-Moll. Recovering ac-
+[34] Naureen Mahmood, Nima Ghorbani, Nikolaus F Troje, Ger-             curate 3d human pose in the wild using imus and a moving
+     ard Pons-Moll, and Michael J Black. Amass: Archive                 camera. In Proceedings of the European conference on com-
+     of motion capture as surface shapes. In Proceedings of             puter vision (ECCV), pages 601–617, 2018. 2, 5, 6, 8, 9, 13,
+     the IEEE/CVF international conference on computer vision,          14
+     pages 5442–5451, 2019. 3                                      [46] Jingdong Wang, Ke Sun, Tianheng Cheng, Borui Jiang,
+[35] Dushyant Mehta, Oleksandr Sotnychenko, Franziska                   Chaorui Deng, Yang Zhao, Dong Liu, Yadong Mu, Mingkui
+     Mueller, Weipeng Xu, Srinath Sridhar, Gerard Pons-Moll,            Tan, Xinggang Wang, et al. Deep high-resolution repre-
+     and Christian Theobalt. Single-shot multi-person 3d pose           sentation learning for visual recognition. IEEE transactions
+     estimation from monocular rgb. In 2018 International               on pattern analysis and machine intelligence, 43(10):3349–
+     Conference on 3D Vision (3DV), pages 120–130. IEEE,                3364, 2020. 2
+     2018. 5, 13                                                   [47] Hongyi Xu, Eduard Gabriel Bazavan, Andrei Zanfir,
+[36] Gyeongsik Moon, Hongsuk Choi, and Kyoung Mu Lee.                   William T Freeman, Rahul Sukthankar, and Cristian Smin-
+     Neuralannot: Neural annotator for 3d human mesh training           chisescu. Ghum & ghuml: Generative 3d human shape and
+     sets. In Proceedings of the IEEE/CVF Conference on Com-            articulated pose models. In Proceedings of the IEEE/CVF
+     puter Vision and Pattern Recognition, pages 2299–2307,             Conference on Computer Vision and Pattern Recognition,
+     2022. 3                                                            pages 6184–6193, 2020. 2
+[48] Sen Yang, Wen Heng, Gang Liu, GUOZHONG LUO,
+     Wankou Yang, and Gang YU. Capturing the motion of every
+     joint: 3d human pose and shape estimation with independent
+     tokens. In The Eleventh International Conference on Learn-
+     ing Representations (ICLR), 2023. 6
+[49] Chun-Han Yao, Jimei Yang, Duygu Ceylan, Yi Zhou, Yang
+     Zhou, and Ming-Hsuan Yang. Learning visibility for robust
+     dense human body estimation. In European Conference on
+     Computer Vision, pages 412–428. Springer, 2022. 6, 8
+[50] Matthew D Zeiler and Rob Fergus. Visualizing and un-
+     derstanding convolutional networks. In Computer Vision–
+     ECCV 2014: 13th European Conference, Zurich, Switzer-
+     land, September 6-12, 2014, Proceedings, Part I 13, pages
+     818–833. Springer, 2014. 14
+[51] Hongwen Zhang, Yating Tian, Xinchi Zhou, Wanli Ouyang,
+     Yebin Liu, Limin Wang, and Zhenan Sun. Pymaf: 3d human
+     pose and shape regression with pyramidal mesh alignment
+     feedback loop. In Proceedings of the IEEE/CVF Interna-
+     tional Conference on Computer Vision, pages 11446–11456,
+     2021. 1, 2, 7
+[52] Jianrong Zhang, Yangsong Zhang, Xiaodong Cun, Shaoli
+     Huang, Yong Zhang, Hongwei Zhao, Hongtao Lu, and Xi
+     Shen. T2m-gpt: Generating human motion from textual de-
+     scriptions with discrete representations. In Proceedings of
+     the IEEE/CVF Conference on Computer Vision and Pattern
+     Recognition (CVPR), 2023. 3
+[53] Song-Hai Zhang, Ruilong Li, Xin Dong, Paul Rosin, Zixi
+     Cai, Xi Han, Dingcheng Yang, Haozhi Huang, and Shi-Min
+     Hu. Pose2seg: Detection free human instance segmentation.
+     In Proceedings of the IEEE/CVF conference on computer vi-
+     sion and pattern recognition, pages 889–898, 2019. 8
+[54] Tianshu Zhang, Buzhen Huang, and Yangang Wang. Object-
+     occluded human shape and pose estimation from a single
+     color image. In Proceedings of the IEEE/CVF conference on
+     computer vision and pattern recognition, pages 7376–7385,
+     2020. 2, 3, 5, 6, 8, 13
+Appendix                                                                 Pretraining Dataset Scale As said in our main paper, we
+                                                                         adopt the publicly available4 pose tokenizer as described
+                                                                         in [11]. To train this tokenizer, a large open-source code-
+   In Appendix A, we first illustrate the detailed architec-
+                                                                         base MMPose5 is used and COCO 2017 dataset(150k in-
+ture of our MLP-Mixer-based layers, which are used in our
+                                                                         stances) and MPII dataset(40K instances) are adopted.
+pose feature modulator. Then we provide more details about
+                                                                             In our main paper, we report the performance of
+our datasets and experimental settings in Appendix B. More
+                                                                         MPT [30] and our proposed method on 3DPW-TEST
+visualization results and occlusion sensitivity analysis re-
+                                                                         dataset. Our proposed PostoMETRO outperforms MPT
+sults are provided in Appendix C and Appendix D. We also
+                                                                         on MPVPE and PA-MPJPE metrics but underperforms on
+conduct more experiments in Appendix E. Finally, we dis-
+                                                                         MPJPE. We notice that the scale of the pretraining dataset
+cuss about societal impact, our limitations and future re-
+                                                                         of MPT is much larger than ours, and that should be brought
+search directions in Appendix F.
+                                                                         to concern. The numbers of samples of pretraining datasets
+                                                                         are listed in Tab. 9. As can be seen, MPT leverages much
+A. Architecture                                                          more training samples, i.e., 80000k mesh-pose pairs, during
+                                                                         pretraining. Due to such a significant gap, we believe that
+                                                                         MPT’s better performance on the MPJPE metric is partly
+                                                                         attributed to the large-scale dataset it utilizes.
+               MLPBlock                              Dropout
+
+                                                                         Data Preprocessing We directly adopt training data from
+                                                     Linear
+               LayerNorm                                                 open source GitHub repository6 and replace COCO and
+                                                                         MPII data as described above. Besides, we download
+                                                     Dropout
+            Transpose                                                    3DPW-VAL [45] and 3DOH [54] from official websites78
+               MLPBlock                                                  and then parse data. Note that for 3D joint annotations of
+                                                     GELU
+            Transpose
+                                                                         3DPW-VAL and 3DOH, we use 3D joints regressed from
+                                                                         SMPL [32].
+               LayerNorm                             Linear
+
+
+
+(a)Architecture of MLP-Mixer-based Layer   (b)Architecture of MLPBlock   Fine-tune Strategy We first train PostoMETRO on
+                                                                         mixed datasets and then fine-tune it on corresponding
+Figure 5. Detailed architecture of MLP-Mixer-based layer (a) and         datasets following existing works. When testing on 3DPW-
+MLPBlock (b).                                                            TEST, we fine-tune our model on 3DPW-TRAIN by setting
+                                                                         the learning rate to 2 × 10−5 and training it for 30 epochs.
+    The detailed architecture of our MLP-mixer-based layer               When testing on 3DOH, we fine-tune our model on 3DOH
+is illustrated in Fig. 5. The MLPBlock is a key part, made               training split by setting the learning rate to 1 × 10−4 and
+up of Linear, GELU, and Dropout layers stacked together.                 training it for 30 epochs.
+Each MLP-Mixer-based layer contains two sets of Layer-                       When testing on 3DPW-OCC, we directly use Pos-
+Norm and MLPBlock. Residual connection is used to ease                   toMETRO trained from mixed datasets. This differs from
+the training.                                                            the policy in PARE [22], where COCO, Human3.6M, and
+                                                                         3DOH are used. When testing on 3DOH, we further fine-
+B. Datasets                                                              tune our model on 3DOH train set, note that we only train
+                                                                         PostoMETRO on 3DOH train set when testing on 3DOH
+3D/2D Dataset Scale We utilized a large mixed dataset of                 test set.
+around 512k samples. Those samples, including 312k from
+Human3.6M [15], 7k from UP-3D [24], 102k from MuCo-                      C. Qualitative Results
+3DHP [35]. and 75k(28k + 47k) from COCO [31], along
+with 16k from MPII [1]. We adopt pseudo-ground-truth                     Here, we offer more qualitative results in Fig. 7. Note
+SMPL [32] annotated datasets for part of our COCO(28k)                   that we highlight the crucial regions with red rectangular
+and MPII datasets from open source GitHub repository2 ,                  boxes. Especially, to validate that PostoMETRO does not
+and the other part of COCO(47k) from EFT3 after remov-                     4 https://github.com/Gengzigang/PCT
+ing items duplicated with the former 28k.                                  5 https://github.com/open-mmlab/mmpose
+                                                                           6 https://github.com/microsoft/MeshTransformer
+   2 https://github.com/huawei- noah/noah- research/                       7 https://virtualhumans.mpi-inf.mpg.de/3DPW/
+
+tree/master/CLIFF                                                          8 https://www.yangangwang.com/papers/ZHANG- OOH-
+  3 https://github.com/facebookresearch/eft                              2020-03.html
+                         Methods     Backbone     Pre Dataset Scale                3DPW-TEST
+                                                                      MPVPE(↓) MPJPE(↓) PA-MPJPE(↓)
+                          MPT      HigherHRNet         8000K             79.4         65.9            42.8
+                          Ours     HRNet-W48           190K              76.8         67.7            39.8
+
+Table 9. Comparison between MPT and ours in terms of performance in the 3DPW-TEST dataset and Pretraining dataset scale. Results in
+bold indicate the best performance. Pre is short for Pretraining.
+
+
+collapse when the 2D pose is noisy, we feed noisy pose to-                      Methods                  3DPW-Non-OC
+kens to our model and test whether it can output plausible
+                                                                                             MPVPE(↓) MPJPE(↓) PA-MPJPE(↓)
+results. First, we train our model with pose token without
+noise and freeze it. Then we add random Gaussian noise to                 FastMETRO [5]        99.9          91.1         51.0
+the logits L̂ ∈ RN ×V (output by the classifier in pose tok-                   Ours            90.1          82.3         46.8
+enizer) and get noisy logits L̂noisy ∈ RN ×V . We then use
+                                                                      Table 10. Performance on 3DPW-Non-OC. Results in bold indi-
+L̂noisy to obtain noisy pose tokens as input for the frozen
+                                                                      cate the best performance. ResNet-50 is used as backbone. Note
+model and visualize its output. The output and the corre-             that results are obtained without fine-tuning on 3DPW-TRAIN
+sponding noisy 2D poses are shown in Fig. 8, we use red               split.
+rectangular boxes to denote noisy regions. As can be seen,
+PostoMETRO can output decent results even when 2D pose
+                                                                            Pose tokens                  3DPW-TEST
+is unreliable. These results demonstrate the robustness of
+PostoMETRO and indicate the complementary role of im-                                        MPVPE(↓) MPJPE(↓) PA-MPJPE(↓)
+age tokens to pose tokens, further distinguishing our model               2D coordinates       97.6          87.6        50.0
+from those that rely solely on token-wise pose representa-                    Ours             91.6          84.9        48.9
+tion [30].
+                                                                      Table 11. Performance on 3DPW-TEST [45] when using different
+D. Occlusion Analysis                                                 representations as the source of pose tokens. ResNet-50 is used as
+                                                                      backbone. Results in bold indicate the best performance. Note that
+Following prior works [22, 26, 50], we visualize joint er-            results are obtained without fine-tuning on 3DPW-TRAIN split.
+ror maps by replacing the classification score with errors
+between predicted joints and corresponding ground truth.
+Same as [22, 26], we use MPJPE as our measurement since               nates predicted by PCT [11] and utilize the same MLP-
+PA-MPJPE leads to an artificially low error by aligning               Mixer-based layers as the pose feature modulator, with the
+global orientations. We conduct our experiment on the                 only modification being the adjustment of input dimensions.
+SOTA non-parametric method, FastMETRO [5], and our                    We train this 2D-coordinates-based-variant using the same
+proposed PostoMETRO. We provide extensive results in                  datasets for an equal duration of training time(including
+Fig. 9 and Fig. 10, where a warmer color denotes a higher             pretraining). The results are shown in Tab. 11. As can
+error. It can be seen that PostoMETRO can produce results             be seen,our method, which extracts tokens from pretrained
+with lower errors in various scenarios, showing that Pos-             codebook as 2D pose representation, has better results.
+toMETRO is more robust to occlusions, demonstrating its               These results prove that pretraining is necessary since it can
+superiority.                                                          explicitly makes structural human pose knowledge stored in
+                                                                      the codebook, while directly end-to-end training might not
+E. Extra ablations                                                    guarantee such effective encoding.
+Results in non-occlusion scenarios.        We also test our           F. Discussion
+model’s performance under non-occlusion scenarios. We
+construct a non-occlusion subset from 3DPW by remov-                  Societal Impact. Our proposed method can be used to de-
+ing samples used in 3DPW-OCC and 3DPW-PC. The com-                    tect 3D human body poses, thus applicable in certain sce-
+parison between FastMETRO and PostoMETRO is listed                    narios, such as monitoring worker activities in industrial
+in Tab. 10. Our method performs significantly better, hence           manufacturing environments or positioning patient poses in
+proving its effectiveness even in non-occlusion scenarios.            medical settings. However, in these low fault-tolerant en-
+Results of different pose tokens. We also try to use other            vironments, additional model assistance may be necessary
+type of 2D pose representation,i.e., raw 2D pose coordi-              when using the model.
+nates, as the source of pose tokens. We use 2D coordi-                Limitations & Future research. Given that PostoMETRO
+is a data-driven approach, it may fail when there is a signif-
+icant difference between the test samples and those in our
+datasets. Here we show some failure cases in Fig. 6. As
+can be seen, when the persons in the image exhibit extreme
+poses, e.g., skateboarding, PostoMETRO might not perform
+well and yield unsatisfactory results(e.g., body part mis-
+alignment bounded by red boxes), due to the lack of abun-
+dant training samples of such poses in our training sets. A
+straightforward solution is to use datasets with more diverse
+human poses. Setting that aside, exploring how to faithfully
+reconstruct the human mesh with extreme poses within the
+constraints of existing data is an interesting future work.
+                   (a) Input Image                      (b) 2D Pose                         (c) Ours
+
+Figure 6. Qualitative results of PostoMETRO in some challenging cases. From left to right: (a) Input image, (b) 2D pose, (c) Our
+results.
+ (a) Input Image    (b) 2D Pose   (c) FastMETRO      (d) Ours      (a) Input Image      (b) 2D Pose    (c) FastMETRO     (d) Ours
+
+Figure 7. Qualitative results on 3DPW (rows 1-3) and OCHuman (rows 4-6) datasets. From left to right: (a) Input image, (b) 2D Pose
+decoded from pose tokens, (c) FastMETRO [5] results, (d) Our results.
+
+
+
+
+  (a) Input Image       (b) Noisy 2D Pose         (c) Ours            (a) Input Image       (b) Noisy 2D Pose          (c) Ours
+
+Figure 8. Performance of PostoMETRO with noisy pose token. From left to right: (a) Input image, (b) Noisy 2D pose, (c) Our results.
+Input Image                                              Occlusion Sensitivity Heatmap
+
+
+
+
+                               FastMETRO
+                               PostoMETRO
+
+
+Input Image                                              Occlusion Sensitivity Heatmap
+                               FastMETRO
+                               PostoMETRO
+
+
+
+
+Input Image                                              Occlusion Sensitivity Heatmap
+                               FastMETRO
+                               PostoMETRO
+
+
+
+
+          Figure 9. Occlusion Sensitivity Maps of FastMETRO [5] and PostoMETRO.
+Input Image                                                 Occlusion Sensitivity Heatmap
+
+
+
+
+                                 FastMETRO
+                                 PostoMETRO
+
+
+Input Image                                                 Occlusion Sensitivity Heatmap
+                                 FastMETRO
+                                 PostoMETRO
+
+
+
+
+Input Image                                                 Occlusion Sensitivity Heatmap
+                                 FastMETRO
+                                 PostoMETRO
+
+
+
+
+Figure 10. Additional results for Occlusion Sensitivity Maps of FastMETRO [5] and PostoMETRO.
+

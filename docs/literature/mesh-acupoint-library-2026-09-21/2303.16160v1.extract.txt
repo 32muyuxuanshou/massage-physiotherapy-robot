@@ -1,0 +1,925 @@
+                                         One-Stage 3D Whole-Body Mesh Recovery with Component Aware Transformer
+
+                                                                  Jing Lin1,2§ , Ailing Zeng1¶ , Haoqian Wang2 , Lei Zhang1 , Yu Li1
+                                                                        1
+                                                                          International Digital Economy Academy (IDEA),
+                                                                  2
+                                                                    Shenzhen International Graduate School, Tsinghua University
+                                                                               https://osx-ubody.github.io
+arXiv:2303.16160v1 [cs.CV] 28 Mar 2023
+
+
+
+
+                                                                                  E1
+                                                                                  E2
+
+
+
+
+                                                                                            Fusion
+
+
+
+
+                                                                                                                                                     D
+                                                                                                                                              E
+                                                                                  E2
+                                                                                  E3
+
+
+
+
+                                                                    (a) Previous multi-stage pipeline                                 (b) Our one-stage pipeline
+
+                                         Figure 1. A comparison of existing whole-body mesh recovery methods and ours. Most existing methods leverage a multi-stage pipeline
+                                         which uses separate expert models to process body component (e.g., E1: HeadNet, E2: HandNet, E3: BodyNet) and fuse them to get the
+                                         whole-body prediction in a copy-paste manner. The result (from [48]) produces unnatural wrist poses. In contrast, our pipeline is a neat
+                                         one-stage framework with a single encoder-decoder and can predict more accurately with natural meshes.
+
+
+                                                                   Abstract                                     deformable attention to estimate hand and face precisely.
+                                                                                                                The whole pipeline is simple yet effective without any man-
+                                             Whole-body mesh recovery aims to estimate the 3D hu-               ual post-processing and naturally avoids implausible pre-
+                                         man body, face, and hands parameters from a single im-                 diction. Comprehensive experiments demonstrate the effec-
+                                         age. It is challenging to perform this task with a single              tiveness of OSX. Lastly, we build a large-scale Upper-Body
+                                         network due to resolution issues, i.e., the face and hands             dataset (UBody) with high-quality 2D and 3D whole-body
+                                         are usually located in extremely small regions. Existing               annotations. It contains persons with partially visible bod-
+                                         works usually detect hands and faces, enlarge their reso-              ies in diverse real-life scenarios to bridge the gap between
+                                         lution to feed in a specific network to predict the parameter,         the basic task and downstream applications.
+                                         and finally fuse the results. While this copy-paste pipeline
+                                         can capture the fine-grained details of the face and hands,            1. Introduction
+                                         the connections between different parts cannot be easily re-
+                                                                                                                   Expressive whole-body mesh recovery aims to jointly es-
+                                         covered in late fusion, leading to implausible 3D rotation
+                                                                                                                timate the 3D human body poses, hand gestures, and fa-
+                                         and unnatural pose. In this work, we propose a one-stage
+                                                                                                                cial expressions from monocular images. It is gaining in-
+                                         pipeline for expressive whole-body mesh recovery, named
+                                                                                                                creasing attention due to recent advancements in whole-
+                                         OSX, without separate networks for each part. Specifically,
+                                                                                                                body parametric models (e.g., SMPL-X [49]). This task is a
+                                         we design a Component Aware Transformer (CAT) com-
+                                                                                                                key step in modeling human behaviors and has many appli-
+                                         posed of a global body encoder and a local face/hand de-
+                                                                                                                cations, e.g., motion capture, human-computer interaction.
+                                         coder. The encoder predicts the body parameters and pro-
+                                                                                                                Previous research focus on individual tasks of reconstruct-
+                                         vides a high-quality feature map for the decoder, which per-
+                                                                                                                ing human body [11, 28, 32, 61, 67, 68], face [2, 12, 15, 60],
+                                         forms a feature-level upsample-crop scheme to extract high-
+                                         resolution part-specific features and adopt keypoint-guided                § Work done during an internship at IDEA; ¶ Corresponding author.
+or hand [4, 10, 22]. However, whole body mesh recovery is        ture generation, and human-computer interaction. Many
+particularly challenging as it requires accurate estimation of   scenarios, such as talk shows and online classes, are of vital
+each part and natural connections between them.                  importance to our daily life yet under-explored. In such sce-
+    Existing learning-based works [16, 39, 48, 56, 70] use       narios, the upper body is a major focus, whereas the hand
+multi-stage pipelines for body, hand, and face estimation        and face are essential for analysis. To address this issue, we
+to achieve the goal of this task. As depicted in Figure 1(a),    build a large-scale upper-body dataset with fifteen human-
+these methods typically detect different body parts, crop and    centric real-life scenes, as shown in Figure 2(f) to (t). This
+resize each region, and feed them into separate expert mod-      dataset contains many unseen poses, diverse appearances,
+els to estimate the parameters of each part. The multi-stage     heavy truncation, interaction, and abrupt shot changes,
+pipeline with different estimators for body, hand, and face      which are quite different from previous datasets. Accord-
+results in a complicated system with a large computational       ingly, we design a systematical annotation pipeline and pro-
+complexity. Moreover, the blocked communications among           vide precise 2D whole-body keypoint and 3D whole-body
+different components inevitably cause incompatible config-       mesh annotations. With this dataset, we perform a compre-
+urations, unnatural articulation of the mesh, and implau-        hensive benchmarking of existing whole-body estimators.
+sible 3D wrist rotations as they cannot obtain informative          Our contributions can be summarized as follows.
+and consistent clues from other components. Some meth-              • We propose a one-stage pipeline, OSX, for 3D whole-
+ods [16,39,70] attempt to alleviate these issues by designing         body mesh recovery, which can regress the SMPL-X
+additional complicated integration schemes or elbow-twist             parameters in a simple yet effective manner.
+compensation fusion among individual body parts. How-               • Despite the conceptual simplicity of our one-stage
+ever, these approaches can be regarded as a late fusion strat-        framework, it achieves the new state of the art on three
+egy and thus have limited ability to enhance each other and           popular benchmarks.
+correct implausible predictions.                                    • We build a large-scale upper-body dataset, UBody, to
+    In this work, we propose a one-stage framework named              bridge the gap between the basic task and downstream
+OSX for 3D whole-body mesh recovery, as shown in Fig-                 applications and provide precise annotations, with
+ure 1(b), which does not require separate networks for each           which we conduct benchmarking of existing methods.
+part. Inspired by recent advancements in Vision Transform-            We hope UBody can inspire new research topics.
+ers [13, 64], which are effective in capturing spatial infor-
+mation in a plain architecture, we design our pipeline as a      2. Related Work
+component-aware Transformer (CAT) composed of a global
+body encoder and a local component-specific decoder. The         2.1. Methods of Whole-body Mesh Recovery
+encoder equipped with body tokens as inputs captures the            Whole-body mesh recovery targets to localize mesh ver-
+global correlation, predicts the body parameters, and si-        tices of all human components, including body, hands, and
+multaneously provides high-quality feature map for the de-       face from monocular images. Most previous works focus
+coder. The decoder utilizes a differentiable upsample-crop       only on individual hand [4, 10, 22], face [2, 12, 15, 60], and
+scheme to extract part-specific high-resolution features and     body [30–32, 61, 67] reconstruction. In contrast, the joint
+adopt the keypoint-guided deformable attention to precisely      whole-body estimation methods are less addressed. Some
+locate and estimate hand and face parameters. The proposed       optimization-based works reconstruct 3D bodies by fitting
+pipeline is simple yet effective without any manual post-        the detected 2D keypoints from images with additional con-
+processing. To the best of our knowledge, this is the first      straints, but they are slow and prone to local optima [49,63].
+one-stage pipeline for 3D whole-body estimation. We con-         Thanks to the whole-body parametric model (e.g., SMPL-
+duct comprehensive experiments to investigate the effects        X [49]), learning-based models [16, 48, 56, 59, 74] emerge
+of the above designs and compare our method, with existing       to train networks to predict expressive body pose, shape,
+works on three benchmarks. Results show that OSX outper-         hand gesture, and facial expression. Due to the low resolu-
+forms the state-of-the-art (SOTA) [39] by 9.5% on AGORA,         tion of hands and face, these whole-body methods crop and
+7.8% on EHF, and 13.4% on the body-only 3DPW dataset.            resize the hands and face images to higher resolutions and
+    In addition, existing popular benchmarks, as illustrated     feed them into separate expert networks to conduct the cor-
+in the first row of Figure 2, are either indoor single-person    responding parameter regression. Specifically, ExPose [48]
+scenes with limited images (e.g., EHF [49]) or outdoor syn-      introduces body-driven attention for higher-resolution crops
+thetic scenes (e.g., AGORA [47]), where the people are of-       of the face and hand estimation, a dedicated refinement
+ten too far from the camera and the hands and faces are fre-     module, and part-specific knowledge from existing hand-
+quently obscured. In fact, human pose estimation and mesh        only and face-only datasets. FrankMocap [56] presents a
+recovery is a fundamental task that benefits many down-          regression-and-integration method to build a fast and accu-
+stream applications, such as sign language recognition, ges-     rate system. PIXIE [16] produces animatable whole body
+           (a) AGORA                   (b) EHF               (c) Multi-Shot-AVA          (d) MSCOCO                   (e) 3DPW
+
+
+
+
+       (f) Conduct Music             (g) Talk Show           (h) Entertainment            (i) Sign Language           (j) Magic Show
+
+
+
+
+           (k) Singing                 (l) Movie              (m) Interview               (n) Olympic                 (o) Online Class
+
+
+
+
+           (p) Speech                 (q) TV Show              (r) Conference             (s) Live Vlog              (t) Fitness
+Figure 2. Illustration of five previous datasets (from (a) to (e)) and the proposed Upper Body Dataset (from (f) to (t)) with fifteen real-life
+scenes. UBody bridges the gap between the basic 3D whole-body estimation task and downstream tasks with highly expressive actions.
+with realistic facial details via a moderator to fuse body                door scenes. FBA [55] emphasizes the severe failure cases
+part features adaptively. Recently, Hand4Whole [39] uti-                  of existing body recovery methods on consumer video data
+lizes both body and hand joint features for accurate 3D wrist             due to unusual camera viewpoints and aggressive trunca-
+rotation and smooth connection between body and hands.                    tions. They annotate pseudo 2D body keypoints and SMPL
+    Nevertheless, these methods aim at high performance by                annotations via HMR [28] on 13k frames across four ac-
+using separate networks in a divide-and-conquer fashion for               tion recognition datasets. Multi-shot-AVA [50] also argues
+different components and a specific fusion module to paste                that data from edited media, like movies with rich appear-
+them together. The multi-stage pipelines lead to high com-                ances, interactions between humans, and various temporal
+plexity and inevitably cause inconsistent and unnatural ar-               contexts, is valuable. They apply the proposed multi-shot
+ticulation of the mesh and implausible 3D wrist rotations,                optimization on AVA [18] to get pseudo 3D ground truth.
+especially in occluded, truncated, and blurry contexts. Un-               Interestingly, a body recovery benchmark [46] finds that
+til now, one-stage methods in this task are unexplored.                   simply using the 2D COCO dataset with pseudo-3D labels
+                                                                          can surprisingly achieve a better performance and general-
+2.2. Benchmarks of Expressive Body                                        ization ability. To complement these prior datasets and fo-
+                                                                          cus on expressive body recovery, we construct a new bench-
+    Some datasets with parametric model annotations [6,
+                                                                          mark with high-quality 2D and 3D whole-body annotations.
+23, 26, 40, 47, 49, 62] have been developed to advance the
+field. Table 1 summarizes these datasets from the annota-
+tion type, size, scene diversity, etc. To be specific, EHF [49]           3. Method
+is the first evaluation dataset for SMPL-X-based models,
+                                                                          3.1. Motivation
+which is built by capturing 3D body shapes with a scanning
+system and then fitting the SMPL-X model to the scans.                       A one-stage framework is vital to simplify the cumber-
+AGORA [47] is a synthetic dataset with high realism and                   some processes without hand-craft and complex integra-
+accurate ground truth, which is by far the most commonly                  tion designs. However, translating from multi-stage meth-
+used test data due to the diversity of subjects, environments,            ods directly to a one-stage method is nontrivial. We take
+clothes, and occlusions. Notably, people in AGORA are                     the present state-of-the-art method Hand4Whole [39] as an
+often far from the camera, and their hands and face are ob-               example to perform some preliminary studies on bringing
+scured and have small resolutions, making existing methods                the gap between the multi-stage method and one-stage ap-
+focus more on body rather than hand and face estimation.                  proach. On the one hand, we replace its separate backbones
+    Since marker-based 3D mocap labels are hard to obtain,                with a shared backbone for all human components. On the
+there are a few annotation methods [16,40,43,49,50,55] for                other hand, we explore different crop-and-resize image res-
+high-precision labeling for both monocular indoor and out-                olutions for the hands and face, as they usually have small
+                                                                             Multi   In-the-   Upper             Annotation     Annotation
+ Type             Dataset                     #Frames         Scenes                                   Video
+                                                                            Person    wild     Body                Type          Source
+ Rendered         AGORA [47]                   17K              Daily         Y        N        N       N         SMPL-X            [47]
+
+ Marker/Sensor-   Human3.6M [23]              3.6M              Daily         N        N        N       Y         SMPL-X            [40]
+ based MoCap      3DPW [62]                   > 51K             Daily         Y        Y        N       Y         SMPL-X            [40]
+
+ Marker-less      MPI-INF-3DHP [37]           > 1.3M            Daily         N        Y        N       Y         SMPL-X            [40]
+ Multi-view       EHF [49]                     0.1K             Daily         N        N        N       N         SMPL-X            [49]
+  MoCap           ZJU-MoCap [51]              ≥ 237K            Daily         N        N        N       Y         SMPL-X             [1]
+                  PennAction [72]               77K          Fitness          N        Y        N       Y          SMPL             [71]
+                  MSCOCO [35]                  200K           Daily           Y        Y        N       N         SMPL-X            [40]
+                  COCO-Wholebody [24]          200K           Daily           Y        Y        N       N         2D KPT            [24]
+                  MPII [3]                      25K           Daily           Y        Y        N       N         SMPL-X            [40]
+  Pseudo-         MTP [42]                     3.8K           Daily           N        Y        N       N         SMPL-X            [42]
+ 3D Labels        FBA [55]                      13K     Vlog&Cook&Daily       Y        Y        N       Y          SMPL             [55]
+                  Multi-shot-AVA [50]          350K          Movie            Y        Y        N       Y          SMPL             [50]
+                  UBody (Ours)                >1051K     Real-life Scenes     Y        Y        Y       Y      SMPL-X&2D KPT       Ours
+
+    Table 1. Comparison of related datasets. UBody is a large-scale upper-body dataset with high-precision whole-body annotations.
+
+
+                            AGORA-val                   EHF                 former (CAT) estimates the corresponding body, hand, and
+ Method
+                    Hand      Face      All     Hand     Face      All      face parameters P̂ = {P̂body , P̂lhand , P̂rhand , P̂f ace } and
+ Ori.                73.3      81.4   183.8      42.7    25.7     77.5
+                                                                            then feed them into a SMPL-X layer [49] to obtain the fi-
+ Ori.+1/4 Hand       75.7      80.8   183.0      50.9    24.8     78.5      nal 3D whole-body human mesh. Specifically, P̂body con-
+ Ori.+1/4 Face       73.2      81.8   184.0      41.3    24.2     77.0      tains 3D body joint rotation θbody ∈ R22×3 , body shape
+ Share Backbone      81.1      91.0   202.3      55.5    33.5     84.7      β ∈ R10 , and 3D global translation t ∈ R3 . For P̂lhand
+ Share+1/4 Hand      77.4      86.1   188.6      57.0    25.8     84.8      and P̂rhand , they have 3D left and right hand joint rotation
+ Share+1/4 Face      79.5      85.0   196.7      57.8    24.4     82.5      θlhand ∈ R15×3 and θrhand ∈ R15×3 , respectively. P̂f ace
+                                                                            consists of 3D jaw rotation θf ace ∈ R3 and facial expres-
+Table 2. A preliminary study on the effect of different component
+scales and share backbone for all components’ feature extraction.           sion ϕ ∈ R10 . Our training target is to minimize the dis-
+                                                                            tance between the recovered parameters P̂ and the ground-
+image resolutions.                                                          truth parameters P. As shown in Figure 3, the proposed
+    Table 2 shows that, when we transition from the origi-                  CAT consists of a component-aware encoder to capture the
+nal setup (Ori.) to a shared backbone (Share Backbone), all                 global correlation and extract high-quality multi-scale fea-
+recovery errors are severely deteriorated on two datasets.                  ture, and a component-aware decoder to strengthen the hand
+Specifically, MPVPE increases from 183.8mm to 202.3mm                       and face regression via an up-sampling strategy to obtain
+(a 10.1% drop) on AGORA [47], and from 77.5mm to                            higher-resolution feature maps.
+84.7mm (a 9.3% drop) on EHF for all components (All).
+These results indicate that extracting the multi-component                  3.3. Body Regression via Global Encoder
+whole-body features with a shared backbone is difficult.
+Notably, the hand estimation performance deteriorates by                        In the component-aware encoder, the human image I
+                                                                                                                           HW      2
+30.0% on EHF. Based on the results of different resolu-                     is split into fixed-size image patches P ∈ R M 2 ×(M ×3) ,
+tions, we summarize some interesting observations as fol-                   where M is the patch size. The patches P are then lin-
+lows: (i) Overall, changing the resolution of the hand re-                  early projected by a convolution layer and added with po-
+                                                                                                         HW
+sults in a larger performance drop than the face on EHF;                    sition embeddings Pe ∈ R M 2 ×C to obtain a sequence of
+(ii) When not sharing a backbone, the results are generally                                           HW
+                                                                            feature tokens Tf ∈ R M 2 ×C . To explicitly leverage the
+worse with smaller input resolutions of the hands and face.
+                                                                            body prior and learn the body information in the encoder,
+                                                                            we concatenate the feature token Tf with the body tokens
+3.2. Building Component Aware Transformer                                   Tb ∈ RB×C , which are learnable parameters. The con-
+   As an attempt to break the above status quo, we propose                  catenated tokens are then fed into a standard Transformer
+a one-stage framework with a vision transformer encoder                     encoder with multiple Transformer blocks [13]. Each block
+and decoder for expressive full-body mesh recovery, named                   consists of a multi-head self-attention, a feed-forward net-
+OSX. It is simple in design and effective in full-body mesh                 work (FFN), and two layer normalization. After the global
+prediction, as we will demonstrate later. We hope it can                    feature fusion, the body tokens and image feature tokens
+                                                                                                                             HW
+serve as a baseline for future one-stage methods. Given a                   are updated into Tb ′ ∈ RB×C and Tf ′ ∈ R M 2 ×C . Fi-
+human image I ∈ RH×W ×3 , our component-aware Trans-                        nally, we use several fully connected layers to regress the
+      Body Params., Shape, Cam.                                                                                                                         Hands&Face Params.
+
+           Regression Head                                                                               Low-Resolution                                     Regression Head
+                                  𝐓 ′                                          𝐓′                         Feature (𝐅 )
+                                                                                                  ×𝟏
+                          …                                                                                                                                   …
+
+                                                                                                                                                                                         ×𝐍
+                               Transformer Encoder
+                                                                                                                                                                        FFN
+            Body Tokens (𝐓 )                          Feature Tokens (𝐓 )                          ×𝟐
+                          …                                                                                                                     𝑽
+                                                                                                                                                             Cross-Attention
+                                        Positional                                                                                                                             𝑸
+                                        Emb. (𝑷 )
+                                                     Patch Embedding                                                                                           Self-Attention
+                                                                                                   ×𝟒
+
+
+                                                                                                                                                              …
+                                                        Image Patches                                   High-Resolution
+          RGB Image (𝐈)                                                                                                                                     Keypoint-guided
+                                                                                                         Feature (𝐅𝒉𝒓 )
+                                                                                                                                                          Component Tokens (𝐓 )
+                          (a) Component-aware Encoder                                                               (b) Component-aware Decoder
+
+Figure 3. The overview of the proposed one-stage framework (OSX) with component-aware transformer. It includes (a) a component-aware
+Transformer encoder and (b) a component-aware Transformer decoder.
+
+body parameters P̂body = {θbody , β, t} based on Tb ′ .                     highest-resolution feature. The cropped multi-scale features
+                                                                            then serve as memory tokens V for the keypoint-guided
+3.4. High-Resolution Decoder for Hand and Face
+                                                                            component-aware decoder. To relieve the computational
+Up-sampling for multi-scale high-resolution features.                       pressure, we reduce the token dimension from C to C ′ in
+Since the hands and face in a human image are usually                       the component-aware decoder, where C ′ = C/2.
+small, previous methods upsample the human image and                        Keypoint-guided deformable attention decoder. To im-
+crop out the hands and face to obtain higher-resolution im-                 prove the precision of hand and face parameter regression,
+ages. However, this image-level upsampling-crop scheme                      we leverage 2D keypoint positions as prior knowledge to
+requires additional backbones to extract the hand and face                  obtain better component tokens Tc than random initializa-
+features separately. To solve this problem, we propose a                    tion. We simply use the feature map Flr to regress each
+differentiable feature-level upsampling-crop strategy to en-                2D keypoint to trade off accuracy and efficiency and re-
+                                                                                                                                      ′
+hance the hands and face regression process as inspired by                  gard it as a reference keypoint. The input Tc ∈ RK×C of
+the recent ViTDet [34]. Specifically, we reshape the fea-                   the decoder, which we call the keypoint-guided component
+ture tokens Tf ′ into a feature map and upsample it into                    tokens, is obtained by summing up reference keypoint fea-
+multiple higher-resolution features Thr via deconvolution                   ture, pose positional embedding, and learnable embeddings.
+layers. Then, since decoding the hand and face component                    We then pass the keypoint-guided component token through
+information from the full feature map inevitably leads to re-               N deformable attention blocks as inspired by deformable
+dundant computation and makes the computation process                       DETR [75]. To relieve the issue of looking over all possible
+inefficient, we perform differentiable RoIAlign [21] on the                 spatial locations, these blocks learn a small set of sampling
+feature maps and crop out multi-scale hand feature maps                     points (e.g., four here) around the reference keypoint and
+Thand and face feature maps Tf ace , according to the pre-                  further enlarge the feature spatial resolution while maintain-
+dicted hand and face bounding boxes, which are regressed                    ing computational efficiency compared to vanilla DETR [9].
+from Tf ′ using FFNs. The up-sampling and decoding pro-                     Each block is composed of a multi-head self-attention layer,
+cesses for hand and face components are the same, and                       a multi-scale deformable cross-attention layer, and FFNs.
+we illustrate the case of hand parameter regression in de-                  In the deformable cross-attention layer, keypoint queries Q
+tail in Figure 3(b). The cropped multi-scale hand features                  extract features from the elements of multi-scale features V
+can be represented as Thand = {Flr , ..., Fhr }. The low-                   around the position of keypoints pq :
+                              H′ W′
+resolution feature Flr ∈ R M × M ×C is cropped from the
+original low-resolution feature map, where H ′ and W ′ are                     \text {CA}(\mathbf {Q}, \mathbf {V}, p_q)=\sum _{l=1}^L\sum _{k=1}^KA_{lqk} W\mathbf {V}_l(\phi _l(p_q)+\Delta p_{lqk}),  (1)
+the height and width of hand image patches. Fhr is the
+                                                                                                                       2D Loss
+
+                                                      ViT
+                                                                            𝐾          𝐾          𝐾            OSX                                              2D
+                                                   Whole-Body                                                                    SMPL-X        Projection
+                                                                                                               Model                                           KPTs
+
+
+
+
+                                                                                                                                 3D Loss
+                                   Body               Hand                                      ViT
+                                                                          IoU Match
+                                  Detector           Detector                                 Hand-only
+                                                                                                               OSX                Pseudo
+                                                      ViT                                                      Model             SMPL-X
+                                                                            𝐾
+                                                    Body-only
+
+
+Figure 4. Illustration of the annotation pipeline of UBody. Black lines show the annotation process of 2D whole-body keypoints, and blue
+lines are the 3D SMPL-X annotation procedure. Red dotted lines mean to update the information.
+
+
+
+
+       OpenPose                 MediaPipe               ViT-WholeBody                      Ours            Image                 NeuralAnnot                Ours
+                                   (a) 2D Keypoints Annotation                                                     (b) 3D Mesh Annotation
+Figure 5. Comparisons of (a) the 2D keypoints annotation quality of wildly used methods [8, 69] and recent SOTA [64] on UBody (the left
+part), and (b) the 3D mesh annotation quality of previous SOTA [40] with ours on COCO (the right part).
+
+
+where l and k index the feature level and keys, A and W are                                   of-the-art methods hard to generalize well on these scenes.
+attention weight and learnable parameter. ϕ(·) and ∆p are                                     Interestingly, these scenarios are more concerned with the
+position rescaling and offset. After that, the updated com-                                   representations of upper bodies. We take this insight and
+                                   ′
+ponent tokens Tc ′ ∈ RK×C will be fed into hand or face                                       present a novel large-scale benchmark for the expressive
+regression head to output the final hand or face parameters                                   upper body mesh recovery as shown in Figure 2(f) to (t),
+(P̂lhand , P̂rhand , P̂f ace ), respectively.                                                 named UBody. Our annotation pipeline is in Figure 4. Due
+Loss Function. OSX is trained in an end-to-end manner by                                      to the page limit, we put the data collection, data annotation
+minimizing the following loss function:                                                       processes, and annotation visualization in Appendix.
+
+         L = L_{smplx} + L_{kpt3D} + L_{kpt2D} +L_{bbox2D}. \label {eq:loss}     (2)          4.1. Quality Analysis
+                                                                                                 Our annotation pipeline produces far better 3D pseudo-
+The four items are calculated as the L1 distance between
+                                                                                              GT fits with a shorter running time than the previous
+the ground truth values and the predicted ones. Specifically,
+                                                                                              optimization-based and learning-based methods [16, 26, 40,
+Lsmplx provides the explicit supervision of the SMPL-X
+                                                                                              49, 50]. Figure 5(a) compares our 2D annotation results
+parameters. Lkpt3D , Lkpt2D , and Lbbox2D are regression
+                                                                                              with the two wildly used annotation methods (OpenPose [8]
+losses for 3D whole-body keypoints, projected 2D whole-
+                                                                                              and MediaPipe [69]). The quality of our 2D annotations
+body keypoints, and left/right hands and face 2D bounding
+                                                                                              is much more accurate, especially in terms of hand details
+boxes. More details are provided in the Appendix.
+                                                                                              and the robustness of occlusion and blur. Figure 5(b) com-
+                                                                                              pares the 3D annotation of ours with the SOTA NeuralAn-
+4. UBody–An Upper Body Dataset                                                                not method [40] on COCO. The quality of our approach is
+   3D whole-body mesh recovery from videos is a basic                                         also better for the naked eye in terms of the fit of the body
+computer vision task, where it can provide comprehensive                                      shape and the whole-body poses.
+motion, gesture, and expression information to understand
+                                                                                              4.2. Data Characteristics
+how humans perceive and act. However, existing datasets
+lack scenes of downstream tasks, such as sign language                                           Compared to the popular datasets illustrated in Figure 2
+recognition, gesture generation, emotion recognition, and                                     (a) to (e) and the related human-centric datasets listed in
+real-life scenarios recorded as VLOGs, making recent state-                                   Table 1, UBody possesses unique features that present new
+                                                                           The Input Image    MPVPE (Hands): 38.46 mm   MPVPE (Hands): 45.61 mm
+
+
+                                                                     Figure 7. Illustration of the inconsistency between quantitative and
+                                                                     qualitative results compared Hand4Whole [39] (the middle one)
+                                                                     with OSX (the right figure) on EHF.
+Figure 6. The statistical comparisons of the areas of the hand and   and face-only datasets for training as a simple baseline for
+face bounding boxes (upper row) and the number of 2D visible         a one-stage method. The SMPL/SMPL-X pseudo-GTs are
+hand and face keypoints (lower row) with the logarithmic scale of    obtained from EFT [25] and NeuralAnnot [40].
+the Y-axis. UBody focuses on upper bodies exhibiting expressive
+                                                                     Evaluation metrics. For 3D whole-body mesh recovery,
+gestures and facial expressions.
+                                                                     we utilize the mean per-vertex position error (MPVPE) as
+challenges for future research. Many videos are from edited          our primary metric. In addition, we apply Procrustes Anal-
+media with highly diverse scenes and rich human actions              ysis (PA) to the recovered mesh, and report the PA-MPVPE
+and gestures. They have abrupt shot changes and dynamic              after rigid alignment. For AGORA, we also report normal-
+camera viewpoints, leading to discontinuities between the            ized mean vertex error (N-PMVPE) to compensate for miss-
+frames. Close-up shots of humans cause severe truncation,            ing detection. Hand error is calculated as the mean of the
+making existing methods tend to fail. Meanwhile, they have           left and right hands. For 3D body-only recovery on 3DPW,
+varying degrees of interaction with objects and body com-            we follow previous works [32, 67] to report the mean per
+ponents, subtitles, and special effects as occluded scenes.          joint position error (MPJPE) and PA-MPJPE. All reported
+Also, there are high variations in background and light.             errors are in units of millimeters.
+Those conditions have not appeared in previous datasets.             Implementation details. OSX is implemented in Pytorch
+All scenes in UBody have rich hand gestures and facial               and trained using the Adam optimizer with an initial learn-
+expressions, making the recognition models pay more at-              ing rate of 1×10−4 for 14 epochs. Scaling, rotation, random
+tention to these important body components. Lastly, all              horizontal flip, and color jittering are used as data augmen-
+of these real-life videos provide audio as additional infor-         tations during training. We set the number of body tokens
+mation to serve future multi-modality methods. We also               Tb and component tokens Tc to 27 and 92, respectively.
+provide statistical comparisons between the key features of
+UBody and the wildly used dataset AGORA [47] in Fig-                 5.2. Comparisons with Existing Methods
+ure 6. AGORA’s hand/face bounding box area is generally                  Table 3 provides a comprehensive comparison of OSX
+small, while UBody pays more attention to diverse hand and           and existing whole-body mesh recovery methods. As the
+face scales as evidenced by its more dispersed area distribu-        first one-stage method, OSX surpasses existing multi-stage
+tion. Meanwhile, UBody has more visible face/hand key-               models with complex designs in most cases. Notably,
+points, underscoring the importance of recognizing hand              OSX has not been trained on hand-only and face-only
+gestures and facial expressions. Lastly, UBody’s inclusion           datasets [29, 41, 76]. Our All MPVPEs show a 9.5% im-
+of real-life videos provides new possibilities for subsequent        provement on AGORA test set and 7.8% improvement on
+spatio-temporal modeling that are not available in AGORA,            EHF than SOTA [39]. Since AGORA is a more complex
+which is an image-based dataset.                                     and natural dataset than EHF, previous works [39,47] claim
+                                                                     it is more convincing and representative of real-world sce-
+5. Experiment                                                        narios. We also visualize the misleading high-error cases
+5.1. Experimental Setup                                              on EHF in Figure 7. Besides, we obtain a SOTA perfor-
+                                                                     mance on the body-only dataset, 3DPW, with a 13.4% error
+   Due to the page limit, we leave the detailed experiment           reduction compared to these whole-body methods. More
+setup, implementation, annotation visualization, qualitative         qualitative results are available in the appendix.
+comparison with SOTA methods, and more benchmark re-
+sults and analyses in the appendix.                                  5.3. Ablation Study
+Datasets. We use COCO-Wholebody [24], MPII [3], and                  Impact of the component-aware decoder. Unlike body-
+Human3.6M [23] as the training set. Unlike previous multi-           only pose estimation, whole-body mesh recovery requires
+stage methods [39, 48], we do not use additional hand-only           attention to both the body’s posture, which is on a larger
+                                           AGORA-test                                             EHF                                           3DPW
+ Method                         MPVPE ↓                     N-MPVPE ↓                MPVPE ↓                 PA-MPVPE ↓               MPJPE ↓      PA-MPJPE ↓
+                         All        Hands     Face       All      Body        All       Hands    Face     All    Hands       Face       Body              Body
+ ExPose [48]            217.3        73.1     51.1      265.0     184.8       77.1       51.6    35.0     54.5    12.8        5.8       93.4              60.7
+ FrankMocap [56]          -          55.2      -          -       207.8      107.6       42.8     -       57.5    12.6         -        96.7              61.9
+ PIXIE [16]             191.8        49.3     50.2      233.9     173.4       89.2       42.8    32.7     55.0    11.1        4.6       91.0              61.3
+ Hand4Whole [39]          -           -        -          -         -         79.2       43.2    25.0     53.1    12.1        5.8         -                 -
+ Hand4Whole [39]×       135.5        47.2     41.6      144.1      96.0       76.8       39.8    26.1     50.3    10.8        5.8       86.6              54.4
+ OSX (Ours)         122.8↓9.5%      45.7      36.2        130.6    85.3     70.8↓7.8%   53.7     26.4     48.7      15.9     6.0      74.7↓13.4%          45.1
+Table 3. 3D body reconstruction error comparisons on three existing datasets. × uses additional hand-only and face-only training datasets.
+
+  Hand          Ours     w/o H.D.     w/o K.G    w/o both                                        MPVPE ↓                   PA-MPVPE ↓              PA-MPJPE ↓
+  MPVPE          53.7      55.3        55.1          56.4          Method                 All     Hand       Face      All     Hand      Face      Body     Hand
+  PA-MPVPE       15.9      17.7        17.6          18.1
+                                                                   ExPose [48]           171.5     83.7      45.1     66.9     12.0       3.9      70.7      12.3
+  Face          Ours     w/o F.D.     w/o K.G    w/o both          PIXIE [16]            168.4     55.6      45.2     61.7     12.2       4.2      66.8      12.3
+  MPVPE          26.4      27.2        26.4          26.8          Hand4Whole [39]       104.1     45.7      27.0     44.8      8.9       2.8      45.5       9.0
+  PA-MPVPE        6.0      5.9         5.8           6.0           Hand4Whole [39]×      157.4     62.2      49.8     82.2      9.8       3.9      92.8      10.0
+  Upsampling     ×1         ×2         ×4            ×8            OSX (Ours)             92.4     47.7      24.9     42.4     10.8       2.4      42.9      11.0
+  MPVPE          54.9      54.3        53.7          54.1          OSX (Ours)†            81.9     41.5      21.2     42.2     8.6        2.0      48.4      8.8
+
+Table 4. Ablation study of component-aware decoder on             Table 5. Reconstruction errors on UBody test set on the intra-scene protocol.
+EHF with H.D., F.D., K.G, and upsampling strategies.              All models are pretrained on previous datasets, except for the results labeled by
+H.D., F.D., and K.G are abbreviations for Hand Decoder,           (i) †: finetuned on the UBody training data; (ii) ×: finetuned on the AGORA
+Face Decoder and Keypoint-Guided scheme.                          training data. The result of the inter-scene setting is in the appendix.
+
+spatial scale, and the gesture and expression of the hands                      Hand4Whole on AGORA and test again, and we find all
+and face, which are on a finer scale. To handle the resolution                  errors are significantly enlarged. This observation can be
+issue in a one-stage pipeline, we propose the component-                        attributed to the data distribution gap between AGORA and
+aware decoder attached to the component-aware encoder.                          UBody, as shown in Figure 6. Moreover, we train OSX on
+First, in the upper Table 4, we verify the effectiveness of the                 our train set and find a 16.1% improvement compared to the
+proposed decoder for both hand and face regression. We                          original pretrained model, indicating that UBody can serve
+can observe a significant drop without the decoder (e.g.,                       to improve the performance on downstream real-life scenes.
+w/o H.D. and w/o F.D., indicating that simply regressing
+the low-resolution hand and face directly from the encoder                      6. Conclusion
+is inferior. Moreover, the errors will also increase without                        In this work, we propose the first one-stage pipeline for
+the proposed keypoint-guided deformable attention scheme,                       3D whole-body mesh recovery that achieves SOTA perfor-
+as shown in the medium Table 4. In particular, the perfor-                      mance on three benchmarks in a simple yet effective man-
+mance of the hand estimation is highly influenced, showing                      ner. Moreover, to bridge the gap between the basic task of
+that hand pose estimation attends more to the sparsely de-                      full-body pose and shape estimation and their downstream
+formable spatial information to obtain better queries.                          tasks, we develop a large-scale dataset with comprehensive
+Impact of the up-sampling strategy. To relieve the low-                         scenes covering our daily life. With our proposed anno-
+resolution problem of hand and facial features, we design                       tation method, we show that training on UBody can effec-
+the feature up-sampling strategy in the decoder to obtain                       tively improve the performance of mesh recovery in upper-
+multi-scale higher-resolution features. The lower Table 4                       body scenes. We hope this work can contribute new insights
+presents the impact of different up-sampling scale. As                          to this area, both in terms of methodology and dataset.
+the up-sampling scale increases, the MPVPE decreases and                        Limitation and future work. Currently, our training does
+then reaches a saturation point. Therefore, we use three                        not use additional hand and face-specific datasets. It is
+scales (i.e., [×1, ×2, ×4]) by default in our experiments.                      worth studying how to make the best use of them in our
+                                                                                pipeline to further improve performance. Also, we can val-
+5.4. Benchmark on UBody                                                         idate the effectiveness of UBody on some downstream ap-
+    As a new dataset, we provide both quantitative and qual-                    plications, e.g., gesture recognition, driving avatar.
+itative results on UBody. Table 5 presents the performance                          Acknowledgements: This work was partially funded
+comparisons of existing 3D whole-body methods. The gen-                         through the National Key Research and Develop-
+eral result ranking is similar to AGORA. Since the upper                        ment Program of China (Project No.2022YFB36066),
+body is closer to the camera, their errors will be smaller                      in part by the Shenzhen Science and Technology
+than AGORA. However, the hand and face will play a more                         Project under Grant (CJGJZD20200617102601004,
+important role than previous data. Besides, we finetune                         JCYJ20220818101001004).
+                                                             [13] Alexey Dosovitskiy, Lucas Beyer, Alexander
+                                                                  Kolesnikov, Dirk Weissenborn, Xiaohua Zhai,
+References                                                        Thomas Unterthiner, Mostafa Dehghani, Matthias
+                                                                  Minderer, Georg Heigold, Sylvain Gelly, Jakob
+ [1] Easymocap - make human motion capture easier.                Uszkoreit, and Neil Houlsby. An image is worth
+     Github, 2021. 4                                              16x16 words: Transformers for image recognition at
+ [2] Oswald Aldrian and William A. P. Smith. Inverse ren-         scale. In ICLR, 2021. 2, 4
+     dering of faces with a 3d morphable model. TPAMI,
+                                                             [14] Amanda Duarte, Shruti Palaskar, Lucas Ventura,
+     2013. 1, 2
+                                                                  Deepti Ghadiyaram, Kenneth DeHaan, Florian Metze,
+ [3] Mykhaylo Andriluka, Leonid Pishchulin, Peter                 Jordi Torres, and Xavier Giro-i Nieto. How2sign: A
+     Gehler, and Bernt Schiele. 2d human pose estima-             large-scale multimodal dataset for continuous ameri-
+     tion: New benchmark and state of the art analysis. In        can sign language. In CVPR, 2021. 14
+     CVPR, 2014. 4, 7
+                                                             [15] Bernhard Egger, William A. P. Smith, Ayush Tewari,
+ [4] Adnane Boukhayma, Rodrigo de Bem, and Philip                 Stefanie Wuhrer, Michael Zollhoefer, Thabo Beeler,
+     H. S. Torr. 3d hand shape and pose from images in            Florian Bernard, Timo Bolkart, Adam Kortylewski,
+     the wild. In CVPR, 2019. 2                                   Sami Romdhani, Christian Theobalt, Volker Blanz,
+ [5] Andrew Brown, Vicky Kalogeiton, and Andrew Zis-              and Thomas Vetter. 3d morphable face models—past,
+     serman. Face, body, voice: Video person-clustering           present, and future. TOG, 2020. 1, 2
+     with multiple modalities. In ICCV, 2021. 14             [16] Yao Feng, Vasileios Choutas, Timo Bolkart, Dimitrios
+ [6] Zhongang Cai, Daxuan Ren, Ailing Zeng, Zhengyu               Tzionas, and Michael J. Black. Collaborative regres-
+     Lin, Tao Yu, Wenjia Wang, Xiangyu Fan, Yang Gao,             sion of expressive bodies using moderation. In 3DV,
+     Yifan Yu, Liang Pan, Fangzhou Hong, Mingyuan                 2021. 2, 3, 6, 8, 14, 15
+     Zhang, Chen Change Loy, Lei Yang, and Ziwei Liu.        [17] David F Fouhey, Wei-cheng Kuo, Alexei A Efros, and
+     Humman: Multi-modal 4d human dataset for versatile           Jitendra Malik. From lifestyle vlogs to everyday inter-
+     sensing and modeling. In ECCV, 2022. 3                       actions. In CVPR, 2018. 14
+ [7] Necati Cihan Camgöz, Ben Saunders, Guillaume Ro-       [18] Chunhui Gu, Chen Sun, David A. Ross, Carl Von-
+     chette, Marco Giovanelli, Giacomo Inches, Robin              drick, Caroline Pantofaru, Yeqing Li, Sudheendra
+     Nachtrab-Ribback, and Richard Bowden. Content4all            Vijayanarasimhan, George Toderici, Susanna Ricco,
+     open research sign language translation datasets. In         Rahul Sukthankar, Cordelia Schmid, and Jitendra Ma-
+     FG. IEEE, 2021. 14                                           lik. AVA: A video dataset of spatio-temporally local-
+ [8] Zhe Cao, Gines Hidalgo, Tomas Simon, Shih-En Wei,            ized atomic visual actions. In CVPR, 2018. 3, 14
+     and Yaser Sheikh. OpenPose: Realtime multi-person
+                                                             [19] Lin Guo, Zongxing Lu, and Ligang Yao. Human-
+     2d pose estimation using part affinity fields. TPAMI,
+                                                                  machine interaction sensing technology based on hand
+     2021. 6
+                                                                  gesture recognition: A review. IEEE Transactions on
+ [9] Nicolas Carion, Francisco Massa, Gabriel Synnaeve,           Human-Machine Systems, 2021. 14
+     Nicolas Usunier, Alexander Kirillov, and Sergey
+                                                             [20] Kaiming He, Xinlei Chen, Saining Xie, Yanghao Li,
+     Zagoruyko. End-to-end object detection with trans-
+                                                                  Piotr Dollár, and Ross Girshick. Masked autoencoders
+     formers. In ECCV, 2020. 5
+                                                                  are scalable vision learners. In CVPR, 2022. 14
+[10] Theocharis Chatzis, Andreas Stergioulas, Dimitrios
+                                                             [21] Kaiming He, Georgia Gkioxari, Piotr Dollar, and Ross
+     Konstantinidis, Kosmas Dimitropoulos, and Petros
+                                                                  Girshick. Mask R-CNN. In ICCV, 2017. 5
+     Daras. A comprehensive study on deep learning-based
+     3d hand pose estimation methods. Applied Sciences,      [22] Lin Huang, Zhang Boshen, Zhilin Guo, Yang Xiao,
+     2020. 2                                                      Zhiguo Cao, and Junsong Yuan. Survey on depth and
+[11] Hongsuk Choi, Gyeongsik Moon, and Kyoung Mu                  rgb image-based 3d hand shape and pose estimation.
+     Lee. Pose2mesh: Graph convolutional network for              Virtual Reality & Intelligent Hardware, 2021. 2
+     3d human pose and mesh recovery from a 2d human         [23] Catalin Ionescu, Dragos Papava, Vlad Olaru, and Cris-
+     pose. In ECCV. 2020. 1                                       tian Sminchisescu. Human3.6M: Large scale datasets
+[12] Yu Deng, Jiaolong Yang, Sicheng Xu, Dong Chen,               and predictive methods for 3d human sensing in natu-
+     Yunde Jia, and Xin Tong. Accurate 3d face recon-             ral environments. TPAMI, 2014. 3, 4, 7
+     struction with weakly-supervised learning: From sin-    [24] Sheng Jin, Lumin Xu, Jin Xu, Can Wang, Wentao Liu,
+     gle image to image set. In CVPRW, 2019. 1, 2                 Chen Qian, Wanli Ouyang, and Ping Luo. Whole-
+     body human pose estimation in the wild. In ECCV,          [38] Sushmita Mitra and Tinku Acharya. Gesture recogni-
+     2020. 4, 7, 14                                                 tion: A survey. IEEE Transactions on Systems, Man,
+[25] Hanbyul Joo, Natalia Neverova, and Andrea Vedaldi.             and Cybernetics, Part C (Applications and Reviews),
+     Exemplar fine-tuning for 3d human pose fitting to-             2007. 14
+     wards in-the-wild 3d human pose estimation. 2020.         [39] Gyeongsik Moon, Hongsuk Choi, and Kyoung Mu
+     7                                                              Lee. Accurate 3d hand pose estimation for whole-
+[26] Hanbyul Joo, Natalia Neverova, and Andrea Vedaldi.             body 3d human mesh estimation. In CVPRW, 2022.
+     Exemplar fine-tuning for 3d human model fitting to-            2, 3, 7, 8, 13, 14, 15
+     wards in-the-wild 3d human pose estimation. 3DV,
+                                                               [40] Gyeongsik Moon, Hongsuk Choi, and Kyoung Mu
+     2022. 3, 6
+                                                                    Lee. NeuralAnnot: Neural annotator for 3d human
+[27] Hamid Reza Vaezi Joze and Oscar Koller. Ms-asl:                mesh training sets. In CVPRW, 2022. 3, 4, 6, 7
+     A large-scale data set and benchmark for understand-
+     ing american sign language. ArXiv, abs/1812.01053,        [41] Gyeongsik Moon, Shoou-I Yu, He Wen, Takaaki Shi-
+     2019. 14                                                       ratori, and Kyoung Mu Lee. Interhand2.6m: A dataset
+                                                                    and baseline for 3d interacting hand pose estimation
+[28] Angjoo Kanazawa, Michael J. Black, David W. Ja-
+                                                                    from a single rgb image. ECCV, 2020. 7
+     cobs, and Jitendra Malik. End-to-end recovery of hu-
+     man shape and pose. In CVPR, 2018. 1, 3                   [42] Lea Muller, Ahmed AA Osman, Siyu Tang, Chun-
+[29] Tero Karras, Samuli Laine, and Timo Aila. A style-             Hao P Huang, and Michael J Black. On self-contact
+     based generator architecture for generative adversarial        and human pose. In CVPR, 2021. 4
+     networks. TPAMI, 2021. 7                                  [43] Lea Muller, Ahmed A. A. Osman, Siyu Tang, Chun-
+[30] Muhammed Kocabas, Chun-Hao P Huang, Otmar                      Hao P. Huang, and Michael J. Black. On self-contact
+     Hilliges, and Michael J Black. Pare: Part attention re-        and human pose. In CVPR, 2021. 3
+     gressor for 3d human body estimation. In ICCV, 2021.      [44] Arsha Nagrani, Joon Son Chung, Weidi Xie, and An-
+     2                                                              drew Zisserman. Voxceleb: Large-scale speaker ver-
+[31] Muhammed Kocabas, Chun-Hao P Huang, Joachim                    ification in the wild. Computer Speech & Language,
+     Tesch, Lea Müller, Otmar Hilliges, and Michael J              2020. 14
+     Black. Spec: Seeing people in the wild with an es-
+                                                               [45] Supreeth Narasimhaswamy,        Thanh Nguyen,
+     timated camera. In CVPR, 2021. 2, 14
+                                                                    Mingzhen Huang, and Minh Hoai. Whose hands are
+[32] Nikos Kolotouros, Georgios Pavlakos, Michael Black,            these? hand detection and hand-body association in
+     and Kostas Daniilidis. Learning to reconstruct 3d hu-          the wild. In CVPR, 2022. 14
+     man pose and shape via model-fitting in the loop. In
+     ICCV, 2019. 1, 2, 7                                       [46] Hui En Pang, Zhongang Cai, Lei Yang, Tianwei
+                                                                    Zhang, and Ziwei Liu. Benchmarking and analyz-
+[33] Zijian Kuang and Xinran Tie. Flow-based video
+                                                                    ing 3d human pose and shape estimation beyond al-
+     segmentation for human head and shoulders. arXiv
+                                                                    gorithms. In Neural Information Processing Systems
+     preprint arXiv:2104.09752, 2021. 14
+                                                                    Datasets and Benchmarks Track. 3
+[34] Yanghao Li, Hanzi Mao, Ross B. Girshick, and Kaim-
+     ing He. Exploring plain vision transformer backbones      [47] Priyanka Patel, Chun-Hao P. Huang, Joachim Tesch,
+     for object detection. In ECCV, 2022. 5                         David T. Hoffmann, Shashank Tripathi, and Michael J.
+                                                                    Black. AGORA: Avatars in geography optimized for
+[35] Tsung-Yi Lin, Michael Maire, Serge Belongie, James
+                                                                    regression analysis. In CVPR, 2021. 2, 3, 4, 7
+     Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and
+     C Lawrence Zitnick. Microsoft coco: Common ob-            [48] Georgios Pavlakos, Vasileios Choutas, Timo Bolkart,
+     jects in context. In ECCV, 2014. 4, 14                         Dimitrios Tzionas, Michael J. Black, Vasileios
+[36] Xin Liu, Henglin Shi, Haoyu Chen, Zitong Yu, Xi-               Choutas, Georgios Pavlakos, Timo Bolkart, Dimitrios
+     aobai Li, and Guoying Zhao. imigue: An identity-               Tzionas, and Michael J. Black. Monocular expres-
+     free video dataset for micro-gesture understanding and         sive body regression through body-driven attention.
+     emotion analysis. In CVPR, 2021. 14                            ECCV, 2020. 1, 2, 7, 8, 14, 15
+[37] Dushyant Mehta, Helge Rhodin, Dan Casas, Pascal           [49] Georgios Pavlakos, Vasileios Choutas, Nima Ghor-
+     Fua, Oleksandr Sotnychenko, Weipeng Xu, and Chris-             bani, Timo Bolkart, Ahmed A. Osman, Dimitrios
+     tian Theobalt. Monocular 3d human pose estimation              Tzionas, and Michael J. Black. Expressive body cap-
+     in the wild using improved cnn supervision. In 3DV,            ture: 3d hands, face, and body from a single image. In
+     year=2017. 4                                                   CVPR, 2019. 1, 2, 3, 4, 6, 14, 15
+[50] Georgios Pavlakos, Jitendra Malik, and Angjoo             [64] Yufei Xu, Jing Zhang, Qiming Zhang, and Dacheng
+     Kanazawa. Human mesh recovery from multiple                    Tao. Vitpose: Simple vision transformer baselines for
+     shots. In CVPR, 2022. 3, 4, 6, 14                              human pose estimation. arXiv:2204.12484, 2022. 2,
+[51] Sida Peng, Yuanqing Zhang, Yinghao Xu, Qianqian                6, 14, 15
+     Wang, Qing Shuai, Hujun Bao, and Xiaowei Zhou.            [65] Youngwoo Yoon, Woo-Ri Ko, Minsu Jang, Jaeyeon
+     Neural body: Implicit neural representations with              Lee, Jaehong Kim, and Geehyuk Lee. Robots learn
+     structured latent codes for novel view synthesis of dy-        social skills: End-to-end learning of co-speech gesture
+     namic humans. In CVPR, 2021. 4                                 generation for humanoid robots. In ICRA, 2019. 14
+[52] William H Press and Saul A Teukolsky. Savitzky-           [66] Ian T Young and Lucas J Van Vliet. Recursive im-
+     golay smoothing filters. Computers in Physics, 1990.           plementation of the gaussian filter. Signal processing,
+     14                                                             1995. 14
+[53] Jie Pu, Yannis Panagakis, Stavros Petridis, and Maja      [67] Ailing Zeng, Xuan Ju, Lei Yang, Ruiyuan Gao,
+     Pantic. Audio-visual object localization and separa-           Xizhou Zhu, Bo Dai, and Qiang Xu. Deciwatch: A
+     tion using low-rank and sparsity. In ICASSP. IEEE,             simple baseline for 10x efficient 2d and 3d pose esti-
+     2017. 14                                                       mation. In ECCV, 2022. 1, 2, 7
+[54] Razieh Rastgoo, Kourosh Kiani, Sergio Escalera, and       [68] Ailing Zeng, Lei Yang, Xuan Ju, Jiefeng Li, Jianyi
+     Mohammad Sabokrou. Sign language production: a                 Wang, and Qiang Xu. Smoothnet: A plug-and-play
+     review. In CVPR, 2021. 14                                      network for refining human poses in videos. In ECCV,
+[55] Chris Rockwell and David F Fouhey. Full-body                   2022. 1, 14
+     awareness from partial observations. In ECCV, 2020.
+                                                               [69] Fan Zhang, Valentin Bazarevsky, Andrey Vakunov,
+     3, 4, 14
+                                                                    Andrei Tkachenka, George Sung, Chuo-Ling Chang,
+[56] Yu Rong, Takaaki Shiratori, and Hanbyul Joo.                   and Matthias Grundmann. Mediapipe hands: On-
+     FrankMocap: A monocular 3d whole-body pose es-                 device real-time hand tracking. arXiv:2006.10214,
+     timation system via regression and integration. In IC-         2020. 6
+     CVW, 2021. 2, 8, 14
+                                                               [70] Hongwen Zhang, Yating Tian, Yuxiang Zhang,
+[57] Aliaksandr Siarohin, Oliver J Woodford, Jian Ren,              Mengcheng Li, Liang An, and Yebin Liu. Pymaf-
+     Menglei Chai, and Sergey Tulyakov. Motion repre-               x: Towards well-aligned full-body model regression
+     sentations for articulated animation. In CVPR, 2021.           from monocular images. arXiv:2207.06400, 2022. 2,
+     14                                                             13, 14
+[58] S Subburaj and S Murugavalli. Survey on sign lan-
+                                                               [71] Jason Y Zhang, Panna Felsen, Angjoo Kanazawa, and
+     guage recognition in context of vision-based and deep
+                                                                    Jitendra Malik. Predicting 3d human dynamics from
+     learning. Measurement: Sensors, 2022. 14
+                                                                    video. In ICCV, 2019. 4
+[59] Yu Sun, Tianyu Huang, Qian Bao, Wu Liu, Wenpeng
+     Gao, and Yili Fu. Learning monocular mesh recovery        [72] Weiyu Zhang, Menglong Zhu, and Konstantinos G
+     of multiple body parts via synthesis. In ICASSP. IEEE,         Derpanis. From actemes to action: A strongly-
+     2022. 2                                                        supervised representation for detailed action under-
+                                                                    standing. In ICCV, 2013. 4
+[60] Ayush Tewari, Michael Zollhofer, Hyeongwoo Kim,
+     Pablo Garrido, Florian Bernard, Patrick Perez, and        [73] Hao Zhou, Wengang Zhou, Yun Zhou, and Houqiang
+     Christian Theobalt. MoFA: Model-based deep convo-              Li. Spatial-temporal multi-cue network for sign lan-
+     lutional face autoencoder for unsupervised monocular           guage recognition and translation. IEEE Transactions
+     reconstruction. In ICCVW, 2017. 1, 2                           on Multimedia, 2021. 14
+[61] Yating Tian, Hongwen Zhang, Yebin Liu, and Limin          [74] Yuxiao Zhou, Marc Habermann, Ikhsanul Habibie,
+     Wang. Recovering 3d human mesh from monocular                  Ayush Tewari, Christian Theobalt, and Feng Xu.
+     images: A survey. arXiv:2203.01923, 2022. 1, 2                 Monocular real-time full body capture with inter-part
+[62] Timo von Marcard, Roberto Henschel, Michael J.                 correlations. In CVPR, 2021. 2
+     Black, Bodo Rosenhahn, and Gerard Pons-Moll. Re-          [75] Xizhou Zhu, Weijie Su, Lewei Lu, Bin Li, Xiao-
+     covering accurate 3d human pose in the wild using              gang Wang, and Jifeng Dai. Deformable DETR: de-
+     IMUs and a moving camera. In ECCV. 2018. 3, 4                  formable transformers for end-to-end object detection.
+[63] Donglai Xiang, Hanbyul Joo, and Yaser Sheikh.                  In ICLR, 2021. 5
+     Monocular total capture: Posing face, body, and hands     [76] Christian Zimmermann, Duygu Ceylan, Jimei Yang,
+     in the wild. In CVPR, 2019. 2                                  Bryan Russell, Max J. Argus, and Thomas Brox. Frei-
+HAND: A dataset for markerless capture of hand pose
+and shape from single RGB images. In ICCV, 2019. 7
+                        Supplementary Material:
+One-Stage 3D Whole-Body Mesh Recovery with Component Aware Transformer
+
+
+Overview                                                               B. Efficiency comparison with SOTA methods
+This supplementary material presents more details and ad-              We report the complexity comparisons including average
+ditional results not included in the main paper due to page            inference time, number of model parameters, FLOPs, and
+limitation. The list of items included are:                            the NMJE-All on AGORA-test in Table S-1. The numbers
+                                                                       are measured for single-person regression on the same res-
+  • More experiment setup and details in Sec. A.                       olution input using a machine with an NVIDIA A100 GPU.
+                                                                       OSX has the shortest inference time and lowest error, indi-
+                                                                       cating the advantages in practical applications.
+  • Efficiency comparison with SOTA in Sec. B.
+                                                                            Method        ExPose [34]   PIXIE [13]   H4W [27]   PyMAF-X [48]   OSX
+                                                                        NMJE-All (mm)       263.3         230.9       141.1        140.0       127.6
+  • Experiment on AGORA dataset in Sec. C.                              Infer Time (ms)     120.2         192.0        73.3        209.3       54.6
+                                                                          Params (M)        135.8         192.9        77.9        205.9       102.9
+                                                                          FLOPS (G)          28.5         34.3         16.7         35.5        25.3
+  • More introduction of UBody in Sec. D.
+                                                                         Table S-1. Efficiency comparisons with multi-stage methods.
+  • Inter-scene benchmark on UBody dataset in Sec. E.
+                                                                       C. Experiment on AGORA Dataset
+  • Qualitative comparisons with SOTA in Sec. F.                           In this part, we report the complete result on the AGORA
+                                                                       test set and the experiment result on the AGORA val set.
+                                                                       AGORA Test Set. Table S-2 depicts the complete result
+                                                                       on the AGORA test set. All the results are taken from the
+                                                                       official leaderboard. As shown, our OSX outperforms other
+A. Experiment Setup                                                    competitors on most metrics, especially on the evaluation of
+Evaluation metrics. To quantitatively evaluate the per-                the body and full-body recovery. More specifically, for full-
+formance of human mesh recovery, MPVPE, PA-MPVPE,                      body reconstruction, OSX even surpasses PyMAF-X [70]
+MPJPE, and PA-MPJPE are used as evaluation metrics. Be-                by 10.6 mm, 9.1 mm, 2.9 mm, and 4.7 mm on NMVE,
+sides, we also report normalized mean vertex error (NMVE)              NMJE, MVE, and MPJPE, respectively. Since PyMAF-
+and normalized mean joint error (NMJE) by the standard                 X has a lower detected person ratio, they have similar re-
+detection metric, F1 score (the harmonic mean of recall and            sults on MVE and MPJPE metrics, which only calculate
+precision) to penalize models for misses and false positives           the matched person. The NMVE and NMJE will take the
+on AGORA test set with many multi-person scenes.                       misses and false positives into account, and we have overall
+Implementation details. Our OSX model is implemented                   better multi-person estimation with more improvement un-
+in Pytorch. It is trained with Adam optimizer (β1 =                    der the metrics. Notably, although OSX does not use extra
+0.1, β2 = 0.999) using the Cosine Annealing scheme for                 hand-only and face-only datasets, it can achieve competi-
+14 epochs. The learning rate is initially set to 1 × 10−4 .            tive results on hand and face metrics, which demonstrates
+The batch size is set to 192. Random scaling, rotation, hor-           the effectiveness of our component-aware decoder.
+izontal flip, and color jittering are used as data augmenta-           AGORA Val Set. Table S-3 shows the result on the
+tions during training. The spatial size of the input image is          AGORA val set. All the results are taken from [39] ex-
+256 × 192. The number of body tokens Tb and component                  cept OSX. Although we do not use extra hand/face spe-
+tokens Tc are set to 27 and 92, respectively. During exper-            cific datasets during training, OSX outperforms the SOAT
+iments on the AGORA-test set, we remove the decoder as                 method Hand4Whole by 8.3% on the MPVPE-all, demon-
+we find that the decoder increases training time and does              strating the effectiveness of our one-stage method.
+not significantly improve performance on AGORA-test set.
+This observation may be attributed to the fact that the main           D. UBody: An Upper Body Dataset
+problem of AGORA is occlusion, while the decoder aims to               D.1. Data Collection
+estimate hands/face at a finer level.
+                                                                          To bridge the gap between the basic human mesh re-
+   § Work done during an internship at IDEA; ¶ Corresponding author.   covery task and its downstream applications, we design
+                              NMVE ↓                          NMJE ↓                             MVE ↓                                MPJPE ↓
+      Method          Full-Body       Body           Full-Body           Body     Full-Body    Body    Face   LH/RH       Full-Body   Body    Face   LH/RH
+ SMPLify-X [49]         333.1         263.3            326.5             256.5      236.5      187.0   48.9   48.3/51.4     231.8     182.1   52.9   46.5/49.6
+ ExPose [48]            265.0         184.8            263.3             183.4      217.3      151.5   51.1   74.9/71.3     215.9     150.4   55.2   72.5/68.8
+ FrankMocap [56]          -           207.8              -               204.0        -        168.3    -     54.7/55.7       -       165.2    -     52.3/53.1
+ PIXIE [16]             233.9         173.4            230.9             171.1      191.8      142.2   50.2   49.5/49.0     189.3     140.3   54.5   46.4/46.0
+ Hand4Whole [39] †      144.1          96.0            141.1              92.7      135.5       90.2   41.6   46.3/48.1     132.6      87.1   46.1   44.3/46.2
+ PyMAF-X [70] †         141.2          94.4            140.0              93.5      125.7      84.0    35.0   44.6/45.6     124.6      83.2   37.9   42.5/43.7
+ OSX (Ours) †         130.6↓7.5%    85.3↓9.6%        127.6↓8.9%     83.3↓10.9%      122.8      80.2    36.2   45.4/46.1     119.9     78.3    37.9   43.0/43.9
+
+Table S-2. Reconstruction errors on the AGORA test set. † denotes the methods that are fine-tuned on the AGORA training set or similarly
+synthetic data [31]. The best results are shown in bold and the second best results are highlighted with underlined font.
+
+
+                              MPVPE ↓                     PA-MPVPE ↓                          set. The benchmark was provided in the main paper.
+     Method             All        Hand       Face      All    Hand        Face
+ ExPose [48]           219.8       115.4   103.5       88.0       12.1      4.8             • Inter-scene: we use ten scenes of the videos as the
+ FrankMocap [56]       218.0        95.2   105.4       90.6       11.2      4.9               training set and the other five scenes as the test set.
+ PIXIE [16]            203.0        89.9   95.4        82.7       12.8      5.4               Due to the page limit, we present the benchmark in
+ Hand4Whole [39]       183.9        72.8   81.6        73.2        9.7      4.7
+ OSX (Ours)          168.6↓8.3%    70.6    77.2        69.4       11.5      4.8               Table S-4.
+
+    Table S-3. Reconstruction errors on the AGORA val set.                            D.2. Data Annotation Processes
+UBody with two rules. First, we research a wide range of
+                                                                                         As shown in Figure S-1, we design a thorough whole-
+human-related downstream tasks with upper-body scenes,
+                                                                                      body annotation pipeline with high precision. It is di-
+including gesture recognition [19, 38, 65], sign language
+                                                                                      vided into two stages: 2D whole-body keypoint annotation
+recognition, and translation [7, 14, 27, 54, 58, 73], person
+                                                                                      and 3D SMPLX annotations fitting. Since UBody scenes
+clustering [5], emotion analysis, speaker verification [44],
+                                                                                      have a number of unpredictable transitions and cutscenes
+micro-gesture understanding [36], audio-visual generation
+                                                                                      that make it difficult to use the temporal smoothing ap-
+and separation [53], human action recognition, and local-
+                                                                                      proaches [52,66,68], the annotation is conducted on a single
+ization [17, 18, 50, 55, 57], and human video segmenta-
+                                                                                      frame.
+tion [33]. We select the corresponding high-quality datasets
+                                                                                      2D whole-body keypoint annotation: We first detect all
+from these existing tasks as a part of our data for the corre-
+                                                                                      persons and their hands in an image via a specific human
+sponding scenarios. In order to ensure a balanced amount
+                                                                                      and hand detector BodyHands [45] shown as Body Detec-
+of data for each scene, for datasets with many videos (e.g.,
+                                                                                      tor and Hand Detector in Figure 4. Leveraging the recent
+lasting 20k minutes), we manually selected the videos in
+                                                                                      state-of-the-art 2D pose estimator ViT-Body-only [64], we
+which the upper body appeared more frequently.
+                                                                                      use the pre-trained model trained on the COCO [35] dataset
+   Second, with all kinds of athletic competitions, enter-
+                                                                                      to localize 17 body keypoints for each detected single per-
+tainment shows, we media, online conferences, and online
+                                                                                      son, named KBody , which shows highly robust results on
+classes being more and more indispensable, we carefully se-
+                                                                                      many scenes. Due to the diverse scales and motion blur
+lected a large number of rich videos from YouTube to pro-
+                                                                                      for the fast-moving hands, we find that Hand Detector will
+vide new opportunities and challenges for potential applica-
+                                                                                      output false positive samples or miss some hands. To en-
+tions.
+                                                                                      hance the performance of hand detection, we train a 2D
+   Since some untrimmed videos may have missing main
+                                                                                      whole-body estimator on COCO-wholeBody [24] with 133
+characters, extraneous images such as opening and closing
+                                                                                      2D keypoints, called ViT-WholeBody following the model
+credits, and repetitive actions, we manually fine-cut the long
+                                                                                      design of ViTPose [64] and masked autoencoder pre-trained
+videos. Each edited video is 10 seconds long, which ensures
+                                                                                      scheme [20]. ViT-WholeBody can provide high-recall hand
+the high quality of the video.
+                                                                                      keypoints KHand , but the localization precision is low be-
+   In order to prevent infringement of ownership rights, we
+                                                                                      cause of the fully one-stage pipeline and low-resolution of
+only provide download links to the corresponding videos
+                                                                                      hands from the raw image. Accordingly, We can obtain
+and our labels without any personal information.
+                                                                                      coarse hand bounding boxes by calculating the maximum,
+   In summary, we collect fifteen real-life scenarios with
+                                                                                      and minimum values of the detected left and right-hand key-
+more than 105,1k frames. We split the train/test sets from
+                                                                                      points to correct the hand boxes from Hand Detector via an
+two protocols as follows.
+                                                                                      IoU matching strategy. Then, we use the fine hand boxes
+   • Intra-scene: in each scene, the former 70% of the                                to crop the hand patches, resize them to a larger size, and
+     videos are the training set, and the last 30% are the test                       put them into our specific pre-trained ViT-Hand-only model
+                                                                                                  2D Loss
+
+                                        ViT
+                                                       𝐾          𝐾     𝐾                 OSX                                                    2D
+                                     Whole-Body                                                             SMPL-X           Projection
+                                                                                          Model                                                 KPTs
+
+
+
+
+                                                                                                            3D Loss
+                          Body          Hand                            ViT
+                                                      IoU Match
+                         Detector      Detector                       Hand-only
+                                                                                          OSX                Pseudo
+                                        ViT                                               Model             SMPL-X
+                                                       𝐾
+                                      Body-only
+
+
+
+Figure S-1. Illustration of the annotation pipeline of UBody. Black lines show the annotation process of 2D whole-body keypoints, and
+blue lines are the 3D SMPL-X annotation procedure. Red dotted lines mean to update the information.
+
+trained with the hand labels from the COCO-Whole dataset.                                            MPVPE ↓                    PA-MPVPE ↓
+In summary, ViT-WholeBody will output the body, hand, and                     Method          All      Hand           Face   All     Hand       Face
+face 2D keypoints. We use the body output from ViT-Body-               ExPose [48]           185.7      89.5          47.2   76.4     11.8       4.0
+only to replace the KBody , and use the fine hand keypoints            PIXIE [16]            185.0      60.9          45.3   74.5     11.9       4.2
+from ViT-Hand-only to change the KHand . As the face of                Hand4Whole [39]×      198.1      66.9          51.8   90.2     10.3       4.1
+                                                                       Hand4Whole [39]       109.4      50.4          24.8   57.0      8.9       2.7
+the current SMPL-X model does not require much detail,
+                                                                       Hand4Whole [39]†       87.4      41.6          22.1   46.3     8.0        2.0
+we simply use the 2D face keypoints KF ace obtained from
+                                                                       OSX (Ours)            100.7      52.5          24.5   52.9         9.5    2.6
+ViT-WholeBody.                                                         OSX (Ours)†            82.0      44.2          21.5   44.2         8.8    1.9
+3D whole-body mesh recovery annotation: Different                     Table S-4. Reconstruction errors on UBody test set on the inter-
+from previous optimization-based annotation [49] that may             scene protocol. All models are pretrained on previous datasets,
+output implausible poses, we use our proposed OSX to es-              except for the results labeled by (i) †: finetuned on the UBody
+timate the SMPL-X parameters from human images as a                   training data; (ii) ×: finetuned on the AGORA training data.
+proper 3D initialization to provide pseudo-3D constraints.
+Benefiting from current 2D keypoint localization that tends
+to be more accurate, we additionally supervise the pro-               F. Qualitative with SOTA method
+jected 2D whole-body keypoints by the above annotated 2D
+                                                                      Qualitative comparisons on AGORA: We compare the
+whole-body keypoints as a way to train OSX. More impor-
+                                                                      mesh quality on the AGORA dataset in Figure S-2. Agora
+tantly, to avoid performance degradation from not accurate
+                                                                      is a synthetic dataset with many challenging factors like
+enough initial labeling and consistently push up the 3D an-
+                                                                      heavy occlusion, dark environment, and unnatural multi-
+notation quality, we propose an iterative training-labeling-
+                                                                      person interaction. It only has limited actions, e.g., taking
+revision loop for every 30 epochs to train 120 epochs in
+                                                                      phones, walking, sitting, etc. We can see OSX outperforms
+total.
+                                                                      ExPose [48] and Hand4Whole [39] consistently in terms of
+                                                                      global body orientations, whole-body poses, and hand pose.
+                                                                      Qualitative comparisons on EHF: The visual compar-
+E. Inter-Scene Benchmark on UBody dataset                             isons of whole-body mesh recovery quality on the EHF
+                                                                      dataset can be found in Figure S-3. As can be seen, OSX
+   Due to the page limit, we further provide another data             estimates the most accurate whole-body poses, in which the
+protocol comparison to show the usage of the proposed                 body parts like hands, feet, and hands are better aligned with
+UBody. Table S-4 presents the performance comparisons                 the person in the image.
+of existing 3D whole-body methods. Inter-scene test shows             Qualitative comparisons on UBody: The qualitative com-
+large errors than the intra-scene test due to the different           parison on our UBody is in Figure S-4. UBody focuses more
+motion and gesture distributions. The model finetuned                 on the expressive upper body part. Hand4Whole [39] and
+on AGORA still has a significant gap than trained on the              our OSX produces better body mesh recoveries than Ex-
+COCO dataset. Furthermore, we also train Hand4Whole                   Pose [64]. Close inspection of the hand part shows that our
+and UBody on our training set, we can find a consistent               hand recovery is more accurate than Hand4Whole.
+improvement compared to the original pretrained model,                Visualization of our annotation on UBody: The visual-
+indicating that UBody can serve to bridge the gap among               izations of our SMPL-X annotation in our UBody can be
+these downstream real-life scenes. Moreover, different from           found in Figure S-5, S-6, and S-7. Our annotation produces
+single-frame AGORA and EHF, UBody provides videos,                    high-quality ground truth. In many challenging cases of ex-
+which can drive progress in spatial-temporal modeling on              pressive hand poses, our estimated mesh can capture fine-
+such edit media sources.                                              level details.
+(a) Input image (b) ExPose   (c) Hand4Whole (d) OSX (Ours) (e) Input image    (f) ExPose (g) Hand4Whole (h) OSX (Ours)
+                     Figure S-2. Comparisons of existing 3D whole-body estimation methods on AGORA.
+(a) Input image               (b) ExPose              (c) Hand4Whole              (d) OSX (Ours)
+            Figure S-3. Comparisons of existing 3D whole-body estimation methods on EHF.
+(a) Input image     (b) ExPose   (c) Hand4Whole   (d) OSX (Ours)   (e) Input image   (f) ExPose   (g) Hand4Whole   (h) OSX (Ours)
+                  Figure S-4. Comparisons of existing 3D whole-body estimation methods on our proposed UBody.
+(a) Conduct Music
+(b) Talk Show
+ (c) Entertainment
+(d) Sign Language
+ (e) Magic Show
+ (f) Singing
+ (g) Movie
+(h) Interview
+
+
+
+
+Figure S-5. Illustration of the ground-truth SMPL-X annotation for the eight scenes in UBody. For each scene, we show the input image
+(the upper) and our annotation (the lower).
+(i) Olympic
+(j) Online Class
+(k) Speech
+(l) TV Show
+(m) Conference
+(n) Live Vlog
+ (o) Fitness
+
+
+
+
+Figure S-6. Illustration of the ground-truth SMPL-X annotation for seven other scenes in UBody. For each scene, we show the input image
+(the upper) and our annotation (the lower).
+Multi-person scenes
+Multi-person scenes
+Full-body scenes
+Full-body scenes
+
+
+
+
+Figure S-7. Illustration of the ground-truth SMPL-X annotation for some special cases: multi-person scenes and full body scenes in UBody.
+Our annotation pipeline can still work well on these scenes.
+

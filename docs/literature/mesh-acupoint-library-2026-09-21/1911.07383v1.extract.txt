@@ -1,0 +1,578 @@
+                                                                    Towards Robust RGB-D Human Mesh Recovery
+
+                                          Ren Li1 , Changjiang Cai2 , Georgios Georgakis3 , Srikrishna Karanam1 , Terrence Chen1 , and Ziyan Wu1
+                                                                       1
+                                                                         United Imaging Intelligence, Cambridge MA
+                                                     2
+                                                       Department of Computer Science, Stevens Institute of Technology, Hoboken NJ
+                                                         3
+                                                           Department of Computer Science, George Mason University, Fairfax VA
+                                                              {first.last}@united-imaging.com,ccai1@stevens.edu,ggeorgak@gmu.edu
+arXiv:1911.07383v1 [cs.CV] 18 Nov 2019
+
+
+
+
+                                                         RGB+D     Depth     RGB            RGB+D   Depth   RGB              RGB+D   Depth   RGB           RGB+D   Depth   RGB
+                                           HMR
+                                           Ours
+
+
+
+
+                                                                                   CAD 60                                                          PKU
+                                         Figure 1. Results on the CAD 60 and PKU-MMD dataset. Our framework includes a new dynamic data fusion module that enables our
+                                         model to recover human mesh from any of RGB-only, depth-only or RGB-D inputs. We also propose a universal SMPL constraint generator
+                                         that provides for SMPL constraints when explicit annotations are not available. This facilitates principled model training in conjunction
+                                         with our novel depth ranking consistency learning objective. First row: baseline HMR [21], second row: our results.
+
+                                                                   Abstract                                       image of a person and a known parametric mesh model, e.g.,
+                                                                                                                  the 3D SMPL model [31], we seek to estimate the parame-
+                                            We consider the problem of human pose estimation.                     ters of the model that best explain the human pose in the test
+                                         While much recent work has focused on the RGB domain,                    image. This problem finds applications in a diverse set of
+                                         these techniques are inherently under-constrained since                  areas including healthcare [38] and robotics [33, 54], among
+                                         there can be many 3D configurations that explain the same                others [4, 20, 24, 36]. There has been substantial progress in
+                                         2D projection. To this end, we propose a new method that                 the recent past in this area, with [1, 6, 21, 52, 53] providing
+                                         uses RGB-D data to estimate a parametric human mesh                      a representative overview. Most existing deep human pose
+                                         model. Our key innovations include (a) the design of a                   estimation algorithms solely attempt to recover the mesh pa-
+                                         new dynamic data fusion module that facilitates learning                 rameters from a single RGB image, which is an inherently
+                                         with a combination of RGB-only and RGB-D datasets, (b)                   under-constrained problem since there are many possible
+                                         a new constraint generator module that provides SMPL su-                 3D configurations that can in principle explain the same 2D
+                                         pervisory signals when explicit SMPL annotations are not                 projection. Consequently, these methods, typically trained
+                                         available, and (c) the design of a new depth ranking learn-              only with 2D keypoints or SMPL annotations, are unable
+                                         ing objective, all of which enable principled model training             to resolve these ambiguities by design. While SMPL anno-
+                                         with RGB-D data. We conduct extensive experiments on a                   tations do provide stronger supervisory signals when com-
+                                         variety of RGB-D datasets to demonstrate efficacy.                       pared to using only 2D keypoints, one is still attempting to
+                                                                                                                  regress these 3D SMPL parameters directly from an RGB
+                                         1. Introduction
+                                                                                                                  image, with no notion of the input depth that is key to re-
+                                           We consider the problem of estimating a parametric hu-                 solving this depth ambiguity problem. As we demonstrate
+                                         man mesh model for human pose estimation. Given a test                   in this work, using depth data that is aligned with RGB im-
+ages, which is easy to obtain with the advent of affordable       is achieved by means of explicit depth ranking supervision
+consumer-focused sensors such as the Kinect line of devices       on the ordering of the predicted keypoints. As indicated in
+[24], helps address this problem, resulting in reduced mesh       Figure 1, these components in together help us to generate
+reconstruction errors.                                            more reliable and accurate results of human mesh recovery.
+    Using aligned RGB-D data to train a human mesh pre-               To summarize, the key contributions of this work in-
+dictor with existing approaches would need the availabil-         clude:
+ity of datasets that are annotated with both keypoints as
+well as SMPL parameters. However, as noted above, since             • We address the problem of depth ambiguity in exist-
+much recent progress has been in the RGB-only domain,                 ing RGB-based human mesh recovery algorithms by
+there are no publicly available RGB-D datasets that provide           proposing three new functionalities.
+both keypoints and SMPL annotations for training, with the          • We propose a new dynamic data fusion module to fa-
+few available ones providing only keypoints information.              cilitate training human mesh predictors with datasets
+Next, the RGB-D datasets that do have keypoints annota-               that do not have aligned RGB-D data.
+tions may vary in definitions (e.g., the coordinate systems
+in which the keypoints are defined). Finally, the few RGB-          • We propose a new constraint generator that pro-
+only datasets that have these annotations do not come with            vides auxiliary SMPL supervisory signals for RGB-D
+aligned depth data [34]. Consequently, we ask two key                 datasets that do not have SMPL annotations, and is ag-
+questions in this work- (a) how can we train mesh estima-             nostic to the coordinate system in which their keypoint
+tors with such datasets that provide different kinds of anno-         annotations may be defined.
+tations? and (b) how can we generate universal 3D supervi-
+sory signals from RGB-D datasets that do not have SMPL              • We propose a new depth ranking consistency learning
+annotations available?                                                objective that ensures the model estimates mesh pa-
+                                                                      rameters that result in respecting the relative depth or-
+   In this work, we take a step towards solving the key depth
+                                                                      dering of predicted keypoints.
+ambiguity problem by addressing the aforementioned ques-
+tions in a principled manner. To tackle the challenge posed
+by the lack of aligned depth data (or even RGB data) in           2. Related Work
+some datasets, we propose a new dynamic data fusion mod-
+ule, along with an associated training policy, that facilitates      Human pose estimation has been extensively studied in
+the functioning of the trained model with only RGB inputs,        the past and we refer readers to [35, 36, 46] for detailed sur-
+only depth inputs, or both. To realize this functionality,        veys. Here, we review algorithms that are most immediately
+our training procedure includes a randomly activated data         related to our work, i.e., estimating parametric human mesh
+stream selection functionality that selects one of the two        models and 3D human pose estimation, helping differenti-
+input stream (RGB or depth) feature representations when          ate our method while also putting it in proper context.
+optimizing the overall learning objective. This results in a      RGB-only 3D pose estimation from 2D. Much effort has
+model trained to work with any of the three resulting com-        been expended in estimating the 3D human pose given 2D
+binations of data availability. Next, to tackle the challenge     keypoints information. Martinez et al. [32] proposed sev-
+posed by RGB-D datasets having 3D keypoints information           eral simple techniques, e.g., estimating 3D joints in cam-
+in different coordinate systems, and the lack of SMPL an-         era frame and baseline architectural changes such as batch
+notations, we propose a new module we call the Univer-            normalization, that resulted in performance improvements
+sal SMPL Constraint Generator (USCG). Our USCG is de-             of existing baseline algorithms that “lift" 2D joints to 3D.
+signed to be agnostic to the specific coordinate system in        Wandt and Rosenhahn [51] proposed to perform this lifting
+which the 3D keypoints may be defined. This is achieved by        by means of a distribution mapping approach that is trained
+explicitly enforcing USCG to only look at the relative, root-     to map a given 2D pose to its most likely 3D counterpart.
+agnostic, configuration of the 3D keypoints as input. More        Jahangiri et al. [17] proposed to use a multi-modal mix-
+crucially, the USCG is trained to output auxiliary SMPL           ture density network to generate multiple plausible 3D pose
+parametric information that we use to generate 3D SMPL            hypotheses, all of which can explain the input 2D joints.
+supervisory signals for training our model in the absence         To address this 2D-3D ambiguity problem, several con-
+of explicit SMPL annotations. Finally, our training proce-        strained search methods have been proposed. Jiang [18]
+dure involves a new learning objective we call the depth          used a nearest neighbor search strategy to attempt to re-
+ranking consistency (DRC) loss. The proposed DRC loss             solve the ambiguity, whereas Gupta et al. [14] and Chen
+ensures the mesh parameters estimated by our model re-            and Ramanan [7] explored variants of a temporal search
+spects the relative configuration of the predicted keypoints      strategy. Some more recent end-to-end 3D pose estimators
+on the depth data (e.g., one is closer than the other). This      require large amounts of annotated, and in possibly paired,
+               RGB Encoder                                                                                    Discriminator Loss
+
+
+                                                                                              SMPL                         Depth Ranking
+                                                                                              Discriminator                Layer         Depth Ranking
+                                                                                                                                           Consistency Loss
+
+
+
+
+                                                                                                                                             2D Joint Loss
+                                 Dynamic      SMPL Regressor
+                                 Fusion Layer                                       SMPL Layer                      Project
+                                                               Est. SMPL
+                                                                                                  Est. 3D Joints          Est. 2D Joints
+                                                                                            Parameter
+               Depth Encoder                                                              Consistency Loss
+
+
+                                           Available GT                    Universal SMPL
+                                           3D Joints                       Constraint Generator
+
+Figure 2. The pipeline of the proposed depth-aware human pose regression model. Our model takes RGB images and depth maps as
+input. After the dynamic fusion of RGB-D features, the SMPL regressor regresses the human body parameters. We use different kinds of
+consistency to constrain the regression.
+
+
+2D and 3D data. Pavlakos [41] extended the stacked Hour-                      as RGB-only approaches, mostly due to the lack of relavant
+glass [37] model to a coarse-to-fine volumetric prediction                    annotations (e.g., SMPL data), there is some prior work in
+in 3D space. Sun et al. [48] used the differentiable soft-                    using depth data for 3D pose estimation. Kadkhodamoham-
+argmax [3, 27] operation to unify heatmap representation                      madi et al. [20] proposed a multi-view RGB-D approach for
+and joint regression, giving a flexible approach compati-                     human pose estimation in surgical operating rooms, demon-
+ble with existing heatmap-based algorithms. Given that ap-                    strating the benefit of using depth data in reducing pose am-
+proches along this direction require (costly) large-scale an-                 biguity. Pavlakos et al. [40] proposed using ordinal depth
+notations, there have also been efforts in learning from syn-                 constraints as a form of weak supervision, training a model
+thetic data [8, 11, 13, 42, 45, 50], or training algorithms in                to predict the 3D pose. Such constraints were also used by
+un-/self-/weakly-supervised ways [9, 23, 43, 44, 53]. All                     Sharma et al. [47] to score and refine candidate 3D poses.
+these techniques rely on using only RGB images in estimat-                    In contrast, we propose a dynamic fusion module that en-
+ing the 3D pose, whereas we use the aligned depth image                       ables training models with RGB and RGB-D data having a
+as well in conjunction with a model training strategy that                    wide variety of annotations to address the ambiguity prob-
+explicitly attempts to address the depth ambiguity problem.                   lem, while also explicitly recovering the human mesh which
+RGB-only 3D Human Mesh Recovery. With the sim-                                was not part of the design of these methods.
+plicity and extensibility of the SMPL model [31], there has
+been substantial recent work in estimating the parameters of                  3. Approach
+this model. Bogo et al. [5] fit the model by minimizing the                       As noted in Section 1, existing approaches that perform
+reprojection error between the 3D model joints and the in-                    parametric human mesh estimation rely only on RGB im-
+put 2D joints. Kannzawa et al. [21] presented the first end-                  ages, thereby solving an inherently under-constrained prob-
+to-end version of this strategy with an adversarial training                  lem by design. To address this problem, we propose to ex-
+scheme, taking as input a single RGB image and outputing                      plicitly use depth data aligned with the corresponding RGB
+the model parameters in one inference step. Some recent                       images, potentially providing an additional source of su-
+extensions of this work included a graph-CNN strategy [25]                    pervisory information. However, a naive extension of ex-
+for directly regressing the vertices of the SMPL model, ex-                   isting approaches, like e.g., Kanazawa et al. [21], is sub-
+ploiting video temporal context [2] for reducing the 2D-3D                    optimal since accurately training such a model will need
+ambiguity, and directly learning human motion dynamics                        the availability of keypoints and SMPL annotations. While
+[22] from input video. In contrast, our approach relies on                    some human RGB-D datasets do have keypoints informa-
+RGB-D data to estimate the parameters of the SMPL model,                      tion, they most certainly do not have SMPL annotations.
+where a key difference to existing work is we do not rely on                  On the other hand, the few RGB-only datasets that do have
+the availability of explicit SMPL annotations for training.                   SMPL annotations in addition to keypoints information do
+Depth-based 3D Pose Estimation. While not as popular                          not come with aligned depth data. To address this crucial
+problem, our proposed pipeline (see Figure 2) comprises          3.2. Dynamic Data Fusion
+several important components- (a) a novel dynamic data fu-
+                                                                    A simple, straightforward way to use both RGB and
+sion module that enables the trained model to work as well
+                                                                 depth images for mesh recovery is to concatenate the RGB
+with RGB-only, depth-only, or RGB-D data as input, (b) a
+                                                                 and depth features before inferring the mesh parameters,
+novel universal SMPL constraint generator (USCG) module
+                                                                 which can be done using any existing RGB-only based pa-
+that helps generate auxilialy 3D SMPL supervisory signals
+                                                                 rameter inference pipeline. In fact, this is indeed one of
+for RGB-D datasets that do not have explicit SMPL anno-
+                                                                 the baselines we experimentally compare our proposed ap-
+tations, and (c) various learning objectives, of which a new
+                                                                 proach with later in the paper. For this baseline, we use
+depth ranking loss ensures the trained model respects the
+                                                                 the recent work of Kanazawa et al. [21], where the feature
+relative configuration or ordering of the predicted keypoints
+                                                                 encoder is followed by an iterative SMPL regressor that out-
+on the depth map. In this section, we describe our key inno-
+                                                                 puts the pose and shape parameters.
+vations in detail. We first start with a brief review, in Sec-
+                                                                    However, as noted previously, not all RGB-D datasets
+tion 3.1 of the SMPL model, the parametric human mesh
+                                                                 come with both 2D and 3D annotations for us to use the
+model we use in this work. We then describe our proposed
+                                                                 simple fusion scheme described above. In fact, many of
+dynamic data fusion method in Section 3.2, the USCG in
+                                                                 the human RGB-D datasets that are relevant in our context
+Section 3.3, and the ranking loss in Section 3.4.
+                                                                 [10, 49] only have 3D skeletal joints annotations, whereas
+                                                                 several RGB-only pose estimation datasets have mostly 2D
+3.1. 3D Human Body Representation                                keypoints annotations [19, 29]. Consequently, one naturally
+                                                                 asks the question- given these datasets with various kinds of
+   We use the Skinned Multi-Person Linear (SMPL) model           annotations, how can we train a parametric mesh estimator
+of Loper et al. [31] to represent the human body. The SMPL       that makes the best use of all the available data? As an an-
+model is a statistical parametric differentiable model that      swer to this challenge, we propose a novel dynamic data
+operates on shape parameters β ∈ R10 and pose parame-            fusion module, which we show can facilitate dynamical fu-
+ters θ ∈ R72 . Given the shape β and the pose θ, the SMPL        sion of features, before parameter estimation, irrespective
+model defines a function M (β, θ, Φ) : R82 → R3N that            of whether the input is RGB-only, depth-only, or RGB-D.
+produces the N mesh vertices representing the human body.           As shown in Figure 2, we first process the RGB and
+The shape parameters β comprise the first 10 coefficients        depth data using two separate convolutional encoder (we
+of a principal component analysis (PCA) space, responsible       use ResNet-50 [15, 16]) to extract the RGB features φRGB
+for outputting a blend shape sculpting the identity. Pose in     and depth features φD . We perform all fusion operations
+the SMPL model is represented using the standard skeletal        in the feature space, and to this end, we employ a fea-
+rig and is parameterized by the joint angles, in axis-angle      ture concatenation unit to concatenate the feature vectors
+representation, of each of the 23 joints of the rig as well as   φRGB ∈ Rd and φD ∈ Rd , and process the concatenated
+the root joint. This gives 3 × 23 + 3 = 72 parameters to rep-    feature representation [φRGB , φD ] with two additional fully
+resent the pose in the SMPL model, accounting for mesh           connected units to obtain the final fused feature representa-
+deformations that are dependent on the pose of the joints.       tion φf use . This is the baseline fusion strategy.
+Given a particular β and θ, and the learned model parame-           However, given that aligned RGB and depth data are not
+ters Φ, one can compute the 3D joints locations X(β, θ; Φ)       always readily available, we simulate this aspect using a
+from a pre-defined linear regression of the mesh vertices,       new probabilistic training policy that attempts to address
+and we define this particular operation as the SMPL layer        this missing data problem. Specifically, during training,
+in our pipeline.                                                 we add random noise to features extracted from the RGB
+    Given the 3D joints locations, we follow Kanazawa et         and the depth streams. To realize this, we randomly select
+al. [21] to project them to the 2D image plane and obtain 2D     one of the RGB and depth streams with a probability pmiss
+image keypoints. Specifically, we use the weak-perspective       (pmiss < 0.5), which means there is a case that neither of the
+camera model defined as:                                         streams is chosen. We then replace the original input of the
+                                                                 selected stream with an input array comprising all zeros as
+                                                                 pixel values, and concatenate the feature representation of
+                  x = sΠ(RX(β, θ)) + t,                   (1)
+                                                                 this stream φvoid and the feature representation of the other
+                                                                 stream. In this way, during the course of training our net-
+where R ∈ R3 is the global rotation in axis-angle repre-         work, the fusion module will encounter three kinds of fea-
+sentation, t ∈ R2 and s ∈ R are translation and scale,           ture representations as input: [φRGB , φD ], [φRGB , φvoid ],
+and Π is an orthographic projection. Therefore, the pose         and [φvoid , φD ], simulating the three situations where both
+of the human body in the image is represented by Θ =             RGB and depth data are present, and one of the two is ab-
+{θ, β, R, s, t}.                                                 sent. Our network will then be trained as usual with this dy-
+namically fused feature representation. During inference, if            Our USCG module is trained in this fashion with the
+both RGB and depth data are present, we use both as input           MoSh data described above. Once trained, the USCG will
+to our network; otherwise the missing stream will be sub-           provide our overall training pipeline of Figure 2 with aux-
+stituted with blank images as above. However, since our             iliary SMPL training constraints by generating [β̃, θ̃] from
+model was trained using the policy described above, it will         the 3D keypoints information available as part of RGB-D
+have learned to fuse features dynamically according to the          datasets. The predicted [β̃, θ̃] will then be used to provide
+presence of φvoid .                                                 supervisory signals to constrain the shape and pose esti-
+                                                                    mated by our model. Note that before using these estimated
+3.3. Universal SMPL Constraint Generator                            constraints, we perform a quality check to filter out any ob-
+                                                                    viously incorrect [β̃, θ̃] predictions. To realize this, we set a
+    As shown in Kanazawa et al. [21] and Liang et al. [28],
+                                                                    threshold on the reconstruction error, which is the mean per
+having data with SMPL annotations is crucial for learning
+                                                                    joint position error (MPJPE) after rigid alignment via Pro-
+an accurate human mesh estimator. However, most RGB-D
+                                                                    crustes Analysis [12], between J and Jˆ after the forward
+datasets [10, 49] that are relevant in our context do not have
+                                                                    cycle.
+SMPL annotations, and only make available the 3D key-
+points locations. Moreover, each RGB-D dataset will have
+its own definition of the coordinate system in which these
+keypoints are defined, further exacerbating training a mesh
+estimator on multiple datasets jointly. As an answer to this
+challenge, we propose a new module we call the universal
+SMPL constraint generator (USCG), whose goal is to unify
+the keypoints annotations across multiple datasets and gen-                          Figure 3. Our proposed USCG.
+erate auxiliary SMPL constraints which we then use to fur-
+ther regularize our mesh estimator learning process. Simply            Once the SMPL constraints are generated by our trained
+put, our proposed USCG modules removes the need for ob-             USCG, we use the standard Euclidean distance metric to op-
+taining SMPL annotations for these RGB-D datasets, which            timize the SMPL learning objective when training our pro-
+in itself is a highly complex process. In fact, as noted by         posed RGB-D model:
+Kanazawa [21], this is an elaborate process involving using
+                                                                                 Lsmpl = i k[β̃, θ̃] − [β̂, θ̂]k22 ,
+                                                                                          P
+ground-truth mocap data (relevant RGB-D datasets noted                                                                     (3)
+above do not have this data).
+                                                                    3.4. Depth Ranking Consistency
+    To this end, we train our USCG module to take as input
+a set of 3D keypoints locations and produce the correspond-             Given θ and β predictions, we can use the SMPL
+ing SMPL parameters β and θ. One key aspect of our USCG             forwarding functionality to infer the 3D joints positions
+is that the input set of keypoints is always relative to the root   (xJ , yJ , zJ ). Along with our RGB-D pipeline and the con-
+location, i.e., the root location is set to origin in a reference   straint generator, we also propose a new learning objective
+frame common to all the RGB-D datasets. This way, once              we call depth ranking consistency to address the depth am-
+trained, the USCG can be used to process 3D keypoints               biguity problem. The intuition of the depth ranking con-
+from any given RGB-D dataset. To train the USCG we need             sistency is to ensure the relative ordering of the predicted
+paired 3D keypoints and SMPL parameter data. A large                joints locations is consistent with the input joints. Given
+number of such paired data can be easily obtained from the          an input 2D keypoint (x, y), we obtain its corresponding
+synthetically created data from Loper et al. [30] from the          depth zd from the aligned depth map. While the raw depth
+raw 3D MoCap markers. The USCG training process is                  value zd is not directly comparable to the zJ obtained from
+visually summarized in Figure 3. Given 3D keypoints in-             the SMPL forwarding function (as the coordinate system
+formation J, the USCG G estimates [β̂, θ̂] = G(J). These            definitions are different), the relative depth orderings (i.e.,
+predictions are supervised by the ground truth shape and            closer-farther) between each pair of joints zJ and zd will
+pose parameters. To further ensure that the predicted β̂ and        have to be consistent. To this end, our depth ranking con-
+θ̂ are accurate, we also introduce a joints-cycle-consistency       sistency learning objective explicitly enforces our network
+learning objective which ensures the 3D keypoints inferred          to predict θ and β that satisfies this relative depth ordering
+from the predicted β̂ and θ̂ are close to the input 3D key-         property. Specifically, for a pair of joints (p, q), we define
+points. Mathematically, we seek to enforce a forward cycle          its depth ranking relation rp,q as:
+consistency as: J → G(J) → X(G(J)) = Jˆ ≈ J. The                                             
+overall loss function to train our USCG is:                                                  1,
+                                                                                                     if zdp < zdq
+                                                                                       rp,q = −1, if zdp > zdq                 (4)
+       L =k[β, θ] − [β̂, θ̂]k22 + kJ − X(G(J))k22 .                                                   if zdp = zdq .
+                                                                                             
+                                                             (2)                             
+                                                                                                0,
+The depth ranking consistency objective penalizes the case       respectively. HMRRGBD denotes the model that uses a di-
+when a pair of the inferred 3D joints, from the predicted        rect concatenation as the fusion method when trained on
+θ and β, has relative depth relationship that is opposite to     RGB-D input. In other words, HMRRGBD represents the
+the relationship derived from the input depth. Our objective     scenario where we have both RGB and depth data available
+function can be expressed as:                                    during both training and inference. We test all baselines
+                              X                                  with the same kind of input as used in training. For ex-
+                    Ldrc =             Lp,q               (5)    ample, HMRRGB and HMRD are tested on RGB and depth
+                             (p,q)∈P                             images only, respectively, whereas HMRRGBD is tested on
+                                                                 the aligned RGB-D data. Our proposed model, represented
+where P represents the set containing the non-repetitive         by Fusion, is tested under 3 scenarios (to demonstrate our
+pairs of joints and Lp,q = log(1 + exp(rp,q (zJp − zJq )).       fusion): RGB-only input, depth-only input, and RGB-D in-
+                                                                 put, denoted RGB, D, and RGB-D respectively in the tables
+3.5. Overall Learning Objective                                  that follow. We use the reconstruction error (MPJPE after
+   Our proposed overall objective function is:                   rigid alignment as noted previously) as the evaluation met-
+                                                                 ric.
+ L = λ2d L2d + λsmpl Lsmpl + λdrc Ldrc + λadv Ladv ,
+                                                           (6)   5.1. Impact of Dynamic Data Fusion
+where L2d is an L1 norm loss on the 14 2D joints as defined          To evaluate the robustness of our fusion module, we pro-
+in prior work [5, 21, 26], Ladv is the same discriminator loss   gressively increase the level of noise (specifically, we in-
+of Kanazawa et al. [21], Lsmpl and Ldrc are in Equations 3       crease the probability pmiss from 0.0 to 1.0) in both the RGB
+and 5, and the λs are the corresponding loss weights.            and depth streams during inference on the CAD-60 dataset,
+                                                                 and compare the performance of our method with the base-
+4. Implementation Details                                        line HMRRGBD . Figure 4(a) shows a heatmap representa-
+Datasets We use PKU-MMD [10] and CAD-60 [49] as                  tion of the reconstruction error of HMRRGBD , whereas Fig-
+our RGB-D datasets. They provide aligned RGB-D images            ure 4(b) shows our results. As can be observed from the
+and 3D joints annotations. PKU-MMD covers a wide range           figures, with an increase in the level of noise, the perfor-
+of complex human activities while CAD-60 has a relatively        mance of both models goes down as expected. However, as
+small number of activities (12 in total). Both these datasets    indicated by Figure 4(c), our proposed model suffers less
+do not have SMPL annotations. To expand the variety of the       degradation when compared to HMRRGBD , suggesting bet-
+training data, we also use RGB datasets that provide only        ter robustness with partially missing aligned RGB-D data.
+2D joints annotations: MS COCO [29] and LSP [19]. Ar-                Tables 1 and 2 show the reconstruction error on PKU-
+chitecture We use two separate ResNet-50 networks, with-         MMD and CAD-60 datasets respectively. We make sev-
+out the top fully connected (FC) layers, as RGB and depth        eral observations. We note that the performance of our pro-
+encoders, giving φRGB ∈ R2048 and φD ∈ R2048 . Our fu-           posed fusion method (trained with probabilistically missing
+sion module has two FC layers (with 4086 and 2048 units),        RGB-D data) is not expected to be better than the baseline
+each with ReLU activation, with pmiss = 0.3. The USCG            HMRRGBD (which is trained RGB and D both available), but
+is implemented with a stack of 10 FC layers (with ReLU           we see from column 4 and 6 that with RGB-D input, our
+activations) and 100mm as the quality-check threshold e.         error is 136.61 (quite close to baseline 136.18). However,
+When training with RGB-only and RGB-D datasets, we en-           with our proposed RGB-D fusion, we can now achieve bet-
+sure each batch contains data samples equally distributed        ter performance (error of 141.93) compared to the HMRD
+among the two. The batch size is set to 40, learning rate to     baseline that is trained only on depth data. Since our fusion
+10−5 , and our code is written in PyTorch [39].                  results in column 6 are with only L2d and Ladv losses (i.e.,
+                                                                 no Ldrc or Lsmpl ), we do not expect much improvement
+5. Experiments and Results                                       when tested with RGB-only input. Despite this, our fu-
+                                                                 sion achieves reasonably competitive performance (139.02
+   We evaluate the efficacy of our proposed dynamic data         error) when compared to HMRR , the RGB-only baseline,
+fusion module, the universal SMPL constraint generator           which achieves 133.7. However, to realize the full value of
+module, and the depth ranking consistency loss thoroughly        our fusion pipeline, we test our fusion pipeline with Ldrc ,
+by a variety of experiments on the RGB-D datasets consid-        since this will enable us to provide more explicit 3D super-
+ered in this work. In all our experiments, as noted in Sec-      vision. Results with this configuration are shown in col-
+tion 3.2, we use the HMR algorithm of Kanazawa et al. [21]       umn 7, where we see consistent performance improvement
+as our baseline, and denote the HMR model trained with           across all the input types. It is also worth pointing out
+RGB-only and depth-only input as HMRRGB and HMRD                 that our fusion with DRC gives better performance than the
+                 (a) HMRRGBD                                   (b) Ours                           (c) Performance gain of ours
+               Figure 4. Comparison under different noise ratios. (a) HMRRGBD . (b) Ours. (c) Our improvement (a) − (b).
+
+                                                          HMRRGBD           HMRRGBD             Fusion              Fusion
+       Input         HMRRGB              HMRD
+                                                           no DRC           with DRC            no DRC             with DRC
+       RGB             133.70              -                  -                 -                139.02             111.88
+        D                -               173.69               -                 -                141.93             128.06
+      RGB-D              -                 -                136.18           122.65              136.61             107.86
+                                 Table 1. Reconstruction errors (mm) on PKU-MMD. Lower is better.
+
+
+baseline HMRRGBD with DRC.                                            as well. To address this issue, as motivated in Section 3.3,
+                                                                      we train a model combining both datasets. However, naive
+5.2. Impact of Depth Rank Consistency                                 combination (with the 3D joints loss) of the two datasets
+   Columns 4, 5, 6, and 7 in Tables 1 and 2 show results              is not meaningful since the 3D joints information of each
+of both baseline HMR and our pipeline with and without                dataset is in a different coordinate system. To address this
+the proposed DRC learning objective. As can be seen from              issue and provide our model with meaningful 3D supervi-
+the results, adding Ldrc to the training objective results in         sion, we generate auxiliary SMPL constraints using our pro-
+a decrease in the reconstruction error. Notably, the error of         posed USCG module of Section 3.3. We take the 3D joints
+our model with the RGB-D input on the PKU-MMD data                    provided by datasets, use our USCG to produce the corre-
+drops by over 30mm. We further note that the error reduc-             sponding SMPL parameters, and retain only those param-
+tion is not limited to only our method, but even the base-            eters that pass our quality check described in Section 3.3.
+line HMR benefits from the proposed Ldrc loss. Additional             Once these constraints are obtained, we train a model on
+experiments to further demonstrate the impact of DRC are              both PKU-MMD and CAD-60 datasets with the Lsmpl loss
+discussed in Section 5.3 below.                                       as well. To understand the impact of this auxiliary Lsmpl
+                                                                      loss, we refer to column 4 and column 5 in Table 3. Col-
+5.3. Impact of USCG                                                   umn 4 shows the performance of the baseline HMRRGBD
+   As noted previously, each dataset typically has 3D joints          model with our fusion module, whereas column 5 shows
+annotations in their specific coordinate system, and training         its performance when also trained with our auxiliary Lsmpl
+a model, with direct 3D joints supervision, on one dataset            loss. We clearly note a consistent reduction in the recon-
+does not necessarily result in good generalization on an-             struction error across all the three input types (RGB-only,
+other dataset. To understand this aspect better, we train             Depth-only, and RGB-D) and both datasets (PKU-MMD
+two HMRRGBD models with the 3D joints loss and our fu-                and CAD-60). To more explicitly use 3D joints during
+sion module (denoted 2d+adv+3D in Table 3) on the PKU-                training as well, we incorporate our proposed DRC. Note
+MMD and CAD-60 datasets separately. We summarize test-                that while 3D joints for the two datasets may be in differ-
+ing results on each dataset in Table 3. As can be seen from           ent coordinate systems, our proposed DRC objective only
+the results, both models perform worse when tested on a               looks at the relative ordering configuration of the 3D joints,
+dataset they were not trained on. For instance, the PKU-              helping alleviate this problem. We summarize our results in
+MMD model trained with RGB-D data on the PKU-MMD                      columns 6 and 7 of Table 3. In column 6, we add our pro-
+data gives a reconstruction error of 96.62 on the PKU-MMD             posed DRC to the baseline HMRRGBD , resulting in substan-
+data, while giving 131.21 on the CAD data. A similar ob-              tial reductions in reconstruction error across all input types
+servation holds for the model trained on the CAD-60 data              and both datasets (e.g., 130.70 with baseline HMRRGBD on
+                                                      HMRRGBD           HMRRGBD             Fusion          Fusion
+       Input       HMRRGB            HMRD
+                                                       no DRC           with DRC            no DRC         with DRC
+       RGB          119.22             -                  -                 -                106.99         102.96
+        D             -              108.98               -                 -                109.47         103.24
+      RGB-D           -                -                101.43            99.17              106.96         102.68
+                                Table 2. Reconstruction errors (mm) on CAD-60. Lower is better.
+
+                       RGB-D           RGB-D           RGB-D             RGB-D       RGB-D                  RGB-D
+        Input        2d+adv+3D       2d+adv+3D         2d+adv          2d+adv+smpl 2d+adv+rank         2d+adv+smpl+rank
+                        PKU             CAD           PKU+CAD          PKU+CAD      PKU+CAD               PKU+CAD
+    RGB (PKU)           96.70          131.63           132.19           126.64       122.25                120.98
+     D (PKU)           100.64          142.10           132.74           131.43       121.08                123.29
+   RGB-D (PKU)          96.62          131.21           130.70           126.74       120.90                120.59
+    RGB (CAD)          133.77           79.45           126.08           111.37       105.51                102.76
+     D (CAD)           134.34           80.64           126.28           113.18       105.70                103.45
+   RGB-D (CAD)         132.31           79.33           124.67           111.46       104.87                102.45
+    Table 3. Reconstruction errors (mm) on PKU-MMD and CAD-60. All the models are trained with our dynamic fusion module.
+
+
+RGBD input and 120.90 when proposed DRC is added to                                       RGB-D                RGB-D
+baseline HMRRGBD ). These error reductions suggest that                  Input      2d+adv+smpl+rank 2d+adv+smpl+rank
+our proposed DRC is able to account for the coordinate sys-                          w/o RGB datasets      w/ RGB datasets
+tem differences and help improve the baseline performance.           RGB (PKU)             120.98               111.56
+                                                                      D (PKU)              123.29               112.85
+Finally, we integrate both Lsmpl and Ldrc into the baseline
+                                                                    RGB-D (PKU)            120.59               110.47
+HMRRGBD (results in column 7 of Table 3), which gives the            RGB (CAD)             102.76                93.92
+better performance than using either Lsmpl or Ldrc by it-             D (CAD)              103.45                91.13
+self in most cases. We would also like to note that while           RGB-D (CAD)            102.45                91.04
+results may not be directly comparable to the case when the                Table 4. Results w/ and w/o RGB datasets.
+model is trained and tested on the same dataset (whose per-
+formance is naturally expected to be the best), we observe
+our model trained on both datasets with USCG and DRC              datasets. We summarize results in Table 4, where we see
+and tested on each individual dataset performs better than        training with the additional RGB-only data gives consistent
+training the baseline model on one dataset and testing on         reduction in reconstruction errors across all input types and
+another dataset. These results suggest our proposed USCG          both the testing datasets. These results further demonstrate
+and DRC has the potential to enable unified model training        the impact of our fusion module in training generalizable
+across multiple RGB-D datasets despite variations in thier        models with different kinds of datasets each of which pro-
+coordinate system definitions.                                    vides different kinds of annotations.
+
+5.4. Training with RGB Datasets                                   6. Summary
+    While RGB datasets cannot provide direct 3D supervi-             We proposed a new technique to address the human mesh
+sory signals to address the depth ambiguity problem, their        estimation problem with RGB-D data. We presented a
+2D keypoints annotations can certainly help improve model         dynamic data fusion module that gives improved estima-
+generalizability. With our proposed dynamic data fusion           tion robustness with scenarios involving potentially miss-
+module, we can now integrate RGB-D and RGB datasets               ing aligned RGB-D data. To realize this, we also presented
+that provide different kinds of annotations to train a uni-       an associated probabilistic training policy to simulate this
+fied model. To this end, we follow the same workflow de-          aspect of missing data, which also helps us train models
+scribed in our fusion module in Section 3.2, but now also         with a wide variety of datasets. To deal with the wide vari-
+have RGB-only datasets in addition to RGB-D datasets. For         ety of available or unavailable annotations, we presented a
+training, with data from the RGB-only datasets, we sim-           new SMPL constraint generator that helps provide auxiliary
+ply pair the RGB images with zero-value blank images to           SMPL supervisory signals for RGB-D datasets that have no
+make up the missing depth channel, following our discus-          explicit SMPL annotations. Finally, to ensure depth consis-
+sion in Section 3.2. We now train our proposed model (with        tent parameter estimation, we proposed a new depth ranking
+Lsmpl and Ldrc ) in two ways: (a) with a combination of           consistency loss to guide the model to respect the relative
+RGB-D and RGB-only datasets, and (b) with only RGB-D              depth ordering of predicted keypoints.
+References                                                          [15] Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+                                                                         Deep residual learning for image recognition. In Proceed-
+ [1] Rıza Alp Güler, Natalia Neverova, and Iasonas Kokkinos.             ings of the IEEE conference on computer vision and pattern
+     Densepose: Dense human pose estimation in the wild. In              recognition, pages 770–778, 2016. 4
+     Proceedings of the IEEE Conference on Computer Vision          [16] Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+     and Pattern Recognition, pages 7297–7306, 2018. 1                   Identity mappings in deep residual networks. In European
+ [2] Anurag Arnab, Carl Doersch, and Andrew Zisserman. Ex-               conference on computer vision, pages 630–645. Springer,
+     ploiting temporal context for 3d human pose estimation in           2016. 4
+     the wild. In CVPR, 2019. 3                                     [17] Ehsan Jahangiri and Alan L Yuille. Generating multiple di-
+ [3] Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio.                 verse hypotheses for human 3d pose consistent with 2d joint
+     Neural machine translation by jointly learning to align and         detections. In Proceedings of the IEEE International Con-
+     translate. In ICLR, 2015. 3                                         ference on Computer Vision, pages 805–814, 2017. 2
+ [4] Hayet Belghit, Abdelkader Bellarbi, Nadia Zenati, and Samir    [18] Hao Jiang. 3d human pose reconstruction using millions of
+     Otmane. Vision-based pose estimation for augmented real-            exemplars. In ICPR, 2010. 2
+     ity: A comparison study. arXiv preprint arXiv:1806.09316,      [19] Sam Johnson and Mark Everingham. Clustered pose and
+     2018. 1                                                             nonlinear appearance models for human pose estimation. In
+ [5] Federica Bogo, Angjoo Kanazawa, Christoph Lassner, Pe-              bmvc, volume 2, page 5, 2010. 4, 6
+     ter Gehler, Javier Romero, and Michael J. Black. Keep it       [20] Abdolrahim Kadkhodamohammadi, Afshin Gangi, Michel
+     SMPL: Automatic estimation of 3D human pose and shape               de Mathelin, and Nicolas Padoy. A multi-view rgb-d ap-
+     from a single image. In Computer Vision – ECCV 2016,                proach for human pose estimation in operating rooms. In
+     Lecture Notes in Computer Science. Springer International           2017 IEEE Winter Conference on Applications of Computer
+     Publishing, Oct. 2016. 3, 6                                         Vision (WACV), pages 363–372. IEEE, 2017. 1, 3
+ [6] Zhe Cao, Tomas Simon, Shih-En Wei, and Yaser Sheikh.           [21] Angjoo Kanazawa, Michael J. Black, David W. Jacobs, and
+     Realtime multi-person 2d pose estimation using part affinity        Jitendra Malik. End-to-end recovery of human shape and
+     fields. In Proceedings of the IEEE Conference on Computer           pose. In Computer Vision and Pattern Regognition (CVPR),
+     Vision and Pattern Recognition, pages 7291–7299, 2017. 1            2018. 1, 3, 4, 5, 6
+ [7] Ching-Hang Chen and Deva Ramanan. 3d human pose es-            [22] Angjoo Kanazawa, Jason Y Zhang, Panna Felsen, and Jiten-
+     timation = 2d pose estimation+ matching. In Proceedings             dra Malik. Learning 3d human dynamics from video. In
+     of the IEEE Conference on Computer Vision and Pattern               CVPR, 2019. 3
+     Recognition, pages 7035–7043, 2017. 2                          [23] Muhammed Kocabas, Salih Karagoz, and Emre Akbas. Self-
+ [8] Wenzheng Chen, Huan Wang, Yangyan Li, Hao Su, Zhen-                 supervised learning of 3d human pose using multi-view ge-
+     hua Wang, Changhe Tu, Dani Lischinski, Daniel Cohen-                ometry. In The IEEE Conference on Computer Vision and
+     Or, and Baoquan Chen. Synthesizing training images for              Pattern Recognition (CVPR), June 2019. 3
+     boosting human 3d pose estimation. In 2016 Fourth Inter-       [24] Pushmeet Kohli and Jamie Shotton. Key developments in
+     national Conference on 3D Vision (3DV), pages 479–488.              human pose estimation for kinect. In Consumer Depth Cam-
+     IEEE, 2016. 3                                                       eras for Computer Vision, pages 63–70. Springer, 2013. 1,
+ [9] Xipeng Chen, Kwan-Yee Lin, Wentao Liu, Chen Qian, and               2
+     Liang Lin. Weakly-supervised discovery of geometry-aware       [25] Nikos Kolotouros, Georgios Pavlakos, and Kostas Dani-
+     representation for 3d human pose estimation. In Proceed-            ilidis. Convolutional mesh regression for single-image hu-
+     ings of the IEEE Conference on Computer Vision and Pattern          man shape reconstruction. In CVPR, 2019. 3
+     Recognition, pages 10895–10904, 2019. 3                        [26] Christoph Lassner, Javier Romero, Martin Kiefel, Federica
+[10] Liu Chunhui, Hu Yueyu, Li Yanghao, Song Sijie, and Liu              Bogo, Michael J Black, and Peter V Gehler. Unite the peo-
+     Jiaying. Pku-mmd: A large scale benchmark for continu-              ple: Closing the loop between 3d and 2d human representa-
+     ous multi-modal human action understanding. arXiv preprint          tions. In Proceedings of the IEEE Conference on Computer
+     arXiv:1703.07475, 2017. 4, 5, 6                                     Vision and Pattern Recognition, pages 6050–6059, 2017. 6
+[11] Theo Deprelle, Thibault Groueix, Matthew Fisher,               [27] Sergey Levine, Chelsea Finn, Trevor Darrell, and Pieter
+     Vladimir G Kim, Bryan C Russell, and Mathieu Aubry.                 Abbeel. End-to-end training of deep visuomotor policies.
+     Learning elementary structures for 3d shape generation and          The Journal of Machine Learning Research, 17(1):1334–
+     matching. arXiv preprint arXiv:1908.04725, 2019. 3                  1373, 2016. 3
+[12] John C Gower. Generalized procrustes analysis. Psychome-       [28] Junbang Liang and Ming C Lin. Shape-aware human pose
+     trika, 40(1):33–51, 1975. 5                                         and shape reconstruction using multi-view images. In Pro-
+[13] Thibault Groueix, Matthew Fisher, Vladimir G. Kim, Bryan            ceedings of the IEEE International Conference on Computer
+     Russell, and Mathieu Aubry. 3d-coded : 3d correspondences           Vision, pages 4352–4362, 2019. 5
+     by deep deformation. In ECCV, 2018. 3                          [29] Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays,
+[14] Ankur Gupta, Julieta Martinez, James J Little, and Robert J         Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence
+     Woodham. 3d pose from motion for cross-view action recog-           Zitnick. Microsoft coco: Common objects in context. In
+     nition via non-linear circulant temporal encoding. In CVPR,         European conference on computer vision, pages 740–755.
+     2014. 2                                                             Springer, 2014. 4, 6
+[30] Matthew Loper, Naureen Mahmood, and Michael J Black.            [44] Helge Rhodin, Mathieu Salzmann, and Pascal Fua. Unsuper-
+     Mosh: Motion and shape capture from sparse markers. ACM              vised geometry-aware representation learning for 3d human
+     Transactions on Graphics (TOG), 33(6):220, 2014. 5                   pose estimation. In ECCV, 2018. 3
+[31] Matthew Loper, Naureen Mahmood, Javier Romero, Ger-             [45] Grégory Rogez and Cordelia Schmid. Mocap-guided data
+     ard Pons-Moll, and Michael J. Black. SMPL: A skinned                 augmentation for 3d pose estimation in the wild. In Advances
+     multi-person linear model. ACM Trans. Graphics (Proc.                in neural information processing systems, pages 3108–3116,
+     SIGGRAPH Asia), 34(6):248:1–248:16, Oct. 2015. 1, 3, 4               2016. 3
+[32] Julieta Martinez, Rayat Hossain, Javier Romero, and             [46] Nikolaos Sarafianos, Bogdan Boteanu, Bogdan Ionescu, and
+     James J. Little. A simple yet effective baseline for 3d hu-          Ioannis A Kakadiaris. 3d human pose estimation: A review
+     man pose estimation. In ICCV, 2017. 2                                of the literature and analysis of covariates. Computer Vision
+[33] Angel Martínez-González, Michael Villamizar, Olivier                 and Image Understanding, 152:1–20, 2016. 2
+     Canévet, and Jean-Marc Odobez. Real-time convolutional          [47] Saurabh Sharma, Pavan Teja Varigonda, Prashast Bindal,
+     networks for depth-based human pose estimation. In 2018              Abhishek Sharma, and Arjun Jain. Monocular 3d human
+     IEEE/RSJ International Conference on Intelligent Robots              pose estimation by generation and ordinal ranking. In The
+     and Systems (IROS), pages 41–47. IEEE, 2018. 1                       IEEE International Conference on Computer Vision (ICCV),
+[34] Dushyant Mehta, Srinath Sridhar, Oleksandr Sotnychenko,              October 2019. 3
+     Helge Rhodin, Mohammad Shafiei, Hans-Peter Seidel,              [48] Xiao Sun, Bin Xiao, Fangyin Wei, Shuang Liang, and Yichen
+     Weipeng Xu, Dan Casas, and Christian Theobalt. Vnect:                Wei. Integral human pose regression. In Proceedings of the
+     Real-time 3d human pose estimation with a single rgb cam-            European Conference on Computer Vision (ECCV), pages
+     era. ACM Transactions on Graphics, 36(4), July 2017. 2               529–545, 2018. 3
+[35] Thomas B Moeslund and Erik Granum. A survey of com-             [49] Jaeyong Sung, Colin Ponce, Bart Selman, and Ashutosh Sax-
+     puter vision-based human motion capture. Computer vision             ena. Human activity detection from rgbd images. In Work-
+     and image understanding, 81(3):231–268, 2001. 2                      shops at the twenty-fifth AAAI conference on artificial intel-
+[36] Thomas B Moeslund, Adrian Hilton, and Volker Krüger. A               ligence, 2011. 4, 5, 6
+     survey of advances in vision-based human motion capture         [50] Gül Varol, Javier Romero, Xavier Martin, Naureen Mah-
+     and analysis. Computer vision and image understanding,               mood, Michael J. Black, Ivan Laptev, and Cordelia Schmid.
+     104(2-3):90–126, 2006. 1, 2                                          Learning from synthetic humans. In CVPR, 2017. 3
+[37] Alejandro Newell, Kaiyu Yang, and Jia Deng. Stacked hour-
+                                                                     [51] Bastian Wandt and Bodo Rosenhahn. Repnet: Weakly su-
+     glass networks for human pose estimation. In European con-
+                                                                          pervised training of an adversarial reprojection network for
+     ference on computer vision, pages 483–499. Springer, 2016.
+                                                                          3d human pose estimation. In Computer Vision and Pattern
+     3
+                                                                          Recognition (CVPR), June 2019. 2
+[38] Štěpán Obdržálek, Gregorij Kurillo, Ferda Ofli, Ruzena Ba-
+                                                                     [52] Shih-En Wei, Varun Ramakrishna, Takeo Kanade, and Yaser
+     jcsy, Edmund Seto, Holly Jimison, and Michael Pavel. Accu-
+                                                                          Sheikh. Convolutional pose machines. In CVPR, 2016. 1
+     racy and robustness of kinect pose estimation in the context
+                                                                     [53] Xingyi Zhou, Qixing Huang, Xiao Sun, Xiangyang Xue, and
+     of coaching of elderly population. In 2012 Annual Interna-
+                                                                          Yichen Wei. Towards 3d human pose estimation in the wild:
+     tional Conference of the IEEE Engineering in Medicine and
+                                                                          A weakly-supervised approach. In The IEEE International
+     Biology Society, pages 1188–1193. IEEE, 2012. 1
+                                                                          Conference on Computer Vision (ICCV), Oct 2017. 1, 3
+[39] Adam Paszke, Sam Gross, Soumith Chintala, Gregory
+     Chanan, Edward Yang, Zachary DeVito, Zeming Lin, Alban          [54] Christian Zimmermann, Tim Welschehold, Christian Dorn-
+     Desmaison, Luca Antiga, and Adam Lerer. Automatic dif-               hege, Wolfram Burgard, and Thomas Brox. 3d human pose
+     ferentiation in PyTorch. In NIPS Autodiff Workshop, 2017.            estimation in rgbd images for robotic task learning. In 2018
+     6                                                                    IEEE International Conference on Robotics and Automation
+[40] Georgios Pavlakos, Xiaowei Zhou, and Kostas Daniilidis.              (ICRA), pages 1986–1992. IEEE, 2018. 1
+     Ordinal depth supervision for 3d human pose estimation. In
+     Proceedings of the IEEE Conference on Computer Vision
+     and Pattern Recognition, pages 7307–7316, 2018. 3
+[41] Georgios Pavlakos, Xiaowei Zhou, Konstantinos G Derpa-
+     nis, and Kostas Daniilidis. Coarse-to-fine volumetric predic-
+     tion for single-image 3D human pose. In CVPR, 2017. 3
+[42] Xi Peng, Zhiqiang Tang, Fei Yang, Rogerio S Feris, and
+     Dimitris Metaxas. Jointly optimize data augmentation and
+     network training: Adversarial data augmentation in human
+     pose estimation. In Proceedings of the IEEE Conference
+     on Computer Vision and Pattern Recognition, pages 2226–
+     2234, 2018. 3
+[43] Helge Rhodin, Victor Constantin, Katircioglu Isinsu, Math-
+     ieu Salzmann, and Pascal Fua. Neural scene decomposition
+     for multi-person motion capture. In CVPR, 2019. 3
+
