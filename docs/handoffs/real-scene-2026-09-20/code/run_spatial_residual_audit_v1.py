@@ -24,16 +24,20 @@ def box(mask, cond):
     if cond=='UPPER': return (max(0,round(x0+.02*w)),max(0,y0),min(W,round(x0+.98*w)),min(H,round(y0+.72*h)))
     return (max(0,round(x0+.20*w)),max(0,round(y0+.15*h)),min(W,round(x0+.80*w)),min(H,round(y0+.72*h)))
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument('--root',type=Path,required=True); ap.add_argument('--sequences',type=Path,required=True); ap.add_argument('--calibs',type=Path,required=True); ap.add_argument('--table-root',type=Path,required=True); ap.add_argument('--out',type=Path,required=True); a=ap.parse_args(); out=[]
+    ap=argparse.ArgumentParser(); ap.add_argument('--root',type=Path,required=True); ap.add_argument('--sequences',type=Path,required=True); ap.add_argument('--calibs',type=Path,required=True); ap.add_argument('--table-root',type=Path,required=True); ap.add_argument('--body-map',type=Path,required=True); ap.add_argument('--out',type=Path,required=True); a=ap.parse_args(); out=[]
+    bm=np.load(a.body_map); labels=bm['vertex_labels']; names=[str(x) for x in bm['group_names']]
     for jp in sorted(a.root.glob('Sub*/raw/*/*/*/*.json')):
         r=json.loads(jp.read_text()); s=r['spec']; seq,fr=s['sequence'],s['frame']; src=a.sequences/seq/fr; mask=cv2.imread(str(src/'k0.person_mask.jpg'),0); b=box(mask,r['condition']); cams=[cam(a.calibs,seq,k) for k in range(4)]
         for k in (1,2,3):
             p=depth_points(cv2.imread(str(src/f'k{k}.depth.png'),-1),cv2.imread(str(src/f'k{k}.person_mask.jpg'),0),np.load(a.table_root/str(k)/'pointcloud_table.npy')); p0=transform(p,cams[k],cams[0]); uv=project(p0,cams[0][0],cams[0][1]); inside=(uv[:,0]>=b[0])&(uv[:,0]<b[2])&(uv[:,1]>=b[1])&(uv[:,1]<b[3]); sid=f"{seq}/{fr}/{r['condition']}/K{k}"; z=np.load(jp.with_name(r['condition']+'_vertices.npz')); faces=z['faces']
             for method,keyname in (('Official','Official'),('Txyz','Txyz'),('T+Pose','T_pose')):
-                v=transform(z[keyname],cams[0],cams[k]); q=dist_to_tri(p,v,faces)*1000
+                v=transform(z[keyname],cams[0],cams[k]); q=dist_to_tri(p,v,faces)*1000; nearest=cKDTree(v).query(p,workers=-1)[1]; part=np.asarray([names[int(labels[i])] for i in nearest])
                 for region,sel in [('roi',inside),('outside_roi',~inside)]:
                     if not np.any(sel): continue
                     out.append({'subject':s['subject'],'sequence':seq,'frame':fr,'condition':r['condition'],'camera':f'K{k}','method':method,'region':region,'count':int(sel.sum()),'median_nn_mm':float(np.median(q[sel])),'p95_nn_mm':float(np.percentile(q[sel],95)),'mean_nn_mm':float(np.mean(q[sel]))})
-    a.out.mkdir(parents=True,exist_ok=True); (a.out/'SPATIAL_RESIDUAL_AUDIT.json').write_text(json.dumps({'status':'COMPLETE_DESCRIPTIVE_SAMPLE','distance':'formal point_to_triangle_distances','sample_per_camera':500,'region':'K0 projection inside/outside condition ROI','rows':out},indent=2)+'\n')
+                    for part_name in names:
+                        ps=sel&(part==part_name)
+                        if np.any(ps): out.append({'subject':s['subject'],'sequence':seq,'frame':fr,'condition':r['condition'],'camera':f'K{k}','method':method,'region':region,'body_part':part_name,'count':int(ps.sum()),'median_nn_mm':float(np.median(q[ps])),'p95_nn_mm':float(np.percentile(q[ps],95)),'mean_nn_mm':float(np.mean(q[ps]))})
+    a.out.mkdir(parents=True,exist_ok=True); (a.out/'SPATIAL_RESIDUAL_AUDIT.json').write_text(json.dumps({'status':'COMPLETE_DESCRIPTIVE_SAMPLE','distance':'formal point_to_triangle_distances','sample_per_camera':500,'region':'K0 projection inside/outside condition ROI','body_part':'nearest predicted MHR vertex label from topology-bound engineering map','rows':out},indent=2)+'\n')
     print('rows',len(out))
 if __name__=='__main__': main()

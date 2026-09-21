@@ -2,11 +2,12 @@
 
 ## Material Passport
 
-- 状态：`COMPLETE_DESCRIPTIVE`；只读取已有 formal V3 vertices、RGB-D、mask 和 calibration。
+- 状态：`COMPLETE_DESCRIPTIVE_SAMPLE`；只读取已有 formal V3 vertices、RGB-D、mask 和 calibration。
 - 运行位置：服务器 `/raid5/xuhd/back_local_feasibility_v1/spatial_residual_audit_v1/`。
 - 范围：18 timestamps × 3 条件 × 3 held-out cameras × 3 methods；原始记录 954 条。
 - 空间定义：将每个 K1/K2/K3 深度点变到 K0，按 K0 mask-derived condition ROI 的投影分成 `roi` / `outside_roi`。
 - 距离：项目正式 `point_to_triangle_distances`；每个 camera 固定抽取 500 个深度点，作为空间定位诊断样本。
+- 部位：MHR 拓扑绑定工程部位图的最近预测顶点标签；不是医生标注，也不是解剖真值。
 
 ## 聚合结果（所有相机/帧/sequence/subject 的中位数）
 
@@ -31,3 +32,27 @@
 4. 本轮已经改用 `point_to_triangle_distances`；由于单次全量精确计算非常昂贵，当前是每 camera 500 点的固定诊断样本，不是主指标的 5000 点全量复算。若写论文，应保存每个残差点的三维位置、K0 投影、区域和误差分位数，并在更大样本上复核。
 
 完整原始结果在 `SPATIAL_RESIDUAL_AUDIT.json`，脚本为 `../code/run_spatial_residual_audit_v1.py`。本审计没有改变训练、评价阈值或样本。
+
+## 工程部位归因（ROI 内）
+
+下表是 ROI 内、按 subject/sequence/frame/camera 聚合后的中位 point-to-triangle 距离，单位 mm。每个部位的点数会随姿态和相机变化；它用于定位误差来源，不用于替代整体主指标。
+
+| 条件 | 部位 | Official | Txyz | T+Pose |
+|---|---|---:|---:|---:|
+| FULL | torso | 32.16 | 13.65 | 15.16 |
+| FULL | arms | 33.22 | 14.05 | 12.23 |
+| FULL | legs | 32.12 | 13.55 | 11.47 |
+| FULL | head | 32.33 | 18.86 | 13.46 |
+| FULL | hands_feet | 50.51 | 31.84 | 31.27 |
+| UPPER | torso | 24.24 | 13.68 | 12.89 |
+| UPPER | arms | 21.87 | 15.04 | 12.64 |
+| UPPER | legs | 21.43 | 18.53 | 15.00 |
+| UPPER | head | 25.57 | 16.22 | 9.09 |
+| UPPER | hands_feet | 33.00 | 25.99 | 20.47 |
+| LOCAL_TORSO | torso | 29.76 | 18.14 | 14.40 |
+| LOCAL_TORSO | arms | 28.65 | 18.10 | 13.08 |
+| LOCAL_TORSO | legs | 30.11 | 24.43 | 17.63 |
+| LOCAL_TORSO | head | 31.94 | 28.32 | 20.29 |
+| LOCAL_TORSO | hands_feet | 59.18 | 49.98 | 43.78 |
+
+这版结果提示：LOCAL_TORSO 的长尾主要集中在 `hands_feet`，其次是 legs/head；torso 和 arms 的误差相对小。这个方向支持“局部输入下远端补全更难”的工程判断，但由于部位标签来自预测 mesh 最近顶点，仍不能宣称是严格的真实解剖区域误差。
