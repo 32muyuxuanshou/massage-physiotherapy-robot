@@ -1,0 +1,19 @@
+{
+  "schema": "HUMMAN_REFERENCE_AUDIT_V2",
+  "status": "COMPLETED_TARGETED_AUDIT",
+  "sequences": [
+    "p000823_a000035",
+    "p001088_a000203"
+  ],
+  "checks": {
+    "heldout_camera_pointcloud_or_depth": "AVAILABLE_IN_PREPARED_NPZ",
+    "textured_mesh": "NOT_FOUND_IN_FROZEN_LOCAL_SUBSET",
+    "reconstruction_mesh": "NOT_FOUND_IN_FROZEN_LOCAL_SUBSET",
+    "3d_keypoints": "NOT_CHECKED_OR_NOT_FOUND",
+    "smpl_vertices_mesh": "NOT_AVAILABLE",
+    "smpl_params_npz": "AVAILABLE"
+  },
+  "classification": "SMPL_PARAMS_ONLY",
+  "decision": "BLOCKED_BY_LICENSED_SMPL_MODEL",
+  "note": "HuMMan excluded from primary formal model evaluation by preregistration."
+}
