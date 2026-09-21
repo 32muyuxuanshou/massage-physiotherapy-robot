@@ -1,6 +1,6 @@
 {
   "task": "FORMAL_BACK_LOCAL_MODEL_EVALUATION_CONTINUATION_V1",
-  "status": "COMPLETE_V3",
+  "status": "COMPLETE_V3_PARAMETER_COMPLETE",
   "primary_dataset": "BEHAVE",
   "subjects": [
     "Sub03",
@@ -42,5 +42,8 @@
   "aggregation": "K1/K2/K3 -> frame -> sequence -> subject",
   "heldout_sampling": "identical deterministic samples per frame/camera across methods",
   "final_vertices": "saved per condition as raw/*/*/*/*_vertices.npz",
-  "final_parameters": "cam_t in NPZ; translation delta/global_rot/body_pose in raw JSON"
+  "final_parameters": "cam_t in NPZ; translation delta/global_rot/body_pose in raw JSON",
+  "raw_root": "formal_eval_v3_complete",
+  "aggregation_root": "aggregated_v3_complete",
+  "final_vertices_and_parameters": "each *_vertices.npz stores Official/Txyz/T_pose vertices, faces, cam_t, global_rot and body_pose"
 }
