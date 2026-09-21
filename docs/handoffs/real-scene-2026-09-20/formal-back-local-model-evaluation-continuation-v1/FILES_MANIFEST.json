@@ -1,6 +1,6 @@
 {
   "root": "docs/handoffs/real-scene-2026-09-20/formal-back-local-model-evaluation-continuation-v1",
-  "file_count": 78,
+  "file_count": 200,
   "files": [
     {
       "path": "aggregated_v2/CORRECTION_BENEFIT.csv",
@@ -43,6 +43,26 @@
       "bytes": 1011
     },
     {
+      "path": "aggregated_v3/FORMAL_RESULTS_V3.json",
+      "sha256": "0cafc4fa00a07b08a495239c44b7cccbc735b47ae5d48572267fb89ddda7032a",
+      "bytes": 115209
+    },
+    {
+      "path": "aggregated_v3/FRAME_RESULTS_V3.json",
+      "sha256": "45183809fcee4d97f055fc3d175c7b103509ca872fa168ecfc86a6a1d1303d14",
+      "bytes": 74035
+    },
+    {
+      "path": "aggregated_v3/SEQUENCE_RESULTS_V3.json",
+      "sha256": "f95d5c5fbbcba5500cddf554030655af572c6a4dcf93571c5539f911d48fbfa0",
+      "bytes": 19711
+    },
+    {
+      "path": "aggregated_v3/SUBJECT_RESULTS_V3.json",
+      "sha256": "b15931a877806fa42940d319dfb553cb5422252b35dcbe282a823672865199ec",
+      "bytes": 5409
+    },
+    {
       "path": "BASELINE_DIAGNOSTIC_t0015.json",
       "sha256": "8441d5a7e3cc83c196ac1dae82b12c5f015378f5151ba97dd7b13949de715570",
       "bytes": 1802
@@ -58,9 +78,14 @@
       "bytes": 5646
     },
     {
+      "path": "code/aggregate_formal_v3.py",
+      "sha256": "c38b7225e16fba6c0f0fb269c8a05750b3ec8d834cc8c21d9041e1ccf691a2f7",
+      "bytes": 3508
+    },
+    {
       "path": "code/run_formal_evaluation.py",
-      "sha256": "b3f849d8edc8f19748134d053a255e1cc71cc84bb3f7d51993f80c76a33c8619",
-      "bytes": 9772
+      "sha256": "7b79eb68b4bad582c758debe571f1f70dda0c20c23c8b4839c0158c2b5d06bef",
+      "bytes": 10797
     },
     {
       "path": "EXECUTION_AUDIT.json",
@@ -74,13 +99,18 @@
     },
     {
       "path": "EXECUTION_RECORD.json",
-      "sha256": "8e1f092b8b7599df43327f936b40416296ac8a35419421372e4da38c9de88ac2",
-      "bytes": 1702
+      "sha256": "295ea209f288c547f3e930367bf750c73dd48222964983fcbeeb8f05a711edac",
+      "bytes": 2084
     },
     {
       "path": "FINAL_REPORT.md",
       "sha256": "d741741a015ea66587dfa355778f9c47e2c44cdf8d32247c56cf625678a711c0",
       "bytes": 4621
+    },
+    {
+      "path": "FINAL_REPORT_V3.md",
+      "sha256": "b77ceaedad44349a210ac2b4d64cfd076b3af78b3129225ab95bcff70d740d02",
+      "bytes": 1481
     },
     {
       "path": "formal_eval_shards_v2/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0014.000/FULL.json",
@@ -383,6 +413,581 @@
       "bytes": 2101
     },
     {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0014.000/FULL.json",
+      "sha256": "3c774dc15c5c9c06092b586841c6846d760d72e5b1c56b8e78717b9767e358d0",
+      "bytes": 11488
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0014.000/FULL_vertices.npz",
+      "sha256": "aa8dfa42719c56a28d565995ff369910e3edb3b827198423ee0ae2125eb08478",
+      "bytes": 786625
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0014.000/LOCAL_TORSO.json",
+      "sha256": "6542eb551540fcd2a56d73d48c9c195501b5fcb97861508e7971030cbc2ae508",
+      "bytes": 11499
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0014.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "f91350ce59ce63cdf5ed42c3f2788defcd28c5f0a6a9fd75b741b333ab66efbd",
+      "bytes": 786316
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0014.000/UPPER.json",
+      "sha256": "958acc2939d19f56696b74abd2916d1e7933d5aba1a90d562a2700518b36aded",
+      "bytes": 11509
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0014.000/UPPER_vertices.npz",
+      "sha256": "1f146eff1d089f886b5bc2c9181376568845c8d276c6e78c1bf19d2d11bca32e",
+      "bytes": 786939
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0036.000/FULL.json",
+      "sha256": "bf8d21620ee23ea86c8e0f62c67e6134a83d4675ef849cdd307d03ada527822e",
+      "bytes": 11515
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0036.000/FULL_vertices.npz",
+      "sha256": "087de34e79aec42e5075e14eecd173359706de3cfd8f90e0c5b808b9c5016dbe",
+      "bytes": 794850
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0036.000/LOCAL_TORSO.json",
+      "sha256": "7d174ce06adafba2024366d2ee5d3a716a7a383f5e55e330fd0d60f8f648b7e6",
+      "bytes": 11513
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0036.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "02788f3a9e1fa1e6a59ffbf5cb418ac42034e0e8631e5aa2b3fdf477cf85ec6d",
+      "bytes": 795119
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0036.000/UPPER.json",
+      "sha256": "179998c06285d833c356a81f6e4e133ebda1a5f385bb7322342f7073324a01ee",
+      "bytes": 11491
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_backpack_back/t0036.000/UPPER_vertices.npz",
+      "sha256": "a74a21894cbe25f37b3b2f9c1977a7f6817513adbdbe9d375c1d30319a4cd7f3",
+      "bytes": 794277
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0015.000/FULL.json",
+      "sha256": "1ffbcb871a85946d66e1aa82d9619f5c8b89a4fbaa723533f930e45052a085aa",
+      "bytes": 11488
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0015.000/FULL_vertices.npz",
+      "sha256": "055c3aade05fa3d4ddb7ec376a6c28aef5a85fb14ea9d4a12317da26f7f6a0b1",
+      "bytes": 792919
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0015.000/LOCAL_TORSO.json",
+      "sha256": "54088be33e4ee4553c453f971b9727a028a529625d3188d96f459b4020fd8c67",
+      "bytes": 11504
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0015.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "ada52ede1658ebf83957a54e2fba43b252dd3a3809f55ba35890f30fad3129a7",
+      "bytes": 791765
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0015.000/UPPER.json",
+      "sha256": "71c0846df9915dd0067ad81473fc1a0ee7fc3ea136c4c2cb04436d07c292994c",
+      "bytes": 11511
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0015.000/UPPER_vertices.npz",
+      "sha256": "be16d0a83cc3baf5be70846521c29e0da27c7a8da864eed889ce9a8895f4f6ce",
+      "bytes": 792426
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0038.000/FULL.json",
+      "sha256": "631ece1fa5d9ec6283b940408691db1a1bee0395417a6ea6157c900fd114b4fd",
+      "bytes": 11506
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0038.000/FULL_vertices.npz",
+      "sha256": "1b4a53cde1118740aea8782fed20c1f8f0273a9f957ad52168346b39067b3868",
+      "bytes": 787118
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0038.000/LOCAL_TORSO.json",
+      "sha256": "fe9c3ef96ddea686cb7b1a883cefdc0275ea21cafd8171b9c50a0c3942c11e47",
+      "bytes": 11513
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0038.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "9327d7ddf4d0a85c8c6f7c2a4bdc8566605b215ab7371c4b48cb2bdb2426a6cb",
+      "bytes": 786463
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0038.000/UPPER.json",
+      "sha256": "d539ff7695b0142ecf15b72deed06b6ac814aa1b46ad54e3c9c384da02914649",
+      "bytes": 11527
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_stool_sit/t0038.000/UPPER_vertices.npz",
+      "sha256": "b1cc439f157041b06a90db88259656970bbda161add4abb3489ebb1914d04316",
+      "bytes": 786850
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0014.000/FULL.json",
+      "sha256": "d856bef94550315dc58457e861d2b8cb8ef26e8348f267f5a7c5528eafb840d5",
+      "bytes": 11508
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0014.000/FULL_vertices.npz",
+      "sha256": "c8e63676f8b2fa224564fc52acaabb7b6e0f4086260239659aa458693318062e",
+      "bytes": 790585
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0014.000/LOCAL_TORSO.json",
+      "sha256": "32ae82a96a959e71d8515a62a04631f51d3d9f9940ac987911d3f7d167ba7f29",
+      "bytes": 11528
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0014.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "6ae29a039a66dc8f94ece0ce0755239f4b36912b86c6fdb1b0e5b5ffc7f12ee7",
+      "bytes": 788000
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0014.000/UPPER.json",
+      "sha256": "78d282c40e3a09c46e088a80305d72e952cc3407a7163c1ec15f970292f3a85b",
+      "bytes": 11521
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0014.000/UPPER_vertices.npz",
+      "sha256": "450151fa230b9df1e355e465b80b4f3d10ebb3afbcf45538f29234fb9571ff86",
+      "bytes": 789450
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0036.000/FULL.json",
+      "sha256": "8c5c57d212eaaffbb42c66a33ec361063f47727dbe94fc7e4ff98eb59e681bb7",
+      "bytes": 11494
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0036.000/FULL_vertices.npz",
+      "sha256": "6bb0bf3a60aeb79e20ea74528fc16dd966c893101960d4c75797a8244098a64d",
+      "bytes": 792383
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0036.000/LOCAL_TORSO.json",
+      "sha256": "d98828d982d8a5628377727e08919abe2990975ea43ff65691b86b60dc3726a0",
+      "bytes": 11528
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0036.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "a97a8374dbb667acd58eddb49cd41d199ead45bba5827d7386f595b82a137449",
+      "bytes": 792095
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0036.000/UPPER.json",
+      "sha256": "1961558bd87133a4aff12bf86f88d4147bcb865cd4e3e18f405aa332d5bcc932",
+      "bytes": 11462
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/raw/Sub03/Date03_Sub03_yogaball_play/t0036.000/UPPER_vertices.npz",
+      "sha256": "fdd7985cfc5a4d4fd195138048e241f1d658d4ea3ca90df5e2e569861afdaec4",
+      "bytes": 790740
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/report/per_frame_results.json",
+      "sha256": "af9677ae7dbb5909b0e90bf6ce14ddab6ff6a4d71eb5a3d43856a9774e3b0298",
+      "bytes": 224658
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub03/report/reference_coordinate_audit.json",
+      "sha256": "468c77c43b599519787b15df3cc1d8adc1f0f882ee4513971cd533c915eb1c6c",
+      "bytes": 2124
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0015.000/FULL.json",
+      "sha256": "9775c85ed4fc07134f2b7d46cf61aaaea17f8cae9b86a5aade482f8888f61ed1",
+      "bytes": 11523
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0015.000/FULL_vertices.npz",
+      "sha256": "588b46502a2a9700606a34f573213c1a820e8ba11c678303ae836566751965b0",
+      "bytes": 791680
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0015.000/LOCAL_TORSO.json",
+      "sha256": "66830e150a82f97775d1990f81a390d84d90793f3f320e419c102ddcaaae1dc4",
+      "bytes": 11531
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0015.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "2e8c4175196805889db8107a0321c9cb3b590460fea5aec259339670018be8a0",
+      "bytes": 792847
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0015.000/UPPER.json",
+      "sha256": "e0a24db02f34cb020794646002a244c7f8c9ba7489c0887e79d9b16d0266643c",
+      "bytes": 11532
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0015.000/UPPER_vertices.npz",
+      "sha256": "8987c0b97506555648cdb4b8e2fe62ab1898e61862f6971532ffba91ccdbc817",
+      "bytes": 794470
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0037.000/FULL.json",
+      "sha256": "b50511a316209ea9e4f3524030fe3acceaf11d5421819ca9e1869ecb890d9257",
+      "bytes": 11499
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0037.000/FULL_vertices.npz",
+      "sha256": "6e6c1cddb805aea23c65431767fc5e4de9f5706b4eb769adea29f9dd805880be",
+      "bytes": 798695
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0037.000/LOCAL_TORSO.json",
+      "sha256": "ca94d52cdabe2abfd949908da1114ec5ff559a73ac95aa623ca8dc4aa1fc2870",
+      "bytes": 11539
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0037.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "38b56ce902c9c7b19c56c309e53581c2582c248539bcb1095f3b2de496a139bd",
+      "bytes": 798427
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0037.000/UPPER.json",
+      "sha256": "27af340223506baba5695b61a0125bdd8b19d17cd36233805956184e9d2f89c8",
+      "bytes": 11552
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_backpack_back/t0037.000/UPPER_vertices.npz",
+      "sha256": "fa9e2bae2398ce04601dbf66c1a604a06523133b37fc63e205691af03475eaae",
+      "bytes": 797836
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0015.000/FULL.json",
+      "sha256": "f6bc071b963d84f8e73805348d8eee178f99113384e00d53ea3c4c95f76f2a2e",
+      "bytes": 11526
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0015.000/FULL_vertices.npz",
+      "sha256": "4c5aab840161dfa66be28f35066f5e4c512c5b55dde787080c2dea03a4d2e8c3",
+      "bytes": 800921
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0015.000/LOCAL_TORSO.json",
+      "sha256": "12e360b10bd8cbf8c929cbfa592a32d63b9dd95e9b4d6f7ba25eb005969e44cc",
+      "bytes": 11528
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0015.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "62d4bd7c47d4d86862e899cddce64fc9ff55ba4786b4fc2c50a0d5b11617021c",
+      "bytes": 800066
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0015.000/UPPER.json",
+      "sha256": "c35a2c2a9460be886b9e1fba5f84cc3c06ca0c9564701ff65871cb07ff5930c3",
+      "bytes": 11498
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0015.000/UPPER_vertices.npz",
+      "sha256": "62b0f10f6fc5c619e1b10c98390d54216ebe567a05646e9bdd4d128506626005",
+      "bytes": 800471
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0038.000/FULL.json",
+      "sha256": "a1af06c47b3caa8d89a2c8831caf2ef68ebc286b650523ac783a143a1aecb1fa",
+      "bytes": 11524
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0038.000/FULL_vertices.npz",
+      "sha256": "d4194804c5080f9a6138b920f61e8bd0935d54f01c64ae6154a3e48b35eaf019",
+      "bytes": 798089
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0038.000/LOCAL_TORSO.json",
+      "sha256": "a931e7ec2ae5e37d345fc5695aa59ce2aed750ca40c2f8d34b5769ca0b9b1567",
+      "bytes": 11499
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0038.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "017060d88297733b18b51a815bd6f670db323da241186e188848ee82f30e465f",
+      "bytes": 797444
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0038.000/UPPER.json",
+      "sha256": "4eeee28ea16cbbca90de014af597ed011ab4f676d02b5e6b99e03b9541aa742e",
+      "bytes": 11501
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_stool_sit/t0038.000/UPPER_vertices.npz",
+      "sha256": "622ad1d5261263ece3562ed0c96833e7295b26b137b1ca1177771762f64805ef",
+      "bytes": 799416
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0010.000/FULL.json",
+      "sha256": "18e14b519320d2116c79b1f906b087c8056d1cf07a3208787c23ab2fc93bb935",
+      "bytes": 11475
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0010.000/FULL_vertices.npz",
+      "sha256": "52883ac7570c5b1325e9695df15e049051f807a59172dd10219e8714688ef60c",
+      "bytes": 788755
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0010.000/LOCAL_TORSO.json",
+      "sha256": "080371e59c91ee71e0b63a45f23a78eadf141fa6b20ae5de49d52cad0e39f6f2",
+      "bytes": 11491
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0010.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "964d9bcaba6475c148bb6e6085aed4fa7c36ba3ee6809266e131a149ac869a76",
+      "bytes": 786284
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0010.000/UPPER.json",
+      "sha256": "b6af1311f52dd86d426045c668c3fd7f0f7a53b710452777f74a305417671381",
+      "bytes": 11491
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0010.000/UPPER_vertices.npz",
+      "sha256": "1d62bb1a8a15f93bf002a326f7ca4b53b2c0a677e07c31711f341f164cf0cbae",
+      "bytes": 789520
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0034.000/FULL.json",
+      "sha256": "59733d4a04bf322eba5576cfe2a2f62970b5739133e7ec4530bf1a247ef589a1",
+      "bytes": 11533
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0034.000/FULL_vertices.npz",
+      "sha256": "63bb44665e611d488ad6143008f1701edb2a6cec1288ae06b234d7dc8c2758c9",
+      "bytes": 785828
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0034.000/LOCAL_TORSO.json",
+      "sha256": "5d5ae44fc3b98edadf0fe1f98b522afb6fb1d1ef09941fb2b0c0f029f2f5185c",
+      "bytes": 11535
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0034.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "e388f81d85017eb5628d56f0182409f11d4120eda9c9b05556cae02a7e333bae",
+      "bytes": 788488
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0034.000/UPPER.json",
+      "sha256": "1df1b4c92edd67486d7f94863012f238d96916a4edd41508bac535698bccabd2",
+      "bytes": 11550
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/raw/Sub04/Date03_Sub04_yogaball_play/t0034.000/UPPER_vertices.npz",
+      "sha256": "35d236c56e66fdfdbd2afa5e307a7ea7844cc9c7da873fd86f05edac082e55b6",
+      "bytes": 788020
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/report/per_frame_results.json",
+      "sha256": "11a90e72b375b485453f9b8ae52b0eac47fd61e863f66f1ff266f6fad60a4091",
+      "bytes": 224880
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub04/report/reference_coordinate_audit.json",
+      "sha256": "7bae360a272c887b9deadf118395646567696be2ccf21bc1ea29512e96860e67",
+      "bytes": 2129
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0035.000/FULL.json",
+      "sha256": "fac956f97a9a898fdc6a5556cbb6a21e22bd6275e7e64f8400afa64652ea0aa4",
+      "bytes": 11413
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0035.000/FULL_vertices.npz",
+      "sha256": "77629146b43739ac2c3eba9d8b4f8f8c94495c6c2f3a02304baef2dd0da38b59",
+      "bytes": 789423
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0035.000/LOCAL_TORSO.json",
+      "sha256": "570311ad7d3a877e9be46363d25813a05f3c0f7ff5e23a76cdfea207690e77e9",
+      "bytes": 11523
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0035.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "da48eeaea7db56f5d309322bbe06b837276e469fce821a621d7bd04d09ac8f44",
+      "bytes": 790381
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0035.000/UPPER.json",
+      "sha256": "350cb3c0ec9406214dd7a1b4cecde3ea18d159be04ec3d7f2f93831508f5f356",
+      "bytes": 11490
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0035.000/UPPER_vertices.npz",
+      "sha256": "f29d13d83b14ae255c63f90c870ee010c3ff50df829e5af663a4d1fca97ef0be",
+      "bytes": 789297
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0101.000/FULL.json",
+      "sha256": "9df52692be48ecf4ceb53763f049ff2b2c617632440d99e66d062ed7d0baf837",
+      "bytes": 11483
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0101.000/FULL_vertices.npz",
+      "sha256": "c83692ebfc1c1b02391737252f58a7deeef2899b9bbe06298c5c9b8719b39f32",
+      "bytes": 786958
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0101.000/LOCAL_TORSO.json",
+      "sha256": "aff7216c6576c74a549cb848bd943330988780a16949fe6279ea6a35fdea00cb",
+      "bytes": 11507
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0101.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "a818e7100fd0eda80162fb9767ac2eafe0456421b83a009cd550d7b787881225",
+      "bytes": 789009
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0101.000/UPPER.json",
+      "sha256": "ea0fc640ec4e89fe93153c21ca958dcc8f67ef9680d70cc3839b01ecfcfcf2ab",
+      "bytes": 11541
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_backpack/t0101.000/UPPER_vertices.npz",
+      "sha256": "e2f8de7f87ca2092e375153cfa06ebc3ec9dae15effcc8b5cc88f8263f13bb3b",
+      "bytes": 789304
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0019.000/FULL.json",
+      "sha256": "1fe23eb585e5b0833046ea25b6db732d6350f8c0e500f2d84f3f5309055de8bc",
+      "bytes": 11514
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0019.000/FULL_vertices.npz",
+      "sha256": "5e360a8d8623d4cc72b1c8f1406cc80cf6da626ef8e468090cab84c659220970",
+      "bytes": 802662
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0019.000/LOCAL_TORSO.json",
+      "sha256": "a24148e49eed61aa5a32acd368ff3da23ca0a46ba01b964b9d78aba8e020208b",
+      "bytes": 11482
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0019.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "471d7d02310c187bcf601c20b4f8423d7c853979a9756f7085ecbd00f977774e",
+      "bytes": 799756
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0019.000/UPPER.json",
+      "sha256": "38578f9e9a167439f5ec73fad2cbf142fa392756e3d5952d41962b7c4bcc3377",
+      "bytes": 11546
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0019.000/UPPER_vertices.npz",
+      "sha256": "e9c49de1e3b61a1b706078e93e2af284348ec6f89708b8f58ec1c958695f33fb",
+      "bytes": 803725
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0050.000/FULL.json",
+      "sha256": "4ee3284faeba1882e9b239be1f9539654bcc98e7ea0a034a682091d043e7d8b1",
+      "bytes": 11438
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0050.000/FULL_vertices.npz",
+      "sha256": "1c439039ba08b34fbc6623e5da4e64af2f32361a1787a47b5c8fac4d0fe1bc46",
+      "bytes": 793600
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0050.000/LOCAL_TORSO.json",
+      "sha256": "1b9d789ad2c3f20ff00918741d921d9f1e32190c4e538a59241560914edee65c",
+      "bytes": 11522
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0050.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "c2ca08d47dd0d6ebaa24ca726b79044cb101b5fc73486191c7eb4fb8ab36a060",
+      "bytes": 793351
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0050.000/UPPER.json",
+      "sha256": "f48cc7cb57b45707b6cc8f786a072ceeb1de66750325760156c40bdbaa29a76e",
+      "bytes": 11521
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_stool/t0050.000/UPPER_vertices.npz",
+      "sha256": "645201d48b6a19255586d8a156d20aac3ba88144e550e99595ad4944c7bcb2d5",
+      "bytes": 794099
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0019.000/FULL.json",
+      "sha256": "1f310be3b9f0ed8ff13cd8c0a23eb92352ee11157c37ca01437665ea6c958365",
+      "bytes": 11513
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0019.000/FULL_vertices.npz",
+      "sha256": "815c00a15fa7dfca4724131ab4c70a1e633ac8dc373fe187751f960779d7a808",
+      "bytes": 793392
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0019.000/LOCAL_TORSO.json",
+      "sha256": "87794f16a9f85fdf86f9d3bec17406ef322cdff77390d4d3fda369438e1f5d17",
+      "bytes": 11491
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0019.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "390c7c8863d5013264cb23f85a3d8518bb1e9576eb2d677ef2ffd99e97b5cbf4",
+      "bytes": 794504
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0019.000/UPPER.json",
+      "sha256": "743630ec1f237d7a1ab9578369e9e51e311deca8a51cbbdfab1efe837f9f13fe",
+      "bytes": 11497
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0019.000/UPPER_vertices.npz",
+      "sha256": "af5b619e5a1f36f93c395ac94ce499d1fe9a71f9ca832677ff2b26cb2906e837",
+      "bytes": 794368
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0051.000/FULL.json",
+      "sha256": "26b919426742fb574212ae6c21ad4d8064fd18a6e3270318a86b3ac420468aaf",
+      "bytes": 11433
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0051.000/FULL_vertices.npz",
+      "sha256": "89e777a073c589ba14aa193c61a0a336b5e0cdfe87c23afc4898cd17f00a15ee",
+      "bytes": 788931
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0051.000/LOCAL_TORSO.json",
+      "sha256": "61104cbb34c87baba6d5c902291e73f1f189a594143d5c8fb154b5dfa132d981",
+      "bytes": 11542
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0051.000/LOCAL_TORSO_vertices.npz",
+      "sha256": "5588d57969c4c636092b84207ff23b742a02771fadbeb95f8e7bdcc08d1a8698",
+      "bytes": 788667
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0051.000/UPPER.json",
+      "sha256": "b23738943f4d36c0538d4305880c0126495ee6eff127c744e1c3e3fcbc6a1099",
+      "bytes": 11469
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/raw/Sub05/Date03_Sub05_yogaball/t0051.000/UPPER_vertices.npz",
+      "sha256": "4a8642f3b237b53e36d93b28f200df0211fac801c7116c4beec317bb66bc3fb6",
+      "bytes": 790035
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/report/per_frame_results.json",
+      "sha256": "91f1ac79b8c7196eea7154e3814534265358e2b0a6c7f1a58b96e11a2c64c85c",
+      "bytes": 224478
+    },
+    {
+      "path": "formal_eval_v3_shards/Sub05/report/reference_coordinate_audit.json",
+      "sha256": "9822d3cc1197571cf02fc9eb3f8586748b32a3f34847902a5779b14501098f9d",
+      "bytes": 2101
+    },
+    {
+      "path": "FORMAL_RESULTS_V3.json",
+      "sha256": "c445e9d84b320a0f232c33f2e936741aa34d5f26a4b8a7458b7a81a8489e1aca",
+      "bytes": 119215
+    },
+    {
       "path": "HUMMAN_REFERENCE_AUDIT_V2.json",
       "sha256": "9aefc11d0f9e125c4dd62d5648998c52c8a05f8a2bb8e0751a8c2496fdf6ed69",
       "bytes": 660
@@ -391,6 +996,11 @@
       "path": "REFERENCE_COORDINATE_AUDIT.json",
       "sha256": "5b2d0ef2f7bf2807c88701c660a9e7cd61f01efc834ed35fe11e3253af621ee2",
       "bytes": 827
+    },
+    {
+      "path": "SMOKE_V3_RESULTS.json",
+      "sha256": "8883fcd61c835715828c26eed883d6026e3e5ae4554826b6530c2aed273044c3",
+      "bytes": 38884
     }
   ]
 }
