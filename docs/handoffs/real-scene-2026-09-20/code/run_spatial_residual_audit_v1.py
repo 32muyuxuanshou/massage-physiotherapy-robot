@@ -10,11 +10,14 @@ def cam(calibs, seq, k):
 def transform(v, src, dst):
     _,_,R,t=src; _,_,R2,t2=dst; w=np.asarray(v)@R.T+t; return (w-t2)@R2
 def depth_points(d,m,table):
-    good=(d>0)&(m>127); r=np.dstack([table,np.ones(table.shape[:2],table.dtype)]); return r[good].astype(np.float32)*d[good,None].astype(np.float32)/1000
+    good=(d>0)&(m>127); r=np.dstack([table,np.ones(table.shape[:2],table.dtype)]); p=r[good].astype(np.float32)*d[good,None].astype(np.float32)/1000
+    if len(p)>500:
+        rng=np.random.default_rng(20260920); p=p[np.sort(rng.choice(len(p),500,replace=False))]
+    return p
 def project(p,K,dist): return cv2.projectPoints(p.astype(np.float32),np.zeros(3),np.zeros(3),K.astype(np.float32),dist.astype(np.float32))[0].reshape(-1,2)
 def dist_to_tri(points,v,faces):
-    tri=v[faces]; out=np.full(len(points),np.inf); # nearest vertices is a conservative spatial proxy for region auditing
-    q=cKDTree(v).query(points,workers=-1)[0]; return q
+    from surface_metrics import point_to_triangle_distances
+    return point_to_triangle_distances(points,v,faces)
 def box(mask, cond):
     y,x=np.where(mask>127); x0,x1,y0,y1=x.min(),x.max()+1,y.min(),y.max()+1; w,h=x1-x0,y1-y0; H,W=mask.shape
     if cond=='FULL': return (0,0,W,H)
@@ -31,6 +34,6 @@ def main():
                 for region,sel in [('roi',inside),('outside_roi',~inside)]:
                     if not np.any(sel): continue
                     out.append({'subject':s['subject'],'sequence':seq,'frame':fr,'condition':r['condition'],'camera':f'K{k}','method':method,'region':region,'count':int(sel.sum()),'median_nn_mm':float(np.median(q[sel])),'p95_nn_mm':float(np.percentile(q[sel],95)),'mean_nn_mm':float(np.mean(q[sel]))})
-    a.out.mkdir(parents=True,exist_ok=True); (a.out/'SPATIAL_RESIDUAL_AUDIT.json').write_text(json.dumps({'status':'COMPLETE_DESCRIPTIVE','distance':'nearest mesh vertex proxy, not point-to-triangle','region':'K0 projection inside/outside condition ROI','rows':out},indent=2)+'\n')
+    a.out.mkdir(parents=True,exist_ok=True); (a.out/'SPATIAL_RESIDUAL_AUDIT.json').write_text(json.dumps({'status':'COMPLETE_DESCRIPTIVE_SAMPLE','distance':'formal point_to_triangle_distances','sample_per_camera':500,'region':'K0 projection inside/outside condition ROI','rows':out},indent=2)+'\n')
     print('rows',len(out))
 if __name__=='__main__': main()
