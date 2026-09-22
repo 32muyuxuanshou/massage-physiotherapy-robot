@@ -1,0 +1,18 @@
+{
+  "task": "POSTERIOR_TORSO_V1_PRECHECK",
+  "status": "BLOCKED_MISSING_LOCAL_MESH_ASSETS",
+  "checked_at": "2026-09-21",
+  "required_files": [
+    "mhr_rest_vertices.npy",
+    "mhr_faces.npy"
+  ],
+  "expected_contract": {
+    "vertices": 18439,
+    "faces": 36874,
+    "mhr_asset_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "faces_sha256": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+    "rest_vertices_sha256": "2b16a5d065c9dd8aeaf648d068a1ee2721c0068a6a0f97602be68a83a560e254"
+  },
+  "result": "The repository contains the topology contract and hashes, but not the raw arrays. No posterior face mask was generated and no arbitrary coordinate threshold was frozen.",
+  "next_input": "Provide the exact frozen MHR raw asset directory on the execution machine."
+}
