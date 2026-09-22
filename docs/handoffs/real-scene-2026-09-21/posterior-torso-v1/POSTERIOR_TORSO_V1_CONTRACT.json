@@ -1,7 +1,7 @@
 {
   "contract": "POSTERIOR_TORSO_V1",
   "version": "1.0",
-  "status": "CANDIDATE_REQUIRES_CANONICAL_VISUAL_QA",
+  "status": "FROZEN_ENGINEERING_ONLY_PENDING_EXTERNAL_REVIEW",
   "purpose": "Evaluate mesh residuals on the true posterior torso surface.",
   "coordinate_convention": {
     "mesh": "canonical MHR LOD1",
@@ -18,11 +18,15 @@
   },
   "mask_definition": {
     "representation": "triangle-face mask with derived vertex mask",
-    "face_ids": [],
-    "vertex_ids": [],
+    "mask_artifact": "candidate_posterior_mask.json",
+    "mask_artifact_sha256": "17241b1006697c9b24cae29e766f69a5eeffffecf5aea17f172c615361f3b53e",
+    "face_count": 2152,
+    "vertex_count": 1196,
+    "face_ids": "see mask_artifact",
+    "vertex_ids": "see mask_artifact",
     "exclusions": ["head", "neck", "left_arm", "right_arm", "anterior_torso", "pelvis", "legs"],
     "freeze_requirements": [
-      "canonical visual QA",
+      "canonical visual QA (engineering owner completed; external review remains optional)",
       "connectivity sanity",
       "normal/orientation sanity",
       "mesh hash equality"
