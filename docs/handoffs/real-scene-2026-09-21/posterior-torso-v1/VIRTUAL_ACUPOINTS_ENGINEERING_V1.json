@@ -1,6 +1,8 @@
 {
   "schema": "VIRTUAL_ACUPOINTS_ENGINEERING_V1",
-  "status": "PROVISIONAL_ENGINEERING_ONLY",
+  "status": "ATLAS_SEED_ONLY_RULE_COMPUTATION_PENDING",
+  "label_type": "canonical_atlas_seed",
+  "rule_computed": false,
   "medical_truth": false,
   "mesh_contract": "POSTERIOR_TORSO_V1",
   "mesh_hashes": {
@@ -177,5 +179,5 @@
       "review_status": "PROVISIONAL_NO_CLINICIAN_VALIDATION"
     }
   ],
-  "warning": "These points are not clinical ground truth and must not be used for patient treatment without qualified clinical review."
+  "warning": "These points encode a provisional atlas seed only. They are not the output of individualized landmark detection or B-cun computation, are not clinical ground truth, and must not be used for patient treatment."
 }
