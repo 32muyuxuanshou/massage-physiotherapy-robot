@@ -1,0 +1,39 @@
+{
+  "schema": "REAL_SCENE_MESH_DELIVERY_INDEX_V1",
+  "date": "2026-09-21",
+  "base_commit": "b908628",
+  "local_commits_to_push": [
+    "2b8544d",
+    "475cbf3",
+    "4d8bd70"
+  ],
+  "historical_experiments": {
+    "subjects": 3,
+    "timestamps": 18,
+    "conditions": ["FULL", "UPPER", "LOCAL_TORSO"],
+    "methods": ["Official", "Txyz", "T+Pose"],
+    "aggregation": "K1/K2/K3 -> frame -> sequence -> subject",
+    "primary_evidence": "held-out K1/K2/K3 sensor depth to predicted mesh"
+  },
+  "corrected_results_mm": {
+    "FULL": {"Official": 30.77, "Txyz": 16.53, "T+Pose": 13.72},
+    "UPPER": {"Official": 35.21, "Txyz": 16.52, "T+Pose": 14.06},
+    "LOCAL_TORSO": {"Official": 35.49, "Txyz": 21.76, "T+Pose": 21.66}
+  },
+  "added_visualizations": [
+    {"path": "visualizations/Sub03_FULL_K0K1K2K3.jpg", "sha256": "C3ED521AD5DD3CE59F047484D012380F11A43B884DF7AC4BC44858810A9E8ED9"},
+    {"path": "visualizations/Sub03_K1_conditions.jpg", "sha256": "76C8C404BCC5DB0F8890767DDFDEF0C5FECEAF7C81C0BCE3CB451200FC293923"},
+    {"path": "visualizations/Sub04_FULL_K0K1K2K3.jpg", "sha256": "F6441C3A6322DA630A2B783A7121603084CEE7F044A1689B103E18B953F9565F"},
+    {"path": "visualizations/Sub04_K1_conditions.jpg", "sha256": "937E9BDD6E53E76BD1323C693A2DBAD8A5B6A79AAB14E2CF4C817DF170451321"},
+    {"path": "visualizations/Sub05_FULL_K0K1K2K3.jpg", "sha256": "E43BBE2025327521B8ACCC0A4C7BFEB10A9E7E6D0835189C21535184C8E1A70D"},
+    {"path": "visualizations/Sub05_K1_conditions.jpg", "sha256": "F71BFBC612E0784FA95C5E86D29F8B1A5FE452A90C16E459FA98A4DC2CBEE87D"},
+    {"path": "visualizations/inference_montage.png", "source": "historical review output"},
+    {"path": "visualizations/evaluation_montage.png", "source": "historical review output"}
+  ],
+  "scientific_boundaries": [
+    "No medical acupoint ground truth",
+    "No claim of clinical accuracy",
+    "No new Mesh training completed in this delivery",
+    "Engineering body-part labels are topology-bound and not physician anatomy labels"
+  ]
+}
