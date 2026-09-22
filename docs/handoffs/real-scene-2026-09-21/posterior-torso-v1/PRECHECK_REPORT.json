@@ -1,6 +1,6 @@
 {
   "task": "POSTERIOR_TORSO_V1_PRECHECK",
-  "status": "BLOCKED_MISSING_LOCAL_MESH_ASSETS",
+  "status": "CANDIDATE_GENERATED_REQUIRES_VISUAL_FREEZE_QA",
   "checked_at": "2026-09-21",
   "required_files": [
     "mhr_rest_vertices.npy",
@@ -13,6 +13,15 @@
     "faces_sha256": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
     "rest_vertices_sha256": "2b16a5d065c9dd8aeaf648d068a1ee2721c0068a6a0f97602be68a83a560e254"
   },
-  "result": "The repository contains the topology contract and hashes, but not the raw arrays. No posterior face mask was generated and no arbitrary coordinate threshold was frozen.",
-  "next_input": "Provide the exact frozen MHR raw asset directory on the execution machine."
+  "asset_dir": "docs/handoffs/real-scene-2026-09-11/back-dmd37-engineering-validation-v1/raw",
+  "candidate": {
+    "face_count": 2152,
+    "vertex_count": 1196,
+    "connected_components": 3,
+    "largest_component_ratio": 0.9990706319702602,
+    "preview": "candidate_posterior_preview.png",
+    "mask": "candidate_posterior_mask.json"
+  },
+  "result": "Frozen MHR arrays were found and their hashes matched. A review-only candidate was generated. Shoulder-edge exclusion and final posterior boundary still require canonical visual QA.",
+  "next_input": "Review the three-view candidate preview, then freeze or edit the face IDs in POSTERIOR_TORSO_V1_CONTRACT.json."
 }

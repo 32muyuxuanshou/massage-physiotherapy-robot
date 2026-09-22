@@ -40,14 +40,19 @@ def main() -> None:
         raise SystemExit("face hash mismatch")
 
     # Candidate only: posterior is predominantly -Z in the frozen convention.
-    # The bounds are deliberately broad and must be reviewed visually; they are
-    # not asserted as an anatomical truth or written into the final contract.
+    # The bounds are deliberately conservative and must be reviewed visually;
+    # they are not asserted as anatomical truth or written into the final contract.
     cent = v[f].mean(axis=1)
-    candidate = (cent[:, 2] < 0.0) & (cent[:, 1] > 45.0) & (cent[:, 1] < 160.0)
+    candidate = (
+        (cent[:, 2] < 0.0)
+        & (cent[:, 1] > 72.0)
+        & (cent[:, 1] < 145.0)
+        & (np.abs(cent[:, 0]) < 25.0)
+    )
     vertex_ids = np.unique(f[candidate].reshape(-1))
     payload = {
         "status": "CANDIDATE_REQUIRES_CANONICAL_VISUAL_QA",
-        "candidate_rule": "face centroid z<0, 45<y<160 in frozen MHR coordinates",
+        "candidate_rule": "face centroid z<0, 72<y<145, abs(x)<25 in frozen MHR coordinates",
         "face_ids": np.flatnonzero(candidate).tolist(),
         "vertex_ids": vertex_ids.tolist(),
         "mesh_hashes": {"faces_sha256": sha256_array(f), "rest_vertices_sha256": sha256_array(v)},
