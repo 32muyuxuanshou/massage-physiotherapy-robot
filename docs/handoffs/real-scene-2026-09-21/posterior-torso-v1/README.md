@@ -59,3 +59,8 @@
 - 不从当前 generic torso map 推导后背真值；
 - 不在没有医生输入时填写穴位坐标或报告医学精度。
 
+## 当前完成状态
+
+本阶段已由工程负责人完成虚拟标注闭环：后背 mask 已冻结为工程版本，8 个 provisional 点已传播到 B1–B5 五个同拓扑预测 Mesh。详细数值见 `FINAL_REPORT_V1.md`、`ENGINEERING_ARTIFACTS_QA_V1.json`、`TOPOLOGY_TRANSFER_QA_V1.json` 和 `PROPAGATION_SUMMARY_V1.json`。
+
+这不改变医学边界：所有点仍为 `medical_truth=false`，后续模型训练或论文表述必须称为 provisional engineering labels。
