@@ -1,0 +1,107 @@
+{
+  "schema": "PROXY_LANDMARK_FRAME_V1",
+  "status": "PROXY_GEOMETRY_SANITY_ONLY",
+  "medical_truth": false,
+  "coordinate_frame": "mesh_native",
+  "source": "posterior_mask_face_centroid_interpolation",
+  "proxy_span_cun": 8.0,
+  "posterior_face_count": 2152,
+  "coordinate_orientation_contract": {
+    "vertical_order": "max_to_min",
+    "lateral_sign": -1.0
+  },
+  "posterior_centroid_bbox_native": {
+    "min": [
+      -0.3414985040823619,
+      -1.499147653579712,
+      -0.11544610311587651
+    ],
+    "max": [
+      0.3321466048558553,
+      -0.7188727259635925,
+      0.06771819045146306
+    ]
+  },
+  "levels": {
+    "C7_T1": {
+      "point": [
+        -0.014015634388973314,
+        -0.7869450847307841,
+        -0.033200740503768124
+      ],
+      "lateral_axis": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "native_per_b_cun": 0.052214931137859806,
+      "proxy_vertical_fraction": 0.08,
+      "proxy_band_native": 0.027309622466564182
+    },
+    "T3": {
+      "point": [
+        0.005285556699770192,
+        -0.8996394475301106,
+        -0.09458361193537712
+      ],
+      "lateral_axis": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "native_per_b_cun": 0.052214931137859806,
+      "proxy_vertical_fraction": 0.23,
+      "proxy_band_native": 0.027309622466564182
+    },
+    "T5": {
+      "point": [
+        0.006278769035513203,
+        -1.010838548342387,
+        -0.07279606908559799
+      ],
+      "lateral_axis": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "native_per_b_cun": 0.052214931137859806,
+      "proxy_vertical_fraction": 0.38,
+      "proxy_band_native": 0.027309622466564182
+    },
+    "T9": {
+      "point": [
+        0.0025497231787691512,
+        -1.2493114074071248,
+        -0.015538409158277014
+      ],
+      "lateral_axis": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "native_per_b_cun": 0.052214931137859806,
+      "proxy_vertical_fraction": 0.68,
+      "proxy_band_native": 0.027309622466564182
+    },
+    "L2": {
+      "point": [
+        0.004771796308583968,
+        -1.4245676199595134,
+        -0.056199174374341965
+      ],
+      "lateral_axis": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "native_per_b_cun": 0.052214931137859806,
+      "proxy_vertical_fraction": 0.9,
+      "proxy_band_native": 0.027309622466564182
+    }
+  },
+  "limitations": [
+    "No vertebral or skeletal landmark is observed.",
+    "Vertical fractions and lateral scale are synthetic engineering proxies.",
+    "Not for clinical accuracy, ground truth, or treatment execution."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema": "RULE_ONLY_GEOMETRY_SANITY_V1",
+  "status": "ENGINEERING_PROXY_ONLY",
+  "medical_truth": false,
+  "rule_config": "E:\\\u9879\u76ee-\u6309\u6469\u7406\u7597\u673a\u5668\u4eba\\docs\\handoffs\\real-scene-2026-09-21\\acupoint-rule-based-pipeline-v2\\RULE_ENGINE_CONFIG_V1.json",
+  "samples": [
+    {
+      "sample": "canonical_mhr",
+      "native_unit": "mm",
+      "native_to_mm": 1.0,
+      "rule_count": 8,
+      "projection_distance_median_mm": 1.373528814264572,
+      "projection_distance_max_mm": 3.238000651274136,
+      "all_surface_projections_valid": true,
+      "medical_truth": false
+    },
+    {
+      "sample": "B1",
+      "native_unit": "m",
+      "native_to_mm": 1000.0,
+      "rule_count": 8,
+      "projection_distance_median_mm": 12.408589869739645,
+      "projection_distance_max_mm": 20.2305654795518,
+      "all_surface_projections_valid": true,
+      "medical_truth": false
+    },
+    {
+      "sample": "B2",
+      "native_unit": "m",
+      "native_to_mm": 1000.0,
+      "rule_count": 8,
+      "projection_distance_median_mm": 19.69418274284324,
+      "projection_distance_max_mm": 27.888777588584425,
+      "all_surface_projections_valid": true,
+      "medical_truth": false
+    },
+    {
+      "sample": "B3",
+      "native_unit": "m",
+      "native_to_mm": 1000.0,
+      "rule_count": 8,
+      "projection_distance_median_mm": 13.271231683675607,
+      "projection_distance_max_mm": 24.7472435435238,
+      "all_surface_projections_valid": true,
+      "medical_truth": false
+    },
+    {
+      "sample": "B4",
+      "native_unit": "m",
+      "native_to_mm": 1000.0,
+      "rule_count": 8,
+      "projection_distance_median_mm": 19.490450087811457,
+      "projection_distance_max_mm": 29.72965997641934,
+      "all_surface_projections_valid": true,
+      "medical_truth": false
+    },
+    {
+      "sample": "B5",
+      "native_unit": "m",
+      "native_to_mm": 1000.0,
+      "rule_count": 8,
+      "projection_distance_median_mm": 21.96968480704778,
+      "projection_distance_max_mm": 40.934771024438156,
+      "all_surface_projections_valid": true,
+      "medical_truth": false
+    }
+  ],
+  "interpretation": "This confirms deterministic rule evaluation and posterior-surface projection across the canonical and B1-B5 meshes. It does not measure acupoint accuracy.",
+  "next_gate": "Replace proxy landmark frames with externally reviewed anatomical landmarks before clinical or treatment claims."
+}
