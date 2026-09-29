@@ -1,0 +1,37 @@
+{
+  "n": 20,
+  "Tpose_3d_median_improved_vs_txyz": 20,
+  "Tpose_2d_iou_worse_vs_txyz": 14,
+  "Tpose_2d_iou_better_vs_txyz": 6,
+  "two_d_stats": {
+    "point_pixel_coverage": {
+      "Official": {
+        "median": 0.7709062851549712,
+        "mean": 0.7722392851054773
+      },
+      "Official+Txyz": {
+        "median": 0.8544424046933643,
+        "mean": 0.8431470629317642
+      },
+      "Official+Txyz+Pose": {
+        "median": 0.8710175213319948,
+        "mean": 0.8429951184209018
+      }
+    },
+    "dilated_support_iou_r3": {
+      "Official": {
+        "median": 0.6919045541306139,
+        "mean": 0.6919303929256407
+      },
+      "Official+Txyz": {
+        "median": 0.7625361280760582,
+        "mean": 0.7603583498890407
+      },
+      "Official+Txyz+Pose": {
+        "median": 0.7738622155906179,
+        "mean": 0.7476785691910621
+      }
+    }
+  },
+  "caveat": "2D support compares rendered mesh silhouettes to projected official K0 filtered person point clouds dilated by radius 3 px. It is a diagnostic, not manually annotated GT or independent validation."
+}

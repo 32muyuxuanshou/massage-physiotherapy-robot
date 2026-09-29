@@ -1,0 +1,21 @@
+{
+  "sam3d_source_directory": "/raid5/xuhd/sam3d_s01_pilot_20260906/sam-3d-body",
+  "sam3d_git_commit": null,
+  "sam3d_git_commit_note": "Source directory has no .git metadata; full file-tree SHA256 recorded instead.",
+  "sam3d_file_count": 105,
+  "sam3d_tree_sha256": "bd1bb04e61532f81e395a51846b16a7a3a53dbca9193c773fe953488e930c974",
+  "python_source_files": 66,
+  "python": "3.10.20",
+  "torch": "2.4.0+cu121",
+  "cuda_runtime": "12.1",
+  "gpu": "NVIDIA GeForce RTX 2080 Ti",
+  "visible_gpu": "CUDA_VISIBLE_DEVICES=0",
+  "server_output": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/inference_3method_v1",
+  "local_output": "E:\\\u9879\u76ee-\u6309\u6469\u7406\u7597\u673a\u5668\u4eba\\output\\pressurepose_prone_review\\full_run",
+  "dataset_root_server": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/raw",
+  "source_repository": "https://github.com/Healthcare-Robotics/bodies-at-rest",
+  "dataset_slice": "20 participants, each one p_sel_prn frame, K0 only",
+  "training": false,
+  "evaluation_warning": "Txyz/T+Pose are optimized with the same K0 point cloud used for reported fit metric; results are in-sample fit consistency, not independent accuracy.",
+  "evaluation_sampling_contract": "Txyz fits on full K0 point cloud; T+Pose optimizes on 1024 points; 10000 evaluation points sampled from same pool and overlap is not excluded. Do not call this held-out evaluation."
+}

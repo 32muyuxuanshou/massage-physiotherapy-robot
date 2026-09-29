@@ -1,0 +1,1528 @@
+{
+  "status": "COMPLETE",
+  "axis_convention": "camera coordinates: +X right, +Y down, +Z forward into scene; image offset +dx right, +dy down",
+  "directional_nn_note": "Per-point residuals to nearest of 16384 mesh anchors, trimmed to closest 80%, coordinate-wise median. No anatomical correspondence; directional diagnosis only.",
+  "image_note": "Mesh mask rendered with the same K0 calibration; cloud support is the filtered person pointcloud projected into RGB. This is a projection diagnostic, not manual silhouette GT.",
+  "rows": [
+    {
+      "subject": "S103",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        -0.0066613564854063004,
+        -0.004494240993596257,
+        -0.06648907871731713
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.0034640197987161614,
+        0.007134130710698239,
+        -0.0006476858090500581
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -1.8358564060026104,
+            -0.8431920854978792,
+            -45.843466269674174
+          ],
+          "median_nearest_anchor_distance_mm": 53.70028373950102,
+          "projected_cloud_to_mesh_iou_r3": 0.6982547579562505,
+          "point_coverage_by_mesh": 0.760208539640007,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            4.886224527895877,
+            12.440996138579294
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            7,
+            31,
+            -8,
+            -62
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.5227804873653291,
+            -0.8797665745885475,
+            -0.35532611406752235
+          ],
+          "median_nearest_anchor_distance_mm": 13.511248563233089,
+          "projected_cloud_to_mesh_iou_r3": 0.7550916955796872,
+          "point_coverage_by_mesh": 0.8290615716199685,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            1.5688122488372471,
+            11.473733815584296
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -1,
+            19,
+            2,
+            -37
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.08365190799691866,
+            -0.17381144586686714,
+            0.2486961492701445
+          ],
+          "median_nearest_anchor_distance_mm": 11.954630848119036,
+          "projected_cloud_to_mesh_iou_r3": 0.7536461493516708,
+          "point_coverage_by_mesh": 0.8348138871089882,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -2.144373921454644,
+            4.88156520786265
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -13,
+            15,
+            2,
+            -41
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S104",
+      "txyz_fallback": true,
+      "txyz_raw_m": [
+        0.008781665750762266,
+        0.044563273183946345,
+        -0.3
+      ],
+      "tpose_delta_from_txyz_m": [
+        0.056631810031831264,
+        0.07990097999572754,
+        -0.07467103004455566
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            7.663174633513736,
+            14.826007076660764,
+            -309.61976975742743
+          ],
+          "median_nearest_anchor_distance_mm": 322.4850887672341,
+          "projected_cloud_to_mesh_iou_r3": 0.6957201903601363,
+          "point_coverage_by_mesh": 0.7694660379762966,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            2.4078907910363228,
+            0.2502427945554473
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            0,
+            31,
+            2,
+            -52
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            7.663174633513736,
+            14.826007076660764,
+            -309.61976975742743
+          ],
+          "median_nearest_anchor_distance_mm": 322.4850887672341,
+          "projected_cloud_to_mesh_iou_r3": 0.6957201903601363,
+          "point_coverage_by_mesh": 0.7694660379762966,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            2.4078907910363228,
+            0.2502427945554473
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            0,
+            31,
+            2,
+            -52
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            3.0373319403515926,
+            18.06300588738502,
+            -185.34152580878094
+          ],
+          "median_nearest_anchor_distance_mm": 198.64670466524134,
+          "projected_cloud_to_mesh_iou_r3": 0.5745180389068744,
+          "point_coverage_by_mesh": 0.6568752389448197,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            11.390834906859169,
+            18.472304866953664
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -18,
+            35,
+            24,
+            -17
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S107",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        -0.0043014905374907444,
+        0.005668862761935234,
+        -0.07792538066616723
+      ],
+      "tpose_delta_from_txyz_m": [
+        0.004397275201644797,
+        -0.00237314313836956,
+        0.0018874969076223547
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -4.413019893865167,
+            2.649651985954349,
+            -54.30277606858391
+          ],
+          "median_nearest_anchor_distance_mm": 63.2027804271245,
+          "projected_cloud_to_mesh_iou_r3": 0.7281304518104461,
+          "point_coverage_by_mesh": 0.7964770732608629,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            4.081835752585619,
+            2.029941503017767
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            11,
+            27,
+            -18,
+            -54
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.4900776514411287,
+            0.12070368570784445,
+            -0.6905768887677244
+          ],
+          "median_nearest_anchor_distance_mm": 13.899984369545763,
+          "projected_cloud_to_mesh_iou_r3": 0.7982005903201717,
+          "point_coverage_by_mesh": 0.8798232377667601,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            2.599835378714488,
+            4.611821177513889
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            4,
+            17,
+            -8,
+            -26
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.042817627163960204,
+            -0.01061471908786471,
+            -0.2046102436463748
+          ],
+          "median_nearest_anchor_distance_mm": 13.071931000719992,
+          "projected_cloud_to_mesh_iou_r3": 0.7972092147681012,
+          "point_coverage_by_mesh": 0.8849813691374373,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            1.4035646161747195,
+            1.3352497289336611
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            1,
+            9,
+            -3,
+            -19
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S114",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        0.00571246082587791,
+        -0.0015142703154900905,
+        -0.09520184945632755
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.0008071578170235211,
+        0.006758406172118425,
+        -0.0010660891575640097
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.41627555854793774,
+            -2.6462199211756965,
+            -71.9530289519683
+          ],
+          "median_nearest_anchor_distance_mm": 79.8204716342086,
+          "projected_cloud_to_mesh_iou_r3": 0.7340739386977181,
+          "point_coverage_by_mesh": 0.821331880331693,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -2.0363579225371495,
+            -6.026794383191373
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -4,
+            10,
+            -3,
+            -39
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.7029335417719287,
+            0.43851710813730405,
+            -0.9889143999912697
+          ],
+          "median_nearest_anchor_distance_mm": 14.039188069297591,
+          "projected_cloud_to_mesh_iou_r3": 0.8220602995424743,
+          "point_coverage_by_mesh": 0.8984147525072792,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -0.03797056764199169,
+            -3.0568167912942386
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -7,
+            -3,
+            8,
+            -2
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.016250801336025952,
+            0.1991796093171183,
+            1.0336814619622547
+          ],
+          "median_nearest_anchor_distance_mm": 11.918397166514731,
+          "projected_cloud_to_mesh_iou_r3": 0.8214751107636175,
+          "point_coverage_by_mesh": 0.9025183469836027,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            0.5171164886696147,
+            -5.765934231123083
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -1,
+            -7,
+            2,
+            -1
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S118",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        0.004048333202371829,
+        -0.003750948415689369,
+        -0.16707032987567608
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.005129239220986598,
+        0.021590737806253424,
+        0.0025374300191087773
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -2.2001805475447,
+            -5.213075987959455,
+            -130.17764866442639
+          ],
+          "median_nearest_anchor_distance_mm": 144.52080674896612,
+          "projected_cloud_to_mesh_iou_r3": 0.6763362804835732,
+          "point_coverage_by_mesh": 0.7631997337868817,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            0.9348275870253531,
+            3.510841127186211
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            0,
+            20,
+            -12,
+            -58
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            1.2685541073617357,
+            0.6905495906726206,
+            -1.7873901630272027
+          ],
+          "median_nearest_anchor_distance_mm": 16.063977167352853,
+          "projected_cloud_to_mesh_iou_r3": 0.8418149317096333,
+          "point_coverage_by_mesh": 0.9333727723138356,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            0.7111518508907579,
+            3.460945881633336
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -13,
+            -5,
+            14,
+            -2
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.4102638972688921,
+            -0.19883480332660852,
+            0.5255863598152555
+          ],
+          "median_nearest_anchor_distance_mm": 12.766677426093896,
+          "projected_cloud_to_mesh_iou_r3": 0.8062199650502403,
+          "point_coverage_by_mesh": 0.924535975745027,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -1.6232113189634845,
+            5.586459185792535
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -15,
+            -2,
+            3,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S121",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        -0.005684242024917634,
+        -0.0032186938744115847,
+        -0.08718502207210617
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.0037933435292052953,
+        -0.03620644078440183,
+        -0.0009008677441779689
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -4.6699086721391225,
+            -0.0822743856013497,
+            -62.56306963930036
+          ],
+          "median_nearest_anchor_distance_mm": 70.53159284014635,
+          "projected_cloud_to_mesh_iou_r3": 0.6453431808433848,
+          "point_coverage_by_mesh": 0.7149658629211287,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            5.820247624672476,
+            11.915160765100836
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            5,
+            38,
+            -9,
+            -60
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.18757370706744964,
+            -0.8481328742274141,
+            -0.7274048485064188
+          ],
+          "median_nearest_anchor_distance_mm": 15.095302431318459,
+          "projected_cloud_to_mesh_iou_r3": 0.7447437582128777,
+          "point_coverage_by_mesh": 0.8235343395278053,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            2.708738595421636,
+            12.152626270531016
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -5,
+            23,
+            4,
+            -25
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.0033443001841854114,
+            0.07246256328624634,
+            0.8350532161505164
+          ],
+          "median_nearest_anchor_distance_mm": 13.30194794622,
+          "projected_cloud_to_mesh_iou_r3": 0.7836267378298111,
+          "point_coverage_by_mesh": 0.8572665205311143,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            2.2287711154261274,
+            -10.248691874486553
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -3,
+            0,
+            10,
+            -17
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S130",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        0.005934088181271029,
+        0.009882555295928935,
+        -0.15837850882262564
+      ],
+      "tpose_delta_from_txyz_m": [
+        0.005582885195003079,
+        0.031140997121826164,
+        0.010944035784905992
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            1.4545174719056975,
+            2.0637720422435057,
+            -117.69875577031908
+          ],
+          "median_nearest_anchor_distance_mm": 127.31923770238282,
+          "projected_cloud_to_mesh_iou_r3": 0.7036121974421309,
+          "point_coverage_by_mesh": 0.8052967407461117,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -1.893439993899591,
+            -16.64924878618922
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            8,
+            23,
+            -15,
+            -48
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.6852039656283226,
+            1.428679525046106,
+            -4.728658640531513
+          ],
+          "median_nearest_anchor_distance_mm": 22.673004103586624,
+          "projected_cloud_to_mesh_iou_r3": 0.8411034736068842,
+          "point_coverage_by_mesh": 0.9278903672551935,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -1.1930569787182037,
+            -17.92540497110332
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -4,
+            -2,
+            8,
+            9
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.10371629539394911,
+            0.19331986802908346,
+            -0.9121625486463447
+          ],
+          "median_nearest_anchor_distance_mm": 14.281933641001494,
+          "projected_cloud_to_mesh_iou_r3": 0.8043266769073221,
+          "point_coverage_by_mesh": 0.9110684117028605,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -2.5182449822598016,
+            -19.843664822137953
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -14,
+            0,
+            14,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S134",
+      "txyz_fallback": true,
+      "txyz_raw_m": [
+        -0.005813286187325538,
+        -0.0076844483421790385,
+        -0.19826072549676355
+      ],
+      "tpose_delta_from_txyz_m": [
+        0.0255529647693038,
+        -0.07765328884124756,
+        -0.07444274425506592
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -2.962472454647841,
+            -5.602598295502748,
+            -165.63058438787738
+          ],
+          "median_nearest_anchor_distance_mm": 177.44977079784545,
+          "projected_cloud_to_mesh_iou_r3": 0.6845900399697527,
+          "point_coverage_by_mesh": 0.7807392002335085,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            3.232012798303657,
+            -4.649543871891751
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            8,
+            20,
+            -12,
+            -72
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -2.962472454647841,
+            -5.602598295502748,
+            -165.63058438787738
+          ],
+          "median_nearest_anchor_distance_mm": 177.44977079784545,
+          "projected_cloud_to_mesh_iou_r3": 0.6845900399697527,
+          "point_coverage_by_mesh": 0.7807392002335085,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            3.232012798303657,
+            -4.649543871891751
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            8,
+            20,
+            -12,
+            -72
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.49843337889696193,
+            -1.3469089233122955,
+            -70.11517360331455
+          ],
+          "median_nearest_anchor_distance_mm": 83.18431682479968,
+          "projected_cloud_to_mesh_iou_r3": 0.6274291713010985,
+          "point_coverage_by_mesh": 0.739692790426153,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            12.280916029065281,
+            -28.07427598078374
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            9,
+            -19,
+            -1,
+            -34
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S140",
+      "txyz_fallback": true,
+      "txyz_raw_m": [
+        -0.010316081199264221,
+        -0.011407533540931686,
+        -0.18232607062460204
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.029251493513584137,
+        -0.07141649723052979,
+        -0.07417964935302734
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -3.9230373465778126,
+            -8.469672903799685,
+            -143.83889050283648
+          ],
+          "median_nearest_anchor_distance_mm": 158.51228031701976,
+          "projected_cloud_to_mesh_iou_r3": 0.674546749633771,
+          "point_coverage_by_mesh": 0.741690408357075,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            7.449858266906489,
+            -2.6522860376090875
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            10,
+            20,
+            -13,
+            -45
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -3.9230373465778126,
+            -8.469672903799685,
+            -143.83889050283648
+          ],
+          "median_nearest_anchor_distance_mm": 158.51228031701976,
+          "projected_cloud_to_mesh_iou_r3": 0.674546749633771,
+          "point_coverage_by_mesh": 0.741690408357075,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            7.449858266906489,
+            -2.6522860376090875
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            10,
+            20,
+            -13,
+            -45
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.07110780217322102,
+            0.09059279047218816,
+            -58.35587377792151
+          ],
+          "median_nearest_anchor_distance_mm": 70.99835721178073,
+          "projected_cloud_to_mesh_iou_r3": 0.7068064873314661,
+          "point_coverage_by_mesh": 0.7947135169357391,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            2.8704193147529793,
+            -25.96118636605854
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            12,
+            -20,
+            2,
+            -5
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S141",
+      "txyz_fallback": true,
+      "txyz_raw_m": [
+        -0.011987704425335397,
+        -0.019744919927700066,
+        -0.1786821966276203
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.0436248779296875,
+        -0.06928372383117676,
+        -0.07417809963226318
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -3.096573129517541,
+            -10.021310907173786,
+            -149.7548495917036
+          ],
+          "median_nearest_anchor_distance_mm": 163.16899399194844,
+          "projected_cloud_to_mesh_iou_r3": 0.6948913973449617,
+          "point_coverage_by_mesh": 0.7750829952047215,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            5.677130805470455,
+            -1.8227463747970774
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            11,
+            27,
+            -10,
+            -68
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -3.096573129517541,
+            -10.021310907173786,
+            -149.7548495917036
+          ],
+          "median_nearest_anchor_distance_mm": 163.16899399194844,
+          "projected_cloud_to_mesh_iou_r3": 0.6948913973449617,
+          "point_coverage_by_mesh": 0.7750829952047215,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            5.677130805470455,
+            -1.8227463747970774
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            11,
+            27,
+            -10,
+            -68
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            1.0544938111559168,
+            0.8309385398443114,
+            -51.759399646194694
+          ],
+          "median_nearest_anchor_distance_mm": 64.7188524086203,
+          "projected_cloud_to_mesh_iou_r3": 0.7170693479617996,
+          "point_coverage_by_mesh": 0.8100516414607156,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -5.637304506213923,
+            -25.801400593874007
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -3,
+            -18,
+            -3,
+            -21
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S145",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        -0.0007834620057123425,
+        0.0011720612348612627,
+        -0.16036997006135437
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.0037300773681623184,
+        0.014237765997499485,
+        -0.023395202897019685
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.6108632990385228,
+            -1.8188286476241156,
+            -124.55749449160703
+          ],
+          "median_nearest_anchor_distance_mm": 137.78112995529878,
+          "projected_cloud_to_mesh_iou_r3": 0.7025123412178301,
+          "point_coverage_by_mesh": 0.764775281794557,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            5.686911082085032,
+            -10.597220662594736
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            11,
+            18,
+            -12,
+            -57
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.2989604920308059,
+            1.1363227136547693,
+            -1.5212481131438027
+          ],
+          "median_nearest_anchor_distance_mm": 17.636243193348417,
+          "projected_cloud_to_mesh_iou_r3": 0.8379359049288915,
+          "point_coverage_by_mesh": 0.9018222980405912,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            2.8459341325015544,
+            -5.812661288297306
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -2,
+            -2,
+            8,
+            0
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.3758326492839248,
+            0.4836535826014815,
+            -0.7475630949351775
+          ],
+          "median_nearest_anchor_distance_mm": 13.644246326234466,
+          "projected_cloud_to_mesh_iou_r3": 0.8207929046991868,
+          "point_coverage_by_mesh": 0.9108461011112351,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            1.0070798194356314,
+            5.442979746617937
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -1,
+            11,
+            1,
+            -4
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S151",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        -0.02014984664690498,
+        -0.004214728018011486,
+        -0.17230300790980127
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.0011942786239385259,
+        0.030374610563482674,
+        0.0015451181621817245
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -10.092653691759553,
+            -4.941616881732696,
+            -133.7370081997914
+          ],
+          "median_nearest_anchor_distance_mm": 147.30384462264618,
+          "projected_cloud_to_mesh_iou_r3": 0.6730945821854912,
+          "point_coverage_by_mesh": 0.7280626665589922,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            8.985163373850128,
+            -8.345875805820015
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            49,
+            73,
+            -45,
+            -118
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.17673097092015239,
+            0.8592455297298379,
+            -2.3921944902290937
+          ],
+          "median_nearest_anchor_distance_mm": 15.540249069774175,
+          "projected_cloud_to_mesh_iou_r3": 0.8268440085203349,
+          "point_coverage_by_mesh": 0.8978276669627715,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            1.6859057890328586,
+            -9.882853417607976
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            30,
+            44,
+            -21,
+            -53
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.12032946463730321,
+            0.2935276976146206,
+            -0.08849654539544449
+          ],
+          "median_nearest_anchor_distance_mm": 12.22477786347411,
+          "projected_cloud_to_mesh_iou_r3": 0.8134416543574594,
+          "point_coverage_by_mesh": 0.8941290478882339,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            3.907742202505972,
+            -5.263174584717319
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            39,
+            50,
+            -25,
+            -58
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S163",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        -0.00349833644427866,
+        0.005091214925032193,
+        -0.12809340808053307
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.009822578956703243,
+        0.002287124842423882,
+        -0.003072096375033251
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -2.825406182893869,
+            0.09626723102407198,
+            -98.56423226846434
+          ],
+          "median_nearest_anchor_distance_mm": 108.30557607793513,
+          "projected_cloud_to_mesh_iou_r3": 0.6857588620583026,
+          "point_coverage_by_mesh": 0.7961003981575455,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            3.650300823351273,
+            -10.147733774894789
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            5,
+            31,
+            -5,
+            -60
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.3553773893032047,
+            0.9933773323660411,
+            -2.3668975409438797
+          ],
+          "median_nearest_anchor_distance_mm": 18.275219815852562,
+          "projected_cloud_to_mesh_iou_r3": 0.7699805605724291,
+          "point_coverage_by_mesh": 0.885978608790694,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            0.7430659620112579,
+            -6.910046703023909
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -2,
+            12,
+            7,
+            -11
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.4936787566462014,
+            0.22568413561696588,
+            -0.5205383086475113
+          ],
+          "median_nearest_anchor_distance_mm": 11.438172380525334,
+          "projected_cloud_to_mesh_iou_r3": 0.7640976933514247,
+          "point_coverage_by_mesh": 0.8847685221328753,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -0.34997980607019485,
+            -18.167862539133466
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -5,
+            3,
+            17,
+            -11
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S165",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        -0.010893864098757177,
+        -0.0028460891434507474,
+        0.04524545106886935
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.011628600295812225,
+        0.05209937407463361,
+        0.022273379230508095
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -1.579644043688544,
+            -1.0099634196535923,
+            9.272050176575508
+          ],
+          "median_nearest_anchor_distance_mm": 31.87427390453382,
+          "projected_cloud_to_mesh_iou_r3": 0.7161866418911944,
+          "point_coverage_by_mesh": 0.7900939204615364,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            5.112347012706721,
+            -10.125780156693622
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -17,
+            12,
+            34,
+            -44
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -2.149847530264537,
+            0.6810105157388779,
+            5.870166032920565
+          ],
+          "median_nearest_anchor_distance_mm": 21.66621248165772,
+          "projected_cloud_to_mesh_iou_r3": 0.7026362260343088,
+          "point_coverage_by_mesh": 0.7861566434713659,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            2.056246041110853,
+            -11.282242269240442
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -15,
+            20,
+            25,
+            -64
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.7521377540897558,
+            -0.07493087565596523,
+            1.9389403703733432
+          ],
+          "median_nearest_anchor_distance_mm": 13.21739550327194,
+          "projected_cloud_to_mesh_iou_r3": 0.6608821177472454,
+          "point_coverage_by_mesh": 0.7629157723488318,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -1.0880495816053326,
+            7.460221464226663
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -16,
+            41,
+            23,
+            -71
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S170",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        -0.004755225606914377,
+        4.0980526392175864e-05,
+        -0.1069183322332355
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.0006156017848292818,
+        0.02878120308261667,
+        -0.0005576637842206189
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.9640596878976587,
+            -0.518848428913532,
+            -79.06126973190419
+          ],
+          "median_nearest_anchor_distance_mm": 88.55775984856554,
+          "projected_cloud_to_mesh_iou_r3": 0.6780683867469738,
+          "point_coverage_by_mesh": 0.766063833241339,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            2.9143459922940735,
+            -9.628186561303096
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -10,
+            20,
+            17,
+            -67
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.8220844092074985,
+            0.43525057496140995,
+            -1.129440970963791
+          ],
+          "median_nearest_anchor_distance_mm": 14.485778056940068,
+          "projected_cloud_to_mesh_iou_r3": 0.8044331673688242,
+          "point_coverage_by_mesh": 0.8854995292054937,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            0.67757962118867,
+            -7.963482464774927
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -22,
+            4,
+            35,
+            -28
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.24935871031950274,
+            -0.019293739046272185,
+            0.5154566400930038
+          ],
+          "median_nearest_anchor_distance_mm": 12.88191071415006,
+          "projected_cloud_to_mesh_iou_r3": 0.8046732297473609,
+          "point_coverage_by_mesh": 0.9129030163316991,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -0.18600789577203614,
+            -1.0910222093941115
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -23,
+            9,
+            41,
+            -20
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S179",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        0.0065316873957034435,
+        -0.009886182660008153,
+        -0.1411842003184355
+      ],
+      "tpose_delta_from_txyz_m": [
+        0.008600911183226458,
+        0.027874149197483655,
+        -0.002919088332077102
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.06936240255744908,
+            -6.379816884976436,
+            -114.93984469563334
+          ],
+          "median_nearest_anchor_distance_mm": 124.22827673699253,
+          "projected_cloud_to_mesh_iou_r3": 0.6905242319259908,
+          "point_coverage_by_mesh": 0.7921648479785586,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -0.9925721400491341,
+            9.081747187547876
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            0,
+            41,
+            0,
+            -71
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.9560906222338388,
+            -0.030004399976635288,
+            -1.4548191262255816
+          ],
+          "median_nearest_anchor_distance_mm": 17.64596443737524,
+          "projected_cloud_to_mesh_iou_r3": 0.8076821225457435,
+          "point_coverage_by_mesh": 0.8957517534241807,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            1.783983118922606,
+            8.294370669022612
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -9,
+            18,
+            21,
+            -18
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.19428738090464248,
+            -0.29748786675976024,
+            1.0991191032243552
+          ],
+          "median_nearest_anchor_distance_mm": 12.798379296121393,
+          "projected_cloud_to_mesh_iou_r3": 0.8102022058823529,
+          "point_coverage_by_mesh": 0.9053934109538976,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            1.8811825681184473,
+            3.370979486760632
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -13,
+            10,
+            23,
+            -8
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S184",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        -0.002837066088597129,
+        0.0011018784536919596,
+        -0.04393962169548049
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.006983667130788018,
+        0.027853461931744983,
+        -0.0019111320886993077
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -1.9785329024212817,
+            -0.30371451172876707,
+            -23.488449181591765
+          ],
+          "median_nearest_anchor_distance_mm": 31.504411396947553,
+          "projected_cloud_to_mesh_iou_r3": 0.693284876335237,
+          "point_coverage_by_mesh": 0.7723465323336457,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            0.6954601003100152,
+            -1.9337249187062184
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -18,
+            18,
+            14,
+            -44
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.22628048409136653,
+            0.19931447783527734,
+            -1.5520348729775035
+          ],
+          "median_nearest_anchor_distance_mm": 14.887386280247814,
+          "projected_cloud_to_mesh_iou_r3": 0.7422119590558873,
+          "point_coverage_by_mesh": 0.8286228912839737,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -0.846981961333455,
+            -1.0607205474365173
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -24,
+            12,
+            22,
+            -27
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.19391017364563806,
+            -0.1196797621575707,
+            0.22026661368856892
+          ],
+          "median_nearest_anchor_distance_mm": 12.305456108333606,
+          "projected_cloud_to_mesh_iou_r3": 0.7338224456348377,
+          "point_coverage_by_mesh": 0.8288132614807873,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            1.6542743673090001,
+            1.6363885373286848
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -10,
+            11,
+            22,
+            -26
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S187",
+      "txyz_fallback": true,
+      "txyz_raw_m": [
+        0.012650848080418452,
+        0.01476122239285153,
+        -0.22352491565227522
+      ],
+      "tpose_delta_from_txyz_m": [
+        0.020108066499233246,
+        0.07929456233978271,
+        -0.07435774803161621
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            3.950773299250523,
+            6.660778386463784,
+            -191.61499439199224
+          ],
+          "median_nearest_anchor_distance_mm": 204.28862620350878,
+          "projected_cloud_to_mesh_iou_r3": 0.6705164952509414,
+          "point_coverage_by_mesh": 0.7559435862995298,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -3.3815335330609457,
+            -3.1188023799913367
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -3,
+            30,
+            -3,
+            -67
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            3.950773299250523,
+            6.660778386463784,
+            -191.61499439199224
+          ],
+          "median_nearest_anchor_distance_mm": 204.28862620350878,
+          "projected_cloud_to_mesh_iou_r3": 0.6705164952509414,
+          "point_coverage_by_mesh": 0.7559435862995298,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -3.3815335330609457,
+            -3.1188023799913367
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -3,
+            30,
+            -3,
+            -67
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.7826513431318862,
+            5.166740893791127,
+            -78.19084953774824
+          ],
+          "median_nearest_anchor_distance_mm": 89.98450253502719,
+          "projected_cloud_to_mesh_iou_r3": 0.6542489883361104,
+          "point_coverage_by_mesh": 0.7607406696728389,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            8.064732826313445,
+            14.329732907790003
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            12,
+            42,
+            15,
+            -38
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S188",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        -0.0031118652881911733,
+        -0.009803839652856508,
+        0.046321894179570666
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.010100267910785343,
+        -0.03480290559021593,
+        0.023084615219843396
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.12604713156244562,
+            -1.3429756106888568,
+            7.5904247622109455
+          ],
+          "median_nearest_anchor_distance_mm": 30.73176814688938,
+          "projected_cloud_to_mesh_iou_r3": 0.7068459781781273,
+          "point_coverage_by_mesh": 0.782400495002892,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            5.757766343826972,
+            12.193526013511587
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            0,
+            35,
+            17,
+            -57
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -1.532362857826465,
+            -0.8548507484552929,
+            6.624634432528587
+          ],
+          "median_nearest_anchor_distance_mm": 20.7905853931439,
+          "projected_cloud_to_mesh_iou_r3": 0.6720720904600563,
+          "point_coverage_by_mesh": 0.745557752579261,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            4.92219340800159,
+            7.658571097341451
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            3,
+            40,
+            9,
+            -78
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            0.3520880878245397,
+            0.26796676665738484,
+            -0.6654751453947227
+          ],
+          "median_nearest_anchor_distance_mm": 14.11961444949875,
+          "projected_cloud_to_mesh_iou_r3": 0.6810919871530923,
+          "point_coverage_by_mesh": 0.7715992090714661,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            -2.637761909019247,
+            -17.650432610455994
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            -13,
+            22,
+            10,
+            -84
+          ]
+        }
+      }
+    },
+    {
+      "subject": "S196",
+      "txyz_fallback": false,
+      "txyz_raw_m": [
+        -0.007508197808190394,
+        -0.018238377451151488,
+        -0.1301847281971459
+      ],
+      "tpose_delta_from_txyz_m": [
+        -0.00023025087125677635,
+        -0.007492709279805609,
+        -0.005225461431455081
+      ],
+      "methods": {
+        "Official": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.49040031696344355,
+            -9.530879291082345,
+            -97.13410278826262
+          ],
+          "median_nearest_anchor_distance_mm": 107.81039416686941,
+          "projected_cloud_to_mesh_iou_r3": 0.6863162781806016,
+          "point_coverage_by_mesh": 0.7683756678226638,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            5.460837481433657,
+            11.880802509509635
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            16,
+            26,
+            -17,
+            -63
+          ]
+        },
+        "Official+Txyz": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.33881907288145335,
+            -0.5710186184877813,
+            -2.16977537922447
+          ],
+          "median_nearest_anchor_distance_mm": 13.08698244651365,
+          "projected_cloud_to_mesh_iou_r3": 0.8200913367630471,
+          "point_coverage_by_mesh": 0.920704845814978,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            0.2006656489238594,
+            12.166195378931207
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            4,
+            6,
+            -4,
+            -18
+          ]
+        },
+        "Official+Txyz+Pose": {
+          "trimmed_nn_residual_median_xyz_mm": [
+            -0.08370713634186458,
+            0.1483561095354663,
+            -0.4769882292645633
+          ],
+          "median_nearest_anchor_distance_mm": 11.660946291001157,
+          "projected_cloud_to_mesh_iou_r3": 0.8179912567401707,
+          "point_coverage_by_mesh": 0.9112756584497141,
+          "mesh_centroid_minus_cloud_centroid_px_xy": [
+            1.1800155635580438,
+            8.7908809068918
+          ],
+          "mesh_bbox_minus_cloud_bbox_px_xywh": [
+            9,
+            0,
+            -7,
+            -18
+          ]
+        }
+      }
+    }
+  ]
+}
