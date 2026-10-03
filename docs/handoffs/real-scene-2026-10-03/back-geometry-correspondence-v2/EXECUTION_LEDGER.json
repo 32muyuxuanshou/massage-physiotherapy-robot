@@ -1,0 +1,2396 @@
+{
+  "status": "COMPLETE_WITH_BEHAVE_QUALIFICATION_NO_GO",
+  "start_date_local": "2026-10-03",
+  "completion_date_local": "2026-10-04",
+  "atlas": {
+    "old_cached_meshes_read": 300,
+    "new_engineering_points": 2400,
+    "medical_truth": false
+  },
+  "behave": {
+    "candidate_timestamps": 300,
+    "camera_views": 1200,
+    "new_inferences": 0,
+    "new_fits": 0,
+    "qualification_file": "/raid5/xuhd/datasets/back_geometry_correspondence_v2_20261003/b_qualification/COMMON_SUPPORT_COHORT_LIMITS.json"
+  },
+  "pressurepose": {
+    "final_subjects": 20,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "new_fit_logical_branches": 60,
+    "reused_meshes": 180,
+    "final_meshes": 240,
+    "final_metrics": 240,
+    "new_engineering_points": 1920,
+    "point_movement_records": 960,
+    "public_comparison_pages": 60,
+    "new_official_inferences": 0,
+    "training_runs": 0,
+    "fit_rows": [
+      {
+        "subject": "S103",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "c825514caeb67ef4a280b3ce43d11e1e513bb714618e8739d33f1002bb4c3dc1",
+        "fit_seconds": 2.9391982555389404,
+        "train_count": 55332,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2791,
+              "solve_relative_residual": 7.903008974267959e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2927,
+              "solve_relative_residual": 7.292273346380942e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2817,
+              "solve_relative_residual": 7.278239332888225e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2809,
+              "solve_relative_residual": 7.424679356952032e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 5.204170427930421e-15,
+          "fixed_normal_norm_max_error": 1.8042340528268141e-06,
+          "scalar_abs_p95_mm": 9.966069642721669
+        }
+      },
+      {
+        "subject": "S103",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "cbc2134411a48484ddf04788631f6bf4d035321eecdf257ac71acbe3265b246b",
+        "fit_seconds": 2.669844627380371,
+        "train_count": 54979,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2698,
+              "solve_relative_residual": 7.997333568815226e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2844,
+              "solve_relative_residual": 7.486606386611778e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2726,
+              "solve_relative_residual": 7.681996320165615e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2729,
+              "solve_relative_residual": 7.565003624502016e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.204847710556568e-15,
+          "fixed_normal_norm_max_error": 1.8042340528268141e-06,
+          "scalar_abs_p95_mm": 9.829185856659366
+        }
+      },
+      {
+        "subject": "S103",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "bb4af91d3aa85c5f730b75faa41fe91e23b18e53de64763b7f9eddea94fdda4a",
+        "fit_seconds": 3.04103946685791,
+        "train_count": 54155,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2887,
+              "solve_relative_residual": 7.362318095884628e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2881,
+              "solve_relative_residual": 7.865107494797271e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2876,
+              "solve_relative_residual": 7.576365310518741e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2869,
+              "solve_relative_residual": 7.952651157658724e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 4.982613841084487e-15,
+          "fixed_normal_norm_max_error": 1.8042340527157918e-06,
+          "scalar_abs_p95_mm": 10.126610341382381
+        }
+      },
+      {
+        "subject": "S104",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "0cd5ee6dab2dbf28e913cee7692926ad0df1b6c0b200859bbdd07b7d40d626cf",
+        "fit_seconds": 2.5556864738464355,
+        "train_count": 37085,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2007,
+              "solve_relative_residual": 6.477926132407019e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2147,
+              "solve_relative_residual": 7.366058688612686e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2114,
+              "solve_relative_residual": 7.75211453201284e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2078,
+              "solve_relative_residual": 7.326710880638476e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.359808400080195e-15,
+          "fixed_normal_norm_max_error": 1.7741193196751937e-06,
+          "scalar_abs_p95_mm": 7.125082610823883
+        }
+      },
+      {
+        "subject": "S104",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "23c1361502e14ca349ebcf44fa2cab45b67fee9820150560eee28234451fe9d9",
+        "fit_seconds": 2.383979082107544,
+        "train_count": 38130,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2035,
+              "solve_relative_residual": 6.423360952076973e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2124,
+              "solve_relative_residual": 7.114153641602752e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2192,
+              "solve_relative_residual": 7.252401669710838e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2155,
+              "solve_relative_residual": 7.058885714958564e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 4.9068383956186596e-15,
+          "fixed_normal_norm_max_error": 1.774119319786216e-06,
+          "scalar_abs_p95_mm": 7.901207688706783
+        }
+      },
+      {
+        "subject": "S104",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "3221da80a8251f0059d60d2a32b6e6302a6be269a2acbf26d40b7c6d1438d609",
+        "fit_seconds": 2.342416763305664,
+        "train_count": 38365,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 1974,
+              "solve_relative_residual": 6.844572533759001e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2026,
+              "solve_relative_residual": 6.612127002032679e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2118,
+              "solve_relative_residual": 7.116817892527388e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2069,
+              "solve_relative_residual": 7.19469351170924e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.359808400080195e-15,
+          "fixed_normal_norm_max_error": 1.774119319786216e-06,
+          "scalar_abs_p95_mm": 7.63824573656658
+        }
+      },
+      {
+        "subject": "S107",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "49a2e0a63f396cc717848868c4d3180a2db428cd0fc6e8a586df8a07a4673fc2",
+        "fit_seconds": 2.999478340148926,
+        "train_count": 51899,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2965,
+              "solve_relative_residual": 7.435963347071713e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2856,
+              "solve_relative_residual": 7.220790571890761e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3008,
+              "solve_relative_residual": 8.333858263620801e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3043,
+              "solve_relative_residual": 7.966612288968624e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.7977595647700184e-06,
+          "scalar_abs_p95_mm": 9.75031873318258
+        }
+      },
+      {
+        "subject": "S107",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "950f2b057facec916bf34e0742c631bddd4e640e65745fd72d560b5a756bbfc1",
+        "fit_seconds": 3.111048460006714,
+        "train_count": 52407,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3052,
+              "solve_relative_residual": 7.116172115663816e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2896,
+              "solve_relative_residual": 8.104918879269895e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3117,
+              "solve_relative_residual": 7.886488123476464e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3121,
+              "solve_relative_residual": 7.281696694261676e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.204847710556568e-15,
+          "fixed_normal_norm_max_error": 1.7977595648810407e-06,
+          "scalar_abs_p95_mm": 9.788753618083913
+        }
+      },
+      {
+        "subject": "S107",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "fd9cf30c6826606d920baac97fd8a74a98ee0fe11be78afabec2d37e67b5eede",
+        "fit_seconds": 3.0745718479156494,
+        "train_count": 51887,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3274,
+              "solve_relative_residual": 7.307226884769244e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3016,
+              "solve_relative_residual": 8.269534731162215e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3276,
+              "solve_relative_residual": 8.225642759069824e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3287,
+              "solve_relative_residual": 8.31658972330418e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.7977595648810407e-06,
+          "scalar_abs_p95_mm": 10.93635428776593
+        }
+      },
+      {
+        "subject": "S114",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "57a98ec443b908222332bb36f1681d9c7fa8d16273cc6009c3f94349a5401228",
+        "fit_seconds": 3.07633900642395,
+        "train_count": 47646,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2818,
+              "solve_relative_residual": 7.212301030899119e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2691,
+              "solve_relative_residual": 1.0085814458392792e-15
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2875,
+              "solve_relative_residual": 9.652904749760581e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2874,
+              "solve_relative_residual": 8.335857890106755e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.806255641895632e-15,
+          "fixed_normal_norm_max_error": 1.7678646911933882e-06,
+          "scalar_abs_p95_mm": 10.17283449378328
+        }
+      },
+      {
+        "subject": "S114",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "3a1b05aef4808cdff77a64a12504365b5f8882df51e2f5c63634be7cf567467a",
+        "fit_seconds": 2.9594860076904297,
+        "train_count": 47048,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2920,
+              "solve_relative_residual": 7.33749697921445e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2960,
+              "solve_relative_residual": 9.11549695595063e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2979,
+              "solve_relative_residual": 9.244227634037662e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2969,
+              "solve_relative_residual": 8.581503758828943e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.806255641895632e-15,
+          "fixed_normal_norm_max_error": 1.7678646909713436e-06,
+          "scalar_abs_p95_mm": 9.842280031816642
+        }
+      },
+      {
+        "subject": "S114",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "cb7ecb320c427035599a90f83f4e1f7bfda12d27dbb8d591e93ea087b9e8bfc1",
+        "fit_seconds": 3.0470097064971924,
+        "train_count": 47369,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3343,
+              "solve_relative_residual": 6.875080968064562e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3323,
+              "solve_relative_residual": 8.118871358522079e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3426,
+              "solve_relative_residual": 8.975112972332505e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3400,
+              "solve_relative_residual": 9.007425939346929e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 8.498374721940739e-15,
+          "fixed_normal_norm_max_error": 1.7678646911933882e-06,
+          "scalar_abs_p95_mm": 11.491987298815378
+        }
+      },
+      {
+        "subject": "S118",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "0a09e72d29bf99d146b35d976d7750abdb1ddb6f1fd151c35452a679e56ba198",
+        "fit_seconds": 2.944702625274658,
+        "train_count": 42544,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2419,
+              "solve_relative_residual": 7.119911588954199e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2436,
+              "solve_relative_residual": 7.465109066549084e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2437,
+              "solve_relative_residual": 8.423032340188239e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2428,
+              "solve_relative_residual": 8.404296551465915e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.0408340855860843e-14,
+          "fixed_normal_norm_max_error": 1.9306170596644634e-06,
+          "scalar_abs_p95_mm": 9.412111479101679
+        }
+      },
+      {
+        "subject": "S118",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "ba029795dd3a1f7c476ef28e61d4c6d9a56b7f7b7bfaf3045eba8d28ebe13ee8",
+        "fit_seconds": 2.8470370769500732,
+        "train_count": 41383,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2571,
+              "solve_relative_residual": 7.294626012463913e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2568,
+              "solve_relative_residual": 8.183976991740849e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2602,
+              "solve_relative_residual": 7.459013139137775e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2564,
+              "solve_relative_residual": 7.355300048848001e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 8.498374721940739e-15,
+          "fixed_normal_norm_max_error": 1.9306170596644634e-06,
+          "scalar_abs_p95_mm": 8.998669776757986
+        }
+      },
+      {
+        "subject": "S118",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "01e229f0766b86af85a94281b4e0f4051e0d0c3f5647e9c4aba953ab3be52614",
+        "fit_seconds": 2.88023042678833,
+        "train_count": 43395,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2445,
+              "solve_relative_residual": 8.133896749210133e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2469,
+              "solve_relative_residual": 7.587334331046697e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2516,
+              "solve_relative_residual": 8.189349363085099e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2509,
+              "solve_relative_residual": 7.692004240223569e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.204847710556568e-15,
+          "fixed_normal_norm_max_error": 1.9306170597754857e-06,
+          "scalar_abs_p95_mm": 9.274248708324958
+        }
+      },
+      {
+        "subject": "S121",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "0be3e9713ece426d7a9fc1f42a9854b916a27f67ff501feec61cdf8b02aa5e02",
+        "fit_seconds": 2.78902006149292,
+        "train_count": 57490,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2573,
+              "solve_relative_residual": 7.275103884469164e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2509,
+              "solve_relative_residual": 8.218108807050051e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2618,
+              "solve_relative_residual": 8.089189114058923e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2598,
+              "solve_relative_residual": 8.423841566989564e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 9.85133562538035e-15,
+          "fixed_normal_norm_max_error": 1.6776911865301614e-06,
+          "scalar_abs_p95_mm": 11.984043424388702
+        }
+      },
+      {
+        "subject": "S121",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "1530452c25ed2955749b27811910f59b729c4e460b7f52f8207d725e52578a33",
+        "fit_seconds": 2.7013487815856934,
+        "train_count": 56165,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2747,
+              "solve_relative_residual": 6.670629239098762e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2736,
+              "solve_relative_residual": 7.993720292578557e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2739,
+              "solve_relative_residual": 7.576453648264285e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2728,
+              "solve_relative_residual": 7.701248641472871e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.39116278673411e-14,
+          "fixed_normal_norm_max_error": 1.677691186419139e-06,
+          "scalar_abs_p95_mm": 13.928042154733008
+        }
+      },
+      {
+        "subject": "S121",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "c701405b7e311df15095337a389a9cbb202e554bc52a28328579b408a2caf386",
+        "fit_seconds": 2.972252607345581,
+        "train_count": 56609,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2820,
+              "solve_relative_residual": 7.121985849340999e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2858,
+              "solve_relative_residual": 8.195481178150172e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2886,
+              "solve_relative_residual": 8.194612749971293e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2872,
+              "solve_relative_residual": 8.464392602338132e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.0408340855860843e-14,
+          "fixed_normal_norm_max_error": 1.6776911865301614e-06,
+          "scalar_abs_p95_mm": 13.933478043699191
+        }
+      },
+      {
+        "subject": "S130",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "2b5e7948537f030a041120dfa0014b6418a5a9c2ecba5aef9eed06f934826267",
+        "fit_seconds": 2.6301493644714355,
+        "train_count": 44509,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2627,
+              "solve_relative_residual": 7.311958448940636e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2601,
+              "solve_relative_residual": 7.652326026464613e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2725,
+              "solve_relative_residual": 7.306982023320944e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2712,
+              "solve_relative_residual": 7.389011802099808e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.806255641895632e-15,
+          "fixed_normal_norm_max_error": 1.8514809225766982e-06,
+          "scalar_abs_p95_mm": 8.546990382949216
+        }
+      },
+      {
+        "subject": "S130",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "1f5e72f73fe98f0085833ff89c0b45fa93a88b6f751a09e75a1db40bddf8910e",
+        "fit_seconds": 2.6647884845733643,
+        "train_count": 44184,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2696,
+              "solve_relative_residual": 6.789377874270095e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2737,
+              "solve_relative_residual": 7.482852307163009e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2853,
+              "solve_relative_residual": 7.381950780516964e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2828,
+              "solve_relative_residual": 7.303124409665939e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.8514809226877205e-06,
+          "scalar_abs_p95_mm": 9.489292000384854
+        }
+      },
+      {
+        "subject": "S130",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "d5c66f29f9596637d70b0b3a79949be2f381c13a5021d1f4ae20b9aa14adb845",
+        "fit_seconds": 2.5703344345092773,
+        "train_count": 45313,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2587,
+              "solve_relative_residual": 7.092534718863746e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2594,
+              "solve_relative_residual": 8.008601792030957e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2693,
+              "solve_relative_residual": 8.133383911274335e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2672,
+              "solve_relative_residual": 7.515845830357492e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.204847710556568e-15,
+          "fixed_normal_norm_max_error": 1.8514809224656759e-06,
+          "scalar_abs_p95_mm": 9.462820174496777
+        }
+      },
+      {
+        "subject": "S134",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "6268aec4cd6679a568f94aa06af2b38eb95127b2731634004a8cbb0a97f9fe0e",
+        "fit_seconds": 2.8648693561553955,
+        "train_count": 45228,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2390,
+              "solve_relative_residual": 6.709658960082395e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2461,
+              "solve_relative_residual": 7.078266501509225e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2531,
+              "solve_relative_residual": 7.97761727205284e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2511,
+              "solve_relative_residual": 7.984078037387255e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.431146867680866e-14,
+          "fixed_normal_norm_max_error": 1.9147517756890053e-06,
+          "scalar_abs_p95_mm": 13.978219372294584
+        }
+      },
+      {
+        "subject": "S134",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "1f20c5c07dbe15acb165254b7b259977f0516aed759ac1cf07561e8096468cf2",
+        "fit_seconds": 2.695131540298462,
+        "train_count": 44419,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2480,
+              "solve_relative_residual": 6.941944794811891e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2538,
+              "solve_relative_residual": 7.895956227347898e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2612,
+              "solve_relative_residual": 9.266751461949018e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2590,
+              "solve_relative_residual": 8.28607899728142e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.0408340855860843e-14,
+          "fixed_normal_norm_max_error": 1.91475177591105e-06,
+          "scalar_abs_p95_mm": 14.156430177172936
+        }
+      },
+      {
+        "subject": "S134",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "4e674603d02a406b2c45d6239b145ac66288534f13ed289864339c4659b048b7",
+        "fit_seconds": 2.5534801483154297,
+        "train_count": 40775,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2167,
+              "solve_relative_residual": 7.11251473890495e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2199,
+              "solve_relative_residual": 7.194427871728955e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2283,
+              "solve_relative_residual": 7.357067089693774e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2230,
+              "solve_relative_residual": 7.966636968790943e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.5899003276961254e-14,
+          "fixed_normal_norm_max_error": 1.91475177591105e-06,
+          "scalar_abs_p95_mm": 11.419570528013171
+        }
+      },
+      {
+        "subject": "S140",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "178930fe50f9641c50b15f2d5ec9e9683f5bdfb62f252c5ba55569bb25958162",
+        "fit_seconds": 2.4817373752593994,
+        "train_count": 45195,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2477,
+              "solve_relative_residual": 6.492217463023612e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2207,
+              "solve_relative_residual": 7.336291603017211e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2448,
+              "solve_relative_residual": 9.442411338691741e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2451,
+              "solve_relative_residual": 8.502375207087015e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.806255641895632e-15,
+          "fixed_normal_norm_max_error": 1.7764318800406187e-06,
+          "scalar_abs_p95_mm": 9.594349492875345
+        }
+      },
+      {
+        "subject": "S140",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "fcbb845fbd2e77a5a6139728c253ac9c1e6f24a466f21d7d62073bc5026a1eab",
+        "fit_seconds": 2.626962423324585,
+        "train_count": 44694,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2529,
+              "solve_relative_residual": 6.996814867755032e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2189,
+              "solve_relative_residual": 7.507937768464233e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2488,
+              "solve_relative_residual": 7.868637315211318e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2467,
+              "solve_relative_residual": 8.796151732493475e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.7764318799295964e-06,
+          "scalar_abs_p95_mm": 10.252780149531427
+        }
+      },
+      {
+        "subject": "S140",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "64b408138d6b79bffc0c5a3e532b126f340a8245ad423b701310cf517385be9d",
+        "fit_seconds": 2.4729156494140625,
+        "train_count": 44503,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2396,
+              "solve_relative_residual": 6.770319936168732e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2144,
+              "solve_relative_residual": 8.708524491686969e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2405,
+              "solve_relative_residual": 8.97007873407038e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2407,
+              "solve_relative_residual": 7.950720069355028e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.806255641895632e-15,
+          "fixed_normal_norm_max_error": 1.776431880151641e-06,
+          "scalar_abs_p95_mm": 8.936419879408158
+        }
+      },
+      {
+        "subject": "S141",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "891ef8a131dbddb585c3a2f4ba9e7d33c3526aef3f4fb33f1c5331d95278f817",
+        "fit_seconds": 3.096902847290039,
+        "train_count": 44411,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3249,
+              "solve_relative_residual": 7.564772157937709e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3241,
+              "solve_relative_residual": 8.961592063981407e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3428,
+              "solve_relative_residual": 1.0014280355941566e-15
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3392,
+              "solve_relative_residual": 9.273685395404007e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 2.596296363159515e-14,
+          "fixed_normal_norm_max_error": 1.7994853165337332e-06,
+          "scalar_abs_p95_mm": 20.273170841829568
+        }
+      },
+      {
+        "subject": "S141",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "3f744be00abd2c199d9771038fc8129632ea0fb04f2438564fd466785444e16e",
+        "fit_seconds": 3.0984580516815186,
+        "train_count": 43856,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3283,
+              "solve_relative_residual": 7.711702677095859e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3202,
+              "solve_relative_residual": 8.850194501586047e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3496,
+              "solve_relative_residual": 1.07049784001043e-15
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3504,
+              "solve_relative_residual": 1.03150156971731e-15
+            }
+          ],
+          "vertex_tangent_max_mm": 1.5899003276961254e-14,
+          "fixed_normal_norm_max_error": 1.7994853166447555e-06,
+          "scalar_abs_p95_mm": 19.932525361281755
+        }
+      },
+      {
+        "subject": "S141",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "da9e7cffdb4f3e4d5cf34a2e441e54c3188c53426bfd20dd3e0b6224303b40b8",
+        "fit_seconds": 2.957247018814087,
+        "train_count": 43729,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2847,
+              "solve_relative_residual": 7.583301133280686e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2906,
+              "solve_relative_residual": 9.18279300380286e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3125,
+              "solve_relative_residual": 9.78415188473446e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3097,
+              "solve_relative_residual": 9.413080578927242e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.5612511283791264e-14,
+          "fixed_normal_norm_max_error": 1.7994853166447555e-06,
+          "scalar_abs_p95_mm": 16.87631717988931
+        }
+      },
+      {
+        "subject": "S145",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "4996070341d0425d3e3d5c39d5b1f2dc7c6fdaa40467ea7e043322ff9d01cf86",
+        "fit_seconds": 3.1644582748413086,
+        "train_count": 49358,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3110,
+              "solve_relative_residual": 7.276428344628202e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2995,
+              "solve_relative_residual": 8.18800763063429e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3187,
+              "solve_relative_residual": 9.26139862868475e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3142,
+              "solve_relative_residual": 7.524023526291359e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.6900318143830972e-06,
+          "scalar_abs_p95_mm": 12.340627726482612
+        }
+      },
+      {
+        "subject": "S145",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "4f85e124fc2094db2d3aca6af6f731cf17e09ef2af02598022d7f12acff6c26b",
+        "fit_seconds": 3.057969331741333,
+        "train_count": 50072,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2903,
+              "solve_relative_residual": 7.451433395730007e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2753,
+              "solve_relative_residual": 7.50531564214223e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2922,
+              "solve_relative_residual": 7.573063361229264e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2975,
+              "solve_relative_residual": 7.832583091761114e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 9.813077866773594e-15,
+          "fixed_normal_norm_max_error": 1.6900318143830972e-06,
+          "scalar_abs_p95_mm": 10.578254139440798
+        }
+      },
+      {
+        "subject": "S145",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "6e48a9c34834d7b900ac3cb4e35c15e23dfd18c2312a1e4949df2bcc355855ad",
+        "fit_seconds": 2.97395920753479,
+        "train_count": 49245,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2960,
+              "solve_relative_residual": 7.111185009831021e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3025,
+              "solve_relative_residual": 7.692186638078835e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3067,
+              "solve_relative_residual": 7.970295015129365e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3028,
+              "solve_relative_residual": 7.866885555121399e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 8.498374721940739e-15,
+          "fixed_normal_norm_max_error": 1.6900318143830972e-06,
+          "scalar_abs_p95_mm": 12.476916103467603
+        }
+      },
+      {
+        "subject": "S151",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "c05b5c1a96bed53127e70165917598146210ac6a479abda148bc9c85632e5cd5",
+        "fit_seconds": 3.0104010105133057,
+        "train_count": 49428,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2642,
+              "solve_relative_residual": 8.734072675173971e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2621,
+              "solve_relative_residual": 9.305168430978447e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2738,
+              "solve_relative_residual": 8.329269762354076e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2718,
+              "solve_relative_residual": 7.35513992505989e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 4.925667812690175e-15,
+          "fixed_normal_norm_max_error": 1.7178939347717304e-06,
+          "scalar_abs_p95_mm": 7.620170183404628
+        }
+      },
+      {
+        "subject": "S151",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "ffabf20fcc31755b9c2538b55e904395300b081283aa246cfd77aa0968877de5",
+        "fit_seconds": 2.981384754180908,
+        "train_count": 48711,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2602,
+              "solve_relative_residual": 7.957599449154023e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2562,
+              "solve_relative_residual": 7.421640502288437e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2634,
+              "solve_relative_residual": 8.172083656164713e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2635,
+              "solve_relative_residual": 7.667811972712973e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.165583942981723e-15,
+          "fixed_normal_norm_max_error": 1.7178939348827527e-06,
+          "scalar_abs_p95_mm": 8.663776705576387
+        }
+      },
+      {
+        "subject": "S151",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "3c3133befe7aaa516a0014d0341e1b2616d8faeca2b603c90eac227fbff24ad0",
+        "fit_seconds": 3.0019140243530273,
+        "train_count": 49380,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2580,
+              "solve_relative_residual": 7.774133539876511e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2554,
+              "solve_relative_residual": 8.443418246995285e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2658,
+              "solve_relative_residual": 7.833120968094165e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2643,
+              "solve_relative_residual": 7.518570363686094e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.770031522344853e-15,
+          "fixed_normal_norm_max_error": 1.717893934660708e-06,
+          "scalar_abs_p95_mm": 8.3178326008853
+        }
+      },
+      {
+        "subject": "S163",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "cdacc838b01beefdb511bff11d679ed2540298625e29fa77df8a9b60704628d3",
+        "fit_seconds": 2.6879074573516846,
+        "train_count": 41798,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2702,
+              "solve_relative_residual": 7.441277983384244e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2663,
+              "solve_relative_residual": 8.284342279124332e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2717,
+              "solve_relative_residual": 8.570021793380054e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2700,
+              "solve_relative_residual": 7.923508352646959e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 6.774311733017761e-15,
+          "fixed_normal_norm_max_error": 1.8642496126819452e-06,
+          "scalar_abs_p95_mm": 7.72175229790194
+        }
+      },
+      {
+        "subject": "S163",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "c7cd333a34f8b117486ed16c496dd031fc562296ad8fb2dce318087a66ee8595",
+        "fit_seconds": 2.8101797103881836,
+        "train_count": 40615,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2789,
+              "solve_relative_residual": 6.449655465352117e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2732,
+              "solve_relative_residual": 7.182809068529832e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2836,
+              "solve_relative_residual": 7.454447981562747e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2826,
+              "solve_relative_residual": 7.695238325557368e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.8642496126819452e-06,
+          "scalar_abs_p95_mm": 9.438087436651342
+        }
+      },
+      {
+        "subject": "S163",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "29176f8100e4ce41d0c103524fa09ba1a0e7551190710d896795c1d9658b604b",
+        "fit_seconds": 3.0943427085876465,
+        "train_count": 40650,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2962,
+              "solve_relative_residual": 6.523703366844108e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2922,
+              "solve_relative_residual": 8.034740148868473e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2995,
+              "solve_relative_residual": 8.011251456746254e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2979,
+              "solve_relative_residual": 8.072778855534572e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.864249612570923e-06,
+          "scalar_abs_p95_mm": 10.003726738019893
+        }
+      },
+      {
+        "subject": "S165",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "af2b874c123995a8071d357b5859ad602a2c572f35ff6c145d95a8a14d104bde",
+        "fit_seconds": 3.067612409591675,
+        "train_count": 59067,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2377,
+              "solve_relative_residual": 7.018620684251756e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2359,
+              "solve_relative_residual": 7.932793588787962e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2433,
+              "solve_relative_residual": 7.944675326903859e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2419,
+              "solve_relative_residual": 7.683703853260271e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.792536489575447e-06,
+          "scalar_abs_p95_mm": 11.372614105883974
+        }
+      },
+      {
+        "subject": "S165",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "7ec4d3f3d8b86aba7bfb0c7c2e8c3c66d745cad7916bc11a33b76ba05d8cb260",
+        "fit_seconds": 2.6431567668914795,
+        "train_count": 59783,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2111,
+              "solve_relative_residual": 6.13265133427287e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2073,
+              "solve_relative_residual": 7.452125160723539e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2145,
+              "solve_relative_residual": 7.576684860977722e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2130,
+              "solve_relative_residual": 7.451062159006467e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.046480070129584e-15,
+          "fixed_normal_norm_max_error": 1.7925364896864693e-06,
+          "scalar_abs_p95_mm": 9.407279916540741
+        }
+      },
+      {
+        "subject": "S165",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "231cdb34a0df3143182bb4ac22ad80e9371945726c3ef57bc1fb9cf6f68560ae",
+        "fit_seconds": 2.6104962825775146,
+        "train_count": 57664,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2226,
+              "solve_relative_residual": 6.751168891536634e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2223,
+              "solve_relative_residual": 7.636019172226883e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2300,
+              "solve_relative_residual": 7.939338193126202e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2286,
+              "solve_relative_residual": 7.467591403072249e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.7925364897974916e-06,
+          "scalar_abs_p95_mm": 10.21608438461264
+        }
+      },
+      {
+        "subject": "S170",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "fc9a28c3d7d485b30776a42383f48bc09f6ec54f8c38e2a1b3db68e6c58a1c48",
+        "fit_seconds": 3.1197969913482666,
+        "train_count": 50544,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3405,
+              "solve_relative_residual": 7.500335192035597e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3088,
+              "solve_relative_residual": 9.314630396547389e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3354,
+              "solve_relative_residual": 9.891925495297507e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3378,
+              "solve_relative_residual": 9.117713140126183e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.7352654923862145e-14,
+          "fixed_normal_norm_max_error": 1.7787968534799248e-06,
+          "scalar_abs_p95_mm": 14.991082291009352
+        }
+      },
+      {
+        "subject": "S170",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "2df54ff6a279d4905a14c20e4133d082aa8a504940a8587f2c3fc3c7fa13afb4",
+        "fit_seconds": 3.2139549255371094,
+        "train_count": 50181,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3512,
+              "solve_relative_residual": 7.57834251506786e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3221,
+              "solve_relative_residual": 9.517687572093747e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3442,
+              "solve_relative_residual": 9.62602336368287e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3484,
+              "solve_relative_residual": 1.078429271960069e-15
+            }
+          ],
+          "vertex_tangent_max_mm": 1.5612511283791264e-14,
+          "fixed_normal_norm_max_error": 1.7787968533689025e-06,
+          "scalar_abs_p95_mm": 16.223343218319645
+        }
+      },
+      {
+        "subject": "S170",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "ce45f23e7d5b13b59273bc54c6b02dd9d9effb1614e4d7ffc8861471fa17277d",
+        "fit_seconds": 2.808260202407837,
+        "train_count": 47196,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3453,
+              "solve_relative_residual": 7.580090920770687e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2975,
+              "solve_relative_residual": 9.461952706744965e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3228,
+              "solve_relative_residual": 9.881629391401402e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3256,
+              "solve_relative_residual": 1.0214891799060432e-15
+            }
+          ],
+          "vertex_tangent_max_mm": 1.0408340855860843e-14,
+          "fixed_normal_norm_max_error": 1.7787968534799248e-06,
+          "scalar_abs_p95_mm": 11.801729757654714
+        }
+      },
+      {
+        "subject": "S179",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "058b09287b570d284825ef67c963428835df863dbf900c35414f67c34a8e33c0",
+        "fit_seconds": 3.1248292922973633,
+        "train_count": 46152,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3255,
+              "solve_relative_residual": 6.253511006870736e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3240,
+              "solve_relative_residual": 7.522498711033063e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3325,
+              "solve_relative_residual": 8.167159842032615e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3316,
+              "solve_relative_residual": 8.300444354459195e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.4304896245381993e-14,
+          "fixed_normal_norm_max_error": 1.744431184835804e-06,
+          "scalar_abs_p95_mm": 12.82284709026306
+        }
+      },
+      {
+        "subject": "S179",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "cfead44715f6ec5969467e2def1e3b43728b1f8d433999b81264e704ab22e577",
+        "fit_seconds": 2.676588296890259,
+        "train_count": 46237,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2794,
+              "solve_relative_residual": 6.865035527029269e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2722,
+              "solve_relative_residual": 7.377826427757811e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2908,
+              "solve_relative_residual": 8.424141289969336e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2866,
+              "solve_relative_residual": 8.641318927090537e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 9.822656275951702e-15,
+          "fixed_normal_norm_max_error": 1.744431184835804e-06,
+          "scalar_abs_p95_mm": 9.624984587415852
+        }
+      },
+      {
+        "subject": "S179",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "a413916d0f0ae94c8dcb08a5a7bc6e79f7c133a50bfd8cc8178a9e05f397f600",
+        "fit_seconds": 2.9522829055786133,
+        "train_count": 45189,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3277,
+              "solve_relative_residual": 6.630688727268877e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3371,
+              "solve_relative_residual": 7.221898444120559e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3419,
+              "solve_relative_residual": 8.034126124091488e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3413,
+              "solve_relative_residual": 7.831440101986272e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 9.85133562538035e-15,
+          "fixed_normal_norm_max_error": 1.7444311846137595e-06,
+          "scalar_abs_p95_mm": 11.079913186111693
+        }
+      },
+      {
+        "subject": "S184",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "deaf352da7d43496cb916420fb3445a9b256c68f84f552c1acae1e74d6ecd4e5",
+        "fit_seconds": 2.8294830322265625,
+        "train_count": 54508,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2894,
+              "solve_relative_residual": 6.128843690769912e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2794,
+              "solve_relative_residual": 8.228737738757445e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2962,
+              "solve_relative_residual": 7.426705648610929e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2928,
+              "solve_relative_residual": 7.529313177998579e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.6964486749815322e-06,
+          "scalar_abs_p95_mm": 8.673450756168819
+        }
+      },
+      {
+        "subject": "S184",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "b3c5aca10322e7a0b175a8341ac10f5a7ff59e85df42b57a0c5ae510cf42fba3",
+        "fit_seconds": 3.141782522201538,
+        "train_count": 55331,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3173,
+              "solve_relative_residual": 6.616208355701212e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3036,
+              "solve_relative_residual": 8.574702624621398e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3194,
+              "solve_relative_residual": 7.969481116487547e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3174,
+              "solve_relative_residual": 7.690127279004467e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 8.498374721940739e-15,
+          "fixed_normal_norm_max_error": 1.6964486750925545e-06,
+          "scalar_abs_p95_mm": 10.709749276108091
+        }
+      },
+      {
+        "subject": "S184",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "48aae3be6c3676ef1208679a5d01dde69256cbcaaa7160a3ac399868d3bafdeb",
+        "fit_seconds": 3.1074347496032715,
+        "train_count": 55179,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2990,
+              "solve_relative_residual": 6.519456575430505e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2797,
+              "solve_relative_residual": 7.586339607690997e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3040,
+              "solve_relative_residual": 7.525960783052168e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3010,
+              "solve_relative_residual": 7.184975082302221e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.6964486749815322e-06,
+          "scalar_abs_p95_mm": 8.855423851098804
+        }
+      },
+      {
+        "subject": "S187",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "3670939685442464d379bebb1ca2847653b11a200aa36adcb9e643787016b750",
+        "fit_seconds": 2.981203556060791,
+        "train_count": 39968,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2361,
+              "solve_relative_residual": 6.835102008519978e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2520,
+              "solve_relative_residual": 8.183593816753463e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2556,
+              "solve_relative_residual": 7.90394916133543e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2498,
+              "solve_relative_residual": 7.583430225407477e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.359808400080195e-15,
+          "fixed_normal_norm_max_error": 1.8892122584102111e-06,
+          "scalar_abs_p95_mm": 9.024496749015384
+        }
+      },
+      {
+        "subject": "S187",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "0c52c32e2daabed86311e2041c1402d454ae696d05ca474e473a9a62b02c3e3b",
+        "fit_seconds": 2.801671266555786,
+        "train_count": 41229,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2378,
+              "solve_relative_residual": 7.39459117792247e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2503,
+              "solve_relative_residual": 8.904749494519246e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2558,
+              "solve_relative_residual": 7.636547284390826e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2502,
+              "solve_relative_residual": 7.678811630884005e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.4331167885963446e-14,
+          "fixed_normal_norm_max_error": 1.8892122584102111e-06,
+          "scalar_abs_p95_mm": 7.704191915867276
+        }
+      },
+      {
+        "subject": "S187",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "cefd5ec6f8a23367fd6826a0a0f9eb4e2c75d40e0759cafcd001152addf7784e",
+        "fit_seconds": 2.6305758953094482,
+        "train_count": 42059,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2282,
+              "solve_relative_residual": 7.456196780370068e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2445,
+              "solve_relative_residual": 7.42879408958017e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2440,
+              "solve_relative_residual": 6.991535972277635e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2408,
+              "solve_relative_residual": 7.062880916098886e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.2516784214709242e-14,
+          "fixed_normal_norm_max_error": 1.8892122585212334e-06,
+          "scalar_abs_p95_mm": 8.741291604149989
+        }
+      },
+      {
+        "subject": "S188",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "147b881b8949a196901ed5cd551faf0190d198aa4d5f5104c00684ddc4a6bd1a",
+        "fit_seconds": 2.9313955307006836,
+        "train_count": 59378,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2516,
+              "solve_relative_residual": 7.236484480203246e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2539,
+              "solve_relative_residual": 7.398002637136626e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2547,
+              "solve_relative_residual": 7.921350347504484e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2531,
+              "solve_relative_residual": 7.633872569532569e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.359808400080195e-15,
+          "fixed_normal_norm_max_error": 1.8019698041493726e-06,
+          "scalar_abs_p95_mm": 8.738984723577056
+        }
+      },
+      {
+        "subject": "S188",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "29c356e0043a136844a7031a474782f0b927f6b1e44d19f9c712e5006c1d231b",
+        "fit_seconds": 2.8097071647644043,
+        "train_count": 59201,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2390,
+              "solve_relative_residual": 8.101417713314667e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2384,
+              "solve_relative_residual": 8.522181505630194e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2407,
+              "solve_relative_residual": 7.372766427329869e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2389,
+              "solve_relative_residual": 7.577312843287513e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 4.2491873609703695e-15,
+          "fixed_normal_norm_max_error": 1.8019698040383503e-06,
+          "scalar_abs_p95_mm": 8.747663673342599
+        }
+      },
+      {
+        "subject": "S188",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "c18dca0ffb83bf908778ea59e72f30094f824b58a1011c3c2d4ee753c4848ed6",
+        "fit_seconds": 2.857363224029541,
+        "train_count": 58411,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2459,
+              "solve_relative_residual": 7.431758053286379e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2454,
+              "solve_relative_residual": 7.651676679319982e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 2468,
+              "solve_relative_residual": 7.92050869478015e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 2452,
+              "solve_relative_residual": 7.573710132502135e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 4.911328137975851e-15,
+          "fixed_normal_norm_max_error": 1.8019698042603949e-06,
+          "scalar_abs_p95_mm": 8.559006565944994
+        }
+      },
+      {
+        "subject": "S196",
+        "seed": 0,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "90e7fdd9730b9a24b8b353d5d6ee9f26ee59f4a5e79ee4e1972af0fce8bbb1c6",
+        "fit_seconds": 2.742981195449829,
+        "train_count": 42957,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 2935,
+              "solve_relative_residual": 7.222115809037072e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 2875,
+              "solve_relative_residual": 8.110616673420793e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3109,
+              "solve_relative_residual": 7.823571223184722e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3064,
+              "solve_relative_residual": 7.383439066952907e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.922239666551917e-06,
+          "scalar_abs_p95_mm": 12.152970570818702
+        }
+      },
+      {
+        "subject": "S196",
+        "seed": 1,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "307b773dda910b199b5f27083752ccb12db991baf3e13ff2eed31965961ef3ec",
+        "fit_seconds": 3.2728214263916016,
+        "train_count": 42273,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3092,
+              "solve_relative_residual": 7.074263061349911e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3018,
+              "solve_relative_residual": 8.068795367289139e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3300,
+              "solve_relative_residual": 7.982400485748005e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3221,
+              "solve_relative_residual": 7.109775986571863e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 7.949501638480627e-15,
+          "fixed_normal_norm_max_error": 1.9222396666629393e-06,
+          "scalar_abs_p95_mm": 11.738407192429417
+        }
+      },
+      {
+        "subject": "S196",
+        "seed": 2,
+        "new_fits": 1,
+        "official_inferences": 0,
+        "mesh_sha256": "92b464c3728ab67274d7bc2b9e5bae074e5f58d2d55189e4f6d23439c99ec127",
+        "fit_seconds": 3.2839651107788086,
+        "train_count": 43115,
+        "heldout_intersection": 0,
+        "solver": {
+          "parameterization": "scalar displacement on fixed Rigid vertex normals",
+          "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+          "iterations": [
+            {
+              "iteration": 0,
+              "data_vertices": 3286,
+              "solve_relative_residual": 6.504538916914768e-16
+            },
+            {
+              "iteration": 1,
+              "data_vertices": 3111,
+              "solve_relative_residual": 8.647621631668641e-16
+            },
+            {
+              "iteration": 2,
+              "data_vertices": 3351,
+              "solve_relative_residual": 8.813924936756175e-16
+            },
+            {
+              "iteration": 3,
+              "data_vertices": 3298,
+              "solve_relative_residual": 7.371606815519503e-16
+            }
+          ],
+          "vertex_tangent_max_mm": 1.4012657719410506e-14,
+          "fixed_normal_norm_max_error": 1.9222396664408947e-06,
+          "scalar_abs_p95_mm": 11.780553640164939
+        }
+      }
+    ]
+  },
+  "retained_attempt1": {
+    "successful_cached_fits": 57,
+    "failed_fit_calls": 1,
+    "all_solver_calls": 58,
+    "path": "/raid5/xuhd/datasets/back_geometry_correspondence_v2_20261003/c_pressure_normal_attempt1",
+    "reason": "diagnostic assertion assumed exactly unit length frozen normals"
+  },
+  "total_physical_normal_solver_calls": 118,
+  "total_successful_saved_normal_meshes_all_attempts": 117,
+  "final_fit_results_are_attempt2_only": true,
+  "optimizer_or_weights_tuned_to_test": false,
+  "aggregation": "seed arithmetic mean -> subject -> role subject median",
+  "integrity": {
+    "status": "PASS",
+    "source_files_checked": 470,
+    "meshes_checked": 240,
+    "previous_results_unchanged": true,
+    "optimizer_unchanged_since_dev_gate": true,
+    "medical_accuracy_validated": false
+  }
+}

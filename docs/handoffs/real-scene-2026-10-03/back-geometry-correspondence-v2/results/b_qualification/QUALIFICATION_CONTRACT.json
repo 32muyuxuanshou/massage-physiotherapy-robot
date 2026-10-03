@@ -1,0 +1,36 @@
+{
+  "status": "FROZEN_BEFORE_MODEL",
+  "candidate_budget": 300,
+  "sampling": "20 numeric-time uniform quantile positions per each of 15 existing subject/date sequences; exclude old 45 first",
+  "date_mapping": {
+    "Sub03": "Date03",
+    "Sub04": "Date03",
+    "Sub05": "Date03",
+    "Sub06": "Date05",
+    "Sub07": "Date06"
+  },
+  "target_frames_per_person": 6,
+  "target_sequences_per_person": 2,
+  "selected_timestamp_min_gap_s": 3,
+  "subjects_previously_consumed": true,
+  "qualification": "K0 clear posterior patch plus >=1 heldout camera with same patch world NN support",
+  "patch_half_width_height_crop_fraction": [
+    0.06,
+    0.05
+  ],
+  "minimum_valid_patch_points": 30,
+  "same_patch_nn_radius_m": 0.05,
+  "minimum_bidirectional_support_fraction": 0.5,
+  "planned_development": [
+    "Sub03",
+    "Sub04"
+  ],
+  "planned_validation": [
+    "Sub05",
+    "Sub06",
+    "Sub07"
+  ],
+  "model_outputs_used_for_selection": 0,
+  "all_selected_ROIs_require_original_RGB_visual_review": true,
+  "purpose": "visible clothed posterior surface, not bare-skin/prone/anatomical reference"
+}

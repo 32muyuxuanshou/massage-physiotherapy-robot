@@ -1,12 +1,14 @@
 # 项目当前状态
 
-更新时间：2026-10-03。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
+更新时间：2026-10-04。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
 
 ## 目标
 
 真实**俯卧背部 RGB-D → 个体 Mesh → 工程参考/规则定位 → 后续机器人坐标接口**。工程效果与可发表的方法贡献并行推进，表面距离、点位稳定性、医学准确率及部署精度分别验收。当前没有部署相机和独立临床穴位真值，可以继续离线工程，不将 AI 代理当临床标注。
 
 ## 最新实际交付
+
+0. [工程模板与法向几何对照V2](handoffs/real-scene-2026-10-03/back-geometry-correspondence-v2/FINAL_REPORT.md)：新8个ENG中性探针/300缓存/2,400传播完成；20人×3种子新增60个法向D，四方法240缓存/评价完成。16人测试角色后背距离Rigid 8.25、向量D 3.66、法向D 3.99 mm；切向移动1.86→0.48 mm，但跨种子点跨度7.39→7.75 mm，14/16人法向D的全身投影支持IoU弱于Rigid。300个BEHAVE候选资格筛查不足5×6帧，Sub07最多3个非相邻时刻/1序列，未启动新BEHAVE模型。470冻结源与240缓存核验PASS，原180基线逐点指标exact一致。没有新训练/SAM推理，不能作为临床或部署精度。
 
 1. [可信俯卧五方法修正版](handoffs/real-scene-2026-10-03/pressurepose-prone-corrected-comparison-v2-execution/FINAL_REPORT.md)：PressurePose 20人、开发4/测试角色16、3 seeds，共300缓存完成。优化前划分6 cm空间块留出，各分支共享新的Official。测试角色后背距离Rigid 8.25→Rigid+D 3.66 mm；属于近似相机合同下的同源空间留出，13/16人全身投影支持IoU下降，不是产品或穴位精度。
 2. [表面与点位对应验证](handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/FINAL_REPORT.md)：300缓存/单位/拓扑实读；2,400工程点、60共享规则框架及2,400规则代理点；BEHAVE五人固定45帧、五方法225网格、K1/K2/K3独立sensor对照完成。
@@ -27,9 +29,11 @@ PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼�
 
 | 事项 | 状态 |
 |---|---|
-| 缓存传播/单位/同拓扑 | 已完成，几何合法 |
+| 缓存传播/单位/同拓扑 | 新ENG atlas几何绑定通过；人体解剖左右/旧医学语义仍未验证 |
 | Rigid+D同源局部拟合 | 局部收益成立，存在轮廓/全局质量代价 |
 | Rigid+D独立机位后背收益 | 已执行；收益小、覆盖有限，未通过强结论 |
+| 法向D单因素对照 | 60新分支完成；切向代价下降，种子稳定性/完整网格合格性未通过 |
+| 新BEHAVE共同后背cohort | 300候选筛查不足计划预算；未签发manifest，0新模型/拟合 |
 | 8点atlas医学语义 | HOLD；独立代理候选也未医学验证 |
 | Mesh+规则代理链 | 跑通；椎体/B-cun输入为代理 |
 | 独立三维穴位/可靠目标对应 | 尚无资格数据，不报告准确率 |
@@ -38,9 +42,10 @@ PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼�
 
 ## 运行位置
 
-本轮实际在线执行服务器：`xuhd@172.18.18.151:436`，5张RTX2080Ti按人物运行。环境、代码、输入与资产SHA见[复现说明](handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/REPRODUCTION.md)。
+最新实际执行服务器：`xuhd@172.18.18.151:436`，本轮4个CPU人物进程求解，没有新GPU模型加载。环境、代码、输入与资产SHA见[最新复现说明](handoffs/real-scene-2026-10-03/back-geometry-correspondence-v2/REPRODUCTION.md)。上一轮BEHAVE为5张RTX2080Ti按人物运行，属于历史已完成批次。
 
-- 本轮：`/raid5/xuhd/datasets/prone_back_point_validation_20261003`
+- 最新：`/raid5/xuhd/datasets/back_geometry_correspondence_v2_20261003`
+- 上一轮：`/raid5/xuhd/datasets/prone_back_point_validation_20261003`
 - 300俯卧Mesh源：`/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/corrected_comparison_v2/run_v2`
 - BEHAVE数据：`/raid5/xuhd/behave_rgbd_mesh_v1/data`
 - 新资料：`/raid5/xuhd/datasets/back_prone_acquisition_20261003`
@@ -50,6 +55,8 @@ PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼�
 
 ## 下一步
 
-先建立独立工程atlas V2，修正中线/上下/轴与来源语义；同时补足输入和独立机位都可见后背的验证条件。当前45帧不换样本，新cohort另建冻结版本。几何与对应分开查清后，再决定RGB-D几何或参考/对应模块训练。
+工程atlas V2与法向对照已完成。保留Rigid/向量D/法向D为基线；优先补同后背块的独立观测或已知相机/表面/对应的受控几何闭环，先厘清观测与目标对应。当前45帧不换样本，新cohort资格不足不填数。独立证据明确后，再决定RGB-D几何或参考/对应模块训练。
+
+本轮原计划见[工程模板与几何机制验证计划V2](research/2026-10-03-no-deployment-camera/NEXT_EXECUTION_PLAN_V2.md)，执行结果以上方最新报告为准。完整原RGB新副本在本地 `output/back_geometry_correspondence_v2/private_review/INDEX.html`。
 
 医学对应最终需要可靠独立目标参考，部署效果最终需要设备标定和验收。当前小残差不能替代这两项。

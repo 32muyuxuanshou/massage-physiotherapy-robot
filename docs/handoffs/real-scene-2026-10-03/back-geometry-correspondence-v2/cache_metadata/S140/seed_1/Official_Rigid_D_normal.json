@@ -1,0 +1,73 @@
+{
+  "subject": "S140",
+  "seed": 1,
+  "method": "Official+Rigid+D_normal",
+  "source_status": "NEW_NORMAL_D_ONLY_FROM_FROZEN_RIGID",
+  "mesh_sha256": "fcbb845fbd2e77a5a6139728c253ac9c1e6f24a466f21d7d62073bc5026a1eab",
+  "vertices_sha256": "f6855b1221b706f82b1ede60d3b0ba08f0786d0e84f0c21870f870951c193f74",
+  "faces_sha256": "0e47f537d5e48ef99092c6631963ca4c31c9ec59d1cfaa20cefc9ce41d518b84",
+  "input_sha256": "cc7cce43a41e1fd4abee5294735ee990153e34ef347b3cec9f4dc83744ee9f11",
+  "split_sha256": "85aa24b5f412f8c9126725d9495856efdf1d9905dfe10c781b7a56c29d305642",
+  "optimization": {
+    "config": {
+      "lam": 0.15,
+      "mu": 0.0001,
+      "tau": 0.05,
+      "n0": 6.0,
+      "irls": 4,
+      "sigma_m": 0.012,
+      "use_conf": true,
+      "use_robust": true,
+      "bed": null
+    },
+    "parameterization": "scalar displacement on fixed Rigid vertex normals",
+    "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+    "iterations": [
+      {
+        "iteration": 0,
+        "data_vertices": 2529,
+        "solve_relative_residual": 6.996814867755032e-16
+      },
+      {
+        "iteration": 1,
+        "data_vertices": 2189,
+        "solve_relative_residual": 7.507937768464233e-16
+      },
+      {
+        "iteration": 2,
+        "data_vertices": 2488,
+        "solve_relative_residual": 7.868637315211318e-16
+      },
+      {
+        "iteration": 3,
+        "data_vertices": 2467,
+        "solve_relative_residual": 8.796151732493475e-16
+      }
+    ],
+    "vertex_tangent_max_mm": 7.949501638480627e-15,
+    "fixed_normal_norm_max_error": 1.7764318799295964e-06,
+    "scalar_abs_p95_mm": 10.252780149531427,
+    "input": "same frozen train_idx as Rigid/D_vector",
+    "rigid_source_sha256": "3de0978f457f27a3ba907c683ce81c56f051d863c1bf69f1fbbe0a49b3c22a0b",
+    "optimizer_source_sha256": "b083b6a8dede39d5f1b71ee9bf7f6f5e7baef9f34fd28e6aaa36bf900701b9a2"
+  },
+  "optimization_point_count": 44694,
+  "optimization_heldout_intersection": 0,
+  "mesh_quality": {
+    "face_flip_frac": 0.0011661333188696644,
+    "edge_strain_p50": 0.0022354949087176083,
+    "edge_strain_p99": 0.49984584834547213,
+    "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+  },
+  "silhouette": {
+    "iou": 0.8182957228208544,
+    "boundary_median_px": 5.385164807134504,
+    "boundary_p95_px": 18.027756377319946,
+    "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+  },
+  "visualization": {
+    "renderer": "CPU inverse-Z pinhole at integer pixel coordinates",
+    "input_npz_sha256": "cc7cce43a41e1fd4abee5294735ee990153e34ef347b3cec9f4dc83744ee9f11",
+    "overlay": "visualizations/S140/seed_1/Official_Rigid_D_normal_overlay.png"
+  }
+}

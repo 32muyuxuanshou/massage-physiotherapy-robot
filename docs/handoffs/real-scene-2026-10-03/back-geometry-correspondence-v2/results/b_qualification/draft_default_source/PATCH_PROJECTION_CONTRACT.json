@@ -1,0 +1,9 @@
+{
+  "status": "FROZEN_BEFORE_MODEL",
+  "source_patch": "fractional source person display crop; default center (.50,.35), RGB-reviewed overrides",
+  "target_patch": "convex hull of distorted-color projections of every source patch point, dilated 5 pixels",
+  "nn_rule": "bidirectional >=50% of all valid patch points within 50mm; both patches >=30 points",
+  "model_runs": 0,
+  "source_centers_overrides": {},
+  "numeric_candidates_require_RGB_patch_confirmation": true
+}

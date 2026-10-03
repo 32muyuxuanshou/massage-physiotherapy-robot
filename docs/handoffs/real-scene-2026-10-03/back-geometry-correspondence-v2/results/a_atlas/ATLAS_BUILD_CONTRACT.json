@@ -1,0 +1,83 @@
+{
+  "status": "FROZEN_BEFORE_PROPAGATION",
+  "semantic_status": "ENGINEERING_SURFACE_PROBES_NOT_ACUPOINTS",
+  "native_unit": "cm",
+  "native_to_mm": 10,
+  "prediction_unit": "m",
+  "prediction_to_mm": 1000,
+  "axis": {
+    "y": "+Y canonical superior; verified by full-height canonical geometry",
+    "posterior": "-Z in reviewed posterior mask and visible surface normals",
+    "x": "Signed canonical X; patient anatomical left/right NOT ESTABLISHED"
+  },
+  "target_spec": [
+    {
+      "id": "ENG_MID_UP",
+      "fraction_down": 0.2,
+      "x_fraction_of_work_width": 0
+    },
+    {
+      "id": "ENG_MID_DOWN",
+      "fraction_down": 0.75,
+      "x_fraction_of_work_width": 0
+    },
+    {
+      "id": "ENG_PAIR_1_NEG_X",
+      "fraction_down": 0.3,
+      "x_fraction_of_work_width": -0.2
+    },
+    {
+      "id": "ENG_PAIR_1_POS_X",
+      "fraction_down": 0.3,
+      "x_fraction_of_work_width": 0.2
+    },
+    {
+      "id": "ENG_PAIR_2_NEG_X",
+      "fraction_down": 0.5,
+      "x_fraction_of_work_width": -0.2
+    },
+    {
+      "id": "ENG_PAIR_2_POS_X",
+      "fraction_down": 0.5,
+      "x_fraction_of_work_width": 0.2
+    },
+    {
+      "id": "ENG_PAIR_3_NEG_X",
+      "fraction_down": 0.7,
+      "x_fraction_of_work_width": -0.2
+    },
+    {
+      "id": "ENG_PAIR_3_POS_X",
+      "fraction_down": 0.7,
+      "x_fraction_of_work_width": 0.2
+    }
+  ],
+  "working_y_range_mm": [
+    867.1684773763021,
+    1449.9628194173176
+  ],
+  "working_width_mm": 522.8999710083008,
+  "work_definition": "original posterior face centroids, exclude bottom 20% of original centroid Y range",
+  "old_primary_evaluation_faces": 2152,
+  "work_faces": 1738,
+  "source": [
+    {
+      "path": "/raid5/xuhd/datasets/back_geometry_correspondence_v2_20261003/assets/mhr_rest_vertices.npy",
+      "sha256": "bf7e1fedc17f7245febfd073b694b3574a3d230622d06ba0461cfc0850bb27a8"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_geometry_correspondence_v2_20261003/assets/mhr_faces.npy",
+      "sha256": "79d3954cae04ae7a16ad2005238df81da2003b971b5b582457495430182b77c5"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_geometry_correspondence_v2_20261003/assets/candidate_posterior_mask.json",
+      "sha256": "17241b1006697c9b24cae29e766f69a5eeffffecf5aea17f172c615361f3b53e"
+    }
+  ],
+  "limits": [
+    "No measured vertebral levels",
+    "No B-cun rule",
+    "No medical truth",
+    "Working region is geometric, not clinician-reviewed anatomy"
+  ]
+}

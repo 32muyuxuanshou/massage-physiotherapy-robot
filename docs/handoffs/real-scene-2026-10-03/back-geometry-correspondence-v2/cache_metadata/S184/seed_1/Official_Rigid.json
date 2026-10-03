@@ -1,0 +1,61 @@
+{
+  "subject": "S184",
+  "seed": 1,
+  "method": "Official+Rigid",
+  "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+  "mesh_sha256": "d80ad002d885514513f07014ea7a988700de0ec493fa0eb45f0b635fa621f4d0",
+  "vertices_sha256": "f0228f8ffe2390745c764993871e310b98d52e66cf7e32ded8a1f4c9f5042605",
+  "faces_sha256": "0e47f537d5e48ef99092c6631963ca4c31c9ec59d1cfaa20cefc9ce41d518b84",
+  "input_sha256": "cb0013a221a1612baf8b1a91ce0ed6f6d06e968088a010871561f82e96170724",
+  "split_sha256": "56bc4c7186ad80043fb9a97754ff806c7b214771897feb14408096a07221ff12",
+  "optimization": {
+    "depth_fit": true,
+    "config": {
+      "iterations": 30,
+      "trim_fraction": 0.2,
+      "initial_translation_iterations": 4
+    },
+    "R": [
+      [
+        0.9953758489870651,
+        -0.0032053623724114396,
+        0.09600335882322994
+      ],
+      [
+        0.006984633238687569,
+        0.9992126161516407,
+        -0.039055891001424384
+      ],
+      [
+        -0.09580257904566737,
+        0.0395458389145516,
+        0.9946144944010938
+      ]
+    ],
+    "t_m": [
+      -0.17142644088539216,
+      0.103443071519103,
+      -0.04445949917501812
+    ],
+    "parameter_semantics": "original MHR shape/pose + explicit rigid transform; effective camera translation stored"
+  },
+  "optimization_point_count": 55331,
+  "optimization_heldout_intersection": 0,
+  "mesh_quality": {
+    "face_flip_frac": 0.0,
+    "edge_strain_p50": 4.524616400327226e-15,
+    "edge_strain_p99": 1.0327532244925574e-13,
+    "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+  },
+  "silhouette": {
+    "iou": 0.7023943677087693,
+    "boundary_median_px": 7.0,
+    "boundary_p95_px": 28.792360097775937,
+    "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+  },
+  "visualization": {
+    "renderer": "CPU inverse-Z pinhole at integer pixel coordinates",
+    "input_npz_sha256": "cb0013a221a1612baf8b1a91ce0ed6f6d06e968088a010871561f82e96170724",
+    "overlay": "visualizations/S184/seed_1/Official_Rigid_overlay.png"
+  }
+}
