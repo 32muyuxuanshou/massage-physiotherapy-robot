@@ -1,6 +1,6 @@
 # AI 感知模块
 
-> **项目现役状态（2026-09-15）：** 统一见[项目当前状态](../docs/CURRENT_STATUS.md)。最新正式交付是 [SAM3D → Txyz 复现实验 V1.4.12](../docs/handoffs/real-scene-2026-09-14/sam3d-txyz-reproducibility-isolation-v1/formal-execution-v1.4.12/README.md)，Gate 为 `PASS_REPRODUCIBILITY_ISOLATION_EXECUTION`。固定输入、环境、seed和帧顺序下SAM与Txyz已通过正式复现；后背语义、DMD37→MHR桥接、合成DMD37及RTMPose微调仍未放行。
+> **项目现役状态（2026-10-03）：** 统一见[项目当前状态](../docs/CURRENT_STATUS.md)。最新完成[表面几何与工程点对应验证](../docs/handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/FINAL_REPORT.md)：300个俯卧缓存、2,400工程点、BEHAVE45帧五方法及数据资格审计。单位/拓扑通过，旧atlas语义HOLD；D的独立机位后背收益小且覆盖有限，医学标签和新训练未放行。以下早期实验章节是历史记录。
 
 官方SAM预训练推理和真实照片Mesh叠加已跑通。只贴Mesh无需训练；没有完整复现论文训练与基准评测。既有COCO与MHR标注属于历史数据准备，不代表DMD37标签已经放行。网络训练、穴位精度和标签状态以当前状态页为准。
 

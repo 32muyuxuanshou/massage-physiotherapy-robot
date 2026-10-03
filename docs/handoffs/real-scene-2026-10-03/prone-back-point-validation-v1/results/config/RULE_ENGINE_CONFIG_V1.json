@@ -1,0 +1,22 @@
+{
+  "schema": "RULE_ENGINE_CONFIG_V1",
+  "status": "ENGINEERING_RULE_SPEC_PENDING_CLINICAL_REVIEW",
+  "medical_truth": false,
+  "units": "mesh_native_units",
+  "rules": [
+    {"id": "GV14", "name": "Dazhui", "reference_level": "C7_T1", "lateral_b_cun": 0.0, "laterality": "midline"},
+    {"id": "BL13_L", "name": "Feishu", "reference_level": "T3", "lateral_b_cun": 1.5, "laterality": "left"},
+    {"id": "BL13_R", "name": "Feishu", "reference_level": "T3", "lateral_b_cun": 1.5, "laterality": "right"},
+    {"id": "BL15_L", "name": "Xinshu", "reference_level": "T5", "lateral_b_cun": 1.5, "laterality": "left"},
+    {"id": "BL15_R", "name": "Xinshu", "reference_level": "T5", "lateral_b_cun": 1.5, "laterality": "right"},
+    {"id": "BL18_L", "name": "Ganshu", "reference_level": "T9", "lateral_b_cun": 1.5, "laterality": "left"},
+    {"id": "BL18_R", "name": "Ganshu", "reference_level": "T9", "lateral_b_cun": 1.5, "laterality": "right"},
+    {"id": "GV4", "name": "Mingmen", "reference_level": "L2", "lateral_b_cun": 0.0, "laterality": "midline"}
+  ],
+  "required_landmark_fields": ["levels.<level>.point", "levels.<level>.lateral_axis", "levels.<level>.native_per_b_cun"],
+  "proxy_policy": {
+    "allowed_for": "geometry_sanity_only",
+    "not_allowed_for": ["clinical_accuracy", "ground_truth", "doctor_replacement"],
+    "note": "Reference levels and scale must be replaced or validated with observable anatomical landmarks before clinical use."
+  }
+}

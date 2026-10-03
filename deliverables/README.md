@@ -6,6 +6,8 @@
 
 | 内容 | 文件 | 查看方式 |
 | --- | --- | --- |
+| 2026-10-03 表面与工程点对应验证 | [报告及完整审查导航](../docs/handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/README.md) | 网页代码/指标/105页预测图；原始RGB与大Mesh留服务器 |
+| 2026-10-03 可信俯卧五方法修正版 | [正式结果](../docs/handoffs/real-scene-2026-10-03/pressurepose-prone-corrected-comparison-v2-execution/FINAL_REPORT.md) | 同源空间留出，不是临床定位精度 |
 | AI 模块进度与使用入口 | [模块说明](../AI感知模块/README.md) | 网页阅读 |
 | 2026-09-06 真实场景研究、30 篇文献与实施计划 | [独立交接文档](../docs/real-scene-research-2026-09-06.md) | 网页阅读；PDF 原文留本地 |
 | 2026-09-03 组会更新版 | [PPTX](../SKEL_RGBD_组会汇报_2026-09-02/SKEL_RGBD_组会汇报_2026-09-03_更新版.pptx) | 下载 |

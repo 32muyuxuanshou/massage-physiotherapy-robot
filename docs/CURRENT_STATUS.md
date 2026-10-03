@@ -1,55 +1,55 @@
 # 项目当前状态
 
-更新时间：2026-09-15
+更新时间：2026-10-03。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
 
-本页是项目现役研究状态入口。各 `docs/handoffs/` 目录保留当时的协议、结果和历史结论；发生冲突时，以本页指向的最新正式交付及其机器可读结果为准。
+## 目标
 
-## 当前目标
+真实**俯卧背部 RGB-D → 个体 Mesh → 工程参考/规则定位 → 后续机器人坐标接口**。工程效果与可发表的方法贡献并行推进，表面距离、点位稳定性、医学准确率及部署精度分别验收。当前没有部署相机和独立临床穴位真值，可以继续离线工程，不将 AI 代理当临床标注。
 
-从真实 RGB-D 图像恢复可用于背部工程定位的人体 Mesh，并在几何、DMD37 表面对应、真实域泛化和拒答条件均有证据后，才进入穴位定位模型训练。工程定位结果不等于医学穴位确认，也不能直接作为机器人执行坐标。
+## 最新实际交付
 
-## 已经成立
+1. [可信俯卧五方法修正版](handoffs/real-scene-2026-10-03/pressurepose-prone-corrected-comparison-v2-execution/FINAL_REPORT.md)：PressurePose 20人、开发4/测试角色16、3 seeds，共300缓存完成。优化前划分6 cm空间块留出，各分支共享新的Official。测试角色后背距离Rigid 8.25→Rigid+D 3.66 mm；属于近似相机合同下的同源空间留出，13/16人全身投影支持IoU下降，不是产品或穴位精度。
+2. [表面与点位对应验证](handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/FINAL_REPORT.md)：300缓存/单位/拓扑实读；2,400工程点、60共享规则框架及2,400规则代理点；BEHAVE五人固定45帧、五方法225网格、K1/K2/K3独立sensor对照完成。
+3. 新BEHAVE posterior patch：Rigid 30.80→Rigid+D 30.32 mm，4/5人改善，Sub06略退化。180视图仅36个held-out后背小块/28帧有效；仅5帧/3人同时有K0及held-out后背参考。穿衣、非俯卧、已消费人物，**不足以确认俯卧裸背的稳定独立D增益**。[全部结果](handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/results/p2/RESULTS.json)
+4. 旧8点atlas：canonical原始cm，修正为×10 mm；缓存m×1000不变。同拓扑通过，但旧GV14/GV4上下颠倒、中线种子偏侧、左右与历史轴声明冲突。**语义HOLD，不生成医学标签或治疗目标。**[资产审计](handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/results/p0/POINT_ASSET_AUDIT.json)
+5. [公开数据资格](handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/DATA_QUALIFICATION.md)：DMD历史205组全部视觉检查，1张确认俯卧；当前V2为0图。PCdare324非Output点云与1,326线候选已枚举，有源码支持的几何重新绑定；没有三维穴位GT或已核验校准prone RGB-D关联。
 
-1. 官方 SAM 3D Body 推理、MHR Mesh 输出和真实图像叠加已经跑通。只生成 Mesh 不需要重新训练模型。
-2. Cheap Txyz 使用当前帧 Depth 只修正整个人体的 XYZ 平移。在冻结的 HuMMan 36帧实验中，主距离指标从 63.63 mm 降到 22.48 mm；在独立 BEHAVE 5人、15序列、45帧实验中，从 31.17 mm 降到 17.80 mm，5/5人物整体改善。指标是 Depth observation 到 Mesh 的单向距离聚合，不是完整人体双向表面误差或穴位误差。
-3. [SAM3D → Txyz 正式复现实验 V1.4.12](handoffs/real-scene-2026-09-14/sam3d-txyz-reproducibility-isolation-v1/formal-execution-v1.4.12/README.md) 已完成，Gate 为 `PASS_REPRODUCIBILITY_ISOLATION_EXECUTION`：
-   - 固定输入、环境、seed 和帧顺序的 SAM B–F cohort 共225次推理，450个两两比较的 vertex、anchor、camera translation 漂移均为0且 hash 完全一致。
-   - Txyz 对45帧分别完成同进程20次和新进程20次重复，未发现分歧。
-   - 27项预注册下游特征全部为 `STABLE`。
-   - 三种帧顺序的7帧测试在21个配对中的6个发现极小浮点顺序效应，最大 vertex 位移0.000999 mm、最大 anchor 位移0.000919 mm。该结果不推翻固定顺序复现结论，但后续实验必须冻结帧顺序。
-4. 正式复现使用的运行资产、输入、点云、结果和交付完整性都有 hash 绑定。Git 保留完整 JSON 审计包；大型逐帧 NPZ 留在服务器。
+PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼成同一项精度。全部失败和缺失保留，没有本轮训练/微调。
+
+## 已有基础
+
+- 官方SAM3D Body checkpoint/MHR推理、真实图像Mesh叠加已跑通；不等于从头复现论文训练。
+- 历史Cheap Txyz：HuMMan36帧63.63→22.48 mm；BEHAVE五人45帧whole-body口径31.17→17.80 mm。单向depth点→面距离，不是穴位准确率。[历史报告](handoffs/real-scene-2026-09-11/behave-cheap-txyz-generalization-v2/results-v2.3/RESULTS.md)
+- [固定顺序复现V1.4.12](handoffs/real-scene-2026-09-14/sam3d-txyz-reproducibility-isolation-v1/formal-execution-v1.4.12/README.md)历史Gate通过，225次SAM B–F固定顺序精确一致、27特征稳定；另有最大约0.001 mm帧顺序浮点效应，后续保持帧顺序冻结。
+- 历史合成RTMPose只证明合成工程任务可行，不能推导当前真人穴位定位精度。
 
 ## 当前 Gate
 
-| 事项 | 状态 | 含义 |
-| --- | --- | --- |
-| SAM3D → Txyz 固定顺序复现 | `PASS_REPRODUCIBILITY_ISOLATION_EXECUTION` | 可继续冻结协议下的残差研究 |
-| 真实后背躯干语义几何 | `POSTERIOR_GEOMETRY_NOT_READY` | 现有宽松 ROI 未通过独立 QA，不能当后背真值 |
-| DMD37 → MHR 桥接 | `BRIDGE_REVIEW_INCONCLUSIVE` | 两套候选存在约20–30 mm表面切向分歧，尚未选定 |
-| 合成 DMD37 | `SYNTHETIC_DMD37_NOT_READY` | Atlas 未放行，不生成正式合成标签 |
-| Mesh teacher / 工程伪标签 | `MESH_TEACHER_NOT_READY` | O/A/C/G尚无独立后背真值排名 |
-| RTMPose DMD37 微调 | `NOT_READY` | 上游标签合同未通过 |
+| 事项 | 状态 |
+|---|---|
+| 缓存传播/单位/同拓扑 | 已完成，几何合法 |
+| Rigid+D同源局部拟合 | 局部收益成立，存在轮廓/全局质量代价 |
+| Rigid+D独立机位后背收益 | 已执行；收益小、覆盖有限，未通过强结论 |
+| 8点atlas医学语义 | HOLD；独立代理候选也未医学验证 |
+| Mesh+规则代理链 | 跑通；椎体/B-cun输入为代理 |
+| 独立三维穴位/可靠目标对应 | 尚无资格数据，不报告准确率 |
+| 新训练、Mesh teacher、DMD37伪标签 | 未启动/未放行 |
+| 部署相机、机器人变换及接触控制 | 未验收 |
 
-DMD37 Gate 的证据见 [Back → DMD37 Bridge / Posterior V2](handoffs/real-scene-2026-09-11/back-dmd37-bridge-posterior-v2/README.md)。
+## 运行位置
 
-## 数据与运行位置
+本轮实际在线执行服务器：`xuhd@172.18.18.151:436`，5张RTX2080Ti按人物运行。环境、代码、输入与资产SHA见[复现说明](handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/REPRODUCTION.md)。
 
-- 2026-09-14 已按用户指令删除本机 HuMMan 解压子集、7z 分卷和两个 Hugging Face 下载缓存。本机不再保有这些原始数据。
-- 最新正式复现结果服务器目录：`/raid5/xuhd/sam3d_txyz_repro_v147_formal_20260914/results`。
-- 服务器元数据归档：`/raid5/xuhd/sam3d_txyz_repro_v1412_metadata.tgz`，SHA256 `70e417de411cc34a363655ef3d379f9baeac9518af325be1afc829d63ff1756a`。
-- Git 中保留实验报告、指标、必要可视化与审计元数据；授权权重、原始数据和大型运行数组不进入 Git。
+- 本轮：`/raid5/xuhd/datasets/prone_back_point_validation_20261003`
+- 300俯卧Mesh源：`/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/corrected_comparison_v2/run_v2`
+- BEHAVE数据：`/raid5/xuhd/behave_rgbd_mesh_v1/data`
+- 新资料：`/raid5/xuhd/datasets/back_prone_acquisition_20261003`
+- SAM代码/权重：`/raid5/xuhd/sam3d_s01_pilot_20260906`，授权权重不入Git。
 
-服务器路径来自正式执行账本，本次知识收尾没有重新登录服务器验证文件仍在线，因此服务器在线状态记为 `pending`。
+完整RGB复查保留服务器及本地`output/prone_back_point_validation_v1`；Git交付不含原图的预测图、代码、配置、索引和指标。原始数据、原生模型资产、大型NPZ不重发。
 
 ## 下一步
 
-主实验下一步是在 V1.4.12 冻结复现链上恢复 post-Txyz residual failure audit，区分整体平移修正后剩余误差来自姿势、体型、局部表面、遮挡还是传感器几何。
+先建立独立工程atlas V2，修正中线/上下/轴与来源语义；同时补足输入和独立机位都可见后背的验证条件。当前45帧不换样本，新cohort另建冻结版本。几何与对应分开查清后，再决定RGB-D几何或参考/对应模块训练。
 
-DMD37 线路在训练前必须先完成 V3 correspondence adjudication：修正解剖行组和顺序定义，独立裁决高分歧的 `DIRECT_SMPL` 与 `HISTORICAL_SMPLX` 对应。Atlas 放行前不生成 DMD37 伪标签、不启动 RTMPose 微调。
-
-## 尚未成立
-
-- Cheap Txyz 不能修复错误姿势、局部曲面、人体与物体接触形变或遮挡。
-- HuMMan/BEHAVE 结果不能证明治疗床、裸背、产品相机或机器人接触条件下的精度。
-- 当前没有医生确认的 DMD37 医学真值，也没有临床有效性或机器人安全结论。
-- Blender/SKEL/MHR 坐标尚不能直接作为机器人执行坐标。
+医学对应最终需要可靠独立目标参考，部署效果最终需要设备标定和验收。当前小残差不能替代这两项。

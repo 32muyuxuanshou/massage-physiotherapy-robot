@@ -1,0 +1,122 @@
+{
+  "id": "PRESSUREPOSE_PRONE_CORRECTED_COMPARISON_V2",
+  "status": "FROZEN_BEFORE_NEW_MODEL_OUTPUTS",
+  "subjects": [
+    "S103",
+    "S104",
+    "S107",
+    "S114",
+    "S118",
+    "S121",
+    "S130",
+    "S134",
+    "S140",
+    "S141",
+    "S145",
+    "S151",
+    "S163",
+    "S165",
+    "S170",
+    "S179",
+    "S184",
+    "S187",
+    "S188",
+    "S196"
+  ],
+  "dev": [
+    "S104",
+    "S107",
+    "S165",
+    "S187"
+  ],
+  "cohort_note": "All subjects previously consumed in engineering diagnosis; not unseen external generalization",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "block_m": 0.06,
+  "heldout_block_fraction": 0.2,
+  "methods": [
+    "Official",
+    "Official+Txyz",
+    "Official+Txyz+Pose",
+    "Official+Rigid",
+    "Official+Rigid+D"
+  ],
+  "eval_points_per_region_max": 1500,
+  "txyz": {
+    "iterations": 6,
+    "step_per_axis_m": 0.05,
+    "trim_fraction": 0.2,
+    "total_norm_bound_m": 0.17788820176363326
+  },
+  "o2": {
+    "iterations": 25,
+    "observed_points": 1024,
+    "anchor_stride": 2,
+    "huber_beta_m": 0.02,
+    "lr_translation": 0.003,
+    "lr_pose": 0.001,
+    "lambda_translation": 0.01,
+    "lambda_pose": 0.01,
+    "trainable": [
+      "translation",
+      "global_rot",
+      "body_pose"
+    ]
+  },
+  "rigid": {
+    "iterations": 30,
+    "trim_fraction": 0.2,
+    "initial_translation_iterations": 4
+  },
+  "D": {
+    "lam": 0.15,
+    "mu": 0.0001,
+    "tau": 0.05,
+    "n0": 6.0,
+    "irls": 4,
+    "sigma_m": 0.012,
+    "use_conf": true,
+    "use_robust": true,
+    "bed": null
+  },
+  "geometry": {
+    "units": "metres",
+    "camera": "OpenCV +X right +Y down +Z forward",
+    "intrinsics_source": "historical per-image mat-corner fitted pinhole K using official viewer camera center",
+    "distortion": "unavailable; pinhole approximation",
+    "shared_bbox": "historical full filtered pointcloud projected bbox; explicitly shared upstream input"
+  },
+  "regions": {
+    "posterior_roi": "RGB-only manual engineering polygons, frozen before model results; clothed observed back, not skin ground truth",
+    "posterior_d3d_surface": "fixed reviewed MHR posterior face ids; canonical coordinate unit labels not used",
+    "torso_band": [
+      0.2,
+      0.62
+    ]
+  },
+  "evaluation": {
+    "primary": "heldout point to exact posterior triangle distance in RGB posterior ROI",
+    "supporting": [
+      "all-mesh torso-band distance",
+      "exact continuous pinhole ray residual",
+      "ray hit fraction",
+      "intersection-of-five-methods common-hit residual",
+      "projected filtered-cloud support silhouette diagnostic",
+      "mesh quality relative to rotation-aligned input"
+    ],
+    "aggregation": "seed arithmetic mean -> subject -> dev/test subject median and individual deltas",
+    "medical_truth": false,
+    "independent_sensor_validation": false
+  },
+  "expected_rows": 300,
+  "historical_checkpoint_sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+  "historical_mhr_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+  "historical_anchors_sha256": "e949e9f42739efd9d6fd62db9fa41aca4a6f590c63625bcae9bef435879c1971",
+  "historical_faces_sha256": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+  "official_parameter_roundtrip_max_mm": 0.1,
+  "faces_sha256_serialization": "little-endian int32 C-order (matches the historical topology contract)",
+  "baseline_snapshot_entrypoint": "NOT USED; run_comparison.py is the only formal entrypoint"
+}

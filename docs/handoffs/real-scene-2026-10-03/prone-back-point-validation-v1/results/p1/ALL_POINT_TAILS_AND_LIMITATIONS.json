@@ -1,0 +1,140 @@
+{
+  "status": "ALL_480_RIGID_D_PAIRS_REPORTED",
+  "stats": {
+    "movement_total_mm": {
+      "min": 0.31026154548901475,
+      "median": 6.631923333752675,
+      "p95": 16.1304448966454,
+      "max": 28.48326724774573,
+      "maximum_case": {
+        "subject": "S121",
+        "seed": "1",
+        "point_id": "GV14",
+        "movement_total_mm": "28.48326724774573"
+      }
+    },
+    "movement_normal_abs_mm": {
+      "min": 0.1228459844338881,
+      "median": 6.171236022100958,
+      "p95": 15.686414372163364,
+      "max": 28.29373896866146,
+      "maximum_case": {
+        "subject": "S121",
+        "seed": "1",
+        "point_id": "GV14",
+        "movement_normal_abs_mm": "28.29373896866146"
+      }
+    },
+    "movement_tangent_mm": {
+      "min": 0.059767218978798095,
+      "median": 1.6150723530381015,
+      "p95": 4.448987537856229,
+      "max": 11.64108694889201,
+      "maximum_case": {
+        "subject": "S141",
+        "seed": "1",
+        "point_id": "GV14",
+        "movement_tangent_mm": "11.64108694889201"
+      }
+    },
+    "point_face_normal_angle_deg": {
+      "min": 0.29090527652664977,
+      "median": 7.434361114329626,
+      "p95": 16.748521135013238,
+      "max": 25.903930324184937,
+      "maximum_case": {
+        "subject": "S163",
+        "seed": "0",
+        "point_id": "BL15_R",
+        "point_face_normal_angle_deg": "25.903930324184937"
+      }
+    },
+    "rgb_projection_movement_px": {
+      "min": 0.04773934158320416,
+      "median": 0.8234164329450526,
+      "p95": 2.9121638400150727,
+      "max": 5.265199519535135,
+      "maximum_case": {
+        "subject": "S121",
+        "seed": "1",
+        "point_id": "GV14",
+        "rgb_projection_movement_px": "5.265199519535135"
+      }
+    },
+    "local_edge_change_p99": {
+      "min": 0.011488531977531299,
+      "median": 0.05758601677927683,
+      "p95": 0.12722151188200223,
+      "max": 0.2422992269539009,
+      "maximum_case": {
+        "subject": "S163",
+        "seed": "2",
+        "point_id": "GV14",
+        "local_edge_change_p99": "0.2422992269539009"
+      }
+    },
+    "local_area_ratio_median": {
+      "min": 0.8016444228288855,
+      "median": 0.9864350464101136,
+      "p95": 1.064783957320708,
+      "max": 1.1210359974548565,
+      "maximum_case": {
+        "subject": "S107",
+        "seed": "1",
+        "point_id": "GV4",
+        "local_area_ratio_median": "1.1210359974548565"
+      }
+    },
+    "local_normal_angle_p95_deg": {
+      "min": 2.976059797301004,
+      "median": 12.186647928855434,
+      "p95": 21.472659405923128,
+      "max": 35.94641796477323,
+      "maximum_case": {
+        "subject": "S141",
+        "seed": "0",
+        "point_id": "GV14",
+        "local_normal_angle_p95_deg": "35.94641796477323"
+      }
+    },
+    "local_normal_reversal_fraction": {
+      "min": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0,
+      "maximum_case": {
+        "subject": "S103",
+        "seed": "0",
+        "point_id": "BL13_L",
+        "local_normal_reversal_fraction": "0.0"
+      }
+    },
+    "local_degenerate_faces": {
+      "min": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0,
+      "maximum_case": {
+        "subject": "S103",
+        "seed": "0",
+        "point_id": "BL13_L",
+        "local_degenerate_faces": "0"
+      }
+    }
+  },
+  "normal_component_larger_than_tangent_pairs": 420,
+  "pair_count": 480,
+  "pairs_with_local_normal_reversal": 0,
+  "pairs_with_local_degenerate_faces": 0,
+  "limitation_flags": {
+    "CONFLICT_WITH_HISTORICAL_PLUS_X_IS_SUBJECT_LEFT_DECLARATION": 1800,
+    "OUTSIDE_FROZEN_RGB_BACK_ROI": 1515,
+    "NO_HELDOUT_SUPPORT_WITHIN_20MM": 1806,
+    "MIDLINE_LABEL_WITH_NONZERO_CANONICAL_X": 600
+  },
+  "caveats": [
+    "Quantiles here pool diagnostic pairs, not independent subjects; primary equal-person summary remains SUMMARY.json",
+    "Local one-ring checks do not establish global absence of self-intersection",
+    "No target ground truth; old atlas semantic labels on HOLD"
+  ]
+}

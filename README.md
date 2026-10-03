@@ -1,6 +1,6 @@
 # 按摩理疗机器人
 
-> **项目现役状态（2026-09-15）：** 统一见[项目当前状态](docs/CURRENT_STATUS.md)。最新正式交付是 [SAM3D → Txyz 复现实验 V1.4.12](docs/handoffs/real-scene-2026-09-14/sam3d-txyz-reproducibility-isolation-v1/formal-execution-v1.4.12/README.md)，Gate 为 `PASS_REPRODUCIBILITY_ISOLATION_EXECUTION`。固定帧顺序下 SAM 与 Txyz 可精确复现；另发现最大约 0.001 mm 的浮点帧顺序效应。后背语义、DMD37→MHR桥接、合成DMD37和RTMPose微调仍未放行。
+> **项目现役状态（2026-10-03）：** 统一见[项目当前状态](docs/CURRENT_STATUS.md)。最新完成[表面几何与工程点对应验证](docs/handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/FINAL_REPORT.md)：300个俯卧缓存的单位/拓扑、2,400点诊断、BEHAVE45帧五方法独立机位对照及公开数据资格审计。D的跨机位后背收益很小且覆盖有限；旧atlas存在语义错误，医学标签、新训练与机器人定位验收仍未放行。
 项目源码、工程文档与交付资料的统一版本管理入口。
 
 > **研究边界：** HuMMan/BEHAVE 指标是 Depth observation 到 Mesh 的单向距离聚合，不是完整人体双向表面误差或穴位误差。现有结果不能外推到治疗床、裸背、产品相机、临床有效性或机器人安全。

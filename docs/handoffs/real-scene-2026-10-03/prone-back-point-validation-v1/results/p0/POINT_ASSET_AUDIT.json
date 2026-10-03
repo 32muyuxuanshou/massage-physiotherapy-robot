@@ -1,0 +1,197 @@
+{
+  "status": "PASS_UNITS_AND_TOPOLOGY_HOLD_ANATOMICAL_SEMANTICS",
+  "native_unit": "cm",
+  "native_to_mm": 10,
+  "predicted_cache_unit": "m",
+  "predicted_native_to_mm": 1000,
+  "raw_rest_equals_raw_zero_forward": false,
+  "zero_forward_minus_rest_median_mm": 7.64428116888113e-05,
+  "zero_forward_minus_rest_max_mm": 0.00041482092229712576,
+  "canonical_source": "raw rest vertices; zero-forward comparison recorded separately",
+  "unit_source": "/raid5/xuhd/sam3d_s01_pilot_20260906/sam-3d-body/sam_3d_body/models/heads/mhr_head.py",
+  "unit_source_sha256": "1e4b5482f78b337a2c739c945f29a02f579b3aca99523f69f5436c3f1e394bf8",
+  "unit_source_lines": [
+    {
+      "line": 233,
+      "text": "curr_skinned_verts = curr_skinned_verts / 100"
+    }
+  ],
+  "canonical_bbox_mm": {
+    "min": [
+      -653.2131958007812,
+      -0.5858399868011475,
+      -138.9409637451172
+    ],
+    "max": [
+      653.2131958007812,
+      1726.228759765625,
+      256.1319885253906
+    ]
+  },
+  "faces_sha256_int32": "f6748e290ef37fbb6877c4cc5bd7287105db9e98252b0ba170ae9ac3c45eacd6",
+  "faces_sha256_int64": "0e47f537d5e48ef99092c6631963ca4c31c9ec59d1cfaa20cefc9ce41d518b84",
+  "actual_caches_verified": 300,
+  "medical_truth": false,
+  "old_axis_declaration": {
+    "mesh": "canonical MHR LOD1",
+    "x": "+X is subject-left",
+    "z": "posterior/dorsal is predominantly -Z",
+    "units": "millimetres"
+  },
+  "point_checks": [
+    {
+      "id": "BL13_L",
+      "face_index": 15338,
+      "inside_posterior": true,
+      "canonical_xyz_mm": [
+        -74.91397857666016,
+        898.1759643554688,
+        -124.43831443786621
+      ],
+      "normal": [
+        -0.0833439901471138,
+        -0.3511093854904175,
+        -0.9326177835464478
+      ],
+      "flags": [
+        "CONFLICT_WITH_HISTORICAL_PLUS_X_IS_SUBJECT_LEFT_DECLARATION"
+      ]
+    },
+    {
+      "id": "BL13_R",
+      "face_index": 15464,
+      "inside_posterior": true,
+      "canonical_xyz_mm": [
+        74.91397857666016,
+        898.1759643554688,
+        -124.43831443786621
+      ],
+      "normal": [
+        0.13346752524375916,
+        -0.3450556993484497,
+        -0.9290441274642944
+      ],
+      "flags": [
+        "CONFLICT_WITH_HISTORICAL_PLUS_X_IS_SUBJECT_LEFT_DECLARATION"
+      ]
+    },
+    {
+      "id": "BL15_L",
+      "face_index": 15170,
+      "inside_posterior": true,
+      "canonical_xyz_mm": [
+        -50.77150821685791,
+        963.1903839111328,
+        -138.9409637451172
+      ],
+      "normal": [
+        -0.03795000538229942,
+        0.0984308272600174,
+        -0.9944199919700623
+      ],
+      "flags": [
+        "CONFLICT_WITH_HISTORICAL_PLUS_X_IS_SUBJECT_LEFT_DECLARATION"
+      ]
+    },
+    {
+      "id": "BL15_R",
+      "face_index": 14988,
+      "inside_posterior": true,
+      "canonical_xyz_mm": [
+        50.77150821685791,
+        963.1903839111328,
+        -138.9409637451172
+      ],
+      "normal": [
+        0.05971195548772812,
+        0.00602733762934804,
+        -0.9981974363327026
+      ],
+      "flags": [
+        "CONFLICT_WITH_HISTORICAL_PLUS_X_IS_SUBJECT_LEFT_DECLARATION"
+      ]
+    },
+    {
+      "id": "BL18_L",
+      "face_index": 13706,
+      "inside_posterior": true,
+      "canonical_xyz_mm": [
+        -46.31378173828125,
+        1185.4752349853516,
+        -99.29394721984863
+      ],
+      "normal": [
+        0.24998831748962402,
+        -0.22497853636741638,
+        -0.9417486190795898
+      ],
+      "flags": [
+        "CONFLICT_WITH_HISTORICAL_PLUS_X_IS_SUBJECT_LEFT_DECLARATION"
+      ]
+    },
+    {
+      "id": "BL18_R",
+      "face_index": 13538,
+      "inside_posterior": true,
+      "canonical_xyz_mm": [
+        46.31378173828125,
+        1185.4752349853516,
+        -99.29394721984863
+      ],
+      "normal": [
+        0.06631956994533539,
+        -0.20103372633457184,
+        -0.9773367643356323
+      ],
+      "flags": [
+        "CONFLICT_WITH_HISTORICAL_PLUS_X_IS_SUBJECT_LEFT_DECLARATION"
+      ]
+    },
+    {
+      "id": "GV14",
+      "face_index": 16004,
+      "inside_posterior": true,
+      "canonical_xyz_mm": [
+        79.34846878051758,
+        809.5566558837891,
+        -82.735595703125
+      ],
+      "normal": [
+        -0.16783420741558075,
+        -0.20541030168533325,
+        -0.9641774892807007
+      ],
+      "flags": [
+        "MIDLINE_LABEL_WITH_NONZERO_CANONICAL_X"
+      ]
+    },
+    {
+      "id": "GV4",
+      "face_index": 12544,
+      "inside_posterior": true,
+      "canonical_xyz_mm": [
+        75.01889228820801,
+        1369.1740417480469,
+        -126.51785850524902
+      ],
+      "normal": [
+        0.06104753538966179,
+        0.16927263140678406,
+        -0.9836767315864563
+      ],
+      "flags": [
+        "MIDLINE_LABEL_WITH_NONZERO_CANONICAL_X"
+      ]
+    }
+  ],
+  "vertical_order": {
+    "GV14_y_mm": 809.5566558837891,
+    "GV4_y_mm": 1369.1740417480469,
+    "GV14_above_GV4_under_plus_Y_up": false,
+    "note": "Engineering semantic ordering check, not observed vertebral locations"
+  },
+  "limitations": [
+    "Old point labels/placements retained as engineering seeds; semantic flags prohibit accuracy claims",
+    "Orientation declaration conflicts are recorded, not silently relabeled"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-03",
+  "status": "ACQUISITION_AND_STRUCTURE_AUDIT_COMPLETED",
+  "model_training_or_new_mesh_fit_executed": false,
+  "server": {
+    "host": "172.18.18.151",
+    "port": 436,
+    "user": "xuhd",
+    "root": "/raid5/xuhd/datasets/back_prone_acquisition_20261003"
+  },
+  "pcdare": {
+    "source": "https://github.com/mkaisereth/PCdareSoftware",
+    "commit": "35f7a1d9c1b24264708111a986ba89bdf17f1df1",
+    "relative_root": "pcdare_35f7a1d9",
+    "selected_files": 2250,
+    "selected_bytes": 402360708,
+    "identity_status": "DOWNLOAD_AND_BLOB_IDENTITY_PASS",
+    "ply_files": 504,
+    "non_output_path_ply": 324,
+    "derived_output_path_ply": 180,
+    "nonfinite_vertices": 0,
+    "nonempty_marker_json_files": 933,
+    "nonempty_line_json_files": 1104,
+    "verified_subject_count": null,
+    "units_approved": false,
+    "rgbd_camera_tuple_established": false,
+    "independent_acupoint_truth": false,
+    "qualification": "SUPPORTING_BACK_SURFACE_RESOURCE_PENDING_SCAN_MARKER_UNIT_BINDING",
+    "license": "CC BY-NC-SA 4.0",
+    "download_audit_sha256": "3730ea8f3a6bdc3fafe1e66d45fb8bb3f7eb5fff8860f3ea8dfc70efb7fcc127"
+  },
+  "dmd_current_v2": {
+    "source": "https://www.kaggle.com/api/v1/datasets/download/chunzheye/dmd-bak?datasetVersionNumber=2",
+    "archive_bytes": 415,
+    "archive_sha256": "b5af77789882659371df86e78e9331b568ee32afb1547cd27c48767abf7f62ca",
+    "actual_images": 0,
+    "status": "NO_IMAGE_PAYLOAD_AUTHOR_QUALITY_REVIEW_NOTICE"
+  },
+  "dmd_historical_v1": {
+    "source": "https://www.kaggle.com/api/v1/datasets/download/chunzheye/dmd-bak?datasetVersionNumber=1",
+    "whole_archive_downloaded": false,
+    "remote_archive_bytes": 8562947645,
+    "remote_jpg_png_entries": 2357,
+    "remote_json_entries": 2358,
+    "stem_matched_available_pairs": 1255,
+    "directory_proxies": 75,
+    "verified_subject_count": null,
+    "downloaded_pairs": 205,
+    "downloaded_bytes": 449142256,
+    "crc_verified": true,
+    "sha256_recorded": true,
+    "dimension_mismatch_images": 17,
+    "images_with_outside_points": 11,
+    "exact_duplicate_images": 5,
+    "imagePath_basename_mismatch_images": 43,
+    "point_count_histogram": {
+      "37": 198,
+      "35": 5,
+      "36": 1,
+      "38": 1
+    },
+    "status": "HISTORICAL_IMAGES_DECODED_LABELS_QUARANTINED",
+    "clinical_labels_approved": false,
+    "subject_split_approved": false,
+    "sensor_depth_established": false,
+    "manual_visual_review_images": 37,
+    "manual_visual_review_pages": [
+      1,
+      8,
+      12,
+      18,
+      24,
+      30,
+      35
+    ],
+    "confirmed_bed_prone_in_reviewed_subset": 0,
+    "metadata_license": "CC BY-NC-SA 3.0 IGO",
+    "download_audit_sha256": "fb91c81f482d642484d67b52908f9701bbedd035d1b2f13af0fb8eb5a9798081"
+  },
+  "limits": [
+    "File counts are not subject counts",
+    "Visual review is a subset; decoding is complete",
+    "No calibrated prone RGB-D with independent 3D acupoint labels acquired in this round",
+    "Historical experiments and thresholds unchanged"
+  ]
+}

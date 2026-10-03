@@ -1,0 +1,87 @@
+{
+  "status": "DATA_ONLY_VISUAL_REVIEW_COMPLETE",
+  "reviewer": "Codex engineering review, not physical calibration certification",
+  "model_outputs_seen": 0,
+  "rows": [
+    {
+      "sequence": "Date01_Sub01_stool_sit",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date03_Sub03_backpack_back",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date03_Sub03_stool_sit",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date03_Sub03_yogaball_play",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date03_Sub04_backpack_back",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date03_Sub04_stool_sit",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date03_Sub04_yogaball_play",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date03_Sub05_backpack",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date03_Sub05_stool",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date03_Sub05_yogaball",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date05_Sub06_backpack_back",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date05_Sub06_stool_sit",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date05_Sub06_yogaball_play",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date06_Sub07_backpack_back",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date06_Sub07_stool_sit",
+      "world_cloud_visual_sanity": "PASS"
+    },
+    {
+      "sequence": "Date06_Sub07_yogaball_play",
+      "world_cloud_visual_sanity": "PASS"
+    }
+  ],
+  "images": [
+    {
+      "path": "/raid5/xuhd/datasets/prone_back_point_validation_20261003/p2_behave_crossview/cloud_world_QA_0.png",
+      "sha256": "3858c0e94f725cbbf360a188092c08fe91c03b3f3d0e45d0aa012925953a81da"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/prone_back_point_validation_20261003/p2_behave_crossview/cloud_world_QA_1.png",
+      "sha256": "a17ce0b0ea9212410ef05fe446f415b4e49b34d7e02099379da6bce3e500a111"
+    }
+  ],
+  "limits": [
+    "All 16 world-cloud overlays visually inspected before new SAM inference",
+    "2-98 percentile axis limits for visualization only; no outliers removed from optimization or metrics",
+    "Sub06 stool K2 coarse whole-surface median 211.13mm retained as warning; surfaces from opposite cameras need not coincide",
+    "No model-based camera adjustment"
+  ]
+}

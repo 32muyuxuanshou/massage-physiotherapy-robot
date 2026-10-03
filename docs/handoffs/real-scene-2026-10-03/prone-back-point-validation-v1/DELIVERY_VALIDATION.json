@@ -1,0 +1,155 @@
+{
+  "status": "PASS",
+  "date": "2026-10-03",
+  "p1": {
+    "source_meshes": 300,
+    "point_records": 2400,
+    "paired_records": 480,
+    "private_rgb_pages": 60,
+    "public_prediction_pages": 60
+  },
+  "p2": {
+    "formal_frames": 45,
+    "method_meshes": 225,
+    "all_camera_records": 900,
+    "heldout_potential_records": 675,
+    "heldout_valid_method_records": 180,
+    "heldout_valid_views": 36,
+    "heldout_valid_frames": 28,
+    "private_rgb_pages": 45,
+    "public_prediction_pages": 45,
+    "cache_recomputation_views": 3,
+    "cache_recomputation_method_groups": 15
+  },
+  "p3": {
+    "dmd_pairs": 205,
+    "raw_label_classes": 25,
+    "scan_rows": 324,
+    "line_candidates": 1326,
+    "unique_independent_reference_bindings": 0
+  },
+  "p4": {
+    "point_records": 2400,
+    "shared_frames": 60
+  },
+  "source_and_input_integrity": "PASS",
+  "jobs_returncode_zero": 5,
+  "aggregate_subject_equal_mean_recomputed": "PASS",
+  "camera_frame_sequence_subject_recomputed": [
+    {
+      "file": "PER_FRAME_HELDOUT.csv",
+      "rows": 225,
+      "status": "PASS"
+    },
+    {
+      "file": "PER_SEQUENCE_HELDOUT.csv",
+      "rows": 75,
+      "status": "PASS"
+    },
+    {
+      "file": "PER_SUBJECT_HELDOUT.csv",
+      "rows": 25,
+      "status": "PASS"
+    }
+  ],
+  "frozen_source_identity_checks": [
+    {
+      "path": "frozen_baseline_code/aggregate_results.py",
+      "sha256": "4a40f2eb624b50e48ac4e052108de2c297397045ea35f8f1ba03d0775c56d835"
+    },
+    {
+      "path": "frozen_baseline_code/audit_outputs.py",
+      "sha256": "925cf97d6e88bb09f599b6b70806466382dc866824d9570a085a5d650efd2a82"
+    },
+    {
+      "path": "frozen_baseline_code/baseline_v1.py",
+      "sha256": "3ae551deb14e131d8e08f9d3ab579dafdfd31ff3e8b4f55d08789fccb8841a04"
+    },
+    {
+      "path": "frozen_baseline_code/bed_io.py",
+      "sha256": "2e195dfb8ea5f8769da455f95ea2336f3ad56cc9d515fba4ab321a2de85c74ae"
+    },
+    {
+      "path": "frozen_baseline_code/cache_v2.py",
+      "sha256": "6ba5bdb689f91d998c3059c1b61d7fdb682c275eeb89777f76285530fd61acbb"
+    },
+    {
+      "path": "frozen_baseline_code/camera_qa.py",
+      "sha256": "3213d43dd3f676470aed0e459e61da4d20b4c890ffaf99f8a5db6c27c24c1eff"
+    },
+    {
+      "path": "frozen_baseline_code/data_v2.py",
+      "sha256": "fc5ef4b1d0bb34290e5425ac2a493be2cf21cd3c3a9a9c666157287d2cb0f4b7"
+    },
+    {
+      "path": "frozen_baseline_code/evaluate_cache.py",
+      "sha256": "225a33fb2b60967dbdbff5ec0f3ec3f61133e178bcf207cb939c440e205c2f94"
+    },
+    {
+      "path": "frozen_baseline_code/freeze_package.py",
+      "sha256": "fe6ff25543276dccbe402cceda94e624304de8d4a033e7e11ee83eadf5f15a5a"
+    },
+    {
+      "path": "frozen_baseline_code/l1_fit.py",
+      "sha256": "ba88eb7f48a722047fe7546664649206a770ee57ed656d906e514bea124b5a1f"
+    },
+    {
+      "path": "frozen_baseline_code/make_visuals.py",
+      "sha256": "f8c72216cc779fbaa0c7452fe5790586992ee8323214ef490d6bc005b5c49581"
+    },
+    {
+      "path": "frozen_baseline_code/metrics_v2.py",
+      "sha256": "27d5452b94ec693e521d5b4212492a1da1acf9ce1abc6ddc72447834cbc4f80e"
+    },
+    {
+      "path": "frozen_baseline_code/preflight.py",
+      "sha256": "61cc7e457a44a699c2c7e5b5540fda71befba8c52f4e34f13bfd3d51ad501fdf"
+    },
+    {
+      "path": "frozen_baseline_code/prepare_delivery.py",
+      "sha256": "14c34fe1373b0174e200edad54033caf4c933fb833907c6b646231147c8f2da1"
+    },
+    {
+      "path": "frozen_baseline_code/prepare_roi.py",
+      "sha256": "1228415b61f74334da14bd7f8c5caf2f72193106ae84941769553eaa66c2dd67"
+    },
+    {
+      "path": "frozen_baseline_code/run_comparison.py",
+      "sha256": "c5627a05c5244d6b1dc5019ef01625f8ced8818595190ed6a47639b891317b0d"
+    },
+    {
+      "path": "frozen_baseline_code/run_offline_sanity.py",
+      "sha256": "e162a5e16d58260bb0bbc21e93d2903627d580ec3d00b16448beee5c9229a06a"
+    },
+    {
+      "path": "frozen_baseline_code/server_preflight.py",
+      "sha256": "5c152bb2d7ee04cdd0c93537c31cf898cf7a2578df165e2826070e3e0be6be1a"
+    },
+    {
+      "path": "frozen_baseline_code/surface_metrics.py",
+      "sha256": "619b32af927ae466203a2e48bf44389511d28cddb32dff7c4d36d551a9194d81"
+    },
+    {
+      "path": "frozen_baseline_code/test_metrics_v2.py",
+      "sha256": "a7687dd2a676e43c3337de5e697637496cb38072b691e4ae12362f33192b3dd2"
+    },
+    {
+      "path": "frozen_baseline_code/test_pipeline_v2.py",
+      "sha256": "bc1333dde498822b402a6f96fa43ef565f7724545103280ecaf2a6000c43e325"
+    },
+    {
+      "path": "code/run_behave_rigid_d.py",
+      "sha256": "0072fbf9dd80df68e33a389c508e6e58462e1453c3f8527142b81571c8bd2566"
+    },
+    {
+      "path": "code/behave_v2_io.py",
+      "sha256": "c9a2e4ead57bb04a75cd57b702a03de8a693d9b97d2170cd3ecaef82fa614e5b"
+    },
+    {
+      "path": "code/run_cached_point_diagnostics.py",
+      "sha256": "43ece0d969caaf9908b1a59ef14d819a4a8514f355f3908fa94999ab43724a92"
+    }
+  ],
+  "training_started": false,
+  "clinical_accuracy_validated": false
+}

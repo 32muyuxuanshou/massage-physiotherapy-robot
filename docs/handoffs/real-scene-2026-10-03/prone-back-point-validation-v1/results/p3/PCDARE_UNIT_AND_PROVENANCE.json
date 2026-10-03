@@ -1,0 +1,65 @@
+{
+  "status": "324_NON_OUTPUT_SCANS_ENUMERATED",
+  "scan_count": 324,
+  "independent_subjects_verified": null,
+  "derived_named_scans": 63,
+  "scans_with_index_compatible_lines": 0,
+  "available_non_output_geometry": 324,
+  "calibrated_prone_rgbd_pairs_qualified": 0,
+  "acupoint_ground_truth_qualified": 0,
+  "unit_source_evidence": [
+    {
+      "file": "StartPCdareRegisterApp.m",
+      "sha256": "137a9c61e1f517e987ca6b209e2850fe6737b78c43cb6fa9b311bca5619101ed",
+      "line": 270,
+      "text": "pcLinePts = jsonObject.pcLinePts/1000;"
+    },
+    {
+      "file": "StartPCdareRegisterApp.m",
+      "sha256": "137a9c61e1f517e987ca6b209e2850fe6737b78c43cb6fa9b311bca5619101ed",
+      "line": 298,
+      "text": "pcLoc = pc.Location*1000; % m to mm"
+    },
+    {
+      "file": "StartPCdareRegisterApp.m",
+      "sha256": "137a9c61e1f517e987ca6b209e2850fe6737b78c43cb6fa9b311bca5619101ed",
+      "line": 312,
+      "text": "pcLoc = pc.Location*1000; % m to mm"
+    },
+    {
+      "file": "StartPCdareRegisterApp.m",
+      "sha256": "137a9c61e1f517e987ca6b209e2850fe6737b78c43cb6fa9b311bca5619101ed",
+      "line": 323,
+      "text": "pcLoc = pc.Location*1000; % m to mm"
+    },
+    {
+      "file": "StartPCdareRegisterApp.m",
+      "sha256": "137a9c61e1f517e987ca6b209e2850fe6737b78c43cb6fa9b311bca5619101ed",
+      "line": 352,
+      "text": "pcLoc = pc.Location*1000; % m to mm"
+    },
+    {
+      "file": "StartPCdareRegisterApp.m",
+      "sha256": "137a9c61e1f517e987ca6b209e2850fe6737b78c43cb6fa9b311bca5619101ed",
+      "line": 362,
+      "text": "pcLoc = pc.Location*1000; % m to mm"
+    },
+    {
+      "file": "Asymmetry/E2_StartPCDrawLineApp.m",
+      "sha256": "8940e55c0739f3664bd9544bab713e71a11f3ecac3c1896f22f9cd85365acaaf",
+      "line": 58,
+      "text": "pcLinePtInds = knnsearch(pc.Location*1000, pcLinePts);"
+    },
+    {
+      "file": "Asymmetry/hNet/A_GenerateDepthAsymmMaps.m",
+      "sha256": "4526eb011feb510d5eb911408417d9d98f4ea8b67db5bfd84e50c5d138d96e11",
+      "line": 54,
+      "text": "pc = pcread(plyFilePath); % point cloud is in m"
+    }
+  ],
+  "limits": [
+    "Index-coordinate agreement tests scan association, not anatomical truth or session identity",
+    "Output directory and _ds/_cut names are processing hints; non-Output does not guarantee raw acquisition",
+    "Directory counts are not independent subject counts; no data used for model training"
+  ]
+}
