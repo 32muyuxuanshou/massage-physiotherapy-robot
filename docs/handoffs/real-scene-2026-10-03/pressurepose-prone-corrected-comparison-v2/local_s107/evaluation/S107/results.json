@@ -1,0 +1,264 @@
+[
+  {
+    "subject": "S107",
+    "split": "dev",
+    "seed": 0,
+    "method": "Official",
+    "mesh_sha256": "cc50a4e2805b321623b529b1842c22990677497a0a3575ec9abcce27361a33dd",
+    "posterior": {
+      "d3d": {
+        "n": 1190,
+        "median_mm": 68.44765507715377,
+        "p95_mm": 95.15227612884492
+      },
+      "ray_absolute": {
+        "n": 1190,
+        "median_mm": 81.06956986513036,
+        "p95_mm": 96.85641797888036
+      },
+      "ray_common_hit_absolute": {
+        "n": 1190,
+        "median_mm": 81.06956986513036,
+        "p95_mm": 96.85641797888036
+      },
+      "ray_hit_fraction": 1.0,
+      "ray_common_hit_fraction": 1.0,
+      "point_count": 1190,
+      "ray_signed_median_mm": 81.06956986513036
+    },
+    "torso": {
+      "d3d": {
+        "n": 1407,
+        "median_mm": 65.79578940033477,
+        "p95_mm": 91.27684950076738
+      },
+      "ray_absolute": {
+        "n": 1084,
+        "median_mm": 81.21813181270343,
+        "p95_mm": 117.74721403479019
+      },
+      "ray_common_hit_absolute": {
+        "n": 1070,
+        "median_mm": 81.19975255211753,
+        "p95_mm": 115.48747773852772
+      },
+      "ray_hit_fraction": 0.7704335465529495,
+      "ray_common_hit_fraction": 0.7604832977967306,
+      "point_count": 1407,
+      "ray_signed_median_mm": 81.21813181270343
+    },
+    "optimization": {
+      "depth_fit": false
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 5.714247821586429e-15,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7191802491124052,
+      "boundary_median_px": 10.0,
+      "boundary_p95_px": 32.7566787083184,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "OFFLINE_SANITY_LEGACY_RGB_ONLY_OFFICIAL_INCOMPLETE_MHR_PARAMETERS",
+    "input_sha256": "ced1cb173b7fdb2e0f5ccadeadc8bb8e87f441371f69c8aafe3dba833ce4be82",
+    "split_sha256": "07413b185469d57f988ea6930f1473c9136860c760e6ae40317fd7e90be49c42"
+  },
+  {
+    "subject": "S107",
+    "split": "dev",
+    "seed": 0,
+    "method": "Official+Rigid",
+    "mesh_sha256": "7583a0447b686fddc5c2550c7ac83735314ab9be42a695c550f346e1b72499c3",
+    "posterior": {
+      "d3d": {
+        "n": 1190,
+        "median_mm": 8.801258875609374,
+        "p95_mm": 34.75855588261636
+      },
+      "ray_absolute": {
+        "n": 1190,
+        "median_mm": 9.537170074821688,
+        "p95_mm": 93.35268268200487
+      },
+      "ray_common_hit_absolute": {
+        "n": 1190,
+        "median_mm": 9.537170074821688,
+        "p95_mm": 93.35268268200487
+      },
+      "ray_hit_fraction": 1.0,
+      "ray_common_hit_fraction": 1.0,
+      "point_count": 1190,
+      "ray_signed_median_mm": -6.9144633669537825
+    },
+    "torso": {
+      "d3d": {
+        "n": 1407,
+        "median_mm": 8.184011906678203,
+        "p95_mm": 37.27375496039097
+      },
+      "ray_absolute": {
+        "n": 1211,
+        "median_mm": 11.334963996643355,
+        "p95_mm": 89.23259389376292
+      },
+      "ray_common_hit_absolute": {
+        "n": 1070,
+        "median_mm": 11.530573605394888,
+        "p95_mm": 89.24654206111038
+      },
+      "ray_hit_fraction": 0.8606965174129353,
+      "ray_common_hit_fraction": 0.7604832977967306,
+      "point_count": 1407,
+      "ray_signed_median_mm": -2.588208076330867
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "iterations": 30,
+        "trim_fraction": 0.2,
+        "initial_translation_iterations": 4
+      },
+      "R": [
+        [
+          0.9997169343306929,
+          -0.01044465531204604,
+          -0.021376631817347277
+        ],
+        [
+          0.010049140989459268,
+          0.9997778631422815,
+          -0.018526714118479642
+        ],
+        [
+          0.021565388422559086,
+          0.018306653054735427,
+          0.9995998201661092
+        ]
+      ],
+      "t_m": [
+        0.03900089349211572,
+        0.04087230210457071,
+        -0.07846425559268885
+      ]
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 5.1694896425762205e-15,
+      "edge_strain_p99": 1.324464966876412e-13,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.789033685763462,
+      "boundary_median_px": 7.0,
+      "boundary_p95_px": 26.459390100996952,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "OFFLINE_SANITY_LEGACY_RGB_ONLY_OFFICIAL_INCOMPLETE_MHR_PARAMETERS",
+    "input_sha256": "ced1cb173b7fdb2e0f5ccadeadc8bb8e87f441371f69c8aafe3dba833ce4be82",
+    "split_sha256": "07413b185469d57f988ea6930f1473c9136860c760e6ae40317fd7e90be49c42"
+  },
+  {
+    "subject": "S107",
+    "split": "dev",
+    "seed": 0,
+    "method": "Official+Rigid+D",
+    "mesh_sha256": "300a4bcfe36584afad4379996ee7847bd899397f71480a13b238aa570ee19d13",
+    "posterior": {
+      "d3d": {
+        "n": 1190,
+        "median_mm": 2.9178615920995394,
+        "p95_mm": 26.960729823918584
+      },
+      "ray_absolute": {
+        "n": 1190,
+        "median_mm": 3.3144993112873555,
+        "p95_mm": 73.78390766106169
+      },
+      "ray_common_hit_absolute": {
+        "n": 1190,
+        "median_mm": 3.3144993112873555,
+        "p95_mm": 73.78390766106169
+      },
+      "ray_hit_fraction": 1.0,
+      "ray_common_hit_fraction": 1.0,
+      "point_count": 1190,
+      "ray_signed_median_mm": -1.3954125976203269
+    },
+    "torso": {
+      "d3d": {
+        "n": 1407,
+        "median_mm": 3.6757505092547658,
+        "p95_mm": 28.47315486856746
+      },
+      "ray_absolute": {
+        "n": 1198,
+        "median_mm": 4.4356227912456525,
+        "p95_mm": 72.52966523124532
+      },
+      "ray_common_hit_absolute": {
+        "n": 1070,
+        "median_mm": 4.13685605496994,
+        "p95_mm": 70.78155595874455
+      },
+      "ray_hit_fraction": 0.851457000710732,
+      "ray_common_hit_fraction": 0.7604832977967306,
+      "point_count": 1407,
+      "ray_signed_median_mm": -0.9824026524045681
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "lam": 0.15,
+        "mu": 0.0001,
+        "tau": 0.05,
+        "n0": 6.0,
+        "irls": 4,
+        "sigma_m": 0.012,
+        "use_conf": true,
+        "use_robust": true,
+        "bed": null
+      },
+      "D_info": {
+        "n_data_it0": 2968,
+        "n_data_it1": 2907,
+        "n_data_it2": 3031,
+        "n_data_it3": 3024,
+        "tangential_p50_mm": 0.1355486649662824,
+        "tangential_p95_mm": 3.868590076197601
+      }
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0007051038672235179,
+      "edge_strain_p50": 0.003658555381254744,
+      "edge_strain_p99": 0.3300632273085849,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7856623595900851,
+      "boundary_median_px": 6.708203932499369,
+      "boundary_p95_px": 26.248809496813376,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "OFFLINE_SANITY_LEGACY_RGB_ONLY_OFFICIAL_INCOMPLETE_MHR_PARAMETERS",
+    "input_sha256": "ced1cb173b7fdb2e0f5ccadeadc8bb8e87f441371f69c8aafe3dba833ce4be82",
+    "split_sha256": "07413b185469d57f988ea6930f1473c9136860c760e6ae40317fd7e90be49c42"
+  }
+]

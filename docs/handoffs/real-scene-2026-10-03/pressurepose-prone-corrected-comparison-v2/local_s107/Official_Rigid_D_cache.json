@@ -1,0 +1,52 @@
+{
+  "subject": "S107",
+  "seed": 0,
+  "method": "Official+Rigid+D",
+  "source_status": "OFFLINE_SANITY_LEGACY_RGB_ONLY_OFFICIAL_INCOMPLETE_MHR_PARAMETERS",
+  "mesh_sha256": "300a4bcfe36584afad4379996ee7847bd899397f71480a13b238aa570ee19d13",
+  "vertices_sha256": "186c388afb870a9398a258380315254ca0cd0c9186d0b766909251585b950c4f",
+  "faces_sha256": "0e47f537d5e48ef99092c6631963ca4c31c9ec59d1cfaa20cefc9ce41d518b84",
+  "input_sha256": "ced1cb173b7fdb2e0f5ccadeadc8bb8e87f441371f69c8aafe3dba833ce4be82",
+  "split_sha256": "07413b185469d57f988ea6930f1473c9136860c760e6ae40317fd7e90be49c42",
+  "optimization": {
+    "depth_fit": true,
+    "config": {
+      "lam": 0.15,
+      "mu": 0.0001,
+      "tau": 0.05,
+      "n0": 6.0,
+      "irls": 4,
+      "sigma_m": 0.012,
+      "use_conf": true,
+      "use_robust": true,
+      "bed": null
+    },
+    "D_info": {
+      "n_data_it0": 2968,
+      "n_data_it1": 2907,
+      "n_data_it2": 3031,
+      "n_data_it3": 3024,
+      "tangential_p50_mm": 0.1355486649662824,
+      "tangential_p95_mm": 3.868590076197601
+    }
+  },
+  "optimization_point_count": 51899,
+  "optimization_heldout_intersection": 0,
+  "mesh_quality": {
+    "face_flip_frac": 0.0007051038672235179,
+    "edge_strain_p50": 0.003658555381254744,
+    "edge_strain_p99": 0.3300632273085849,
+    "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+  },
+  "silhouette": {
+    "iou": 0.7856623595900851,
+    "boundary_median_px": 6.708203932499369,
+    "boundary_p95_px": 26.248809496813376,
+    "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+  },
+  "visualization": {
+    "renderer": "CPU inverse-Z pinhole at integer pixel coordinates",
+    "input_npz_sha256": "ced1cb173b7fdb2e0f5ccadeadc8bb8e87f441371f69c8aafe3dba833ce4be82",
+    "overlay": "visualizations\\S107\\seed_0\\Official_Rigid_D_overlay.png"
+  }
+}

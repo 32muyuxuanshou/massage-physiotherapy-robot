@@ -1,0 +1,57 @@
+{
+  "task": "PRESSUREPOSE_PRONE_CORRECTED_COMPARISON_V2",
+  "date": "2026-10-03",
+  "status": "LOCAL_PREPARATION_COMPLETE_WAITING_FOR_SERVER",
+  "server": "xuhd@172.18.18.151:436",
+  "server_state": "User states server unavailable; no further SSH attempts",
+  "formal_expected_rows": 300,
+  "formal_completed_rows": 0,
+  "fresh_official_inferences_completed": 0,
+  "local_sanity_subjects": [
+    "S107"
+  ],
+  "local_sanity_seeds": [
+    0
+  ],
+  "local_sanity_methods": [
+    "Official",
+    "Official+Rigid",
+    "Official+Rigid+D"
+  ],
+  "local_sanity_rows": 3,
+  "local_original_data_subjects": [
+    "S107"
+  ],
+  "posterior_rgb_roi_frozen_subjects": 20,
+  "local_code_preflight": {
+    "tests": 8,
+    "passed": 8,
+    "scope": "pure/mock plus raster analytical checks; GPU numerics not validated"
+  },
+  "local_camera_audit": {
+    "subjects": [
+      "S107"
+    ],
+    "status": "APPROXIMATE_PINHOLE_NOT_INDEPENDENTLY_VALIDATED"
+  },
+  "local_cached_metric_recomputation": {
+    "status": "PASS",
+    "method_rows": 3,
+    "cached_meshes_unchanged": true,
+    "posterior_and_torso_metrics_exact_equal": true,
+    "model_or_fitting_calls": 0
+  },
+  "output_count_audit": "PASS",
+  "historical_source_integrity": "PASS",
+  "waiting": [
+    "server availability and read-only environment/weight check",
+    "four-subject raw camera audit",
+    "fresh Official full MHR parameter reconstruction",
+    "train-only real-anchor Txyz and GPU O2",
+    "dev 60 rows then full 300 rows",
+    "full-data old/new paired comparison"
+  ],
+  "data_policy": "Raw pickle, input NPZ, weights and large cache files excluded from Git; local cache locations/hashes and S107 split indices supplied",
+  "local_cache_root": "E:\\项目-按摩理疗机器人\\output\\pressurepose_prone_corrected_v2_offline_sanity",
+  "server_new_output_proposed": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/corrected_comparison_v2/run_v2"
+}

@@ -1,0 +1,891 @@
+{
+  "schema": "PRESSUREPOSE_PRONE_PREVIEW_V1",
+  "dataset": "PressurePose real participant-selected poses",
+  "selected_pose_label": "p_sel_prn",
+  "participants": 20,
+  "raw_p_select_files": 20,
+  "rgb_depth_alignment": "official visualization rotates raw depth with np.rot90; aligned depth dimensions match RGB",
+  "depth_display": "per-image 2nd\u201398th percentile grayscale, near=white; display only; depth16 files retain source values",
+  "medical_truth": false,
+  "entries": [
+    {
+      "subject": "S103",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8244886363636363,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 165.0,
+        "10": 1502.0,
+        "50": 1648.0,
+        "90": 2189.0,
+        "99": 2208.0
+      },
+      "point_cloud_shape": [
+        68668,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S103_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S103_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S103_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "d2eb545038254f2cf5094190ef5f25acd13102b59824172175c36d3574d9bb91"
+    },
+    {
+      "subject": "S104",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8059013429752067,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 306.0,
+        "10": 1556.0,
+        "50": 1652.0,
+        "90": 2200.0,
+        "99": 2213.0
+      },
+      "point_cloud_shape": [
+        47082,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S104_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S104_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S104_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "3c8ff795c558cc7ca4cb3d03ff521b98c7e7111db0ba761bb496f4649a3a0553"
+    },
+    {
+      "subject": "S107",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8188171487603306,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 118.0,
+        "10": 1510.0,
+        "50": 1644.0,
+        "90": 2192.0,
+        "99": 2210.0
+      },
+      "point_cloud_shape": [
+        64946,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S107_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S107_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S107_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "e3f92851f242c9898803c80dc7ee611f0ac7c5926c08da176a6301c202f59742"
+    },
+    {
+      "subject": "S114",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8222701446280992,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 134.0,
+        "10": 1516.0,
+        "50": 1652.0,
+        "90": 2194.0,
+        "99": 2209.0
+      },
+      "point_cloud_shape": [
+        58729,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S114_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S114_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S114_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "eaf7486af96688dc093b82feddb7a53f1a09f4d3dbdbfe51d84eed99a8bf8fcf"
+    },
+    {
+      "subject": "S118",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8220170454545455,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 130.0,
+        "10": 1521.0,
+        "50": 1651.0,
+        "90": 2197.0,
+        "99": 2212.0
+      },
+      "point_cloud_shape": [
+        54092,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S118_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S118_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S118_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "ba12f23b07d4884b86cf224e78a0de060bba7acd9e832937cbc4143d378f3557"
+    },
+    {
+      "subject": "S121",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8231740702479339,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 127.0,
+        "10": 1455.0,
+        "50": 1647.0,
+        "90": 2188.0,
+        "99": 2207.0
+      },
+      "point_cloud_shape": [
+        71623,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S121_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S121_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S121_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "54fe1735a9c8c7cadc73a4e06521b708413d12cdd705f49eb9081ec16a445c52"
+    },
+    {
+      "subject": "S130",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8229571280991735,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 147.0,
+        "10": 1531.0,
+        "50": 1652.0,
+        "90": 2199.0,
+        "99": 2213.0
+      },
+      "point_cloud_shape": [
+        55166,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S130_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S130_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S130_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "95ee97b0d510736b08df2655f085885be3efd41a6c9a0b4ed34fdde9fd06a6d5"
+    },
+    {
+      "subject": "S134",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.824297520661157,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 141.0,
+        "10": 1528.0,
+        "50": 1650.0,
+        "90": 2194.0,
+        "99": 2212.0
+      },
+      "point_cloud_shape": [
+        54816,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S134_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S134_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S134_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "1b5010b741b31b1d81bc36a0cdfc08e023d713609990797d1f632d4779ebc135"
+    },
+    {
+      "subject": "S140",
+      "pose_type": "p_sel_prn",
+      "index": 3,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn",
+        "p_sel_sup"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8243181818181818,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 124.0,
+        "10": 1517.0,
+        "50": 1652.0,
+        "90": 2193.0,
+        "99": 2209.0
+      },
+      "point_cloud_shape": [
+        56862,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S140_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S140_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S140_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "02552d739707e3a09b9882a6796d6fa7ca58a99698b950dbc92b70d2c7be63c3"
+    },
+    {
+      "subject": "S141",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8274974173553719,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 158.0,
+        "10": 1532.0,
+        "50": 1647.0,
+        "90": 2196.0,
+        "99": 2211.0
+      },
+      "point_cloud_shape": [
+        54220,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S141_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S141_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S141_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "fa401547ecbf00094d956c36f1c4f72f3490e6da33bed52e2e02fd9cf4783ca7"
+    },
+    {
+      "subject": "S145",
+      "pose_type": "p_sel_prn",
+      "index": 3,
+      "p_select_pose_types": [
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8222443181818182,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 151.72000000000025,
+        "10": 1513.0,
+        "50": 1641.0,
+        "90": 2190.0,
+        "99": 2209.0
+      },
+      "point_cloud_shape": [
+        62723,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S145_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S145_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S145_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "6f2f1cde8640fbe09579087f2512692d519ff052300610bd3b57d05813db7313"
+    },
+    {
+      "subject": "S151",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8225878099173554,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 128.0,
+        "10": 1503.0,
+        "50": 1643.0,
+        "90": 2190.0,
+        "99": 2208.0
+      },
+      "point_cloud_shape": [
+        61915,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S151_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S151_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S151_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "17986b3525bda71a66bff2619f97d07cabff0ab97fff4cad2d738235c6a52cb5"
+    },
+    {
+      "subject": "S163",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8217820247933885,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 71.0,
+        "10": 1497.0,
+        "50": 1652.0,
+        "90": 2191.0,
+        "99": 2211.0
+      },
+      "point_cloud_shape": [
+        51236,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S163_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S163_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S163_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "9b0ed8d68d0c243e8437ae5bff62a358fdf7e26c9dc200a3845635cb46b1f422"
+    },
+    {
+      "subject": "S165",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8233729338842976,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 107.0,
+        "10": 1505.0,
+        "50": 1644.0,
+        "90": 2192.0,
+        "99": 2211.0
+      },
+      "point_cloud_shape": [
+        73147,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S165_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S165_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S165_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "625d8fa4dad354e91c0fb2f460c481763c7269c52157cd841e27dd8bcc7e5e36"
+    },
+    {
+      "subject": "S170",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8222236570247934,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 131.0,
+        "10": 1522.0,
+        "50": 1652.0,
+        "90": 2193.0,
+        "99": 2210.0
+      },
+      "point_cloud_shape": [
+        61598,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S170_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S170_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S170_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "7ae37d46ba72a5615103a7aba2413d2e55294b8d739c65f163c1477cd2aba9ba"
+    },
+    {
+      "subject": "S179",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8227272727272728,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 124.0,
+        "10": 1494.0,
+        "50": 1652.0,
+        "90": 2193.0,
+        "99": 2212.0
+      },
+      "point_cloud_shape": [
+        57459,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S179_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S179_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S179_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "35befeea179e7ca23943ea33a8ccd6dfc2e7b1b69bf7e8869d59e4c65eaf9032"
+    },
+    {
+      "subject": "S184",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8251007231404959,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 158.0,
+        "10": 1511.0,
+        "50": 1647.0,
+        "90": 2197.0,
+        "99": 2210.0
+      },
+      "point_cloud_shape": [
+        68288,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S184_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S184_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S184_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "4c9f5f8605d77c2a53796fc94e3b357eda2f575831880a88c6966234e2c86d4e"
+    },
+    {
+      "subject": "S187",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8186544421487604,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 118.0,
+        "10": 1508.0,
+        "50": 1653.0,
+        "90": 2189.0,
+        "99": 2213.0
+      },
+      "point_cloud_shape": [
+        52115,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S187_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S187_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S187_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "a8a459743a6f43f64a1f5e7e422f0dc7b1120814aa39ec40934a71fab051bdf3"
+    },
+    {
+      "subject": "S188",
+      "pose_type": "p_sel_prn",
+      "index": 2,
+      "p_select_pose_types": [
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn",
+        "p_sel_any",
+        "p_sel_sup"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8186157024793388,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 96.0,
+        "10": 1432.0,
+        "50": 1648.0,
+        "90": 2184.0,
+        "99": 2207.0
+      },
+      "point_cloud_shape": [
+        74343,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S188_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S188_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S188_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "63224dcbbe02e0ac098ae8c7099813d33b17e2b3989c91ef6f76b465403ad4df"
+    },
+    {
+      "subject": "S196",
+      "pose_type": "p_sel_prn",
+      "index": 4,
+      "p_select_pose_types": [
+        "p_sel_any",
+        "p_sel_sup",
+        "p_sel_ll",
+        "p_sel_rl",
+        "p_sel_prn"
+      ],
+      "rgb_shape": [
+        880,
+        440,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "depth_raw_shape": [
+        440,
+        880
+      ],
+      "depth_aligned_shape": [
+        880,
+        440
+      ],
+      "depth_dtype": "uint16",
+      "depth_valid_fraction": 0.8238636363636364,
+      "depth_nonzero_percentiles_mm_candidate": {
+        "1": 134.0,
+        "10": 1535.0,
+        "50": 1652.0,
+        "90": 2198.0,
+        "99": 2213.0
+      },
+      "point_cloud_shape": [
+        53345,
+        3
+      ],
+      "point_cloud_dtype": "float64",
+      "rgb_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/rgb/S196_p_sel_prn.png",
+      "depth16_aligned_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_raw_aligned/S196_p_sel_prn_depth16.png",
+      "depth_preview_file": "/raid5/xuhd/datasets/pressurepose_pselect_real_20260928/prone_preview/depth_visual/S196_p_sel_prn_depth_preview.png",
+      "raw_pickle_sha256": "46a87f65c41b57158b1d610726828c99df5ae5e813a51f598b002f3fe8a3c4f0"
+    }
+  ]
+}
