@@ -1,0 +1,1793 @@
+[
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 0,
+    "method": "Official",
+    "mesh_sha256": "e68a1ca10640a933807e7084ff89b22ad8b57f77bb5940905100c7fe8a204fde",
+    "posterior": {
+      "d3d": {
+        "n": 1208,
+        "median_mm": 66.00144375907115,
+        "p95_mm": 80.45661838080392
+      },
+      "ray_absolute": {
+        "n": 1189,
+        "median_mm": 73.7559798419607,
+        "p95_mm": 85.44277918130163
+      },
+      "ray_common_hit_absolute": {
+        "n": 1189,
+        "median_mm": 73.7559798419607,
+        "p95_mm": 85.44277918130163
+      },
+      "ray_hit_fraction": 0.984271523178808,
+      "ray_common_hit_fraction": 0.984271523178808,
+      "point_count": 1208,
+      "ray_signed_median_mm": 73.7559798419607
+    },
+    "torso": {
+      "d3d": {
+        "n": 1421,
+        "median_mm": 62.2021401381008,
+        "p95_mm": 76.32466484772107
+      },
+      "ray_absolute": {
+        "n": 1258,
+        "median_mm": 72.09704670906402,
+        "p95_mm": 91.76606860678312
+      },
+      "ray_common_hit_absolute": {
+        "n": 1223,
+        "median_mm": 72.54651709614168,
+        "p95_mm": 91.94599198477303
+      },
+      "ray_hit_fraction": 0.8852920478536243,
+      "ray_common_hit_fraction": 0.860661505981703,
+      "point_count": 1421,
+      "ray_signed_median_mm": 72.09704670906403
+    },
+    "optimization": {
+      "depth_fit": false
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 3.1991482840286084e-15,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.6922562152154274,
+      "boundary_median_px": 10.5352261608226,
+      "boundary_p95_px": 40.792156108742276,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_NO_DEPTH_FIT",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "6270be53f1023de4482d8500a2a56456fd537ef2cee8ef36f00765d0a54d141a"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 0,
+    "method": "Official+Txyz",
+    "mesh_sha256": "9cfe43351ad39810c98e33e031831584b7d46311e3131454782d199664fd8b98",
+    "posterior": {
+      "d3d": {
+        "n": 1208,
+        "median_mm": 5.880788050037916,
+        "p95_mm": 18.41372245025321
+      },
+      "ray_absolute": {
+        "n": 1200,
+        "median_mm": 6.951629619956767,
+        "p95_mm": 19.515655999139547
+      },
+      "ray_common_hit_absolute": {
+        "n": 1189,
+        "median_mm": 6.938638569039091,
+        "p95_mm": 19.48375451517314
+      },
+      "ray_hit_fraction": 0.9933774834437086,
+      "ray_common_hit_fraction": 0.984271523178808,
+      "point_count": 1208,
+      "ray_signed_median_mm": 6.107529502428655
+    },
+    "torso": {
+      "d3d": {
+        "n": 1421,
+        "median_mm": 4.952642204271809,
+        "p95_mm": 19.068950016240468
+      },
+      "ray_absolute": {
+        "n": 1288,
+        "median_mm": 5.927944707429078,
+        "p95_mm": 19.22327192508141
+      },
+      "ray_common_hit_absolute": {
+        "n": 1223,
+        "median_mm": 5.840416120622471,
+        "p95_mm": 18.2644488008534
+      },
+      "ray_hit_fraction": 0.9064039408866995,
+      "ray_common_hit_fraction": 0.860661505981703,
+      "point_count": 1421,
+      "ray_signed_median_mm": 3.4035974198205476
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "iterations": 6,
+        "step_per_axis_m": 0.05,
+        "trim_fraction": 0.2,
+        "total_norm_bound_m": 0.17788820176363326
+      },
+      "raw_translation_m": [
+        -0.006376918907701597,
+        -0.005750547950536068,
+        -0.06587200263469062
+      ],
+      "applied_translation_m": [
+        -0.006376918907701597,
+        -0.005750547950536068,
+        -0.06587200263469062
+      ],
+      "fallback": false,
+      "trace": [
+        {
+          "iteration": 1,
+          "step_m": [
+            -0.00197018838670324,
+            -0.001319371635957474,
+            -0.04737186136872529
+          ],
+          "t_m": [
+            -0.00197018838670324,
+            -0.001319371635957474,
+            -0.04737186136872529
+          ]
+        },
+        {
+          "iteration": 2,
+          "step_m": [
+            -0.0012620984296748856,
+            -0.0005881282854002245,
+            -0.010496754558001475
+          ],
+          "t_m": [
+            -0.0032322868163781257,
+            -0.0019074999213576985,
+            -0.05786861592672676
+          ]
+        },
+        {
+          "iteration": 3,
+          "step_m": [
+            -0.0010934435507330142,
+            -0.0009280036390912072,
+            -0.004345347585354542
+          ],
+          "t_m": [
+            -0.00432573036711114,
+            -0.0028355035604489057,
+            -0.062213963512081305
+          ]
+        },
+        {
+          "iteration": 4,
+          "step_m": [
+            -0.0008297504125517052,
+            -0.0009659939682273855,
+            -0.0020641834964465477
+          ],
+          "t_m": [
+            -0.005155480779662845,
+            -0.003801497528676291,
+            -0.06427814700852785
+          ]
+        },
+        {
+          "iteration": 5,
+          "step_m": [
+            -0.0006763245482467872,
+            -0.000986111961614744,
+            -0.001054448462062485
+          ],
+          "t_m": [
+            -0.005831805327909632,
+            -0.004787609490291035,
+            -0.06533259547059034
+          ]
+        },
+        {
+          "iteration": 6,
+          "step_m": [
+            -0.0005451135797919643,
+            -0.000962938460245033,
+            -0.0005394071641002807
+          ],
+          "t_m": [
+            -0.006376918907701597,
+            -0.005750547950536068,
+            -0.06587200263469062
+          ]
+        }
+      ]
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 6.8771100662727555e-15,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7504291989030345,
+      "boundary_median_px": 8.0,
+      "boundary_p95_px": 37.0,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "6270be53f1023de4482d8500a2a56456fd537ef2cee8ef36f00765d0a54d141a"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 0,
+    "method": "Official+Txyz+Pose",
+    "mesh_sha256": "9515d5004bce5c9c33a0a01ef8eed4a6b3eb4afcb1f5a5515227f37a4bfb394e",
+    "posterior": {
+      "d3d": {
+        "n": 1208,
+        "median_mm": 6.846527494474795,
+        "p95_mm": 17.067681983830692
+      },
+      "ray_absolute": {
+        "n": 1196,
+        "median_mm": 8.058050039016829,
+        "p95_mm": 18.507051733522683
+      },
+      "ray_common_hit_absolute": {
+        "n": 1189,
+        "median_mm": 7.9839109766211,
+        "p95_mm": 18.414209846789383
+      },
+      "ray_hit_fraction": 0.9900662251655629,
+      "ray_common_hit_fraction": 0.984271523178808,
+      "point_count": 1208,
+      "ray_signed_median_mm": 4.223392505219747
+    },
+    "torso": {
+      "d3d": {
+        "n": 1421,
+        "median_mm": 8.23648069863146,
+        "p95_mm": 21.136926563733518
+      },
+      "ray_absolute": {
+        "n": 1280,
+        "median_mm": 9.764434590209925,
+        "p95_mm": 21.282540606361383
+      },
+      "ray_common_hit_absolute": {
+        "n": 1223,
+        "median_mm": 9.550783178684519,
+        "p95_mm": 19.51725797042827
+      },
+      "ray_hit_fraction": 0.9007741027445461,
+      "ray_common_hit_fraction": 0.860661505981703,
+      "point_count": 1421,
+      "ray_signed_median_mm": 6.683147600425765
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "iterations": 25,
+        "observed_points": 1024,
+        "anchor_stride": 2,
+        "huber_beta_m": 0.02,
+        "lr_translation": 0.003,
+        "lr_pose": 0.001,
+        "lambda_translation": 0.01,
+        "lambda_pose": 0.01,
+        "trainable": [
+          "translation",
+          "global_rot",
+          "body_pose"
+        ]
+      },
+      "txyz_fallback": false,
+      "history": [
+        0.008819970302283764,
+        0.008413329720497131,
+        0.00797003973275423,
+        0.007617661729454994,
+        0.007399831898510456,
+        0.007276173681020737,
+        0.007175173610448837,
+        0.007125022821128368,
+        0.007095486391335726,
+        0.007086202967911959,
+        0.007073987275362015,
+        0.007001809310168028,
+        0.00690053915604949,
+        0.006810975261032581,
+        0.006750246975570917,
+        0.006701732985675335,
+        0.0066810837015509605,
+        0.006650720257312059,
+        0.006622497923672199,
+        0.006602481007575989,
+        0.006570866331458092,
+        0.0065282853320240974,
+        0.006483370903879404,
+        0.006432343274354935,
+        0.006369482260197401
+      ],
+      "pose_points_n": 1024,
+      "prior_points_idx_from_Txyz": "optimization_point_idx",
+      "translation_delta_from_txyz_m": [
+        -0.0048709394974116305,
+        -0.008930970127314364,
+        0.0022171030375226497
+      ]
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0003491106992814284,
+      "edge_strain_p99": 0.026729243059739748,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7584012191432381,
+      "boundary_median_px": 9.0,
+      "boundary_p95_px": 34.74165429767747,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "6270be53f1023de4482d8500a2a56456fd537ef2cee8ef36f00765d0a54d141a"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 0,
+    "method": "Official+Rigid",
+    "mesh_sha256": "6f2f0d9aaed6c768273b2cffedee28cc1b5add844df77255bdfc4787e79f259e",
+    "posterior": {
+      "d3d": {
+        "n": 1208,
+        "median_mm": 7.061051384332005,
+        "p95_mm": 16.458474582602086
+      },
+      "ray_absolute": {
+        "n": 1190,
+        "median_mm": 8.382404448954661,
+        "p95_mm": 17.548140751004702
+      },
+      "ray_common_hit_absolute": {
+        "n": 1189,
+        "median_mm": 8.376098730307424,
+        "p95_mm": 17.53334383173248
+      },
+      "ray_hit_fraction": 0.9850993377483444,
+      "ray_common_hit_fraction": 0.984271523178808,
+      "point_count": 1208,
+      "ray_signed_median_mm": 1.0773558243020176
+    },
+    "torso": {
+      "d3d": {
+        "n": 1421,
+        "median_mm": 10.164205572526308,
+        "p95_mm": 21.51178776486913
+      },
+      "ray_absolute": {
+        "n": 1276,
+        "median_mm": 12.658326227971695,
+        "p95_mm": 25.20413723974618
+      },
+      "ray_common_hit_absolute": {
+        "n": 1223,
+        "median_mm": 12.674029346461557,
+        "p95_mm": 24.22100643346487
+      },
+      "ray_hit_fraction": 0.8979591836734694,
+      "ray_common_hit_fraction": 0.860661505981703,
+      "point_count": 1421,
+      "ray_signed_median_mm": 9.356873276759714
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "iterations": 30,
+        "trim_fraction": 0.2,
+        "initial_translation_iterations": 4
+      },
+      "R": [
+        [
+          0.9997615400821614,
+          -0.020892209044801564,
+          0.0063544137237369035
+        ],
+        [
+          0.021089190596303868,
+          0.9992427769631198,
+          -0.032697381042305934
+        ],
+        [
+          -0.005666481495326074,
+          0.0328235934696568,
+          0.9994450973911486
+        ]
+      ],
+      "t_m": [
+        -0.016745236008467095,
+        0.03659862605043676,
+        -0.06346369637402076
+      ],
+      "parameter_semantics": "original MHR shape/pose + explicit rigid transform; effective camera translation stored"
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 4.940441976582354e-15,
+      "edge_strain_p99": 1.1946388613151205e-13,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7551703673844156,
+      "boundary_median_px": 9.0,
+      "boundary_p95_px": 37.107950630558946,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "6270be53f1023de4482d8500a2a56456fd537ef2cee8ef36f00765d0a54d141a"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 0,
+    "method": "Official+Rigid+D",
+    "mesh_sha256": "9be582ceb08cc9b504d94ea751323b488c90ba023e04b36e43764010eb4116c9",
+    "posterior": {
+      "d3d": {
+        "n": 1208,
+        "median_mm": 3.0865902164390597,
+        "p95_mm": 10.666773537540159
+      },
+      "ray_absolute": {
+        "n": 1193,
+        "median_mm": 3.5870641697468564,
+        "p95_mm": 11.633957704839915
+      },
+      "ray_common_hit_absolute": {
+        "n": 1189,
+        "median_mm": 3.526939009643071,
+        "p95_mm": 11.46852570200667
+      },
+      "ray_hit_fraction": 0.9875827814569537,
+      "ray_common_hit_fraction": 0.984271523178808,
+      "point_count": 1208,
+      "ray_signed_median_mm": 0.6804718326702819
+    },
+    "torso": {
+      "d3d": {
+        "n": 1421,
+        "median_mm": 2.6895090478668244,
+        "p95_mm": 15.440975046899714
+      },
+      "ray_absolute": {
+        "n": 1287,
+        "median_mm": 3.1313502335375,
+        "p95_mm": 11.936773246114932
+      },
+      "ray_common_hit_absolute": {
+        "n": 1223,
+        "median_mm": 3.00083356704528,
+        "p95_mm": 10.68569167203301
+      },
+      "ray_hit_fraction": 0.9057002111189303,
+      "ray_common_hit_fraction": 0.860661505981703,
+      "point_count": 1421,
+      "ray_signed_median_mm": 1.3016308658622133
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "lam": 0.15,
+        "mu": 0.0001,
+        "tau": 0.05,
+        "n0": 6.0,
+        "irls": 4,
+        "sigma_m": 0.012,
+        "use_conf": true,
+        "use_robust": true,
+        "bed": null
+      },
+      "rigid": {
+        "depth_fit": true,
+        "config": {
+          "iterations": 30,
+          "trim_fraction": 0.2,
+          "initial_translation_iterations": 4
+        },
+        "R": [
+          [
+            0.9997615400821614,
+            -0.020892209044801564,
+            0.0063544137237369035
+          ],
+          [
+            0.021089190596303868,
+            0.9992427769631198,
+            -0.032697381042305934
+          ],
+          [
+            -0.005666481495326074,
+            0.0328235934696568,
+            0.9994450973911486
+          ]
+        ],
+        "t_m": [
+          -0.016745236008467095,
+          0.03659862605043676,
+          -0.06346369637402076
+        ],
+        "parameter_semantics": "original MHR shape/pose + explicit rigid transform; effective camera translation stored"
+      },
+      "D_info": {
+        "n_data_it0": 2791,
+        "n_data_it1": 2941,
+        "n_data_it2": 2854,
+        "n_data_it3": 2821,
+        "tangential_p50_mm": 0.07655395324849265,
+        "tangential_p95_mm": 3.5275685571077715
+      },
+      "displacement_norm_p95_mm": 11.41479188635817,
+      "parameter_semantics": "MHR prior + explicit rigid transform + vector vertex displacement"
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.001871237186093182,
+      "edge_strain_p50": 0.0029603543168951166,
+      "edge_strain_p99": 0.25755212398048505,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7527189146765333,
+      "boundary_median_px": 9.055385138137417,
+      "boundary_p95_px": 36.40054944640259,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "6270be53f1023de4482d8500a2a56456fd537ef2cee8ef36f00765d0a54d141a"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 1,
+    "method": "Official",
+    "mesh_sha256": "e68a1ca10640a933807e7084ff89b22ad8b57f77bb5940905100c7fe8a204fde",
+    "posterior": {
+      "d3d": {
+        "n": 1153,
+        "median_mm": 66.32440361472636,
+        "p95_mm": 78.69941566188648
+      },
+      "ray_absolute": {
+        "n": 1102,
+        "median_mm": 76.06756196358499,
+        "p95_mm": 92.71173692924945
+      },
+      "ray_common_hit_absolute": {
+        "n": 1102,
+        "median_mm": 76.06756196358499,
+        "p95_mm": 92.71173692924945
+      },
+      "ray_hit_fraction": 0.955767562879445,
+      "ray_common_hit_fraction": 0.955767562879445,
+      "point_count": 1153,
+      "ray_signed_median_mm": 76.06756196358499
+    },
+    "torso": {
+      "d3d": {
+        "n": 1337,
+        "median_mm": 62.7962789542513,
+        "p95_mm": 76.32488423822205
+      },
+      "ray_absolute": {
+        "n": 1207,
+        "median_mm": 70.40362172592208,
+        "p95_mm": 89.63368418716443
+      },
+      "ray_common_hit_absolute": {
+        "n": 1196,
+        "median_mm": 70.4511890179742,
+        "p95_mm": 89.70576123960022
+      },
+      "ray_hit_fraction": 0.9027673896783844,
+      "ray_common_hit_fraction": 0.8945400149588631,
+      "point_count": 1337,
+      "ray_signed_median_mm": 70.40362172592208
+    },
+    "optimization": {
+      "depth_fit": false
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 3.1991482840286084e-15,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.6922562152154274,
+      "boundary_median_px": 10.5352261608226,
+      "boundary_p95_px": 40.792156108742276,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_NO_DEPTH_FIT",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "fdabd0a5f25df6f97eef47ae53ea454f9e4daa23672bc970ad5a532c2a10126c"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 1,
+    "method": "Official+Txyz",
+    "mesh_sha256": "eeece19c26a0664b17fdfd74b8ea986bb9a0c1b7b32e04b593fc880eadd0f504",
+    "posterior": {
+      "d3d": {
+        "n": 1153,
+        "median_mm": 8.20455665982227,
+        "p95_mm": 17.312974979589388
+      },
+      "ray_absolute": {
+        "n": 1141,
+        "median_mm": 9.468437219405157,
+        "p95_mm": 19.948827306634165
+      },
+      "ray_common_hit_absolute": {
+        "n": 1102,
+        "median_mm": 9.413317844791935,
+        "p95_mm": 19.358744714656222
+      },
+      "ray_hit_fraction": 0.98959236773634,
+      "ray_common_hit_fraction": 0.955767562879445,
+      "point_count": 1153,
+      "ray_signed_median_mm": 8.311061818861987
+    },
+    "torso": {
+      "d3d": {
+        "n": 1337,
+        "median_mm": 6.0238765243638435,
+        "p95_mm": 16.777226395038753
+      },
+      "ray_absolute": {
+        "n": 1251,
+        "median_mm": 7.078651819703241,
+        "p95_mm": 19.7633016808727
+      },
+      "ray_common_hit_absolute": {
+        "n": 1196,
+        "median_mm": 6.795608370156692,
+        "p95_mm": 17.639390403850154
+      },
+      "ray_hit_fraction": 0.9356768885564697,
+      "ray_common_hit_fraction": 0.8945400149588631,
+      "point_count": 1337,
+      "ray_signed_median_mm": 3.8544506054800642
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "iterations": 6,
+        "step_per_axis_m": 0.05,
+        "trim_fraction": 0.2,
+        "total_norm_bound_m": 0.17788820176363326
+      },
+      "raw_translation_m": [
+        -0.007391854819564806,
+        -0.0029914412609228364,
+        -0.06533888212857875
+      ],
+      "applied_translation_m": [
+        -0.007391854819564806,
+        -0.0029914412609228364,
+        -0.06533888212857875
+      ],
+      "fallback": false,
+      "trace": [
+        {
+          "iteration": 1,
+          "step_m": [
+            -0.0020842404510762746,
+            -0.0003326365708231638,
+            -0.04516184896088293
+          ],
+          "t_m": [
+            -0.0020842404510762746,
+            -0.0003326365708231638,
+            -0.04516184896088293
+          ]
+        },
+        {
+          "iteration": 2,
+          "step_m": [
+            -0.00187434033286543,
+            -7.796921815687863e-05,
+            -0.011116812674200949
+          ],
+          "t_m": [
+            -0.003958580783941705,
+            -0.0004106057889800424,
+            -0.05627866163508388
+          ]
+        },
+        {
+          "iteration": 3,
+          "step_m": [
+            -0.001207428311350768,
+            -0.0004952049784403556,
+            -0.004878609866958206
+          ],
+          "t_m": [
+            -0.005166009095292473,
+            -0.000905810767420398,
+            -0.06115727150204209
+          ]
+        },
+        {
+          "iteration": 4,
+          "step_m": [
+            -0.0009269556670447043,
+            -0.00062769958815731,
+            -0.002409827575121204
+          ],
+          "t_m": [
+            -0.006092964762337177,
+            -0.001533510355577708,
+            -0.06356709907716329
+          ]
+        },
+        {
+          "iteration": 5,
+          "step_m": [
+            -0.0007324426224489464,
+            -0.0007189177480242948,
+            -0.001171517511062925
+          ],
+          "t_m": [
+            -0.0068254073847861235,
+            -0.0022524281036020027,
+            -0.06473861658822622
+          ]
+        },
+        {
+          "iteration": 6,
+          "step_m": [
+            -0.000566447434778683,
+            -0.0007390131573208336,
+            -0.0006002655403525292
+          ],
+          "t_m": [
+            -0.007391854819564806,
+            -0.0029914412609228364,
+            -0.06533888212857875
+          ]
+        }
+      ]
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 1.1330583034958112e-14,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7472255924487138,
+      "boundary_median_px": 8.0,
+      "boundary_p95_px": 36.234651798415015,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "fdabd0a5f25df6f97eef47ae53ea454f9e4daa23672bc970ad5a532c2a10126c"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 1,
+    "method": "Official+Txyz+Pose",
+    "mesh_sha256": "18c56030791aa9ecd8a4b62ee1a31d344baf3d11afb96d445ead2a9c5791eca2",
+    "posterior": {
+      "d3d": {
+        "n": 1153,
+        "median_mm": 5.93937904325363,
+        "p95_mm": 15.858100000717142
+      },
+      "ray_absolute": {
+        "n": 1144,
+        "median_mm": 7.235829736408239,
+        "p95_mm": 17.485168817307486
+      },
+      "ray_common_hit_absolute": {
+        "n": 1102,
+        "median_mm": 7.178515659056028,
+        "p95_mm": 17.449081907456065
+      },
+      "ray_hit_fraction": 0.9921942758022549,
+      "ray_common_hit_fraction": 0.955767562879445,
+      "point_count": 1153,
+      "ray_signed_median_mm": 3.573294792257431
+    },
+    "torso": {
+      "d3d": {
+        "n": 1337,
+        "median_mm": 6.392498338377647,
+        "p95_mm": 17.002452457928158
+      },
+      "ray_absolute": {
+        "n": 1241,
+        "median_mm": 7.704982197677568,
+        "p95_mm": 18.86758712415304
+      },
+      "ray_common_hit_absolute": {
+        "n": 1196,
+        "median_mm": 7.590260873550636,
+        "p95_mm": 18.378479634664767
+      },
+      "ray_hit_fraction": 0.9281974569932685,
+      "ray_common_hit_fraction": 0.8945400149588631,
+      "point_count": 1337,
+      "ray_signed_median_mm": 5.280833221784187
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "iterations": 25,
+        "observed_points": 1024,
+        "anchor_stride": 2,
+        "huber_beta_m": 0.02,
+        "lr_translation": 0.003,
+        "lr_pose": 0.001,
+        "lambda_translation": 0.01,
+        "lambda_pose": 0.01,
+        "trainable": [
+          "translation",
+          "global_rot",
+          "body_pose"
+        ]
+      },
+      "txyz_fallback": false,
+      "history": [
+        0.009089975617825985,
+        0.008753699250519276,
+        0.008331632241606712,
+        0.00796143151819706,
+        0.007659427355974913,
+        0.007444194983690977,
+        0.007305977400392294,
+        0.007211219985038042,
+        0.007166864816099405,
+        0.007133121136575937,
+        0.007074547000229359,
+        0.006987113039940596,
+        0.006899033673107624,
+        0.006810503546148539,
+        0.006743494421243668,
+        0.006686217617243528,
+        0.0066389827989041805,
+        0.006595890503376722,
+        0.006552606821060181,
+        0.0065234871581196785,
+        0.006485838908702135,
+        0.006423745770007372,
+        0.006350735202431679,
+        0.0062861875630915165,
+        0.006232595071196556
+      ],
+      "pose_points_n": 1024,
+      "prior_points_idx_from_Txyz": "optimization_point_idx",
+      "translation_delta_from_txyz_m": [
+        -0.006915882530899059,
+        -0.016017850864779026,
+        0.002195271174294078
+      ]
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.00034708340839594313,
+      "edge_strain_p99": 0.026555707197005583,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7688913403199118,
+      "boundary_median_px": 9.0,
+      "boundary_p95_px": 38.139166973929896,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "fdabd0a5f25df6f97eef47ae53ea454f9e4daa23672bc970ad5a532c2a10126c"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 1,
+    "method": "Official+Rigid",
+    "mesh_sha256": "0b2a3cfdee0f0e4e988b36ff6e44aa94fd21a1f3a5c5d58c8ed021ecf18fc98d",
+    "posterior": {
+      "d3d": {
+        "n": 1153,
+        "median_mm": 5.600310382146447,
+        "p95_mm": 15.619629711868374
+      },
+      "ray_absolute": {
+        "n": 1137,
+        "median_mm": 6.937662659293853,
+        "p95_mm": 16.850407488136156
+      },
+      "ray_common_hit_absolute": {
+        "n": 1102,
+        "median_mm": 6.925427969348696,
+        "p95_mm": 16.804752605641195
+      },
+      "ray_hit_fraction": 0.9861231569817867,
+      "ray_common_hit_fraction": 0.955767562879445,
+      "point_count": 1153,
+      "ray_signed_median_mm": 3.4642056807516752
+    },
+    "torso": {
+      "d3d": {
+        "n": 1337,
+        "median_mm": 6.331428325996754,
+        "p95_mm": 18.121233349329543
+      },
+      "ray_absolute": {
+        "n": 1220,
+        "median_mm": 7.3245864848061615,
+        "p95_mm": 19.317753662148547
+      },
+      "ray_common_hit_absolute": {
+        "n": 1196,
+        "median_mm": 7.371107083918305,
+        "p95_mm": 19.270911836327066
+      },
+      "ray_hit_fraction": 0.912490650710546,
+      "ray_common_hit_fraction": 0.8945400149588631,
+      "point_count": 1337,
+      "ray_signed_median_mm": 5.244927636633867
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "iterations": 30,
+        "trim_fraction": 0.2,
+        "initial_translation_iterations": 4
+      },
+      "R": [
+        [
+          0.999703942370077,
+          -0.02432008020853227,
+          0.0007492051626949559
+        ],
+        [
+          0.02433160360959539,
+          0.9992622351935915,
+          -0.029714615624181887
+        ],
+        [
+          -2.5990590147315426e-05,
+          0.02972404774854704,
+          0.9995581425359565
+        ]
+      ],
+      "t_m": [
+        -0.008532546730054838,
+        0.03356389027010992,
+        -0.06340770585240903
+      ],
+      "parameter_semantics": "original MHR shape/pose + explicit rigid transform; effective camera translation stored"
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 3.5295464596474776e-15,
+      "edge_strain_p99": 1.155732930400963e-13,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.753363680084106,
+      "boundary_median_px": 9.055385138137417,
+      "boundary_p95_px": 36.5519664312246,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "fdabd0a5f25df6f97eef47ae53ea454f9e4daa23672bc970ad5a532c2a10126c"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 1,
+    "method": "Official+Rigid+D",
+    "mesh_sha256": "2d222a6ac8bef959b54903841162dc9be58ef4022dd9c91472e44023fa08b6f3",
+    "posterior": {
+      "d3d": {
+        "n": 1153,
+        "median_mm": 2.4640567410084615,
+        "p95_mm": 8.595949741573682
+      },
+      "ray_absolute": {
+        "n": 1138,
+        "median_mm": 2.827187134669451,
+        "p95_mm": 9.877825656867897
+      },
+      "ray_common_hit_absolute": {
+        "n": 1102,
+        "median_mm": 2.7367892672504057,
+        "p95_mm": 9.609452249569317
+      },
+      "ray_hit_fraction": 0.986990459670425,
+      "ray_common_hit_fraction": 0.955767562879445,
+      "point_count": 1153,
+      "ray_signed_median_mm": 1.0984728916726416
+    },
+    "torso": {
+      "d3d": {
+        "n": 1337,
+        "median_mm": 2.154397057101834,
+        "p95_mm": 11.01092946009926
+      },
+      "ray_absolute": {
+        "n": 1222,
+        "median_mm": 2.3890353961000255,
+        "p95_mm": 9.061487076070108
+      },
+      "ray_common_hit_absolute": {
+        "n": 1196,
+        "median_mm": 2.3711995634649874,
+        "p95_mm": 8.896212946932936
+      },
+      "ray_hit_fraction": 0.9139865370231862,
+      "ray_common_hit_fraction": 0.8945400149588631,
+      "point_count": 1337,
+      "ray_signed_median_mm": 0.7466956577614203
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "lam": 0.15,
+        "mu": 0.0001,
+        "tau": 0.05,
+        "n0": 6.0,
+        "irls": 4,
+        "sigma_m": 0.012,
+        "use_conf": true,
+        "use_robust": true,
+        "bed": null
+      },
+      "rigid": {
+        "depth_fit": true,
+        "config": {
+          "iterations": 30,
+          "trim_fraction": 0.2,
+          "initial_translation_iterations": 4
+        },
+        "R": [
+          [
+            0.999703942370077,
+            -0.02432008020853227,
+            0.0007492051626949559
+          ],
+          [
+            0.02433160360959539,
+            0.9992622351935915,
+            -0.029714615624181887
+          ],
+          [
+            -2.5990590147315426e-05,
+            0.02972404774854704,
+            0.9995581425359565
+          ]
+        ],
+        "t_m": [
+          -0.008532546730054838,
+          0.03356389027010992,
+          -0.06340770585240903
+        ],
+        "parameter_semantics": "original MHR shape/pose + explicit rigid transform; effective camera translation stored"
+      },
+      "D_info": {
+        "n_data_it0": 2698,
+        "n_data_it1": 2870,
+        "n_data_it2": 2759,
+        "n_data_it3": 2735,
+        "tangential_p50_mm": 0.07001446426981459,
+        "tangential_p95_mm": 3.3057368034655497
+      },
+      "displacement_norm_p95_mm": 11.22240513607471,
+      "parameter_semantics": "MHR prior + explicit rigid transform + vector vertex displacement"
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0005966263491891306,
+      "edge_strain_p50": 0.0025719995059244717,
+      "edge_strain_p99": 0.24549610921348558,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7518023464087408,
+      "boundary_median_px": 9.055385138137417,
+      "boundary_p95_px": 35.57446298423634,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "fdabd0a5f25df6f97eef47ae53ea454f9e4daa23672bc970ad5a532c2a10126c"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 2,
+    "method": "Official",
+    "mesh_sha256": "e68a1ca10640a933807e7084ff89b22ad8b57f77bb5940905100c7fe8a204fde",
+    "posterior": {
+      "d3d": {
+        "n": 1025,
+        "median_mm": 60.835811362121916,
+        "p95_mm": 71.36603546411806
+      },
+      "ray_absolute": {
+        "n": 976,
+        "median_mm": 65.04510951764509,
+        "p95_mm": 99.57813154235234
+      },
+      "ray_common_hit_absolute": {
+        "n": 976,
+        "median_mm": 65.04510951764509,
+        "p95_mm": 99.57813154235234
+      },
+      "ray_hit_fraction": 0.9521951219512195,
+      "ray_common_hit_fraction": 0.9521951219512195,
+      "point_count": 1025,
+      "ray_signed_median_mm": 65.04510951764509
+    },
+    "torso": {
+      "d3d": {
+        "n": 1461,
+        "median_mm": 58.37744803915185,
+        "p95_mm": 70.33860997007476
+      },
+      "ray_absolute": {
+        "n": 1337,
+        "median_mm": 67.2778344977527,
+        "p95_mm": 96.86401602914141
+      },
+      "ray_common_hit_absolute": {
+        "n": 1267,
+        "median_mm": 67.7787513669077,
+        "p95_mm": 97.08918992754919
+      },
+      "ray_hit_fraction": 0.9151266255989049,
+      "ray_common_hit_fraction": 0.867214236824093,
+      "point_count": 1461,
+      "ray_signed_median_mm": 67.2778344977527
+    },
+    "optimization": {
+      "depth_fit": false
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 3.1991482840286084e-15,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.6922562152154274,
+      "boundary_median_px": 10.5352261608226,
+      "boundary_p95_px": 40.792156108742276,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_NO_DEPTH_FIT",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "607d42661f6d0172c92b7178636728fa0e6e838c7281932b2c219e389b58c8bd"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 2,
+    "method": "Official+Txyz",
+    "mesh_sha256": "1fd257e7db06f98590e62bb36e70beedf9cfd0ae1db0fee336df5866e1747659",
+    "posterior": {
+      "d3d": {
+        "n": 1025,
+        "median_mm": 7.318203987741739,
+        "p95_mm": 14.618801475963501
+      },
+      "ray_absolute": {
+        "n": 1023,
+        "median_mm": 8.080298163828603,
+        "p95_mm": 16.604955584617276
+      },
+      "ray_common_hit_absolute": {
+        "n": 976,
+        "median_mm": 8.01953149695489,
+        "p95_mm": 15.716297595757823
+      },
+      "ray_hit_fraction": 0.9980487804878049,
+      "ray_common_hit_fraction": 0.9521951219512195,
+      "point_count": 1025,
+      "ray_signed_median_mm": -2.6008711272249574
+    },
+    "torso": {
+      "d3d": {
+        "n": 1461,
+        "median_mm": 4.655315904299538,
+        "p95_mm": 14.272515153948806
+      },
+      "ray_absolute": {
+        "n": 1377,
+        "median_mm": 6.016202235039403,
+        "p95_mm": 20.958807678408856
+      },
+      "ray_common_hit_absolute": {
+        "n": 1267,
+        "median_mm": 5.558240742368437,
+        "p95_mm": 17.5051870722784
+      },
+      "ray_hit_fraction": 0.9425051334702259,
+      "ray_common_hit_fraction": 0.867214236824093,
+      "point_count": 1461,
+      "ray_signed_median_mm": -1.9953644561419015
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "iterations": 6,
+        "step_per_axis_m": 0.05,
+        "trim_fraction": 0.2,
+        "total_norm_bound_m": 0.17788820176363326
+      },
+      "raw_translation_m": [
+        -0.0061432234357116575,
+        -0.0030778342356394634,
+        -0.06684627087818718
+      ],
+      "applied_translation_m": [
+        -0.0061432234357116575,
+        -0.0030778342356394634,
+        -0.06684627087818718
+      ],
+      "fallback": false,
+      "trace": [
+        {
+          "iteration": 1,
+          "step_m": [
+            -0.0015222683439230639,
+            -0.00025010201232228413,
+            -0.04431102915486029
+          ],
+          "t_m": [
+            -0.0015222683439230639,
+            -0.00025010201232228413,
+            -0.04431102915486029
+          ]
+        },
+        {
+          "iteration": 2,
+          "step_m": [
+            -0.0012628715977129265,
+            -9.193649744193566e-05,
+            -0.011802949824251008
+          ],
+          "t_m": [
+            -0.0027851399416359904,
+            -0.0003420385097642198,
+            -0.0561139789791113
+          ]
+        },
+        {
+          "iteration": 3,
+          "step_m": [
+            -0.0011331515493244828,
+            -0.0005228629870205892,
+            -0.005773217770586592
+          ],
+          "t_m": [
+            -0.003918291490960473,
+            -0.000864901496784809,
+            -0.06188719674969789
+          ]
+        },
+        {
+          "iteration": 4,
+          "step_m": [
+            -0.0009393730235428659,
+            -0.0006698152299794494,
+            -0.002837528370063236
+          ],
+          "t_m": [
+            -0.004857664514503339,
+            -0.0015347167267642584,
+            -0.06472472511976113
+          ]
+        },
+        {
+          "iteration": 5,
+          "step_m": [
+            -0.0006802460452571355,
+            -0.0007499085919037444,
+            -0.0013978830607161985
+          ],
+          "t_m": [
+            -0.005537910559760474,
+            -0.0022846253186680028,
+            -0.06612260818047733
+          ]
+        },
+        {
+          "iteration": 6,
+          "step_m": [
+            -0.0006053128759511833,
+            -0.0007932089169714607,
+            -0.0007236626977098481
+          ],
+          "t_m": [
+            -0.0061432234357116575,
+            -0.0030778342356394634,
+            -0.06684627087818718
+          ]
+        }
+      ]
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 1.5895711634182857e-14,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.748589237019311,
+      "boundary_median_px": 8.0,
+      "boundary_p95_px": 37.0,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "607d42661f6d0172c92b7178636728fa0e6e838c7281932b2c219e389b58c8bd"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 2,
+    "method": "Official+Txyz+Pose",
+    "mesh_sha256": "deb69340105babb649da35bab34780090b921e11a2fe088853d4a07b8ebd6406",
+    "posterior": {
+      "d3d": {
+        "n": 1025,
+        "median_mm": 11.931390982790122,
+        "p95_mm": 18.060074530622224
+      },
+      "ray_absolute": {
+        "n": 1025,
+        "median_mm": 12.849808794281659,
+        "p95_mm": 24.860401222920903
+      },
+      "ray_common_hit_absolute": {
+        "n": 976,
+        "median_mm": 12.653618061640447,
+        "p95_mm": 20.624473015738275
+      },
+      "ray_hit_fraction": 1.0,
+      "ray_common_hit_fraction": 0.9521951219512195,
+      "point_count": 1025,
+      "ray_signed_median_mm": -12.849808794281659
+    },
+    "torso": {
+      "d3d": {
+        "n": 1461,
+        "median_mm": 9.394605332805819,
+        "p95_mm": 18.80684364975057
+      },
+      "ray_absolute": {
+        "n": 1348,
+        "median_mm": 12.27995677190874,
+        "p95_mm": 27.315594809914163
+      },
+      "ray_common_hit_absolute": {
+        "n": 1267,
+        "median_mm": 11.894804743412424,
+        "p95_mm": 22.76494962805598
+      },
+      "ray_hit_fraction": 0.9226557152635181,
+      "ray_common_hit_fraction": 0.867214236824093,
+      "point_count": 1461,
+      "ray_signed_median_mm": -8.149541906018797
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "iterations": 25,
+        "observed_points": 1024,
+        "anchor_stride": 2,
+        "huber_beta_m": 0.02,
+        "lr_translation": 0.003,
+        "lr_pose": 0.001,
+        "lambda_translation": 0.01,
+        "lambda_pose": 0.01,
+        "trainable": [
+          "translation",
+          "global_rot",
+          "body_pose"
+        ]
+      },
+      "txyz_fallback": false,
+      "history": [
+        0.00939248874783516,
+        0.009068893268704414,
+        0.008749471977353096,
+        0.00843946821987629,
+        0.00817115418612957,
+        0.007975083775818348,
+        0.007902621291577816,
+        0.007833767682313919,
+        0.0078066750429570675,
+        0.007812357507646084,
+        0.007770496420562267,
+        0.007685540709644556,
+        0.007608204148709774,
+        0.007540465332567692,
+        0.007468272000551224,
+        0.007377197500318289,
+        0.007290285546332598,
+        0.0072299218736588955,
+        0.007193340454250574,
+        0.0071458653546869755,
+        0.007090006023645401,
+        0.007034079637378454,
+        0.0069871218875050545,
+        0.006950222887098789,
+        0.0069123441353440285
+      ],
+      "pose_points_n": 1024,
+      "prior_points_idx_from_Txyz": "optimization_point_idx",
+      "translation_delta_from_txyz_m": [
+        -0.004583369999098974,
+        -0.026483923805742382,
+        -0.0033575102497425124
+      ]
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.00025880932802861944,
+      "edge_strain_p99": 0.025481879570385415,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7716852819311836,
+      "boundary_median_px": 8.246211251235321,
+      "boundary_p95_px": 39.82147624630701,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "607d42661f6d0172c92b7178636728fa0e6e838c7281932b2c219e389b58c8bd"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 2,
+    "method": "Official+Rigid",
+    "mesh_sha256": "98c082695576368082f65349be19dfc19939e060325b0039e09f128ce31d5001",
+    "posterior": {
+      "d3d": {
+        "n": 1025,
+        "median_mm": 18.309790157721114,
+        "p95_mm": 28.34527984104839
+      },
+      "ray_absolute": {
+        "n": 1025,
+        "median_mm": 18.471889385947236,
+        "p95_mm": 28.968609139848397
+      },
+      "ray_common_hit_absolute": {
+        "n": 976,
+        "median_mm": 18.76447693657302,
+        "p95_mm": 29.122517313871278
+      },
+      "ray_hit_fraction": 1.0,
+      "ray_common_hit_fraction": 0.9521951219512195,
+      "point_count": 1025,
+      "ray_signed_median_mm": -18.471889385947236
+    },
+    "torso": {
+      "d3d": {
+        "n": 1461,
+        "median_mm": 7.027631045760088,
+        "p95_mm": 27.71690768932348
+      },
+      "ray_absolute": {
+        "n": 1351,
+        "median_mm": 8.69057932444961,
+        "p95_mm": 33.22680836829961
+      },
+      "ray_common_hit_absolute": {
+        "n": 1267,
+        "median_mm": 7.967020072780384,
+        "p95_mm": 31.310544342588827
+      },
+      "ray_hit_fraction": 0.9247091033538672,
+      "ray_common_hit_fraction": 0.867214236824093,
+      "point_count": 1461,
+      "ray_signed_median_mm": 0.8744263998052837
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "iterations": 30,
+        "trim_fraction": 0.2,
+        "initial_translation_iterations": 4
+      },
+      "R": [
+        [
+          0.9995720203324596,
+          0.00896842535462671,
+          0.02784499084474395
+        ],
+        [
+          -0.0077233791904597155,
+          0.9989793752447526,
+          -0.04450345210749455
+        ],
+        [
+          -0.028215697446027307,
+          0.04426934811200851,
+          0.9986210989336105
+        ]
+      ],
+      "t_m": [
+        -0.06671950172159243,
+        0.07026648250662089,
+        -0.06601462885909887
+      ],
+      "parameter_semantics": "original MHR shape/pose + explicit rigid transform; effective camera translation stored"
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 5.240586534317952e-15,
+      "edge_strain_p99": 1.2680136115534072e-13,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7488659793814433,
+      "boundary_median_px": 8.0,
+      "boundary_p95_px": 34.713109915419565,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "607d42661f6d0172c92b7178636728fa0e6e838c7281932b2c219e389b58c8bd"
+  },
+  {
+    "subject": "S103",
+    "split": "test",
+    "seed": 2,
+    "method": "Official+Rigid+D",
+    "mesh_sha256": "2cd676504ec625b71350b0609d2aa4fb919d9f6b5c389d2ca11ea02f9769e290",
+    "posterior": {
+      "d3d": {
+        "n": 1025,
+        "median_mm": 2.408107783568761,
+        "p95_mm": 7.359751505923968
+      },
+      "ray_absolute": {
+        "n": 1025,
+        "median_mm": 2.6454765022947413,
+        "p95_mm": 8.446077019270335
+      },
+      "ray_common_hit_absolute": {
+        "n": 976,
+        "median_mm": 2.5963267885596997,
+        "p95_mm": 8.107870229113024
+      },
+      "ray_hit_fraction": 1.0,
+      "ray_common_hit_fraction": 0.9521951219512195,
+      "point_count": 1025,
+      "ray_signed_median_mm": -1.4685310609516833
+    },
+    "torso": {
+      "d3d": {
+        "n": 1461,
+        "median_mm": 2.427927305319142,
+        "p95_mm": 9.621026905186461
+      },
+      "ray_absolute": {
+        "n": 1363,
+        "median_mm": 2.7764030917469817,
+        "p95_mm": 13.562081420024697
+      },
+      "ray_common_hit_absolute": {
+        "n": 1267,
+        "median_mm": 2.5891015507979454,
+        "p95_mm": 9.58833465543203
+      },
+      "ray_hit_fraction": 0.9329226557152636,
+      "ray_common_hit_fraction": 0.867214236824093,
+      "point_count": 1461,
+      "ray_signed_median_mm": -1.5074508579526746
+    },
+    "optimization": {
+      "depth_fit": true,
+      "config": {
+        "lam": 0.15,
+        "mu": 0.0001,
+        "tau": 0.05,
+        "n0": 6.0,
+        "irls": 4,
+        "sigma_m": 0.012,
+        "use_conf": true,
+        "use_robust": true,
+        "bed": null
+      },
+      "rigid": {
+        "depth_fit": true,
+        "config": {
+          "iterations": 30,
+          "trim_fraction": 0.2,
+          "initial_translation_iterations": 4
+        },
+        "R": [
+          [
+            0.9995720203324596,
+            0.00896842535462671,
+            0.02784499084474395
+          ],
+          [
+            -0.0077233791904597155,
+            0.9989793752447526,
+            -0.04450345210749455
+          ],
+          [
+            -0.028215697446027307,
+            0.04426934811200851,
+            0.9986210989336105
+          ]
+        ],
+        "t_m": [
+          -0.06671950172159243,
+          0.07026648250662089,
+          -0.06601462885909887
+        ],
+        "parameter_semantics": "original MHR shape/pose + explicit rigid transform; effective camera translation stored"
+      },
+      "D_info": {
+        "n_data_it0": 2887,
+        "n_data_it1": 2905,
+        "n_data_it2": 2912,
+        "n_data_it3": 2878,
+        "tangential_p50_mm": 0.10980659207329922,
+        "tangential_p95_mm": 3.052296123147895
+      },
+      "displacement_norm_p95_mm": 10.791065704802852,
+      "parameter_semantics": "MHR prior + explicit rigid transform + vector vertex displacement"
+    },
+    "mesh_quality": {
+      "face_flip_frac": 0.0010034170418180832,
+      "edge_strain_p50": 0.0036384328581707953,
+      "edge_strain_p99": 0.21585161454541077,
+      "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+    },
+    "silhouette": {
+      "iou": 0.7469185423365488,
+      "boundary_median_px": 8.246211251235321,
+      "boundary_p95_px": 34.058772731852805,
+      "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+    },
+    "common_hit_methods": [
+      "Official",
+      "Official+Txyz",
+      "Official+Txyz+Pose",
+      "Official+Rigid",
+      "Official+Rigid+D"
+    ],
+    "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+    "input_sha256": "595fc1c35136818f4910a363771978f7842a8d63dfb68ced25ff46ac5d521646",
+    "split_sha256": "607d42661f6d0172c92b7178636728fa0e6e838c7281932b2c219e389b58c8bd"
+  }
+]

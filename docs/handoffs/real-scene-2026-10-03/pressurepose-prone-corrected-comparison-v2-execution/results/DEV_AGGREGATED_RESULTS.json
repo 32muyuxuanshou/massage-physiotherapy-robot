@@ -1,0 +1,2072 @@
+{
+  "status": "PARTIAL_OR_OFFLINE_SANITY",
+  "row_count": 60,
+  "fresh_official_inference_count": 4,
+  "aggregation": "seed arithmetic mean -> subject -> split subject median; no seed treated as a new subject",
+  "subjects": [
+    "S104",
+    "S107",
+    "S165",
+    "S187"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "methods": [
+    "Official",
+    "Official+Txyz",
+    "Official+Txyz+Pose",
+    "Official+Rigid",
+    "Official+Rigid+D"
+  ],
+  "summary": {
+    "dev": {
+      "Official": {
+        "subject_count": 4,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 149.08835456967833
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 171.91751864646017
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 159.5471027956932
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 190.7990672813215
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 159.96479816267484
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 186.52202921102128
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9726588625200538
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9243611646261073
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 142.20978302142169
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 167.3687099851697
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 162.22849736895327
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 212.40215141466138
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 161.41953322449388
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 206.07587821914012
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8945032961029056
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8179553688798706
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 4,
+            "median": 7.553282327148084e-15
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 4,
+            "median": 0.6980489735541089
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 4,
+            "median": 8.924428900898052
+          }
+        }
+      },
+      "Official+Txyz": {
+        "subject_count": 4,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 129.32700765319308
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 144.80496789755233
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 137.18575981941268
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 162.51414751572307
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 137.74137590523907
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 159.56873157489963
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9772759535144194
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9243611646261073
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 120.3643259249845
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 147.95815793800435
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 138.87060218829797
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 182.57199359091058
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 138.5796313958379
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 180.8528726749576
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9166203950187459
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8179553688798706
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 4,
+            "median": 8.9008335945318e-15
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 4,
+            "median": 0.6909615103144322
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 4,
+            "median": 7.807886552931954
+          }
+        }
+      },
+      "Official+Txyz+Pose": {
+        "subject_count": 4,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 56.407336194058956
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 108.84111595013792
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 73.56279477739969
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 136.49657240966167
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 73.76509541790676
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 135.89621524728844
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9445393010172674
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9243611646261073
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 59.082614945215184
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 110.65127384025439
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 77.37402522350818
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 143.81142446564448
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 77.97788796059066
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 142.32748385551085
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8686205004114789
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8179553688798706
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 4,
+            "median": 0.00036668597786698
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 4,
+            "median": 0.03933745502302647
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 4,
+            "median": 0.6534610533044194
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 4,
+            "median": 9.011400376514832
+          }
+        }
+      },
+      "Official+Rigid": {
+        "subject_count": 4,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 10.892092197963471
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 24.922530007505166
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 12.052011117488936
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 35.70124463442522
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 11.748001445662275
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 28.599978341520895
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9954872570004121
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9243611646261073
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 9.577899131075766
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 30.463818213284313
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 12.427699773371769
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 60.44062562333109
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 12.347746562666572
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 53.24878953791958
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9461085177748805
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8179553688798706
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 4,
+            "median": 5.895990860814813e-15
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 4,
+            "median": 1.2855563329486985e-13
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 4,
+            "median": 0.7619100303306621
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 4,
+            "median": 6.409372103166664
+          }
+        }
+      },
+      "Official+Rigid+D": {
+        "subject_count": 4,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 3.026954173381686
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 10.954944522411662
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 3.4715341600892184
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 18.952366309818974
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 3.2502688325458657
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 12.212856738548014
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9929165732161934
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9243611646261073
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 3.5000343339411613
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 23.455779660430473
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 4.0825030990766145
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 48.29711105773852
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 3.769814901278793
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 42.08659519279004
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9427433688907859
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8179553688798706
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 4,
+            "median": 0.002223789119704941
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 4,
+            "median": 0.0018760220409626675
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 4,
+            "median": 0.3277294856388775
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 4,
+            "median": 0.7622152067401079
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 4,
+            "median": 6.284700655416562
+          }
+        }
+      }
+    },
+    "test": {
+      "Official": {
+        "subject_count": 0,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 0,
+            "median": null
+          }
+        }
+      },
+      "Official+Txyz": {
+        "subject_count": 0,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 0,
+            "median": null
+          }
+        }
+      },
+      "Official+Txyz+Pose": {
+        "subject_count": 0,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 0,
+            "median": null
+          }
+        }
+      },
+      "Official+Rigid": {
+        "subject_count": 0,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 0,
+            "median": null
+          }
+        }
+      },
+      "Official+Rigid+D": {
+        "subject_count": 0,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 0,
+            "median": null
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 0,
+            "median": null
+          }
+        }
+      }
+    },
+    "all": {
+      "Official": {
+        "subject_count": 4,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 149.08835456967833
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 171.91751864646017
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 159.5471027956932
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 190.7990672813215
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 159.96479816267484
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 186.52202921102128
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9726588625200538
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9243611646261073
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 142.20978302142169
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 167.3687099851697
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 162.22849736895327
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 212.40215141466138
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 161.41953322449388
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 206.07587821914012
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8945032961029056
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8179553688798706
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 4,
+            "median": 7.553282327148084e-15
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 4,
+            "median": 0.6980489735541089
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 4,
+            "median": 8.924428900898052
+          }
+        }
+      },
+      "Official+Txyz": {
+        "subject_count": 4,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 129.32700765319308
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 144.80496789755233
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 137.18575981941268
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 162.51414751572307
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 137.74137590523907
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 159.56873157489963
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9772759535144194
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9243611646261073
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 120.3643259249845
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 147.95815793800435
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 138.87060218829797
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 182.57199359091058
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 138.5796313958379
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 180.8528726749576
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9166203950187459
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8179553688798706
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 4,
+            "median": 8.9008335945318e-15
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 4,
+            "median": 0.6909615103144322
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 4,
+            "median": 7.807886552931954
+          }
+        }
+      },
+      "Official+Txyz+Pose": {
+        "subject_count": 4,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 56.407336194058956
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 108.84111595013792
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 73.56279477739969
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 136.49657240966167
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 73.76509541790676
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 135.89621524728844
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9445393010172674
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9243611646261073
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 59.082614945215184
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 110.65127384025439
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 77.37402522350818
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 143.81142446564448
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 77.97788796059066
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 142.32748385551085
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8686205004114789
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8179553688798706
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 4,
+            "median": 0.00036668597786698
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 4,
+            "median": 0.03933745502302647
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 4,
+            "median": 0.6534610533044194
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 4,
+            "median": 9.011400376514832
+          }
+        }
+      },
+      "Official+Rigid": {
+        "subject_count": 4,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 10.892092197963471
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 24.922530007505166
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 12.052011117488936
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 35.70124463442522
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 11.748001445662275
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 28.599978341520895
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9954872570004121
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9243611646261073
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 9.577899131075766
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 30.463818213284313
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 12.427699773371769
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 60.44062562333109
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 12.347746562666572
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 53.24878953791958
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9461085177748805
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8179553688798706
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 4,
+            "median": 0.0
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 4,
+            "median": 5.895990860814813e-15
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 4,
+            "median": 1.2855563329486985e-13
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 4,
+            "median": 0.7619100303306621
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 4,
+            "median": 6.409372103166664
+          }
+        }
+      },
+      "Official+Rigid+D": {
+        "subject_count": 4,
+        "metrics": {
+          "posterior_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 3.026954173381686
+          },
+          "posterior_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 10.954944522411662
+          },
+          "posterior_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 3.4715341600892184
+          },
+          "posterior_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 18.952366309818974
+          },
+          "posterior_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 3.2502688325458657
+          },
+          "posterior_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 12.212856738548014
+          },
+          "posterior_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9929165732161934
+          },
+          "posterior_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9243611646261073
+          },
+          "torso_d3d_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 3.5000343339411613
+          },
+          "torso_d3d_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 23.455779660430473
+          },
+          "torso_ray_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 4.0825030990766145
+          },
+          "torso_ray_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 48.29711105773852
+          },
+          "torso_ray_common_hit_absolute_median_mm": {
+            "n_valid_subjects": 4,
+            "median": 3.769814901278793
+          },
+          "torso_ray_common_hit_absolute_p95_mm": {
+            "n_valid_subjects": 4,
+            "median": 42.08659519279004
+          },
+          "torso_ray_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.9427433688907859
+          },
+          "torso_ray_common_hit_fraction": {
+            "n_valid_subjects": 4,
+            "median": 0.8179553688798706
+          },
+          "face_flip_frac": {
+            "n_valid_subjects": 4,
+            "median": 0.002223789119704941
+          },
+          "edge_strain_p50": {
+            "n_valid_subjects": 4,
+            "median": 0.0018760220409626675
+          },
+          "edge_strain_p99": {
+            "n_valid_subjects": 4,
+            "median": 0.3277294856388775
+          },
+          "silhouette_iou": {
+            "n_valid_subjects": 4,
+            "median": 0.7622152067401079
+          },
+          "silhouette_boundary_median_px": {
+            "n_valid_subjects": 4,
+            "median": 6.284700655416562
+          }
+        }
+      }
+    }
+  },
+  "per_subject": [
+    {
+      "subject": "S104",
+      "split": "dev",
+      "method": "Official",
+      "posterior_d3d_median_mm": 344.5344766152998,
+      "posterior_d3d_p95_mm": 370.4182271336847,
+      "posterior_ray_absolute_median_mm": 373.4960841982338,
+      "posterior_ray_absolute_p95_mm": 391.82813641526536,
+      "posterior_ray_common_hit_absolute_median_mm": 372.68284101288054,
+      "posterior_ray_common_hit_absolute_p95_mm": 388.675041025918,
+      "posterior_ray_hit_fraction": 0.9616609388211548,
+      "posterior_ray_common_hit_fraction": 0.8945713541254471,
+      "torso_d3d_median_mm": 333.039300107836,
+      "torso_d3d_p95_mm": 369.97097809993033,
+      "torso_ray_absolute_median_mm": 365.2032524996566,
+      "torso_ray_absolute_p95_mm": 388.4800587559327,
+      "torso_ray_common_hit_absolute_median_mm": 364.30761443028086,
+      "torso_ray_common_hit_absolute_p95_mm": 386.49032901178566,
+      "torso_ray_hit_fraction": 0.9200193810332463,
+      "torso_ray_common_hit_fraction": 0.809283257222123,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 9.149587083747952e-15,
+      "silhouette_iou": 0.6885504885993484,
+      "silhouette_boundary_median_px": 7.615773105863909,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S104",
+      "split": "dev",
+      "method": "Official+Txyz",
+      "posterior_d3d_median_mm": 344.5344766152998,
+      "posterior_d3d_p95_mm": 370.4182271336847,
+      "posterior_ray_absolute_median_mm": 373.4960841982338,
+      "posterior_ray_absolute_p95_mm": 391.82813641526536,
+      "posterior_ray_common_hit_absolute_median_mm": 372.68284101288054,
+      "posterior_ray_common_hit_absolute_p95_mm": 388.675041025918,
+      "posterior_ray_hit_fraction": 0.9616609388211548,
+      "posterior_ray_common_hit_fraction": 0.8945713541254471,
+      "torso_d3d_median_mm": 333.039300107836,
+      "torso_d3d_p95_mm": 369.97097809993033,
+      "torso_ray_absolute_median_mm": 365.2032524996566,
+      "torso_ray_absolute_p95_mm": 388.4800587559327,
+      "torso_ray_common_hit_absolute_median_mm": 364.30761443028086,
+      "torso_ray_common_hit_absolute_p95_mm": 386.49032901178566,
+      "torso_ray_hit_fraction": 0.9200193810332463,
+      "torso_ray_common_hit_fraction": 0.809283257222123,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 9.149587083747952e-15,
+      "silhouette_iou": 0.6885504885993484,
+      "silhouette_boundary_median_px": 7.615773105863909,
+      "txyz_fallback_seeds": 3
+    },
+    {
+      "subject": "S104",
+      "split": "dev",
+      "method": "Official+Txyz+Pose",
+      "posterior_d3d_median_mm": 233.80067776060025,
+      "posterior_d3d_p95_mm": 307.8371862719326,
+      "posterior_ray_absolute_median_mm": 264.767639526201,
+      "posterior_ray_absolute_p95_mm": 350.07258836039597,
+      "posterior_ray_common_hit_absolute_median_mm": 265.10561042670207,
+      "posterior_ray_common_hit_absolute_p95_mm": 350.07278273240314,
+      "posterior_ray_hit_fraction": 0.8962931172108465,
+      "posterior_ray_common_hit_fraction": 0.8945713541254471,
+      "torso_d3d_median_mm": 224.9431271371745,
+      "torso_d3d_p95_mm": 307.0722940013273,
+      "torso_ray_absolute_median_mm": 250.0373677222572,
+      "torso_ray_absolute_p95_mm": 345.5145394794344,
+      "torso_ray_common_hit_absolute_median_mm": 255.08362826438199,
+      "torso_ray_common_hit_absolute_p95_mm": 346.24421462643915,
+      "torso_ray_hit_fraction": 0.8447286877503161,
+      "torso_ray_common_hit_fraction": 0.809283257222123,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0003065410321819786,
+      "edge_strain_p99": 0.04988553999136933,
+      "silhouette_iou": 0.5497799366684203,
+      "silhouette_boundary_median_px": 12.333333333333334,
+      "txyz_fallback_seeds": 3
+    },
+    {
+      "subject": "S104",
+      "split": "dev",
+      "method": "Official+Rigid",
+      "posterior_d3d_median_mm": 9.781264359088611,
+      "posterior_d3d_p95_mm": 18.506050620425995,
+      "posterior_ray_absolute_median_mm": 11.03757802044103,
+      "posterior_ray_absolute_p95_mm": 20.072767796936073,
+      "posterior_ray_common_hit_absolute_median_mm": 11.05729091101526,
+      "posterior_ray_common_hit_absolute_p95_mm": 19.644333063780227,
+      "posterior_ray_hit_fraction": 0.996900826446281,
+      "posterior_ray_common_hit_fraction": 0.8945713541254471,
+      "torso_d3d_median_mm": 9.750364873647657,
+      "torso_d3d_p95_mm": 24.933583370462912,
+      "torso_ray_absolute_median_mm": 11.20503019991222,
+      "torso_ray_absolute_p95_mm": 47.33771187255209,
+      "torso_ray_common_hit_absolute_median_mm": 11.249472725016417,
+      "torso_ray_common_hit_absolute_p95_mm": 35.24224017205227,
+      "torso_ray_hit_fraction": 0.9886370805996835,
+      "torso_ray_common_hit_fraction": 0.809283257222123,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 7.015480740361076e-15,
+      "edge_strain_p99": 1.4347578174063314e-13,
+      "silhouette_iou": 0.7323484557000962,
+      "silhouette_boundary_median_px": 5.7950549357115015,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S104",
+      "split": "dev",
+      "method": "Official+Rigid+D",
+      "posterior_d3d_median_mm": 2.311386894723303,
+      "posterior_d3d_p95_mm": 6.556220860828343,
+      "posterior_ray_absolute_median_mm": 2.6503242098270263,
+      "posterior_ray_absolute_p95_mm": 8.55194446381874,
+      "posterior_ray_common_hit_absolute_median_mm": 2.5118604925611354,
+      "posterior_ray_common_hit_absolute_p95_mm": 7.858683671480402,
+      "posterior_ray_hit_fraction": 0.9989669421487603,
+      "posterior_ray_common_hit_fraction": 0.8945713541254471,
+      "torso_d3d_median_mm": 3.262532281454338,
+      "torso_d3d_p95_mm": 20.321550113739068,
+      "torso_ray_absolute_median_mm": 3.80545456386594,
+      "torso_ray_absolute_p95_mm": 37.983550049022945,
+      "torso_ray_common_hit_absolute_median_mm": 3.503694195540641,
+      "torso_ray_common_hit_absolute_p95_mm": 28.750369135148627,
+      "torso_ray_hit_fraction": 0.98940219154077,
+      "torso_ray_common_hit_fraction": 0.809283257222123,
+      "face_flip_frac": 0.011869248431595883,
+      "edge_strain_p50": 0.0010543677877084404,
+      "edge_strain_p99": 0.3637055997998986,
+      "silhouette_iou": 0.7338871284386724,
+      "silhouette_boundary_median_px": 5.666666666666667,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S107",
+      "split": "dev",
+      "method": "Official",
+      "posterior_d3d_median_mm": 74.50935548260962,
+      "posterior_d3d_p95_mm": 102.4609061604906,
+      "posterior_ray_absolute_median_mm": 82.4418799784971,
+      "posterior_ray_absolute_p95_mm": 113.09845019019673,
+      "posterior_ray_common_hit_absolute_median_mm": 82.487011215444,
+      "posterior_ray_common_hit_absolute_p95_mm": 113.10247447137044,
+      "posterior_ray_hit_fraction": 0.9899319727891157,
+      "posterior_ray_common_hit_fraction": 0.988020919350399,
+      "torso_d3d_median_mm": 66.45267421996385,
+      "torso_d3d_p95_mm": 94.07058225893938,
+      "torso_ray_absolute_median_mm": 81.242246148073,
+      "torso_ray_absolute_p95_mm": 116.7987335140695,
+      "torso_ray_common_hit_absolute_median_mm": 81.01513660300348,
+      "torso_ray_common_hit_absolute_p95_mm": 114.0453975621557,
+      "torso_ray_hit_fraction": 0.8394631813975231,
+      "torso_ray_common_hit_fraction": 0.8266274805376183,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 4.904241954601862e-15,
+      "silhouette_iou": 0.7191802491124052,
+      "silhouette_boundary_median_px": 10.0,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S107",
+      "split": "dev",
+      "method": "Official+Txyz",
+      "posterior_d3d_median_mm": 13.614865949245706,
+      "posterior_d3d_p95_mm": 33.23591257249502,
+      "posterior_ray_absolute_median_mm": 15.426795360369875,
+      "posterior_ray_absolute_p95_mm": 66.14910582422235,
+      "posterior_ray_common_hit_absolute_median_mm": 15.316682939182796,
+      "posterior_ray_common_hit_absolute_p95_mm": 66.02015963488172,
+      "posterior_ray_hit_fraction": 0.9989115646258503,
+      "posterior_ray_common_hit_fraction": 0.988020919350399,
+      "torso_d3d_median_mm": 9.132830679789228,
+      "torso_d3d_p95_mm": 33.00401627461736,
+      "torso_ray_absolute_median_mm": 12.65512394596476,
+      "torso_ray_absolute_p95_mm": 62.271404006354516,
+      "torso_ray_common_hit_absolute_median_mm": 12.211111182063567,
+      "torso_ray_common_hit_absolute_p95_mm": 60.41285147823243,
+      "torso_ray_hit_fraction": 0.920235872388877,
+      "torso_ray_common_hit_fraction": 0.8266274805376183,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 8.652080105315647e-15,
+      "silhouette_iou": 0.7883519609794322,
+      "silhouette_boundary_median_px": 6.606510700810529,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S107",
+      "split": "dev",
+      "method": "Official+Txyz+Pose",
+      "posterior_d3d_median_mm": 9.705466782072774,
+      "posterior_d3d_p95_mm": 33.110717766177004,
+      "posterior_ray_absolute_median_mm": 11.847254707408736,
+      "posterior_ray_absolute_p95_mm": 75.55573785310959,
+      "posterior_ray_common_hit_absolute_median_mm": 11.64285688162355,
+      "posterior_ray_common_hit_absolute_p95_mm": 74.35152349318467,
+      "posterior_ray_hit_fraction": 0.9991836734693877,
+      "posterior_ray_common_hit_fraction": 0.988020919350399,
+      "torso_d3d_median_mm": 9.99085726462642,
+      "torso_d3d_p95_mm": 36.85576959001937,
+      "torso_ray_absolute_median_mm": 14.279948340184978,
+      "torso_ray_absolute_p95_mm": 73.78468364233588,
+      "torso_ray_common_hit_absolute_median_mm": 13.742026319728799,
+      "torso_ray_common_hit_absolute_p95_mm": 73.53784041029257,
+      "torso_ray_hit_fraction": 0.9099170880793176,
+      "torso_ray_common_hit_fraction": 0.8266274805376183,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0004236599335569774,
+      "edge_strain_p99": 0.03249470050098096,
+      "silhouette_iou": 0.801850862557612,
+      "silhouette_boundary_median_px": 6.694254176766073,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S107",
+      "split": "dev",
+      "method": "Official+Rigid",
+      "posterior_d3d_median_mm": 11.340843085223073,
+      "posterior_d3d_p95_mm": 36.457953976092476,
+      "posterior_ray_absolute_median_mm": 12.376457570099271,
+      "posterior_ray_absolute_p95_mm": 76.58619606911658,
+      "posterior_ray_common_hit_absolute_median_mm": 12.373667321955367,
+      "posterior_ray_common_hit_absolute_p95_mm": 76.9545043617651,
+      "posterior_ray_hit_fraction": 0.9926530612244898,
+      "posterior_ray_common_hit_fraction": 0.988020919350399,
+      "torso_d3d_median_mm": 9.405433388503875,
+      "torso_d3d_p95_mm": 35.99405305610571,
+      "torso_ray_absolute_median_mm": 13.650369346831317,
+      "torso_ray_absolute_p95_mm": 73.54353937411008,
+      "torso_ray_common_hit_absolute_median_mm": 13.446020400316728,
+      "torso_ray_common_hit_absolute_p95_mm": 71.25533890378688,
+      "torso_ray_hit_fraction": 0.909777345773381,
+      "torso_ray_common_hit_fraction": 0.8266274805376183,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 4.9232125808035614e-15,
+      "edge_strain_p99": 1.2590448788929914e-13,
+      "silhouette_iou": 0.7914716049612279,
+      "silhouette_boundary_median_px": 7.0236892706218255,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S107",
+      "split": "dev",
+      "method": "Official+Rigid+D",
+      "posterior_d3d_median_mm": 3.7304271046478434,
+      "posterior_d3d_p95_mm": 25.920420022120492,
+      "posterior_ray_absolute_median_mm": 4.294915321219839,
+      "posterior_ray_absolute_p95_mm": 57.30662970582765,
+      "posterior_ray_common_hit_absolute_median_mm": 4.291696574349024,
+      "posterior_ray_common_hit_absolute_p95_mm": 57.32498123564191,
+      "posterior_ray_hit_fraction": 0.9901977900986983,
+      "posterior_ray_common_hit_fraction": 0.988020919350399,
+      "torso_d3d_median_mm": 3.7375363864279847,
+      "torso_d3d_p95_mm": 26.59000920712188,
+      "torso_ray_absolute_median_mm": 4.71276545648643,
+      "torso_ray_absolute_p95_mm": 58.6106720664541,
+      "torso_ray_common_hit_absolute_median_mm": 4.485913184187377,
+      "torso_ray_common_hit_absolute_p95_mm": 55.42282125043146,
+      "torso_ray_hit_fraction": 0.9070759871559718,
+      "torso_ray_common_hit_fraction": 0.8266274805376183,
+      "face_flip_frac": 0.0015277250456509556,
+      "edge_strain_p50": 0.005143228586165554,
+      "edge_strain_p99": 0.36501848863998854,
+      "silhouette_iou": 0.7905432850415434,
+      "silhouette_boundary_median_px": 6.902734644166457,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S165",
+      "split": "dev",
+      "method": "Official",
+      "posterior_d3d_median_mm": 70.33700424941061,
+      "posterior_d3d_p95_mm": 91.03536321340282,
+      "posterior_ray_absolute_median_mm": 83.72101937479441,
+      "posterior_ray_absolute_p95_mm": 128.35413628509244,
+      "posterior_ray_common_hit_absolute_median_mm": 83.40365495719679,
+      "posterior_ray_common_hit_absolute_p95_mm": 119.92675490712502,
+      "posterior_ray_hit_fraction": 0.9711771528530413,
+      "posterior_ray_common_hit_fraction": 0.9532739994138061,
+      "torso_d3d_median_mm": 44.435483371986514,
+      "torso_d3d_p95_mm": 93.4547758340194,
+      "torso_ray_absolute_median_mm": 85.37216845157964,
+      "torso_ray_absolute_p95_mm": 165.70075556897976,
+      "torso_ray_common_hit_absolute_median_mm": 82.44349117210756,
+      "torso_ray_common_hit_absolute_p95_mm": 153.08139592973063,
+      "torso_ray_hit_fraction": 0.8757851832015654,
+      "torso_ray_common_hit_fraction": 0.7808523445296167,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 8.7081106721567e-15,
+      "silhouette_iou": 0.7075474585088695,
+      "silhouette_boundary_median_px": 9.848857801796104,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S165",
+      "split": "dev",
+      "method": "Official+Txyz",
+      "posterior_d3d_median_mm": 34.986661649639096,
+      "posterior_d3d_p95_mm": 48.2358046626749,
+      "posterior_ray_absolute_median_mm": 38.99833342223335,
+      "posterior_ray_absolute_p95_mm": 71.78429675389559,
+      "posterior_ray_common_hit_absolute_median_mm": 38.95681044232524,
+      "posterior_ray_common_hit_absolute_p95_mm": 65.23628582263866,
+      "posterior_ray_hit_fraction": 0.9804113348417723,
+      "posterior_ray_common_hit_fraction": 0.9532739994138061,
+      "torso_d3d_median_mm": 22.76176002708952,
+      "torso_d3d_p95_mm": 55.24947816460868,
+      "torso_ray_absolute_median_mm": 38.65637809026901,
+      "torso_ray_absolute_p95_mm": 106.0404399214782,
+      "torso_ray_common_hit_absolute_median_mm": 36.763687514795606,
+      "torso_ray_common_hit_absolute_p95_mm": 102.63538484136556,
+      "torso_ray_hit_fraction": 0.8883216267662558,
+      "torso_ray_common_hit_fraction": 0.7808523445296167,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 1.0952158990633177e-14,
+      "silhouette_iou": 0.693372532029516,
+      "silhouette_boundary_median_px": 9.37459579907547,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S165",
+      "split": "dev",
+      "method": "Official+Txyz+Pose",
+      "posterior_d3d_median_mm": 14.92558606243049,
+      "posterior_d3d_p95_mm": 31.612591947037075,
+      "posterior_ray_absolute_median_mm": 17.290482196720877,
+      "posterior_ray_absolute_p95_mm": 40.90086459572928,
+      "posterior_ray_common_hit_absolute_median_mm": 16.904692694859612,
+      "posterior_ray_common_hit_absolute_p95_mm": 37.200241002897606,
+      "posterior_ray_hit_fraction": 0.9923494524715025,
+      "posterior_ray_common_hit_fraction": 0.9532739994138061,
+      "torso_d3d_median_mm": 11.692870736173615,
+      "torso_d3d_p95_mm": 41.52202862643987,
+      "torso_ray_absolute_median_mm": 16.207133684716563,
+      "torso_ray_absolute_p95_mm": 91.30133929685509,
+      "torso_ray_common_hit_absolute_median_mm": 15.303296863944679,
+      "torso_ray_common_hit_absolute_p95_mm": 88.12547248175467,
+      "torso_ray_hit_fraction": 0.8628484206627017,
+      "torso_ray_common_hit_fraction": 0.7808523445296167,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0003097120221769826,
+      "edge_strain_p99": 0.023608966594326274,
+      "silhouette_iou": 0.667443782728015,
+      "silhouette_boundary_median_px": 9.073181485764296,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S165",
+      "split": "dev",
+      "method": "Official+Rigid",
+      "posterior_d3d_median_mm": 11.322951073554131,
+      "posterior_d3d_p95_mm": 27.871218905424524,
+      "posterior_ray_absolute_median_mm": 13.958087275483125,
+      "posterior_ray_absolute_p95_mm": 36.20109925311325,
+      "posterior_ray_common_hit_absolute_median_mm": 13.607695294743147,
+      "posterior_ray_common_hit_absolute_p95_mm": 33.33153391456737,
+      "posterior_ray_hit_fraction": 0.9940736875545433,
+      "posterior_ray_common_hit_fraction": 0.9532739994138061,
+      "torso_d3d_median_mm": 11.424084115086693,
+      "torso_d3d_p95_mm": 49.93202079469569,
+      "torso_ray_absolute_median_mm": 14.098246674619526,
+      "torso_ray_absolute_p95_mm": 84.08128379401832,
+      "torso_ray_common_hit_absolute_median_mm": 13.661670516334192,
+      "torso_ray_common_hit_absolute_p95_mm": 82.64231894759631,
+      "torso_ray_hit_fraction": 0.8646967421275175,
+      "torso_ray_common_hit_fraction": 0.7808523445296167,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 5.3982606907332e-15,
+      "edge_strain_p99": 1.2275392901166656e-13,
+      "silhouette_iou": 0.6561357492234746,
+      "silhouette_boundary_median_px": 9.60750792093546,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S165",
+      "split": "dev",
+      "method": "Official+Rigid+D",
+      "posterior_d3d_median_mm": 2.959996115902316,
+      "posterior_d3d_p95_mm": 9.589881422857255,
+      "posterior_ray_absolute_median_mm": 3.440711627171522,
+      "posterior_ray_absolute_p95_mm": 11.400751827587802,
+      "posterior_ray_common_hit_absolute_median_mm": 3.3321321257447907,
+      "posterior_ray_common_hit_absolute_p95_mm": 10.177952257188336,
+      "posterior_ray_hit_fraction": 0.9781536095013336,
+      "posterior_ray_common_hit_fraction": 0.9532739994138061,
+      "torso_d3d_median_mm": 4.098020987673909,
+      "torso_d3d_p95_mm": 48.931363068906705,
+      "torso_ray_absolute_median_mm": 4.359551634287288,
+      "torso_ray_absolute_p95_mm": 72.38650218730128,
+      "torso_ray_common_hit_absolute_median_mm": 4.035935607016945,
+      "torso_ray_common_hit_absolute_p95_mm": 71.67181904733461,
+      "torso_ray_hit_fraction": 0.855415214877473,
+      "torso_ray_common_hit_fraction": 0.7808523445296167,
+      "face_flip_frac": 0.002919853193758927,
+      "edge_strain_p50": 0.0019760145666717814,
+      "edge_strain_p99": 0.29175337147785646,
+      "silhouette_iou": 0.6513533841063709,
+      "silhouette_boundary_median_px": 9.778563594100413,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S187",
+      "split": "dev",
+      "method": "Official",
+      "posterior_d3d_median_mm": 223.66735365674705,
+      "posterior_d3d_p95_mm": 241.37413113242977,
+      "posterior_ray_absolute_median_mm": 235.373186216592,
+      "posterior_ray_absolute_p95_mm": 253.24399827755056,
+      "posterior_ray_common_hit_absolute_median_mm": 236.52594136815287,
+      "posterior_ray_common_hit_absolute_p95_mm": 253.11730351491755,
+      "posterior_ray_hit_fraction": 0.9741405721870665,
+      "posterior_ray_common_hit_fraction": 0.8954483298384085,
+      "torso_d3d_median_mm": 217.9668918228795,
+      "torso_d3d_p95_mm": 240.6668377114,
+      "torso_ray_absolute_median_mm": 239.08482628632692,
+      "torso_ray_absolute_p95_mm": 259.10354726034296,
+      "torso_ray_common_hit_absolute_median_mm": 240.39557527688018,
+      "torso_ray_common_hit_absolute_p95_mm": 259.07036050854964,
+      "torso_ray_hit_fraction": 0.9132214090042456,
+      "torso_ray_common_hit_fraction": 0.8271954903453246,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 6.3984539821394694e-15,
+      "silhouette_iou": 0.6635790931118034,
+      "silhouette_boundary_median_px": 8.0,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S187",
+      "split": "dev",
+      "method": "Official+Txyz",
+      "posterior_d3d_median_mm": 223.66735365674705,
+      "posterior_d3d_p95_mm": 241.37413113242977,
+      "posterior_ray_absolute_median_mm": 235.373186216592,
+      "posterior_ray_absolute_p95_mm": 253.24399827755056,
+      "posterior_ray_common_hit_absolute_median_mm": 236.52594136815287,
+      "posterior_ray_common_hit_absolute_p95_mm": 253.11730351491755,
+      "posterior_ray_hit_fraction": 0.9741405721870665,
+      "posterior_ray_common_hit_fraction": 0.8954483298384085,
+      "torso_d3d_median_mm": 217.9668918228795,
+      "torso_d3d_p95_mm": 240.6668377114,
+      "torso_ray_absolute_median_mm": 239.08482628632692,
+      "torso_ray_absolute_p95_mm": 259.10354726034296,
+      "torso_ray_common_hit_absolute_median_mm": 240.39557527688018,
+      "torso_ray_common_hit_absolute_p95_mm": 259.07036050854964,
+      "torso_ray_hit_fraction": 0.9132214090042456,
+      "torso_ray_common_hit_fraction": 0.8271954903453246,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0,
+      "edge_strain_p99": 6.3984539821394694e-15,
+      "silhouette_iou": 0.6635790931118034,
+      "silhouette_boundary_median_px": 8.0,
+      "txyz_fallback_seeds": 3
+    },
+    {
+      "subject": "S187",
+      "split": "dev",
+      "method": "Official+Txyz+Pose",
+      "posterior_d3d_median_mm": 97.88908632568742,
+      "posterior_d3d_p95_mm": 184.57151413409883,
+      "posterior_ray_absolute_median_mm": 129.8351073580785,
+      "posterior_ray_absolute_p95_mm": 197.43740696621376,
+      "posterior_ray_common_hit_absolute_median_mm": 130.6254981409539,
+      "posterior_ray_common_hit_absolute_p95_mm": 197.44090700139222,
+      "posterior_ray_hit_fraction": 0.8967291495630323,
+      "posterior_ray_common_hit_fraction": 0.8954483298384085,
+      "torso_d3d_median_mm": 106.47235915425675,
+      "torso_d3d_p95_mm": 179.78051905406892,
+      "torso_ray_absolute_median_mm": 138.54091676229982,
+      "torso_ray_absolute_p95_mm": 196.32150963443385,
+      "torso_ray_common_hit_absolute_median_mm": 140.65247905723666,
+      "torso_ray_common_hit_absolute_p95_mm": 196.529495229267,
+      "torso_ray_hit_fraction": 0.8743925801602561,
+      "torso_ray_common_hit_fraction": 0.8271954903453246,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 0.0005337664023541694,
+      "edge_strain_p99": 0.04618020954507198,
+      "silhouette_iou": 0.6394783238808239,
+      "silhouette_boundary_median_px": 8.949619267265367,
+      "txyz_fallback_seeds": 3
+    },
+    {
+      "subject": "S187",
+      "split": "dev",
+      "method": "Official+Rigid",
+      "posterior_d3d_median_mm": 10.461233322372813,
+      "posterior_d3d_p95_mm": 21.97384110958581,
+      "posterior_ray_absolute_median_mm": 11.727564664878601,
+      "posterior_ray_absolute_p95_mm": 35.2013900157372,
+      "posterior_ray_common_hit_absolute_median_mm": 11.122335569369184,
+      "posterior_ray_common_hit_absolute_p95_mm": 23.86842276847442,
+      "posterior_ray_hit_fraction": 0.9985982618446875,
+      "posterior_ray_common_hit_fraction": 0.8954483298384085,
+      "torso_d3d_median_mm": 8.204448480562712,
+      "torso_d3d_p95_mm": 21.479223431366318,
+      "torso_ray_absolute_median_mm": 9.94454123436091,
+      "torso_ray_absolute_p95_mm": 46.570446883847865,
+      "torso_ray_common_hit_absolute_median_mm": 8.885132639442425,
+      "torso_ray_common_hit_absolute_p95_mm": 23.763969747913823,
+      "torso_ray_hit_fraction": 0.98243968977638,
+      "torso_ray_common_hit_fraction": 0.8271954903453246,
+      "face_flip_frac": 0.0,
+      "edge_strain_p50": 6.393721030896427e-15,
+      "edge_strain_p99": 1.312067787004406e-13,
+      "silhouette_iou": 0.8150570853125821,
+      "silhouette_boundary_median_px": 4.0,
+      "txyz_fallback_seeds": 0
+    },
+    {
+      "subject": "S187",
+      "split": "dev",
+      "method": "Official+Rigid+D",
+      "posterior_d3d_median_mm": 3.0939122308610556,
+      "posterior_d3d_p95_mm": 12.320007621966068,
+      "posterior_ray_absolute_median_mm": 3.5023566930069143,
+      "posterior_ray_absolute_p95_mm": 26.503980792050143,
+      "posterior_ray_common_hit_absolute_median_mm": 3.168405539346941,
+      "posterior_ray_common_hit_absolute_p95_mm": 14.247761219907693,
+      "posterior_ray_hit_fraction": 0.9956353563336885,
+      "posterior_ray_common_hit_fraction": 0.8954483298384085,
+      "torso_d3d_median_mm": 3.154693206011725,
+      "torso_d3d_p95_mm": 14.45701471027281,
+      "torso_ray_absolute_median_mm": 3.732865966087869,
+      "torso_ray_absolute_p95_mm": 35.5347257170966,
+      "torso_ray_common_hit_absolute_median_mm": 3.143099293054267,
+      "torso_ray_common_hit_absolute_p95_mm": 14.081733372434272,
+      "torso_ray_hit_fraction": 0.9784107506256,
+      "torso_ray_common_hit_fraction": 0.8271954903453246,
+      "face_flip_frac": 0.0006327855218672597,
+      "edge_strain_p50": 0.0017760295152535533,
+      "edge_strain_p99": 0.24209772997643697,
+      "silhouette_iou": 0.7945278705934952,
+      "silhouette_boundary_median_px": 4.6996731711975945,
+      "txyz_fallback_seeds": 0
+    }
+  ],
+  "paired_changes": [
+    {
+      "subject": "S104",
+      "split": "dev",
+      "method": "Official",
+      "posterior_median_delta_mm": 0.0,
+      "posterior_p95_delta_mm": 0.0,
+      "ray_hit_delta": 0.0
+    },
+    {
+      "subject": "S104",
+      "split": "dev",
+      "method": "Official+Txyz",
+      "posterior_median_delta_mm": 0.0,
+      "posterior_p95_delta_mm": 0.0,
+      "ray_hit_delta": 0.0
+    },
+    {
+      "subject": "S104",
+      "split": "dev",
+      "method": "Official+Txyz+Pose",
+      "posterior_median_delta_mm": -110.73379885469956,
+      "posterior_p95_delta_mm": -62.581040861752115,
+      "ray_hit_delta": -0.0653678216103083
+    },
+    {
+      "subject": "S104",
+      "split": "dev",
+      "method": "Official+Rigid",
+      "posterior_median_delta_mm": -334.7532122562112,
+      "posterior_p95_delta_mm": -351.9121765132587,
+      "ray_hit_delta": 0.0352398876251262
+    },
+    {
+      "subject": "S104",
+      "split": "dev",
+      "method": "Official+Rigid+D",
+      "posterior_median_delta_mm": -342.2230897205765,
+      "posterior_p95_delta_mm": -363.8620062728564,
+      "ray_hit_delta": 0.037306003327605475
+    },
+    {
+      "subject": "S107",
+      "split": "dev",
+      "method": "Official",
+      "posterior_median_delta_mm": 0.0,
+      "posterior_p95_delta_mm": 0.0,
+      "ray_hit_delta": 0.0
+    },
+    {
+      "subject": "S107",
+      "split": "dev",
+      "method": "Official+Txyz",
+      "posterior_median_delta_mm": -60.89448953336392,
+      "posterior_p95_delta_mm": -69.22499358799558,
+      "ray_hit_delta": 0.00897959183673458
+    },
+    {
+      "subject": "S107",
+      "split": "dev",
+      "method": "Official+Txyz+Pose",
+      "posterior_median_delta_mm": -64.80388870053685,
+      "posterior_p95_delta_mm": -69.35018839431359,
+      "ray_hit_delta": 0.009251700680272035
+    },
+    {
+      "subject": "S107",
+      "split": "dev",
+      "method": "Official+Rigid",
+      "posterior_median_delta_mm": -63.16851239738655,
+      "posterior_p95_delta_mm": -66.00295218439811,
+      "ray_hit_delta": 0.0027210884353741083
+    },
+    {
+      "subject": "S107",
+      "split": "dev",
+      "method": "Official+Rigid+D",
+      "posterior_median_delta_mm": -70.77892837796178,
+      "posterior_p95_delta_mm": -76.5404861383701,
+      "ray_hit_delta": 0.00026581730958263883
+    },
+    {
+      "subject": "S165",
+      "split": "dev",
+      "method": "Official",
+      "posterior_median_delta_mm": 0.0,
+      "posterior_p95_delta_mm": 0.0,
+      "ray_hit_delta": 0.0
+    },
+    {
+      "subject": "S165",
+      "split": "dev",
+      "method": "Official+Txyz",
+      "posterior_median_delta_mm": -35.350342599771515,
+      "posterior_p95_delta_mm": -42.799558550727916,
+      "ray_hit_delta": 0.00923418198873105
+    },
+    {
+      "subject": "S165",
+      "split": "dev",
+      "method": "Official+Txyz+Pose",
+      "posterior_median_delta_mm": -55.41141818698012,
+      "posterior_p95_delta_mm": -59.42277126636574,
+      "ray_hit_delta": 0.021172299618461232
+    },
+    {
+      "subject": "S165",
+      "split": "dev",
+      "method": "Official+Rigid",
+      "posterior_median_delta_mm": -59.01405317585648,
+      "posterior_p95_delta_mm": -63.16414430797829,
+      "ray_hit_delta": 0.02289653470150199
+    },
+    {
+      "subject": "S165",
+      "split": "dev",
+      "method": "Official+Rigid+D",
+      "posterior_median_delta_mm": -67.3770081335083,
+      "posterior_p95_delta_mm": -81.44548179054556,
+      "ray_hit_delta": 0.006976456648292273
+    },
+    {
+      "subject": "S187",
+      "split": "dev",
+      "method": "Official",
+      "posterior_median_delta_mm": 0.0,
+      "posterior_p95_delta_mm": 0.0,
+      "ray_hit_delta": 0.0
+    },
+    {
+      "subject": "S187",
+      "split": "dev",
+      "method": "Official+Txyz",
+      "posterior_median_delta_mm": 0.0,
+      "posterior_p95_delta_mm": 0.0,
+      "ray_hit_delta": 0.0
+    },
+    {
+      "subject": "S187",
+      "split": "dev",
+      "method": "Official+Txyz+Pose",
+      "posterior_median_delta_mm": -125.77826733105964,
+      "posterior_p95_delta_mm": -56.80261699833093,
+      "ray_hit_delta": -0.07741142262403422
+    },
+    {
+      "subject": "S187",
+      "split": "dev",
+      "method": "Official+Rigid",
+      "posterior_median_delta_mm": -213.20612033437425,
+      "posterior_p95_delta_mm": -219.40029002284396,
+      "ray_hit_delta": 0.024457689657620962
+    },
+    {
+      "subject": "S187",
+      "split": "dev",
+      "method": "Official+Rigid+D",
+      "posterior_median_delta_mm": -220.573441425886,
+      "posterior_p95_delta_mm": -229.0541235104637,
+      "ray_hit_delta": 0.02149478414662198
+    }
+  ],
+  "interpretation": "reconstructed-camera same-source spatial holdout diagnostic; not independent sensor or medical accuracy"
+}

@@ -1,0 +1,85 @@
+{
+  "subject": "S104",
+  "seed": 1,
+  "method": "Official+Rigid+D",
+  "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+  "mesh_sha256": "4f65f36299313b69e9258a4507155b87bf4407bd49a625c6f6b4f10246b5a117",
+  "vertices_sha256": "3774f35acb714f78071365b517f334cca921b533f18b69199ee8516cc74d711c",
+  "faces_sha256": "0e47f537d5e48ef99092c6631963ca4c31c9ec59d1cfaa20cefc9ce41d518b84",
+  "input_sha256": "8f7d361e5b401c7d727f6e13b3dfc4707ee0bc94db9ef15f8b1f7269234458e5",
+  "split_sha256": "e4663454002a13815a04815bf0adaf01926709f74683a3de327cac48ddfad634",
+  "optimization": {
+    "depth_fit": true,
+    "config": {
+      "lam": 0.15,
+      "mu": 0.0001,
+      "tau": 0.05,
+      "n0": 6.0,
+      "irls": 4,
+      "sigma_m": 0.012,
+      "use_conf": true,
+      "use_robust": true,
+      "bed": null
+    },
+    "rigid": {
+      "depth_fit": true,
+      "config": {
+        "iterations": 30,
+        "trim_fraction": 0.2,
+        "initial_translation_iterations": 4
+      },
+      "R": [
+        [
+          0.9969483001133765,
+          0.003869159416503254,
+          0.07796868926984547
+        ],
+        [
+          -0.0030138175561032292,
+          0.9999340175331698,
+          -0.01108501166949341
+        ],
+        [
+          -0.07800643438067503,
+          0.010816200136090404,
+          0.9968941799458101
+        ]
+      ],
+      "t_m": [
+        -0.16376671033324094,
+        -0.018195613115161876,
+        -0.3546652087110784
+      ],
+      "parameter_semantics": "original MHR shape/pose + explicit rigid transform; effective camera translation stored"
+    },
+    "D_info": {
+      "n_data_it0": 2035,
+      "n_data_it1": 2099,
+      "n_data_it2": 2197,
+      "n_data_it3": 2154,
+      "tangential_p50_mm": 0.0371648461212951,
+      "tangential_p95_mm": 3.3887932765797038
+    },
+    "displacement_norm_p95_mm": 10.115639771967098,
+    "parameter_semantics": "MHR prior + explicit rigid transform + vector vertex displacement"
+  },
+  "optimization_point_count": 38130,
+  "optimization_heldout_intersection": 0,
+  "mesh_quality": {
+    "face_flip_frac": 0.011715571947713836,
+    "edge_strain_p50": 0.0010633075561264568,
+    "edge_strain_p99": 0.36367871779518357,
+    "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+  },
+  "silhouette": {
+    "iou": 0.742486707799039,
+    "boundary_median_px": 5.0,
+    "boundary_p95_px": 24.170228206730442,
+    "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+  },
+  "visualization": {
+    "renderer": "CPU inverse-Z pinhole at integer pixel coordinates",
+    "input_npz_sha256": "8f7d361e5b401c7d727f6e13b3dfc4707ee0bc94db9ef15f8b1f7269234458e5",
+    "overlay": "visualizations/S104/seed_1/Official_Rigid_D_overlay.png"
+  }
+}

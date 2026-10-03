@@ -1,0 +1,130 @@
+{
+  "subject": "S130",
+  "seed": 0,
+  "method": "Official+Txyz",
+  "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+  "mesh_sha256": "e349b86459fb9d4565e462482e93c44445ee1c49c91084e66edc03409eca14d4",
+  "vertices_sha256": "c27e2397477218b29ae99212e1092fadc6990373f3f465ba284c412a74e8be5b",
+  "faces_sha256": "0e47f537d5e48ef99092c6631963ca4c31c9ec59d1cfaa20cefc9ce41d518b84",
+  "input_sha256": "c7b671939b7f1320318d360fa6b29d2ab08d8d0098f09e8528ea47a6b7da16b9",
+  "split_sha256": "131a515ca80a28f834e2138743d941f0f71bdec425ed1f96278eefc32e418fc0",
+  "optimization": {
+    "depth_fit": true,
+    "config": {
+      "iterations": 6,
+      "step_per_axis_m": 0.05,
+      "trim_fraction": 0.2,
+      "total_norm_bound_m": 0.17788820176363326
+    },
+    "raw_translation_m": [
+      0.005907237306679908,
+      0.011588445772433922,
+      -0.1600301526077547
+    ],
+    "applied_translation_m": [
+      0.005907237306679908,
+      0.011588445772433922,
+      -0.1600301526077547
+    ],
+    "fallback": false,
+    "trace": [
+      {
+        "iteration": 1,
+        "step_m": [
+          0.002122856555230701,
+          0.0024325102960707223,
+          -0.05
+        ],
+        "t_m": [
+          0.002122856555230701,
+          0.0024325102960707223,
+          -0.05
+        ]
+      },
+      {
+        "iteration": 2,
+        "step_m": [
+          0.0018652120321045462,
+          0.002159701038543041,
+          -0.05
+        ],
+        "t_m": [
+          0.003988068587335247,
+          0.0045922113346137635,
+          -0.1
+        ]
+      },
+      {
+        "iteration": 3,
+        "step_m": [
+          0.001392265822022648,
+          0.002171609844190292,
+          -0.034303862187070155
+        ],
+        "t_m": [
+          0.005380334409357895,
+          0.0067638211788040555,
+          -0.13430386218707016
+        ]
+      },
+      {
+        "iteration": 4,
+        "step_m": [
+          0.00035037080111826636,
+          0.001561438399364623,
+          -0.013322349762538321
+        ],
+        "t_m": [
+          0.005730705210476162,
+          0.008325259578168678,
+          -0.14762621194960848
+        ]
+      },
+      {
+        "iteration": 5,
+        "step_m": [
+          4.3970871096157826e-05,
+          0.0016399739827535065,
+          -0.007433140841381025
+        ],
+        "t_m": [
+          0.0057746760815723195,
+          0.009965233560922184,
+          -0.1550593527909895
+        ]
+      },
+      {
+        "iteration": 6,
+        "step_m": [
+          0.0001325612251075886,
+          0.0016232122115117376,
+          -0.004970799816765181
+        ],
+        "t_m": [
+          0.005907237306679908,
+          0.011588445772433922,
+          -0.1600301526077547
+        ]
+      }
+    ]
+  },
+  "optimization_point_count": 44509,
+  "optimization_heldout_intersection": 0,
+  "mesh_quality": {
+    "face_flip_frac": 0.0,
+    "edge_strain_p50": 0.0,
+    "edge_strain_p99": 9.276226264028408e-15,
+    "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+  },
+  "silhouette": {
+    "iou": 0.8377930748926039,
+    "boundary_median_px": 4.123105625617661,
+    "boundary_p95_px": 17.0,
+    "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+  },
+  "visualization": {
+    "renderer": "CPU inverse-Z pinhole at integer pixel coordinates",
+    "input_npz_sha256": "c7b671939b7f1320318d360fa6b29d2ab08d8d0098f09e8528ea47a6b7da16b9",
+    "overlay": "visualizations/S130/seed_0/Official_Txyz_overlay.png"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "subject": "S114",
+  "seed": 2,
+  "method": "Official",
+  "source_status": "FRESH_OFFICIAL_NO_DEPTH_FIT",
+  "mesh_sha256": "42e9e62cef05d14ac3146c059314e7e9cba1d2cc335584305df2ce3725b5463d",
+  "vertices_sha256": "85d5eb191213b080bad3392aee0a0a6fb62b310c2a6475cf56ad8c71aaa1f705",
+  "faces_sha256": "0e47f537d5e48ef99092c6631963ca4c31c9ec59d1cfaa20cefc9ce41d518b84",
+  "input_sha256": "ecc65ba9762d1b653a10e9c1ade78512e13ce09cf9535d12c14ed2d951856cb1",
+  "split_sha256": "af50ffdf418e141316ec39fd3030860d25fe56a51a59c546f3933d329aa7572e",
+  "optimization": {
+    "depth_fit": false
+  },
+  "optimization_point_count": 0,
+  "optimization_heldout_intersection": 0,
+  "mesh_quality": {
+    "face_flip_frac": 0.0,
+    "edge_strain_p50": 0.0,
+    "edge_strain_p99": 4.463343904470275e-15,
+    "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+  },
+  "silhouette": {
+    "iou": 0.7277020140116377,
+    "boundary_median_px": 8.06225774829855,
+    "boundary_p95_px": 22.80350850198276,
+    "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+  },
+  "visualization": {
+    "renderer": "CPU inverse-Z pinhole at integer pixel coordinates",
+    "input_npz_sha256": "ecc65ba9762d1b653a10e9c1ade78512e13ce09cf9535d12c14ed2d951856cb1",
+    "overlay": "visualizations/S114/seed_2/Official_overlay.png"
+  }
+}

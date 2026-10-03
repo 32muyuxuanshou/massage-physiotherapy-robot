@@ -1,0 +1,76 @@
+{
+  "subject": "S121",
+  "raw_keys": [
+    "pmat_corners",
+    "pose_type",
+    "depth",
+    "pc",
+    "RGB",
+    "images"
+  ],
+  "pose_index": 4,
+  "source_sha256": "54fe1735a9c8c7cadc73a4e06521b708413d12cdd705f49eb9081ec16a445c52",
+  "rgb_array_sha256": "1bb9567fb7ee8b5a04ebd7f5e1bc5d707ffcc3467359d70829b75be7dbf78a1f",
+  "depth_array_sha256": "4ce10609842d96b72eff1ab5c44604d1d6f6e225bc02f60eef2644da3aca0d30",
+  "points_array_sha256": "80965e43bd6c5ce8c5eae498849f07d3d50335876de126c5c55c030b1f2e73cb",
+  "raw_depth_shape": [
+    440,
+    880
+  ],
+  "rotated_depth_shape": [
+    880,
+    440
+  ],
+  "rgb_shape": [
+    880,
+    440,
+    3
+  ],
+  "source_K_or_extrinsics_fields": [],
+  "corner_reprojection_rms_px": 0.5909038784711325,
+  "camera_status": "APPROXIMATE_PINHOLE_NOT_INDEPENDENTLY_VALIDATED",
+  "source_contract": "Original RGB; np.rot90(raw depth), mm/1000; official filtered world cloud -> historical corner-fitted camera; no parameter adjustment from mesh",
+  "projected_valid_depth_fraction": 0.9913854488083437,
+  "all_pc_vs_raw_depth": {
+    "n": 71006,
+    "median_mm": 19.74737560011863,
+    "p95_mm": 240.58665276932211
+  },
+  "posterior_pc_vs_raw_depth": {
+    "n": 15863,
+    "median_mm": 18.280527708562477,
+    "p95_mm": 61.673106110110155
+  },
+  "pc_vs_raw_depth_signed_median_mm": 2.540843507624624,
+  "positive_depth_fraction": 1.0,
+  "splits": [
+    {
+      "seed": 0,
+      "sha256": "df54e59f744c79daebcd16f40c49bc6b915d6cf5715da00781aaf3f6e13ba3a5",
+      "train_n": 57490,
+      "heldout_n": 14133,
+      "posterior_eval_n": 1122,
+      "torso_eval_n": 1201,
+      "train_test_intersection": 0
+    },
+    {
+      "seed": 1,
+      "sha256": "26850a975539a0d3c3c1cc2641a378fad1236bf262564dfa9d91c3c484aaf90a",
+      "train_n": 56165,
+      "heldout_n": 15458,
+      "posterior_eval_n": 800,
+      "torso_eval_n": 1201,
+      "train_test_intersection": 0
+    },
+    {
+      "seed": 2,
+      "sha256": "24f5e7d8f722a3cd473057a106048f069210a12414ca893d3f96ef4c847ab126",
+      "train_n": 56609,
+      "heldout_n": 15014,
+      "posterior_eval_n": 1444,
+      "torso_eval_n": 1361,
+      "train_test_intersection": 0
+    }
+  ],
+  "input_npz_sha256": "6a43876f4bc799fc9fc635021865821d3fae06f04d240dd02b644199eba3528d"
+}

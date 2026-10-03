@@ -1,0 +1,83 @@
+{
+  "subject": "S196",
+  "seed": 1,
+  "method": "Official+Txyz+Pose",
+  "source_status": "FRESH_OFFICIAL_TRAIN_ONLY",
+  "mesh_sha256": "fb7376437d19d1fc8dff5b93ce95d26a959d17e18d5b5d8aa436b48b70dcd4f8",
+  "vertices_sha256": "332e0920456f199e9606cb4a9984f0c3291731c71438997de0078adf0b3752e9",
+  "faces_sha256": "0e47f537d5e48ef99092c6631963ca4c31c9ec59d1cfaa20cefc9ce41d518b84",
+  "input_sha256": "7609360234cffd1cc4bdab878bb9bcd1dd800a92802d60cced7d2aea1e9d1251",
+  "split_sha256": "03752c25a3a8d7013cd0fd1ba64eda8b127a1b483048adf0b52baaa3cc72550f",
+  "optimization": {
+    "depth_fit": true,
+    "config": {
+      "iterations": 25,
+      "observed_points": 1024,
+      "anchor_stride": 2,
+      "huber_beta_m": 0.02,
+      "lr_translation": 0.003,
+      "lr_pose": 0.001,
+      "lambda_translation": 0.01,
+      "lambda_pose": 0.01,
+      "trainable": [
+        "translation",
+        "global_rot",
+        "body_pose"
+      ]
+    },
+    "txyz_fallback": false,
+    "history": [
+      0.007131723687052727,
+      0.0066861254163086414,
+      0.006584777496755123,
+      0.006563752889633179,
+      0.006518949288874865,
+      0.0064716520719230175,
+      0.006410609930753708,
+      0.006316918879747391,
+      0.00623553991317749,
+      0.0061824447475373745,
+      0.006159749813377857,
+      0.006139262579381466,
+      0.006112976931035519,
+      0.006061405874788761,
+      0.006019725929945707,
+      0.006002434529364109,
+      0.005986632313579321,
+      0.005967314355075359,
+      0.0059463586658239365,
+      0.005923427175730467,
+      0.005897405557334423,
+      0.00587540864944458,
+      0.005864102393388748,
+      0.0058516645804047585,
+      0.005819511134177446
+    ],
+    "pose_points_n": 1024,
+    "prior_points_idx_from_Txyz": "optimization_point_idx",
+    "translation_delta_from_txyz_m": [
+      -0.0059083707655456785,
+      -0.005969868699995384,
+      -0.004262136523707882
+    ]
+  },
+  "optimization_point_count": 42273,
+  "optimization_heldout_intersection": 0,
+  "mesh_quality": {
+    "face_flip_frac": 0.0,
+    "edge_strain_p50": 0.00047605890414135983,
+    "edge_strain_p99": 0.04084767033745372,
+    "reference": "method input after best global rigid alignment; normal reversal proxy, not self-intersection proof"
+  },
+  "silhouette": {
+    "iou": 0.8142037983434776,
+    "boundary_median_px": 4.0,
+    "boundary_p95_px": 18.14514960492979,
+    "reference": "full filtered-pointcloud projected support dilated 3 px; shared upstream diagnostic, not manual GT"
+  },
+  "visualization": {
+    "renderer": "CPU inverse-Z pinhole at integer pixel coordinates",
+    "input_npz_sha256": "7609360234cffd1cc4bdab878bb9bcd1dd800a92802d60cced7d2aea1e9d1251",
+    "overlay": "visualizations/S196/seed_1/Official_Txyz_Pose_overlay.png"
+  }
+}
