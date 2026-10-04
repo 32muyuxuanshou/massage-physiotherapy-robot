@@ -1,6 +1,6 @@
 # 按摩理疗机器人
 
-> **项目现役状态（2026-10-04）：** 统一见[项目当前状态](docs/CURRENT_STATUS.md)。最新完成真实体表曲线提取、俯卧参考到Mesh接口和有界参考对应：[三阶段完整交付](docs/handoffs/real-scene-2026-10-04/continuous-execution-summary-v1/README.md)。低贴面距离未解决点位稳定性，有界插值减少噪声放大但部分尾部误差退化。曲线学习原型已写好、尚未训练；服务器既有存储目前不可见。医学穴位精度和部署验收仍未完成。
+> **项目现役状态（2026-10-05）：** 统一见[项目当前状态](docs/CURRENT_STATUS.md)。服务器存储已恢复，[体表线训练与俯卧迁移](docs/handoffs/real-scene-2026-10-05/prone-learned-reference-transfer-v1/README.md)已实际完成。缺失增强改善参考提取，俯卧工程点仍有厘米级波动；没有新SAM训练或Mesh拟合。医学穴位精度和部署验收仍未完成。
 项目源码、工程文档与交付资料的统一版本管理入口。
 
 > **研究边界：** HuMMan/BEHAVE 指标是 Depth observation 到 Mesh 的单向距离聚合，不是完整人体双向表面误差或穴位误差。现有结果不能外推到治疗床、裸背、产品相机、临床有效性或机器人安全。

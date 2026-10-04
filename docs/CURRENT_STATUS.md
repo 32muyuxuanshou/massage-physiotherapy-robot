@@ -1,6 +1,6 @@
 # 项目当前状态
 
-更新时间：2026-10-04。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
+更新时间：2026-10-05。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
 
 ## 目标
 
@@ -8,7 +8,12 @@
 
 ## 最新实际交付
 
-[2026-10-04连续执行完整索引](handoffs/real-scene-2026-10-04/continuous-execution-summary-v1/README.md)：三阶段实际实验已提交，1169个交付文件与Git blob一致。[体表线学习原型](handoffs/real-scene-2026-10-04/surface-line-completion-pilot-v1/README.md)已写好，7脚本语法/本地数据sanity通过，尚未训练。服务器目前可登录，但`/raid5/xuhd`及数据目录不可见，存储未就绪；不把连接故障或待运行代码计为实验完成。
+[最新两阶段完整交付](handoffs/real-scene-2026-10-05/prone-learned-reference-transfer-v1/README.md)：服务器既有存储已恢复，六个体表线小模型实际训练完成、冻结模型俯卧迁移完成。没有新SAM推理或Mesh拟合。以下先列新增事实，原三阶段及更早交付保留历史合同。
+
+- [体表线学习](handoffs/real-scene-2026-10-04/surface-line-completion-pilot-v1/results-v1/FINAL_REPORT.md)：20训练/4开发/6已消费扫描来源，两策略×三初始化各120轮；216评价/222缓存。缺失增强相对普通模型作者线横向差异6.99→4.15 mm，6/6来源改善。不是独立患者/俯卧/穴位精度。训练实测10.76分钟；缓存重算exact通过。
+- [俯卧冻结模型迁移](handoffs/real-scene-2026-10-05/prone-learned-reference-transfer-v1/FINAL_REPORT.md)：原20人、360曲线、1080绑定/9720ENG点。与沟槽共同12人的RigidD绑定输入跨度25.41→16.66 mm；完整16人对普通模型13改善、3退化，初始化跨度仍15.17 mm。表面未重新拟合；跨度不是定位误差。留出输入交集0、180实际网格与全部缓存核验通过。
+
+[上一轮连续执行索引](handoffs/real-scene-2026-10-04/continuous-execution-summary-v1/README.md)保留当时三阶段状态；其训练待运行说明已被上述执行结果承接。
 
 1. [有界参考对应V1](handoffs/real-scene-2026-10-04/bounded-reference-correspondence-v1/FINAL_REPORT.md)：同一60固定表面、300对应缓存/2400点/60图完成；180旧缓存精确继承、430源不变。16已消费验证来源切向带噪：FIXED9.271、RBF6.586、CONVEX4 5.338 mm；但P95 9.269→11.438变差。投影前考试点最大噪声响应14.730→4.563 mm，噪声放大减少；控制组仍全部退化，不能补救参考身份错误。工程基线保留，不当医学teacher。
 
@@ -30,7 +35,7 @@
 11. 旧8点atlas：canonical原始cm，修正为×10 mm；缓存m×1000不变。同拓扑通过，但旧GV14/GV4上下颠倒、中线种子偏侧、左右与历史轴声明冲突。**语义HOLD，不生成医学标签或治疗目标。**[资产审计](handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/results/p0/POINT_ASSET_AUDIT.json)
 12. [公开数据资格](handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/DATA_QUALIFICATION.md)：DMD历史205组全部视觉检查，1张确认俯卧；当前V2为0图。PCdare324非Output点云与1,326线候选已枚举，有源码支持的几何重新绑定；没有三维穴位GT或已核验校准prone RGB-D关联。
 
-PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼成同一项精度。全部失败和缺失保留，没有本轮训练/微调。
+PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼成同一项精度。全部失败和缺失保留。上述早期几何阶段没有训练；最新只训练体表线小模型，没有SAM微调。
 
 ## 已有基础
 
@@ -54,17 +59,19 @@ PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼�
 | 8点atlas医学语义 | HOLD；独立代理候选也未医学验证 |
 | Mesh+规则代理链 | 跑通；椎体/B-cun输入为代理 |
 | 独立三维穴位/可靠目标对应 | 尚无资格数据，不报告准确率 |
-| 新训练、Mesh teacher、DMD37伪标签 | 未启动/未放行 |
+| 体表线小模型训练与迁移 | 已完成；源域改善、俯卧仍厘米级分歧 |
+| SAM微调、Mesh teacher、DMD37伪标签 | 未启动/未放行 |
 | 部署相机、机器人变换及接触控制 | 未验收 |
 
 ## 运行位置
 
-最新实际执行服务器：`xuhd@172.18.18.151:436`，本轮CPU完成真实曲线提取、俯卧参考绑定和有界对应，没有新SAM推理、Mesh拟合或训练。三个已完成包的运行入口及核验见[连续执行索引](handoffs/real-scene-2026-10-04/continuous-execution-summary-v1/README.md)。随后服务器恢复登录但`/raid5/xuhd`不可见，已有环境/数据当前不能访问；待服务器侧恢复既有存储，原因未确认。上一轮BEHAVE多GPU属于历史已完成批次。
+最新实际执行服务器：`xuhd@172.18.18.151:436`，`/raid5/xuhd`及既有环境/数据已恢复并实读。GPU0/2080Ti实际完成六小模型训练和俯卧迁移；PyTorch2.4.0+cu121、Python3.10.20。没有新SAM推理、Mesh拟合或SAM微调。原存储不可见是此前阶段的故障，当前已不再阻塞。
 
 - 有界参考对应：`/raid5/xuhd/datasets/bounded_reference_correspondence_v1_20261004`
 - 俯卧参考Mesh接口：`/raid5/xuhd/datasets/prone_reference_mesh_interface_v1_20261004`
 - 真实曲线提取：`/raid5/xuhd/datasets/back_reference_extraction_v1_20261004`
-- 待运行学习原型：`/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004`
+- 已完成学习原型：`/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004`
+- 俯卧冻结模型迁移：`/raid5/xuhd/datasets/prone_learned_reference_transfer_v1_20261005`
 - 最新真实参考资格：`/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004`
 - 参考辅助对应：`/raid5/xuhd/datasets/back_reference_assisted_v1_20261004`
 - 已知参考受控闭环：`/raid5/xuhd/datasets/back_controlled_reference_v1_20261004`
@@ -79,7 +86,7 @@ PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼�
 
 ## 下一步
 
-三个新阶段表明：几何曲线可在完整扫描上靠近作者画线，但衣物俯卧空间留出下约25 mm不稳定；低贴面分数未使对应变可靠；非负插值减少噪声放大，但尾部仍可能退化。下一项为已写好的真实体表线监督/缺失块训练对照，先比较参考提取，不微调SAM、不生成穴位伪标签。服务器存储恢复后重新同步最新代码，跑正向/反向与真实数据准备，再执行20训练/4开发/6已消费评价角色、两策略×3种子。不能将数字目录代理说成独立患者、作者线说成穴位GT。原45帧/既有数据角色不更换；部署标定及解剖参考仍待独立验收。
+最新训练证明缺失增强有帮助，迁移也部分改善；但工程点对输入与初始化仍厘米级变化，没有可靠医学身份。保留这个基线，不继续用16名已消费测试角色调参追分。下一项应确定俯卧可用的可重复后正中参考及上下端身份、源/目标输入坐标合同，再用可靠参考比较拓扑传播和规则定位。现有公开数据没有独立三维穴位真值；不把作者画线、稳定输出或小贴面分数当医学teacher。相机标定、完整Mesh质量及部署验收仍分别推进。
 
 本轮原计划见[工程模板与几何机制验证计划V2](research/2026-10-03-no-deployment-camera/NEXT_EXECUTION_PLAN_V2.md)，执行结果以上方最新报告为准。完整原RGB新副本在本地 `output/back_geometry_correspondence_v2/private_review/INDEX.html`。
 

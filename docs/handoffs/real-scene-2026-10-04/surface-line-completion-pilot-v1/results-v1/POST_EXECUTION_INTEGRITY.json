@@ -1,0 +1,538 @@
+{
+  "status": "PASS",
+  "source_assets": 106,
+  "frozen_prediction_assets": 222,
+  "prediction_records": 216,
+  "sources": [
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/PROTOCOL.md",
+      "expected_sha256": "534ecd8953696287183c6e8b118e89474e3d18bdb9019bb24529bf165c4f548d",
+      "actual_sha256": "534ecd8953696287183c6e8b118e89474e3d18bdb9019bb24529bf165c4f548d"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/code/test_line.py",
+      "expected_sha256": "e74ab2c02c591d81dd1b12e16c6d37ce9f09e83c79155b1789b80fa5ab58ed40",
+      "actual_sha256": "e74ab2c02c591d81dd1b12e16c6d37ce9f09e83c79155b1789b80fa5ab58ed40"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/code/test_data.py",
+      "expected_sha256": "1663d5bef7424e380c00c869224b11b596483ce04b910881ffb9644c54b77e16",
+      "actual_sha256": "1663d5bef7424e380c00c869224b11b596483ce04b910881ffb9644c54b77e16"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/code/data_line.py",
+      "expected_sha256": "0ced5b5c073fed8d497f0b8d7feb7603de23a972a9a8561a0e05673f5833b47c",
+      "actual_sha256": "0ced5b5c073fed8d497f0b8d7feb7603de23a972a9a8561a0e05673f5833b47c"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/code/evaluate_line.py",
+      "expected_sha256": "adc8be664b81c0620d723b8216c9da7b79ab033bc4bc69c4986bb8009c255707",
+      "actual_sha256": "adc8be664b81c0620d723b8216c9da7b79ab033bc4bc69c4986bb8009c255707"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/code/make_figures.py",
+      "expected_sha256": "9d4dac2a1cba6271cd4e1b13c4b94fe1873d411f610ab843de86a39a540e332a",
+      "actual_sha256": "9d4dac2a1cba6271cd4e1b13c4b94fe1873d411f610ab843de86a39a540e332a"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/code/train_line.py",
+      "expected_sha256": "8fe97ee02404e299aaedbb03418eacf4d8eeff47911100d5801fc05af6fbf57b",
+      "actual_sha256": "8fe97ee02404e299aaedbb03418eacf4d8eeff47911100d5801fc05af6fbf57b"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/code/line_net.py",
+      "expected_sha256": "8fd2c29131baa9156d24beb7ff25b20d9fc75f04e8cff2ed862314e22461b778",
+      "actual_sha256": "8fd2c29131baa9156d24beb7ff25b20d9fc75f04e8cff2ed862314e22461b778"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/code/audit_references.py",
+      "expected_sha256": "2a8333fec98a61f56d3420774c4f4d64a8bd2a4f82f435a7edcf8e1c6cdd3e86",
+      "actual_sha256": "2a8333fec98a61f56d3420774c4f4d64a8bd2a4f82f435a7edcf8e1c6cdd3e86"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/back-data-acquisition-v1/code/audit_acquired_assets.py",
+      "expected_sha256": "ccf5a27e5e4704e970e08aefb1678202b6dfbc7f22660d7b11aeac7bbb732f5f",
+      "actual_sha256": "ccf5a27e5e4704e970e08aefb1678202b6dfbc7f22660d7b11aeac7bbb732f5f"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/REFERENCE_PACKET_MANIFEST.json",
+      "expected_sha256": "ee0f48b382033afb6a1d213c218db054ed36bd3434377fec1401642e1839c615",
+      "actual_sha256": "ee0f48b382033afb6a1d213c218db054ed36bd3434377fec1401642e1839c615"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/prone_back_point_validation_20261003/p3_data_qualification/SCAN_REFERENCE_BINDING.csv",
+      "expected_sha256": "60b43f5367ec499ad7ad7c56a9a23a805b9b978b5332366659855462c4b2a617",
+      "actual_sha256": "60b43f5367ec499ad7ad7c56a9a23a805b9b978b5332366659855462c4b2a617"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_reference_extraction_v1_20261004/code/extract_geometry.py",
+      "expected_sha256": "af147a509119058bef24c9562c94642b6b5eccb1187bfa20522b0acf778e4ae6",
+      "actual_sha256": "af147a509119058bef24c9562c94642b6b5eccb1187bfa20522b0acf778e4ae6"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_reference_extraction_v1_20261004/CONFIG.json",
+      "expected_sha256": "5d020b0a813e08ec3d66c9a0cc091cc2a079b6f44b7663663d103b314066d8d3",
+      "actual_sha256": "5d020b0a813e08ec3d66c9a0cc091cc2a079b6f44b7663663d103b314066d8d3"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/30/photoneo.ply",
+      "expected_sha256": "039400ed8bfc2261a700365b1afbda946e3f7f5d2ed5facb11cdfa479032f061",
+      "actual_sha256": "039400ed8bfc2261a700365b1afbda946e3f7f5d2ed5facb11cdfa479032f061"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1312.npz",
+      "expected_sha256": "3a1c83ace2e880092eb2412b4e520176e80505c33632681effc5c0694d416a00",
+      "actual_sha256": "3a1c83ace2e880092eb2412b4e520176e80505c33632681effc5c0694d416a00"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1312.npz",
+      "expected_sha256": "828581e69df39720e7df4f160aef7a731f818d68385d872f37bf2ec1627f0858",
+      "actual_sha256": "828581e69df39720e7df4f160aef7a731f818d68385d872f37bf2ec1627f0858"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/12/photoneo.ply",
+      "expected_sha256": "095b69275b5bf520671a39ffe6d0ad22c16b9e0faf473a34440911884e116323",
+      "actual_sha256": "095b69275b5bf520671a39ffe6d0ad22c16b9e0faf473a34440911884e116323"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1272.npz",
+      "expected_sha256": "ffe3c9bba2dc3c79f39556cb855c5047c790f25567326b6393c8ffbbe3d112d6",
+      "actual_sha256": "ffe3c9bba2dc3c79f39556cb855c5047c790f25567326b6393c8ffbbe3d112d6"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1272.npz",
+      "expected_sha256": "0d5e6a7387fa0c4d1bd6be9c89ef030e2d447d1f778135fc0f61fd56f60781b0",
+      "actual_sha256": "0d5e6a7387fa0c4d1bd6be9c89ef030e2d447d1f778135fc0f61fd56f60781b0"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/1/photoneo.ply",
+      "expected_sha256": "121e40eeca133e01db48d7b4b4887e69c6abb8b9e77834324d807983609773fa",
+      "actual_sha256": "121e40eeca133e01db48d7b4b4887e69c6abb8b9e77834324d807983609773fa"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1266.npz",
+      "expected_sha256": "674b75bd14ec40962a7cf56fc0b57f9fb9907b88a42efbfd5810a5fdb11820db",
+      "actual_sha256": "674b75bd14ec40962a7cf56fc0b57f9fb9907b88a42efbfd5810a5fdb11820db"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1266.npz",
+      "expected_sha256": "86c7276bcc8910c48e407e69ffb5144f4e91104f1b1b693923613ade8fe9e58f",
+      "actual_sha256": "86c7276bcc8910c48e407e69ffb5144f4e91104f1b1b693923613ade8fe9e58f"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/28/photoneo.ply",
+      "expected_sha256": "12a99022b98afd9cda1f97e95316422dea7d95aac4dba04a0cc22b5b27616e28",
+      "actual_sha256": "12a99022b98afd9cda1f97e95316422dea7d95aac4dba04a0cc22b5b27616e28"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1306.npz",
+      "expected_sha256": "1ee19cb333f68d92b7e661490faa75ea36dc657803373879ff3eecf12bf18e94",
+      "actual_sha256": "1ee19cb333f68d92b7e661490faa75ea36dc657803373879ff3eecf12bf18e94"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1306.npz",
+      "expected_sha256": "7409f1c53d42cc6aa4237b0bee4fc7b798978eaafe2b806392f5a59c40ea0c36",
+      "actual_sha256": "7409f1c53d42cc6aa4237b0bee4fc7b798978eaafe2b806392f5a59c40ea0c36"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/16/photoneo.ply",
+      "expected_sha256": "1542afc690369697eb530f31ca34aecce6e6ddfe765ccf3a9ea8d4ed7083ed31",
+      "actual_sha256": "1542afc690369697eb530f31ca34aecce6e6ddfe765ccf3a9ea8d4ed7083ed31"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1280.npz",
+      "expected_sha256": "5f093426eecfc68c728a7106016e0fc6bbdbc68c3e7af738c2f0dc8703e2f5c5",
+      "actual_sha256": "5f093426eecfc68c728a7106016e0fc6bbdbc68c3e7af738c2f0dc8703e2f5c5"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1280.npz",
+      "expected_sha256": "7da6e0ebae203811eaf88b46ebc856eca723e4718853370da5af01b2392f8420",
+      "actual_sha256": "7da6e0ebae203811eaf88b46ebc856eca723e4718853370da5af01b2392f8420"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/24/photoneo.ply",
+      "expected_sha256": "155373899cb554d2d0513198e090edb895e2d2152f679caee19fb832122e9658",
+      "actual_sha256": "155373899cb554d2d0513198e090edb895e2d2152f679caee19fb832122e9658"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1298.npz",
+      "expected_sha256": "4a089f32a165a05dfec2cadc6627172b058c69d9b5b9984b27deca7abe4681ae",
+      "actual_sha256": "4a089f32a165a05dfec2cadc6627172b058c69d9b5b9984b27deca7abe4681ae"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1298.npz",
+      "expected_sha256": "3c7276f8a39023052ec9fe12801981fc1a331f86b4549629aaed2e05dd8b2eaf",
+      "actual_sha256": "3c7276f8a39023052ec9fe12801981fc1a331f86b4549629aaed2e05dd8b2eaf"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/22/photoneo.ply",
+      "expected_sha256": "22dd6206ab40dd4e8bbbdde31641aeba380a0faf8646541d8fedd4cd0613f5c5",
+      "actual_sha256": "22dd6206ab40dd4e8bbbdde31641aeba380a0faf8646541d8fedd4cd0613f5c5"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1294.npz",
+      "expected_sha256": "1750ca8bebc7b4983209f04495d87e06a87f84be3c3eb06674f1811e01af283f",
+      "actual_sha256": "1750ca8bebc7b4983209f04495d87e06a87f84be3c3eb06674f1811e01af283f"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1294.npz",
+      "expected_sha256": "07e3c15b147ad0b9dda4c1c8fc9837312cb0eb71a3b9d2f91ae4ff626acc0ffd",
+      "actual_sha256": "07e3c15b147ad0b9dda4c1c8fc9837312cb0eb71a3b9d2f91ae4ff626acc0ffd"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/25/photoneo.ply",
+      "expected_sha256": "30a0e932ce651aa450929b96db9bdcd949c3b748d1ec5cc5ced8753bb42ff3b5",
+      "actual_sha256": "30a0e932ce651aa450929b96db9bdcd949c3b748d1ec5cc5ced8753bb42ff3b5"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1300.npz",
+      "expected_sha256": "65452eb5d2db6ca29ff874ece9330326e86e7fb0559f464e5d98693437d591cb",
+      "actual_sha256": "65452eb5d2db6ca29ff874ece9330326e86e7fb0559f464e5d98693437d591cb"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1300.npz",
+      "expected_sha256": "570ffc290c5f09c218cd4f3206e0832660dd512ba75e73d47914385badcb1583",
+      "actual_sha256": "570ffc290c5f09c218cd4f3206e0832660dd512ba75e73d47914385badcb1583"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/4/photoneo.ply",
+      "expected_sha256": "4aa32c9dffc15d19aaf0d2fa8656024a462f923bc157bdf2c42cd70aa84905f9",
+      "actual_sha256": "4aa32c9dffc15d19aaf0d2fa8656024a462f923bc157bdf2c42cd70aa84905f9"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1314.npz",
+      "expected_sha256": "e4d0f104558df69db0ad3743b7785ce70139c8b98c22cf108b236c8ef65e33f8",
+      "actual_sha256": "e4d0f104558df69db0ad3743b7785ce70139c8b98c22cf108b236c8ef65e33f8"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1314.npz",
+      "expected_sha256": "ecd2836a98847a94adb74f73f37281e36e2eb4eb72f4b99d90523444fe0561d2",
+      "actual_sha256": "ecd2836a98847a94adb74f73f37281e36e2eb4eb72f4b99d90523444fe0561d2"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/19/photoneo.ply",
+      "expected_sha256": "519fd930de70cc77df4db40ad6676607c6e289f6441c5ddfcfa190d022afea27",
+      "actual_sha256": "519fd930de70cc77df4db40ad6676607c6e289f6441c5ddfcfa190d022afea27"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1286.npz",
+      "expected_sha256": "7519719fbf51cbc1b4361277bff64fcd8d4966a96f3087f61f90ffc63c13e6ff",
+      "actual_sha256": "7519719fbf51cbc1b4361277bff64fcd8d4966a96f3087f61f90ffc63c13e6ff"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1286.npz",
+      "expected_sha256": "94370cf7dc85746950be836aa1f78ebb877020723e66c4fb633060c7b0b827e8",
+      "actual_sha256": "94370cf7dc85746950be836aa1f78ebb877020723e66c4fb633060c7b0b827e8"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/23/photoneo.ply",
+      "expected_sha256": "52afe4de2fd5bc1d4b7611430fb1497ac1f0df37c8a7de82baa19f2820db2fd5",
+      "actual_sha256": "52afe4de2fd5bc1d4b7611430fb1497ac1f0df37c8a7de82baa19f2820db2fd5"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1296.npz",
+      "expected_sha256": "a9e0d97cdef403017687b8bcff0650798877e6a309d0475fd6229cd6fa407176",
+      "actual_sha256": "a9e0d97cdef403017687b8bcff0650798877e6a309d0475fd6229cd6fa407176"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1296.npz",
+      "expected_sha256": "d6c410c286f00fcf600f849b5f6aee34724b4803473d39eafaca53ca1c3d03ac",
+      "actual_sha256": "d6c410c286f00fcf600f849b5f6aee34724b4803473d39eafaca53ca1c3d03ac"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/11/photoneo.ply",
+      "expected_sha256": "653edafc46c46361ade2a04b70b89beec63b3142f29c2ccebe68d1f406683ad7",
+      "actual_sha256": "653edafc46c46361ade2a04b70b89beec63b3142f29c2ccebe68d1f406683ad7"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1270.npz",
+      "expected_sha256": "40bec3d939de33fc68f940cb942d7770dd15f5f7e6995435129ed1bbbe1dcf2e",
+      "actual_sha256": "40bec3d939de33fc68f940cb942d7770dd15f5f7e6995435129ed1bbbe1dcf2e"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1270.npz",
+      "expected_sha256": "56177ba1b08d7b1045c689d65449859565f8b4e05496b8429b68093210b5134e",
+      "actual_sha256": "56177ba1b08d7b1045c689d65449859565f8b4e05496b8429b68093210b5134e"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/7/photoneo.ply",
+      "expected_sha256": "677f72f0670f808bf382cdf6fac8e20f8b5136cf1193b8c8548e6335628da878",
+      "actual_sha256": "677f72f0670f808bf382cdf6fac8e20f8b5136cf1193b8c8548e6335628da878"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1320.npz",
+      "expected_sha256": "b1e9ae9d38d9665debf893aea3243daaf2071e50286696fc854e7436b144ab05",
+      "actual_sha256": "b1e9ae9d38d9665debf893aea3243daaf2071e50286696fc854e7436b144ab05"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1320.npz",
+      "expected_sha256": "aca89b5b7c0c2236d268e596daa7098dda2c2b2dac14346ffee161b251131ad5",
+      "actual_sha256": "aca89b5b7c0c2236d268e596daa7098dda2c2b2dac14346ffee161b251131ad5"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/2/photoneo.ply",
+      "expected_sha256": "7598b42fb3453ac8ff9ace6cb8f404d09bbe853d1d91829d403283f0ae247db7",
+      "actual_sha256": "7598b42fb3453ac8ff9ace6cb8f404d09bbe853d1d91829d403283f0ae247db7"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1288.npz",
+      "expected_sha256": "3db6a77407ebe443ea244bb862d6f3efbc559f5dddef2bc4ede3c3d93e084824",
+      "actual_sha256": "3db6a77407ebe443ea244bb862d6f3efbc559f5dddef2bc4ede3c3d93e084824"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1288.npz",
+      "expected_sha256": "a40b6b24843be96c16229fd13804c61cf1704568e1f9258f28f30ea2a3514c82",
+      "actual_sha256": "a40b6b24843be96c16229fd13804c61cf1704568e1f9258f28f30ea2a3514c82"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/27/photoneo.ply",
+      "expected_sha256": "7a3b622237e22d3d7e2eb6908c32119d70a2452cfc774d96da53288890fa8c94",
+      "actual_sha256": "7a3b622237e22d3d7e2eb6908c32119d70a2452cfc774d96da53288890fa8c94"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1304.npz",
+      "expected_sha256": "b11d66a123a19c1c7e636b45185f4fc547581c06b493424dcb9472b8055027ab",
+      "actual_sha256": "b11d66a123a19c1c7e636b45185f4fc547581c06b493424dcb9472b8055027ab"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1304.npz",
+      "expected_sha256": "d41ba6e4fb21700e5ea803c7d0a32afaf0a12b98f5faa54ac015ef18b976240f",
+      "actual_sha256": "d41ba6e4fb21700e5ea803c7d0a32afaf0a12b98f5faa54ac015ef18b976240f"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/10/photoneo.ply",
+      "expected_sha256": "7e7cea17d37728a333b5bb7def0167f0c49b53a194d1d2c5c323cfd5fb17520f",
+      "actual_sha256": "7e7cea17d37728a333b5bb7def0167f0c49b53a194d1d2c5c323cfd5fb17520f"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1268.npz",
+      "expected_sha256": "df17217c31053d82642aa890694450284b3fefd6c234d914ffcbdfd574a7f2f8",
+      "actual_sha256": "df17217c31053d82642aa890694450284b3fefd6c234d914ffcbdfd574a7f2f8"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1268.npz",
+      "expected_sha256": "d77463c9cf8d3fec9c32bd74170f01835ceaea5d890043938681f5fd38d0d413",
+      "actual_sha256": "d77463c9cf8d3fec9c32bd74170f01835ceaea5d890043938681f5fd38d0d413"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/15/photoneo.ply",
+      "expected_sha256": "949a8a234929fa22a7aa84d53eac71e4bbdda45e3cedc0277060ad15fec5bbd0",
+      "actual_sha256": "949a8a234929fa22a7aa84d53eac71e4bbdda45e3cedc0277060ad15fec5bbd0"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1278.npz",
+      "expected_sha256": "e1f86d7d5a75d6911d424526885a5d95cc6c73e3e22065244220cd6f09018c9c",
+      "actual_sha256": "e1f86d7d5a75d6911d424526885a5d95cc6c73e3e22065244220cd6f09018c9c"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1278.npz",
+      "expected_sha256": "de64e6e35e5d3584402fa08f290c9220d1f9bc19ef4a78a85c7dbd949c0e2636",
+      "actual_sha256": "de64e6e35e5d3584402fa08f290c9220d1f9bc19ef4a78a85c7dbd949c0e2636"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/20/photoneo.ply",
+      "expected_sha256": "ab3eab735c29348daab6ace3da41043f0700e84ee5caa4a63b78e3e781e07953",
+      "actual_sha256": "ab3eab735c29348daab6ace3da41043f0700e84ee5caa4a63b78e3e781e07953"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1290.npz",
+      "expected_sha256": "f5984b142e5a81b253f348d85c50e4364c888708b8837760323fcedb4dfee5d3",
+      "actual_sha256": "f5984b142e5a81b253f348d85c50e4364c888708b8837760323fcedb4dfee5d3"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1290.npz",
+      "expected_sha256": "91be86d5835ca21da2b77409d54e21b74fdb54161d71f72ff53dc26a8466fd33",
+      "actual_sha256": "91be86d5835ca21da2b77409d54e21b74fdb54161d71f72ff53dc26a8466fd33"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/8/photoneo.ply",
+      "expected_sha256": "abb879bdcf96619f20b6712355980b8a96327dfaf9844b9757f464035046d041",
+      "actual_sha256": "abb879bdcf96619f20b6712355980b8a96327dfaf9844b9757f464035046d041"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1322.npz",
+      "expected_sha256": "33e8e2d801fbf289f5b54f24960477bf6782d2e69e9992169d0a7e18495973cd",
+      "actual_sha256": "33e8e2d801fbf289f5b54f24960477bf6782d2e69e9992169d0a7e18495973cd"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1322.npz",
+      "expected_sha256": "69f518c12becf755ea49ebd87e0885033c7e2d2dbce8084fdd37aaeabd1e8499",
+      "actual_sha256": "69f518c12becf755ea49ebd87e0885033c7e2d2dbce8084fdd37aaeabd1e8499"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/26/photoneo.ply",
+      "expected_sha256": "b2bc9f6792ddac656aee20743f672d6e4c1f1b2924c0952706aabb7c5711eb29",
+      "actual_sha256": "b2bc9f6792ddac656aee20743f672d6e4c1f1b2924c0952706aabb7c5711eb29"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1302.npz",
+      "expected_sha256": "7f8039efd3ed1e664893a661b34d96703cae4de846672b584fa1f52780ef9970",
+      "actual_sha256": "7f8039efd3ed1e664893a661b34d96703cae4de846672b584fa1f52780ef9970"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1302.npz",
+      "expected_sha256": "b1e8829ad1c8de2915abbcc81a6b78d020e31ef60582f78db0f447b58d222b25",
+      "actual_sha256": "b1e8829ad1c8de2915abbcc81a6b78d020e31ef60582f78db0f447b58d222b25"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/9/photoneo.ply",
+      "expected_sha256": "c1cc6199e4edeeac19416311cda12259fad4a9da960f07d2df02393bb45aacf8",
+      "actual_sha256": "c1cc6199e4edeeac19416311cda12259fad4a9da960f07d2df02393bb45aacf8"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1324.npz",
+      "expected_sha256": "9f3e7d61777666a3b884e342e6621db9d9997d182e2654223ee74aedb967692c",
+      "actual_sha256": "9f3e7d61777666a3b884e342e6621db9d9997d182e2654223ee74aedb967692c"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1324.npz",
+      "expected_sha256": "1767190b436340e35c00e5f1214ecd333a148d5109799093dc1b2a32e9872eca",
+      "actual_sha256": "1767190b436340e35c00e5f1214ecd333a148d5109799093dc1b2a32e9872eca"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/14/photoneo.ply",
+      "expected_sha256": "c6de0222bdd280c7496d8fc70af0fb682f2d83f711bfd923c2c141096af3e71b",
+      "actual_sha256": "c6de0222bdd280c7496d8fc70af0fb682f2d83f711bfd923c2c141096af3e71b"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1276.npz",
+      "expected_sha256": "c178747afcfd0e99e52fa3813b4feaae6ac6bb1a255800def582b613523620de",
+      "actual_sha256": "c178747afcfd0e99e52fa3813b4feaae6ac6bb1a255800def582b613523620de"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1276.npz",
+      "expected_sha256": "0c64249aae365e46fefacde202f06fe0f93ff43be868aa9aa539120993c4f10a",
+      "actual_sha256": "0c64249aae365e46fefacde202f06fe0f93ff43be868aa9aa539120993c4f10a"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/17/photoneo.ply",
+      "expected_sha256": "cd3a5b6f4616375a5bea47a9fd942672c52a5d863d2416b41970195f56665abf",
+      "actual_sha256": "cd3a5b6f4616375a5bea47a9fd942672c52a5d863d2416b41970195f56665abf"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1282.npz",
+      "expected_sha256": "62fa78ef63ef89ea9ad49f7ea5792a7692cfd5fc0efeed2795acc640a28aeb6f",
+      "actual_sha256": "62fa78ef63ef89ea9ad49f7ea5792a7692cfd5fc0efeed2795acc640a28aeb6f"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1282.npz",
+      "expected_sha256": "b04f7d9ae64cb1f71f26491ea1be92c627fbc86d49ed2d9e557ca18aa3e1d3e0",
+      "actual_sha256": "b04f7d9ae64cb1f71f26491ea1be92c627fbc86d49ed2d9e557ca18aa3e1d3e0"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/13/photoneo.ply",
+      "expected_sha256": "ce20aeefbbd04317da82306fe101f17d658fc3a500bfcd667d8a2b673f544350",
+      "actual_sha256": "ce20aeefbbd04317da82306fe101f17d658fc3a500bfcd667d8a2b673f544350"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1274.npz",
+      "expected_sha256": "75c7b415b0419e13eaea36da2447a148f74736f6777c87ff1565052bd6cb5e6c",
+      "actual_sha256": "75c7b415b0419e13eaea36da2447a148f74736f6777c87ff1565052bd6cb5e6c"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1274.npz",
+      "expected_sha256": "b5dcbd2b9c8736e291c6a2e85247922588e08ccdae75abf1c00bb74c1dee7727",
+      "actual_sha256": "b5dcbd2b9c8736e291c6a2e85247922588e08ccdae75abf1c00bb74c1dee7727"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/5/photoneo.ply",
+      "expected_sha256": "cef9931a79e592221837feabb1b30deccedd6f13fbe97ddc60d01e6dcc260a72",
+      "actual_sha256": "cef9931a79e592221837feabb1b30deccedd6f13fbe97ddc60d01e6dcc260a72"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1316.npz",
+      "expected_sha256": "39b13974d78a446fefb87d9a32c3c00c4d80edd25bca33b1379143b497425119",
+      "actual_sha256": "39b13974d78a446fefb87d9a32c3c00c4d80edd25bca33b1379143b497425119"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1316.npz",
+      "expected_sha256": "a69c33f2317ae70017d1c3d49f9f7bea3244554bd9fe1474382dac2484878a99",
+      "actual_sha256": "a69c33f2317ae70017d1c3d49f9f7bea3244554bd9fe1474382dac2484878a99"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/6/photoneo.ply",
+      "expected_sha256": "ded46cf85671955f50c901e5a4cc614aa595bbdab7e19c61fe744dfcc7fc98d1",
+      "actual_sha256": "ded46cf85671955f50c901e5a4cc614aa595bbdab7e19c61fe744dfcc7fc98d1"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1318.npz",
+      "expected_sha256": "718a66b92170ff34cfc1ae1a1216aec989c3f09dfd02fd6a2acf48a1486ce80c",
+      "actual_sha256": "718a66b92170ff34cfc1ae1a1216aec989c3f09dfd02fd6a2acf48a1486ce80c"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1318.npz",
+      "expected_sha256": "29316362c6649c8943ff531feebb1ecded367322013b42e8a8ea2386c2bc86b9",
+      "actual_sha256": "29316362c6649c8943ff531feebb1ecded367322013b42e8a8ea2386c2bc86b9"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/3/photoneo.ply",
+      "expected_sha256": "dfdba02970048ea1cbb82094c467c7d9369e8d0b319113da752e4274a04ef2f0",
+      "actual_sha256": "dfdba02970048ea1cbb82094c467c7d9369e8d0b319113da752e4274a04ef2f0"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1310.npz",
+      "expected_sha256": "e42e8b39594627b4f3fc6de678e0534e3f356e1941f79e24214abe2d0a4965f4",
+      "actual_sha256": "e42e8b39594627b4f3fc6de678e0534e3f356e1941f79e24214abe2d0a4965f4"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1310.npz",
+      "expected_sha256": "ed2efb226f58fab510210ef88ccfdea89dd20978585aad4600b3ccbef47c8cf7",
+      "actual_sha256": "ed2efb226f58fab510210ef88ccfdea89dd20978585aad4600b3ccbef47c8cf7"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/18/photoneo.ply",
+      "expected_sha256": "e4c41dd5b2b59f153e4bfcd3246a5ccbcef3a2d58142ede1bb3254e089dcae86",
+      "actual_sha256": "e4c41dd5b2b59f153e4bfcd3246a5ccbcef3a2d58142ede1bb3254e089dcae86"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1284.npz",
+      "expected_sha256": "61ac996a2936a553a2bc6594a4d5e02920c8a9ac48db7ba02ce06d848fb8619c",
+      "actual_sha256": "61ac996a2936a553a2bc6594a4d5e02920c8a9ac48db7ba02ce06d848fb8619c"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1284.npz",
+      "expected_sha256": "f5f346292d30304b888a84dd5b2c96485146582e58cfd19fdd34cac7bcafddfa",
+      "actual_sha256": "f5f346292d30304b888a84dd5b2c96485146582e58cfd19fdd34cac7bcafddfa"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/21/photoneo.ply",
+      "expected_sha256": "f8576eee085720145a38b2dd7238253e7b1c3d911fb5a6c1146cca61784a1898",
+      "actual_sha256": "f8576eee085720145a38b2dd7238253e7b1c3d911fb5a6c1146cca61784a1898"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1292.npz",
+      "expected_sha256": "1ebe925dea5d1b40a8e70ee494e8e8a8e3e9c7d4ae901a3b28229966e6b7dd86",
+      "actual_sha256": "1ebe925dea5d1b40a8e70ee494e8e8a8e3e9c7d4ae901a3b28229966e6b7dd86"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1292.npz",
+      "expected_sha256": "a81a145ce8a498c8ab47552f4df5841b720d96db5986342560068a604b3ca06a",
+      "actual_sha256": "a81a145ce8a498c8ab47552f4df5841b720d96db5986342560068a604b3ca06a"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_prone_acquisition_20261003/pcdare_35f7a1d9/IIR/Study3/29/photoneo.ply",
+      "expected_sha256": "fea78e1b630ce626f9ae660a95f78cab6846ddac7279a4d6cd004367c9f2d000",
+      "actual_sha256": "fea78e1b630ce626f9ae660a95f78cab6846ddac7279a4d6cd004367c9f2d000"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004/reference_packets/candidate_1308.npz",
+      "expected_sha256": "b09f19965a057a887aa5f3e156beff6ae09fbbba5e9bf512a039207973732451",
+      "actual_sha256": "b09f19965a057a887aa5f3e156beff6ae09fbbba5e9bf512a039207973732451"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/dataset/candidate_1308.npz",
+      "expected_sha256": "06e351673ad88bf042dbc802c35fe73d020a94fcfd88e688baa39ae588b8f13c",
+      "actual_sha256": "06e351673ad88bf042dbc802c35fe73d020a94fcfd88e688baa39ae588b8f13c"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/CONFIG.json",
+      "expected_sha256": "71faaff8f213d743fc69899fb5598ded2e74eca7dd3353fb3e2f31be4ed79cc6",
+      "actual_sha256": "71faaff8f213d743fc69899fb5598ded2e74eca7dd3353fb3e2f31be4ed79cc6"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/DATA_MANIFEST.json",
+      "expected_sha256": "bb72c77ddc76718c2f3ae31c774f1ff0b44eb1307f95ad04b63de4741fbbfc24",
+      "actual_sha256": "bb72c77ddc76718c2f3ae31c774f1ff0b44eb1307f95ad04b63de4741fbbfc24"
+    }
+  ]
+}

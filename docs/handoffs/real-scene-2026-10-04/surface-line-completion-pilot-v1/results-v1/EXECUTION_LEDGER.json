@@ -1,0 +1,63 @@
+{
+  "status": "COMPLETE",
+  "started_server_utc": "2026-10-04T15:59:40.513725+00:00",
+  "server": "172.18.18.151:436",
+  "gpu": "0",
+  "training_models": 6,
+  "training_epochs_per_model": 120,
+  "training_monotonic_seconds": 645.8809791890162,
+  "scientific_protocol_sha256": "534ecd8953696287183c6e8b118e89474e3d18bdb9019bb24529bf165c4f548d",
+  "source_freeze_sha256": "6422c474def1bd854b8a20cc15c24fc074220f8e2a92e99cae30cdefe1836cb3",
+  "analysis_freeze_sha256": "7cc73c40b9f283de0d85a10967ab9a2ebb69d9abf4cf8fcb1bf4ce7c1a7132e6",
+  "stages": [
+    {
+      "name": "evaluation",
+      "command": [
+        "/raid5/xuhd/sam3d_s01_pilot_20260906/venv/bin/python",
+        "-u",
+        "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/code/evaluate_line.py",
+        "--root",
+        "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004"
+      ],
+      "started_server_utc": "2026-10-04T15:59:40.514330+00:00",
+      "ended_server_utc": "2026-10-04T16:00:12.791986+00:00",
+      "monotonic_seconds": 32.27767902999767,
+      "returncode": 0,
+      "log_path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/evaluation.log",
+      "log_sha256": "180d21f64de4c7179a61eccba965276b79c8cd9ff0086987db0a2531c2f0e8af"
+    },
+    {
+      "name": "figures",
+      "command": [
+        "/raid5/xuhd/sam3d_s01_pilot_20260906/venv/bin/python",
+        "-u",
+        "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/code/make_figures.py",
+        "--root",
+        "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004"
+      ],
+      "started_server_utc": "2026-10-04T16:00:12.793279+00:00",
+      "ended_server_utc": "2026-10-04T16:00:19.565886+00:00",
+      "monotonic_seconds": 6.772591881999688,
+      "returncode": 0,
+      "log_path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/figures.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "cached_analysis",
+      "command": [
+        "/raid5/xuhd/sam3d_s01_pilot_20260906/venv/bin/python",
+        "-u",
+        "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/analysis/analyze_completed.py",
+        "--root",
+        "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004"
+      ],
+      "started_server_utc": "2026-10-04T16:00:19.567274+00:00",
+      "ended_server_utc": "2026-10-04T16:00:21.203348+00:00",
+      "monotonic_seconds": 1.6360595619989908,
+      "returncode": 0,
+      "log_path": "/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004/cached_analysis.log",
+      "log_sha256": "d6c42fcd3ade69578213d0957f7bf441ea29dc4de958f2f15e7042d27bcc696a"
+    }
+  ],
+  "ended_server_utc": "2026-10-04T16:00:21.204170+00:00"
+}
