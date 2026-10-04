@@ -8,6 +8,10 @@
 
 ## 最新实际交付
 
+[俯卧点位工作台V1](handoffs/real-scene-2026-10-05/prone-body-query-workbench-v1/FINAL_REPORT.md)：20人、600绑定/4800ENG点、120面缓存、全量对照与独立重算完成。BODY跨度19.33 mm、与Topo差143.02 mm，未升级；默认Topology跨度7.39 mm（非医学误差）。工作台原图点击→实际Mesh射线绑定→本地复核JSON已经浏览器与真实文件验证；原RGB私有，公共几何版进入Git。
+
+[局部身份学习结构对照V1](handoffs/real-scene-2026-10-05/body-intrinsic-query-learning-v1/FINAL_REPORT.md)：三卡9训练完成、3600评价/40图/实际缓存重算PASS。PARTIAL身份BODY FAUST2.21/SCAPE7.17；DUAL2.63/8.07（%各库sqrt-area，非mm），几何分支更差。不采用该双路候选，不再在消费考试上调轮数。工程保留Topology，论文转向可靠解剖/身体结构参考与新的数据证据。
+
 [同输入局部曲面编码V1](handoffs/real-scene-2026-10-05/intrinsic-local-query-v1/FINAL_REPORT.md)：362局部算子/1080评价/40扫描图完成，实际缓存重算PASS。冻结全身DiffusionNet在局部背部输入失败（PARTIAL FAUST13.36、SCAPE12.49 %各库sqrt-area），不能把全曲面参考1.70/2.40作为局部部署效果。当前进入身体位置参考＋局部曲面特征双路query训练对照，保留拓扑工程默认。
 
 [MHR模板查询工程接口V1](handoffs/real-scene-2026-10-05/mhr-query-engineering-interface-v1/FINAL_REPORT.md)：20俯卧、3训练点划分、两缓存Mesh、960绑定/7680ENG点完成。16已消费测试角色RigidD输入跨度：拓扑7.39、学习22.03–25.07 mm，学习点与拓扑差174–194 mm；贴面约2 mm不能证明身份正确。默认保留拓扑。120原Mesh与960绑定实际核查，Git交付目标/面缓存可独立重算。原始20pose_type实读均p_sel_prn。

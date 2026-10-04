@@ -1,0 +1,54 @@
+{
+  "cohort": [
+    "S103",
+    "S104",
+    "S107",
+    "S114",
+    "S118",
+    "S121",
+    "S130",
+    "S134",
+    "S140",
+    "S141",
+    "S145",
+    "S151",
+    "S163",
+    "S165",
+    "S170",
+    "S179",
+    "S184",
+    "S187",
+    "S188",
+    "S196"
+  ],
+  "dev": [
+    "S104",
+    "S107",
+    "S165",
+    "S187"
+  ],
+  "meshes": {
+    "Rigid": "Official_Rigid",
+    "RigidD": "Official_Rigid_D"
+  },
+  "source_query_ids": [
+    "ENG_MID_UP",
+    "ENG_MID_DOWN",
+    "ENG_PAIR_1_NEG_X",
+    "ENG_PAIR_1_POS_X",
+    "ENG_PAIR_2_NEG_X",
+    "ENG_PAIR_2_POS_X",
+    "ENG_PAIR_3_NEG_X",
+    "ENG_PAIR_3_POS_X"
+  ],
+  "voxel_m": 0.012,
+  "max_candidates": 2048,
+  "default_method": "TOPOLOGY",
+  "clinical_validated": false,
+  "robot_release": false,
+  "normalization": "full mesh area-centroid / sqrt(area), then same-topology posterior Kabsch",
+  "normalization_differs_from_scan_vertex_centroid": true,
+  "experimental_model": "BODY_QUERY",
+  "method_status": "NOT_PROMOTED",
+  "medical_label": false
+}

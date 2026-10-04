@@ -1,0 +1,23 @@
+{
+  "modes": [
+    "BODY_QUERY",
+    "INTRINSIC_QUERY",
+    "DUAL_QUERY"
+  ],
+  "model_seeds": [
+    0,
+    1,
+    2
+  ],
+  "steps": 1200,
+  "batch": 1,
+  "queries": 24,
+  "lr_head": 0.001,
+  "lr_geometry": 0.0001,
+  "loss": "soft identity CE",
+  "sigma": 0.01,
+  "pretrained_checkpoint_sha256": "1f5c37e08689b5b24752ee7fb8ac447dcd140791d46514114f0156646f7e4a28",
+  "dev_checkpoint_selection": "20 FAUST dev sources, PARTIAL_BAND input_seed0",
+  "clinical_validated": false,
+  "body_features": "observed patch .05/.95 XYZ ranges + oriented normals"
+}

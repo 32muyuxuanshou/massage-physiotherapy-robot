@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "training_sources_only": true,
+  "optimizer_steps": 0,
+  "models": [
+    {
+      "mode": "BODY_QUERY",
+      "logits_shape": [
+        24,
+        181
+      ],
+      "loss": 5.200276851654053,
+      "backward_finite": true
+    },
+    {
+      "mode": "INTRINSIC_QUERY",
+      "logits_shape": [
+        24,
+        181
+      ],
+      "loss": 8.830891609191895,
+      "backward_finite": true
+    },
+    {
+      "mode": "DUAL_QUERY",
+      "logits_shape": [
+        24,
+        181
+      ],
+      "loss": 9.448016166687012,
+      "backward_finite": true
+    }
+  ]
+}
