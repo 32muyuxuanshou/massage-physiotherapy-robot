@@ -8,6 +8,8 @@
 
 ## 最新实际交付
 
+[同输入局部曲面编码V1](handoffs/real-scene-2026-10-05/intrinsic-local-query-v1/FINAL_REPORT.md)：362局部算子/1080评价/40扫描图完成，实际缓存重算PASS。冻结全身DiffusionNet在局部背部输入失败（PARTIAL FAUST13.36、SCAPE12.49 %各库sqrt-area），不能把全曲面参考1.70/2.40作为局部部署效果。当前进入身体位置参考＋局部曲面特征双路query训练对照，保留拓扑工程默认。
+
 [MHR模板查询工程接口V1](handoffs/real-scene-2026-10-05/mhr-query-engineering-interface-v1/FINAL_REPORT.md)：20俯卧、3训练点划分、两缓存Mesh、960绑定/7680ENG点完成。16已消费测试角色RigidD输入跨度：拓扑7.39、学习22.03–25.07 mm，学习点与拓扑差174–194 mm；贴面约2 mm不能证明身份正确。默认保留拓扑。120原Mesh与960绑定实际核查，Git交付目标/面缓存可独立重算。原始20pose_type实读均p_sel_prn。
 
 [可换模板对应V1](handoffs/real-scene-2026-10-05/paired-template-query-v1/FINAL_REPORT.md)：FAUST60训练/20开发/20已消费考试，SCAPE20姿态跨库。局部query身份GLOBAL约1.96→7.22（各库sqrt-area百分比，非mm），LOCAL更差；实际作者完整上下文参考SCAPE2.40，非公平局部输入对照。6模型/2520评价/40全量图、实际缓存重算完成，不采用小网络为最终匹配。当前转向相同局部输入的曲面几何编码器。
