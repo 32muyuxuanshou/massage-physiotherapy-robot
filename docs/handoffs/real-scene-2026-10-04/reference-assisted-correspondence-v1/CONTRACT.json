@@ -1,0 +1,67 @@
+{
+  "id": "REFERENCE_ASSISTED_CORRESPONDENCE_V1",
+  "frozen_before_results": true,
+  "parent_commit": "08128e14f881805a316e642c1f120810c22c7772",
+  "parent_manifest_sha256": "829abe21340d48fe9815d4b885f575689907e238f81d3400e7079533f82dfe84",
+  "subjects": [
+    "S103",
+    "S104",
+    "S107",
+    "S114",
+    "S118",
+    "S121",
+    "S130",
+    "S134",
+    "S140",
+    "S141",
+    "S145",
+    "S151",
+    "S163",
+    "S165",
+    "S170",
+    "S179",
+    "S184",
+    "S187",
+    "S188",
+    "S196"
+  ],
+  "dev": [
+    "S104",
+    "S107",
+    "S165",
+    "S187"
+  ],
+  "input_indices": [
+    0,
+    1,
+    2,
+    7
+  ],
+  "query_indices": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "methods": [
+    "FIXED",
+    "REF4_EXACT",
+    "REF4_NOISY5"
+  ],
+  "cases": [
+    "RIGID_ONLY",
+    "NORMAL_BUMP",
+    "TANGENTIAL_SHIFT"
+  ],
+  "surface_source_method": "D_VECTOR",
+  "noise_magnitude_m": 0.005,
+  "noise_seed_formula": "20261004 + int(subject[1:]); same vectors in all error cases",
+  "algorithm": "predicted graph-distance Gaussian RBF + constant, median input pair distance bandwidth, ridge 1e-6, full posterior closest triangle projection",
+  "ridge": 1e-06,
+  "projection_face_count": 2152,
+  "geometric_reference_is_oracle": true,
+  "new_sam_inferences": 0,
+  "new_mesh_fits": 0,
+  "training_runs": 0,
+  "primary": "4 unprovided query errors median per case -> source median within each error class; dev/consumed validation separate"
+}
