@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "scope": "random input forward/backward; no optimizer steps/no test inputs",
+  "records": [
+    {
+      "method": "GLOBAL_REGRESSION",
+      "shape": [
+        2,
+        5,
+        2
+      ],
+      "parameters": 80506,
+      "finite": true,
+      "min_y_gap": -0.07861942052841187
+    },
+    {
+      "method": "INDEPENDENT_HEATMAP",
+      "shape": [
+        2,
+        5,
+        2
+      ],
+      "parameters": 80021,
+      "finite": true,
+      "min_y_gap": -0.018437206745147705
+    },
+    {
+      "method": "ORDERED_QUERY",
+      "shape": [
+        2,
+        5,
+        2
+      ],
+      "parameters": 304755,
+      "finite": true,
+      "min_y_gap": 0.15044045448303223
+    }
+  ],
+  "python": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+  "torch": "2.4.0+cu121",
+  "cuda": "12.1"
+}

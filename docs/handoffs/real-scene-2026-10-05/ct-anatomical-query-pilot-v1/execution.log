@@ -1,0 +1,91 @@
+evaluated s0011 train
+evaluated s0223 train
+evaluated s0310 train
+evaluated s0344 train
+evaluated s0357 dev
+evaluated s0358 train
+evaluated s0363 test
+evaluated s0407 train
+evaluated s0425 dev
+evaluated s0461 test
+evaluated s0477 test
+evaluated s0481 train
+evaluated s0511 train
+evaluated s0519 train
+evaluated s0522 test
+evaluated s0582 train
+evaluated s0591 test
+evaluated s0629 train
+evaluated s0649 train
+evaluated s0703 train
+evaluated s0720 train
+evaluated s0726 train
+evaluated s0727 train
+evaluated s0747 author_val_supporting
+evaluated s0763 dev
+evaluated s0777 train
+evaluated s0811 train
+evaluated s0812 train
+evaluated s0859 test
+evaluated s0866 test
+evaluated s0878 train
+evaluated s0885 train
+evaluated s0903 train
+evaluated s0908 train
+evaluated s0912 dev
+evaluated s0914 train
+evaluated s0915 train
+evaluated s0928 train
+evaluated s0950 train
+evaluated s0963 train
+evaluated s0970 train
+evaluated s0999 dev
+evaluated s1029 train
+evaluated s1042 train
+evaluated s1082 train
+evaluated s1086 test
+evaluated s1123 dev
+evaluated s1124 train
+evaluated s1127 train
+evaluated s1144 train
+evaluated s1164 dev
+evaluated s1167 train
+evaluated s1206 train
+evaluated s1221 train
+evaluated s1233 author_val_supporting
+evaluated s1245 train
+evaluated s1267 train
+evaluated s1287 author_val_supporting
+evaluated s1336 test
+evaluated s1337 author_val_supporting
+evaluated s1348 test
+evaluated s1350 test
+evaluated s1353 dev
+evaluated s1361 train
+evaluated s1364 train
+evaluated s1365 train
+evaluated s1369 dev
+evaluated s1370 train
+evaluated s1371 train
+evaluated s1372 test
+evaluated s1379 train
+evaluated s1384 dev
+evaluated s1387 train
+evaluated s1388 dev
+evaluated s1395 train
+evaluated s1397 train
+evaluated s1400 train
+evaluated s1404 train
+REPLAY_PASS 78 780
+# CT解剖参考查询原型V1：实际结果
+
+输入只有CT派生后表面高度/有效mask/物理图像平面坐标；目标为逐节标签后侧极值的体表投影代理。下列毫米不是穴位或俯卧RGB-D精度。
+
+|角色|例数|训练中位位置|全局回归|独立热图|有序查询|
+|---|---:|---:|---:|---:|---:|
+|train|51|60.476|19.010|15.939|18.466|
+|dev|11|97.577|17.121|16.792|15.359|
+|test|12|56.346|21.803|20.936|17.567|
+|author_val_supporting|4|29.290|19.879|18.816|19.365|
+
+上述为每例内部目标均值、每例跨初始化中位、角色内例均值的X/Z误差。所有有效CT目标参与主指标；没有因未命中表面而排除困难目标。

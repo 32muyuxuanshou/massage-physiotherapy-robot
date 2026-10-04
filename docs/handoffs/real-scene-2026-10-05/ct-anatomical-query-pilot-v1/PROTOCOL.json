@@ -1,0 +1,57 @@
+{
+  "stage": "CT_ANATOMICAL_QUERY_PILOT_V1",
+  "scope": "surface-only localization of CT label-derived posterior vertebral proxies; not acupoint or prone deployment accuracy",
+  "registered_before_model_training_and_test": true,
+  "source": "TotalSegmentator small v2.0.1, 102 cases; source qualification separately documented",
+  "levels": [
+    "C7",
+    "T3",
+    "T5",
+    "T9",
+    "L2"
+  ],
+  "target": "posterior-most 2-percent label voxel mean projected at its X/Z to CT-only posterior surface",
+  "target_valid": "nonempty label, no scanner-boundary contact, finite surface projection, bone-to-skin posterior distance in [0,200] mm",
+  "case_eligible": "at least 3 valid target levels; original surface has >=10000 valid columns; all valid proxy levels ordered C7>T3>T5>T9>L2 in RAS Z",
+  "split_seed": 42,
+  "split": "shuffle 98 author-train IDs; first70 train, next14 dev, final14 test, then apply the fixed case qualification within each role; author-val4 supporting only; development source s0011/s0250 moved to train before freezing",
+  "input": "CT-only posterior heightfield/valid mask, physical image-plane coordinate channels; 128x128 full scanner field, no bone-driven ROI",
+  "input_excludes": [
+    "CT density",
+    "bone mask",
+    "ground-truth target positions",
+    "age",
+    "study_type",
+    "scanner identity",
+    "absolute DICOM origin",
+    "SAM parameters"
+  ],
+  "methods": [
+    "TRAIN_MEDIAN_POSITION",
+    "GLOBAL_REGRESSION",
+    "INDEPENDENT_HEATMAP",
+    "ORDERED_QUERY"
+  ],
+  "encoder": "same CNN4 ->16 ->32 ->64 ->96, four stride2 blocks; independently trained same optimizer",
+  "query": "five reference tokens cross-attend to surface features via two 96-dimensional four-head decoder layers; X sigmoid, Y uses positive six-gap normalization enforcing C7<T3<T5<T9<L2 in superior-to-inferior image row",
+  "no_confidence_head": true,
+  "loss": "masked squared normalized X/Z coordinate error; no medical/shape/pseudo-label losses",
+  "epochs": 120,
+  "batch_size": 8,
+  "lr": 0.001,
+  "optimizer": "AdamW weight_decay=0.0001",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "checkpoint": "smallest dev mean physical X/Z error; check every 10 epochs; all runs retained",
+  "augmentation": "none in this first source-domain pilot; no hidden synthetic prone conversion",
+  "metrics": "per-level physical X/Z median/P95 and 3D predicted-surface query distance conditional on hit; surface hit coverage and common-hit paired distance; ordered-level violations",
+  "aggregation": "all targets within case -> case mean; model seeds within case -> median; equal-weight cases within split",
+  "missing_hit": "not imputed or clamped; report miss and common-hit, no favorable score by discarding missed queries",
+  "method_decision": "requires independent test gain over train-median and plain global regression across seeds; no promotion to clinical/PressurePose inference from CT-only result",
+  "new_sam_inference": false,
+  "medical_validated": false,
+  "pretraining_source_amendment": "Entire s1373 train-source excluded after raw CT/source-label qualification showed C7 inferior to T9/L2; no trained model or exam results existed. No guessed relabeling."
+}
