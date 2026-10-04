@@ -1,0 +1,89 @@
+{
+  "source_files": [
+    {
+      "package": "back-reference-extraction-v1",
+      "path": "back-reference-extraction-v1\\RESULTS.json",
+      "sha256": "a7adfc904498157d354fa3d1c044e4f84c6bd1e2c14e56cd8ed18116742238ec"
+    },
+    {
+      "package": "prone-reference-mesh-interface-v1",
+      "path": "prone-reference-mesh-interface-v1\\RESULTS.json",
+      "sha256": "6b6a83e3cf33f00d00c8980ca1c6100541d7ee6a801b4fd4f4e072e288bba673"
+    },
+    {
+      "package": "bounded-reference-correspondence-v1",
+      "path": "bounded-reference-correspondence-v1\\RESULTS.json",
+      "sha256": "7668b53d29b00224e6776277ef685ec0122bd6e74dff5544a9f7442fe63de120"
+    }
+  ],
+  "panels": [
+    {
+      "title": "1. Complete real XYZ scans\n30 scans / author surface line",
+      "labels": [
+        "Boundary",
+        "Symmetry",
+        "Groove"
+      ],
+      "first": [
+        10.511325805845555,
+        11.867951622008928,
+        3.690046456757476
+      ],
+      "second": [
+        21.808352212324237,
+        48.032206103677666,
+        10.39845543521469
+      ],
+      "legends": [
+        "Scan median, then median",
+        "Scan P95, then median"
+      ],
+      "ylabel": "Same-Y reference difference / mm"
+    },
+    {
+      "title": "2. Clothed prone interface\n12/16 complete consumed test roles",
+      "labels": [
+        "Rigid",
+        "Rigid+D"
+      ],
+      "first": [
+        7.3657524669441585,
+        1.5804508233594308
+      ],
+      "second": [
+        24.409620367582782,
+        25.407430393434442
+      ],
+      "legends": [
+        "Query-to-mesh distance",
+        "Bound-point cross-split span"
+      ],
+      "ylabel": "Two distinct measurements / mm"
+    },
+    {
+      "title": "3. Controlled tangent mismatch\n16 consumed sources / fixed 5mm noise",
+      "labels": [
+        "Fixed topology",
+        "RBF + noise",
+        "Convex4 + noise"
+      ],
+      "first": [
+        9.27122736018116,
+        6.58580647364644,
+        5.337779287353951
+      ],
+      "second": [
+        18.490101399936023,
+        9.269370613819994,
+        11.437843239399879
+      ],
+      "legends": [
+        "Source median, then median",
+        "Source P95, then median"
+      ],
+      "ylabel": "Unprovided ENG probe difference / mm"
+    }
+  ],
+  "recomputed_scientific_predictions": false,
+  "clinical_accuracy": false
+}

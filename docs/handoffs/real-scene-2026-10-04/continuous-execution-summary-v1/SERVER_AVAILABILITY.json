@@ -1,0 +1,33 @@
+{
+  "server": "172.18.18.151:436",
+  "password_login": "PASS",
+  "home_directory": "/raid5/xuhd",
+  "home_visible": false,
+  "data_directory_visible": false,
+  "raid5_directory_exists": true,
+  "fstab_query_for_raid5": "NO_MATCH_EXIT_1",
+  "read_only_disk_inventory": [
+    {
+      "name": "sda",
+      "type": "disk",
+      "size": "43.7T",
+      "filesystem_reported_by_nodeps": null
+    },
+    {
+      "name": "sdb",
+      "type": "disk",
+      "size": "447.1G",
+      "filesystem": "isw_raid_member"
+    },
+    {
+      "name": "sdc",
+      "type": "disk",
+      "size": "447.1G",
+      "filesystem": "isw_raid_member"
+    }
+  ],
+  "cause_confirmed": false,
+  "data_loss_confirmed": false,
+  "requires_server_storage_restoration": true,
+  "storage_configuration_modified": false
+}

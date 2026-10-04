@@ -13,6 +13,10 @@
 
 阶段结果不是同一种误差，不能将3.69、1.58和5.338 mm拼成一个“穴位精度”。其中3.69是作者曲线对照，1.58是查询点贴面距离，5.338是受控程序参考下的点位误差。
 
+![三个合同分别展示](EVIDENCE_OVERVIEW.png)
+
+此图只读取三份原始RESULTS.json，不重新拟合或挑选样本。[精确绘图数据及来源SHA](EVIDENCE_FIGURE_DATA.json) · [生成代码](code/make_evidence_figure.py)。中图蓝色是贴面距离、橙色是跨划分点跨度，含义不同；不能把蓝柱下降解释为点位正确。
+
 ## 完整复查入口
 
 1. [真实曲线完整报告](../back-reference-extraction-v1/FINAL_REPORT.md) · [30图](../back-reference-extraction-v1/figures/INDEX.md) · [独立缓存复算](../back-reference-extraction-v1/CACHE_REPLAY_VERIFICATION.json)。
@@ -20,7 +24,7 @@
 3. [对应机制完整报告](../bounded-reference-correspondence-v1/FINAL_REPORT.md) · [60图](../bounded-reference-correspondence-v1/figures/INDEX.md) · [2400逐点表](../bounded-reference-correspondence-v1/PER_PROBE_RESULTS.csv) · [缓存核验](../bounded-reference-correspondence-v1/CACHE_VERIFICATION.json)。
 4. [学习原型状态与运行入口](../surface-line-completion-pilot-v1/README.md)：代码阶段，不给训练效果数字。
 
-每份已完成交付包含固定协议、配置、代码、逐条结果、匿名预测缓存、全量图和FILES_MANIFEST。[本次Git字节核验](DELIVERY_VERIFICATION.json)检查已完成三包的工作区文件、交付SHA和真实Git blob一致。原始扫描/RGB、大型网格及权重原存于服务器；当前其存储不可见，尚未确认原因或数据损失。服务器最终交付镜像同步为pending，不能写成同步成功。
+每份已完成交付包含固定协议、配置、代码、逐条结果、匿名预测缓存、全量图和FILES_MANIFEST。[本次Git字节核验](DELIVERY_VERIFICATION.json)检查已完成三包的工作区文件、交付SHA和真实Git blob一致。原始扫描/RGB、大型网格及权重原存于服务器；当前其存储不可见，尚未确认原因或数据损失。服务器最终交付镜像同步为pending，不能写成同步成功。[服务器只读核查](SERVER_AVAILABILITY.json)：可登录，原home和数据路径不可见，fstab中未查到/raid5条目；没有更改存储配置。
 
 ## 当前判断及下一项
 
