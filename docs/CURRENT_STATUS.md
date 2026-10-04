@@ -8,6 +8,8 @@
 
 ## 最新实际交付
 
+[注册后背身份学习机制V1](handoffs/real-scene-2026-10-05/registered-back-correspondence-v1/FINAL_REPORT.md)：服务器实际下载100 FAUST/71 SCAPE注册衍生扫描；FAUST60训练/20开发/20网格来源考试，9身份场模型+6query模型完成。PARTIAL可见query身份：近邻8.19、全局2.22、先验局部1.57（%模板sqrt-area，非mm）；完整上下文DiffusionNet作者基线1.70。直接query1.90弱于身份场反查，保留失败。Oracle ROI/完整几何归一化/程序缺失，非俯卧或医学GT。当前转向成对模板可移植性，原保留20已消费。
+
 [Mesh引导坐标对照V1](handoffs/real-scene-2026-10-05/mesh-guided-back-chart-v1/FINAL_REPORT.md)：原20人、1080曲线、3240学习绑定/180拓扑绑定完成。固定人体坐标跨度21.28→20.90 mm，8改善/8退化、初始化跨度14.36→22.89 mm；约44%目标超出线范围而钳制，不采用为最终定位。新的27工程点与旧9点定义不同。全量缓存重算及180实际Mesh核验通过。当前继续注册人体表面身份学习机制，不调这20人测试范围。
 
 [最新两阶段完整交付](handoffs/real-scene-2026-10-05/prone-learned-reference-transfer-v1/README.md)：服务器既有存储已恢复，六个体表线小模型实际训练完成、冻结模型俯卧迁移完成。没有新SAM推理或Mesh拟合。以下先列新增事实，原三阶段及更早交付保留历史合同。

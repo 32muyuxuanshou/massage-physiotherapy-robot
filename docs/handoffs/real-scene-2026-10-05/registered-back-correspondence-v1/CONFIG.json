@@ -1,0 +1,34 @@
+{
+  "steps": 1200,
+  "batch": 8,
+  "points": 256,
+  "lr": 0.001,
+  "huber_beta": 0.02,
+  "dev_every": 200,
+  "model_seeds": [
+    0,
+    1,
+    2
+  ],
+  "modes": [
+    "POINT_GLOBAL",
+    "PRIOR_GLOBAL",
+    "PRIOR_LOCAL"
+  ],
+  "conditions": [
+    "FULL",
+    "PARTIAL_BAND",
+    "NOISY_PARTIAL"
+  ],
+  "normalization": "centered full-mesh / sqrt(full-mesh area)",
+  "metric_unit": "percent template sqrt-area, NOT mm or geodesic distance",
+  "back_points": 472,
+  "engineering_queries": 26,
+  "source_roles": {
+    "train": 60,
+    "dev": 20,
+    "test": 20
+  },
+  "clinical_validated": false,
+  "real_sensor": false
+}

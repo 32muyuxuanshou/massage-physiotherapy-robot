@@ -1,0 +1,19 @@
+{
+  "steps": 1200,
+  "batch": 8,
+  "points": 256,
+  "queries_per_batch": 24,
+  "soft_target_sigma": 0.01,
+  "lr": 0.001,
+  "model_seeds": [
+    0,
+    1,
+    2
+  ],
+  "modes": [
+    "Q_GLOBAL",
+    "Q_PRIOR_LOCAL"
+  ],
+  "test_role": "consumed mechanism sources",
+  "clinical_validated": false
+}
