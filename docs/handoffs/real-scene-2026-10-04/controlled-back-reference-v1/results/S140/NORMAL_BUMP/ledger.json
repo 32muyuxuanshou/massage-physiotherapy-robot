@@ -1,0 +1,69 @@
+{
+  "subject": "S140",
+  "case": "NORMAL_BUMP",
+  "status": "COMPLETE",
+  "seconds": 16.443546056747437,
+  "new_official_inferences": 0,
+  "fits": {
+    "rigid": 1,
+    "vector_D": 1,
+    "normal_D": 1
+  },
+  "K0_points": 26742,
+  "heldout_camera_optimization_points": 0,
+  "vector_solver": {
+    "n_data_it0": 3820,
+    "n_data_it1": 3885,
+    "n_data_it2": 3828,
+    "n_data_it3": 3818,
+    "tangential_p50_mm": 0.032955503793791,
+    "tangential_p95_mm": 0.46468444860565666
+  },
+  "normal_solver": {
+    "parameterization": "scalar displacement on fixed Rigid vertex normals",
+    "smoothness": "N.T @ kron(L,I3) @ N; exact restricted frozen vector energy",
+    "iterations": [
+      {
+        "iteration": 0,
+        "data_vertices": 3820,
+        "solve_relative_residual": 8.741295351560204e-16
+      },
+      {
+        "iteration": 1,
+        "data_vertices": 3847,
+        "solve_relative_residual": 8.068506636391378e-16
+      },
+      {
+        "iteration": 2,
+        "data_vertices": 3803,
+        "solve_relative_residual": 8.832918213626443e-16
+      },
+      {
+        "iteration": 3,
+        "data_vertices": 3796,
+        "solve_relative_residual": 7.594664679852604e-16
+      }
+    ],
+    "vertex_tangent_max_mm": 1.9873754096201568e-15,
+    "fixed_normal_norm_max_error": 1.7724911768324247e-06,
+    "scalar_abs_p95_mm": 1.23625980536596
+  },
+  "output_meshes": [
+    {
+      "method": "INITIAL",
+      "sha256": "75fa8ee75ee8e9e698b134e2b64065e97714eb17994b4ce66d808ab62ec969ae"
+    },
+    {
+      "method": "RIGID",
+      "sha256": "10a643683bd41b6832ac5076c81038f4d14ea50ca6f4901fce29648eb527d54a"
+    },
+    {
+      "method": "D_VECTOR",
+      "sha256": "30450611172f2ec57a093e98d198ee36f215115e460f4312e288017e55963059"
+    },
+    {
+      "method": "D_NORMAL",
+      "sha256": "c7c177aa0dfeb822786e3cbcc825979edd000ec7f3bc2d1ac71bd6678dd6f8a4"
+    }
+  ]
+}

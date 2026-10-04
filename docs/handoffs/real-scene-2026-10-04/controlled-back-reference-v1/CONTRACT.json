@@ -1,0 +1,128 @@
+{
+  "id": "CONTROLLED_BACK_REFERENCE_V1",
+  "status": "FROZEN_BEFORE_FITS",
+  "subjects": [
+    "S103",
+    "S104",
+    "S107",
+    "S114",
+    "S118",
+    "S121",
+    "S130",
+    "S134",
+    "S140",
+    "S141",
+    "S145",
+    "S151",
+    "S163",
+    "S165",
+    "S170",
+    "S179",
+    "S184",
+    "S187",
+    "S188",
+    "S196"
+  ],
+  "dev": [
+    "S104",
+    "S107",
+    "S165",
+    "S187"
+  ],
+  "methods": [
+    "INITIAL",
+    "RIGID",
+    "D_VECTOR",
+    "D_NORMAL"
+  ],
+  "cases": [
+    "RIGID_ONLY",
+    "NORMAL_BUMP",
+    "TANGENTIAL_SHIFT"
+  ],
+  "D": {
+    "lam": 0.15,
+    "mu": 0.0001,
+    "tau": 0.05,
+    "n0": 6.0,
+    "irls": 4,
+    "sigma_m": 0.012,
+    "use_conf": true,
+    "use_robust": true,
+    "bed": null
+  },
+  "rigid": {
+    "iterations": 30,
+    "trim_fraction": 0.2,
+    "initial_translation_iterations": 4
+  },
+  "camera_K": [
+    [
+      900.0,
+      0.0,
+      320.0
+    ],
+    [
+      0.0,
+      900.0,
+      480.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "image_hw": [
+    960,
+    640
+  ],
+  "centers_m": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0.45,
+      0,
+      0
+    ],
+    [
+      -0.45,
+      0,
+      0
+    ]
+  ],
+  "target_m": [
+    0,
+    0,
+    2.4
+  ],
+  "noise_sigma_m": 0,
+  "optimization_view": "K0 only",
+  "evaluation_views": [
+    "K1",
+    "K2"
+  ],
+  "max_K0_points": 40000,
+  "max_posterior_eval_points": 1500,
+  "normal_amplitude_m": 0.012,
+  "tangent_amplitude_m": 0.02,
+  "geodesic_sigma_m": 0.15,
+  "rotation_rodrigues_deg": [
+    2,
+    -1,
+    1
+  ],
+  "translation_m": [
+    0.015,
+    -0.01,
+    0.04
+  ],
+  "source_reference": "recentered cached prediction; procedural geometry, not human GT",
+  "aggregation": "camera median per case -> subject median within each injection class; dev and historical-validation roles separate",
+  "new_inferences": 0,
+  "training_runs": 0,
+  "independent_real_sensor": false
+}

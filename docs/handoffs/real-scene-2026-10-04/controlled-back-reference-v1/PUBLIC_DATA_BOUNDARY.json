@@ -1,0 +1,13 @@
+{
+  "raw_patient_RGB": false,
+  "raw_sensor_depth": false,
+  "weights": false,
+  "reference_and_final_human_geometry_arrays": "server only: 20 references, 60 virtual observations, 240 final mesh NPZ",
+  "indices": "60 virtual observation index/face/bary/camera NPZ; source_point_idx maps selected rows to original observation ordinal; no pointcloud coordinates",
+  "metrics": "480 per-point NPZ and 240 engineering probe NPZ",
+  "analytical_fixture": "simple procedural plane; no patient or native body-model asset",
+  "cache_coordinates": "world meters, final vertices already transformed; do not apply stored rigid_R/t again",
+  "initial_cache_transform": "INITIAL retains injected error; rigid_R/t stored as shared fit metadata, not an additional INITIAL transform",
+  "model_loaded": false,
+  "export_utc": "2026-10-04T01:14:29.305629+00:00"
+}
