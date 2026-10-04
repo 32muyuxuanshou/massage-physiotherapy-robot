@@ -1,0 +1,18 @@
+{
+  "stage": "CT_BACK_ANATOMICAL_REFERENCE_SOURCE_QUALIFICATION_V1",
+  "created_before_model_execution": true,
+  "record": "https://zenodo.org/records/10047263",
+  "subset": "author 102-case exploration package v2.0.1",
+  "development_cases": ["s0011", "s0250"],
+  "selection": "two author-train cases in lexicographic order among neck-thorax-abdomen-pelvis; no model results used",
+  "surface_method": "RAS canonical CT; axial HU>-500, 2-pixel binary opening, largest 2D component, hole filling; first occupied voxel along anterior-positive axis",
+  "target_levels": ["C7", "T3", "T5", "T9", "L2"],
+  "target_definitions": ["vertebral label centroid projected posteriorly at its X/Z", "mean of posterior-most 2 percent labeled voxels projected at its X/Z"],
+  "target_scope": "CT label-derived surface proxies; neither physician palpation nor acupoint ground truth",
+  "boundary_checks": "label occupancy and scanner-boundary contact; surface body coverage; raw CT axial/sagittal visual inspection",
+  "label_input_separation": "body surface extraction uses CT only; bone labels used solely to define diagnostic targets and qualification",
+  "pose_domain": "CT acquisition pose is not inferred to be prone; supine support/contact differs from deployment",
+  "clinical_validated": false,
+  "new_sam_inference": false,
+  "training_in_this_stage": false
+}

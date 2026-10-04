@@ -1,0 +1,16 @@
+{
+  "status": "ALL_102_CASE_MONTAGES_REVIEWED",
+  "pages": 17,
+  "scope": "body extraction, scan field, target presence and coarse label order; no independent medical ground truth",
+  "observations": [
+    "s1389 has oblique affine; CT linear and labels nearest-neighbor resampled into one RAS physical grid. Original scanner boundary used for target flags.",
+    "s1373 has C7 label inferior to T9/L2; original source retained, excluded from model task before training.",
+    "Arms/scanner edges and bed/contact artifacts occur outside target torso. No test-result-based recropping or removal.",
+    "C7 nonclipped labels only 24/102; not all metadata neck scans include a usable C7.",
+    "Body positions and HU surface processing differ from prone RGB-D."
+  ],
+  "oblique_ids": [
+    "s1389"
+  ],
+  "model_results_used_for_source_selection": false
+}
