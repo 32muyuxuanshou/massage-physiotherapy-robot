@@ -1,0 +1,94 @@
+{
+  "cohort": [
+    "S103",
+    "S104",
+    "S107",
+    "S114",
+    "S118",
+    "S121",
+    "S130",
+    "S134",
+    "S140",
+    "S141",
+    "S145",
+    "S151",
+    "S163",
+    "S165",
+    "S170",
+    "S179",
+    "S184",
+    "S187",
+    "S188",
+    "S196"
+  ],
+  "dev": [
+    "S104",
+    "S107",
+    "S165",
+    "S187"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "extraction": {
+    "grid_x_m": 0.002,
+    "grid_y_m": 0.005,
+    "support_radius_m": 0.003,
+    "y_quantiles": [
+      0.05,
+      0.95
+    ],
+    "boundary_quantiles": [
+      0.05,
+      0.95
+    ],
+    "search_halfwidth_m": 0.06,
+    "smooth_sigma": [
+      1,
+      2
+    ],
+    "background_sigma": [
+      1,
+      5
+    ],
+    "mirror_offsets_m": [
+      0.02,
+      0.035,
+      0.05,
+      0.065
+    ],
+    "minimum_mirror_pairs": 3,
+    "data_scale_m": 0.003,
+    "center_weight": 0.1,
+    "step_weight": 0.15,
+    "step_scale_m": 0.004,
+    "max_step_m": 0.008,
+    "methods": [
+      "BOUNDARY_CENTER",
+      "SYMMETRY_DP",
+      "GROOVE_DP"
+    ]
+  },
+  "extractor_sha256": "af147a509119058bef24c9562c94642b6b5eccb1187bfa20522b0acf778e4ae6",
+  "posterior_mask_sha256": "17241b1006697c9b24cae29e766f69a5eeffffecf5aea17f172c615361f3b53e",
+  "posterior_faces": 2152,
+  "meshes": {
+    "Official": "Official",
+    "Rigid": "Official_Rigid",
+    "RigidD": "Official_Rigid_D"
+  },
+  "probe_fractions": [
+    0.1,
+    0.2,
+    0.30000000000000004,
+    0.4,
+    0.5,
+    0.6,
+    0.7000000000000001,
+    0.8,
+    0.9
+  ],
+  "clinical_accuracy": false
+}
