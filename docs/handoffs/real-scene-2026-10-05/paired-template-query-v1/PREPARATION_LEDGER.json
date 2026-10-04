@@ -1,0 +1,48 @@
+{
+  "status": "COMPLETE",
+  "seconds": 1.760145847001695,
+  "new_scape_cases": 180,
+  "faust_cases": 900,
+  "steps": 1200,
+  "batch": 8,
+  "points": 256,
+  "queries": 24,
+  "soft_sigma": 0.01,
+  "lr": 0.001,
+  "modes": [
+    "PAIR_GLOBAL",
+    "PAIR_LOCAL"
+  ],
+  "model_seeds": [
+    0,
+    1,
+    2
+  ],
+  "faust_source_roles": {
+    "train": 60,
+    "dev": 20,
+    "consumed_test": 20
+  },
+  "scape_test_poses": 20,
+  "scape_template_points": 459,
+  "scape_queries": 27,
+  "scape_rotation": [
+    [
+      0,
+      0,
+      -1
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0
+    ]
+  ],
+  "metric_unit": "percent respective template sqrt-area, NOT mm",
+  "clinical_validated": false
+}

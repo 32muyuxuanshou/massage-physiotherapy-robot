@@ -1,0 +1,327 @@
+{
+  "schema": "ENGINEERING_BACK_ATLAS_V2",
+  "status": "FROZEN_BEFORE_PROPAGATION",
+  "semantic_status": "ENGINEERING_SURFACE_PROBES_NOT_ACUPOINTS",
+  "native_unit": "cm",
+  "native_to_mm": 10,
+  "prediction_unit": "m",
+  "prediction_to_mm": 1000,
+  "axis": {
+    "y": "+Y canonical superior; verified by full-height canonical geometry",
+    "posterior": "-Z in reviewed posterior mask and visible surface normals",
+    "x": "Signed canonical X; patient anatomical left/right NOT ESTABLISHED"
+  },
+  "target_spec": [
+    {
+      "id": "ENG_MID_UP",
+      "fraction_down": 0.2,
+      "x_fraction_of_work_width": 0
+    },
+    {
+      "id": "ENG_MID_DOWN",
+      "fraction_down": 0.75,
+      "x_fraction_of_work_width": 0
+    },
+    {
+      "id": "ENG_PAIR_1_NEG_X",
+      "fraction_down": 0.3,
+      "x_fraction_of_work_width": -0.2
+    },
+    {
+      "id": "ENG_PAIR_1_POS_X",
+      "fraction_down": 0.3,
+      "x_fraction_of_work_width": 0.2
+    },
+    {
+      "id": "ENG_PAIR_2_NEG_X",
+      "fraction_down": 0.5,
+      "x_fraction_of_work_width": -0.2
+    },
+    {
+      "id": "ENG_PAIR_2_POS_X",
+      "fraction_down": 0.5,
+      "x_fraction_of_work_width": 0.2
+    },
+    {
+      "id": "ENG_PAIR_3_NEG_X",
+      "fraction_down": 0.7,
+      "x_fraction_of_work_width": -0.2
+    },
+    {
+      "id": "ENG_PAIR_3_POS_X",
+      "fraction_down": 0.7,
+      "x_fraction_of_work_width": 0.2
+    }
+  ],
+  "working_y_range_mm": [
+    867.1684773763021,
+    1449.9628194173176
+  ],
+  "working_width_mm": 522.8999710083008,
+  "work_definition": "original posterior face centroids, exclude bottom 20% of original centroid Y range",
+  "old_primary_evaluation_faces": 2152,
+  "work_faces": 1738,
+  "source": [
+    {
+      "path": "/raid5/xuhd/datasets/back_geometry_correspondence_v2_20261003/assets/mhr_rest_vertices.npy",
+      "sha256": "bf7e1fedc17f7245febfd073b694b3574a3d230622d06ba0461cfc0850bb27a8"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_geometry_correspondence_v2_20261003/assets/mhr_faces.npy",
+      "sha256": "79d3954cae04ae7a16ad2005238df81da2003b971b5b582457495430182b77c5"
+    },
+    {
+      "path": "/raid5/xuhd/datasets/back_geometry_correspondence_v2_20261003/assets/candidate_posterior_mask.json",
+      "sha256": "17241b1006697c9b24cae29e766f69a5eeffffecf5aea17f172c615361f3b53e"
+    }
+  ],
+  "limits": [
+    "No measured vertebral levels",
+    "No B-cun rule",
+    "No medical truth",
+    "Working region is geometric, not clinician-reviewed anatomy"
+  ],
+  "records": [
+    {
+      "id": "ENG_MID_UP",
+      "face_id": 12866,
+      "face_index": 12866,
+      "vertex_ids": [
+        5759,
+        5758,
+        6944
+      ],
+      "barycentric": [
+        0.9779899278167229,
+        0.022010072183277062,
+        -0.0
+      ],
+      "canonical_xyz_mm": [
+        0.0,
+        1333.4039510091145,
+        -115.6894715497721
+      ],
+      "canonical_normal": [
+        0.1480823445254913,
+        0.06856170442377282,
+        -0.9865956172243727
+      ],
+      "fraction_down": 0.2,
+      "x_fraction_of_width": 0,
+      "semantic_status": "ENGINEERING_SURFACE_PROBES_NOT_ACUPOINTS",
+      "medical_truth": false,
+      "anatomical_side": null
+    },
+    {
+      "id": "ENG_MID_DOWN",
+      "face_id": 14858,
+      "face_index": 14858,
+      "vertex_ids": [
+        5742,
+        5743,
+        5850
+      ],
+      "barycentric": [
+        0.4724990064157114,
+        0.5275009935842886,
+        -0.0
+      ],
+      "canonical_xyz_mm": [
+        0.0,
+        1012.8670628865559,
+        -128.8976488693172
+      ],
+      "canonical_normal": [
+        0.004469973146828225,
+        0.2406607343936823,
+        -0.9705990059036533
+      ],
+      "fraction_down": 0.75,
+      "x_fraction_of_width": 0,
+      "semantic_status": "ENGINEERING_SURFACE_PROBES_NOT_ACUPOINTS",
+      "medical_truth": false,
+      "anatomical_side": null
+    },
+    {
+      "id": "ENG_PAIR_1_NEG_X",
+      "face_id": 13030,
+      "face_index": 13030,
+      "vertex_ids": [
+        7175,
+        7176,
+        7301
+      ],
+      "barycentric": [
+        0.1516123993039784,
+        0.22644142621206934,
+        0.6219461744839523
+      ],
+      "canonical_xyz_mm": [
+        -104.57999420166016,
+        1275.124516805013,
+        -110.79529419966205
+      ],
+      "canonical_normal": [
+        -0.2666546203379674,
+        -0.24206125490689986,
+        -0.9328995992738508
+      ],
+      "fraction_down": 0.3,
+      "x_fraction_of_width": -0.2,
+      "semantic_status": "ENGINEERING_SURFACE_PROBES_NOT_ACUPOINTS",
+      "medical_truth": false,
+      "anatomical_side": null
+    },
+    {
+      "id": "ENG_PAIR_1_POS_X",
+      "face_id": 13013,
+      "face_index": 13013,
+      "vertex_ids": [
+        6118,
+        6234,
+        6117
+      ],
+      "barycentric": [
+        0.15161239930397838,
+        0.6219461744839523,
+        0.22644142621206934
+      ],
+      "canonical_xyz_mm": [
+        104.57999420166016,
+        1275.124516805013,
+        -110.79529419966205
+      ],
+      "canonical_normal": [
+        0.2666546203379674,
+        -0.24206125490689986,
+        -0.9328995992738508
+      ],
+      "fraction_down": 0.3,
+      "x_fraction_of_width": 0.2,
+      "semantic_status": "ENGINEERING_SURFACE_PROBES_NOT_ACUPOINTS",
+      "medical_truth": false,
+      "anatomical_side": null
+    },
+    {
+      "id": "ENG_PAIR_2_NEG_X",
+      "face_id": 13846,
+      "face_index": 13846,
+      "vertex_ids": [
+        7305,
+        7306,
+        7425
+      ],
+      "barycentric": [
+        0.17992003827275593,
+        0.15676074336525714,
+        0.6633192183619869
+      ],
+      "canonical_xyz_mm": [
+        -104.57999420166016,
+        1158.5656483968098,
+        -81.70253932655541
+      ],
+      "canonical_normal": [
+        -0.4257847299123594,
+        -0.07638688243256284,
+        -0.9015943699722692
+      ],
+      "fraction_down": 0.5,
+      "x_fraction_of_width": -0.2,
+      "semantic_status": "ENGINEERING_SURFACE_PROBES_NOT_ACUPOINTS",
+      "medical_truth": false,
+      "anatomical_side": null
+    },
+    {
+      "id": "ENG_PAIR_2_POS_X",
+      "face_id": 13694,
+      "face_index": 13694,
+      "vertex_ids": [
+        6344,
+        6229,
+        6230
+      ],
+      "barycentric": [
+        0.6633192183619868,
+        0.15676074336525708,
+        0.17992003827275602
+      ],
+      "canonical_xyz_mm": [
+        104.57999420166014,
+        1158.5656483968096,
+        -81.70253932655541
+      ],
+      "canonical_normal": [
+        0.4257847299123594,
+        -0.07638688243256284,
+        -0.9015943699722692
+      ],
+      "fraction_down": 0.5,
+      "x_fraction_of_width": 0.2,
+      "semantic_status": "ENGINEERING_SURFACE_PROBES_NOT_ACUPOINTS",
+      "medical_truth": false,
+      "anatomical_side": null
+    },
+    {
+      "id": "ENG_PAIR_3_NEG_X",
+      "face_id": 14459,
+      "face_index": 14459,
+      "vertex_ids": [
+        7187,
+        7189,
+        7188
+      ],
+      "barycentric": [
+        0.034085960890430256,
+        0.20673563365864817,
+        0.7591784054509216
+      ],
+      "canonical_xyz_mm": [
+        -104.57999420166016,
+        1042.006779988607,
+        -107.90977377079038
+      ],
+      "canonical_normal": [
+        -0.3112458480887201,
+        0.3447164796630215,
+        -0.8856052002423355
+      ],
+      "fraction_down": 0.7,
+      "x_fraction_of_width": -0.2,
+      "semantic_status": "ENGINEERING_SURFACE_PROBES_NOT_ACUPOINTS",
+      "medical_truth": false,
+      "anatomical_side": null
+    },
+    {
+      "id": "ENG_PAIR_3_POS_X",
+      "face_id": 14436,
+      "face_index": 14436,
+      "vertex_ids": [
+        6106,
+        6105,
+        6104
+      ],
+      "barycentric": [
+        0.0340859608904302,
+        0.7591784054509216,
+        0.20673563365864817
+      ],
+      "canonical_xyz_mm": [
+        104.57999420166016,
+        1042.006779988607,
+        -107.90977377079037
+      ],
+      "canonical_normal": [
+        0.3112458480887201,
+        0.3447164796630215,
+        -0.8856052002423355
+      ],
+      "fraction_down": 0.7,
+      "x_fraction_of_width": 0.2,
+      "semantic_status": "ENGINEERING_SURFACE_PROBES_NOT_ACUPOINTS",
+      "medical_truth": false,
+      "anatomical_side": null
+    }
+  ],
+  "confidence": null
+}

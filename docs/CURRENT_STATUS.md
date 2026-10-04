@@ -8,6 +8,10 @@
 
 ## 最新实际交付
 
+[MHR模板查询工程接口V1](handoffs/real-scene-2026-10-05/mhr-query-engineering-interface-v1/FINAL_REPORT.md)：20俯卧、3训练点划分、两缓存Mesh、960绑定/7680ENG点完成。16已消费测试角色RigidD输入跨度：拓扑7.39、学习22.03–25.07 mm，学习点与拓扑差174–194 mm；贴面约2 mm不能证明身份正确。默认保留拓扑。120原Mesh与960绑定实际核查，Git交付目标/面缓存可独立重算。原始20pose_type实读均p_sel_prn。
+
+[可换模板对应V1](handoffs/real-scene-2026-10-05/paired-template-query-v1/FINAL_REPORT.md)：FAUST60训练/20开发/20已消费考试，SCAPE20姿态跨库。局部query身份GLOBAL约1.96→7.22（各库sqrt-area百分比，非mm），LOCAL更差；实际作者完整上下文参考SCAPE2.40，非公平局部输入对照。6模型/2520评价/40全量图、实际缓存重算完成，不采用小网络为最终匹配。当前转向相同局部输入的曲面几何编码器。
+
 [注册后背身份学习机制V1](handoffs/real-scene-2026-10-05/registered-back-correspondence-v1/FINAL_REPORT.md)：服务器实际下载100 FAUST/71 SCAPE注册衍生扫描；FAUST60训练/20开发/20网格来源考试，9身份场模型+6query模型完成。PARTIAL可见query身份：近邻8.19、全局2.22、先验局部1.57（%模板sqrt-area，非mm）；完整上下文DiffusionNet作者基线1.70。直接query1.90弱于身份场反查，保留失败。Oracle ROI/完整几何归一化/程序缺失，非俯卧或医学GT。当前转向成对模板可移植性，原保留20已消费。
 
 [Mesh引导坐标对照V1](handoffs/real-scene-2026-10-05/mesh-guided-back-chart-v1/FINAL_REPORT.md)：原20人、1080曲线、3240学习绑定/180拓扑绑定完成。固定人体坐标跨度21.28→20.90 mm，8改善/8退化、初始化跨度14.36→22.89 mm；约44%目标超出线范围而钳制，不采用为最终定位。新的27工程点与旧9点定义不同。全量缓存重算及180实际Mesh核验通过。当前继续注册人体表面身份学习机制，不调这20人测试范围。
