@@ -8,6 +8,8 @@
 
 ## 最新实际交付
 
+[解剖身体模型学习与路线调整](research/2026-10-05-anatomical-body-models-v1/READING_NOTES.md)：实际下载5篇论文、查看方法/失败/骨骼图、读取3份作者源码。SKEL运动脊柱为三大段，不直接输出穴位所需逐节水平；未运行HSMR/SKEL-CF。现在服务器获取TotalSegmentator102例CT小包，元数据98train/4val，两例CT-only外表面与椎骨代理开发检查已完成，全包下载/全量资格仍在进行。不会将CT代理称俯卧或穴位GT。
+
 [俯卧点位工作台V1](handoffs/real-scene-2026-10-05/prone-body-query-workbench-v1/FINAL_REPORT.md)：20人、600绑定/4800ENG点、120面缓存、全量对照与独立重算完成。BODY跨度19.33 mm、与Topo差143.02 mm，未升级；默认Topology跨度7.39 mm（非医学误差）。工作台原图点击→实际Mesh射线绑定→本地复核JSON已经浏览器与真实文件验证；原RGB私有，公共几何版进入Git。
 
 [局部身份学习结构对照V1](handoffs/real-scene-2026-10-05/body-intrinsic-query-learning-v1/FINAL_REPORT.md)：三卡9训练完成、3600评价/40图/实际缓存重算PASS。PARTIAL身份BODY FAUST2.21/SCAPE7.17；DUAL2.63/8.07（%各库sqrt-area，非mm），几何分支更差。不采用该双路候选，不再在消费考试上调轮数。工程保留Topology，论文转向可靠解剖/身体结构参考与新的数据证据。
