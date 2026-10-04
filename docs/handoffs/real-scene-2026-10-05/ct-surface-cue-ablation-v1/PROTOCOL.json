@@ -1,0 +1,29 @@
+{
+  "stage": "CT_SURFACE_CUE_ABLATION_V1",
+  "purpose": "Separate posterior height from silhouette and scan-field-size priors; one finite mechanism test, not hyperparameter tuning",
+  "registered_after": "CT_ANATOMICAL_QUERY_PILOT_V1 results consumed; same 12 cases are supporting consumed tests, not fresh generalization",
+  "source": "immutable 78 eligible pilot cases /51 train/11 dev/12 test/4 author_val",
+  "methods": [
+    "GLOBAL_REGRESSION",
+    "ORDERED_QUERY"
+  ],
+  "input_contracts": {
+    "FULL_SURFACE": "reuse actual pilot checkpoints/predictions",
+    "MASK_COORDS": "zero channel0 height for both training and inference",
+    "COORDS_ONLY": "zero channel0 height and channel1 valid mask for both training and inference"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "epochs": 120,
+  "batch_size": 8,
+  "optimizer": "AdamW lr0.001 weight_decay0.0001",
+  "checkpoint": "same dev target mean X/Z, every10 epochs",
+  "same_targets_and_split": true,
+  "metrics_and_aggregation": "exact existing pilot all valid target X/Z; case targets mean -> case seed median -> case equal mean; paired-case deltas",
+  "no_new_source_selection": true,
+  "no_medical_ground_truth": true,
+  "decision": "If removing height does not clearly harm results, do not claim the model has learned depth-dependent internal anatomy; retain facts then proceed engineering integration. No more rounds on this consumed exam."
+}
