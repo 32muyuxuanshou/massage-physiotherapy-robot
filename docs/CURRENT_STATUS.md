@@ -8,11 +8,13 @@
 
 ## 最新实际交付
 
+[2026-10-04连续执行完整索引](handoffs/real-scene-2026-10-04/continuous-execution-summary-v1/README.md)：三阶段实际实验已提交，1169个交付文件与Git blob一致。[体表线学习原型](handoffs/real-scene-2026-10-04/surface-line-completion-pilot-v1/README.md)已写好，7脚本语法/本地数据sanity通过，尚未训练。服务器目前可登录，但`/raid5/xuhd`及数据目录不可见，存储未就绪；不把连接故障或待运行代码计为实验完成。
+
 1. [有界参考对应V1](handoffs/real-scene-2026-10-04/bounded-reference-correspondence-v1/FINAL_REPORT.md)：同一60固定表面、300对应缓存/2400点/60图完成；180旧缓存精确继承、430源不变。16已消费验证来源切向带噪：FIXED9.271、RBF6.586、CONVEX4 5.338 mm；但P95 9.269→11.438变差。投影前考试点最大噪声响应14.730→4.563 mm，噪声放大减少；控制组仍全部退化，不能补救参考身份错误。工程基线保留，不当医学teacher。
 
-2. [俯卧参考到Mesh接口V1](handoffs/real-scene-2026-10-04/prone-reference-mesh-interface-v1/FINAL_REPORT.md)：20人×3seed×3几何方法180记录，132曲线、396绑定、3564ENG点和20全量图；train-only、267源不变、缓存位置/bary/法向实读通过。三seed完整的12/16测试角色：沟槽源点跨度25.52 mm，RigidD贴面1.58 mm、跨度仍25.41 mm；**接口跑通，当前曲线不宜当穴位参考**。下一步比较不放大噪声的对应机制，不启动医学伪标签训练。
+2. [俯卧参考到Mesh接口V1](handoffs/real-scene-2026-10-04/prone-reference-mesh-interface-v1/FINAL_REPORT.md)：20人×3seed×3几何方法180记录，132曲线、396绑定、3564ENG点和20全量图；train-only、267源不变、缓存位置/bary/法向实读通过。三seed完整的12/16测试角色：沟槽源点跨度25.52 mm，RigidD贴面1.58 mm、跨度仍25.41 mm；**接口跑通，当前曲线不宜当穴位参考**。对应机制增量见上项，不启动医学伪标签训练。
 
-3. [真实几何参考提取V1](handoffs/real-scene-2026-10-04/back-reference-extraction-v1/FINAL_REPORT.md)：30真实XYZ扫描×3方法、90曲线/评价完成；预测不输入作者标记/画线。共同覆盖中位90.66%；与作者画线差异：轮廓10.51、对称11.87、沟槽3.69 mm，沟槽26/30改善、4/30退化。90缓存独立重算PASS，30图全部保留。**非俯卧、作者已裁背部、非穴位GT；不替代临床精度。**原PLY仅XYZ，没有颜色；上一轮color_present不能据读取字段列表判真。继续俯卧数据的工程参考接口。
+3. [真实几何参考提取V1](handoffs/real-scene-2026-10-04/back-reference-extraction-v1/FINAL_REPORT.md)：30真实XYZ扫描×3方法、90曲线/评价完成；预测不输入作者标记/画线。共同覆盖中位90.66%；与作者画线差异：轮廓10.51、对称11.87、沟槽3.69 mm，沟槽26/30改善、4/30退化。90缓存独立重算PASS，30图全部保留。**非俯卧、作者已裁背部、非穴位GT；不替代临床精度。**原PLY仅XYZ，没有颜色；上一轮color_present不能据读取字段列表判真。俯卧接口增量见上项。
 
 4. [真实背部参考来源资格V1](handoffs/real-scene-2026-10-04/real-back-reference-qualification-v1/FINAL_REPORT.md)：20俯卧RGB实读/复看；324真实扫描、1326关联候选实算，459几何兼容候选，四标记路由60份合并成30参考包/30扫描SHA。1043项源资产前后冻结、30原扫描暴力最近点及坐标重建、30完整几何图通过。M1/M2到体表画线的每包中位再跨包中位约31.72 mm，注册标记轴不能直接当后正中线。**真实扫描参考可开发；仍无合格俯卧RGB-D/医学穴位GT；不以30扫描称30独立新患者。**零推理/拟合/训练。[完整索引](handoffs/real-scene-2026-10-04/real-back-reference-qualification-v1/README.md)
 
@@ -57,8 +59,12 @@ PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼�
 
 ## 运行位置
 
-最新实际执行服务器：`xuhd@172.18.18.151:436`，本轮单CPU做真实参考资格核查，没有新Mesh拟合或GPU模型加载。环境、代码、输入与资产SHA见[最新复现说明](handoffs/real-scene-2026-10-04/real-back-reference-qualification-v1/REPRODUCTION.md)。上一轮BEHAVE为5张RTX2080Ti按人物运行，属于历史已完成批次。
+最新实际执行服务器：`xuhd@172.18.18.151:436`，本轮CPU完成真实曲线提取、俯卧参考绑定和有界对应，没有新SAM推理、Mesh拟合或训练。三个已完成包的运行入口及核验见[连续执行索引](handoffs/real-scene-2026-10-04/continuous-execution-summary-v1/README.md)。随后服务器恢复登录但`/raid5/xuhd`不可见，已有环境/数据当前不能访问；待服务器侧恢复既有存储，原因未确认。上一轮BEHAVE多GPU属于历史已完成批次。
 
+- 有界参考对应：`/raid5/xuhd/datasets/bounded_reference_correspondence_v1_20261004`
+- 俯卧参考Mesh接口：`/raid5/xuhd/datasets/prone_reference_mesh_interface_v1_20261004`
+- 真实曲线提取：`/raid5/xuhd/datasets/back_reference_extraction_v1_20261004`
+- 待运行学习原型：`/raid5/xuhd/datasets/surface_line_completion_pilot_v1_20261004`
 - 最新真实参考资格：`/raid5/xuhd/datasets/real_back_reference_qualification_v1_20261004`
 - 参考辅助对应：`/raid5/xuhd/datasets/back_reference_assisted_v1_20261004`
 - 已知参考受控闭环：`/raid5/xuhd/datasets/back_controlled_reference_v1_20261004`
@@ -73,7 +79,7 @@ PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼�
 
 ## 下一步
 
-工程atlas V2、几何/对应闭环、四参考辅助及真实参考资格已完成。30份真实扫描包可继续开发标记提取、体表线表达与对应；注册标记用于配准，后正中线候选必须单独建立并核身份，不直接沿M1→M2轴算穴位。当前20张俯卧图背部有衣物覆盖且无独立解剖标签。保留Rigid/各D/简单RBF基线，参考提取与同一扫描的对应明确后再比较固定拓扑与参考辅助规则。oracle四点改善不能当自动穴位定位；带噪参考的退化需要保留。低贴面分数仍不能保证绑定点正确，不把D网格当穴位teacher。真实相机及裸背数据资格仍未补齐。当前45帧不换样本，新cohort资格不足不填数；独立证据明确后再决定模型训练。
+三个新阶段表明：几何曲线可在完整扫描上靠近作者画线，但衣物俯卧空间留出下约25 mm不稳定；低贴面分数未使对应变可靠；非负插值减少噪声放大，但尾部仍可能退化。下一项为已写好的真实体表线监督/缺失块训练对照，先比较参考提取，不微调SAM、不生成穴位伪标签。服务器存储恢复后重新同步最新代码，跑正向/反向与真实数据准备，再执行20训练/4开发/6已消费评价角色、两策略×3种子。不能将数字目录代理说成独立患者、作者线说成穴位GT。原45帧/既有数据角色不更换；部署标定及解剖参考仍待独立验收。
 
 本轮原计划见[工程模板与几何机制验证计划V2](research/2026-10-03-no-deployment-camera/NEXT_EXECUTION_PLAN_V2.md)，执行结果以上方最新报告为准。完整原RGB新副本在本地 `output/back_geometry_correspondence_v2/private_review/INDEX.html`。
 

@@ -1,0 +1,44 @@
+{
+  "window_start_utc": "2026-10-04 04:23:09 UTC",
+  "requested_window_end_utc": "2026-10-04 07:23:09 UTC",
+  "completed_scientific_stages": 3,
+  "new_sam_inferences": 0,
+  "new_mesh_fits": 0,
+  "new_trained_models": 0,
+  "stages": [
+    {
+      "package": "back-reference-extraction-v1",
+      "status": "COMPLETE_COMMITTED_AND_PUSHED",
+      "commit": "b885c7ad0e1de6a06a4067e9cbca8476dcdae756",
+      "files_manifest": "../back-reference-extraction-v1/FILES_MANIFEST.json",
+      "cache_verification": "../back-reference-extraction-v1/CACHE_REPLAY_VERIFICATION.json"
+    },
+    {
+      "package": "prone-reference-mesh-interface-v1",
+      "status": "COMPLETE_COMMITTED_AND_PUSHED",
+      "commit": "051ffbba0c4cf34906c76fed7a44e79527b51a91",
+      "files_manifest": "../prone-reference-mesh-interface-v1/FILES_MANIFEST.json",
+      "cache_verification": "../prone-reference-mesh-interface-v1/CACHE_VERIFICATION.json"
+    },
+    {
+      "package": "bounded-reference-correspondence-v1",
+      "status": "COMPLETE_COMMITTED_AND_PUSHED",
+      "commit": "36b0b74e6b1c22c10dab90fd02275b42ea09d711",
+      "files_manifest": "../bounded-reference-correspondence-v1/FILES_MANIFEST.json",
+      "cache_verification": "../bounded-reference-correspondence-v1/CACHE_VERIFICATION.json"
+    },
+    {
+      "package": "surface-line-completion-pilot-v1",
+      "status": "CODE_SYNTAX_AND_DATA_SANITY_VERIFIED_SERVER_STORAGE_UNAVAILABLE",
+      "model_forward_backward": "UNKNOWN_NO_RESULT_RECEIVED",
+      "training_entrypoint_invoked": false
+    }
+  ],
+  "server_reviewed_delivery_resync": "PENDING_STORAGE_UNAVAILABLE",
+  "server_storage_check": {
+    "/raid5": "exists, listing indicates empty directory",
+    "/raid5/xuhd": "NOT_FOUND",
+    "/raid5/xuhd/datasets": "NOT_FOUND"
+  },
+  "raw_data_loss_confirmed": false
+}
