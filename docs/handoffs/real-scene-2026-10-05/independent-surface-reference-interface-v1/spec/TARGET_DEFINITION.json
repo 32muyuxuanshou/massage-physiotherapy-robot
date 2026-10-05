@@ -1,0 +1,98 @@
+{
+  "scope": "existing eight candidate slots; standards-grounded validation preparation only",
+  "standard": "GB/T 12346-2021",
+  "official_registry": "https://std.samr.gov.cn/gb/search/gbDetailedCNF?id=D1E86BE73ADD430EE05397BE0A0A206B",
+  "source_fulltext_university_mirror": "https://zynj.shutcm.edu.cn/_upload/article/files/66/b4/b34a95604d04b0bf686251b2d317/368ea8b0-187c-48a7-a402-ffdf1e11bb99.pdf",
+  "fulltext_sha256": "256797c814621b238f2599e0efd3a9c215e9f9320d1055ae51250803e568af8b",
+  "points": [
+    {
+      "point_id": "GV14",
+      "name": "大椎",
+      "level": "C7",
+      "laterality": "midline",
+      "lateral_b_cun": 0.0,
+      "standard_clause": "5.13.14",
+      "pdf_page_1based": 33
+    },
+    {
+      "point_id": "GV4",
+      "name": "命门",
+      "level": "L2",
+      "laterality": "midline",
+      "lateral_b_cun": 0.0,
+      "standard_clause": "5.13.4",
+      "pdf_page_1based": 33
+    },
+    {
+      "point_id": "BL13_L",
+      "name": "肺俞",
+      "level": "T3",
+      "laterality": "patient_left",
+      "lateral_b_cun": 1.5,
+      "standard_clause": "5.7.13",
+      "pdf_page_1based": 22
+    },
+    {
+      "point_id": "BL13_R",
+      "name": "肺俞",
+      "level": "T3",
+      "laterality": "patient_right",
+      "lateral_b_cun": 1.5,
+      "standard_clause": "5.7.13",
+      "pdf_page_1based": 22
+    },
+    {
+      "point_id": "BL15_L",
+      "name": "心俞",
+      "level": "T5",
+      "laterality": "patient_left",
+      "lateral_b_cun": 1.5,
+      "standard_clause": "5.7.15",
+      "pdf_page_1based": 22
+    },
+    {
+      "point_id": "BL15_R",
+      "name": "心俞",
+      "level": "T5",
+      "laterality": "patient_right",
+      "lateral_b_cun": 1.5,
+      "standard_clause": "5.7.15",
+      "pdf_page_1based": 22
+    },
+    {
+      "point_id": "BL18_L",
+      "name": "肝俞",
+      "level": "T9",
+      "laterality": "patient_left",
+      "lateral_b_cun": 1.5,
+      "standard_clause": "5.7.18",
+      "pdf_page_1based": 22
+    },
+    {
+      "point_id": "BL18_R",
+      "name": "肝俞",
+      "level": "T9",
+      "laterality": "patient_right",
+      "lateral_b_cun": 1.5,
+      "standard_clause": "5.7.18",
+      "pdf_page_1based": 22
+    }
+  ],
+  "required_landmark_semantics": "inferior spinous-process reference level / depression as required by the point definition; not CT vertebra centroid or posterior voxel skin proxy",
+  "grade_field_is_B_cun": false,
+  "grade_field_definition": "normalized vertebral grade coordinate, T3=0 and L2=1; not length or cun",
+  "B_cun_rule": {
+    "standard_clause": "4.2.2 Table 1",
+    "pdf_page_1based": 11,
+    "back_lumbar_reference_segment": "scapular medial border to posterior midline",
+    "divisions": 3,
+    "assessment": "input reference identification and measurement posture must be recorded; no automatic shoulder-width / torso-width / universal 25mm assumption"
+  },
+  "posture_qualification": {
+    "standard_landmark_clause": "4.2.1",
+    "pdf_page_1based": 10,
+    "T3_scapular_relation_posture": "upright with arms down; not presumed invariant under prone arm elevation"
+  },
+  "medical_semantics_status": "requires independently identified clinical reference; no AI clinical truth",
+  "robot_release": false
+}
