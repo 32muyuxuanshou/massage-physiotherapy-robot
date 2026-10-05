@@ -1,0 +1,32 @@
+{
+  "task": "TWO_TYPED_REFERENCE_BASELINE_ON_EXTERNAL_TUM",
+  "frozen_before_first_TUM_model_inference": true,
+  "new_training": false,
+  "new_geometry_fitting": false,
+  "reference_input": [
+    "T3",
+    "L2"
+  ],
+  "reference_source": "EXACT_CT_BONE_TO_SKIN_PROXY_ORACLE_NOT_CLINICAL_PROMPT",
+  "evaluation_levels": [
+    "C7",
+    "T5",
+    "T9"
+  ],
+  "reference_levels_excluded_from_score": true,
+  "methods": [
+    "FROZEN_GLOBAL_REGRESSION",
+    "FROZEN_ORDERED_QUERY",
+    "FROZEN_INDEPENDENT_HEATMAP",
+    "TWO_REFERENCE_PRIOR",
+    "GLOBAL_PLUS_TWO_REFERENCE",
+    "QUERY_PLUS_TWO_REFERENCE"
+  ],
+  "prior_fit": "Prior source TRAIN only, eligible with valid T3/L2; per-level median normalized along-segment fraction and lateral residual; never uses TUM values for fitting",
+  "reference_calibration": "Affine vertical span and horizontal residual around the T3-L2 line, using predicted endpoints and supplied oracle endpoints; projection on unchanged posterior surface",
+  "metric": "Remaining valid target X/Z mean per case, median over initialization seeds, case-equal average; all valid errors retained when surface misses",
+  "case_exclusions": "Missing T3/L2 input references data QA only; all original17 in manifest and missing counts reported",
+  "purpose": "Test whether sparse typed anatomy resolves source/FOV ambiguity better than surface-only predictions, as an engineering baseline; not a new architecture contribution, not clinical accuracy",
+  "comparison": "No-reference and reference-assisted use identical held-out levels and source input for each case",
+  "scope": "CT derived geometry and anatomy proxies, not prone RGBD, no physicians substituted"
+}

@@ -1,0 +1,21 @@
+{
+  "date_local": "2026-10-05",
+  "server": "xuhd@172.18.18.151:436",
+  "root": "/raid5/xuhd/datasets/tum_synchronized_anatomy_validation_20261005",
+  "completed": [
+    {"stage": "selected download", "actual_files": 268, "actual_bytes": 513800949, "seconds": 157.11128425598145, "author_sha512": "PASS"},
+    {"stage": "NIfTI header and source coordinate QA", "cases": 17, "world_cases": 10, "unregistered_export_cases": 7, "model_execution": false},
+    {"stage": "source preparation final", "cases": 17, "valid_targets": 74, "seconds": 28.29850935935974},
+    {"stage": "first inference adapter failure", "reason": "Path-only sha received string", "completed_predictions": 0, "receipt": "EVALUATOR_ADAPTER_FIX.json"},
+    {"stage": "frozen external inference", "model_checkpoints": 9, "actual_prediction_caches": 170, "seconds_rounded": 51.23, "new_training": false},
+    {"stage": "pre-registered two-reference comparison", "actual_prediction_caches": 272, "seconds": 17.962754487991333, "reference_targets_excluded": true, "new_training": false},
+    {"stage": "CPU replay and complete visual review", "input_caches": 17, "prediction_caches": 442, "target_evaluations": 1380, "pages_viewed": 9, "status": "PASS"},
+    {"stage": "source and execution integrity", "source_files_reopened": 268, "execution_files_rehashed": 11, "models_unchanged": 9, "status": "PASS"}
+  ],
+  "claims": {
+    "clinical_accuracy": false,
+    "prone_RGBD_accuracy": false,
+    "robot_release": false,
+    "TUM_fine_tuning": false
+  }
+}

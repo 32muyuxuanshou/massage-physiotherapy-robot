@@ -1,0 +1,43 @@
+{
+  "task": "TUM_SYNCHRONIZED_ANATOMY_QUALIFICATION_AND_EXTERNAL_MODEL_VALIDATION_V1",
+  "source": "https://mediatum.ub.tum.de/1846795",
+  "doi": "10.14459/2026mp1846795",
+  "license": "CC-BY-4.0",
+  "patients": 17,
+  "raw_RGBD": false,
+  "prone": false,
+  "clinical_acupoint_GT": false,
+  "source_checksums": "sha512 author manifest",
+  "scope": [
+    "actual select download to server",
+    "units axes skin/vertebra identity QA from source code",
+    "all-patient source geometry review",
+    "if compatible, frozen CT model external evaluation, no retraining or dev tuning",
+    "evaluate explicit source references as anatomical proxies, not WHO points"
+  ],
+  "frozen_model_source": "ct_anatomical_query_pilot_20261005",
+  "methods": [
+    "GLOBAL_REGRESSION",
+    "INDEPENDENT_HEATMAP",
+    "ORDERED_QUERY"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "checkpoint_selection": "existing previously frozen author-source dev selected checkpoints; no TUM checkpoint selection",
+  "targets": [
+    "C7",
+    "T3",
+    "T5",
+    "T9",
+    "L2"
+  ],
+  "target_definition": "posterior 2 percent vertebra extrema mean, projected to source posterior body surface; exactly CT pilot proxy meaning, not palpated spinous depression",
+  "exclude": "no new model-result exclusion; missing/clipped levels data QA only; report all source failures",
+  "input": "same physical surface raster and 128x128 height/mask/metric span as frozen CT pilot; no bone information as input",
+  "metric": "all valid proxy X/Z distance, per-case valid target mean then seed median, case-equal average; report projection hit separately",
+  "external_analysis": "all qualified cases, no cherry-pick; prior source test remains consumed",
+  "server_root": "/raid5/xuhd/datasets/tum_synchronized_anatomy_validation_20261005"
+}

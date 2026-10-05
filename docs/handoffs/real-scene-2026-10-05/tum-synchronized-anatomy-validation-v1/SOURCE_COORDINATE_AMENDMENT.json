@@ -1,0 +1,15 @@
+{
+  "status": "SOURCE_ONLY_AMENDMENT_BEFORE_MODEL_INFERENCE",
+  "reason": "Seven NIfTI files declare unknown units and no valid qform/sform; nibabel default centred affine is not source export coordinates",
+  "world_group": "qform or sform >0, source skin/vertebra inside native-world volume",
+  "export_diagnostic": "qform=sform=0, author skin/vertebra in positive origin-zero millimetric export extent. Use source paired export geometry; anatomical left/right and independent NIfTI world are not proven",
+  "primary": "World-qualified subgroup, report all17 additionally and show export group separately; no pooled independent-world precision claim",
+  "unchanged": [
+    "model weights",
+    "source target posterior-proxy formula",
+    "evaluation targets",
+    "no model-output selections",
+    "no training"
+  ],
+  "cache": "Previously completed native-world input rasters may be re-opened only if bounds identical; unfinished export cases never saved an input"
+}
