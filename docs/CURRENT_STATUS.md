@@ -8,6 +8,8 @@
 
 ## 最新实际交付
 
+[俯卧参考→规则→Mesh工作台V1](handoffs/real-scene-2026-10-05/prone-reference-rule-workbench-v1/FINAL_REPORT.md)：20人缓存接入、160个几何fixture候选、实际S104图像点击/HTTP生成/保存/独立重算通过。可输入7参考与显式个体B-cun比例，生成8候选及face/bary/normal；切换患者清空输入。参考及比例未医学确认，相机未部署标定，不报告穴位准确率。
+
 [CT输入线索对照V1](handoffs/real-scene-2026-10-05/ct-surface-cue-ablation-v1/FINAL_REPORT.md)：12新训练/1404缓存/78全量图/CPU重算完成。有序查询完整17.57、去高度17.08、只留扫描尺寸25.20mm（12已消费CT测试，非医学精度）；没有稳定高度增益。停止CT小模型继续调试，保留来源与基线，进入真实MHR参考输入→规则候选→面绑定工程工作台。
 
 [CT解剖参考查询V1](handoffs/real-scene-2026-10-05/ct-anatomical-query-pilot-v1/FINAL_REPORT.md)：三卡9训练完成，78输入/780缓存/3120有效目标和全量图、实际缓存独立重算通过。12例CT代理X/Z：回归21.80、热图20.94、有序查询17.57mm；3初始化一致优于回归，逐例8改善/4退化。保留来源内候选，不称临床或俯卧定位；输入证据消融已完成（见上项），不继续CT小模型调试。

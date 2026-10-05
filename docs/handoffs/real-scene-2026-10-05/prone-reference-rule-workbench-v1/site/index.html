@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh"><meta charset="utf-8"><title>俯卧背部参考与规则工作台</title>
+<style>
+body{margin:0;background:#eef2f6;color:#203047;font:16px system-ui}header{padding:20px 25px;background:white;border-bottom:1px solid #d1dae5}h1{font-size:25px;margin:0 0 10px}p{line-height:1.5;margin:7px 0;color:#536477}.small{font-size:13px}main{display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:18px}.card{background:white;padding:17px;border-radius:10px}button,select,input{font:inherit;padding:7px;border:1px solid #bccbda;border-radius:5px;margin:4px}button{background:#e4efff;cursor:pointer}canvas{max-width:100%;background:#f0f4f7;border:1px solid #d3dce7}#photo{display:block;max-height:760px;width:auto;margin:auto}#surface{width:100%}#status{padding:10px;background:#edf6fc;min-height:24px}table{font-size:12px;border-collapse:collapse;width:100%}td,th{padding:6px;border-bottom:1px solid #ddd;text-align:left}#references{display:flex;gap:4px;flex-wrap:wrap}.ref{font-size:13px;padding:5px;background:#eee;border-radius:5px}.done{background:#d7f2e9}@media(max-width:900px){main{display:block}.card{margin-bottom:15px}}
+</style>
+<header><h1>俯卧背部：参考 → 规则候选 → Mesh绑定</h1>
+<label>人物<select id="subject" aria-label="人物"></select></label><span id="asset"></span>
+<p>原有20人、input 0、RigidD缓存。青色是输入参考，紫色是规则候选，橙色是原ENG拓扑点。</p>
+<p class="small">先记录5个椎体水平候选与左右方向参考，再填写比例。参考名称不代表医学定位正确；当前相机为历史重建合同，尚未放行治疗。</p></header>
+<main><section class="card"><h3>原图与透视叠加</h3><label><input id="meshToggle" type="checkbox" checked>显示缓存后背面</label><label><input id="engToggle" type="checkbox">显示ENG点</label>
+<canvas id="photo"></canvas><p class="small">选择右侧参考名称，再点击原图。交点来自预测Mesh，不是独立真值。未命中时不补点。</p></section>
+<section class="card"><h3>参考与三维检查</h3><canvas id="surface" width="800" height="520"></canvas>
+<div><label>旋转<input id="ry" type="range" min="-180" max="180" value="-15"></label><label>俯仰<input id="rx" type="range" min="-90" max="90" value="10"></label></div>
+<div><label>当前参考<select id="reference" aria-label="当前参考">
+<option value="C7_T1">C7下方凹陷候选</option><option value="T3">T3棘突下缘水平候选</option><option value="T5">T5棘突下缘水平候选</option><option value="T9">T9棘突下缘水平候选</option><option value="L2">L2下方凹陷候选</option><option value="LEFT_REF">患者左侧方向参考</option><option value="RIGHT_REF">患者右侧方向参考</option></select><button id="undo">撤销最后参考</button></div>
+<div id="references"></div>
+<div><label>1 B-cun / mm<input id="scale" type="number" min="0.1" step="0.1" placeholder="填写实测/工程占位" aria-label="1 B-cun 毫米"></label></div>
+<div><label>比例来源<input id="scaleSource" placeholder="说明测量依据或工程占位" aria-label="比例来源"></label></div>
+<div><button id="generate">生成规则候选</button><button id="save">保存复核与规则JSON</button></div>
+<p id="status" role="status">正在读取缓存。</p>
+<table><thead><tr><th>类型/名称</th><th>XYZ / mm</th><th>Face</th></tr></thead><tbody id="rows"></tbody></table>
+<p class="small">输出含参考来源、比例来源、Mesh hash、XYZ(m)、face/bary/normal。比例不由人体bbox猜测，CT骨标签代理不会自动替换这里的棘突凹陷参考。</p></section></main>
+<script>
+let D=null,image=null;let refs={},history=[],rules=[],ruleOutput=null;
+const required=['C7_T1','T3','T5','T9','L2','LEFT_REF','RIGHT_REF'];
+const photo=document.getElementById('photo'),pc=photo.getContext('2d'),surface=document.getElementById('surface'),sc=surface.getContext('2d'),subjects=document.getElementById('subject');
+const $=id=>document.getElementById(id),add=(a,b)=>a.map((x,i)=>x+b[i]),sub=(a,b)=>a.map((x,i)=>x-b[i]),mul=(a,s)=>a.map(x=>x*s),dot=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+const project=v=>{const q=D.K.map(r=>dot(r,v));return[q[0]/q[2],q[1]/q[2]]};
+function hitRay(u,v){const dir=[(u-D.K[0][2])/D.K[0][0],(v-D.K[1][2])/D.K[1][1],1];let best=null;
+ for(let i=0;i<D.faces.length;i++){const [a,b,c]=D.faces[i].map(j=>D.vertices_m[j]),e1=sub(b,a),e2=sub(c,a),h=cross(dir,e2),det=dot(e1,h);if(Math.abs(det)<1e-12)continue;const s=mul(a,-1),beta=dot(s,h)/det;if(beta<0||beta>1)continue;const q=cross(s,e1),gamma=dot(dir,q)/det;if(gamma<0||beta+gamma>1)continue;const t=dot(e2,q)/det;if(t<=0||best&&t>=best.t)continue;let n=cross(e1,e2);n=mul(n,1/Math.sqrt(dot(n,n)));best={t,xyz_m:mul(dir,t),face_id:D.global_face_ids[i],barycentric:[1-beta-gamma,beta,gamma],normal:n,image_uv:[u,v]};}return best;
+}
+function points(){return[...($('engToggle').checked?D.engineering_points.map(p=>({...p,type:'工程拓扑',color:'#f28d00'})):[]),...Object.entries(refs).map(([id,p])=>({...p,id,type:'输入参考',color:'#00aaba'})),...rules.map(p=>({...p,type:'规则候选',color:'#a73ce0'}))]}
+function drawPhoto(){photo.width=D.image_width;photo.height=D.image_height;pc.fillStyle='#edf3f7';pc.fillRect(0,0,photo.width,photo.height);if(image)pc.drawImage(image,0,0);else{pc.fillStyle='#546477';pc.font='18px sans-serif';pc.fillText('公共版无原RGB；本地私有版本可在照片点击',20,40)}
+ if($('meshToggle').checked){pc.fillStyle='rgba(22,155,180,.13)';for(const f of D.faces){const p=f.map(j=>project(D.vertices_m[j]));pc.beginPath();p.forEach((q,i)=>i?pc.lineTo(...q):pc.moveTo(...q));pc.closePath();pc.fill()}}
+ for(const p of points()){const uv=project(p.xyz_m);pc.beginPath();pc.arc(...uv,5,0,Math.PI*2);pc.fillStyle=p.color;pc.fill();pc.strokeStyle='#213147';pc.stroke();pc.font='13px sans-serif';pc.fillText(p.id,uv[0]+6,uv[1]-5)}
+}
+function drawSurface(){const ay=Number($('ry').value)*Math.PI/180,ax=Number($('rx').value)*Math.PI/180,center=D.vertices_m.reduce((s,v)=>add(s,v),[0,0,0]).map(x=>x/D.vertices_m.length);
+ const rotate=v=>{v=sub(v,center);const a=[v[0]*Math.cos(ay)+v[2]*Math.sin(ay),v[1],-v[0]*Math.sin(ay)+v[2]*Math.cos(ay)];return[a[0],a[1]*Math.cos(ax)-a[2]*Math.sin(ax),a[1]*Math.sin(ax)+a[2]*Math.cos(ax)]};const vv=D.vertices_m.map(rotate),bound=Math.max(...vv.map(v=>Math.max(Math.abs(v[0]),Math.abs(v[1])))),scale=210/bound,xy=v=>[400+v[0]*scale,260+v[1]*scale];sc.fillStyle='#f2f6f9';sc.fillRect(0,0,800,520);
+ const fs=D.faces.map(f=>({f,z:f.reduce((s,j)=>s+vv[j][2],0)/3})).sort((a,b)=>b.z-a.z);for(const {f} of fs){const p=f.map(j=>xy(vv[j]));sc.beginPath();p.forEach((v,i)=>i?sc.lineTo(...v):sc.moveTo(...v));sc.closePath();sc.fillStyle='#bdced7';sc.fill();sc.strokeStyle='rgba(55,77,95,.14)';sc.lineWidth=.4;sc.stroke()}
+ for(const p of points()){const q=xy(rotate(p.xyz_m));sc.beginPath();sc.arc(...q,5,0,Math.PI*2);sc.fillStyle=p.color;sc.fill();sc.fillStyle='#24364e';sc.font='11px sans-serif';sc.fillText(p.id,q[0]+7,q[1]-4)}sc.fillStyle='#536477';sc.font='13px sans-serif';sc.fillText('真实缓存后背面 / camera_m / 正交三维视图',12,20);
+}
+function draw(){if(!D)return;drawPhoto();drawSurface();$('rows').replaceChildren();for(const p of points()){const tr=document.createElement('tr');for(const value of [p.type+' '+p.id,p.xyz_m.map(x=>(x*1000).toFixed(1)).join(', '),p.face_id??'—']){const td=document.createElement('td');td.textContent=value;tr.append(td)}$('rows').append(tr)}$('references').replaceChildren();for(const name of required){const span=document.createElement('span');span.className='ref'+(refs[name]?' done':'');span.textContent=name+(refs[name]?' ✓':' 待录入');$('references').append(span)}}
+async function load(subject){D=await(await fetch('cases/'+subject+'.json')).json();refs={};history=[];rules=[];ruleOutput=null;image=null;$('scale').value='';$('scaleSource').value='';$('reference').value=required[0];$('asset').textContent=' | '+D.source_method;$('status').textContent='已读取 '+subject+' 缓存；记录参考候选。';if(D.rgb_data_url){image=new Image();image.onload=draw;image.src=D.rgb_data_url}else draw()}
+photo.addEventListener('click',e=>{if(!image){$('status').textContent='当前是公共几何版，请用本地含原图版本录入。';return}const rect=photo.getBoundingClientRect(),u=(e.clientX-rect.left)*photo.width/rect.width,v=(e.clientY-rect.top)*photo.height/rect.height,hit=hitRay(u,v);if(!hit){$('status').textContent='此像素未命中预测后背面。';return}const name=$('reference').value;history.push({name,previous:refs[name]});refs[name]={...hit,origin:'MANUAL_IMAGE_RAY_UNVERIFIED'};rules=[];ruleOutput=null;const next=required.find(n=>!refs[n]);if(next)$('reference').value=next;$('status').textContent='已记录 '+name+'；面绑定成功不等于解剖身份已确认。';draw()});
+$('undo').onclick=()=>{const last=history.pop();if(last){if(last.previous)refs[last.name]=last.previous;else delete refs[last.name]}rules=[];ruleOutput=null;draw()};
+$('generate').onclick=async()=>{const missing=required.filter(n=>!refs[n]);if(missing.length){$('status').textContent='还缺参考：'+missing.join('、');return}const scale=Number($('scale').value),scaleSource=$('scaleSource').value.trim();if(!(scale>0)||!scaleSource){$('status').textContent='请填写比例值和来源；不会从bbox自动猜测B-cun。';return}const response=await fetch('/api/rules',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({subject:D.subject,mesh_sha256:D.mesh_sha256,references:refs,b_cun_mm:scale,scale_source:scaleSource})});if(!response.ok){$('status').textContent='规则服务失败，请查看本地终端。';return}ruleOutput=await response.json();rules=ruleOutput.rules.map(p=>({id:p.id,xyz_m:p.xyz_m,face_id:p.face_index,barycentric:p.barycentric,normal:p.surface_normal}));$('status').textContent='生成8个规则候选；参考/比例/标定尚未验证，不用于治疗。';draw()};
+$('save').onclick=async()=>{const review={schema:'PATIENT_REFERENCE_RULE_REVIEW_V1',subject:D.subject,mesh_sha256:D.mesh_sha256,source_frame:D.source_frame,references:refs,b_cun_mm:$('scale').value?Number($('scale').value):null,scale_source:$('scaleSource').value,rule_output:ruleOutput,created_at:new Date().toISOString(),medical_validated:false,calibration_validated:false,robot_release:false};const response=await fetch('/api/reviews',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(review)});if(!response.ok){$('status').textContent='本地保存失败。';return}const result=await response.json();$('status').textContent='已写入本地复核文件：'+result.saved_file};
+for(const id of ['ry','rx','meshToggle','engToggle'])$(id).oninput=draw;subjects.onchange=()=>load(subjects.value);
+fetch('CASE_INDEX.json').then(r=>r.json()).then(index=>{for(const s of index.subjects){const o=document.createElement('option');o.textContent=s;o.value=s;subjects.append(o)}subjects.value=index.default;return load(index.default)});
+</script></html>
