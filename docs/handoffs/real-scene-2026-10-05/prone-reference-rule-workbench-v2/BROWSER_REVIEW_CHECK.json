@@ -1,0 +1,997 @@
+{
+  "status": "PASS",
+  "review_path": "E:\\项目-按摩理疗机器人\\output\\prone_reference_rule_workbench_v2\\private_reviews\\review_20261005T032847244400Z.json",
+  "review_sha256": "2b6df8af9dd0beee990cb0e4d4e9bc465857aafb1c129007b7199dd92352e4cc",
+  "actual_review": {
+    "schema": "PATIENT_REFERENCE_RULE_REVIEW_V2",
+    "subject": "S104",
+    "mesh_sha256": "0929ffdc87cc8fe5bef88a70ba7d1bdaabf6f2aaf80bc98e1f471448ccea23c5",
+    "source_frame": "historical reconstructed camera_m",
+    "references": {
+      "T3": {
+        "t": 1.5527044708926316,
+        "xyz_m": [
+          -0.0832480149945756,
+          -0.3007903007465711,
+          1.5527044708926316
+        ],
+        "face_id": 12707,
+        "barycentric": [
+          0.03663211962006574,
+          0.4776202757992385,
+          0.48574760458069577
+        ],
+        "normal": [
+          0.0757003979749702,
+          0.19049674936229954,
+          -0.9787647512190191
+        ],
+        "image_uv": [
+          216.2565445026178,
+          277.23753280839895
+        ],
+        "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+      },
+      "L2": {
+        "t": 1.5584701620569354,
+        "xyz_m": [
+          -0.0835571416529307,
+          0.02158782213434123,
+          1.5584701620569354
+        ],
+        "face_id": 14579,
+        "barycentric": [
+          0.374665933557406,
+          0.13195354019115693,
+          0.4933805262514371
+        ],
+        "normal": [
+          -0.15150320379509383,
+          -0.40739377037707397,
+          -0.9005981873720236
+        ],
+        "image_uv": [
+          216.2565445026178,
+          395.0328083989501
+        ],
+        "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+      },
+      "LEFT_REF": {
+        "t": 1.657833976420518,
+        "xyz_m": [
+          -0.1851553237889093,
+          -0.1457221784282103,
+          1.657833976420518
+        ],
+        "face_id": 13689,
+        "barycentric": [
+          0.057459811914361614,
+          0.4897967328213878,
+          0.4527434552642506
+        ],
+        "normal": [
+          -0.9416497793573367,
+          -0.021639793250483725,
+          -0.335897919589204
+        ],
+        "image_uv": [
+          184.00523560209425,
+          337.29002624671915
+        ],
+        "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+      },
+      "RIGHT_REF": {
+        "t": 1.5921568891924862,
+        "xyz_m": [
+          -0.0028124267792245285,
+          -0.13994921903673216,
+          1.5921568891924862
+        ],
+        "face_id": 13707,
+        "barycentric": [
+          0.03564194155519346,
+          0.6079157033602759,
+          0.35644235508453065
+        ],
+        "normal": [
+          0.20116110713223384,
+          0.04897274168078337,
+          -0.9783332149884318
+        ],
+        "image_uv": [
+          245.0523560209424,
+          337.29002624671915
+        ],
+        "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+      },
+      "C7_T1": {
+        "face_id": 12048,
+        "barycentric": [
+          0.07299370320429588,
+          0.19164808009292286,
+          0.7353582167027812
+        ],
+        "xyz_m": [
+          -0.08063270366636384,
+          -0.36704395739142215,
+          1.5475436992484348
+        ],
+        "normal": [
+          0.08334089460122933,
+          0.03206344683214875,
+          -0.9960051358624156
+        ],
+        "raw_target_m": [
+          -0.08089616046357576,
+          -0.36714531619072943,
+          1.5506922654398165
+        ],
+        "projection_distance_mm": 3.1611947348599205,
+        "prior_fraction": -0.20588235557079315,
+        "prior_lateral_ratio": 0.007544286549091339,
+        "source_training_cases": 14,
+        "origin": "ENGINEERING_ACCEPTED_CT_PROXY_SUGGESTION",
+        "semantic_review_required": true,
+        "medical_validated": false,
+        "semantic_note": "CT surface proxy ratio transferred to candidate slot; not the named spinous-process depression.",
+        "accepted_as_engineering_candidate": true
+      },
+      "T5": {
+        "face_id": 13021,
+        "barycentric": [
+          0.6623403782177979,
+          0.19946327326667637,
+          0.13819634851552573
+        ],
+        "xyz_m": [
+          -0.08163547301846488,
+          -0.24171023203650135,
+          1.5621384679990895
+        ],
+        "normal": [
+          -0.011548730932541633,
+          0.16540962178694216,
+          -0.9861573321910396
+        ],
+        "raw_target_m": [
+          -0.08173988229533075,
+          -0.2402148037424048,
+          1.5532228586103638
+        ],
+        "projection_distance_mm": 9.040757592824518,
+        "prior_fraction": 0.18786601722240448,
+        "prior_lateral_ratio": 0.005163822788745165,
+        "source_training_cases": 38,
+        "origin": "ENGINEERING_ACCEPTED_CT_PROXY_SUGGESTION",
+        "semantic_review_required": true,
+        "medical_validated": false,
+        "semantic_note": "CT surface proxy ratio transferred to candidate slot; not the named spinous-process depression.",
+        "accepted_as_engineering_candidate": true
+      },
+      "T9": {
+        "face_id": 13700,
+        "barycentric": [
+          0.8297955314245005,
+          0.00831497499091057,
+          0.16188949358458896
+        ],
+        "xyz_m": [
+          -0.08419654469033522,
+          -0.13413716490338876,
+          1.5802939246794092
+        ],
+        "normal": [
+          0.09255161662740842,
+          0.1108223111081356,
+          -0.9895214063476874
+        ],
+        "raw_target_m": [
+          -0.08184677924542179,
+          -0.1313235302349023,
+          1.5551712602423478
+        ],
+        "projection_distance_mm": 25.388702332159685,
+        "prior_fraction": 0.5256410837173462,
+        "prior_lateral_ratio": 0.005155640654265881,
+        "source_training_cases": 38,
+        "origin": "ENGINEERING_ACCEPTED_CT_PROXY_SUGGESTION",
+        "semantic_review_required": true,
+        "medical_validated": false,
+        "semantic_note": "CT surface proxy ratio transferred to candidate slot; not the named spinous-process depression.",
+        "accepted_as_engineering_candidate": true
+      }
+    },
+    "proposal_output": {
+      "schema": "TWO_REFERENCE_PATIENT_PROPOSALS_V1",
+      "subject": "S104",
+      "mesh_sha256": "0929ffdc87cc8fe5bef88a70ba7d1bdaabf6f2aaf80bc98e1f471448ccea23c5",
+      "input_references": {
+        "T3": {
+          "t": 1.5527044708926316,
+          "xyz_m": [
+            -0.0832480149945756,
+            -0.3007903007465711,
+            1.5527044708926316
+          ],
+          "face_id": 12707,
+          "barycentric": [
+            0.03663211962006574,
+            0.4776202757992385,
+            0.48574760458069577
+          ],
+          "normal": [
+            0.0757003979749702,
+            0.19049674936229954,
+            -0.9787647512190191
+          ],
+          "image_uv": [
+            216.2565445026178,
+            277.23753280839895
+          ],
+          "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+        },
+        "L2": {
+          "t": 1.5584701620569354,
+          "xyz_m": [
+            -0.0835571416529307,
+            0.02158782213434123,
+            1.5584701620569354
+          ],
+          "face_id": 14579,
+          "barycentric": [
+            0.374665933557406,
+            0.13195354019115693,
+            0.4933805262514371
+          ],
+          "normal": [
+            -0.15150320379509383,
+            -0.40739377037707397,
+            -0.9005981873720236
+          ],
+          "image_uv": [
+            216.2565445026178,
+            395.0328083989501
+          ],
+          "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+        },
+        "LEFT_REF": {
+          "t": 1.657833976420518,
+          "xyz_m": [
+            -0.1851553237889093,
+            -0.1457221784282103,
+            1.657833976420518
+          ],
+          "face_id": 13689,
+          "barycentric": [
+            0.057459811914361614,
+            0.4897967328213878,
+            0.4527434552642506
+          ],
+          "normal": [
+            -0.9416497793573367,
+            -0.021639793250483725,
+            -0.335897919589204
+          ],
+          "image_uv": [
+            184.00523560209425,
+            337.29002624671915
+          ],
+          "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+        },
+        "RIGHT_REF": {
+          "t": 1.5921568891924862,
+          "xyz_m": [
+            -0.0028124267792245285,
+            -0.13994921903673216,
+            1.5921568891924862
+          ],
+          "face_id": 13707,
+          "barycentric": [
+            0.03564194155519346,
+            0.6079157033602759,
+            0.35644235508453065
+          ],
+          "normal": [
+            0.20116110713223384,
+            0.04897274168078337,
+            -0.9783332149884318
+          ],
+          "image_uv": [
+            245.0523560209424,
+            337.29002624671915
+          ],
+          "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+        }
+      },
+      "axial_reference_length_mm": 322.42982626629566,
+      "local_axial_direction": [
+        -0.000958740889249467,
+        0.9998396445329449,
+        0.017882003135597423
+      ],
+      "local_lateral_direction": [
+        0.9406815963474617,
+        0.00696890365404702,
+        -0.33921905706350186
+      ],
+      "prior_sha256": "91549a1909676a77d4208f92ba7c2a205110e0522d7e07560bf0332581a1c08e",
+      "suggestions": {
+        "C7_T1": {
+          "face_id": 12048,
+          "barycentric": [
+            0.07299370320429588,
+            0.19164808009292286,
+            0.7353582167027812
+          ],
+          "xyz_m": [
+            -0.08063270366636384,
+            -0.36704395739142215,
+            1.5475436992484348
+          ],
+          "normal": [
+            0.08334089460122933,
+            0.03206344683214875,
+            -0.9960051358624156
+          ],
+          "raw_target_m": [
+            -0.08089616046357576,
+            -0.36714531619072943,
+            1.5506922654398165
+          ],
+          "projection_distance_mm": 3.1611947348599205,
+          "prior_fraction": -0.20588235557079315,
+          "prior_lateral_ratio": 0.007544286549091339,
+          "source_training_cases": 14,
+          "origin": "CT_PROXY_TWO_REFERENCE_PRIOR_SUGGESTION",
+          "semantic_review_required": true,
+          "medical_validated": false,
+          "semantic_note": "CT surface proxy ratio transferred to candidate slot; not the named spinous-process depression."
+        },
+        "T5": {
+          "face_id": 13021,
+          "barycentric": [
+            0.6623403782177979,
+            0.19946327326667637,
+            0.13819634851552573
+          ],
+          "xyz_m": [
+            -0.08163547301846488,
+            -0.24171023203650135,
+            1.5621384679990895
+          ],
+          "normal": [
+            -0.011548730932541633,
+            0.16540962178694216,
+            -0.9861573321910396
+          ],
+          "raw_target_m": [
+            -0.08173988229533075,
+            -0.2402148037424048,
+            1.5532228586103638
+          ],
+          "projection_distance_mm": 9.040757592824518,
+          "prior_fraction": 0.18786601722240448,
+          "prior_lateral_ratio": 0.005163822788745165,
+          "source_training_cases": 38,
+          "origin": "CT_PROXY_TWO_REFERENCE_PRIOR_SUGGESTION",
+          "semantic_review_required": true,
+          "medical_validated": false,
+          "semantic_note": "CT surface proxy ratio transferred to candidate slot; not the named spinous-process depression."
+        },
+        "T9": {
+          "face_id": 13700,
+          "barycentric": [
+            0.8297955314245005,
+            0.00831497499091057,
+            0.16188949358458896
+          ],
+          "xyz_m": [
+            -0.08419654469033522,
+            -0.13413716490338876,
+            1.5802939246794092
+          ],
+          "normal": [
+            0.09255161662740842,
+            0.1108223111081356,
+            -0.9895214063476874
+          ],
+          "raw_target_m": [
+            -0.08184677924542179,
+            -0.1313235302349023,
+            1.5551712602423478
+          ],
+          "projection_distance_mm": 25.388702332159685,
+          "prior_fraction": 0.5256410837173462,
+          "prior_lateral_ratio": 0.005155640654265881,
+          "source_training_cases": 38,
+          "origin": "CT_PROXY_TWO_REFERENCE_PRIOR_SUGGESTION",
+          "semantic_review_required": true,
+          "medical_validated": false,
+          "semantic_note": "CT surface proxy ratio transferred to candidate slot; not the named spinous-process depression."
+        }
+      },
+      "frame_transfer": "3D chord T3-to-L2 plus orthogonalized supplied lateral axis; different from CT X/Z frame",
+      "calibration_validated": false,
+      "medical_validated": false,
+      "robot_release": false
+    },
+    "b_cun_mm": 25,
+    "scale_source": "GUI_TWO_REFERENCE_FIXTURE_NOT_MEDICAL",
+    "rule_output": {
+      "schema": "PATIENT_REFERENCE_RULE_BINDING_V1",
+      "status": "ENGINEERING_PROXY",
+      "medical_truth": false,
+      "landmark_frame_status": "SUPPLIED_UNVERIFIED_ANATOMICAL_REFERENCE",
+      "coordinate_frame": "historical reconstructed camera_m",
+      "rules": [
+        {
+          "id": "GV14",
+          "name": "Dazhui",
+          "reference_level": "C7_T1",
+          "laterality": "midline",
+          "lateral_b_cun": 0,
+          "rule_target": [
+            -0.08063270366636383,
+            -0.36704395739142215,
+            1.5475436992484348
+          ],
+          "surface_xyz": [
+            -0.08063270366636381,
+            -0.36704395739142215,
+            1.5475436992484348
+          ],
+          "face_index": 12048,
+          "barycentric": [
+            0.07299370320429532,
+            0.1916480800929255,
+            0.7353582167027792
+          ],
+          "surface_normal": [
+            0.08334089460122933,
+            0.03206344683214875,
+            -0.9960051358624156
+          ],
+          "projection_distance_native": 1.3877787807814457e-17,
+          "confidence": null,
+          "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+          "medical_truth": false,
+          "provenance": "rule_engine_v1 + explicit_landmark_frame",
+          "xyz_m": [
+            -0.08063270366636381,
+            -0.36704395739142215,
+            1.5475436992484348
+          ],
+          "projection_distance_mm": 1.3877787807814457e-14
+        },
+        {
+          "id": "BL13_L",
+          "name": "Feishu",
+          "reference_level": "T3",
+          "laterality": "left",
+          "lateral_b_cun": 1.5,
+          "rule_target": [
+            -0.11851357669638282,
+            -0.3019068051948435,
+            1.565406579995966
+          ],
+          "surface_xyz": [
+            -0.1188184539595963,
+            -0.29969270153655386,
+            1.552134823464012
+          ],
+          "face_index": 12704,
+          "barycentric": [
+            0.536114874796932,
+            0.12875147554315333,
+            0.33513364965991466
+          ],
+          "surface_normal": [
+            -0.02265291927209932,
+            0.16451181338562315,
+            -0.9861149570435618
+          ],
+          "projection_distance_native": 0.013458630190280872,
+          "confidence": null,
+          "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+          "medical_truth": false,
+          "provenance": "rule_engine_v1 + explicit_landmark_frame",
+          "xyz_m": [
+            -0.1188184539595963,
+            -0.29969270153655386,
+            1.552134823464012
+          ],
+          "projection_distance_mm": 13.458630190280871
+        },
+        {
+          "id": "BL13_R",
+          "name": "Feishu",
+          "reference_level": "T3",
+          "laterality": "right",
+          "lateral_b_cun": 1.5,
+          "rule_target": [
+            -0.047982453292768366,
+            -0.2996737962982986,
+            1.5400023617892968
+          ],
+          "surface_xyz": [
+            -0.05113038293887549,
+            -0.3033748266962329,
+            1.556334108247201
+          ],
+          "face_index": 12550,
+          "barycentric": [
+            0.48901803299382884,
+            0.06622284665751937,
+            0.4447591203486517
+          ],
+          "surface_normal": [
+            0.18474674473010697,
+            0.21720730608166278,
+            -0.9584829818501607
+          ],
+          "projection_distance_native": 0.01703916164101221,
+          "confidence": null,
+          "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+          "medical_truth": false,
+          "provenance": "rule_engine_v1 + explicit_landmark_frame",
+          "xyz_m": [
+            -0.05113038293887549,
+            -0.3033748266962329,
+            1.556334108247201
+          ],
+          "projection_distance_mm": 17.03916164101221
+        },
+        {
+          "id": "BL15_L",
+          "name": "Xinshu",
+          "reference_level": "T5",
+          "laterality": "left",
+          "lateral_b_cun": 1.5,
+          "rule_target": [
+            -0.1169010347202721,
+            -0.24282673648477385,
+            1.5748405771024243
+          ],
+          "surface_xyz": [
+            -0.11865906383097741,
+            -0.24080973273630468,
+            1.5652218714574253
+          ],
+          "face_index": 13019,
+          "barycentric": [
+            0.5575632732479247,
+            0.006080132134574439,
+            0.43635659461750087
+          ],
+          "surface_normal": [
+            -0.17608622510068572,
+            0.20202542376524169,
+            -0.9634206607096742
+          ],
+          "projection_distance_native": 0.00998391049441859,
+          "confidence": null,
+          "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+          "medical_truth": false,
+          "provenance": "rule_engine_v1 + explicit_landmark_frame",
+          "xyz_m": [
+            -0.11865906383097741,
+            -0.24080973273630468,
+            1.5652218714574253
+          ],
+          "projection_distance_mm": 9.98391049441859
+        },
+        {
+          "id": "BL15_R",
+          "name": "Xinshu",
+          "reference_level": "T5",
+          "laterality": "right",
+          "lateral_b_cun": 1.5,
+          "rule_target": [
+            -0.04636991131665764,
+            -0.24059372758822892,
+            1.5494363588957552
+          ],
+          "surface_xyz": [
+            -0.0487001972036348,
+            -0.24453362976078521,
+            1.5639961526062605
+          ],
+          "face_index": 13022,
+          "barycentric": [
+            0.34637544390323133,
+            0.2047312159333044,
+            0.4488933401634643
+          ],
+          "surface_normal": [
+            0.1526815497214862,
+            0.25814445035208805,
+            -0.9539652966052087
+          ],
+          "projection_distance_native": 0.015262393466846172,
+          "confidence": null,
+          "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+          "medical_truth": false,
+          "provenance": "rule_engine_v1 + explicit_landmark_frame",
+          "xyz_m": [
+            -0.0487001972036348,
+            -0.24453362976078521,
+            1.5639961526062605
+          ],
+          "projection_distance_mm": 15.262393466846172
+        },
+        {
+          "id": "BL18_L",
+          "name": "Ganshu",
+          "reference_level": "T9",
+          "laterality": "left",
+          "lateral_b_cun": 1.5,
+          "rule_target": [
+            -0.11946210639214244,
+            -0.13525366935166122,
+            1.5929960337827438
+          ],
+          "surface_xyz": [
+            -0.12080457958585794,
+            -0.13436615719213982,
+            1.5894398791552387
+          ],
+          "face_index": 13697,
+          "barycentric": [
+            0.09371828844813834,
+            0.5948734245150893,
+            0.31140828703677237
+          ],
+          "surface_normal": [
+            -0.34392839535464825,
+            0.227371864340268,
+            -0.911051751644882
+          ],
+          "projection_distance_native": 0.0039033508481648477,
+          "confidence": null,
+          "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+          "medical_truth": false,
+          "provenance": "rule_engine_v1 + explicit_landmark_frame",
+          "xyz_m": [
+            -0.12080457958585794,
+            -0.13436615719213982,
+            1.5894398791552387
+          ],
+          "projection_distance_mm": 3.903350848164848
+        },
+        {
+          "id": "BL18_R",
+          "name": "Ganshu",
+          "reference_level": "T9",
+          "laterality": "right",
+          "lateral_b_cun": 1.5,
+          "rule_target": [
+            -0.048930982988527986,
+            -0.1330206604551163,
+            1.5675918155760746
+          ],
+          "surface_xyz": [
+            -0.05455674142152908,
+            -0.1354425045854971,
+            1.586368269386587
+          ],
+          "face_index": 13702,
+          "barycentric": [
+            0.26296769533280406,
+            0.1222816294130682,
+            0.6147506752541277
+          ],
+          "surface_normal": [
+            0.2848458976469492,
+            0.12262388680477143,
+            -0.9506977421760263
+          ],
+          "projection_distance_native": 0.019750182395022298,
+          "confidence": null,
+          "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+          "medical_truth": false,
+          "provenance": "rule_engine_v1 + explicit_landmark_frame",
+          "xyz_m": [
+            -0.05455674142152908,
+            -0.1354425045854971,
+            1.586368269386587
+          ],
+          "projection_distance_mm": 19.750182395022296
+        },
+        {
+          "id": "GV4",
+          "name": "Mingmen",
+          "reference_level": "L2",
+          "laterality": "midline",
+          "lateral_b_cun": 0,
+          "rule_target": [
+            -0.0835571416529307,
+            0.021587822134341225,
+            1.5584701620569354
+          ],
+          "surface_xyz": [
+            -0.0835571416529307,
+            0.021587822134341215,
+            1.5584701620569354
+          ],
+          "face_index": 14579,
+          "barycentric": [
+            0.37466593355740535,
+            0.13195354019115718,
+            0.4933805262514375
+          ],
+          "surface_normal": [
+            -0.15150320379509383,
+            -0.4073937703770739,
+            -0.9005981873720235
+          ],
+          "projection_distance_native": 1.0408340855860843e-17,
+          "confidence": null,
+          "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+          "medical_truth": false,
+          "provenance": "rule_engine_v1 + explicit_landmark_frame",
+          "xyz_m": [
+            -0.0835571416529307,
+            0.021587822134341215,
+            1.5584701620569354
+          ],
+          "projection_distance_mm": 1.0408340855860843e-14
+        }
+      ],
+      "subject": "S104",
+      "mesh_sha256": "0929ffdc87cc8fe5bef88a70ba7d1bdaabf6f2aaf80bc98e1f471448ccea23c5",
+      "native_unit": "m",
+      "display_unit": "mm",
+      "reference_points_m": {
+        "C7_T1": [
+          -0.08063270366636383,
+          -0.36704395739142215,
+          1.5475436992484348
+        ],
+        "T3": [
+          -0.0832480149945756,
+          -0.30079030074657104,
+          1.5527044708926314
+        ],
+        "T5": [
+          -0.08163547301846487,
+          -0.24171023203650138,
+          1.5621384679990897
+        ],
+        "T9": [
+          -0.08419654469033522,
+          -0.13413716490338876,
+          1.5802939246794092
+        ],
+        "L2": [
+          -0.0835571416529307,
+          0.021587822134341225,
+          1.5584701620569354
+        ],
+        "LEFT_REF": [
+          -0.18515532378890925,
+          -0.14572217842821025,
+          1.6578339764205177
+        ],
+        "RIGHT_REF": [
+          -0.0028124267792245285,
+          -0.13994921903673213,
+          1.5921568891924862
+        ]
+      },
+      "supplied_references": {
+        "T3": {
+          "t": 1.5527044708926316,
+          "xyz_m": [
+            -0.0832480149945756,
+            -0.3007903007465711,
+            1.5527044708926316
+          ],
+          "face_id": 12707,
+          "barycentric": [
+            0.03663211962006574,
+            0.4776202757992385,
+            0.48574760458069577
+          ],
+          "normal": [
+            0.0757003979749702,
+            0.19049674936229954,
+            -0.9787647512190191
+          ],
+          "image_uv": [
+            216.2565445026178,
+            277.23753280839895
+          ],
+          "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+        },
+        "L2": {
+          "t": 1.5584701620569354,
+          "xyz_m": [
+            -0.0835571416529307,
+            0.02158782213434123,
+            1.5584701620569354
+          ],
+          "face_id": 14579,
+          "barycentric": [
+            0.374665933557406,
+            0.13195354019115693,
+            0.4933805262514371
+          ],
+          "normal": [
+            -0.15150320379509383,
+            -0.40739377037707397,
+            -0.9005981873720236
+          ],
+          "image_uv": [
+            216.2565445026178,
+            395.0328083989501
+          ],
+          "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+        },
+        "LEFT_REF": {
+          "t": 1.657833976420518,
+          "xyz_m": [
+            -0.1851553237889093,
+            -0.1457221784282103,
+            1.657833976420518
+          ],
+          "face_id": 13689,
+          "barycentric": [
+            0.057459811914361614,
+            0.4897967328213878,
+            0.4527434552642506
+          ],
+          "normal": [
+            -0.9416497793573367,
+            -0.021639793250483725,
+            -0.335897919589204
+          ],
+          "image_uv": [
+            184.00523560209425,
+            337.29002624671915
+          ],
+          "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+        },
+        "RIGHT_REF": {
+          "t": 1.5921568891924862,
+          "xyz_m": [
+            -0.0028124267792245285,
+            -0.13994921903673216,
+            1.5921568891924862
+          ],
+          "face_id": 13707,
+          "barycentric": [
+            0.03564194155519346,
+            0.6079157033602759,
+            0.35644235508453065
+          ],
+          "normal": [
+            0.20116110713223384,
+            0.04897274168078337,
+            -0.9783332149884318
+          ],
+          "image_uv": [
+            245.0523560209424,
+            337.29002624671915
+          ],
+          "origin": "MANUAL_IMAGE_RAY_UNVERIFIED"
+        },
+        "C7_T1": {
+          "face_id": 12048,
+          "barycentric": [
+            0.07299370320429588,
+            0.19164808009292286,
+            0.7353582167027812
+          ],
+          "xyz_m": [
+            -0.08063270366636384,
+            -0.36704395739142215,
+            1.5475436992484348
+          ],
+          "normal": [
+            0.08334089460122933,
+            0.03206344683214875,
+            -0.9960051358624156
+          ],
+          "raw_target_m": [
+            -0.08089616046357576,
+            -0.36714531619072943,
+            1.5506922654398165
+          ],
+          "projection_distance_mm": 3.1611947348599205,
+          "prior_fraction": -0.20588235557079315,
+          "prior_lateral_ratio": 0.007544286549091339,
+          "source_training_cases": 14,
+          "origin": "ENGINEERING_ACCEPTED_CT_PROXY_SUGGESTION",
+          "semantic_review_required": true,
+          "medical_validated": false,
+          "semantic_note": "CT surface proxy ratio transferred to candidate slot; not the named spinous-process depression.",
+          "accepted_as_engineering_candidate": true
+        },
+        "T5": {
+          "face_id": 13021,
+          "barycentric": [
+            0.6623403782177979,
+            0.19946327326667637,
+            0.13819634851552573
+          ],
+          "xyz_m": [
+            -0.08163547301846488,
+            -0.24171023203650135,
+            1.5621384679990895
+          ],
+          "normal": [
+            -0.011548730932541633,
+            0.16540962178694216,
+            -0.9861573321910396
+          ],
+          "raw_target_m": [
+            -0.08173988229533075,
+            -0.2402148037424048,
+            1.5532228586103638
+          ],
+          "projection_distance_mm": 9.040757592824518,
+          "prior_fraction": 0.18786601722240448,
+          "prior_lateral_ratio": 0.005163822788745165,
+          "source_training_cases": 38,
+          "origin": "ENGINEERING_ACCEPTED_CT_PROXY_SUGGESTION",
+          "semantic_review_required": true,
+          "medical_validated": false,
+          "semantic_note": "CT surface proxy ratio transferred to candidate slot; not the named spinous-process depression.",
+          "accepted_as_engineering_candidate": true
+        },
+        "T9": {
+          "face_id": 13700,
+          "barycentric": [
+            0.8297955314245005,
+            0.00831497499091057,
+            0.16188949358458896
+          ],
+          "xyz_m": [
+            -0.08419654469033522,
+            -0.13413716490338876,
+            1.5802939246794092
+          ],
+          "normal": [
+            0.09255161662740842,
+            0.1108223111081356,
+            -0.9895214063476874
+          ],
+          "raw_target_m": [
+            -0.08184677924542179,
+            -0.1313235302349023,
+            1.5551712602423478
+          ],
+          "projection_distance_mm": 25.388702332159685,
+          "prior_fraction": 0.5256410837173462,
+          "prior_lateral_ratio": 0.005155640654265881,
+          "source_training_cases": 38,
+          "origin": "ENGINEERING_ACCEPTED_CT_PROXY_SUGGESTION",
+          "semantic_review_required": true,
+          "medical_validated": false,
+          "semantic_note": "CT surface proxy ratio transferred to candidate slot; not the named spinous-process depression.",
+          "accepted_as_engineering_candidate": true
+        }
+      },
+      "b_cun_mm": 25,
+      "scale_source": "GUI_TWO_REFERENCE_FIXTURE_NOT_MEDICAL",
+      "lateral_axis": [
+        0.9404149787148592,
+        0.02977345195393214,
+        -0.33872290942225575
+      ],
+      "reference_medical_validated": false,
+      "calibration_validated": false,
+      "robot_release": false,
+      "semantic_note": "Named references are candidates; no clinician/anatomical accuracy is implied by a successful mesh binding."
+    },
+    "created_at": "2026-10-05T03:28:47.243Z",
+    "medical_validated": false,
+    "calibration_validated": false,
+    "robot_release": false
+  },
+  "max_rule_bary_error_m": 2.242025235105681e-16,
+  "actual_image_inputs": 4,
+  "proposals": 3,
+  "rules": 8,
+  "medical_validated": false
+}

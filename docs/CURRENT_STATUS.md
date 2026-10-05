@@ -8,6 +8,8 @@
 
 ## 最新实际交付
 
+[两参考→规则工作台V2](handoffs/real-scene-2026-10-05/prone-reference-rule-workbench-v2/FINAL_REPORT.md)：20缓存Mesh接入、60建议/160规则、20图及真实浏览器4输入→3建议→8规则→保存/重算完成。新增两参考比例建议与显式工程采纳；输入及建议分开，医学未确认，坐标与CT外部考试不同，不转述9.70mm为此系统精度。继续扩大解剖来源与联合表面/对应方法基础。
+
 [同步CT外部考试＋两参考基线](handoffs/real-scene-2026-10-05/tum-synchronized-anatomy-validation-v1/FINAL_REPORT.md)：实际下载268文件/513.8MB、17病例来源资格、442预测缓存/1380有效目标重算与9页全量图完成。10世界坐标例普通查询37.98mm，没有保持源内优势；相同剩余代理点查询38.86→两参考校准14.39mm，简单两参考比例先验9.70mm。参考为CT oracle，非相机/医生输入、非俯卧穴位精度；7导出坐标例另列。停止CT小网络调试，继续把显式参考坐标接到真实MHR工程，并以比例先验作为论文新方法必须击败的基线。
 
 [俯卧参考→规则→Mesh工作台V1](handoffs/real-scene-2026-10-05/prone-reference-rule-workbench-v1/FINAL_REPORT.md)：20人缓存接入、160个几何fixture候选、实际S104图像点击/HTTP生成/保存/独立重算通过。可输入7参考与显式个体B-cun比例，生成8候选及face/bary/normal；切换患者清空输入。参考及比例未医学确认，相机未部署标定，不报告穴位准确率。
