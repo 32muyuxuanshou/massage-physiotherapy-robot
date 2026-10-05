@@ -1,0 +1,54 @@
+{
+  "status": "FOUNDATION_COMPLETE_FULL_DATA_AND_MODEL_GRID_PENDING",
+  "server": "xuhd@172.18.18.151:436",
+  "server_root": "/raid5/xuhd/datasets/anatomical_surface_method_foundation_20261005",
+  "completed": [
+    {
+      "stage": "official full ZIP directory + meta read",
+      "CT_images": 1939,
+      "entries": 232682
+    },
+    {
+      "stage": "source role freeze",
+      "new_model_results_seen": 0
+    },
+    {
+      "stage": "GPU prototype normal path",
+      "old_TRAIN_cases": 4,
+      "steps": 80,
+      "GPU": 0,
+      "test_cases_used": 0
+    },
+    {
+      "stage": "18-level source constructor",
+      "old_TRAIN_cases": 4,
+      "valid_levels": 64,
+      "points": 32768
+    },
+    {
+      "stage": "cache replay + all train/source figures",
+      "status": "PASS"
+    },
+    {
+      "stage": "CPU 3 model forward/backward/decoder + prior + aggregation check",
+      "status": "PASS",
+      "formal_test_used": 0
+    }
+  ],
+  "pending": [
+    "full ZIP author MD5",
+    "1638 adult source geometric qualification",
+    "3 model x3 seed source training and 0/5mm/no-ref tests",
+    "real MHR learned-field input/body-frame integration",
+    "independent clinical/prone target validation"
+  ],
+  "server_execution_interruption": {
+    "observed": "process D / md_write_start, then command and SSH banner failures",
+    "full_download_completion_not_verified": true,
+    "GPU_larger_model_check_result_not_received": true,
+    "root_disk_repair_not_attempted": true
+  },
+  "latest_training_eval_code_is_local_until_server_sync": true,
+  "model_weights_not_in_Git": true,
+  "raw_CT_and_labels_not_in_Git": true
+}

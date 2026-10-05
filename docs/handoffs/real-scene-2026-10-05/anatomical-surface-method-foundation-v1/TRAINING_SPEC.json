@@ -1,0 +1,52 @@
+{
+  "status": "PRE_FULL_MODEL_EXECUTION",
+  "models": [
+    "GLOBAL_ANATOMY",
+    "LOCAL_ANATOMY",
+    "LOCAL_JOINT"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "epochs": 60,
+  "batch_size": 8,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "point_count": 1024,
+  "query_count": 256,
+  "neighbors": 16,
+  "channels": 64,
+  "observed_noise_mm": 2.0,
+  "query_perturbation_mm": 10.0,
+  "noise_is_simulated_not_measured": true,
+  "partial_observation_probability": 0.4,
+  "partial_surface_point_quantile_fraction": [
+    0.6,
+    0.9
+  ],
+  "unprompted_training_probability": 0.5,
+  "loss": {
+    "anatomy_smooth_l1_beta": 0.05,
+    "surface_smooth_l1_beta": 0.02,
+    "joint_surface_weight": 0.25
+  },
+  "checkpoint_selection": "lowest equal-weight average of prompted and unprompted development anatomy loss (batch means), never test loss",
+  "minimum_qualified_train": 200,
+  "minimum_development": 20,
+  "source_roles_sha256": "0352d8bec7c8d82794c80772951fa322367072c9b32432535c4069e2d22be5c0",
+  "normalization": "observed-point median only; fixed 500mm, RAS source axes",
+  "primary_test": "common two-reference CT-source images; reference noise 0mm; endpoints T3/L2 omitted from all method scores",
+  "supporting_tests": [
+    "5mm reference perturbation",
+    "no reference against TRAIN_GLOBAL_PRIOR"
+  ],
+  "aggregation": "mean over valid nonreference levels -> median over three seeds per CT image -> image-equal median/mean",
+  "test_candidate_surface": "same cached8192 CT skin points for all methods, not predicted MHR",
+  "geometry_evaluation": "fixed disjoint observed/query indices, simulated query displacement; not clinical sensor accuracy",
+  "patient_ID_disjoint_certified": false,
+  "CT_scans_not_prone_certified": true,
+  "model_grid_has_not_run": true
+}

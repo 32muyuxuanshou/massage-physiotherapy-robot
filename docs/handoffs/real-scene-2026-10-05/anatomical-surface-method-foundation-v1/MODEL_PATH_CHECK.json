@@ -1,0 +1,89 @@
+{
+  "status": "NORMAL_PATH_PASS_NOT_FORMAL_EVAL",
+  "torch_version": "2.4.1+cpu",
+  "device": "CPU",
+  "train_cases": [
+    "s0011",
+    "s0344",
+    "s0358",
+    "s0511"
+  ],
+  "test_cases_used": 0,
+  "models": [
+    {
+      "model": "GLOBAL_ANATOMY",
+      "forward": true,
+      "backward": true,
+      "optimizer_step": true,
+      "registered_parameters": 126917,
+      "active_gradient_parameters": 113986,
+      "total": 0.33224546909332275,
+      "anatomy": 0.33224546909332275,
+      "surface": 0.05775615945458412,
+      "inference_scoring_normal_path": true,
+      "unprompted_inference": true,
+      "decoded_levels": 18,
+      "provided_references_excluded": true
+    },
+    {
+      "model": "LOCAL_ANATOMY",
+      "forward": true,
+      "backward": true,
+      "optimizer_step": true,
+      "registered_parameters": 126917,
+      "active_gradient_parameters": 126722,
+      "total": 0.3524314761161804,
+      "anatomy": 0.3524314761161804,
+      "surface": 0.03664136305451393,
+      "inference_scoring_normal_path": true,
+      "unprompted_inference": true,
+      "decoded_levels": 18,
+      "provided_references_excluded": true
+    },
+    {
+      "model": "LOCAL_JOINT",
+      "forward": true,
+      "backward": true,
+      "optimizer_step": true,
+      "registered_parameters": 126917,
+      "active_gradient_parameters": 126917,
+      "total": 0.43570488691329956,
+      "anatomy": 0.42865875363349915,
+      "surface": 0.0281845573335886,
+      "inference_scoring_normal_path": true,
+      "unprompted_inference": true,
+      "decoded_levels": 18,
+      "provided_references_excluded": true
+    }
+  ],
+  "baseline_prior_fit_and_projection": true,
+  "prior_training_counts": [
+    1,
+    2,
+    4,
+    4,
+    4,
+    4,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    3,
+    4,
+    4,
+    4,
+    3
+  ],
+  "seconds": 1.8295247554779053,
+  "clinical_GT": false,
+  "code_sha256": {
+    "train_field.py": "a5f44558ac961f1ef8f5c10aa0a4702dd68a4b7c7c7c31d57a8a35fbe0881f3a",
+    "joint_surface_field.py": "f7afc68875129ddda88353882f73a0082bf4b824f3cf0e812184634cd06dfff2",
+    "fit_field_prior.py": "fd1a41cf508f84dda254d4fb0517912e8f370c50b06792bc44f2e89e2175609c",
+    "evaluate_field.py": "8ef6e4cb5cf88e10818e2a5947fbfbc5d05176d7986f2c15969f37e9c110dd0f",
+    "check_model_paths.py": "989fd1fe18e7010ad7ae4645dccad26f3882004abb7059e121395ec05cf8a94a"
+  }
+}

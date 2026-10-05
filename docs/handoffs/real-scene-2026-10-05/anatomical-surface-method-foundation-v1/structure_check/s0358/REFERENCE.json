@@ -1,0 +1,622 @@
+{
+  "subject": "s0358",
+  "meta": {
+    "image_id": "s0358",
+    "split": "train",
+    "study_type": "ct pelvis"
+  },
+  "axis": "RAS mm, posterior -Y",
+  "ct_shape": [
+    255,
+    255,
+    523
+  ],
+  "oblique_resampled": false,
+  "original_canonical_affine": [
+    [
+      1.5,
+      0.0,
+      0.0,
+      -183.1259765625
+    ],
+    [
+      0.0,
+      1.5,
+      0.0,
+      -11.6259765625
+    ],
+    [
+      0.0,
+      0.0,
+      1.5,
+      -662.5
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "processed_affine": [
+    [
+      1.5,
+      0.0,
+      0.0,
+      -183.1259765625
+    ],
+    [
+      0.0,
+      1.5,
+      0.0,
+      -11.6259765625
+    ],
+    [
+      0.0,
+      0.0,
+      1.5,
+      -662.5
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "spacing_mm": [
+    1.5,
+    1.5,
+    1.5
+  ],
+  "ct_sha256": "1bad23486921c90e111ad8645246b32674cdbaa5ef5298715d805371a29b6038",
+  "posterior_surface_sha256": "0b80558bf496edb2d412c914631bf816b9dbeeb0314d8675df826e82df9f48d9",
+  "surface_method": "CT-only HU>-500 / axial opening2 / largest component / first -Y boundary",
+  "surface_valid_columns": 123231,
+  "surface_all_columns": 133365,
+  "posterior_boundary_contact_fraction": 0.0,
+  "targets": [
+    {
+      "level": "C7",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 4876,
+      "touches_scanner_boundary": true,
+      "centroid_bone_xyz_mm": [
+        -15.3779248807937,
+        156.58321129640075,
+        96.83593109105823
+      ],
+      "centroid_surface_xyz_mm": [
+        -15.1259765625,
+        66.3740234375,
+        96.5
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        -17.960838947821088,
+        120.74558307052752,
+        104.75688073394497
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        -18.1259765625,
+        67.8740234375,
+        105.5
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 9.0,
+      "bone_to_skin_posterior_distance_mm": 52.871559633027516
+    },
+    {
+      "level": "T1",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 5510,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        -14.960459321120709,
+        143.22166409085753,
+        82.59029038112521
+      ],
+      "centroid_surface_xyz_mm": [
+        -15.1259765625,
+        64.8740234375,
+        83.0
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        -16.042643229166686,
+        106.2192615327381,
+        89.07142857142856
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        -16.6259765625,
+        66.3740234375,
+        89.0
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 6.0,
+      "bone_to_skin_posterior_distance_mm": 39.8452380952381
+    },
+    {
+      "level": "T2",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 5523,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        -15.102891282760709,
+        131.57147047715236,
+        66.48126018468224
+      ],
+      "centroid_surface_xyz_mm": [
+        -15.1259765625,
+        63.3740234375,
+        66.5
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        -13.87807740283614,
+        94.97486377363445,
+        66.07142857142856
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        -13.6259765625,
+        63.3740234375,
+        66.5
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 0.0,
+      "bone_to_skin_posterior_distance_mm": 31.600840336134453
+    },
+    {
+      "level": "T3",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 5266,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        -15.713329391972081,
+        119.72115598592384,
+        49.1463159893658
+      ],
+      "centroid_surface_xyz_mm": [
+        -15.1259765625,
+        61.8740234375,
+        48.5
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        -14.503335053066053,
+        84.09100456957547,
+        43.32075471698113
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        -15.1259765625,
+        60.3740234375,
+        44.0
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 4.5,
+      "bone_to_skin_posterior_distance_mm": 23.716981132075475
+    },
+    {
+      "level": "T4",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 5391,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        -12.965987692160553,
+        112.86957157328186,
+        29.69031719532552
+      ],
+      "centroid_surface_xyz_mm": [
+        -13.6259765625,
+        58.8740234375,
+        29.0
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        -11.58650287828948,
+        78.54507606907896,
+        17.28947368421052
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        -12.1259765625,
+        57.3740234375,
+        17.0
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 12.0,
+      "bone_to_skin_posterior_distance_mm": 21.17105263157896
+    },
+    {
+      "level": "T5",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 6382,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        -11.59879072733861,
+        108.88663703825213,
+        9.843152616734528
+      ],
+      "centroid_surface_xyz_mm": [
+        -12.1259765625,
+        58.8740234375,
+        9.5
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        -10.682794744318187,
+        77.5899325284091,
+        -2.784090909090878
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        -10.6259765625,
+        54.3740234375,
+        -2.5
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 12.0,
+      "bone_to_skin_posterior_distance_mm": 23.215909090909093
+    },
+    {
+      "level": "T6",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 3983,
+      "touches_scanner_boundary": true,
+      "centroid_bone_xyz_mm": [
+        -7.454999911734234,
+        106.58969002047766,
+        -7.6718553853878575
+      ],
+      "centroid_surface_xyz_mm": [
+        -7.6259765625,
+        52.8740234375,
+        -7.0
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        -10.049053485576906,
+        76.59380365728022,
+        -16.807692307692378
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        -10.6259765625,
+        52.8740234375,
+        -17.5
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 10.5,
+      "bone_to_skin_posterior_distance_mm": 23.71978021978022
+    },
+    {
+      "level": "T7",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 3022,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        -7.775877290494691,
+        106.31313660758605,
+        -20.51091992058241
+      ],
+      "centroid_surface_xyz_mm": [
+        -7.6259765625,
+        52.8740234375,
+        -20.5
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        -8.171431107954533,
+        74.4779195413961,
+        -38.18831168831173
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        -7.6259765625,
+        51.3740234375,
+        -38.5
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 18.0,
+      "bone_to_skin_posterior_distance_mm": 23.103896103896105
+    },
+    {
+      "level": "T8",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 7265,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        -5.149376424853756,
+        107.96542054692878,
+        -35.400275292498236
+      ],
+      "centroid_surface_xyz_mm": [
+        -4.6259765625,
+        51.3740234375,
+        -35.5
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        -4.066654528601703,
+        75.32317597987287,
+        -59.76271186440681
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        -4.6259765625,
+        51.3740234375,
+        -59.5
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 24.0,
+      "bone_to_skin_posterior_distance_mm": 23.94915254237287
+    },
+    {
+      "level": "T9",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 7936,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        -4.205802671370975,
+        108.96733240927419,
+        -58.15007560483866
+      ],
+      "centroid_surface_xyz_mm": [
+        -4.6259765625,
+        51.3740234375,
+        -58.0
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        -1.1378108820266277,
+        73.43023645525147,
+        -82.83431952662727
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        -1.6259765625,
+        54.3740234375,
+        -83.5
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 25.5,
+      "bone_to_skin_posterior_distance_mm": 19.056213017751475
+    },
+    {
+      "level": "T10",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 9318,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        -0.5174768844574942,
+        111.04369504084835,
+        -81.41967160334832
+      ],
+      "centroid_surface_xyz_mm": [
+        -0.1259765625,
+        54.3740234375,
+        -82.0
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        0.2490234375,
+        74.34476811835106,
+        -101.55585106382978
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        -0.1259765625,
+        55.8740234375,
+        -101.5
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 19.5,
+      "bone_to_skin_posterior_distance_mm": 18.470744680851055
+    },
+    {
+      "level": "T11",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 9212,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        1.047221440105318,
+        115.50911896507273,
+        -102.6103452019106
+      ],
+      "centroid_surface_xyz_mm": [
+        1.3740234375,
+        55.8740234375,
+        -103.0
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        2.390759839173654,
+        76.13343766344141,
+        -120.13389121338912
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        2.8740234375,
+        57.3740234375,
+        -119.5
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 16.5,
+      "bone_to_skin_posterior_distance_mm": 18.759414225941413
+    },
+    {
+      "level": "T12",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 9515,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        4.837659801136368,
+        118.16209490360615,
+        -127.66163951655278
+      ],
+      "centroid_surface_xyz_mm": [
+        4.3740234375,
+        57.3740234375,
+        -127.0
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        5.067699326828063,
+        81.22580209362647,
+        -146.33992094861662
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        4.3740234375,
+        58.8740234375,
+        -146.5
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 19.5,
+      "bone_to_skin_posterior_distance_mm": 22.35177865612647
+    },
+    {
+      "level": "L1",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 12959,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        4.431666774177216,
+        124.61752216425361,
+        -155.24569797052243
+      ],
+      "centroid_surface_xyz_mm": [
+        4.3740234375,
+        60.3740234375,
+        -155.5
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        4.651635377798499,
+        84.62029209421641,
+        -175.16567164179105
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        4.3740234375,
+        60.3740234375,
+        -175.0
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 19.5,
+      "bone_to_skin_posterior_distance_mm": 24.24626865671641
+    },
+    {
+      "level": "L2",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 13493,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        3.884769750402995,
+        131.9461349027042,
+        -184.50804120655158
+      ],
+      "centroid_surface_xyz_mm": [
+        4.3740234375,
+        58.8740234375,
+        -184.0
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        5.513853945974574,
+        89.95453191207628,
+        -202.16949152542372
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        5.8740234375,
+        57.3740234375,
+        -202.0
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 18.0,
+      "bone_to_skin_posterior_distance_mm": 32.58050847457628
+    },
+    {
+      "level": "L3",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 15648,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        1.6573823332055042,
+        142.2164314129601,
+        -214.16602760736203
+      ],
+      "centroid_surface_xyz_mm": [
+        1.3740234375,
+        54.3740234375,
+        -214.0
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        7.5732715578007515,
+        95.45297080592104,
+        -229.26315789473688
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        7.3740234375,
+        55.8740234375,
+        -229.0
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 15.0,
+      "bone_to_skin_posterior_distance_mm": 39.57894736842104
+    },
+    {
+      "level": "L4",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 16595,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        1.0315407619953305,
+        147.39779565804838,
+        -241.79062970774328
+      ],
+      "centroid_surface_xyz_mm": [
+        1.3740234375,
+        52.8740234375,
+        -242.5
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        9.049348112824674,
+        99.01558187905844,
+        -250.56493506493507
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        8.8740234375,
+        55.8740234375,
+        -250.0
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 7.5,
+      "bone_to_skin_posterior_distance_mm": 43.141558441558445
+    },
+    {
+      "level": "L5",
+      "status": "CT_SURFACE_PROXY",
+      "voxels": 15975,
+      "touches_scanner_boundary": false,
+      "centroid_bone_xyz_mm": [
+        6.322098554870905,
+        141.23862437646713,
+        -270.01793427230047
+      ],
+      "centroid_surface_xyz_mm": [
+        5.8740234375,
+        49.8740234375,
+        -269.5
+      ],
+      "centroid_surface_valid": true,
+      "posterior_extreme_bone_xyz_mm": [
+        11.856005419481988,
+        96.00465406813063,
+        -271.0765765765766
+      ],
+      "posterior_extreme_surface_xyz_mm": [
+        11.8740234375,
+        52.8740234375,
+        -271.0
+      ],
+      "posterior_extreme_surface_valid": true,
+      "proxy_definition_vertical_difference_mm": 1.5,
+      "bone_to_skin_posterior_distance_mm": 43.130630630630634
+    }
+  ],
+  "medical_validated": false,
+  "seconds": 31.56208414399589
+}

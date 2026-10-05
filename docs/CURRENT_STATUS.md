@@ -8,6 +8,8 @@
 
 ## 最新实际交付
 
+[大规模解剖来源与联合场基础V1](handoffs/real-scene-2026-10-05/anatomical-surface-method-foundation-v1/FINAL_REPORT.md)：实际读取V3完整档案1939 CT/1830 train/109 test，预冻结1393成人TRAIN、125开发、88作者test图像；资格后数量未定、没有独立患者ID。最后确认33.964/37.416GB，后续磁盘等待/SSH失败，完整MD5待核实。四旧训练来源18等级64/72有效、32768点与缓存重算完成；GPU四例80步联合场、CPU三模型训练/解码及先验/聚合正常路径完成。表面分支未优于零修正；大规模训练和真实MHR学习接口未执行。继续完成完整来源与模型对照，保留可靠几何/两参考比例基线。
+
 [两参考→规则工作台V2](handoffs/real-scene-2026-10-05/prone-reference-rule-workbench-v2/FINAL_REPORT.md)：20缓存Mesh接入、60建议/160规则、20图及真实浏览器4输入→3建议→8规则→保存/重算完成。新增两参考比例建议与显式工程采纳；输入及建议分开，医学未确认，坐标与CT外部考试不同，不转述9.70mm为此系统精度。继续扩大解剖来源与联合表面/对应方法基础。
 
 [同步CT外部考试＋两参考基线](handoffs/real-scene-2026-10-05/tum-synchronized-anatomy-validation-v1/FINAL_REPORT.md)：实际下载268文件/513.8MB、17病例来源资格、442预测缓存/1380有效目标重算与9页全量图完成。10世界坐标例普通查询37.98mm，没有保持源内优势；相同剩余代理点查询38.86→两参考校准14.39mm，简单两参考比例先验9.70mm。参考为CT oracle，非相机/医生输入、非俯卧穴位精度；7导出坐标例另列。停止CT小网络调试，继续把显式参考坐标接到真实MHR工程，并以比例先验作为论文新方法必须击败的基线。
@@ -93,7 +95,7 @@ PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼�
 
 ## 运行位置
 
-最新实际执行服务器：`xuhd@172.18.18.151:436`，`/raid5/xuhd`及既有环境/数据已恢复并实读。GPU0/2080Ti实际完成六小模型训练和俯卧迁移；PyTorch2.4.0+cu121、Python3.10.20。没有新SAM推理、Mesh拟合或SAM微调。原存储不可见是此前阶段的故障，当前已不再阻塞。
+最新实际执行服务器：`xuhd@172.18.18.151:436`，`/raid5/xuhd`及既有环境/数据今日先前已恢复并实读；本轮后续又出现磁盘等待/SSH失败，最新运行能力待恢复核实。GPU0/2080Ti实际完成六小模型训练和俯卧迁移；PyTorch2.4.0+cu121、Python3.10.20。没有新SAM推理、Mesh拟合或SAM微调。原存储不可见是此前阶段的故障，当前已不再阻塞。
 
 - 有界参考对应：`/raid5/xuhd/datasets/bounded_reference_correspondence_v1_20261004`
 - 俯卧参考Mesh接口：`/raid5/xuhd/datasets/prone_reference_mesh_interface_v1_20261004`
