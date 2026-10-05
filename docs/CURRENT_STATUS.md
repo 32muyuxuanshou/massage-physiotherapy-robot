@@ -10,6 +10,8 @@
 
 ## 最新实际交付
 
+[MICCAI 2026三篇获奖论文学习](research/2026-10-05-miccai-best-papers/READING_NOTES.md)：实际下载三篇接收版、阅读方法/实验并查看关键图，检查LRM-Functa与L-TGVN作者代码。当前优先借鉴测量约束与解剖参考分工，视频低秩留待连续数据，CancerVerse借鉴资源/标注一致性评价；没有运行这些作者模型或修改冻结V2训练。L-TGVN公开实现为软谱过滤，不能称绝对硬零空间保证。下一步仍是全量来源/先验对照及真实深度与独立参考验证。
+
 [独立体表参考/穴位核验接口V1](handoffs/real-scene-2026-10-05/independent-surface-reference-interface-v1/FINAL_REPORT.md)：实际核查GB/T12346-2021相关方法/目标页，明确椎体等级坐标不是B-cun、CT代理不等于棘突下标准位置。独立深度反投影及逐标注者/一致性比较CLI已实现，解析模拟正常路径16比较/8配对通过；零真人标注、零新临床准确率，不从预测Mesh制造参考。模型大规模验证仍等待可用服务器。
 
 [参考约束表面/解剖场V2](handoffs/real-scene-2026-10-05/reference-anchored-surface-field-v2/FINAL_REPORT.md)：四TRAIN三模型40步、刚体/单位一致性、正式评价器缓存重算及20实际Mesh→60建议/160规则完成，220面绑定重算通过。参考为fixture、观察点为网格采样，非新RGB-D或医学准确率；结构权重3/4来源仍输比例先验。不再调小例，当前候选是V2的大规模来源/先验/软参考/硬参考/联合对照。服务器TCP可连但SSH握手失败，全量数据MD5与九训练仍待恢复核实，V1保留研究起点。

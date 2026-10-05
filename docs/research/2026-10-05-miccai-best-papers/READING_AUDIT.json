@@ -1,0 +1,131 @@
+{
+  "date": "2026-10-05",
+  "scope": "READING_AND_PROJECT_APPLICABILITY_NOT_METHOD_VALIDATION",
+  "papers": [
+    {
+      "name": "lrm_functa",
+      "url": "https://papers.miccai.org/miccai-2026/paper/1186_paper.pdf",
+      "path": "E:\\项目-按摩理疗机器人\\downloads\\20261005-miccai-best-papers\\lrm_functa.pdf",
+      "bytes": 5078917,
+      "sha256": "6050137940516834c014454396f2690cff74f82db975675d20274242ac092965",
+      "pages": 11,
+      "rendered_pages_one_based": [
+        2,
+        4,
+        6,
+        8
+      ]
+    },
+    {
+      "name": "l_tgvn",
+      "url": "https://papers.miccai.org/miccai-2026/paper/2497_paper.pdf",
+      "path": "E:\\项目-按摩理疗机器人\\downloads\\20261005-miccai-best-papers\\l_tgvn.pdf",
+      "bytes": 7565973,
+      "sha256": "59e9f79aa201c05b05d3034c76fbf6d7022fe3dff0d0a7c99b8bbdd9a2996b11",
+      "pages": 11,
+      "rendered_pages_one_based": [
+        2,
+        5,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "cancerverse",
+      "url": "https://papers.miccai.org/miccai-2026/paper/0562_paper.pdf",
+      "path": "E:\\项目-按摩理疗机器人\\downloads\\20261005-miccai-best-papers\\cancerverse.pdf",
+      "bytes": 4985226,
+      "sha256": "984ef1e4d084424fa13dfcd1ac24ee4b7001b68def4c6d1b20f2a6457b4b7878",
+      "pages": 11,
+      "rendered_pages_one_based": [
+        2,
+        5,
+        7,
+        8
+      ]
+    }
+  ],
+  "method_and_result_text_read": {
+    "lrm_functa": "sections 1-5; PDF pages 1-9",
+    "l_tgvn": "sections 1-5; PDF pages 1-9",
+    "cancerverse": "sections 1-4/conclusion; PDF pages 1-9"
+  },
+  "figures_visually_inspected": {
+    "lrm_functa": [
+      "Fig1 PDF2",
+      "Fig2 PDF4",
+      "Fig3/Fig4 PDF6"
+    ],
+    "l_tgvn": [
+      "Fig1 PDF2",
+      "method equation PDF5",
+      "Fig3 PDF7"
+    ],
+    "cancerverse": [
+      "Fig2 PDF6",
+      "Fig3 PDF7"
+    ]
+  },
+  "author_code": {
+    "LRM_Functa": {
+      "url": "https://github.com/JuliaWolleb/LRM_Functa",
+      "commit": "6da03d1d15b8d07c09dcd2154493dbe1f2acc8f0",
+      "execution_status": "SOURCE_INSPECTED_NOT_EXECUTED",
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "sha256": "ea6605e4d9797633b08d5f439c71a478e154cde2f0a9009fd76c03d70e701f9b"
+        },
+        {
+          "path": "models/inrs.py",
+          "sha256": "eabd04b9d1cc4aa286154a9bd31e0a79ef04b104a88d47e0e13d2330d4008ec1"
+        },
+        {
+          "path": "models/model_wrapper.py",
+          "sha256": "f5a2c85cf1cabd11a1826c4e3974393bf562ac12dbfeeeb17460799fccbe6ef5"
+        },
+        {
+          "path": "train/maml_boot.py",
+          "sha256": "48dcf12c3bc0215a494d506d53cb61cb9f00211b8cd5c13e820fcfcb320a2b52"
+        },
+        {
+          "path": "configs/experiments/cardiac.yaml",
+          "sha256": "4cd285ac1a35c1fc8b316fd5b91d1523ac1ef37bda9e5dbd1c017cfb435be7e2"
+        }
+      ]
+    },
+    "L-TGVN": {
+      "url": "https://github.com/sodicksonlab/L-TGVN",
+      "commit": "759444508ba4253bd07511b9c499b7edb5f6a438",
+      "execution_status": "SOURCE_INSPECTED_NOT_EXECUTED",
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "sha256": "5f879c8a43c8ca9afbb41061cfc1faeec7148d1e350e4c32457b28a6fbef0e74"
+        },
+        {
+          "path": "src/models.py",
+          "sha256": "44aafff368697c8f7146528151112bfa792bb72157979e9ddc158c1de27a89e6"
+        },
+        {
+          "path": "src/math_utils.py",
+          "sha256": "3260b365f74510bb41b69605157307267ba495bf9a287527306d9c4645134397"
+        },
+        {
+          "path": "configs/ltgvn.yaml",
+          "sha256": "97e00f8e3ede914770f88ea84ea71b433b13607683957638e2707da9b8688859"
+        }
+      ]
+    }
+  },
+  "award_sources": {
+    "lrm_functa": "https://fr.linkedin.com/company/miccai",
+    "l_tgvn": "https://www.linkedin.com/posts/dan-sodickson-44a9665_miccai2026-mri-medicalimaging-activity-7511173315898589184-xRLs",
+    "cancerverse": "https://www.zongweiz.com/research"
+  },
+  "cancerverse_release_status_source": "https://huggingface.co/datasets/BodyMaps/CancerVerse/blob/main/README.md?code=true",
+  "cancerverse_release_status": "CARD_STAGED_RELEASE_NOT_FULL_DATA_AVAILABILITY_VERIFIED",
+  "new_training_or_inference_performed": false,
+  "existing_v2_training_contract_changed": false,
+  "pdf_images_full_text_and_author_repositories_in_git": false
+}
