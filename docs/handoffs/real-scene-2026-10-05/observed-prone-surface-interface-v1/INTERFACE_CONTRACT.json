@@ -1,0 +1,17 @@
+{
+  "scope": "Observed point-cloud interface execution; no training or new accuracy experiment",
+  "observed_points": 512,
+  "checkpoint_sha256": "d8fe069a5066d91f12d1a9cff9ebb89a3f703987d701571a098afadc73d1bc51",
+  "checkpoint_qualification": "4 consumed TRAIN CT images, 40-step structure-check weight; not validated efficacy",
+  "input": "Author filtered world point cloud, frozen historical camera transform",
+  "point_selection": "Historical seed0 train indices intersect frozen posterior RGB ROI and two-reference [-0.4,1.4], lateral +/-150 mm",
+  "patient_mesh": "Existing RigidD seed0 posterior patch; no refit",
+  "camera": "Approximate historical pinhole; not independent millimetre calibration",
+  "references": "Four existing mesh geometry fixtures; not doctor annotations",
+  "baseline": "Same frozen model/mesh/references; 512 mesh-sampled observations",
+  "comparison_limit": "Different observation source and sample coordinates; not isolated noise or medical accuracy",
+  "surface_update": "Return raw predicted ray delta separately; never apply",
+  "rules": "Frozen 25 mm fixture scale; not individual medical B-cun",
+  "medical_validated": false,
+  "robot_release": false
+}

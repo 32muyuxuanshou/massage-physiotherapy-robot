@@ -10,6 +10,8 @@
 
 ## 最新实际交付
 
+[真实观测点云接口V1](handoffs/real-scene-2026-10-05/observed-prone-surface-interface-v1/FINAL_REPORT.md)：本地S107原始作者点云实际接入冻结V2，原RGB/depth/相机点数组与历史SHA完全一致、seed0 split逐数组一致；9452个合格train点中固定取512，与留出交集0。双输入分支6建议/16规则及缓存独立重放通过，输入切换建议移动0.75–1.08mm；这是输出差异而非精度。没有训练、新SAM或拟合；结构权重与fixture参考不升级，射线修正未应用。原图叠加本地保留，其他19人原始输入与大规模训练仍等服务器恢复。
+
 [MICCAI 2026三篇获奖论文学习](research/2026-10-05-miccai-best-papers/READING_NOTES.md)：实际下载三篇接收版、阅读方法/实验并查看关键图，检查LRM-Functa与L-TGVN作者代码。当前优先借鉴测量约束与解剖参考分工，视频低秩留待连续数据，CancerVerse借鉴资源/标注一致性评价；没有运行这些作者模型或修改冻结V2训练。L-TGVN公开实现为软谱过滤，不能称绝对硬零空间保证。下一步仍是全量来源/先验对照及真实深度与独立参考验证。
 
 [独立体表参考/穴位核验接口V1](handoffs/real-scene-2026-10-05/independent-surface-reference-interface-v1/FINAL_REPORT.md)：实际核查GB/T12346-2021相关方法/目标页，明确椎体等级坐标不是B-cun、CT代理不等于棘突下标准位置。独立深度反投影及逐标注者/一致性比较CLI已实现，解析模拟正常路径16比较/8配对通过；零真人标注、零新临床准确率，不从预测Mesh制造参考。模型大规模验证仍等待可用服务器。
