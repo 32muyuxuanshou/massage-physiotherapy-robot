@@ -1,0 +1,627 @@
+{
+  "frame": {
+    "origin_mm": [
+      -45.94115369751237,
+      -207.9115620517878,
+      1549.6287958420123
+    ],
+    "basis": [
+      [
+        0.9964835987085693,
+        0.07963603852266538,
+        0.02604877872829307
+      ],
+      [
+        -0.030400596545255516,
+        0.053931422684896944,
+        0.9980817628715974
+      ],
+      [
+        0.07807843002079139,
+        -0.9953640052842977,
+        0.056162761238109066
+      ]
+    ],
+    "reference_length_mm": 388.2695659522174,
+    "native_to_mm": 1000.0
+  },
+  "supplied_references": {
+    "T3": {
+      "face_id": 13364,
+      "barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "origin": "GEOMETRY_FIXTURE_NOT_ANATOMY"
+    },
+    "L2": {
+      "face_id": 15631,
+      "barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "origin": "GEOMETRY_FIXTURE_NOT_ANATOMY"
+    },
+    "LEFT_REF": {
+      "face_id": 14560,
+      "barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "origin": "GEOMETRY_FIXTURE_NOT_ANATOMY"
+    },
+    "RIGHT_REF": {
+      "face_id": 14892,
+      "barycentric": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "origin": "GEOMETRY_FIXTURE_NOT_ANATOMY"
+    }
+  },
+  "suggestions": {
+    "C7_T1": {
+      "face_id": 12710,
+      "barycentric": [
+        0.37264715104067686,
+        0.42956218976329275,
+        0.1977906591960304
+      ],
+      "xyz_m": [
+        -0.05016468552448111,
+        -0.31337441101649044,
+        1.551327097558992
+      ],
+      "normal": [
+        -0.09844082547481063,
+        -0.19031713550042276,
+        -0.9767746883569165
+      ],
+      "coordinate_residual_mm": 8.881784197001252e-16,
+      "exact_chart_candidate_faces": 1,
+      "origin": "STRUCTURE_ONLY_LEARNED_CT_PROXY_NOT_ANATOMY",
+      "medical_validated": false,
+      "semantic_review_required": true
+    },
+    "T5": {
+      "face_id": 13705,
+      "barycentric": [
+        0.506168826099645,
+        0.46333994329329736,
+        0.030491230607057603
+      ],
+      "xyz_m": [
+        -0.044834478479451344,
+        -0.1381664504553165,
+        1.5626741918922011
+      ],
+      "normal": [
+        -0.20570081651219638,
+        0.14426396979902725,
+        -0.9679230760262103
+      ],
+      "coordinate_residual_mm": 1.4211466259831428e-14,
+      "exact_chart_candidate_faces": 1,
+      "origin": "STRUCTURE_ONLY_LEARNED_CT_PROXY_NOT_ANATOMY",
+      "medical_validated": false,
+      "semantic_review_required": true
+    },
+    "T9": {
+      "face_id": 14587,
+      "barycentric": [
+        0.1548384386540329,
+        0.21744069882153125,
+        0.6277208625244358
+      ],
+      "xyz_m": [
+        -0.03900941932575907,
+        0.003129042399086361,
+        1.5485747063349564
+      ],
+      "normal": [
+        -0.0771561758093665,
+        -0.22444853768941894,
+        -0.971426671686317
+      ],
+      "coordinate_residual_mm": 3.552713678800501e-15,
+      "exact_chart_candidate_faces": 1,
+      "origin": "STRUCTURE_ONLY_LEARNED_CT_PROXY_NOT_ANATOMY",
+      "medical_validated": false,
+      "semantic_review_required": true
+    }
+  },
+  "rules": {
+    "schema": "PATIENT_REFERENCE_RULE_BINDING_V1",
+    "status": "ENGINEERING_PROXY",
+    "medical_truth": false,
+    "landmark_frame_status": "SUPPLIED_UNVERIFIED_ANATOMICAL_REFERENCE",
+    "coordinate_frame": "historical reconstructed camera_m",
+    "rules": [
+      {
+        "id": "GV14",
+        "name": "Dazhui",
+        "reference_level": "C7_T1",
+        "laterality": "midline",
+        "lateral_b_cun": 0.0,
+        "rule_target": [
+          -0.05016468552448111,
+          -0.31337441101649044,
+          1.551327097558992
+        ],
+        "surface_xyz": [
+          -0.05016468552448112,
+          -0.31337441101649044,
+          1.551327097558992
+        ],
+        "face_index": 12710,
+        "barycentric": [
+          0.37264715104067614,
+          0.4295621897632935,
+          0.19779065919603034
+        ],
+        "surface_normal": [
+          -0.09844082547481063,
+          -0.19031713550042276,
+          -0.9767746883569165
+        ],
+        "projection_distance_native": 6.938893903907228e-18,
+        "confidence": null,
+        "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+        "medical_truth": false,
+        "provenance": "rule_engine_v1 + explicit_landmark_frame",
+        "xyz_m": [
+          -0.05016468552448112,
+          -0.31337441101649044,
+          1.551327097558992
+        ],
+        "projection_distance_mm": 6.938893903907228e-15
+      },
+      {
+        "id": "BL13_L",
+        "name": "Feishu",
+        "reference_level": "T3",
+        "laterality": "left",
+        "lateral_b_cun": 1.5,
+        "rule_target": [
+          -0.08334137193230907,
+          -0.2083047712187112,
+          1.5523341724406818
+        ],
+        "surface_xyz": [
+          -0.08324746213299844,
+          -0.2082186509412132,
+          1.5504716192717687
+        ],
+        "face_index": 13363,
+        "barycentric": [
+          0.12519137292426497,
+          0.4970314348613176,
+          0.3777771922144174
+        ],
+        "surface_normal": [
+          0.05030235680637516,
+          0.046129934881863094,
+          -0.9976681322000414
+        ],
+        "projection_distance_native": 0.0018669065481783796,
+        "confidence": null,
+        "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+        "medical_truth": false,
+        "provenance": "rule_engine_v1 + explicit_landmark_frame",
+        "xyz_m": [
+          -0.08324746213299844,
+          -0.2082186509412132,
+          1.5504716192717687
+        ],
+        "projection_distance_mm": 1.8669065481783795
+      },
+      {
+        "id": "BL13_R",
+        "name": "Feishu",
+        "reference_level": "T3",
+        "laterality": "right",
+        "lateral_b_cun": 1.5,
+        "rule_target": [
+          -0.00854093546271567,
+          -0.2075183528848644,
+          1.5469234192433428
+        ],
+        "surface_xyz": [
+          -0.008699634936354264,
+          -0.20767774520998405,
+          1.548451111863677
+        ],
+        "face_index": 13369,
+        "barycentric": [
+          0.6854087032324694,
+          0.1920169859759317,
+          0.1225743107915989
+        ],
+        "surface_normal": [
+          0.10277385215553722,
+          0.10322254309349879,
+          -0.9893344439118769
+        ],
+        "projection_distance_native": 0.0015441619663959982,
+        "confidence": null,
+        "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+        "medical_truth": false,
+        "provenance": "rule_engine_v1 + explicit_landmark_frame",
+        "xyz_m": [
+          -0.008699634936354264,
+          -0.20767774520998405,
+          1.548451111863677
+        ],
+        "projection_distance_mm": 1.5441619663959982
+      },
+      {
+        "id": "BL15_L",
+        "name": "Xinshu",
+        "reference_level": "T5",
+        "laterality": "left",
+        "lateral_b_cun": 1.5,
+        "rule_target": [
+          -0.08223469671424805,
+          -0.1385596596222399,
+          1.5653795684908707
+        ],
+        "surface_xyz": [
+          -0.08244326992016908,
+          -0.13787711160979538,
+          1.5603625707681965
+        ],
+        "face_index": 13701,
+        "barycentric": [
+          0.2803625582059534,
+          0.28809686852890515,
+          0.43154057326514145
+        ],
+        "surface_normal": [
+          -0.04115892706057878,
+          0.1346910488118104,
+          -0.9900324560807068
+        ],
+        "projection_distance_native": 0.005067508334560281,
+        "confidence": null,
+        "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+        "medical_truth": false,
+        "provenance": "rule_engine_v1 + explicit_landmark_frame",
+        "xyz_m": [
+          -0.08244326992016908,
+          -0.13787711160979538,
+          1.5603625707681965
+        ],
+        "projection_distance_mm": 5.067508334560281
+      },
+      {
+        "id": "BL15_R",
+        "name": "Xinshu",
+        "reference_level": "T5",
+        "laterality": "right",
+        "lateral_b_cun": 1.5,
+        "rule_target": [
+          -0.007434260244654642,
+          -0.1377732412883931,
+          1.5599688152935316
+        ],
+        "surface_xyz": [
+          -0.007348186476605375,
+          -0.13770659531838564,
+          1.5595004041237255
+        ],
+        "face_index": 13843,
+        "barycentric": [
+          0.1942581255343478,
+          0.5206196781291437,
+          0.28512219633650854
+        ],
+        "surface_normal": [
+          0.17898684612184848,
+          0.1385875423919761,
+          -0.9740416839176371
+        ],
+        "projection_distance_native": 0.00048089437807440495,
+        "confidence": null,
+        "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+        "medical_truth": false,
+        "provenance": "rule_engine_v1 + explicit_landmark_frame",
+        "xyz_m": [
+          -0.007348186476605375,
+          -0.13770659531838564,
+          1.5595004041237255
+        ],
+        "projection_distance_mm": 0.48089437807440494
+      },
+      {
+        "id": "BL18_L",
+        "name": "Ganshu",
+        "reference_level": "T9",
+        "laterality": "left",
+        "lateral_b_cun": 1.5,
+        "rule_target": [
+          -0.07640963756055577,
+          0.0027358332321629616,
+          1.551280082933626
+        ],
+        "surface_xyz": [
+          -0.07559783208145616,
+          0.003173291364080181,
+          1.5537842777176938
+        ],
+        "face_index": 14584,
+        "barycentric": [
+          0.23548931807129792,
+          0.12435131079292956,
+          0.6401593711357725
+        ],
+        "surface_normal": [
+          -0.30420728860200186,
+          -0.16392837399303534,
+          -0.9383951266718182
+        ],
+        "projection_distance_native": 0.002668593125530595,
+        "confidence": null,
+        "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+        "medical_truth": false,
+        "provenance": "rule_engine_v1 + explicit_landmark_frame",
+        "xyz_m": [
+          -0.07559783208145616,
+          0.003173291364080181,
+          1.5537842777176938
+        ],
+        "projection_distance_mm": 2.668593125530595
+      },
+      {
+        "id": "BL18_R",
+        "name": "Ganshu",
+        "reference_level": "T9",
+        "laterality": "right",
+        "lateral_b_cun": 1.5,
+        "rule_target": [
+          -0.0016092010909623672,
+          0.0035222515660097604,
+          1.5458693297362869
+        ],
+        "surface_xyz": [
+          -0.001625956639591978,
+          0.003941836338600563,
+          1.546874188293453
+        ],
+        "face_index": 14590,
+        "barycentric": [
+          0.5899264838336721,
+          0.14615966943334957,
+          0.26391384673297835
+        ],
+        "surface_normal": [
+          0.015385193766221175,
+          -0.38526897390026366,
+          -0.9226760610109129
+        ],
+        "projection_distance_native": 0.0010890697175616243,
+        "confidence": null,
+        "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+        "medical_truth": false,
+        "provenance": "rule_engine_v1 + explicit_landmark_frame",
+        "xyz_m": [
+          -0.001625956639591978,
+          0.003941836338600563,
+          1.546874188293453
+        ],
+        "projection_distance_mm": 1.0890697175616242
+      },
+      {
+        "id": "GV4",
+        "name": "Mingmen",
+        "reference_level": "L2",
+        "laterality": "midline",
+        "lateral_b_cun": 0.0,
+        "rule_target": [
+          -0.03582720568709266,
+          0.17961321080319131,
+          1.571435086770611
+        ],
+        "surface_xyz": [
+          -0.03582720568709265,
+          0.17961321080319134,
+          1.571435086770611
+        ],
+        "face_index": 15631,
+        "barycentric": [
+          0.3333333333333341,
+          0.33333333333333426,
+          0.33333333333333165
+        ],
+        "surface_normal": [
+          0.2553128102751126,
+          0.6217459064254847,
+          -0.7404373010272894
+        ],
+        "projection_distance_native": 3.1031676915590914e-17,
+        "confidence": null,
+        "confidence_status": "UNCALIBRATED_ENGINEERING_ONLY",
+        "medical_truth": false,
+        "provenance": "rule_engine_v1 + explicit_landmark_frame",
+        "xyz_m": [
+          -0.03582720568709265,
+          0.17961321080319134,
+          1.571435086770611
+        ],
+        "projection_distance_mm": 3.1031676915590914e-14
+      }
+    ],
+    "subject": "S134",
+    "mesh_sha256": "205be0d9572b11b7b45c42e68191382b851849a2dac4bd2d913140a194175680",
+    "native_unit": "m",
+    "display_unit": "mm",
+    "reference_points_m": {
+      "C7_T1": [
+        -0.05016468552448111,
+        -0.31337441101649044,
+        1.551327097558992
+      ],
+      "T3": [
+        -0.04594115369751237,
+        -0.2079115620517878,
+        1.5496287958420123
+      ],
+      "T5": [
+        -0.044834478479451344,
+        -0.1381664504553165,
+        1.5626741918922011
+      ],
+      "T9": [
+        -0.03900941932575907,
+        0.003129042399086361,
+        1.5485747063349564
+      ],
+      "L2": [
+        -0.03582720568709266,
+        0.17961321080319131,
+        1.571435086770611
+      ],
+      "LEFT_REF": [
+        -0.20544987095671993,
+        0.004789002977449008,
+        1.6698618646597914
+      ],
+      "RIGHT_REF": [
+        0.14166774938398743,
+        0.008438442386110372,
+        1.6447528163339218
+      ]
+    },
+    "supplied_references": {
+      "T3": {
+        "face_id": 13364,
+        "barycentric": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "origin": "GEOMETRY_FIXTURE_NOT_ANATOMY"
+      },
+      "L2": {
+        "face_id": 15631,
+        "barycentric": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "origin": "GEOMETRY_FIXTURE_NOT_ANATOMY"
+      },
+      "LEFT_REF": {
+        "face_id": 14560,
+        "barycentric": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "origin": "GEOMETRY_FIXTURE_NOT_ANATOMY"
+      },
+      "RIGHT_REF": {
+        "face_id": 14892,
+        "barycentric": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "origin": "GEOMETRY_FIXTURE_NOT_ANATOMY"
+      },
+      "C7_T1": {
+        "face_id": 12710,
+        "barycentric": [
+          0.37264715104067686,
+          0.42956218976329275,
+          0.1977906591960304
+        ],
+        "xyz_m": [
+          -0.05016468552448111,
+          -0.31337441101649044,
+          1.551327097558992
+        ],
+        "normal": [
+          -0.09844082547481063,
+          -0.19031713550042276,
+          -0.9767746883569165
+        ],
+        "coordinate_residual_mm": 8.881784197001252e-16,
+        "exact_chart_candidate_faces": 1,
+        "origin": "STRUCTURE_ONLY_LEARNED_CT_PROXY_NOT_ANATOMY",
+        "medical_validated": false,
+        "semantic_review_required": true
+      },
+      "T5": {
+        "face_id": 13705,
+        "barycentric": [
+          0.506168826099645,
+          0.46333994329329736,
+          0.030491230607057603
+        ],
+        "xyz_m": [
+          -0.044834478479451344,
+          -0.1381664504553165,
+          1.5626741918922011
+        ],
+        "normal": [
+          -0.20570081651219638,
+          0.14426396979902725,
+          -0.9679230760262103
+        ],
+        "coordinate_residual_mm": 1.4211466259831428e-14,
+        "exact_chart_candidate_faces": 1,
+        "origin": "STRUCTURE_ONLY_LEARNED_CT_PROXY_NOT_ANATOMY",
+        "medical_validated": false,
+        "semantic_review_required": true
+      },
+      "T9": {
+        "face_id": 14587,
+        "barycentric": [
+          0.1548384386540329,
+          0.21744069882153125,
+          0.6277208625244358
+        ],
+        "xyz_m": [
+          -0.03900941932575907,
+          0.003129042399086361,
+          1.5485747063349564
+        ],
+        "normal": [
+          -0.0771561758093665,
+          -0.22444853768941894,
+          -0.971426671686317
+        ],
+        "coordinate_residual_mm": 3.552713678800501e-15,
+        "exact_chart_candidate_faces": 1,
+        "origin": "STRUCTURE_ONLY_LEARNED_CT_PROXY_NOT_ANATOMY",
+        "medical_validated": false,
+        "semantic_review_required": true
+      }
+    },
+    "b_cun_mm": 25.0,
+    "scale_source": "FIXTURE_25_MM_NOT_MEDICAL",
+    "lateral_axis": [
+      0.9973391529279118,
+      0.010485577784623987,
+      -0.07214337596451885
+    ],
+    "reference_medical_validated": false,
+    "calibration_validated": false,
+    "robot_release": false,
+    "semantic_note": "Named references are candidates; no clinician/anatomical accuracy is implied by a successful mesh binding."
+  },
+  "geometry_correction_applied": false,
+  "medical_validated": false,
+  "robot_release": false,
+  "subject": "S134",
+  "mesh_sha256": "205be0d9572b11b7b45c42e68191382b851849a2dac4bd2d913140a194175680",
+  "public_input_sha256": "8c1b0efea97769ef85e9b9a2340d480e3bd0f023038f759bd6fff10112e88af6",
+  "cache_sha256": "33842e4972c72e55f9aa2055ae8ce2e6e08a6c7faedd915e33b2952bddc2e811",
+  "max_rule_reconstruction_error_m": 2.2215299868541707e-16,
+  "observation_origin": "MESH_SAMPLED_INTERFACE_FIXTURE_NOT_SENSOR_DEPTH",
+  "reference_origin": "FOUR_GEOMETRY_FIXTURES_NOT_MEDICAL_REFERENCES"
+}

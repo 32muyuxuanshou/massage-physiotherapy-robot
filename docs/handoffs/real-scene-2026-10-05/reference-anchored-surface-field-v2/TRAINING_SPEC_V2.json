@@ -1,0 +1,97 @@
+{
+  "status": "PREREGISTERED_CODE_IMPLEMENTED_FORMAL_GRID_NOT_RUN",
+  "date": "2026-10-05",
+  "source": {
+    "dataset": "TotalSegmentator V3 1939 CT image archive",
+    "role_freeze_path": "../anatomical-surface-method-foundation-v1/SOURCE_ROLE_FREEZE.json",
+    "role_freeze_sha256": "0352d8bec7c8d82794c80772951fa322367072c9b32432535c4069e2d22be5c0",
+    "training": "qualified adult TRAIN with T3 and L2",
+    "development": "qualified adult DEVELOPMENT with T3 and L2",
+    "evaluation": "qualified adult AUTHOR_TEST_UNCONSUMED_IMAGE with T3 and L2",
+    "original_adult_author_test_images": 88,
+    "old_consumed_roles_excluded": true,
+    "minimum_train": 200,
+    "minimum_development": 20,
+    "patient_disjointness_certified": false,
+    "clinical_acupoint_GT": false
+  },
+  "inputs": {
+    "observed_points": 1024,
+    "query_points": 256,
+    "provided_reference_slots": [
+      "T3",
+      "L2"
+    ],
+    "posterior_direction": "RAS -Y in CT; camera-facing mesh reference normals in patient interface",
+    "normalization_mm": 500,
+    "frame": "rigid right/posterior/inferior with T3 origin",
+    "reference_noise_training_mm": 0,
+    "reference_noise_evaluation_mm": [
+      0,
+      5
+    ],
+    "observed_radial_noise_mm": 2,
+    "query_radial_noise_mm": 10,
+    "synthetic_camera_posterior_distance_mm": 1200,
+    "partial_probability": 0.4,
+    "partial_quantile_window_fraction": [
+      0.6,
+      0.9
+    ],
+    "supplied_references_available_when_observed_window_partial": true,
+    "first_hit_visibility_certified": false,
+    "RGB_features": false,
+    "MHR_semantic_feature_input": false,
+    "reference_noise_distribution": "isotropic Gaussian; 5 mm per-axis standard deviation, not a 5 mm norm bound"
+  },
+  "models": [
+    "SOFT_ANATOMY",
+    "HARD_ANATOMY",
+    "HARD_JOINT"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "epochs": 60,
+  "batch_size": 8,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "losses": {
+    "anatomy": "SmoothL1 beta=.05",
+    "ray": "SmoothL1 beta=.02; HARD_JOINT only",
+    "ray_weight": 0.25
+  },
+  "selection": "image-equal development anatomy loss only",
+  "candidate_roi": {
+    "along_T3_to_L2": [
+      -0.4,
+      1.4
+    ],
+    "local_lateral_mm": [
+      -150,
+      150
+    ],
+    "source": "provided input references and surface coordinates; not CT level labels"
+  },
+  "baseline": "paired TRAIN-only 18-grade proportion prior in the same rigid physical frame; same candidate set",
+  "scoring": {
+    "exclude_provided_levels": [
+      "T3",
+      "L2"
+    ],
+    "anatomy": "XYZ primary, RAS XZ supporting CT proxy error",
+    "geometry": "disjoint radial query median/P95; zero correction comparator",
+    "aggregation": "valid non-reference levels mean -> 3-seed median per image -> image-equal median/mean/P95",
+    "all_source_disqualifications_saved": true
+  },
+  "scientific_boundaries": [
+    "radial point-cloud corruption is not rendered/native RGB-D sensor data",
+    "CT proxy anatomy is not spinous depression or WHO acupoint",
+    "20 patient interface images use mesh-sampled observations and geometry reference fixtures",
+    "structural checkpoints do not replace engineering baseline",
+    "no shape scale or camera fitting changes to historical geometric experiments"
+  ]
+}
