@@ -1,0 +1,73 @@
+{
+  "status": "LOCAL_CACHE_DIAGNOSIS_COMPLETE_FULL_MESH_REPLAY_NOT_AVAILABLE",
+  "utc": "2026-10-08T11:46:37.095023+00:00",
+  "seconds": 2.625,
+  "python": "3.11.9",
+  "numpy": "2.4.6",
+  "host": "ss",
+  "server_used": false,
+  "controlled": {
+    "point_records": 1920,
+    "cache_groups": 240,
+    "old_numeric_max_difference_mm": 1.4210854715202004e-14,
+    "error_recomputed_from_point_coordinates": true,
+    "error_recomputed_from_full_mesh": false
+  },
+  "real": {
+    "position_records": 1440,
+    "movement_records": 480,
+    "stability_records": 480,
+    "triangle_bindings_recomputed": 960,
+    "official_positions_from_historical_cache": 480,
+    "binding_max_difference_mm": 0.0,
+    "old_position_max_difference_mm": 0.0,
+    "official_shared_initial_identical": true,
+    "visibility": "NOT_VERIFIED",
+    "real_accuracy": false
+  },
+  "canonical_max_difference_mm": 2.2737367544323206e-13,
+  "sources_opened": 1090,
+  "new_inferences": 0,
+  "new_fits": 0,
+  "new_training": 0,
+  "full_mesh_geometry_metrics_recomputed": false,
+  "medical_accuracy": false,
+  "robot_release": false,
+  "normal_path_check": "S107 development cache + 8 face IDs, then complete fixed 20-person cohort",
+  "attempts": [
+    {
+      "entry": "analyze.py --cohort all",
+      "exit_code": 1,
+      "cause": "KeyError seeds: controlled contract has no real split seeds",
+      "resolution": "Load existing real EXECUTION_CONTRACT; assert cohort/dev identity and seeds 0/1/2"
+    },
+    {
+      "entry": "analyze.py --cohort all",
+      "exit_code": 0
+    }
+  ],
+  "scope_change": "User confirmed server damaged; use local coordinate/triangle caches; full reference/final Mesh replay remains unexecuted",
+  "visuals": {
+    "status": "COMPLETE",
+    "seconds": 75.79700000002049,
+    "new_figures": 82,
+    "new_fits": 0,
+    "new_inferences": 0
+  },
+  "cache_replay": {
+    "status": "PASS",
+    "canonical_points": 8,
+    "controlled_point_errors": 1920,
+    "real_positions": 1440,
+    "real_face_bindings": 960,
+    "real_stability_spans": 480,
+    "visualizations_hashed": 82,
+    "controlled_aggregation_groups": 24,
+    "real_aggregation_groups": 6,
+    "no_native_MHR_or_raw_patient_data_needed": true,
+    "full_mesh_replay": false,
+    "medical_accuracy": false,
+    "new_fits": 0
+  },
+  "end_utc": "2026-10-08T11:58:40.307630+00:00"
+}

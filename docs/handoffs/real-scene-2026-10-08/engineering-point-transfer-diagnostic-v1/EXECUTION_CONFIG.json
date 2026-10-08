@@ -1,0 +1,66 @@
+{
+  "subjects": [
+    "S103",
+    "S104",
+    "S107",
+    "S114",
+    "S118",
+    "S121",
+    "S130",
+    "S134",
+    "S140",
+    "S141",
+    "S145",
+    "S151",
+    "S163",
+    "S165",
+    "S170",
+    "S179",
+    "S184",
+    "S187",
+    "S188",
+    "S196"
+  ],
+  "dev": [
+    "S104",
+    "S107",
+    "S165",
+    "S187"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "controlled_cases": [
+    "RIGID_ONLY",
+    "NORMAL_BUMP",
+    "TANGENTIAL_SHIFT"
+  ],
+  "controlled_methods": [
+    "INITIAL",
+    "RIGID",
+    "D_VECTOR",
+    "D_NORMAL"
+  ],
+  "real_methods": [
+    "Official",
+    "Rigid",
+    "RigidD"
+  ],
+  "point_ids": [
+    "ENG_MID_UP",
+    "ENG_MID_DOWN",
+    "ENG_PAIR_1_NEG_X",
+    "ENG_PAIR_1_POS_X",
+    "ENG_PAIR_2_NEG_X",
+    "ENG_PAIR_2_POS_X",
+    "ENG_PAIR_3_NEG_X",
+    "ENG_PAIR_3_POS_X"
+  ],
+  "aggregation": "8-point median per subject -> role subject median; real span = max pairwise distance over 3 split seeds",
+  "historical_subjects_consumed": true,
+  "new_inferences": 0,
+  "new_fits": 0,
+  "new_training": 0
+}
