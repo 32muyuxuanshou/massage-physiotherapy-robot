@@ -29,6 +29,7 @@ def response_summary(records):
 
 
 def main():
+    torch.set_num_threads(2)
     p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True)
     p.add_argument('--pilot',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
     p.add_argument('--mode',required=True);a=p.parse_args();a.out.mkdir(parents=True,exist_ok=True)
