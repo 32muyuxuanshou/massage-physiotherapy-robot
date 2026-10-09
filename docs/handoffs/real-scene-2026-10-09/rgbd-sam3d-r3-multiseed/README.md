@@ -1,6 +1,6 @@
 # R3：扩大合成数据与三种融合模型的多 seed 对照
 
-状态：执行中；本文件是执行合同，不是完成报告。R2 单次实验不用于否定 Cross-Attention。
+状态：九次训练、Depth 消融和真实开发集评价已完成。结论见 `FINAL_REVIEW_20261010.md`，完整输出见 `completed_results/`；以下保留原执行合同。R2 单次实验不用于否定 Cross-Attention。
 
 ## 数据
 
