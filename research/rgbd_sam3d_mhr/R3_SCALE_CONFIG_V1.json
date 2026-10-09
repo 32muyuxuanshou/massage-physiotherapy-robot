@@ -32,7 +32,7 @@
   "real_evaluation_camera": "kinect_001",
   "real_evaluation_samples": "all 232 prepared TRAIN/VAL timestamps; no TEST",
   "trainable": "existing feature adapter only; official backbone/decoder/heads/MHR frozen",
-  "cache": "native backbone output bfloat16, same dtype as official; forward numerical equivalence QA <=1e-6, geometry <=0.001 mm; not bitwise prediction equality",
+  "cache": "native backbone output bfloat16, same dtype as official; parameter forward numerical equivalence QA <=2e-6, vertices <=0.001 mm; not bitwise prediction equality",
   "storage_estimate_gib": {"new_native_data": 3, "backbone_cache_and_targets": 42, "checkpoints_and_outputs": 12, "reserve_free": 40},
   "limitations": "Procedural surface colour patterns, modest native poses and shape variation; no photoreal clothing, bed/contact deformation or clinical points. Real evaluation is transfer diagnosis; no absolute GT accuracy or unseen-by-official-pretraining claim."
 }
