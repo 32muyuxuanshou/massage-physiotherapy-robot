@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "batch_size": 16,
+  "train_ids": 4,
+  "train_images": 32,
+  "epochs": 2,
+  "fresh_process_resume": true,
+  "fusion_max_abs": 0.00013990513980388641,
+  "optimizer_max_abs": 5.729496479034424e-06,
+  "scheduler_rng_equal": true,
+  "restored_state": {
+    "status": "PASS",
+    "fusion_reloaded_exact": true,
+    "saved_epoch": 1,
+    "next_epoch": 2,
+    "optimizer_restored": true,
+    "scheduler_restored": true,
+    "rng_restored": true
+  },
+  "final_val_difference_mm": 5.2642822254256316e-05,
+  "tolerances": {
+    "restored_state": "exact",
+    "subsequent_training_val_mm": 0.001
+  },
+  "bitwise_training": false,
+  "note": "exact checkpoint restore; CUDA reduction roundoff allowed in subsequent training, geometry agreement reported"
+}

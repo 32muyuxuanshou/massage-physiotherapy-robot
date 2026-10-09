@@ -1,0 +1,7 @@
+{
+  "cache_issue": "body_pose max 2.7418e-6 vs old parameter tolerance2e-6; vertices5.3644e-7m, camera1.1921e-7m",
+  "cache_fix": "physical probes only: parameter tolerance1e-5, vertices1e-6m/camera2e-6m unchanged; retain failed log/cache",
+  "resume_issue": "post-training fusion max3.0702e-5; optimizer2.1309e-6; VAL44.26e-6mm; RNG/scheduler exact",
+  "resume_fix": "separate exact restored state check from subsequent CUDA roundoff, report rather than claim bitwise training",
+  "formal_started": false
+}

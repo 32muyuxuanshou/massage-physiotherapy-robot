@@ -1,0 +1,20 @@
+{
+  "stage": "R4_METRIC_CAMERA_AND_LOCAL_XYZ_ATTENTION",
+  "modes": ["g0", "g1", "g2", "g3"],
+  "pilot": {"train_ids": 100, "val_ids": 50, "epochs": 8, "seed": 11},
+  "formal": {"train_ids": 400, "val_ids": 50, "epochs": 30, "seeds": [11, 23, 37]},
+  "batch_size": 16,
+  "learning_rate": 0.0003,
+  "optimizer_scheduler_loss": "unchanged R3_SCALE_CONFIG_V1.json and render_losses.py",
+  "checkpoint_selection": "minimum synthetic VAL identity-equal camera-frame corresponding vertex error",
+  "camera": {"injection": "head_camera forward output, before all official intermediate/final camera_project calls", "raw_scale_log_bound": 0.5, "raw_tx_ty_bound": 0.15, "zero_final_layer": true, "official_shared_pose_token": true},
+  "geometry": {"grid": [32, 24], "patch_pixels": 16, "window": 5, "keys_per_query": 25, "distance_dtype": "float32", "initial_sigma_m": 0.15, "missing_query": "exact RGB feature"},
+  "test_read": false,
+  "real_camera_input": "kinect_000",
+  "real_camera_evaluation": "kinect_001; original 232 fixed pointsets",
+  "training_stop_utc": "2026-10-10T02:50:00Z",
+  "closeout_deadline_beijing": "2026-10-10T12:00:00+08:00",
+  "gate": "native geometry/projection/gradient/resume QA must PASS, then pilot; prefer synthetic vertex/camera gain over matched G0 with plausible physical-distance response and no evident instability; real is development diagnosis, never checkpoint selection",
+  "legacy_loss_note": "R3 global_rotation loss uses ZYX while native MHR and evaluation use xyz; unchanged for comparator isolation, reported explicitly rather than silently retuned",
+  "limitations": "500 procedural identities, 2 poses x 4 cameras, no clinical points/bed texture/contact; HuMMan TRAIN/VAL already consumed development; no anatomical or final clinical precision claim"
+}

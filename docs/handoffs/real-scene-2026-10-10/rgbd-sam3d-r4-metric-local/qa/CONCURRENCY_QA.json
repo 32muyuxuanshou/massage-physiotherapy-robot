@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "concurrent": 1,
+      "workers": [
+        {
+          "batch_size": 16,
+          "steps": 16,
+          "steady_seconds_per_batch": 0.3069110002058248,
+          "peak_memory_bytes": 7665244672
+        }
+      ],
+      "images_per_second": 52.132377103687595,
+      "peak_memory_sum_bytes": 7665244672
+    },
+    {
+      "concurrent": 2,
+      "workers": [
+        {
+          "batch_size": 16,
+          "steps": 16,
+          "steady_seconds_per_batch": 0.46902487772361684,
+          "peak_memory_bytes": 7665244672
+        },
+        {
+          "batch_size": 16,
+          "steps": 16,
+          "steady_seconds_per_batch": 0.47512248581430566,
+          "peak_memory_bytes": 7665244672
+        }
+      ],
+      "images_per_second": 67.78885586985277,
+      "peak_memory_sum_bytes": 15330489344
+    },
+    {
+      "concurrent": 3,
+      "workers": [
+        {
+          "batch_size": 16,
+          "steps": 16,
+          "steady_seconds_per_batch": 0.6148344619044414,
+          "peak_memory_bytes": 7665244672
+        },
+        {
+          "batch_size": 16,
+          "steps": 16,
+          "steady_seconds_per_batch": 0.6260066227599358,
+          "peak_memory_bytes": 7665244672
+        },
+        {
+          "batch_size": 16,
+          "steps": 16,
+          "steady_seconds_per_batch": 0.6280210151647528,
+          "peak_memory_bytes": 7665244672
+        }
+      ],
+      "images_per_second": 77.0589542732737,
+      "peak_memory_sum_bytes": 22995734016
+    }
+  ],
+  "selected_concurrent": 3,
+  "rule": "highest measured aggregate warmed batch16 images/s among 1/2/3 new G3 workers"
+}
