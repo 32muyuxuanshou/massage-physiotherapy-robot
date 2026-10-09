@@ -1,0 +1,565 @@
+{
+  "status": "PHYSICAL_DISTANCE_PROBE_COMPLETE_NO_TEST",
+  "checkpoint": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/pilots/g0/run/best.pt",
+  "checkpoint_sha256": "e47202bc97b87f065b61abe9463bc2beb2452bb407ae4201049f9d176ff31a71",
+  "ideal_z_response_slope": 1.0,
+  "per_identity": {
+    "mhr3_0000": {
+      "role": "TRAIN",
+      "z_response_slope": 0.26428035355058066,
+      "z_absolute_mae_mm": 1343.534767627716,
+      "z_relative_change_mae_mm": 567.2209858894348,
+      "vertex_camera_mm": 1532.2629699707031,
+      "depth_valid_mean_z_m": [
+        3.611359119415283,
+        4.162595272064209,
+        4.7154717445373535,
+        5.264466762542725
+      ]
+    },
+    "mhr3_0001": {
+      "role": "TRAIN",
+      "z_response_slope": 0.3251352021249184,
+      "z_absolute_mae_mm": 1324.5914578437805,
+      "z_relative_change_mae_mm": 535.943329334259,
+      "vertex_camera_mm": 1398.7964782714844,
+      "depth_valid_mean_z_m": [
+        3.4552338123321533,
+        3.9922919273376465,
+        4.528566360473633,
+        5.0649638175964355
+      ]
+    },
+    "mhr3_0400": {
+      "role": "VAL",
+      "z_response_slope": 0.3464286810677119,
+      "z_absolute_mae_mm": 1667.4162149429321,
+      "z_relative_change_mae_mm": 853.2119989395142,
+      "vertex_camera_mm": 1706.1708526611328,
+      "depth_valid_mean_z_m": [
+        5.17546272277832,
+        5.966342926025391,
+        6.7572479248046875,
+        7.547719478607178
+      ]
+    },
+    "mhr3_0401": {
+      "role": "VAL",
+      "z_response_slope": -0.1272555334903225,
+      "z_absolute_mae_mm": 1407.3723554611206,
+      "z_relative_change_mae_mm": 1450.8017301559448,
+      "vertex_camera_mm": 1468.3863258361816,
+      "depth_valid_mean_z_m": [
+        5.369404315948486,
+        6.1874918937683105,
+        7.005234718322754,
+        7.823419094085693
+      ]
+    }
+  },
+  "records": [
+    {
+      "identity": "mhr3_0000",
+      "role": "TRAIN",
+      "factor": 1.0,
+      "camera_gt_xyz_m": [
+        0.04951345920562744,
+        0.7041884660720825,
+        3.6585545539855957
+      ],
+      "camera_pred_xyz_m": [
+        0.1052350103855133,
+        0.9528469443321228,
+        2.8822407722473145
+      ],
+      "metrics": {
+        "vertex_body_mm": 397.3236083984375,
+        "vertex_camera_mm": 1001.159423828125,
+        "vertex_translation_removed_mm": 350.1163024902344,
+        "joint_mm": 380.4950866699219,
+        "joint_camera_mm": 983.2176513671875,
+        "camera_mm": 817.0673217773438,
+        "shape_rmse": 1.0012375116348267,
+        "scale_rmse": 0.9095181226730347,
+        "global_rotation_deg": 50.316532135009766,
+        "body_pose_periodic_mean_deg": 4.47454833984375,
+        "depth_common_median_mm": 837.9957885742188,
+        "depth_common_p95_mm": 1122.00390625,
+        "depth_hit_rate": 0.6587825417518616,
+        "silhouette_iou": 0.3734378218650818
+      }
+    },
+    {
+      "identity": "mhr3_0000",
+      "role": "TRAIN",
+      "factor": 1.15,
+      "camera_gt_xyz_m": [
+        0.04951345920562744,
+        0.7041884660720825,
+        4.207337856292725
+      ],
+      "camera_pred_xyz_m": [
+        0.10058866441249847,
+        0.9593521356582642,
+        3.158170461654663
+      ],
+      "metrics": {
+        "vertex_body_mm": 407.5276794433594,
+        "vertex_camera_mm": 1267.700439453125,
+        "vertex_translation_removed_mm": 358.0099182128906,
+        "joint_mm": 389.4801025390625,
+        "joint_camera_mm": 1247.484130859375,
+        "camera_mm": 1080.9576416015625,
+        "shape_rmse": 0.9941563606262207,
+        "scale_rmse": 0.8627898693084717,
+        "global_rotation_deg": 52.680355072021484,
+        "body_pose_periodic_mean_deg": 4.554341793060303,
+        "depth_common_median_mm": 1117.340576171875,
+        "depth_common_p95_mm": 1405.093994140625,
+        "depth_hit_rate": 0.6827948093414307,
+        "silhouette_iou": 0.3632396459579468
+      }
+    },
+    {
+      "identity": "mhr3_0000",
+      "role": "TRAIN",
+      "factor": 1.3,
+      "camera_gt_xyz_m": [
+        0.04951345920562744,
+        0.7041884660720825,
+        4.756120681762695
+      ],
+      "camera_pred_xyz_m": [
+        0.09867104887962341,
+        0.9654282331466675,
+        3.1409413814544678
+      ],
+      "metrics": {
+        "vertex_body_mm": 381.89324951171875,
+        "vertex_camera_mm": 1776.0711669921875,
+        "vertex_translation_removed_mm": 345.0162353515625,
+        "joint_mm": 356.5040588378906,
+        "joint_camera_mm": 1745.6346435546875,
+        "camera_mm": 1636.90771484375,
+        "shape_rmse": 1.0003691911697388,
+        "scale_rmse": 1.0305966138839722,
+        "global_rotation_deg": 44.64137268066406,
+        "body_pose_periodic_mean_deg": 4.433803081512451,
+        "depth_common_median_mm": 1694.3304443359375,
+        "depth_common_p95_mm": 2019.4951171875,
+        "depth_hit_rate": 0.7968260645866394,
+        "silhouette_iou": 0.3350900411605835
+      }
+    },
+    {
+      "identity": "mhr3_0000",
+      "role": "TRAIN",
+      "factor": 1.45,
+      "camera_gt_xyz_m": [
+        0.04951345920562744,
+        0.7041884660720825,
+        5.304904460906982
+      ],
+      "camera_pred_xyz_m": [
+        0.09550531953573227,
+        0.9680677056312561,
+        3.3714258670806885
+      ],
+      "metrics": {
+        "vertex_body_mm": 377.0964660644531,
+        "vertex_camera_mm": 2084.120849609375,
+        "vertex_translation_removed_mm": 341.8085021972656,
+        "joint_mm": 352.68292236328125,
+        "joint_camera_mm": 2053.853271484375,
+        "camera_mm": 1951.9443359375,
+        "shape_rmse": 0.9996289610862732,
+        "scale_rmse": 1.0099889039993286,
+        "global_rotation_deg": 43.72761154174805,
+        "body_pose_periodic_mean_deg": 4.426812648773193,
+        "depth_common_median_mm": 2019.6290283203125,
+        "depth_common_p95_mm": 2354.989501953125,
+        "depth_hit_rate": 0.8374870419502258,
+        "silhouette_iou": 0.33298927545547485
+      }
+    },
+    {
+      "identity": "mhr3_0001",
+      "role": "TRAIN",
+      "factor": 1.0,
+      "camera_gt_xyz_m": [
+        -0.07941178232431412,
+        0.9015854001045227,
+        3.565131187438965
+      ],
+      "camera_pred_xyz_m": [
+        0.004269726574420929,
+        1.0826101303100586,
+        2.7764830589294434
+      ],
+      "metrics": {
+        "vertex_body_mm": 330.9033203125,
+        "vertex_camera_mm": 889.302001953125,
+        "vertex_translation_removed_mm": 328.95819091796875,
+        "joint_mm": 327.7830505371094,
+        "joint_camera_mm": 865.8350219726562,
+        "camera_mm": 813.4730834960938,
+        "shape_rmse": 1.1691858768463135,
+        "scale_rmse": 0.8750613927841187,
+        "global_rotation_deg": 67.4385986328125,
+        "body_pose_periodic_mean_deg": 4.317968845367432,
+        "depth_common_median_mm": 828.51025390625,
+        "depth_common_p95_mm": 989.157470703125,
+        "depth_hit_rate": 0.652719259262085,
+        "silhouette_iou": 0.4097782373428345
+      }
+    },
+    {
+      "identity": "mhr3_0001",
+      "role": "TRAIN",
+      "factor": 1.15,
+      "camera_gt_xyz_m": [
+        -0.07941178232431412,
+        0.9015854001045227,
+        4.099900722503662
+      ],
+      "camera_pred_xyz_m": [
+        0.003978499211370945,
+        1.0874602794647217,
+        2.9686410427093506
+      ],
+      "metrics": {
+        "vertex_body_mm": 333.67559814453125,
+        "vertex_camera_mm": 1212.849609375,
+        "vertex_translation_removed_mm": 330.7719421386719,
+        "joint_mm": 325.6786193847656,
+        "joint_camera_mm": 1183.2613525390625,
+        "camera_mm": 1149.457275390625,
+        "shape_rmse": 1.1693857908248901,
+        "scale_rmse": 0.8567137718200684,
+        "global_rotation_deg": 65.75885772705078,
+        "body_pose_periodic_mean_deg": 4.343687534332275,
+        "depth_common_median_mm": 1177.4468994140625,
+        "depth_common_p95_mm": 1340.3114013671875,
+        "depth_hit_rate": 0.710628092288971,
+        "silhouette_iou": 0.40543419122695923
+      }
+    },
+    {
+      "identity": "mhr3_0001",
+      "role": "TRAIN",
+      "factor": 1.3,
+      "camera_gt_xyz_m": [
+        -0.07941178232431412,
+        0.9015854001045227,
+        4.634670257568359
+      ],
+      "camera_pred_xyz_m": [
+        0.005864880979061127,
+        1.069176435470581,
+        3.1200714111328125
+      ],
+      "metrics": {
+        "vertex_body_mm": 330.38153076171875,
+        "vertex_camera_mm": 1578.4696044921875,
+        "vertex_translation_removed_mm": 328.0252990722656,
+        "joint_mm": 317.86376953125,
+        "joint_camera_mm": 1543.7991943359375,
+        "camera_mm": 1526.2269287109375,
+        "shape_rmse": 1.1699670553207397,
+        "scale_rmse": 0.8755686283111572,
+        "global_rotation_deg": 61.876380920410156,
+        "body_pose_periodic_mean_deg": 4.369792938232422,
+        "depth_common_median_mm": 1564.5482177734375,
+        "depth_common_p95_mm": 1741.9903564453125,
+        "depth_hit_rate": 0.7693490386009216,
+        "silhouette_iou": 0.3940429389476776
+      }
+    },
+    {
+      "identity": "mhr3_0001",
+      "role": "TRAIN",
+      "factor": 1.45,
+      "camera_gt_xyz_m": [
+        -0.07941178232431412,
+        0.9015854001045227,
+        5.169440269470215
+      ],
+      "camera_pred_xyz_m": [
+        0.010488600470125675,
+        1.0635123252868652,
+        3.3055810928344727
+      ],
+      "metrics": {
+        "vertex_body_mm": 328.8674621582031,
+        "vertex_camera_mm": 1914.564697265625,
+        "vertex_translation_removed_mm": 327.59002685546875,
+        "joint_mm": 313.39837646484375,
+        "joint_camera_mm": 1876.0587158203125,
+        "camera_mm": 1873.0386962890625,
+        "shape_rmse": 1.170966386795044,
+        "scale_rmse": 0.9068570733070374,
+        "global_rotation_deg": 60.3494987487793,
+        "body_pose_periodic_mean_deg": 4.356520652770996,
+        "depth_common_median_mm": 1918.6431884765625,
+        "depth_common_p95_mm": 2106.9541015625,
+        "depth_hit_rate": 0.806382954120636,
+        "silhouette_iou": 0.3779551088809967
+      }
+    },
+    {
+      "identity": "mhr3_0400",
+      "role": "VAL",
+      "factor": 1.0,
+      "camera_gt_xyz_m": [
+        -0.09474325180053711,
+        1.0162849426269531,
+        5.266086101531982
+      ],
+      "camera_pred_xyz_m": [
+        -0.03938131034374237,
+        1.1778545379638672,
+        4.4518818855285645
+      ],
+      "metrics": {
+        "vertex_body_mm": 301.5190734863281,
+        "vertex_camera_mm": 889.1795043945312,
+        "vertex_translation_removed_mm": 297.0489501953125,
+        "joint_mm": 318.6443786621094,
+        "joint_camera_mm": 884.5048828125,
+        "camera_mm": 831.9243774414062,
+        "shape_rmse": 0.9490434527397156,
+        "scale_rmse": 0.7784736752510071,
+        "global_rotation_deg": 61.22475814819336,
+        "body_pose_periodic_mean_deg": 4.503798007965088,
+        "depth_common_median_mm": 844.9540405273438,
+        "depth_common_p95_mm": 1037.7178955078125,
+        "depth_hit_rate": 0.5843838453292847,
+        "silhouette_iou": 0.3930484652519226
+      }
+    },
+    {
+      "identity": "mhr3_0400",
+      "role": "VAL",
+      "factor": 1.15,
+      "camera_gt_xyz_m": [
+        -0.09474325180053711,
+        1.0162849426269531,
+        6.055998802185059
+      ],
+      "camera_pred_xyz_m": [
+        -0.02817597985267639,
+        1.145437240600586,
+        4.545893669128418
+      ],
+      "metrics": {
+        "vertex_body_mm": 297.1683349609375,
+        "vertex_camera_mm": 1549.046142578125,
+        "vertex_translation_removed_mm": 291.0693664550781,
+        "joint_mm": 310.90869140625,
+        "joint_camera_mm": 1533.5433349609375,
+        "camera_mm": 1517.0791015625,
+        "shape_rmse": 0.9536550045013428,
+        "scale_rmse": 0.7907220125198364,
+        "global_rotation_deg": 58.93202590942383,
+        "body_pose_periodic_mean_deg": 4.457448482513428,
+        "depth_common_median_mm": 1552.04345703125,
+        "depth_common_p95_mm": 1741.9393310546875,
+        "depth_hit_rate": 0.6597895622253418,
+        "silhouette_iou": 0.3742302358150482
+      }
+    },
+    {
+      "identity": "mhr3_0400",
+      "role": "VAL",
+      "factor": 1.3,
+      "camera_gt_xyz_m": [
+        -0.09474325180053711,
+        1.0162849426269531,
+        6.845911502838135
+      ],
+      "camera_pred_xyz_m": [
+        -0.03109245002269745,
+        1.1176294088363647,
+        4.885559558868408
+      ],
+      "metrics": {
+        "vertex_body_mm": 279.8890686035156,
+        "vertex_camera_mm": 1984.046630859375,
+        "vertex_translation_removed_mm": 272.4053955078125,
+        "joint_mm": 289.65374755859375,
+        "joint_camera_mm": 1962.0401611328125,
+        "camera_mm": 1964.00146484375,
+        "shape_rmse": 0.9603213667869568,
+        "scale_rmse": 0.8027655482292175,
+        "global_rotation_deg": 50.49950408935547,
+        "body_pose_periodic_mean_deg": 4.3944091796875,
+        "depth_common_median_mm": 2005.603759765625,
+        "depth_common_p95_mm": 2176.610107421875,
+        "depth_hit_rate": 0.734005331993103,
+        "silhouette_iou": 0.38528379797935486
+      }
+    },
+    {
+      "identity": "mhr3_0400",
+      "role": "VAL",
+      "factor": 1.45,
+      "camera_gt_xyz_m": [
+        -0.09474325180053711,
+        1.0162849426269531,
+        7.635825157165527
+      ],
+      "camera_pred_xyz_m": [
+        -0.02945680357515812,
+        1.1071479320526123,
+        5.250821590423584
+      ],
+      "metrics": {
+        "vertex_body_mm": 268.2412414550781,
+        "vertex_camera_mm": 2402.4111328125,
+        "vertex_translation_removed_mm": 260.53460693359375,
+        "joint_mm": 277.1927185058594,
+        "joint_camera_mm": 2376.653076171875,
+        "camera_mm": 2387.62646484375,
+        "shape_rmse": 0.96612948179245,
+        "scale_rmse": 0.7997627258300781,
+        "global_rotation_deg": 45.74201202392578,
+        "body_pose_periodic_mean_deg": 4.4061279296875,
+        "depth_common_median_mm": 2435.088134765625,
+        "depth_common_p95_mm": 2597.600341796875,
+        "depth_hit_rate": 0.7836804389953613,
+        "silhouette_iou": 0.3870442807674408
+      }
+    },
+    {
+      "identity": "mhr3_0401",
+      "role": "VAL",
+      "factor": 1.0,
+      "camera_gt_xyz_m": [
+        -0.09382697194814682,
+        0.9474560618400574,
+        5.451510906219482
+      ],
+      "camera_pred_xyz_m": [
+        -0.09558591991662979,
+        0.9343576431274414,
+        5.538369655609131
+      ],
+      "metrics": {
+        "vertex_body_mm": 155.25453186035156,
+        "vertex_camera_mm": 170.7515411376953,
+        "vertex_translation_removed_mm": 161.6351776123047,
+        "joint_mm": 187.1410369873047,
+        "joint_camera_mm": 202.8642578125,
+        "camera_mm": 87.85843658447266,
+        "shape_rmse": 1.0423246622085571,
+        "scale_rmse": 0.6705209016799927,
+        "global_rotation_deg": 36.98435592651367,
+        "body_pose_periodic_mean_deg": 3.8198914527893066,
+        "depth_common_median_mm": 76.68495178222656,
+        "depth_common_p95_mm": 135.45565795898438,
+        "depth_hit_rate": 0.7586635947227478,
+        "silhouette_iou": 0.6712616086006165
+      }
+    },
+    {
+      "identity": "mhr3_0401",
+      "role": "VAL",
+      "factor": 1.15,
+      "camera_gt_xyz_m": [
+        -0.09382697194814682,
+        0.9474560618400574,
+        6.269237518310547
+      ],
+      "camera_pred_xyz_m": [
+        -0.06770901381969452,
+        1.0361262559890747,
+        5.349363803863525
+      ],
+      "metrics": {
+        "vertex_body_mm": 201.8970947265625,
+        "vertex_camera_mm": 991.3164672851562,
+        "vertex_translation_removed_mm": 207.20372009277344,
+        "joint_mm": 236.25186157226562,
+        "joint_camera_mm": 1002.7095336914062,
+        "camera_mm": 924.5064697265625,
+        "shape_rmse": 1.0557448863983154,
+        "scale_rmse": 0.7877702116966248,
+        "global_rotation_deg": 49.6262321472168,
+        "body_pose_periodic_mean_deg": 3.78946852684021,
+        "depth_common_median_mm": 964.478515625,
+        "depth_common_p95_mm": 1019.9366455078125,
+        "depth_hit_rate": 0.7418723106384277,
+        "silhouette_iou": 0.5212554931640625
+      }
+    },
+    {
+      "identity": "mhr3_0401",
+      "role": "VAL",
+      "factor": 1.3,
+      "camera_gt_xyz_m": [
+        -0.09382697194814682,
+        0.9474560618400574,
+        7.086964130401611
+      ],
+      "camera_pred_xyz_m": [
+        -0.022016849368810654,
+        1.0996217727661133,
+        5.091412544250488
+      ],
+      "metrics": {
+        "vertex_body_mm": 208.57778930664062,
+        "vertex_camera_mm": 2045.06396484375,
+        "vertex_translation_removed_mm": 215.96932983398438,
+        "joint_mm": 237.3230438232422,
+        "joint_camera_mm": 2042.0189208984375,
+        "camera_mm": 2002.632568359375,
+        "shape_rmse": 1.061424732208252,
+        "scale_rmse": 0.8438491225242615,
+        "global_rotation_deg": 51.84572982788086,
+        "body_pose_periodic_mean_deg": 3.8418946266174316,
+        "depth_common_median_mm": 2072.48974609375,
+        "depth_common_p95_mm": 2128.062255859375,
+        "depth_hit_rate": 0.7764859199523926,
+        "silhouette_iou": 0.40527528524398804
+      }
+    },
+    {
+      "identity": "mhr3_0401",
+      "role": "VAL",
+      "factor": 1.45,
+      "camera_gt_xyz_m": [
+        -0.09382697194814682,
+        0.9474560618400574,
+        7.904691219329834
+      ],
+      "camera_pred_xyz_m": [
+        -0.013266850262880325,
+        1.0698472261428833,
+        5.2774858474731445
+      ],
+      "metrics": {
+        "vertex_body_mm": 201.7584686279297,
+        "vertex_camera_mm": 2666.413330078125,
+        "vertex_translation_removed_mm": 208.4918212890625,
+        "joint_mm": 226.06312561035156,
+        "joint_camera_mm": 2656.508056640625,
+        "camera_mm": 2631.2880859375,
+        "shape_rmse": 1.062964916229248,
+        "scale_rmse": 0.8697608113288879,
+        "global_rotation_deg": 47.87497329711914,
+        "body_pose_periodic_mean_deg": 3.8815860748291016,
+        "depth_common_median_mm": 2714.691162109375,
+        "depth_common_p95_mm": 2775.64208984375,
+        "depth_hit_rate": 0.8301769495010376,
+        "silhouette_iou": 0.38044658303260803
+      }
+    }
+  ],
+  "identity_equal_mean": {
+    "z_response_slope": 0.2021471758132221,
+    "z_absolute_mae_mm": 1435.7286989688873,
+    "z_relative_change_mae_mm": 851.7945110797882,
+    "vertex_camera_mm": 1526.4041566848755
+  },
+  "limitations": "four already-used TRAIN/VAL identities; clean procedural scenes, out-of-range distance extension; mechanism diagnosis only"
+}

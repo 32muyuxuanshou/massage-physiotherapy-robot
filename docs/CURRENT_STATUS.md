@@ -2,13 +2,15 @@
 
 更新时间：2026-10-10。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
 
-**主线：**AutoDL RTX 6000D 已完成R3（500合成身份、三模型三seed30epochs）及R3.1诊断/两候选匹配pilot。真实232帧Camera B评价：Official+Cheap Txyz VAL11.23mm，A21.40mm、B24.35mm；B有明确Depth数值响应，但新候选尚未胜过强基线。完整结果见 [R3.1交付](handoffs/real-scene-2026-10-10/rgbd-sam3d-r31-diagnosis-pilot/README.md) 和 [R3审查](handoffs/real-scene-2026-10-09/rgbd-sam3d-r3-multiseed/FINAL_REVIEW_20261010.md)。用户已授权下一阶段R4：Camera Head公制条件与局部geometry attention，经自审/短跑再决定长跑；本页不提前宣称R4完成。封存TEST不使用。持久备份218，计算服务器仍为AutoDL；R4结束后关机。
+**主线：**R3/R3.1已完成并备份；R4原生自审和四组100身份×8epoch短跑完成，正在执行G1公制Camera与匹配G0的三seed×30epoch正式开发训练。短跑G1合成PVE105.70→100.84mm、Camera84.44→77.87mm，但真实VAL20.32→21.83mm恶化；G2/G3没有晋升大训练。最强历史工程基线仍是Official+Cheap Txyz，HuMMan独立B VAL11.23mm。见 [R4实际状态](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/README.md)、[短跑决定](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/SHORT_PILOT_REPORT.md)、[R3.1完整交付](handoffs/real-scene-2026-10-10/rgbd-sam3d-r31-diagnosis-pilot/README.md)。本页不提前宣称R4完成或有稳定真实优势。封存TEST不使用。持久备份218；R4备份/交付后关闭AutoDL。
 
 ## 目标
 
 真实**俯卧背部 RGB-D → 双模态融合 → 个体原生 MHR Mesh → 标准模板固定拓扑点位传播 → 后续机器人坐标接口**。工程效果与可发表的方法贡献并行推进，表面距离、点位稳定性、医学准确率及部署精度分别验收。本轮优先人体几何，不训练独立穴位网络；目前无部署相机和独立临床穴位真值。
 
 ## 最新实际交付
+
+[R4公制Camera与局部几何候选](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/README.md)：Camera raw参数接入官方投影链、FP32局部XYZ attention、实际内部梯度/四样本过拟合/恢复检查、16图物理距离QA、1/2/3路并发、四组短跑及同232帧B/Depth消融完成。正式3seed训练运行中；所有数字按实际文件，不是最终临床或穴位准确率。
 
 [R3.1诊断与匹配小规模验证](handoffs/real-scene-2026-10-10/rgbd-sam3d-r31-diagnosis-pilot/FINAL_REPORT.md)：三seed fixed-mask Depth、七历史模型基底1624次Cheap Txyz、14历史失败图、两个原生MHR候选实作、四组100身份×8epochs、全部232帧独立B及机制干预完成。B合成camera顶点83.23mm优于RGB-only97.69mm，但真实VAL24.35mm劣于RGB-only21.31mm与Official+Txyz11.23mm。研究机制线索保留，稳定真实优势未成立。
 
