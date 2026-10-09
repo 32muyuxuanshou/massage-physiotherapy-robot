@@ -1,0 +1,90 @@
+{
+  "concurrent_trainers": 3,
+  "rule": "highest measured total steady images/s among 1/2/3 processes",
+  "results": [
+    {
+      "concurrent_trainers": 1,
+      "wall_seconds": 38.84264260577038,
+      "cells": [
+        {
+          "status": "STRUCTURAL_BATCH_BENCHMARK_ONLY",
+          "batch": 16,
+          "steps": 60,
+          "seconds": 21.276569434907287,
+          "seconds_per_step": 0.35460949676732223,
+          "warmed_seconds_per_step": 0.29064136320292683,
+          "peak_memory_bytes": 6274753536,
+          "mode": "cross_attention"
+        }
+      ],
+      "steady_images_per_second": 55.05066389613905,
+      "peak_allocated_bytes_sum": 6274753536
+    },
+    {
+      "concurrent_trainers": 2,
+      "wall_seconds": 45.73883856181055,
+      "cells": [
+        {
+          "status": "STRUCTURAL_BATCH_BENCHMARK_ONLY",
+          "batch": 16,
+          "steps": 60,
+          "seconds": 27.682346446439624,
+          "seconds_per_step": 0.461372445585827,
+          "warmed_seconds_per_step": 0.4258403819486765,
+          "peak_memory_bytes": 6274753536,
+          "mode": "cross_attention"
+        },
+        {
+          "status": "STRUCTURAL_BATCH_BENCHMARK_ONLY",
+          "batch": 16,
+          "steps": 60,
+          "seconds": 27.81481927074492,
+          "seconds_per_step": 0.463580328063108,
+          "warmed_seconds_per_step": 0.424051486280015,
+          "peak_memory_bytes": 6117210624,
+          "mode": "residual"
+        }
+      ],
+      "steady_images_per_second": 75.30403094698667,
+      "peak_allocated_bytes_sum": 12391964160
+    },
+    {
+      "concurrent_trainers": 3,
+      "wall_seconds": 53.439160698093474,
+      "cells": [
+        {
+          "status": "STRUCTURAL_BATCH_BENCHMARK_ONLY",
+          "batch": 16,
+          "steps": 60,
+          "seconds": 35.34007597807795,
+          "seconds_per_step": 0.5890012719125176,
+          "warmed_seconds_per_step": 0.5522114947920532,
+          "peak_memory_bytes": 6274753536,
+          "mode": "cross_attention"
+        },
+        {
+          "status": "STRUCTURAL_BATCH_BENCHMARK_ONLY",
+          "batch": 16,
+          "steps": 60,
+          "seconds": 35.46108133811504,
+          "seconds_per_step": 0.5910180294110129,
+          "warmed_seconds_per_step": 0.553339869948104,
+          "peak_memory_bytes": 6117210624,
+          "mode": "residual"
+        },
+        {
+          "status": "STRUCTURAL_BATCH_BENCHMARK_ONLY",
+          "batch": 16,
+          "steps": 60,
+          "seconds": 35.191286449320614,
+          "seconds_per_step": 0.5865214462702473,
+          "warmed_seconds_per_step": 0.5539208179023782,
+          "peak_memory_bytes": 5838803968,
+          "mode": "rgb_only"
+        }
+      ],
+      "steady_images_per_second": 86.77472188223254,
+      "peak_allocated_bytes_sum": 18230768128
+    }
+  ]
+}
