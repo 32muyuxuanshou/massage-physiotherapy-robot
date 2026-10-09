@@ -133,7 +133,7 @@ def fit_txyz(points,anchors):
         dist,near=cKDTree(anchors+t).query(points,workers=1);keep=dist<=np.quantile(dist,.8)
         step=np.clip(np.median(points[keep]-(anchors+t)[near[keep]],axis=0),-.05,.05);t+=step
         trace.append(dict(iteration=i+1,step_m=step.tolist(),raw_t_m=t.tolist()))
-    fallback=np.linalg.norm(t)>.17788820176363325
+    fallback=bool(np.linalg.norm(t)>.17788820176363325)
     return t,np.zeros(3) if fallback else t,trace,fallback
 
 

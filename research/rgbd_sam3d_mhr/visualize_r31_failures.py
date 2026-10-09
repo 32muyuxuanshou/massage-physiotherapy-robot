@@ -66,8 +66,11 @@ def main():
         fig.colorbar(im,ax=axes[6:9],shrink=.6)
         ax=axes[9];ax.scatter(points[:,0],points[:,2],s=2,c='black',alpha=.25,label='measured Camera B')
         for label,z in data.items():v=z['vertices_camera_B'][::20];ax.scatter(v[:,0],v[:,2],s=1,alpha=.35,label=label)
-        ax.set_xlabel('Camera B X (m)');ax.set_ylabel('Camera B Z (m)');ax.set_aspect('equal');ax.invert_yaxis();ax.legend(fontsize=7);ax.set_title('3D top slice / pointcloud; no refitting')
-        for ax in axes[:9]:ax.axis('off')
+        ax.set_xlabel('Camera B X (m)');ax.set_ylabel('Camera B Z (m)');ax.set_aspect('equal');ax.invert_yaxis();ax.legend(fontsize=7);ax.set_title('Full pointcloud X-Z projection; no refitting')
+        for i,ax in enumerate(axes[:9]):
+            box=(aa if i<5 else bb)['bbox'];x0,y0,x1,y1=box
+            pad=.12*max(x1-x0,y1-y0)
+            ax.set_xlim(max(0,x0-pad),min(1920,x1+pad));ax.set_ylim(min(1080,y1+pad),max(0,y0-pad));ax.axis('off')
         fig.suptitle(name+' | seed11 | green = predicted silhouette; magenta = predicted mesh; B heatmap = actual held-out residual',fontsize=13)
         path=a.out/(name+'.jpg');fig.savefig(path,dpi=120);plt.close(fig)
         off=data['Official'];cross=data['Cross-attention'];delta=cross['vertices_camera_A']-off['vertices_camera_A']

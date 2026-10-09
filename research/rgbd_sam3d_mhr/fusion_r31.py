@@ -138,13 +138,15 @@ class R31Adapter(RGBDBodyAdapter):
         base=super().forward(batch,d,valid,rays)
         if self.mode!='mhr_refinement':return base
         refined=self.fusion(base,self._rgb_feature,d,valid,rays)
-        v,k,j=self.official.head_pose.mhr_forward(global_trans=torch.zeros_like(refined['pred_cam_t']),
+        v,k,j,mp,jr=self.official.head_pose.mhr_forward(global_trans=torch.zeros_like(refined['pred_cam_t']),
             global_rot=refined['global_rot'],body_pose_params=refined['body_pose'],hand_pose_params=refined['hand'],
             scale_params=refined['scale'],shape_params=refined['shape'],expr_params=refined.get('face'),
-            return_keypoints=True,return_joint_coords=True)
+            return_keypoints=True,return_joint_coords=True,return_model_params=True,return_joint_rotations=True)
         flip=v.new_tensor([1.,-1.,-1.])
         refined['pred_vertices']=v*flip
         refined['pred_keypoints_3d']=k[:,:70]*flip
         refined['pred_joint_coords']=j*flip
+        refined['mhr_model_params']=mp
+        refined['joint_global_rots']=jr
         self._rgb_feature=None
         return refined
