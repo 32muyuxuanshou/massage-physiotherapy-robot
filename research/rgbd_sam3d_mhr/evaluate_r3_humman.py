@@ -88,7 +88,8 @@ def evaluate(root,cache,points,out,checkpoint=None):
                 depth_common_p95_mm=float(np.quantile(res,.95)) if len(res) else None,depth_hit_rate=float(hit.mean())))
             tasks.append((str(path),str(points/(name+'.npz')),str(faces_path),metric_root))
             if i%40==0:print('REAL_PREDICTED',i+1,'/',len(rows),flush=True)
-    model._hook.remove()
+    if hasattr(model,'remove_hooks'):model.remove_hooks()
+    else:model._hook.remove()
     # Release GPU before the independent CPU triangle evaluation, allowing the
     # next training cell to proceed while held-out metrics finish in parallel.
     del model,official,renderer,o,b,feature,d,valid,rays,rd
