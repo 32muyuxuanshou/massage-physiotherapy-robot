@@ -1,0 +1,40 @@
+{
+  "screen": [
+    {
+      "mode": "rgb_only",
+      "lr": 0.0001,
+      "score": 96.6492307806015
+    },
+    {
+      "mode": "residual",
+      "lr": 0.0001,
+      "score": 110.04306043624878
+    },
+    {
+      "mode": "cross_attention",
+      "lr": 0.0001,
+      "score": 100.11941685676575
+    },
+    {
+      "mode": "rgb_only",
+      "lr": 0.0003,
+      "score": 89.02096805095672
+    },
+    {
+      "mode": "residual",
+      "lr": 0.0003,
+      "score": 106.44732744216918
+    },
+    {
+      "mode": "cross_attention",
+      "lr": 0.0003,
+      "score": 96.63231998443604
+    }
+  ],
+  "mean_scores": {
+    "0.0001": 102.27056935787202,
+    "0.0003": 97.36687182585399
+  },
+  "chosen": 0.0003,
+  "rule": "minimum mean VAL identity-equal vertex_camera_mm across all three methods at epoch 5; tie selects 1e-4; never real/test"
+}

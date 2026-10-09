@@ -1,0 +1,117 @@
+[
+  {
+    "stage": "native_cache",
+    "start_unix": 1791546818.7714136,
+    "source_commit": "521b42ba93fe5c99f547015215253e0e4709e971",
+    "script_sha256": "9354cfc9864a419cc0f8a13f2d5089aba6cf5ebc404bfa4bb4d06453b86b1236",
+    "end_unix": 1791547230.968582,
+    "returncode": 0,
+    "command": [
+      "/root/autodl-tmp/rgbd_sam3d/envs/rgbd/bin/python",
+      "/root/autodl-tmp/rgbd_sam3d/project_snapshot/research/rgbd_sam3d_mhr/prepare_r3_cache.py",
+      "--root",
+      "/root/autodl-tmp/rgbd_sam3d",
+      "--data",
+      "/root/autodl-tmp/rgbd_sam3d/datasets/synthetic/native_scale_v2",
+      "--out",
+      "/root/autodl-tmp/rgbd_sam3d/datasets/cache/native_scale_v2"
+    ]
+  },
+  {
+    "stage": "heldout_points_freeze",
+    "start_unix": 1791547230.9689617,
+    "source_commit": "521b42ba93fe5c99f547015215253e0e4709e971",
+    "script_sha256": "bd2de5b3e1524ec6de64b90990bbaf9f42b6a38d9ad0b6e005dc68f579f2bd3f",
+    "end_unix": 1791547234.8843448,
+    "returncode": 0,
+    "command": [
+      "/root/autodl-tmp/rgbd_sam3d/envs/rgbd/bin/python",
+      "/root/autodl-tmp/rgbd_sam3d/project_snapshot/research/rgbd_sam3d_mhr/evaluate_r3_humman.py",
+      "--root",
+      "/root/autodl-tmp/rgbd_sam3d",
+      "--points",
+      "/root/autodl-tmp/rgbd_sam3d/datasets/heldout/humman_r3_k1_v1",
+      "--freeze-points"
+    ]
+  },
+  {
+    "stage": "real_cache",
+    "start_unix": 1791547234.885052,
+    "source_commit": "521b42ba93fe5c99f547015215253e0e4709e971",
+    "script_sha256": "9354cfc9864a419cc0f8a13f2d5089aba6cf5ebc404bfa4bb4d06453b86b1236",
+    "end_unix": 1791547281.9505064,
+    "returncode": 0,
+    "command": [
+      "/root/autodl-tmp/rgbd_sam3d/envs/rgbd/bin/python",
+      "/root/autodl-tmp/rgbd_sam3d/project_snapshot/research/rgbd_sam3d_mhr/prepare_r3_cache.py",
+      "--root",
+      "/root/autodl-tmp/rgbd_sam3d",
+      "--data",
+      "/root/autodl-tmp/rgbd_sam3d/datasets/registered_v1",
+      "--out",
+      "/root/autodl-tmp/rgbd_sam3d/datasets/cache/humman_development_v1",
+      "--real"
+    ]
+  },
+  {
+    "stage": "train_multiseed",
+    "start_unix": 1791547321.9565992,
+    "source_commit": "521b42ba93fe5c99f547015215253e0e4709e971",
+    "script_sha256": "f467fd0dd8906cefa00e7cf726455b0c5db0a97c1ac69a602cc604701c5cf9bd",
+    "end_unix": 1791560652.9188778,
+    "returncode": 0,
+    "command": [
+      "/root/autodl-tmp/rgbd_sam3d/envs/rgbd/bin/python",
+      "/root/autodl-tmp/rgbd_sam3d/project_snapshot/research/rgbd_sam3d_mhr/run_r3_queue.py",
+      "--root",
+      "/root/autodl-tmp/rgbd_sam3d",
+      "--cache",
+      "/root/autodl-tmp/rgbd_sam3d/datasets/cache/native_scale_v2",
+      "--config",
+      "/root/autodl-tmp/rgbd_sam3d/project_snapshot/research/rgbd_sam3d_mhr/R3_SCALE_CONFIG_V1.json",
+      "--out",
+      "/root/autodl-tmp/rgbd_sam3d/runs/r3_multiseed_v1/formal",
+      "--source-commit",
+      "521b42ba93fe5c99f547015215253e0e4709e971",
+      "--real-cache",
+      "/root/autodl-tmp/rgbd_sam3d/datasets/cache/humman_development_v1",
+      "--real-points",
+      "/root/autodl-tmp/rgbd_sam3d/datasets/heldout/humman_r3_k1_v1",
+      "--concurrent",
+      "3"
+    ]
+  },
+  {
+    "stage": "summary_figures",
+    "start_unix": 1791560652.9193296,
+    "source_commit": "521b42ba93fe5c99f547015215253e0e4709e971",
+    "script_sha256": "19a02ec59ad243cbd85d1a94d8c0379e6558a4c442ecd6867082f8974aa7189d",
+    "end_unix": 1791560668.18208,
+    "returncode": 0,
+    "command": [
+      "/root/autodl-tmp/rgbd_sam3d/envs/rgbd/bin/python",
+      "/root/autodl-tmp/rgbd_sam3d/project_snapshot/research/rgbd_sam3d_mhr/summarize_r3.py",
+      "--root",
+      "/root/autodl-tmp/rgbd_sam3d",
+      "--out",
+      "/root/autodl-tmp/rgbd_sam3d/runs/r3_multiseed_v1"
+    ]
+  },
+  {
+    "stage": "data_previews",
+    "start_unix": 1791560668.1829941,
+    "source_commit": "521b42ba93fe5c99f547015215253e0e4709e971",
+    "script_sha256": "580c7159ce8b02ada319b02932df437871bd71ed7afb18bdcfd67eb1f7a1de4b",
+    "end_unix": 1791560850.8390176,
+    "returncode": 0,
+    "command": [
+      "/root/autodl-tmp/rgbd_sam3d/envs/rgbd/bin/python",
+      "/root/autodl-tmp/rgbd_sam3d/project_snapshot/research/rgbd_sam3d_mhr/export_native_data_preview.py",
+      "--input-dir",
+      "/root/autodl-tmp/rgbd_sam3d/datasets/synthetic/native_scale_v2",
+      "--output-dir",
+      "/root/autodl-tmp/rgbd_sam3d/datasets/previews/native_scale_v2",
+      "--exclude-test"
+    ]
+  }
+]

@@ -1,0 +1,115 @@
+{
+  "source_commit": "521b42ba93fe5c99f547015215253e0e4709e971",
+  "config_sha256": "83f698927298ac4477926b4cad345727b6f8b6f87ad4436eaff29fa420f66ca8",
+  "cache_manifest_sha256": "cb0d14a2ecd893f9b4f7b27b7fdd8ae6cc3141c0d74ce2ed1b165d54ea846558",
+  "config": {
+    "stage": "R3_SYNTHETIC_SCALE_MULTISEED",
+    "dataset_seed": 2026101001,
+    "identities": 500,
+    "train_identities": 400,
+    "val_identities": 50,
+    "test_identities": 50,
+    "poses_per_identity": 2,
+    "cameras_per_pose": 4,
+    "shape_std": 1.0,
+    "scale_std": 0.3,
+    "pose_stds": [
+      0.1,
+      0.24
+    ],
+    "focal_range_px": [
+      320,
+      1000
+    ],
+    "camera_distance_note": "Lower focal values cover real HuMMan roughly 2-3 m depths while keeping full bodies in the 640x480 frame; distances determined from fixed multi-pose bounds, never model predictions",
+    "train_seeds": [
+      11,
+      23,
+      37
+    ],
+    "methods": [
+      "rgb_only",
+      "residual",
+      "cross_attention"
+    ],
+    "lr_candidates": [
+      0.0001,
+      0.0003
+    ],
+    "lr_screen_seed": 7,
+    "lr_screen_epochs": 5,
+    "lr_selection": "minimum mean VAL identity-equal vertex_camera_mm across all three methods at epoch 5; tie selects 1e-4; never real/test",
+    "epochs": 30,
+    "batch_size": 16,
+    "optimizer": "AdamW",
+    "scheduler": "cosine decay to 0.1 initial lr; 2 epoch linear warmup",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "checkpoint_selection": "best synthetic VAL identity-equal vertex_camera_mm; also retain last",
+    "loss_weights": {
+      "vertices": 5.0,
+      "joints": 5.0,
+      "camera": 2.0,
+      "body_pose": 0.1,
+      "global_rotation": 0.2,
+      "shape": 0.01,
+      "scale": 0.01,
+      "hand": 0.0001,
+      "rendered_depth": 0.2,
+      "silhouette": 0.2
+    },
+    "depth_offsets_m": [
+      -0.2,
+      -0.05,
+      0.05,
+      0.2
+    ],
+    "real_roles": [
+      "TRAIN",
+      "VAL"
+    ],
+    "real_input_camera": "kinect_000",
+    "real_evaluation_camera": "kinect_001",
+    "real_evaluation_samples": "all 232 prepared TRAIN/VAL timestamps; no TEST",
+    "trainable": "existing feature adapter only; official backbone/decoder/heads/MHR frozen",
+    "cache": "native backbone output bfloat16, same dtype as official; parameter forward numerical equivalence QA <=2e-6, vertices <=0.001 mm; not bitwise prediction equality",
+    "storage_estimate_gib": {
+      "new_native_data": 3,
+      "backbone_cache_and_targets": 42,
+      "checkpoints_and_outputs": 12,
+      "reserve_free": 40
+    },
+    "limitations": "Procedural surface colour patterns, modest native poses and shape variation; no photoreal clothing, bed/contact deformation or clinical points. Real evaluation is transfer diagnosis; no absolute GT accuracy or unseen-by-official-pretraining claim."
+  },
+  "runtime_code_sha256": {
+    "check_fusion.py": "5909ac961a99e944135a6ad8796471dd58a799b856a16c9e6c3c51c67221a667",
+    "check_geometry.py": "9d3e444f360a281653775ed2de71e199a23851078fb18a90dbee1d3a81d8cc6d",
+    "check_native_r1.py": "0fdb1ad24c2702163b412327a88017beb1ad639f41583195093e792926825830",
+    "check_renderer.py": "a48ebb4acd2c5263d8be4f3bdaf1fdc11e1faa8228c3208dc82b2b7464814a94",
+    "download_humman.py": "a8b5c1916d5c42fe0eb1c360bd9b1939c678f40f124ae294f25857ae2c24af5a",
+    "download_one.py": "b943e5ac16e0b75925f04569082f5d5fb69ad5fb968336c76a236c86d041349a",
+    "extract_humman_subset.py": "4b268a5093f0183fed2a90492e08fb079679db9c359124d453e758f87c46c82f",
+    "fusion.py": "d6ff399525f7e771605f802f92cb12186bd3b7815770b98d6ca5021ec2803535",
+    "geometry.py": "f02c290848a67666a60597ba9b510ac6e6fc6c3f5fd794a5a9f21dd741ad1e0f",
+    "inventory_humman.py": "a78731913d38f1f0f13f0a16fac214c98e928965ba7f642610c1dfbcd48f29c0",
+    "native_data.py": "dc07195b1b193f6081c3fff69e5cb5a422efde7fea8526207ff68286e0d9474a",
+    "render_losses.py": "94c133ac7b6afbc22d2c3e050f6276e28a4c7022d7cacd17cf50c16ab4f04e2a",
+    "setup_offline_r0.py": "e1e525e2488295bae466b7ff1318d5dd969e023c6b099da5694d99b93c2f0594",
+    "train_native_pilot.py": "c819c3c8589f204dd0f0dbcd5ba31babfc4a812e8c7d20d3a45476bd551e1db0",
+    "humman_geometry.py": "82e33398a57858ba63d637dc08fa88bfe3818f1b2abbd8938df4752381c31bee",
+    "prepare_humman_frames.py": "635d5e6ab534530a1a068b7c2a757775d77607812f2033e0c53f67b502e62b7f",
+    "visualize_native_pilot.py": "b2f5a84b69d71ee019de754d629ba8cbb8b5a8e8e81eab2d3b27d8fbbf8b355f",
+    "export_native_data_preview.py": "580c7159ce8b02ada319b02932df437871bd71ed7afb18bdcfd67eb1f7a1de4b",
+    "native_data_r3.py": "b06c3ab8dafa1b856e4c9fe9bfd46b4bfc67c57a39ee89c6110d9c2d18752eda",
+    "r3_common.py": "6207404de1a677d86f6b5f39b99c4a5a39e2031f5ed5ba723008633492a125b0",
+    "prepare_r3_cache.py": "9354cfc9864a419cc0f8a13f2d5089aba6cf5ebc404bfa4bb4d06453b86b1236",
+    "train_r3_multiseed.py": "ef684cb07b7d26ad0ca1e1842360ab1861883b6d586b85f91fbe079e2b1838a8",
+    "evaluate_r3_humman.py": "bd2de5b3e1524ec6de64b90990bbaf9f42b6a38d9ad0b6e005dc68f579f2bd3f",
+    "benchmark_r3_concurrency.py": "89c3d1dcec8c3413f5743f465a290edb42d72a99b66683dd645b3372bd4faed3",
+    "run_r3_pipeline.py": "ab65405b210640f4940cb92fc0604d793cd47789ad18afe62e87dc8599769331",
+    "run_r3_queue.py": "f467fd0dd8906cefa00e7cf726455b0c5db0a97c1ac69a602cc604701c5cf9bd",
+    "summarize_r3.py": "19a02ec59ad243cbd85d1a94d8c0379e6558a4c442ecd6867082f8974aa7189d"
+  },
+  "checkpoint_sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+  "mhr_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc"
+}
