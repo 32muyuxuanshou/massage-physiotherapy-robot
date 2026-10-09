@@ -1,0 +1,30 @@
+{
+  "stage": "R3.1_DIAGNOSE_LITERATURE_SMALL_PILOT",
+  "existing_run": "runs/r3_multiseed_v1",
+  "diagnostic_seed": 11,
+  "confirmation_seeds": [23, 37],
+  "real_frames": 232,
+  "input_camera": "kinect_000",
+  "evaluation_camera": "kinect_001",
+  "test_used": false,
+  "txyz": {"anchor_seed": 20260910, "anchors": 16384, "iterations": 6, "trim_upper_fraction": 0.2, "step_bound_per_axis_m": 0.05, "total_norm_limit_m": 0.17788820176363325, "observed_points": 5000},
+  "depth_conditions": ["correct", "mask_rays_only", "absolute_only", "relative_only", "flat_center", "lowpass_shape", "highpass_shape", "cross_identity_fixed_mask", "local_shuffle_fixed_mask", "offset_-0.2", "offset_-0.05", "offset_0.05", "offset_0.2", "noise_0.005", "noise_0.02"],
+  "confirmation_conditions": ["correct", "mask_rays_only", "absolute_only", "relative_only", "offset_0.2"],
+  "pilot": {
+    "train_identity_count": 100,
+    "train_selection": "first 100 lexicographically sorted identities from existing synthetic TRAIN; all 8 views; identity split unchanged",
+    "validation": "all existing 50 VAL identities / 400 views",
+    "seed": 11,
+    "epochs": 8,
+    "batch_size": 16,
+    "learning_rate": 0.0003,
+    "methods": ["rgb_only", "cross_attention", "geometry_attention", "mhr_refinement"],
+    "initialization": "same Official frozen model; fresh adapter, zero output gate/head; no continuation from R3 trained adapters",
+    "loss": "exact R3 weights / AdamW / scheduler; real development evidence is evaluation only",
+    "selection": "best synthetic VAL camera-frame vertex mean; no Camera B selection",
+    "geometry_attention": {"hidden": 256, "heads": 8, "distance_scale_m": 0.15, "ray_bias_scale": 0.2},
+    "mhr_refinement": {"queries": 24, "hidden": 256, "correspondence_sigma_m": 0.2, "translation_output_scale_m": 0.1, "rotation_output_scale_rad": 0.1, "pose_output_scale_rad": 0.1, "shape_output_scale": 0.1, "scale_output_scale": 0.05}
+  },
+  "failure_selection": "all p001196 timestamps plus top 6 TRAIN frames by R3 seed11 Cross minus Official P95, deduplicated; descriptive, not selection for fitting",
+  "claim_boundary": "HuMMan development transfer; existing viewed identities, no clinical/prone/acupoint GT, no new multi-seed formal training"
+}
