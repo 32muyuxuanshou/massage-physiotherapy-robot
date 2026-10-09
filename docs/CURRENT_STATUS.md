@@ -1,3 +1,5 @@
+> 2026-10-09 GPU 恢复：RTX 6000D 实测可用，RGB-D→Official Decoder→原生 MHR 的真实前向/反向/optimizer 与冻结检查通过（R1）。详见 [R1 交付](handoffs/real-scene-2026-10-09/rgbd-sam3d-r1/README.md)。首轮合成多身份训练准备启动；真实独立相机收益尚未验证。
+
 # 项目当前状态
 
 更新时间：2026-10-09。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。

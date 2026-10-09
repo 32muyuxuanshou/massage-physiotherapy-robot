@@ -99,6 +99,9 @@ def main():
     with torch.no_grad():
         baseline_batch = batch(); official._initialize_batch(baseline_batch)
         baseline = official.forward_step(baseline_batch, decoder_type='body')['mhr']
+    with torch.no_grad():
+        repeat_batch = batch(); official._initialize_batch(repeat_batch)
+        repeat = official.forward_step(repeat_batch, decoder_type='body')['mhr']
     model = RGBDBodyAdapter(official, mode=args.mode).cuda()
     before = parameter_hashes(official)
     optimizer = torch.optim.AdamW(model.fusion.parameters(), lr=1e-3, weight_decay=0)
@@ -108,7 +111,14 @@ def main():
         initial = model(batch(), cropped, valid, rays)
     keys = ['pred_vertices','pred_keypoints_3d','pred_cam_t','global_rot','body_pose','shape','scale']
     initial_diff = {k: float((initial[k]-baseline[k]).abs().max()) for k in keys}
-    assert max(initial_diff.values()) == 0, 'INITIAL_OFFICIAL_EQUIVALENCE_FAILED'
+    repeat_diff = {k:float((repeat[k]-baseline[k]).abs().max()) for k in keys}
+    print(json.dumps(dict(initial_diff=initial_diff, official_repeat_diff=repeat_diff)),flush=True)
+    (args.out/'INITIAL_COMPARISON.json').write_text(json.dumps(dict(initial_diff=initial_diff,official_repeat_diff=repeat_diff),indent=2))
+    # Native CUDA skinning has measured repeat jitter of 2.4e-7 metres.
+    # MHR/camera parameters still require bitwise equality; geometry tolerance
+    # is 1e-6 m (0.001 mm), not an accuracy threshold.
+    geometry_keys = {'pred_vertices','pred_keypoints_3d'}
+    assert all(d <= (1e-6 if k in geometry_keys else 0) for k,d in initial_diff.items()), 'INITIAL_OFFICIAL_EQUIVALENCE_FAILED'
     steps = []
     for step in range(3):
         optimizer.zero_grad()
@@ -131,7 +141,7 @@ def main():
         missing = model(batch(), cropped, torch.zeros_like(valid), rays)
     depth_change = {k: float((trained[k]-changed[k]).abs().max()) for k in keys}
     missing_diff = {k: float((missing[k]-baseline[k]).abs().max()) for k in keys}
-    assert max(missing_diff.values()) == 0, 'MISSING_DEPTH_OFFICIAL_EQUIVALENCE_FAILED'
+    assert all(d <= (1e-6 if k in geometry_keys else 0) for k,d in missing_diff.items()), 'MISSING_DEPTH_OFFICIAL_EQUIVALENCE_FAILED'
     assert max(depth_change.values()) > 0, 'DEPTH_DOES_NOT_REACH_MHR_OUTPUT'
     np.savez_compressed(args.out/'prediction.npz',
         **{k:v.detach().cpu().numpy() for k,v in trained.items() if torch.is_tensor(v)})
@@ -140,6 +150,8 @@ def main():
         fixture='Simple native MHR zero body pose, zero shape/scale, physical camera Z render',
         depth_m_range=[float(depth[mask].min()),float(depth.max())],
         rgb_feature_contract=[1280,32,24], initial_max_abs_diff=initial_diff,
+        official_repeat_max_abs_diff=repeat_diff, geometry_equivalence_tolerance_m=1e-6,
+        parameter_equivalence_tolerance=0,
         missing_depth_max_abs_diff=missing_diff, changed_depth_output_max_abs_diff=depth_change,
         train_steps=steps, frozen_parameter_count=len(before), frozen_values_unchanged=True,
         frozen_parameter_hashes_before=before, frozen_parameter_hashes_after=after,

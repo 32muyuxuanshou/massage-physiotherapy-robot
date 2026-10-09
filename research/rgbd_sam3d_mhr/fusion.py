@@ -30,8 +30,16 @@ class SpatialDepthFusion(nn.Module):
         self.attention = nn.MultiheadAttention(hidden, heads, batch_first=True, dropout=0)
         self.output_projection = nn.Conv2d(hidden, rgb_channels, 1)
         self.gate = nn.Parameter(torch.zeros(()))
+        if mode != 'cross_attention':
+            self.attention.requires_grad_(False)
+        if mode == 'residual':
+            self.rgb_projection.requires_grad_(False)
+        if mode == 'rgb_only':
+            self.depth_encoder.requires_grad_(False)
 
     def forward(self, rgb, depth_m, valid, rays_xy):
+        if self.mode == 'rgb_only':
+            return rgb + self.gate*self.output_projection(self.rgb_projection(rgb))
         features, valid = metric_features(depth_m, valid, rays_xy)
         depth = self.depth_encoder(features)
         assert depth.shape[-2:] == rgb.shape[-2:], 'RGB_DEPTH_CROP_GRID_MISMATCH'

@@ -1,0 +1,32 @@
+{
+  "stage": "R2_FIRST_GEOMETRY_TRAINING_PILOT",
+  "dataset_seed": 20261009,
+  "identities": 32,
+  "train_identities": 24,
+  "val_identities": 4,
+  "test_identities": 4,
+  "views_per_identity": 8,
+  "train_seed": 42,
+  "epochs": 8,
+  "batch_size": 1,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "gradient_clip_norm": 1.0,
+  "methods": ["rgb_only", "residual", "cross_attention"],
+  "trainable": "Feature adapter only; official backbone/decoder/MHR/camera parameters frozen",
+  "loss_weights": {
+    "vertices": 5.0,
+    "joints": 5.0,
+    "camera": 2.0,
+    "body_pose": 0.1,
+    "global_rotation": 0.2,
+    "shape": 0.01,
+    "scale": 0.01,
+    "hand": 0.0001,
+    "rendered_depth": 0.2,
+    "silhouette": 0.2
+  },
+  "model_selection": "All predeclared epochs; retain last checkpoint, report every epoch validation. No final-test evaluation in pilot.",
+  "limitations": "Simple materials, modest pose variation, no clothes/bed. This pilot does not establish real RGB-D benefit or prone accuracy. RGB-only adapter has a different parameter count; report counts."
+}
