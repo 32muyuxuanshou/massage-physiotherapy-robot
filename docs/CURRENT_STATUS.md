@@ -1,3 +1,5 @@
+> 2026-10-09 新主线首轮训练已执行：32 个合成体型，三组各 8 轮（4,608 步），原生 MHR 与真实冻结/反向检查通过。但 RGB-D Cross-Attention 的合成开发绝对顶点误差 52.92 mm，仍劣于同数据 RGB-only 43.97 mm，错配 Depth 几乎不影响结果。方法优势尚未成立；真实数据仅完成 28 人/352 帧/双相机 QA，未运行新模型。全部 checkpoint/cache/native 数据已备份 218。见 [R2 完整交付](handoffs/real-scene-2026-10-09/rgbd-sam3d-r2-native-pilot/README.md)。
+
 > 2026-10-09 GPU 恢复：RTX 6000D 实测可用，RGB-D→Official Decoder→原生 MHR 的真实前向/反向/optimizer 与冻结检查通过（R1）。详见 [R1 交付](handoffs/real-scene-2026-10-09/rgbd-sam3d-r1/README.md)。首轮合成多身份训练准备启动；真实独立相机收益尚未验证。
 
 # 项目当前状态
