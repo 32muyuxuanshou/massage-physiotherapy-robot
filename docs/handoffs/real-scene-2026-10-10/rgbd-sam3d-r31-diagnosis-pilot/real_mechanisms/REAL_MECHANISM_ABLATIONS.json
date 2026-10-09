@@ -1,0 +1,75 @@
+{
+  "records": [
+    {
+      "mode": "geometry_attention",
+      "condition": "no_3d_attention_bias",
+      "checkpoint_sha256": "90e71abdb910497dc88fffb5d21299bd1dd07508fd183d67798c8f147edaf06f",
+      "results": {
+        "TRAIN": {
+          "median_mm": 48.072760035982995,
+          "p95_mm": 114.6832318132907,
+          "coverage_50mm": 0.5767861825448495
+        },
+        "VAL": {
+          "median_mm": 21.50454997746826,
+          "p95_mm": 54.03219538171123,
+          "coverage_50mm": 0.8682403564453125
+        }
+      }
+    },
+    {
+      "mode": "geometry_attention",
+      "condition": "no_global_metric_context",
+      "checkpoint_sha256": "90e71abdb910497dc88fffb5d21299bd1dd07508fd183d67798c8f147edaf06f",
+      "results": {
+        "TRAIN": {
+          "median_mm": 48.918301812327826,
+          "p95_mm": 115.1612871830898,
+          "coverage_50mm": 0.5720045301649306
+        },
+        "VAL": {
+          "median_mm": 21.445481378639627,
+          "p95_mm": 54.70806117873737,
+          "coverage_50mm": 0.868377685546875
+        }
+      }
+    },
+    {
+      "mode": "mhr_refinement",
+      "condition": "no_local_correspondence",
+      "checkpoint_sha256": "bceac7a5e5dad9f2184150550eca638a4dfc3b7e025028cd687c5373c498ea69",
+      "results": {
+        "TRAIN": {
+          "median_mm": 41.43004081556879,
+          "p95_mm": 103.28017958628982,
+          "coverage_50mm": 0.6527930365668403
+        },
+        "VAL": {
+          "median_mm": 26.097630774447133,
+          "p95_mm": 64.1823561760218,
+          "coverage_50mm": 0.7968063354492188
+        }
+      }
+    },
+    {
+      "mode": "mhr_refinement",
+      "condition": "translation_only",
+      "checkpoint_sha256": "bceac7a5e5dad9f2184150550eca638a4dfc3b7e025028cd687c5373c498ea69",
+      "results": {
+        "TRAIN": {
+          "median_mm": 36.833997838690486,
+          "p95_mm": 95.35396759401162,
+          "coverage_50mm": 0.6854366726345487
+        },
+        "VAL": {
+          "median_mm": 23.24027405459839,
+          "p95_mm": 58.00733274641234,
+          "coverage_50mm": 0.8753433227539062
+        }
+      }
+    }
+  ],
+  "test_used": false,
+  "interpretation": "inference interventions on fixed checkpoints; no B fitting, retraining or checkpoint selection",
+  "inference_code_sha256": "4265de9e07ba3fa037b6f3dd83c21136a32779228206a0c712acd9e4da6902a2"
+}

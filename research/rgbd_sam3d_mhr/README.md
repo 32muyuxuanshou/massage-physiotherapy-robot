@@ -1,3 +1,5 @@
+> 2026-10-10现役状态：R3与R3.1实跑完成；见 [R3.1完整审查](../../docs/handoffs/real-scene-2026-10-10/rgbd-sam3d-r31-diagnosis-pilot/README.md)。下文R0/R1准备状态保留为历史说明，不代表仍未训练。R4经独立自审/短跑后执行，不覆盖R3checkpoint或cache。
+
 # RGB-D SAM3D / native MHR
 
 新主线：校准 RGB-D → RGB backbone + metric Depth encoder → 空间融合 → 原 SAM3D decoder → 原生 MHR 与 Camera。标准 MHR 的固定拓扑穴位传播仍是后续工程接口，本目录不训练穴位检测器。

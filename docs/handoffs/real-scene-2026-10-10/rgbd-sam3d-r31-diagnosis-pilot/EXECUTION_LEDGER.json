@@ -1,0 +1,31 @@
+{
+  "status": "R31_COMPLETED",
+  "timestamp_unix": 1791568396.9147878,
+  "training_commit": "16e161489fafbc041765c5ec0d80ced944fca8f1",
+  "official_frozen": true,
+  "test_read": false,
+  "counts": {
+    "pilot_models": 4,
+    "epochs_each": 8,
+    "synthetic_train_identities": 100,
+    "synthetic_val_identities": 50,
+    "real_frames_each": 232,
+    "real_mechanism_conditions": 4,
+    "cheap_txyz_evaluations": 1624,
+    "failure_visuals": 14,
+    "pilot_visuals": 16,
+    "private_checkpoints": 8
+  },
+  "completed": [
+    "three_seed_depth_diagnostics",
+    "historical_cheap_txyz",
+    "real_failure_attribution",
+    "four_matched_pilots",
+    "fixed_mask_depth_ablations",
+    "four_real_mechanism_ablations",
+    "native_mesh_visualizations",
+    "two_verified_persistent_backups"
+  ],
+  "formal_R31_multiseed": "NOT_STARTED_NEGATIVE_PILOT_GATE",
+  "next_task": "R4 separately authorized; AutoDL remains running until R4 closeout"
+}

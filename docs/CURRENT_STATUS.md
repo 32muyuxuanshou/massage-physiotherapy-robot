@@ -1,18 +1,16 @@
-> 2026-10-09 新主线首轮训练已执行：32 个合成体型，三组各 8 轮（4,608 步），原生 MHR 与真实冻结/反向检查通过。但 RGB-D Cross-Attention 的合成开发绝对顶点误差 52.92 mm，仍劣于同数据 RGB-only 43.97 mm，错配 Depth 几乎不影响结果。方法优势尚未成立；真实数据仅完成 28 人/352 帧/双相机 QA，未运行新模型。全部 checkpoint/cache/native 数据已备份 218。见 [R2 完整交付](handoffs/real-scene-2026-10-09/rgbd-sam3d-r2-native-pilot/README.md)。
-
-> 2026-10-09 GPU 恢复：RTX 6000D 实测可用，RGB-D→Official Decoder→原生 MHR 的真实前向/反向/optimizer 与冻结检查通过（R1）。详见 [R1 交付](handoffs/real-scene-2026-10-09/rgbd-sam3d-r1/README.md)。首轮合成多身份训练准备启动；真实独立相机收益尚未验证。
-
 # 项目当前状态
 
-更新时间：2026-10-09。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
+更新时间：2026-10-10。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
 
-**主线已切换：**不再等待旧151；使用新的 AutoDL `connect.cqa1.seetacloud.com:39846`，开发推理时直接接收 RGB-D、输出原生 MHR 的网络融合模型。当前无卡模式实测仅0.5 CPU核/2 GiB内存，GPU不可用，数据盘200 GiB。先准备数据/权重/环境/代码，再由用户切换GPU；尚未在新实例进行完整 SAM/MHR 推理或训练。备份目标为 `172.18.6.218:436` 的 `/raid5/xuhd/rgbd_sam3d_backups`，不是计算服务器。CT、Reference-Anchored、旧九组大训练暂停，历史源码/结果保留。[R0资料与实际回执](handoffs/real-scene-2026-10-09/rgbd-sam3d-r0/README.md) · [新代码入口](../research/rgbd_sam3d_mhr/README.md)
+**主线：**AutoDL RTX 6000D 已完成R3（500合成身份、三模型三seed30epochs）及R3.1诊断/两候选匹配pilot。真实232帧Camera B评价：Official+Cheap Txyz VAL11.23mm，A21.40mm、B24.35mm；B有明确Depth数值响应，但新候选尚未胜过强基线。完整结果见 [R3.1交付](handoffs/real-scene-2026-10-10/rgbd-sam3d-r31-diagnosis-pilot/README.md) 和 [R3审查](handoffs/real-scene-2026-10-09/rgbd-sam3d-r3-multiseed/FINAL_REVIEW_20261010.md)。用户已授权下一阶段R4：Camera Head公制条件与局部geometry attention，经自审/短跑再决定长跑；本页不提前宣称R4完成。封存TEST不使用。持久备份218，计算服务器仍为AutoDL；R4结束后关机。
 
 ## 目标
 
 真实**俯卧背部 RGB-D → 双模态融合 → 个体原生 MHR Mesh → 标准模板固定拓扑点位传播 → 后续机器人坐标接口**。工程效果与可发表的方法贡献并行推进，表面距离、点位稳定性、医学准确率及部署精度分别验收。本轮优先人体几何，不训练独立穴位网络；目前无部署相机和独立临床穴位真值。
 
 ## 最新实际交付
+
+[R3.1诊断与匹配小规模验证](handoffs/real-scene-2026-10-10/rgbd-sam3d-r31-diagnosis-pilot/FINAL_REPORT.md)：三seed fixed-mask Depth、七历史模型基底1624次Cheap Txyz、14历史失败图、两个原生MHR候选实作、四组100身份×8epochs、全部232帧独立B及机制干预完成。B合成camera顶点83.23mm优于RGB-only97.69mm，但真实VAL24.35mm劣于RGB-only21.31mm与Official+Txyz11.23mm。研究机制线索保留，稳定真实优势未成立。
 
 [RGB-D SAM3D / MHR R0](handoffs/real-scene-2026-10-09/rgbd-sam3d-r0/README.md)：新实例资源及旧微调接口实际审计；官方权重本地源SHA与官方LFS匹配，重新传到AutoDL并备份218；HuMMan必要压缩包下载与环境准备见回执。Depth encoder/残差与交叉注意力、官方backbone后接入适配器、同RGB affine的米制Depth裁剪及待GPU的原生MHR训练检查入口已实现。小模块梯度与几何检查PASS，不等于R1或真人精度；具体下载/安装完成状态以R0报告为准。以下为历史证据，旧服务器等待/旧路线“下一步”不覆盖本轮决策。
 

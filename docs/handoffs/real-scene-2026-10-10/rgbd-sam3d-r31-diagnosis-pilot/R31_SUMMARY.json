@@ -1,0 +1,4215 @@
+{
+  "pilots": {
+    "rgb_only": {
+      "synthetic_best": {
+        "vertex_body_mm": 76.46171531677246,
+        "vertex_camera_mm": 97.68675119876862,
+        "vertex_translation_removed_mm": 63.23933656215668,
+        "joint_mm": 75.78382308483124,
+        "joint_camera_mm": 99.84685937404633,
+        "camera_mm": 75.85758233428001,
+        "shape_rmse": 1.0474857087433338,
+        "scale_rmse": 0.6864499888569117,
+        "global_rotation_deg": 15.144498305022717,
+        "body_pose_periodic_mean_deg": 4.685651064515114,
+        "depth_common_median_mm": 74.38651181697846,
+        "depth_common_p95_mm": 157.1812265110016,
+        "depth_hit_rate": 0.9415654331445694,
+        "silhouette_iou": 0.8841653310507536
+      },
+      "synthetic_last": {
+        "vertex_body_mm": 76.46171198368073,
+        "vertex_camera_mm": 97.68672672748566,
+        "vertex_translation_removed_mm": 63.23933385372162,
+        "joint_mm": 75.78382256031037,
+        "joint_camera_mm": 99.8468300294876,
+        "camera_mm": 75.85755003333092,
+        "shape_rmse": 1.04748570561409,
+        "scale_rmse": 0.6864499831199646,
+        "global_rotation_deg": 15.144501154720784,
+        "body_pose_periodic_mean_deg": 4.685651090145111,
+        "depth_common_median_mm": 74.386499376297,
+        "depth_common_p95_mm": 157.18146045684816,
+        "depth_hit_rate": 0.9415654331445694,
+        "silhouette_iou": 0.8841645709425211
+      },
+      "best_epoch": 8,
+      "seconds": 539.3843946959823,
+      "trainable_parameters": 656897,
+      "peak_memory_bytes": 5840026624,
+      "real": {
+        "TRAIN": {
+          "median_mm": 44.88985215642219,
+          "p95_mm": 108.65460531891887,
+          "coverage_50mm": 0.6269344753689237
+        },
+        "VAL": {
+          "median_mm": 21.310051204859093,
+          "p95_mm": 54.510204498267825,
+          "coverage_50mm": 0.8867416381835938
+        }
+      },
+      "ablations": {
+        "synthetic_VAL": {
+          "correct": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 1.6150365354654638e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 76.46171605110169,
+              "vertex_camera_mm": 97.68673522949219,
+              "vertex_translation_removed_mm": 63.239338150024416,
+              "joint_mm": 75.78382375240326,
+              "joint_camera_mm": 99.84683777809143,
+              "camera_mm": 75.8575537443161,
+              "shape_rmse": 1.0474857041239738,
+              "scale_rmse": 0.6864499796926975,
+              "global_rotation_deg": 15.144496420621872,
+              "body_pose_periodic_mean_deg": 4.685651152729988,
+              "depth_common_median_mm": 74.38645715236663,
+              "depth_common_p95_mm": 157.18133074760436,
+              "depth_hit_rate": 0.9415656444430351,
+              "silhouette_iou": 0.8841644141823053
+            }
+          },
+          "flat_center": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.0004788452852881164,
+                "camera_change_mm": 0.0003718296173701674,
+                "camera_change_xyz_mm": [
+                  1.1827796697616577e-06,
+                  3.5762786865234375e-06,
+                  -2.8014183044433594e-05
+                ],
+                "body_pose_change_periodic_deg": 3.992320231986923e-06,
+                "shape_change_rmse": 2.5306158647708797e-07,
+                "scale_change_rmse": 3.910150164898596e-07,
+                "global_rotation_parameter_change_rad": 5.923748183889188e-07
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 76.46171185970306,
+              "vertex_camera_mm": 97.68675070762635,
+              "vertex_translation_removed_mm": 63.23933315753937,
+              "joint_mm": 75.78382149219513,
+              "joint_camera_mm": 99.84685702323914,
+              "camera_mm": 75.85758225440979,
+              "shape_rmse": 1.0474857087433338,
+              "scale_rmse": 0.6864499880373478,
+              "global_rotation_deg": 15.144497218430041,
+              "body_pose_periodic_mean_deg": 4.685651123523712,
+              "depth_common_median_mm": 74.38648884296417,
+              "depth_common_p95_mm": 157.1812553882599,
+              "depth_hit_rate": 0.9415656444430351,
+              "silhouette_iou": 0.8841651739925146
+            }
+          },
+          "lowpass_shape": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.00047719514648633774,
+                "camera_change_mm": 0.0003652156009866303,
+                "camera_change_xyz_mm": [
+                  4.493631422519684e-07,
+                  1.9371509552001953e-06,
+                  -2.562999725341797e-05
+                ],
+                "body_pose_change_periodic_deg": 3.908334599174168e-06,
+                "shape_change_rmse": 2.580486206227306e-07,
+                "scale_change_rmse": 3.828845165543271e-07,
+                "global_rotation_parameter_change_rad": 6.156670185020197e-07
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 76.46171120166778,
+              "vertex_camera_mm": 97.68676905632019,
+              "vertex_translation_removed_mm": 63.2393334531784,
+              "joint_mm": 75.78382075309753,
+              "joint_camera_mm": 99.84686870098113,
+              "camera_mm": 75.85758907914162,
+              "shape_rmse": 1.0474857094883918,
+              "scale_rmse": 0.6864499894529581,
+              "global_rotation_deg": 15.144500165581704,
+              "body_pose_periodic_mean_deg": 4.6856510418653485,
+              "depth_common_median_mm": 74.38648203849793,
+              "depth_common_p95_mm": 157.1815676498413,
+              "depth_hit_rate": 0.9415656444430351,
+              "silhouette_iou": 0.8841651367396116
+            }
+          },
+          "local_shuffle_fixed_mask": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.0005011309951441945,
+                "camera_change_mm": 0.0003955356277674582,
+                "camera_change_xyz_mm": [
+                  8.597271516919136e-07,
+                  -4.023313522338867e-06,
+                  -3.516674041748047e-05
+                ],
+                "body_pose_change_periodic_deg": 3.9319632168144385e-06,
+                "shape_change_rmse": 2.520249853255052e-07,
+                "scale_change_rmse": 3.7602531389069326e-07,
+                "global_rotation_parameter_change_rad": 5.483935793337835e-07
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 76.46171287536622,
+              "vertex_camera_mm": 97.68673924922943,
+              "vertex_translation_removed_mm": 63.23933315753937,
+              "joint_mm": 75.78382194519043,
+              "joint_camera_mm": 99.84684270858764,
+              "camera_mm": 75.85756012678146,
+              "shape_rmse": 1.0474857081472875,
+              "scale_rmse": 0.6864499878138304,
+              "global_rotation_deg": 15.144499420225621,
+              "body_pose_periodic_mean_deg": 4.6856510943174365,
+              "depth_common_median_mm": 74.38649716854096,
+              "depth_common_p95_mm": 157.18147146224976,
+              "depth_hit_rate": 0.9415654331445694,
+              "silhouette_iou": 0.884164331778884
+            }
+          },
+          "cross_identity_fixed_mask": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.0004951165075181052,
+                "camera_change_mm": 0.0003913977507636446,
+                "camera_change_xyz_mm": [
+                  7.706694304943085e-07,
+                  5.960464477539062e-07,
+                  -3.814697265625e-05
+                ],
+                "body_pose_change_periodic_deg": 3.916184968772996e-06,
+                "shape_change_rmse": 2.54068153857645e-07,
+                "scale_change_rmse": 3.7645158732502184e-07,
+                "global_rotation_parameter_change_rad": 5.584757293863874e-07
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 76.46171135425567,
+              "vertex_camera_mm": 97.68673487663268,
+              "vertex_translation_removed_mm": 63.2393343257904,
+              "joint_mm": 75.78382093906403,
+              "joint_camera_mm": 99.84684061050415,
+              "camera_mm": 75.85755310535431,
+              "shape_rmse": 1.0474857106804847,
+              "scale_rmse": 0.6864499910175801,
+              "global_rotation_deg": 15.144497278928757,
+              "body_pose_periodic_mean_deg": 4.685651080608368,
+              "depth_common_median_mm": 74.38647391319275,
+              "depth_common_p95_mm": 157.18148327827453,
+              "depth_hit_rate": 0.9415654331445694,
+              "silhouette_iou": 0.8841653903573752
+            }
+          },
+          "offset_-0.2": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.00047238946757715894,
+                "camera_change_mm": 0.0003536910256207193,
+                "camera_change_xyz_mm": [
+                  7.89295881986618e-07,
+                  3.874301910400391e-06,
+                  -2.8014183044433594e-05
+                ],
+                "body_pose_change_periodic_deg": 3.93359385441272e-06,
+                "shape_change_rmse": 2.5477405296570055e-07,
+                "scale_change_rmse": 3.843319162299963e-07,
+                "global_rotation_parameter_change_rad": 4.93096089115852e-07
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 76.4617166852951,
+              "vertex_camera_mm": 97.68673050880432,
+              "vertex_translation_removed_mm": 63.23933791160584,
+              "joint_mm": 75.78382333278655,
+              "joint_camera_mm": 99.84683351516723,
+              "camera_mm": 75.85754655838012,
+              "shape_rmse": 1.047485706061125,
+              "scale_rmse": 0.6864499910920858,
+              "global_rotation_deg": 15.144495756924153,
+              "body_pose_periodic_mean_deg": 4.685651080012321,
+              "depth_common_median_mm": 74.38646791934967,
+              "depth_common_p95_mm": 157.18148074150085,
+              "depth_hit_rate": 0.9415654331445694,
+              "silhouette_iou": 0.8841653428226709
+            }
+          },
+          "offset_0.2": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.000483296200291079,
+                "camera_change_mm": 0.0003686046502843965,
+                "camera_change_xyz_mm": [
+                  2.845190465450287e-06,
+                  -5.513429641723633e-06,
+                  -2.205371856689453e-05
+                ],
+                "body_pose_change_periodic_deg": 3.9076423033179706e-06,
+                "shape_change_rmse": 2.537438086669397e-07,
+                "scale_change_rmse": 3.881496258273387e-07,
+                "global_rotation_parameter_change_rad": 5.39542442230534e-07
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 76.46171605110169,
+              "vertex_camera_mm": 97.6867509174347,
+              "vertex_translation_removed_mm": 63.23933577060699,
+              "joint_mm": 75.7838222026825,
+              "joint_camera_mm": 99.84685266971589,
+              "camera_mm": 75.8575715827942,
+              "shape_rmse": 1.047485706359148,
+              "scale_rmse": 0.6864499927312135,
+              "global_rotation_deg": 15.144498265981674,
+              "body_pose_periodic_mean_deg": 4.685651104450226,
+              "depth_common_median_mm": 74.38647976875305,
+              "depth_common_p95_mm": 157.18133462905882,
+              "depth_hit_rate": 0.9415656444430351,
+              "silhouette_iou": 0.8841645077615976
+            }
+          },
+          "missing": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.0004922735963191372,
+                "camera_change_mm": 0.0003813953541612136,
+                "camera_change_xyz_mm": [
+                  9.307404980063438e-07,
+                  -2.980232238769531e-07,
+                  -5.066394805908203e-05
+                ],
+                "body_pose_change_periodic_deg": 3.9124113010302605e-06,
+                "shape_change_rmse": 2.602254287431549e-07,
+                "scale_change_rmse": 3.869754342566978e-07,
+                "global_rotation_parameter_change_rad": 5.416364187027512e-07
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 76.46171013355256,
+              "vertex_camera_mm": 97.68673706054688,
+              "vertex_translation_removed_mm": 63.239330987930295,
+              "joint_mm": 75.78382085323334,
+              "joint_camera_mm": 99.84683910846711,
+              "camera_mm": 75.85754371643067,
+              "shape_rmse": 1.0474857035279275,
+              "scale_rmse": 0.6864499901980161,
+              "global_rotation_deg": 15.144499608278274,
+              "body_pose_periodic_mean_deg": 4.6856510943174365,
+              "depth_common_median_mm": 74.38645642757416,
+              "depth_common_p95_mm": 157.18158379554748,
+              "depth_hit_rate": 0.9415656444430351,
+              "silhouette_iou": 0.8841642097383737
+            }
+          }
+        },
+        "real_TRAIN_VAL": {
+          "correct": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 1.2414657156939664e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 2.0828250885562838e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              }
+            },
+            "synthetic": null
+          },
+          "flat_center": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.0003467513263078419,
+                "camera_change_mm": 0.00021774374540991964,
+                "camera_change_xyz_mm": [
+                  -8.721717340112838e-07,
+                  -5.7948960198296445e-06,
+                  -1.4211292620058414e-05
+                ],
+                "body_pose_change_periodic_deg": 4.063325484872217e-06,
+                "shape_change_rmse": 2.9673444031148906e-07,
+                "scale_change_rmse": 3.842671898539678e-07,
+                "global_rotation_parameter_change_rad": 2.621834230255839e-07
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 0.00033460635586379794,
+                "camera_change_mm": 0.00022694370386489027,
+                "camera_change_xyz_mm": [
+                  6.7229848355054855e-06,
+                  3.632158041000366e-05,
+                  -8.381903171539307e-05
+                ],
+                "body_pose_change_periodic_deg": 3.6248220389722974e-06,
+                "shape_change_rmse": 2.7760774945484457e-07,
+                "scale_change_rmse": 3.809434381274457e-07,
+                "global_rotation_parameter_change_rad": 1.0882603390660606e-07
+              }
+            },
+            "synthetic": null
+          },
+          "lowpass_shape": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.00034823469486919175,
+                "camera_change_mm": 0.00021635658676031098,
+                "camera_change_xyz_mm": [
+                  -1.7457582375586588e-06,
+                  1.241763432820638e-06,
+                  -2.179984693174009e-05
+                ],
+                "body_pose_change_periodic_deg": 3.970088897631285e-06,
+                "shape_change_rmse": 3.0071057233594233e-07,
+                "scale_change_rmse": 3.8892261000211404e-07,
+                "global_rotation_parameter_change_rad": 2.339814635274226e-07
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 0.00029277930298121646,
+                "camera_change_mm": 0.00018814083080087585,
+                "camera_change_xyz_mm": [
+                  7.566995918750763e-07,
+                  3.259629011154175e-05,
+                  -1.1175870895385742e-05
+                ],
+                "body_pose_change_periodic_deg": 3.718521373485828e-06,
+                "shape_change_rmse": 2.694598475461163e-07,
+                "scale_change_rmse": 3.5491642047524863e-07,
+                "global_rotation_parameter_change_rad": 9.893074764955045e-08
+              }
+            },
+            "synthetic": null
+          },
+          "local_shuffle_fixed_mask": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.0003317133506007613,
+                "camera_change_mm": 0.00020565461325414044,
+                "camera_change_xyz_mm": [
+                  1.186385310979353e-06,
+                  -5.587935447692871e-06,
+                  -1.5591029767636903e-05
+                ],
+                "body_pose_change_periodic_deg": 3.974153267870828e-06,
+                "shape_change_rmse": 2.960273657479804e-07,
+                "scale_change_rmse": 3.847101621630073e-07,
+                "global_rotation_parameter_change_rad": 2.0965473604108968e-07
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 0.0003327539518522826,
+                "camera_change_mm": 0.00024019050738388614,
+                "camera_change_xyz_mm": [
+                  2.6193447411060333e-07,
+                  1.0244548320770264e-05,
+                  -7.450580596923828e-06
+                ],
+                "body_pose_change_periodic_deg": 3.52024090588543e-06,
+                "shape_change_rmse": 2.78569394218664e-07,
+                "scale_change_rmse": 3.678569020504341e-07,
+                "global_rotation_parameter_change_rad": 9.971372244566012e-08
+              }
+            },
+            "synthetic": null
+          },
+          "offset_-0.2": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.00035061909383566,
+                "camera_change_mm": 0.00022282237078899116,
+                "camera_change_xyz_mm": [
+                  2.942720635069741e-07,
+                  -2.690487437778049e-06,
+                  -6.760712023134585e-06
+                ],
+                "body_pose_change_periodic_deg": 4.041105410861006e-06,
+                "shape_change_rmse": 3.017490528556266e-07,
+                "scale_change_rmse": 4.0257318079928986e-07,
+                "global_rotation_parameter_change_rad": 1.960199567889402e-07
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 0.0003196460595518147,
+                "camera_change_mm": 0.00021694855206533248,
+                "camera_change_xyz_mm": [
+                  -2.9103830456733704e-07,
+                  4.656612873077393e-06,
+                  -5.587935447692871e-06
+                ],
+                "body_pose_change_periodic_deg": 3.5118034560355227e-06,
+                "shape_change_rmse": 2.684337523373159e-07,
+                "scale_change_rmse": 3.7763535387647096e-07,
+                "global_rotation_parameter_change_rad": 1.0042651227282207e-07
+              }
+            },
+            "synthetic": null
+          },
+          "offset_0.2": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.00033943939208122044,
+                "camera_change_mm": 0.0002118575204837759,
+                "camera_change_xyz_mm": [
+                  3.149007507427423e-06,
+                  -1.931632006609882e-06,
+                  -6.898685737892423e-07
+                ],
+                "body_pose_change_periodic_deg": 3.9984147295828934e-06,
+                "shape_change_rmse": 2.954875660862207e-07,
+                "scale_change_rmse": 3.807059034770604e-07,
+                "global_rotation_parameter_change_rad": 1.907869604193761e-07
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 0.0003201439642452897,
+                "camera_change_mm": 0.00023019001150714757,
+                "camera_change_xyz_mm": [
+                  8.32369551062584e-06,
+                  3.5390257835388184e-05,
+                  -6.51925802230835e-05
+                ],
+                "body_pose_change_periodic_deg": 3.657577282822899e-06,
+                "shape_change_rmse": 2.8698716425523685e-07,
+                "scale_change_rmse": 3.804276407226581e-07,
+                "global_rotation_parameter_change_rad": 1.076014192191721e-07
+              }
+            },
+            "synthetic": null
+          },
+          "missing": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.0003471418263635078,
+                "camera_change_mm": 0.0002240320333747284,
+                "camera_change_xyz_mm": [
+                  -4.3487320740327796e-07,
+                  -6.139830306724265e-06,
+                  -4.08402195683232e-05
+                ],
+                "body_pose_change_periodic_deg": 4.068916387756905e-06,
+                "shape_change_rmse": 3.045545545137745e-07,
+                "scale_change_rmse": 3.9133602399751315e-07,
+                "global_rotation_parameter_change_rad": 2.204678479078981e-07
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 0.00033459774112998275,
+                "camera_change_mm": 0.00024197618836296897,
+                "camera_change_xyz_mm": [
+                  5.326000973582268e-06,
+                  1.862645149230957e-06,
+                  -3.3527612686157227e-05
+                ],
+                "body_pose_change_periodic_deg": 3.525906684842539e-06,
+                "shape_change_rmse": 2.6719420720411335e-07,
+                "scale_change_rmse": 3.5877644277704235e-07,
+                "global_rotation_parameter_change_rad": 1.0803112754365074e-07
+              }
+            },
+            "synthetic": null
+          }
+        }
+      }
+    },
+    "cross_attention": {
+      "synthetic_best": {
+        "vertex_body_mm": 80.02987914085388,
+        "vertex_camera_mm": 108.87783244609832,
+        "vertex_translation_removed_mm": 67.24651145458222,
+        "joint_mm": 79.95546285629273,
+        "joint_camera_mm": 111.99701334476471,
+        "camera_mm": 85.86007444262505,
+        "shape_rmse": 1.040498934984207,
+        "scale_rmse": 0.674254045933485,
+        "global_rotation_deg": 15.870188619792462,
+        "body_pose_periodic_mean_deg": 4.694598494172096,
+        "depth_common_median_mm": 83.02981271743775,
+        "depth_common_p95_mm": 174.21380827903747,
+        "depth_hit_rate": 0.9364441886544228,
+        "silhouette_iou": 0.8731957450509071
+      },
+      "synthetic_last": {
+        "vertex_body_mm": 80.0298787021637,
+        "vertex_camera_mm": 108.87781886577606,
+        "vertex_translation_removed_mm": 67.24651220798492,
+        "joint_mm": 79.95546242237091,
+        "joint_camera_mm": 111.99699958324432,
+        "camera_mm": 85.86005236148834,
+        "shape_rmse": 1.0404989275336265,
+        "scale_rmse": 0.6742540466040373,
+        "global_rotation_deg": 15.87018476575613,
+        "body_pose_periodic_mean_deg": 4.694598442912102,
+        "depth_common_median_mm": 83.02997713088989,
+        "depth_common_p95_mm": 174.21396525382997,
+        "depth_hit_rate": 0.9364450679719448,
+        "silhouette_iou": 0.8731959067285061
+      },
+      "best_epoch": 8,
+      "seconds": 546.1358648580499,
+      "trainable_parameters": 1454977,
+      "peak_memory_bytes": 6274635264,
+      "real": {
+        "TRAIN": {
+          "median_mm": 48.14761965725097,
+          "p95_mm": 113.51322015362204,
+          "coverage_50mm": 0.5842725965711806
+        },
+        "VAL": {
+          "median_mm": 21.58250569360738,
+          "p95_mm": 55.92294066056948,
+          "coverage_50mm": 0.8744888305664062
+        }
+      },
+      "ablations": {
+        "synthetic_VAL": {
+          "correct": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 1.6133462772582875e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 80.02987594604492,
+              "vertex_camera_mm": 108.87782970905305,
+              "vertex_translation_removed_mm": 67.24650865077973,
+              "joint_mm": 79.95546201705933,
+              "joint_camera_mm": 111.99701181888581,
+              "camera_mm": 85.86007013440133,
+              "shape_rmse": 1.0404989330470562,
+              "scale_rmse": 0.674254050552845,
+              "global_rotation_deg": 15.870183366835118,
+              "body_pose_periodic_mean_deg": 4.694598441720009,
+              "depth_common_median_mm": 83.02981273174287,
+              "depth_common_p95_mm": 174.2138770389557,
+              "depth_hit_rate": 0.9364442540705205,
+              "silhouette_iou": 0.8731943914294242
+            }
+          },
+          "flat_center": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.2819549058447592,
+                "camera_change_mm": 0.2794626483810134,
+                "camera_change_xyz_mm": [
+                  -0.004747071070596576,
+                  -0.022021085023880005,
+                  -0.044626593589782715
+                ],
+                "body_pose_change_periodic_deg": 0.003988388541802124,
+                "shape_change_rmse": 0.0005627029379979831,
+                "scale_change_rmse": 0.000997982840185614,
+                "global_rotation_parameter_change_rad": 0.01646789649664413
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 80.02461653232575,
+              "vertex_camera_mm": 108.8841859483719,
+              "vertex_translation_removed_mm": 67.24045654773712,
+              "joint_mm": 79.95132665157318,
+              "joint_camera_mm": 112.0050927066803,
+              "camera_mm": 85.86610344350338,
+              "shape_rmse": 1.0405003488063813,
+              "scale_rmse": 0.6743158482015132,
+              "global_rotation_deg": 15.870591650307178,
+              "body_pose_periodic_mean_deg": 4.6945948129892345,
+              "depth_common_median_mm": 83.02327817440033,
+              "depth_common_p95_mm": 174.22038726806642,
+              "depth_hit_rate": 0.9364544153213501,
+              "silhouette_iou": 0.8732427375763655
+            }
+          },
+          "lowpass_shape": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.029748179632006214,
+                "camera_change_mm": 0.027048038180946605,
+                "camera_change_xyz_mm": [
+                  0.0003417232073843479,
+                  0.001277327537536621,
+                  -0.011055469512939453
+                ],
+                "body_pose_change_periodic_deg": 0.00048140542339751845,
+                "shape_change_rmse": 5.1909045259890264e-05,
+                "scale_change_rmse": 9.153204651056512e-05,
+                "global_rotation_parameter_change_rad": 8.256385386843589e-05
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 80.030407538414,
+              "vertex_camera_mm": 108.87646129131318,
+              "vertex_translation_removed_mm": 67.24692100524902,
+              "joint_mm": 79.95585175037384,
+              "joint_camera_mm": 111.99493680477143,
+              "camera_mm": 85.85760661840439,
+              "shape_rmse": 1.0404976353049278,
+              "scale_rmse": 0.6742567826807498,
+              "global_rotation_deg": 15.870204192996026,
+              "body_pose_periodic_mean_deg": 4.694602140784264,
+              "depth_common_median_mm": 83.02641585350037,
+              "depth_common_p95_mm": 174.2245071411133,
+              "depth_hit_rate": 0.9364433048665524,
+              "silhouette_iou": 0.8731921648234129
+            }
+          },
+          "local_shuffle_fixed_mask": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.013884370443120133,
+                "camera_change_mm": 0.01225529369476135,
+                "camera_change_xyz_mm": [
+                  1.1816155165433884e-06,
+                  -0.0002811849117279053,
+                  -8.404254913330078e-05
+                ],
+                "body_pose_change_periodic_deg": 0.00025204354411471284,
+                "shape_change_rmse": 2.315606663159997e-05,
+                "scale_change_rmse": 4.001743830826854e-05,
+                "global_rotation_parameter_change_rad": 3.975865812250845e-05
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 80.02962041378021,
+              "vertex_camera_mm": 108.87664518356323,
+              "vertex_translation_removed_mm": 67.24624377250672,
+              "joint_mm": 79.95517237663269,
+              "joint_camera_mm": 111.99598655223846,
+              "camera_mm": 85.85873279690742,
+              "shape_rmse": 1.040499545186758,
+              "scale_rmse": 0.6742540293186903,
+              "global_rotation_deg": 15.870204676687717,
+              "body_pose_periodic_mean_deg": 4.694596790075302,
+              "depth_common_median_mm": 83.02977921962739,
+              "depth_common_p95_mm": 174.22794917106629,
+              "depth_hit_rate": 0.9364481912553311,
+              "silhouette_iou": 0.8731966446340084
+            }
+          },
+          "cross_identity_fixed_mask": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 3.6144784525665457,
+                "camera_change_mm": 3.5490016944427043,
+                "camera_change_xyz_mm": [
+                  -0.03712654296308756,
+                  0.0809420645236969,
+                  -0.06096065044403076
+                ],
+                "body_pose_change_periodic_deg": 0.05473136672080727,
+                "shape_change_rmse": 0.008411769744770935,
+                "scale_change_rmse": 0.014951960577145656,
+                "global_rotation_parameter_change_rad": 0.02648259521349587
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 80.0665336227417,
+              "vertex_camera_mm": 109.1179560470581,
+              "vertex_translation_removed_mm": 67.29732296943665,
+              "joint_mm": 80.00510710716247,
+              "joint_camera_mm": 112.25260621547699,
+              "camera_mm": 86.05614083707333,
+              "shape_rmse": 1.0403210784494876,
+              "scale_rmse": 0.6744527352601289,
+              "global_rotation_deg": 15.86007948309183,
+              "body_pose_periodic_mean_deg": 4.69592435002327,
+              "depth_common_median_mm": 83.13928980827332,
+              "depth_common_p95_mm": 174.55470005989073,
+              "depth_hit_rate": 0.936436549127102,
+              "silhouette_iou": 0.8731268718093633
+            }
+          },
+          "offset_-0.2": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.7358052151091397,
+                "camera_change_mm": 0.7230023583397269,
+                "camera_change_xyz_mm": [
+                  0.006931507959961891,
+                  -0.2099268138408661,
+                  0.21197497844696045
+                ],
+                "body_pose_change_periodic_deg": 0.011608981646713801,
+                "shape_change_rmse": 0.0017961335806467105,
+                "scale_change_rmse": 0.0031851030922553035,
+                "global_rotation_parameter_change_rad": 0.017875899905520784
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 80.01843411445617,
+              "vertex_camera_mm": 108.97889819145203,
+              "vertex_translation_removed_mm": 67.22193203926086,
+              "joint_mm": 79.94856157302857,
+              "joint_camera_mm": 112.11001414299011,
+              "camera_mm": 85.98485005199909,
+              "shape_rmse": 1.0406769634783268,
+              "scale_rmse": 0.6742429101467132,
+              "global_rotation_deg": 15.858428347706795,
+              "body_pose_periodic_mean_deg": 4.69430415391922,
+              "depth_common_median_mm": 83.1394898557663,
+              "depth_common_p95_mm": 174.20234909057618,
+              "depth_hit_rate": 0.9364769075810909,
+              "silhouette_iou": 0.8736019127070904
+            }
+          },
+          "offset_0.2": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.7168564996868372,
+                "camera_change_mm": 0.7004040408600122,
+                "camera_change_xyz_mm": [
+                  -0.0034771952778100967,
+                  0.19368499517440796,
+                  -0.2049100399017334
+                ],
+                "body_pose_change_periodic_deg": 0.010781832680222578,
+                "shape_change_rmse": 0.0016490706674812828,
+                "scale_change_rmse": 0.002935882710007718,
+                "global_rotation_parameter_change_rad": 0.0020822572851466247
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 80.04759852409363,
+              "vertex_camera_mm": 108.78202737331391,
+              "vertex_translation_removed_mm": 67.27181451797486,
+              "joint_mm": 79.96910510063171,
+              "joint_camera_mm": 111.89084513664245,
+              "camera_mm": 85.75492507398128,
+              "shape_rmse": 1.0403444580733776,
+              "scale_rmse": 0.6743012239038945,
+              "global_rotation_deg": 15.88200621843338,
+              "body_pose_periodic_mean_deg": 4.69487862765789,
+              "depth_common_median_mm": 82.94221930980683,
+              "depth_common_p95_mm": 174.31335769653322,
+              "depth_hit_rate": 0.9364309152960777,
+              "silhouette_iou": 0.8728533362597227
+            }
+          },
+          "missing": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 105.83397884368897,
+                "camera_change_mm": 117.40533162117005,
+                "camera_change_xyz_mm": [
+                  -0.7265857137739659,
+                  -34.30200856685639,
+                  -55.10249122142792
+                ],
+                "body_pose_change_periodic_deg": 1.5619047264754773,
+                "shape_change_rmse": 0.292411381714046,
+                "scale_change_rmse": 0.43126400478184224,
+                "global_rotation_parameter_change_rad": 0.8471722638513893
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 100.2267936706543,
+              "vertex_camera_mm": 157.12123323917388,
+              "vertex_translation_removed_mm": 76.23586905956269,
+              "joint_mm": 100.58574256896972,
+              "joint_camera_mm": 162.27799877166748,
+              "camera_mm": 153.35730024814606,
+              "shape_rmse": 1.0852154889702796,
+              "scale_rmse": 0.8310197371244431,
+              "global_rotation_deg": 15.718256114423275,
+              "body_pose_periodic_mean_deg": 4.865381698012352,
+              "depth_common_median_mm": 134.22593140602112,
+              "depth_common_p95_mm": 229.14115783691406,
+              "depth_hit_rate": 0.9068311062455178,
+              "silhouette_iou": 0.8788293213397265
+            }
+          }
+        },
+        "real_TRAIN_VAL": {
+          "correct": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 1.2949321376109634e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 2.042970661250698e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              }
+            },
+            "synthetic": null
+          },
+          "flat_center": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 1.219846129169498,
+                "camera_change_mm": 1.4596068712546386,
+                "camera_change_xyz_mm": [
+                  -0.0076971395928585136,
+                  0.06866406787324836,
+                  -0.013769914706548056
+                ],
+                "body_pose_change_periodic_deg": 0.024048169714391134,
+                "shape_change_rmse": 0.004572596356495153,
+                "scale_change_rmse": 0.006832828425710129,
+                "global_rotation_parameter_change_rad": 0.0028941460236637795
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 2.379667571745813,
+                "camera_change_mm": 2.916457030456513,
+                "camera_change_xyz_mm": [
+                  0.03542775823734701,
+                  -0.5544563755393028,
+                  0.9090248495340347
+                ],
+                "body_pose_change_periodic_deg": 0.05545078181603458,
+                "shape_change_rmse": 0.009669103368651122,
+                "scale_change_rmse": 0.014561759460775647,
+                "global_rotation_parameter_change_rad": 0.002609644810036116
+              }
+            },
+            "synthetic": null
+          },
+          "lowpass_shape": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.07491719534004072,
+                "camera_change_mm": 0.0880757658195324,
+                "camera_change_xyz_mm": [
+                  -0.0016942148148599598,
+                  0.007349307890291568,
+                  -0.020511586357046058
+                ],
+                "body_pose_change_periodic_deg": 0.0016264081225219546,
+                "shape_change_rmse": 0.0002768814797280828,
+                "scale_change_rmse": 0.00042433723898174894,
+                "global_rotation_parameter_change_rad": 0.0002139585576288625
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 0.07042882563109742,
+                "camera_change_mm": 0.08359868333718623,
+                "camera_change_xyz_mm": [
+                  0.001100008375942707,
+                  0.018219463527202606,
+                  -0.03228895366191864
+                ],
+                "body_pose_change_periodic_deg": 0.0015683613953569875,
+                "shape_change_rmse": 0.0002631484317134891,
+                "scale_change_rmse": 0.00040324498098698314,
+                "global_rotation_parameter_change_rad": 7.613967874675609e-05
+              }
+            },
+            "synthetic": null
+          },
+          "local_shuffle_fixed_mask": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.012234291549517636,
+                "camera_change_mm": 0.012454671902998126,
+                "camera_change_xyz_mm": [
+                  -0.0004554719823688545,
+                  0.000236142012808058,
+                  -0.0018303592999776204
+                ],
+                "body_pose_change_periodic_deg": 0.0003171030659056366,
+                "shape_change_rmse": 4.13357599363714e-05,
+                "scale_change_rmse": 6.367245446230956e-05,
+                "global_rotation_parameter_change_rad": 5.533337904949242e-05
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 0.012535506475614966,
+                "camera_change_mm": 0.013830625084665371,
+                "camera_change_xyz_mm": [
+                  0.0001731823431327939,
+                  9.592622518539429e-05,
+                  -6.51925802230835e-05
+                ],
+                "body_pose_change_periodic_deg": 0.00027964997786966705,
+                "shape_change_rmse": 4.135343795752533e-05,
+                "scale_change_rmse": 6.39795005099586e-05,
+                "global_rotation_parameter_change_rad": 1.4568319620877901e-05
+              }
+            },
+            "synthetic": null
+          },
+          "offset_-0.2": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 1.4898988696643047,
+                "camera_change_mm": 1.7980779995106988,
+                "camera_change_xyz_mm": [
+                  0.05165285836146386,
+                  -0.7133060997283017,
+                  1.1043977682237271
+                ],
+                "body_pose_change_periodic_deg": 0.033094271229519676,
+                "shape_change_rmse": 0.006513055667003048,
+                "scale_change_rmse": 0.009818755773098759,
+                "global_rotation_parameter_change_rad": 0.003879574913837671
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 1.592968411743641,
+                "camera_change_mm": 1.9614323740825057,
+                "camera_change_xyz_mm": [
+                  -0.061874467064626515,
+                  -0.9685540571808815,
+                  1.6944874078035355
+                ],
+                "body_pose_change_periodic_deg": 0.0355080891167745,
+                "shape_change_rmse": 0.006666158544248901,
+                "scale_change_rmse": 0.010273854350089096,
+                "global_rotation_parameter_change_rad": 0.001779107733455021
+              }
+            },
+            "synthetic": null
+          },
+          "offset_0.2": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 1.3501498155226863,
+                "camera_change_mm": 1.6285490907590698,
+                "camera_change_xyz_mm": [
+                  -0.05618350464781677,
+                  0.6412140749118946,
+                  -0.9904952236899622
+                ],
+                "body_pose_change_periodic_deg": 0.030607317819009987,
+                "shape_change_rmse": 0.005960908103992956,
+                "scale_change_rmse": 0.008952452774758934,
+                "global_rotation_parameter_change_rad": 0.003543645978290307
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 1.4523831554688513,
+                "camera_change_mm": 1.7917821584269404,
+                "camera_change_xyz_mm": [
+                  0.052673363825306296,
+                  0.8801957592368126,
+                  -1.5501324087381363
+                ],
+                "body_pose_change_periodic_deg": 0.03292134017101489,
+                "shape_change_rmse": 0.006155341878184117,
+                "scale_change_rmse": 0.009454983068280853,
+                "global_rotation_parameter_change_rad": 0.0016295304221785045
+              }
+            },
+            "synthetic": null
+          },
+          "missing": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 24.754771597959376,
+                "camera_change_mm": 29.4809852650872,
+                "camera_change_xyz_mm": [
+                  0.20974369198773749,
+                  -12.103375652873957,
+                  20.68088980736556
+                ],
+                "body_pose_change_periodic_deg": 0.48115314883007504,
+                "shape_change_rmse": 0.0939846661079813,
+                "scale_change_rmse": 0.15560866959599984,
+                "global_rotation_parameter_change_rad": 0.05602686227777869
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 28.356188714504242,
+                "camera_change_mm": 34.32672204077244,
+                "camera_change_xyz_mm": [
+                  -1.3187621957622468,
+                  -16.667091265320778,
+                  29.812082797288895
+                ],
+                "body_pose_change_periodic_deg": 0.5059921629726887,
+                "shape_change_rmse": 0.0925513461988885,
+                "scale_change_rmse": 0.15822731662774459,
+                "global_rotation_parameter_change_rad": 0.02521197363967076
+              }
+            },
+            "synthetic": null
+          }
+        }
+      }
+    },
+    "geometry_attention": {
+      "synthetic_best": {
+        "vertex_body_mm": 78.70179725170135,
+        "vertex_camera_mm": 107.49196170806884,
+        "vertex_translation_removed_mm": 65.75807263851166,
+        "joint_mm": 78.21929346561431,
+        "joint_camera_mm": 110.3743043422699,
+        "camera_mm": 86.31531086564064,
+        "shape_rmse": 1.035073908865452,
+        "scale_rmse": 0.6804202205687762,
+        "global_rotation_deg": 15.920404933094979,
+        "body_pose_periodic_mean_deg": 4.705054420232773,
+        "depth_common_median_mm": 82.29953760623931,
+        "depth_common_p95_mm": 174.16696528434753,
+        "depth_hit_rate": 0.9394432553648948,
+        "silhouette_iou": 0.8715426775068045
+      },
+      "synthetic_last": {
+        "vertex_body_mm": 78.70179578304291,
+        "vertex_camera_mm": 107.4919428062439,
+        "vertex_translation_removed_mm": 65.75807172298431,
+        "joint_mm": 78.21929178237914,
+        "joint_camera_mm": 110.37429107666016,
+        "camera_mm": 86.31530076742172,
+        "shape_rmse": 1.035073911100626,
+        "scale_rmse": 0.6804202160984277,
+        "global_rotation_deg": 15.920401301383972,
+        "body_pose_periodic_mean_deg": 4.70505441904068,
+        "depth_common_median_mm": 82.29953477859497,
+        "depth_common_p95_mm": 174.16695852279662,
+        "depth_hit_rate": 0.9394431099295616,
+        "silhouette_iou": 0.8715413477271795
+      },
+      "best_epoch": 8,
+      "seconds": 741.6235211901367,
+      "trainable_parameters": 1852545,
+      "peak_memory_bytes": 6607604224,
+      "real": {
+        "TRAIN": {
+          "median_mm": 48.661394967990354,
+          "p95_mm": 114.85864024695795,
+          "coverage_50mm": 0.5735603615089699
+        },
+        "VAL": {
+          "median_mm": 21.40379884927347,
+          "p95_mm": 54.54067890146464,
+          "coverage_50mm": 0.8690643310546875
+        }
+      },
+      "ablations": {
+        "synthetic_VAL": {
+          "correct": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 1.744895307899341e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 78.70179669380188,
+              "vertex_camera_mm": 107.49197853088378,
+              "vertex_translation_removed_mm": 65.75807062149048,
+              "joint_mm": 78.21929259777069,
+              "joint_camera_mm": 110.37432230949402,
+              "camera_mm": 86.31532589197158,
+              "shape_rmse": 1.035073907226324,
+              "scale_rmse": 0.680420227497816,
+              "global_rotation_deg": 15.92040232181549,
+              "body_pose_periodic_mean_deg": 4.705054416656494,
+              "depth_common_median_mm": 82.29948678016663,
+              "depth_common_p95_mm": 174.16698163986206,
+              "depth_hit_rate": 0.939444265961647,
+              "silhouette_iou": 0.8715435964614153
+            }
+          },
+          "flat_center": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 3.6794237779825925,
+                "camera_change_mm": 3.2899859888665377,
+                "camera_change_xyz_mm": [
+                  0.0012197003979235888,
+                  -0.9877891838550568,
+                  1.0515832901000977
+                ],
+                "body_pose_change_periodic_deg": 0.06111185646150261,
+                "shape_change_rmse": 0.006834856888599461,
+                "scale_change_rmse": 0.011664875422575278,
+                "global_rotation_parameter_change_rad": 0.06078222487401945
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 78.71476691246033,
+              "vertex_camera_mm": 108.27167629241943,
+              "vertex_translation_removed_mm": 65.8106878232956,
+              "joint_mm": 78.24234623432159,
+              "joint_camera_mm": 111.20197163581848,
+              "camera_mm": 87.13712905406952,
+              "shape_rmse": 1.0355587440729142,
+              "scale_rmse": 0.6796922498941421,
+              "global_rotation_deg": 15.88192716985941,
+              "body_pose_periodic_mean_deg": 4.702844794392586,
+              "depth_common_median_mm": 83.07951972007751,
+              "depth_common_p95_mm": 173.69849661827087,
+              "depth_hit_rate": 0.9396495885401964,
+              "silhouette_iou": 0.8730738769471645
+            }
+          },
+          "lowpass_shape": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.9097094769217073,
+                "camera_change_mm": 0.7817950763204135,
+                "camera_change_xyz_mm": [
+                  -0.005042669428512454,
+                  -0.23735582828521729,
+                  0.3633558750152588
+                ],
+                "body_pose_change_periodic_deg": 0.01492073293949943,
+                "shape_change_rmse": 0.0015312086382618872,
+                "scale_change_rmse": 0.002720178697309166,
+                "global_rotation_parameter_change_rad": 0.01920058432253427
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 78.65260791301728,
+              "vertex_camera_mm": 107.6017617559433,
+              "vertex_translation_removed_mm": 65.71089622020722,
+              "joint_mm": 78.1684435749054,
+              "joint_camera_mm": 110.48523242473603,
+              "camera_mm": 86.48816443800926,
+              "shape_rmse": 1.03517324462533,
+              "scale_rmse": 0.6803123302012682,
+              "global_rotation_deg": 15.908808721601963,
+              "body_pose_periodic_mean_deg": 4.704465921521187,
+              "depth_common_median_mm": 82.4134403514862,
+              "depth_common_p95_mm": 173.8079606628418,
+              "depth_hit_rate": 0.9394594695419073,
+              "silhouette_iou": 0.871899341121316
+            }
+          },
+          "local_shuffle_fixed_mask": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.03234640729322564,
+                "camera_change_mm": 0.027789705114701066,
+                "camera_change_xyz_mm": [
+                  -0.0005940033588558435,
+                  0.004021674394607544,
+                  -0.0034290552139282227
+                ],
+                "body_pose_change_periodic_deg": 0.0006287215194606688,
+                "shape_change_rmse": 6.628512340853376e-05,
+                "scale_change_rmse": 0.00012058353557904411,
+                "global_rotation_parameter_change_rad": 0.00018989644236910407
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 78.70240060806275,
+              "vertex_camera_mm": 107.49260504722595,
+              "vertex_translation_removed_mm": 65.75894033908844,
+              "joint_mm": 78.21985520362854,
+              "joint_camera_mm": 110.3744162940979,
+              "camera_mm": 86.31392325639725,
+              "shape_rmse": 1.0350707513093949,
+              "scale_rmse": 0.6804261487722397,
+              "global_rotation_deg": 15.920554624199868,
+              "body_pose_periodic_mean_deg": 4.705080291032791,
+              "depth_common_median_mm": 82.29855027675629,
+              "depth_common_p95_mm": 174.18104187011718,
+              "depth_hit_rate": 0.9394441629946232,
+              "silhouette_iou": 0.8715384303033352
+            }
+          },
+          "cross_identity_fixed_mask": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 5.8116737737506625,
+                "camera_change_mm": 5.841589844878763,
+                "camera_change_xyz_mm": [
+                  0.013245070837438106,
+                  0.1067623496055603,
+                  -0.19883692264556885
+                ],
+                "body_pose_change_periodic_deg": 0.07162367147626356,
+                "shape_change_rmse": 0.007438027169846464,
+                "scale_change_rmse": 0.012782223059912213,
+                "global_rotation_parameter_change_rad": 0.07673136005221749
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 78.80533896446228,
+              "vertex_camera_mm": 108.03941321372986,
+              "vertex_translation_removed_mm": 65.9424120426178,
+              "joint_mm": 78.32311122894288,
+              "joint_camera_mm": 110.91417782783509,
+              "camera_mm": 86.838929002285,
+              "shape_rmse": 1.0350169487297536,
+              "scale_rmse": 0.6805293468385935,
+              "global_rotation_deg": 15.928557880371809,
+              "body_pose_periodic_mean_deg": 4.704480791687965,
+              "depth_common_median_mm": 82.81284889221192,
+              "depth_common_p95_mm": 174.58410494804383,
+              "depth_hit_rate": 0.9395191702246666,
+              "silhouette_iou": 0.8716128855198622
+            }
+          },
+          "offset_-0.2": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.8186533718556166,
+                "camera_change_mm": 0.8315038202144206,
+                "camera_change_xyz_mm": [
+                  -0.009128475794568658,
+                  -0.10267719626426697,
+                  -0.5766242742538452
+                ],
+                "body_pose_change_periodic_deg": 0.00907784782059025,
+                "shape_change_rmse": 0.001214523971284507,
+                "scale_change_rmse": 0.0021993249778461178,
+                "global_rotation_parameter_change_rad": 0.002246305315147765
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 78.69903673648834,
+              "vertex_camera_mm": 107.49835094451905,
+              "vertex_translation_removed_mm": 65.74291159629821,
+              "joint_mm": 78.22244272232055,
+              "joint_camera_mm": 110.38548463821411,
+              "camera_mm": 86.32295359373093,
+              "shape_rmse": 1.0351680497825146,
+              "scale_rmse": 0.6802867563813925,
+              "global_rotation_deg": 15.917584934085607,
+              "body_pose_periodic_mean_deg": 4.704897694587707,
+              "depth_common_median_mm": 82.31629269123077,
+              "depth_common_p95_mm": 173.98884177207947,
+              "depth_hit_rate": 0.9395517449826002,
+              "silhouette_iou": 0.871765088364482
+            }
+          },
+          "offset_0.2": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.7613087771832943,
+                "camera_change_mm": 0.7808904472365975,
+                "camera_change_xyz_mm": [
+                  0.012086639180779457,
+                  0.07139787077903748,
+                  0.5877131223678589
+                ],
+                "body_pose_change_periodic_deg": 0.0079189977835631,
+                "shape_change_rmse": 0.0010255368318030378,
+                "scale_change_rmse": 0.00186980701299035,
+                "global_rotation_parameter_change_rad": 0.002027656851878419
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 78.70804890155792,
+              "vertex_camera_mm": 107.49538991928101,
+              "vertex_translation_removed_mm": 65.77280892372131,
+              "joint_mm": 78.21978617668152,
+              "joint_camera_mm": 110.37530084133148,
+              "camera_mm": 86.3297168135643,
+              "shape_rmse": 1.0350045999884605,
+              "scale_rmse": 0.6805662117898464,
+              "global_rotation_deg": 15.922752077132463,
+              "body_pose_periodic_mean_deg": 4.705194698572159,
+              "depth_common_median_mm": 82.29488753318786,
+              "depth_common_p95_mm": 174.3064688396454,
+              "depth_hit_rate": 0.9393427246063948,
+              "silhouette_iou": 0.8713846793025732
+            }
+          },
+          "missing": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 102.73435653209687,
+                "camera_change_mm": 113.6351991224289,
+                "camera_change_xyz_mm": [
+                  -0.9297435015439988,
+                  -36.206029682159425,
+                  -48.492855257987976
+                ],
+                "body_pose_change_periodic_deg": 1.566574758142233,
+                "shape_change_rmse": 0.314178088568151,
+                "scale_change_rmse": 0.44207374267280103,
+                "global_rotation_parameter_change_rad": 0.8667654892802239
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 100.22679657936096,
+              "vertex_camera_mm": 157.12125405311585,
+              "vertex_translation_removed_mm": 76.23587116241455,
+              "joint_mm": 100.5857441520691,
+              "joint_camera_mm": 162.27801933765411,
+              "camera_mm": 153.35732849121095,
+              "shape_rmse": 1.0852154895663262,
+              "scale_rmse": 0.8310197396576404,
+              "global_rotation_deg": 15.718265733420848,
+              "body_pose_periodic_mean_deg": 4.865381696224213,
+              "depth_common_median_mm": 134.22594020843505,
+              "depth_common_p95_mm": 229.14118591308593,
+              "depth_hit_rate": 0.9068305072188377,
+              "silhouette_iou": 0.8788281688839197
+            }
+          },
+          "no_3d_attention_bias": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 6.243322124034166,
+                "camera_change_mm": 6.498809850588441,
+                "camera_change_xyz_mm": [
+                  -0.0817264359537512,
+                  1.0268202424049377,
+                  -5.844242572784424
+                ],
+                "body_pose_change_periodic_deg": 0.07674249314703047,
+                "shape_change_rmse": 0.00764028435194632,
+                "scale_change_rmse": 0.012919583784241694,
+                "global_rotation_parameter_change_rad": 0.06100514543246391
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 78.8200441455841,
+              "vertex_camera_mm": 107.09582339763641,
+              "vertex_translation_removed_mm": 65.84648226261139,
+              "joint_mm": 78.3241925239563,
+              "joint_camera_mm": 109.87385400772095,
+              "camera_mm": 85.5581092107296,
+              "shape_rmse": 1.0346383379399777,
+              "scale_rmse": 0.6791337378323078,
+              "global_rotation_deg": 16.010715229511263,
+              "body_pose_periodic_mean_deg": 4.7118274909257885,
+              "depth_common_median_mm": 81.96989062309265,
+              "depth_common_p95_mm": 174.83785223960876,
+              "depth_hit_rate": 0.9396022476255894,
+              "silhouette_iou": 0.8696429055929183
+            }
+          },
+          "no_global_metric_context": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 4.29216211527586,
+                "camera_change_mm": 4.46295734912157,
+                "camera_change_xyz_mm": [
+                  0.043913257671520115,
+                  -0.45789435505867004,
+                  -4.139667749404907
+                ],
+                "body_pose_change_periodic_deg": 0.03980704656336456,
+                "shape_change_rmse": 0.005677379968110472,
+                "scale_change_rmse": 0.00923938449821435,
+                "global_rotation_parameter_change_rad": 0.03883221001540733
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 78.63964626312256,
+              "vertex_camera_mm": 107.40365391731262,
+              "vertex_translation_removed_mm": 65.6891913509369,
+              "joint_mm": 78.17774493217468,
+              "joint_camera_mm": 110.28600285530091,
+              "camera_mm": 86.24163608193398,
+              "shape_rmse": 1.035519490838051,
+              "scale_rmse": 0.680327675268054,
+              "global_rotation_deg": 15.89001271635294,
+              "body_pose_periodic_mean_deg": 4.702175959944725,
+              "depth_common_median_mm": 82.26556144237519,
+              "depth_common_p95_mm": 173.73735195159912,
+              "depth_hit_rate": 0.9402701062709093,
+              "silhouette_iou": 0.8724220906943083
+            }
+          }
+        },
+        "real_TRAIN_VAL": {
+          "correct": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 1.2476831887653361e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 1.7633152397777963e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              }
+            },
+            "synthetic": null
+          },
+          "flat_center": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.6618550890297802,
+                "camera_change_mm": 0.6338158828008023,
+                "camera_change_xyz_mm": [
+                  0.007176111853267584,
+                  0.0922652996248669,
+                  -0.35059631422713955
+                ],
+                "body_pose_change_periodic_deg": 0.01700505845117193,
+                "shape_change_rmse": 0.0022069168252764264,
+                "scale_change_rmse": 0.002742467899662626,
+                "global_rotation_parameter_change_rad": 0.0012425877069340964
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 1.1090036323294044,
+                "camera_change_mm": 1.2442171417642385,
+                "camera_change_xyz_mm": [
+                  -0.014386518159881234,
+                  0.3269156441092491,
+                  -0.7164813578128815
+                ],
+                "body_pose_change_periodic_deg": 0.03149106286582537,
+                "shape_change_rmse": 0.004374175448901951,
+                "scale_change_rmse": 0.005454622054458014,
+                "global_rotation_parameter_change_rad": 0.001302130427575321
+              }
+            },
+            "synthetic": null
+          },
+          "lowpass_shape": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.12449543841972223,
+                "camera_change_mm": 0.0956460086671103,
+                "camera_change_xyz_mm": [
+                  0.0021455753422169777,
+                  0.010843285255961947,
+                  -0.0320917202366723
+                ],
+                "body_pose_change_periodic_deg": 0.0035096422248494085,
+                "shape_change_rmse": 0.0003405066513593098,
+                "scale_change_rmse": 0.00046530748247480206,
+                "global_rotation_parameter_change_rad": 0.00035824299347045444
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 0.07657636622025166,
+                "camera_change_mm": 0.06966095245661563,
+                "camera_change_xyz_mm": [
+                  0.0006609625415876508,
+                  0.02167467027902603,
+                  -0.0340733677148819
+                ],
+                "body_pose_change_periodic_deg": 0.002407103266705235,
+                "shape_change_rmse": 0.0002532494791012141,
+                "scale_change_rmse": 0.00033986815924436087,
+                "global_rotation_parameter_change_rad": 0.00011885683545642678
+              }
+            },
+            "synthetic": null
+          },
+          "local_shuffle_fixed_mask": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.025058835836750438,
+                "camera_change_mm": 0.02453046035919181,
+                "camera_change_xyz_mm": [
+                  -0.0003539370717825713,
+                  0.0014546568746919984,
+                  0.002271047344914189
+                ],
+                "body_pose_change_periodic_deg": 0.000656740691569953,
+                "shape_change_rmse": 8.25408939714702e-05,
+                "scale_change_rmse": 0.00010917752975998423,
+                "global_rotation_parameter_change_rad": 7.979075285567837e-05
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 0.028165449912194163,
+                "camera_change_mm": 0.033165564404043835,
+                "camera_change_xyz_mm": [
+                  -0.0006472109816968441,
+                  0.013090670108795166,
+                  -0.018205493688583374
+                ],
+                "body_pose_change_periodic_deg": 0.0007518202565961474,
+                "shape_change_rmse": 0.00010210351749151414,
+                "scale_change_rmse": 0.0001503739852353192,
+                "global_rotation_parameter_change_rad": 4.2373727033861996e-05
+              }
+            },
+            "synthetic": null
+          },
+          "offset_-0.2": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 1.2478025736701157,
+                "camera_change_mm": 1.3923157884704844,
+                "camera_change_xyz_mm": [
+                  0.08652753001337664,
+                  -0.5585787886822664,
+                  0.7411603022504736
+                ],
+                "body_pose_change_periodic_deg": 0.031622157412736364,
+                "shape_change_rmse": 0.006198610972475122,
+                "scale_change_rmse": 0.008455025252058275,
+                "global_rotation_parameter_change_rad": 0.002013761718528797
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 1.2937428997829556,
+                "camera_change_mm": 1.5631279181689024,
+                "camera_change_xyz_mm": [
+                  -0.03938365262001753,
+                  -0.7024994120001793,
+                  1.3821516185998917
+                ],
+                "body_pose_change_periodic_deg": 0.026497571117943153,
+                "shape_change_rmse": 0.005494183074915782,
+                "scale_change_rmse": 0.008623607718618587,
+                "global_rotation_parameter_change_rad": 0.0010776589069791953
+              }
+            },
+            "synthetic": null
+          },
+          "offset_0.2": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 1.0743436651925247,
+                "camera_change_mm": 1.1709884994111404,
+                "camera_change_xyz_mm": [
+                  -0.0735660039267882,
+                  0.4630092945363786,
+                  -0.5746202336417304
+                ],
+                "body_pose_change_periodic_deg": 0.02711045199949122,
+                "shape_change_rmse": 0.005243855449575844,
+                "scale_change_rmse": 0.007104343302166348,
+                "global_rotation_parameter_change_rad": 0.04548746194701312
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 1.1349884294904768,
+                "camera_change_mm": 1.3399364603683352,
+                "camera_change_xyz_mm": [
+                  0.03518527955748141,
+                  0.607895664870739,
+                  -1.1791735887527466
+                ],
+                "body_pose_change_periodic_deg": 0.02365483138419222,
+                "shape_change_rmse": 0.004774800698214676,
+                "scale_change_rmse": 0.007364770943240728,
+                "global_rotation_parameter_change_rad": 0.0009184867290059628
+              }
+            },
+            "synthetic": null
+          },
+          "missing": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 27.397091621602023,
+                "camera_change_mm": 33.24276713199086,
+                "camera_change_xyz_mm": [
+                  1.483765382716363,
+                  -15.271395910669254,
+                  20.352244196114714
+                ],
+                "body_pose_change_periodic_deg": 0.6501322949512137,
+                "shape_change_rmse": 0.13607585972554428,
+                "scale_change_rmse": 0.2017257251880235,
+                "global_rotation_parameter_change_rad": 0.08491530219153329
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 30.7910949960351,
+                "camera_change_mm": 40.156677693128586,
+                "camera_change_xyz_mm": [
+                  -0.9204979734495282,
+                  -20.103694826364517,
+                  34.380376413464546
+                ],
+                "body_pose_change_periodic_deg": 0.620486990083009,
+                "shape_change_rmse": 0.12742739508394152,
+                "scale_change_rmse": 0.20448468253016472,
+                "global_rotation_parameter_change_rad": 0.02991819934686646
+              }
+            },
+            "synthetic": null
+          },
+          "no_3d_attention_bias": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 3.63660437606827,
+                "camera_change_mm": 3.0758040138278844,
+                "camera_change_xyz_mm": [
+                  0.11363007459806759,
+                  0.6663637166773831,
+                  -2.69980839005223
+                ],
+                "body_pose_change_periodic_deg": 0.0712856869374971,
+                "shape_change_rmse": 0.008305383867587402,
+                "scale_change_rmse": 0.011154506690622333,
+                "global_rotation_parameter_change_rad": 0.04882208355852695
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 4.30707499012351,
+                "camera_change_mm": 3.9962194385007024,
+                "camera_change_xyz_mm": [
+                  0.10414235305506736,
+                  1.0657180100679398,
+                  -3.6829672753810883
+                ],
+                "body_pose_change_periodic_deg": 0.07169134725700133,
+                "shape_change_rmse": 0.009946101770765381,
+                "scale_change_rmse": 0.012594698226166656,
+                "global_rotation_parameter_change_rad": 0.0027399416994740022
+              }
+            },
+            "synthetic": null
+          },
+          "no_global_metric_context": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 1.1015711895673086,
+                "camera_change_mm": 0.9257113602426317,
+                "camera_change_xyz_mm": [
+                  0.07375072524882853,
+                  -0.29591581335774175,
+                  0.7957807845539517
+                ],
+                "body_pose_change_periodic_deg": 0.019885422748134093,
+                "shape_change_rmse": 0.0036802122795725834,
+                "scale_change_rmse": 0.006285288371145725,
+                "global_rotation_parameter_change_rad": 0.001262745966700836
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 1.0986352367326617,
+                "camera_change_mm": 1.056784313172102,
+                "camera_change_xyz_mm": [
+                  0.0066743523348122835,
+                  -0.42702723294496536,
+                  0.9639300405979156
+                ],
+                "body_pose_change_periodic_deg": 0.016486771928612143,
+                "shape_change_rmse": 0.003716989554959582,
+                "scale_change_rmse": 0.006691806665912736,
+                "global_rotation_parameter_change_rad": 0.00037583754806291836
+              }
+            },
+            "synthetic": null
+          }
+        }
+      }
+    },
+    "mhr_refinement": {
+      "synthetic_best": {
+        "vertex_body_mm": 80.46323276996613,
+        "vertex_camera_mm": 83.23331023693085,
+        "vertex_translation_removed_mm": 68.23247779846191,
+        "joint_mm": 81.47788383483886,
+        "joint_camera_mm": 86.31714684963227,
+        "camera_mm": 47.45238316237926,
+        "shape_rmse": 1.0051919417083264,
+        "scale_rmse": 0.5647523983567954,
+        "global_rotation_deg": 15.662551807314157,
+        "body_pose_periodic_mean_deg": 4.837464337944985,
+        "depth_common_median_mm": 49.269210610389706,
+        "depth_common_p95_mm": 144.42835337638854,
+        "depth_hit_rate": 0.9196721547096968,
+        "silhouette_iou": 0.8507380602508783
+      },
+      "synthetic_last": {
+        "vertex_body_mm": 80.46323303222657,
+        "vertex_camera_mm": 83.23330782413483,
+        "vertex_translation_removed_mm": 68.23247153759003,
+        "joint_mm": 81.47788372993469,
+        "joint_camera_mm": 86.31721125602722,
+        "camera_mm": 47.452617963254454,
+        "shape_rmse": 1.0051919901371003,
+        "scale_rmse": 0.5647523971647024,
+        "global_rotation_deg": 15.662545397430659,
+        "body_pose_periodic_mean_deg": 4.83746387898922,
+        "depth_common_median_mm": 49.26954334259033,
+        "depth_common_p95_mm": 144.4284690475464,
+        "depth_hit_rate": 0.919671345576644,
+        "silhouette_iou": 0.8507366324216128
+      },
+      "best_epoch": 8,
+      "seconds": 671.5398952052929,
+      "trainable_parameters": 2293460,
+      "peak_memory_bytes": 4526537216,
+      "real": {
+        "TRAIN": {
+          "median_mm": 34.67809271849772,
+          "p95_mm": 94.90250461088289,
+          "coverage_50mm": 0.7034222638165509
+        },
+        "VAL": {
+          "median_mm": 24.35242575834522,
+          "p95_mm": 60.46004957129012,
+          "coverage_50mm": 0.8426361083984375
+        }
+      },
+      "ablations": {
+        "synthetic_VAL": {
+          "correct": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 1.6045223507258623e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 80.4632414150238,
+              "vertex_camera_mm": 83.23340594768524,
+              "vertex_translation_removed_mm": 68.23248883247375,
+              "joint_mm": 81.47789501667023,
+              "joint_camera_mm": 86.31723128795623,
+              "camera_mm": 47.45231753498316,
+              "shape_rmse": 1.0051919741928577,
+              "scale_rmse": 0.5647523609548807,
+              "global_rotation_deg": 15.66254796102643,
+              "body_pose_periodic_mean_deg": 4.8374644750356675,
+              "depth_common_median_mm": 49.26906646728516,
+              "depth_common_p95_mm": 144.42773112297058,
+              "depth_hit_rate": 0.9196719468384981,
+              "silhouette_iou": 0.8507377881556749
+            }
+          },
+          "flat_center": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 53.31914822667837,
+                "camera_change_mm": 56.83207092627883,
+                "camera_change_xyz_mm": [
+                  -0.04982878163922578,
+                  -0.6862765574455261,
+                  -35.758284335136416
+                ],
+                "body_pose_change_periodic_deg": 0.28178380117518825,
+                "shape_change_rmse": 0.0417456952088105,
+                "scale_change_rmse": 0.04831747862059274,
+                "global_rotation_parameter_change_rad": 0.006516575671957981
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 81.19322424411774,
+              "vertex_camera_mm": 105.95301477432251,
+              "vertex_translation_removed_mm": 68.71644597530366,
+              "joint_mm": 82.03468164920807,
+              "joint_camera_mm": 109.51328588485718,
+              "camera_mm": 79.38675897121429,
+              "shape_rmse": 1.00485233604908,
+              "scale_rmse": 0.5743400917202234,
+              "global_rotation_deg": 15.658221478611232,
+              "body_pose_periodic_mean_deg": 4.793488221168518,
+              "depth_common_median_mm": 77.50981906414032,
+              "depth_common_p95_mm": 170.82732283592225,
+              "depth_hit_rate": 0.9264830937236548,
+              "silhouette_iou": 0.8585984461009503
+            }
+          },
+          "lowpass_shape": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 14.424629058111458,
+                "camera_change_mm": 15.431637313151732,
+                "camera_change_xyz_mm": [
+                  0.0006842674640938639,
+                  -0.17073839902877808,
+                  -12.944733510017395
+                ],
+                "body_pose_change_periodic_deg": 0.0743753303118865,
+                "shape_change_rmse": 0.011572069167596056,
+                "scale_change_rmse": 0.013945426932550617,
+                "global_rotation_parameter_change_rad": 0.0018357588417529768
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 80.4865297794342,
+              "vertex_camera_mm": 85.45134767055511,
+              "vertex_translation_removed_mm": 68.25434694766999,
+              "joint_mm": 81.50505853176116,
+              "joint_camera_mm": 88.57909503936767,
+              "camera_mm": 50.67940733253956,
+              "shape_rmse": 1.0047837987542152,
+              "scale_rmse": 0.567702314183116,
+              "global_rotation_deg": 15.654783175587655,
+              "body_pose_periodic_mean_deg": 4.827101986408234,
+              "depth_common_median_mm": 52.01894488811493,
+              "depth_common_p95_mm": 146.84302792549133,
+              "depth_hit_rate": 0.9219798018783331,
+              "silhouette_iou": 0.8528603557497263
+            }
+          },
+          "local_shuffle_fixed_mask": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 0.013116724442370468,
+                "camera_change_mm": 0.013923178424593062,
+                "camera_change_xyz_mm": [
+                  -3.558554453775287e-05,
+                  -1.0579824447631836e-05,
+                  -0.012847185134887695
+                ],
+                "body_pose_change_periodic_deg": 7.394227785880503e-05,
+                "shape_change_rmse": 1.0705731535836093e-05,
+                "scale_change_rmse": 1.1771594346470238e-05,
+                "global_rotation_parameter_change_rad": 1.8988860195889856e-06
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 80.46322713375092,
+              "vertex_camera_mm": 83.2327957201004,
+              "vertex_translation_removed_mm": 68.23249929428101,
+              "joint_mm": 81.47789954662323,
+              "joint_camera_mm": 86.3163946390152,
+              "camera_mm": 47.44984843492508,
+              "shape_rmse": 1.0051917593181132,
+              "scale_rmse": 0.5647555703669787,
+              "global_rotation_deg": 15.662540522515775,
+              "body_pose_periodic_mean_deg": 4.83746739923954,
+              "depth_common_median_mm": 49.26826021194458,
+              "depth_common_p95_mm": 144.43927167892457,
+              "depth_hit_rate": 0.9196734783798456,
+              "silhouette_iou": 0.8507415618747473
+            }
+          },
+          "cross_identity_fixed_mask": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 330.7971817302704,
+                "camera_change_mm": 337.49883178055285,
+                "camera_change_xyz_mm": [
+                  0.31286334787495435,
+                  -6.228500447273254,
+                  124.81078081607819
+                ],
+                "body_pose_change_periodic_deg": 1.704897206965834,
+                "shape_change_rmse": 0.22787750757765024,
+                "scale_change_rmse": 0.2809444011957385,
+                "global_rotation_parameter_change_rad": 0.041795516012061856
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 104.00232167243958,
+              "vertex_camera_mm": 355.68851736068723,
+              "vertex_translation_removed_mm": 89.16178992271423,
+              "joint_mm": 105.14779069900513,
+              "joint_camera_mm": 358.99274789333344,
+              "camera_mm": 347.6442662036419,
+              "shape_rmse": 1.0451640102267266,
+              "scale_rmse": 0.6280291816592216,
+              "global_rotation_deg": 16.238470882326364,
+              "body_pose_periodic_mean_deg": 5.24038343846798,
+              "depth_common_median_mm": 334.81767786979674,
+              "depth_common_p95_mm": 447.6224509525299,
+              "depth_hit_rate": 0.8435093311965466,
+              "silhouette_iou": 0.7645883671939373
+            }
+          },
+          "offset_-0.2": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 114.47069477796555,
+                "camera_change_mm": 121.78809647083283,
+                "camera_change_xyz_mm": [
+                  0.07030521046370268,
+                  0.32546624302864074,
+                  -121.7365754365921
+                ],
+                "body_pose_change_periodic_deg": 0.6115672177821397,
+                "shape_change_rmse": 0.07714515395928175,
+                "scale_change_rmse": 0.08976936625316739,
+                "global_rotation_parameter_change_rad": 0.013346993217128329
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 82.66569408416748,
+              "vertex_camera_mm": 140.09955472946166,
+              "vertex_translation_removed_mm": 70.12227056980133,
+              "joint_mm": 83.64161555290222,
+              "joint_camera_mm": 142.4182775402069,
+              "camera_mm": 123.9500110578537,
+              "shape_rmse": 1.0070380841195583,
+              "scale_rmse": 0.5936989655345678,
+              "global_rotation_deg": 15.589248605072498,
+              "body_pose_periodic_mean_deg": 4.905381426215172,
+              "depth_common_median_mm": 121.62413504123688,
+              "depth_common_p95_mm": 219.09511974334717,
+              "depth_hit_rate": 0.9271134786307812,
+              "silhouette_iou": 0.8413358366489411
+            }
+          },
+          "offset_0.2": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 133.23939103126526,
+                "camera_change_mm": 140.57609656333923,
+                "camera_change_xyz_mm": [
+                  -0.03402577007655054,
+                  -0.8897554874420166,
+                  140.54482786178588
+                ],
+                "body_pose_change_periodic_deg": 0.6694638446718454,
+                "shape_change_rmse": 0.09021453249733895,
+                "scale_change_rmse": 0.10925517560448497,
+                "global_rotation_parameter_change_rad": 0.01491972375108162
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 83.35314192295074,
+              "vertex_camera_mm": 160.62743453979493,
+              "vertex_translation_removed_mm": 70.44769734859466,
+              "joint_mm": 83.6669250869751,
+              "joint_camera_mm": 163.6860350036621,
+              "camera_mm": 151.37560792207717,
+              "shape_rmse": 1.0114321948587894,
+              "scale_rmse": 0.5447611641138792,
+              "global_rotation_deg": 15.832341449409723,
+              "body_pose_periodic_mean_deg": 4.871135296821595,
+              "depth_common_median_mm": 141.24578164577485,
+              "depth_common_p95_mm": 233.68938428878783,
+              "depth_hit_rate": 0.895984266102314,
+              "silhouette_iou": 0.8342218577116728
+            }
+          },
+          "missing": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 130.1281733083725,
+                "camera_change_mm": 142.1736125612259,
+                "camera_change_xyz_mm": [
+                  0.5656256650015712,
+                  -35.339171257019046,
+                  -40.833014221191405
+                ],
+                "body_pose_change_periodic_deg": 1.7451992785930635,
+                "shape_change_rmse": 0.48660680174827575,
+                "scale_change_rmse": 0.452867224663496,
+                "global_rotation_parameter_change_rad": 0.039346972912899215
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 100.22679871559143,
+              "vertex_camera_mm": 157.12126019477844,
+              "vertex_translation_removed_mm": 76.23587150573731,
+              "joint_mm": 100.5857437133789,
+              "joint_camera_mm": 162.27802443504333,
+              "camera_mm": 153.3573264503479,
+              "shape_rmse": 1.0852154906094074,
+              "scale_rmse": 0.8310197421908379,
+              "global_rotation_deg": 15.718253821730613,
+              "body_pose_periodic_mean_deg": 4.865381649136543,
+              "depth_common_median_mm": 134.22597311973573,
+              "depth_common_p95_mm": 229.14119688034057,
+              "depth_hit_rate": 0.9068308983743191,
+              "silhouette_iou": 0.8788291870802641
+            }
+          },
+          "no_local_correspondence": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 96.21942420244217,
+                "camera_change_mm": 106.80591126918793,
+                "camera_change_xyz_mm": [
+                  -0.9367868875153362,
+                  -12.43554341316223,
+                  -82.22874923229217
+                ],
+                "body_pose_change_periodic_deg": 0.8451531741023064,
+                "shape_change_rmse": 0.22382333042100072,
+                "scale_change_rmse": 0.22593538308516145,
+                "global_rotation_parameter_change_rad": 0.022028202333312947
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 86.11560070037842,
+              "vertex_camera_mm": 135.52507281303406,
+              "vertex_translation_removed_mm": 70.79107308387756,
+              "joint_mm": 86.74503201961517,
+              "joint_camera_mm": 139.21004631042481,
+              "camera_mm": 123.47403784513473,
+              "shape_rmse": 1.0162160159647464,
+              "scale_rmse": 0.6717957746982575,
+              "global_rotation_deg": 15.607508388161659,
+              "body_pose_periodic_mean_deg": 4.747027306556702,
+              "depth_common_median_mm": 112.81168979167938,
+              "depth_common_p95_mm": 200.99067463874817,
+              "depth_hit_rate": 0.9263327644020319,
+              "silhouette_iou": 0.8698998018354177
+            }
+          },
+          "translation_only": {
+            "responses": {
+              "VAL": {
+                "vertex_camera_change_mm": 55.546073532104494,
+                "camera_change_mm": 0.00025805449955441874,
+                "camera_change_xyz_mm": [
+                  6.216287147253752e-06,
+                  -1.1920928955078125e-06,
+                  4.76837158203125e-06
+                ],
+                "body_pose_change_periodic_deg": 1.7451992374658585,
+                "shape_change_rmse": 0.4866068056970835,
+                "scale_change_rmse": 0.452867226973176,
+                "global_rotation_parameter_change_rad": 0.03934698783326894
+              }
+            },
+            "synthetic": {
+              "vertex_body_mm": 100.22679817199707,
+              "vertex_camera_mm": 102.83976454734803,
+              "vertex_translation_removed_mm": 76.23587078094482,
+              "joint_mm": 100.58574321746826,
+              "joint_camera_mm": 105.20151009559632,
+              "camera_mm": 47.45229854822159,
+              "shape_rmse": 1.0852154894173145,
+              "scale_rmse": 0.831019743680954,
+              "global_rotation_deg": 15.718268170058728,
+              "body_pose_periodic_mean_deg": 4.865381680130959,
+              "depth_common_median_mm": 57.6562900018692,
+              "depth_common_p95_mm": 189.17326451301574,
+              "depth_hit_rate": 0.8294838616997003,
+              "silhouette_iou": 0.7562415398657322
+            }
+          }
+        },
+        "real_TRAIN_VAL": {
+          "correct": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 1.3249237200433321e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 2.3437854579810846e-05,
+                "camera_change_mm": 0.0,
+                "camera_change_xyz_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "body_pose_change_periodic_deg": 0.0,
+                "shape_change_rmse": 0.0,
+                "scale_change_rmse": 0.0,
+                "global_rotation_parameter_change_rad": 0.0
+              }
+            },
+            "synthetic": null
+          },
+          "flat_center": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 10.460504633822929,
+                "camera_change_mm": 10.682586216264301,
+                "camera_change_xyz_mm": [
+                  -0.020436094487430875,
+                  -0.5943501989046732,
+                  4.559287752266283
+                ],
+                "body_pose_change_periodic_deg": 0.07352959617748166,
+                "shape_change_rmse": 0.011569911012850717,
+                "scale_change_rmse": 0.01034008012060507,
+                "global_rotation_parameter_change_rad": 0.0014797293760643192
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 6.366476554423571,
+                "camera_change_mm": 6.330029612407088,
+                "camera_change_xyz_mm": [
+                  0.016623539151623845,
+                  -0.3047194331884384,
+                  2.7271546721458435
+                ],
+                "body_pose_change_periodic_deg": 0.050832229637308046,
+                "shape_change_rmse": 0.009820935116295004,
+                "scale_change_rmse": 0.009239086597517598,
+                "global_rotation_parameter_change_rad": 0.0015768892826599767
+              }
+            },
+            "synthetic": null
+          },
+          "lowpass_shape": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 2.764085050396345,
+                "camera_change_mm": 2.909775468809703,
+                "camera_change_xyz_mm": [
+                  0.00310441829626345,
+                  0.013561574397263703,
+                  -1.5780285552695945
+                ],
+                "body_pose_change_periodic_deg": 0.01609329757142135,
+                "shape_change_rmse": 0.0019614095492923094,
+                "scale_change_rmse": 0.002059944674042695,
+                "global_rotation_parameter_change_rad": 0.00038127018097013744
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 1.988661544630304,
+                "camera_change_mm": 2.1363610315602273,
+                "camera_change_xyz_mm": [
+                  0.03289137652609497,
+                  0.07401499897241592,
+                  -1.4296285808086395
+                ],
+                "body_pose_change_periodic_deg": 0.012285719600185985,
+                "shape_change_rmse": 0.0014998571753039869,
+                "scale_change_rmse": 0.0015611290430115332,
+                "global_rotation_parameter_change_rad": 0.00037760821851406945
+              }
+            },
+            "synthetic": null
+          },
+          "local_shuffle_fixed_mask": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 0.00926474997423712,
+                "camera_change_mm": 0.009181266300402058,
+                "camera_change_xyz_mm": [
+                  7.271942363500044e-05,
+                  0.00020068276811529087,
+                  -0.0055891772111256914
+                ],
+                "body_pose_change_periodic_deg": 5.805435935502391e-05,
+                "shape_change_rmse": 8.592357647377415e-06,
+                "scale_change_rmse": 7.872248758184138e-06,
+                "global_rotation_parameter_change_rad": 1.3567627572048164e-06
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 0.00940098321007099,
+                "camera_change_mm": 0.009687207491879235,
+                "camera_change_xyz_mm": [
+                  0.00021179221221245825,
+                  0.0005355104804039001,
+                  -0.006161630153656006
+                ],
+                "body_pose_change_periodic_deg": 5.674116061982204e-05,
+                "shape_change_rmse": 7.5182978607202244e-06,
+                "scale_change_rmse": 7.985645325003787e-06,
+                "global_rotation_parameter_change_rad": 1.6288735928959852e-06
+              }
+            },
+            "synthetic": null
+          },
+          "offset_-0.2": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 57.029555418977026,
+                "camera_change_mm": 59.19793195305048,
+                "camera_change_xyz_mm": [
+                  0.5282509136876024,
+                  0.6340611036177035,
+                  -59.162750592938174
+                ],
+                "body_pose_change_periodic_deg": 0.31890185057461534,
+                "shape_change_rmse": 0.036899936976691666,
+                "scale_change_rmse": 0.04018251614912447,
+                "global_rotation_parameter_change_rad": 0.006975900056406519
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 51.201673716306686,
+                "camera_change_mm": 53.29890051484108,
+                "camera_change_xyz_mm": [
+                  1.0685998406261206,
+                  0.6259279325604439,
+                  -53.260980010032654
+                ],
+                "body_pose_change_periodic_deg": 0.2951839400921017,
+                "shape_change_rmse": 0.03394879119878169,
+                "scale_change_rmse": 0.039243890409125015,
+                "global_rotation_parameter_change_rad": 0.008401378634516732
+              }
+            },
+            "synthetic": null
+          },
+          "offset_0.2": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 91.82162057470391,
+                "camera_change_mm": 95.40420724506731,
+                "camera_change_xyz_mm": [
+                  -0.30108502881463484,
+                  -2.218210448821386,
+                  95.36444189151128
+                ],
+                "body_pose_change_periodic_deg": 0.47025287404001026,
+                "shape_change_rmse": 0.055819218851091264,
+                "scale_change_rmse": 0.06743922909286254,
+                "global_rotation_parameter_change_rad": 0.010894961809551913
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 84.57170963287354,
+                "camera_change_mm": 88.34867262840271,
+                "camera_change_xyz_mm": [
+                  -1.499558120034635,
+                  -2.424841746687889,
+                  88.29220604896545
+                ],
+                "body_pose_change_periodic_deg": 0.44915002840571105,
+                "shape_change_rmse": 0.05236269271699712,
+                "scale_change_rmse": 0.0630784937820863,
+                "global_rotation_parameter_change_rad": 0.012191485542643932
+              }
+            },
+            "synthetic": null
+          },
+          "missing": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 70.44029692808788,
+                "camera_change_mm": 75.43313481631101,
+                "camera_change_xyz_mm": [
+                  0.6206555931518475,
+                  -21.7529299667588,
+                  39.38968411419127
+                ],
+                "body_pose_change_periodic_deg": 1.0809664905623153,
+                "shape_change_rmse": 0.29164009053191103,
+                "scale_change_rmse": 0.24662621935001677,
+                "global_rotation_parameter_change_rad": 0.01857440655941092
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 41.842578798532486,
+                "camera_change_mm": 46.69497439265251,
+                "camera_change_xyz_mm": [
+                  -0.79973811423406,
+                  -20.362220585346222,
+                  35.92171883583069
+                ],
+                "body_pose_change_periodic_deg": 1.0608532903715968,
+                "shape_change_rmse": 0.3075322597287595,
+                "scale_change_rmse": 0.25948852207511663,
+                "global_rotation_parameter_change_rad": 0.020737863349495456
+              }
+            },
+            "synthetic": null
+          },
+          "no_local_correspondence": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 30.8733094047617,
+                "camera_change_mm": 32.296014822191665,
+                "camera_change_xyz_mm": [
+                  0.4575589193393373,
+                  -11.877983500008229,
+                  7.86722540082755
+                ],
+                "body_pose_change_periodic_deg": 0.45721242007695967,
+                "shape_change_rmse": 0.12402046055757197,
+                "scale_change_rmse": 0.10880108668762087,
+                "global_rotation_parameter_change_rad": 0.01032478138276255
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 21.527268409729004,
+                "camera_change_mm": 23.96743008494377,
+                "camera_change_xyz_mm": [
+                  -0.057868109783157706,
+                  -13.331503540277481,
+                  9.879274293780327
+                ],
+                "body_pose_change_periodic_deg": 0.4332230216823518,
+                "shape_change_rmse": 0.12361436907667667,
+                "scale_change_rmse": 0.10784847592003644,
+                "global_rotation_parameter_change_rad": 0.011292151222733082
+              }
+            },
+            "synthetic": null
+          },
+          "translation_only": {
+            "responses": {
+              "TRAIN": {
+                "vertex_camera_change_mm": 34.75090648509838,
+                "camera_change_mm": 0.00022344964045091558,
+                "camera_change_xyz_mm": [
+                  1.7138922380076514e-07,
+                  1.0141068034701877e-05,
+                  -1.0072081177322952e-05
+                ],
+                "body_pose_change_periodic_deg": 1.0809665102235695,
+                "shape_change_rmse": 0.2916400985516332,
+                "scale_change_rmse": 0.24662623116401608,
+                "global_rotation_parameter_change_rad": 0.01857444580969901
+              },
+              "VAL": {
+                "vertex_camera_change_mm": 34.0689777135849,
+                "camera_change_mm": 0.00021250859094834595,
+                "camera_change_xyz_mm": [
+                  -9.986251825466752e-07,
+                  -4.656612873077393e-06,
+                  -5.774199962615967e-05
+                ],
+                "body_pose_change_periodic_deg": 1.0608532233163714,
+                "shape_change_rmse": 0.3075322792865336,
+                "scale_change_rmse": 0.25948854512535036,
+                "global_rotation_parameter_change_rad": 0.020737860977533273
+              }
+            },
+            "synthetic": null
+          }
+        }
+      }
+    }
+  },
+  "historical_txyz": {
+    "official": {
+      "before": {
+        "TRAIN": {
+          "median_mm": 53.97129719137776,
+          "p95_mm": 119.74319360509392,
+          "coverage_50mm": 0.5328103524667245
+        },
+        "VAL": {
+          "median_mm": 30.58569943304768,
+          "p95_mm": 69.83547988228193,
+          "coverage_50mm": 0.7442550659179688
+        }
+      },
+      "after": {
+        "TRAIN": {
+          "median_mm": 24.64503760211626,
+          "p95_mm": 80.3167643871916,
+          "coverage_50mm": 0.8462496157045717
+        },
+        "VAL": {
+          "median_mm": 11.226246945551962,
+          "p95_mm": 41.604291887991444,
+          "coverage_50mm": 0.9707183837890625
+        }
+      },
+      "fallback_count": 11
+    },
+    "rgb_only_seed11": {
+      "before": {
+        "TRAIN": {
+          "median_mm": 62.093552530480515,
+          "p95_mm": 153.60856667145077,
+          "coverage_50mm": 0.49552860966435186
+        },
+        "VAL": {
+          "median_mm": 29.418405350337917,
+          "p95_mm": 71.85644347890549,
+          "coverage_50mm": 0.7920684814453125
+        }
+      },
+      "after": {
+        "TRAIN": {
+          "median_mm": 36.780233960119425,
+          "p95_mm": 122.8172245522784,
+          "coverage_50mm": 0.7310892740885416
+        },
+        "VAL": {
+          "median_mm": 12.57592634803535,
+          "p95_mm": 51.87207468629798,
+          "coverage_50mm": 0.9479598999023438
+        }
+      },
+      "fallback_count": 23
+    },
+    "rgb_only_seed23": {
+      "before": {
+        "TRAIN": {
+          "median_mm": 61.137328860457714,
+          "p95_mm": 152.71289349536175,
+          "coverage_50mm": 0.5031896520543981
+        },
+        "VAL": {
+          "median_mm": 31.35222280560335,
+          "p95_mm": 75.07595947006169,
+          "coverage_50mm": 0.741058349609375
+        }
+      },
+      "after": {
+        "TRAIN": {
+          "median_mm": 36.585553756343714,
+          "p95_mm": 124.1050292765953,
+          "coverage_50mm": 0.7305201777705439
+        },
+        "VAL": {
+          "median_mm": 12.429225505030287,
+          "p95_mm": 51.25081921989924,
+          "coverage_50mm": 0.9503555297851562
+        }
+      },
+      "fallback_count": 24
+    },
+    "rgb_only_seed37": {
+      "before": {
+        "TRAIN": {
+          "median_mm": 56.1237925446104,
+          "p95_mm": 143.42541500307252,
+          "coverage_50mm": 0.5359406647858797
+        },
+        "VAL": {
+          "median_mm": 28.131184150423987,
+          "p95_mm": 69.52994904356792,
+          "coverage_50mm": 0.8033218383789062
+        }
+      },
+      "after": {
+        "TRAIN": {
+          "median_mm": 31.11080480337955,
+          "p95_mm": 114.02351351912466,
+          "coverage_50mm": 0.7615972448278356
+        },
+        "VAL": {
+          "median_mm": 12.536606693464478,
+          "p95_mm": 51.95995262633722,
+          "coverage_50mm": 0.942474365234375
+        }
+      },
+      "fallback_count": 12
+    },
+    "cross_attention_seed11": {
+      "before": {
+        "TRAIN": {
+          "median_mm": 51.92489004484841,
+          "p95_mm": 131.8456457866957,
+          "coverage_50mm": 0.5616466380931713
+        },
+        "VAL": {
+          "median_mm": 26.244553033423912,
+          "p95_mm": 64.53252133559769,
+          "coverage_50mm": 0.8209762573242188
+        }
+      },
+      "after": {
+        "TRAIN": {
+          "median_mm": 25.25282130450626,
+          "p95_mm": 99.42180897586667,
+          "coverage_50mm": 0.7998804163049769
+        },
+        "VAL": {
+          "median_mm": 14.318884893692639,
+          "p95_mm": 54.173617432265374,
+          "coverage_50mm": 0.9299468994140625
+        }
+      },
+      "fallback_count": 5
+    },
+    "cross_attention_seed23": {
+      "before": {
+        "TRAIN": {
+          "median_mm": 52.32405873951266,
+          "p95_mm": 126.35045087018109,
+          "coverage_50mm": 0.5463731553819444
+        },
+        "VAL": {
+          "median_mm": 21.60677126366388,
+          "p95_mm": 62.486812252281275,
+          "coverage_50mm": 0.8448562622070312
+        }
+      },
+      "after": {
+        "TRAIN": {
+          "median_mm": 27.33633646682229,
+          "p95_mm": 97.10469975252875,
+          "coverage_50mm": 0.7968586109302662
+        },
+        "VAL": {
+          "median_mm": 13.08597336292314,
+          "p95_mm": 50.08886773636115,
+          "coverage_50mm": 0.9363861083984375
+        }
+      },
+      "fallback_count": 9
+    },
+    "cross_attention_seed37": {
+      "before": {
+        "TRAIN": {
+          "median_mm": 53.62012549067434,
+          "p95_mm": 127.68706351955231,
+          "coverage_50mm": 0.5537499321831597
+        },
+        "VAL": {
+          "median_mm": 26.65903999150685,
+          "p95_mm": 65.27592961279026,
+          "coverage_50mm": 0.8085861206054688
+        }
+      },
+      "after": {
+        "TRAIN": {
+          "median_mm": 29.22772003479686,
+          "p95_mm": 97.34883208242988,
+          "coverage_50mm": 0.7958961769386574
+        },
+        "VAL": {
+          "median_mm": 12.993746901840733,
+          "p95_mm": 46.660507621410815,
+          "coverage_50mm": 0.9561767578125
+        }
+      },
+      "fallback_count": 13
+    }
+  },
+  "depth_source": {
+    "synthetic_VAL_seed11": {
+      "correct": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 1.6358286876059225e-05,
+            "camera_change_mm": 0.0,
+            "camera_change_xyz_mm": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "body_pose_change_periodic_deg": 0.0,
+            "shape_change_rmse": 0.0,
+            "scale_change_rmse": 0.0,
+            "global_rotation_parameter_change_rad": 0.0
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 67.11560067653656,
+          "vertex_camera_mm": 84.96623055934906,
+          "vertex_translation_removed_mm": 56.21746267795563,
+          "joint_mm": 67.22067867994309,
+          "joint_camera_mm": 87.3146713733673,
+          "camera_mm": 64.6002735632658,
+          "shape_rmse": 1.030894437432289,
+          "scale_rmse": 0.5014570859074593,
+          "global_rotation_deg": 14.8051416939497,
+          "body_pose_periodic_mean_deg": 4.440506482124329,
+          "depth_common_median_mm": 63.57033363342285,
+          "depth_common_p95_mm": 140.94784099578857,
+          "depth_hit_rate": 0.934484109133482,
+          "silhouette_iou": 0.8853697404265404
+        }
+      },
+      "mask_rays_only": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 116.66809360742569,
+            "camera_change_mm": 125.3716644358635,
+            "camera_change_xyz_mm": [
+              -2.599418391250074,
+              -15.80252673983574,
+              -117.4543296766281
+            ],
+            "body_pose_change_periodic_deg": 1.2897204603254795,
+            "shape_change_rmse": 0.22881137223914266,
+            "scale_change_rmse": 0.3557847803086042,
+            "global_rotation_parameter_change_rad": 0.8268916137167253
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 85.59267153263092,
+          "vertex_camera_mm": 142.8012413072586,
+          "vertex_translation_removed_mm": 70.26422283887864,
+          "joint_mm": 86.40246856689453,
+          "joint_camera_mm": 146.63704979896545,
+          "camera_mm": 137.12632625341416,
+          "shape_rmse": 1.0710183198750018,
+          "scale_rmse": 0.7081667685508728,
+          "global_rotation_deg": 15.159913489818573,
+          "body_pose_periodic_mean_deg": 4.752090892791748,
+          "depth_common_median_mm": 122.28943242073059,
+          "depth_common_p95_mm": 207.3819295692444,
+          "depth_hit_rate": 0.9178057811409235,
+          "silhouette_iou": 0.8829836016148329
+        }
+      },
+      "absolute_only": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 42.83841495037079,
+            "camera_change_mm": 37.421182607710364,
+            "camera_change_xyz_mm": [
+              -0.11047868445515632,
+              1.174736329317093,
+              36.900790300369266
+            ],
+            "body_pose_change_periodic_deg": 0.4075491997692734,
+            "shape_change_rmse": 0.036727101705037055,
+            "scale_change_rmse": 0.06491314031765796,
+            "global_rotation_parameter_change_rad": 0.6305423155585594
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 71.73033801078796,
+          "vertex_camera_mm": 96.17479692459106,
+          "vertex_translation_removed_mm": 59.82148662567138,
+          "joint_mm": 71.83586198329925,
+          "joint_camera_mm": 98.42591149330138,
+          "camera_mm": 74.54641359582543,
+          "shape_rmse": 1.034143845885992,
+          "scale_rmse": 0.510105117186904,
+          "global_rotation_deg": 14.81022279024124,
+          "body_pose_periodic_mean_deg": 4.464324338436127,
+          "depth_common_median_mm": 75.65333364486695,
+          "depth_common_p95_mm": 157.5643089389801,
+          "depth_hit_rate": 0.9300429855287075,
+          "silhouette_iou": 0.8849211681634188
+        }
+      },
+      "relative_only": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 110.092482213974,
+            "camera_change_mm": 120.0620674943924,
+            "camera_change_xyz_mm": [
+              -2.2886436576768756,
+              -16.161952620744707,
+              -111.51729259490966
+            ],
+            "body_pose_change_periodic_deg": 1.2851625894010068,
+            "shape_change_rmse": 0.21797965766862035,
+            "scale_change_rmse": 0.35043922398239374,
+            "global_rotation_parameter_change_rad": 0.9465928649622947
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 85.93407415390014,
+          "vertex_camera_mm": 138.0701282119751,
+          "vertex_translation_removed_mm": 69.98363869667054,
+          "joint_mm": 86.57185317993164,
+          "joint_camera_mm": 142.3284055185318,
+          "camera_mm": 132.35872367680074,
+          "shape_rmse": 1.0687247240543365,
+          "scale_rmse": 0.704419437944889,
+          "global_rotation_deg": 15.382406904697419,
+          "body_pose_periodic_mean_deg": 4.757478368878364,
+          "depth_common_median_mm": 118.04662366867065,
+          "depth_common_p95_mm": 205.95970406532288,
+          "depth_hit_rate": 0.9196508705615998,
+          "silhouette_iou": 0.8840807235240936
+        }
+      },
+      "flat_center": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 42.850244669616224,
+            "camera_change_mm": 37.22145961508155,
+            "camera_change_xyz_mm": [
+              -0.1453443267941475,
+              1.1710055160522461,
+              36.771281967163084
+            ],
+            "body_pose_change_periodic_deg": 0.40840371579863133,
+            "shape_change_rmse": 0.03660570291103795,
+            "scale_change_rmse": 0.06459899470093661,
+            "global_rotation_parameter_change_rad": 0.6363354716016328
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 71.86700996875763,
+          "vertex_camera_mm": 96.21189511775971,
+          "vertex_translation_removed_mm": 59.948263835906985,
+          "joint_mm": 71.95283607482911,
+          "joint_camera_mm": 98.44720245838165,
+          "camera_mm": 74.20822317436337,
+          "shape_rmse": 1.0341224032640457,
+          "scale_rmse": 0.5101760338991881,
+          "global_rotation_deg": 14.788561438918114,
+          "body_pose_periodic_mean_deg": 4.463715860247612,
+          "depth_common_median_mm": 75.54120186328888,
+          "depth_common_p95_mm": 157.57966336250306,
+          "depth_hit_rate": 0.9298961152136326,
+          "silhouette_iou": 0.8848795358836651
+        }
+      },
+      "lowpass_shape": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 6.174670197442174,
+            "camera_change_mm": 3.8955978228058665,
+            "camera_change_xyz_mm": [
+              -0.03413601676002145,
+              -0.27940765023231506,
+              1.5540415048599243
+            ],
+            "body_pose_change_periodic_deg": 0.08513368391082622,
+            "shape_change_rmse": 0.007763975601774291,
+            "scale_change_rmse": 0.013433159243286355,
+            "global_rotation_parameter_change_rad": 0.25228419546325315
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 67.23982424736023,
+          "vertex_camera_mm": 85.22423353672028,
+          "vertex_translation_removed_mm": 56.29512881278992,
+          "joint_mm": 67.41602793693542,
+          "joint_camera_mm": 87.59509014368058,
+          "camera_mm": 64.68637669503688,
+          "shape_rmse": 1.0317239052057265,
+          "scale_rmse": 0.5047181267291307,
+          "global_rotation_deg": 14.819875267148017,
+          "body_pose_periodic_mean_deg": 4.44778921186924,
+          "depth_common_median_mm": 63.88209102630615,
+          "depth_common_p95_mm": 141.09866282463074,
+          "depth_hit_rate": 0.9341344957053661,
+          "silhouette_iou": 0.8856322010606528
+        }
+      },
+      "highpass_shape": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 40.40134369879961,
+            "camera_change_mm": 35.49104081466794,
+            "camera_change_xyz_mm": [
+              -0.10443787796422839,
+              1.2189872539043427,
+              34.97457095146179
+            ],
+            "body_pose_change_periodic_deg": 0.38544194964691997,
+            "shape_change_rmse": 0.03435111293918453,
+            "scale_change_rmse": 0.06071575433714315,
+            "global_rotation_parameter_change_rad": 0.6022104265849338
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 71.5481133365631,
+          "vertex_camera_mm": 95.1897866678238,
+          "vertex_translation_removed_mm": 59.65194589138031,
+          "joint_mm": 71.55242032527923,
+          "joint_camera_mm": 97.43366306304932,
+          "camera_mm": 73.62475524783135,
+          "shape_rmse": 1.03368686825037,
+          "scale_rmse": 0.5084397801011801,
+          "global_rotation_deg": 14.76906491547823,
+          "body_pose_periodic_mean_deg": 4.458727032542229,
+          "depth_common_median_mm": 74.69795753955842,
+          "depth_common_p95_mm": 156.4762026119232,
+          "depth_hit_rate": 0.9304736094176769,
+          "silhouette_iou": 0.8851928611844778
+        }
+      },
+      "cross_identity_fixed_mask": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 38.05444445490837,
+            "camera_change_mm": 25.47816999897361,
+            "camera_change_xyz_mm": [
+              -0.13655294794589282,
+              -1.3395518088340759,
+              5.769135937690735
+            ],
+            "body_pose_change_periodic_deg": 0.5039712772145868,
+            "shape_change_rmse": 0.05337786370539106,
+            "scale_change_rmse": 0.08513267028145492,
+            "global_rotation_parameter_change_rad": 0.7621207108005182
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 72.54270384311675,
+          "vertex_camera_mm": 92.12659752368927,
+          "vertex_translation_removed_mm": 60.12628310203552,
+          "joint_mm": 72.38139558792115,
+          "joint_camera_mm": 94.1978199338913,
+          "camera_mm": 68.47291909635067,
+          "shape_rmse": 1.0352611987292766,
+          "scale_rmse": 0.5259545662999153,
+          "global_rotation_deg": 14.959029059410096,
+          "body_pose_periodic_mean_deg": 4.498432140946388,
+          "depth_common_median_mm": 69.82081660270691,
+          "depth_common_p95_mm": 152.08007066726685,
+          "depth_hit_rate": 0.9317854106426239,
+          "silhouette_iou": 0.8867664886265993
+        }
+      },
+      "local_shuffle_fixed_mask": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 1.7763499845471233,
+            "camera_change_mm": 1.599734794003889,
+            "camera_change_xyz_mm": [
+              0.01244389386381954,
+              -0.11570900678634644,
+              -0.5669134855270386
+            ],
+            "body_pose_change_periodic_deg": 0.02700570378510747,
+            "shape_change_rmse": 0.002452748976811563,
+            "scale_change_rmse": 0.004087151387720951,
+            "global_rotation_parameter_change_rad": 0.03166842286302199
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 67.11471183776855,
+          "vertex_camera_mm": 84.98073431491852,
+          "vertex_translation_removed_mm": 56.22681843519211,
+          "joint_mm": 67.24465372800827,
+          "joint_camera_mm": 87.3611865401268,
+          "camera_mm": 64.58871888160705,
+          "shape_rmse": 1.0309947562217712,
+          "scale_rmse": 0.5020821291208267,
+          "global_rotation_deg": 14.809519543647767,
+          "body_pose_periodic_mean_deg": 4.441856109499931,
+          "depth_common_median_mm": 63.607943029403685,
+          "depth_common_p95_mm": 140.6861364364624,
+          "depth_hit_rate": 0.9345263634622097,
+          "silhouette_iou": 0.8855039396882057
+        }
+      },
+      "offset_-0.2": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 3.8661757342517378,
+            "camera_change_mm": 3.269530862569809,
+            "camera_change_xyz_mm": [
+              -0.0684593640267849,
+              -0.06356731057167053,
+              -2.906072735786438
+            ],
+            "body_pose_change_periodic_deg": 0.043501350865699354,
+            "shape_change_rmse": 0.005564904324710369,
+            "scale_change_rmse": 0.006587288331356831,
+            "global_rotation_parameter_change_rad": 0.09796908913791412
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 67.1093055820465,
+          "vertex_camera_mm": 85.03999543666839,
+          "vertex_translation_removed_mm": 56.20323059082031,
+          "joint_mm": 67.20433145284653,
+          "joint_camera_mm": 87.38116121053696,
+          "camera_mm": 64.67054862678052,
+          "shape_rmse": 1.0309929232299329,
+          "scale_rmse": 0.50230852432549,
+          "global_rotation_deg": 14.788261859863997,
+          "body_pose_periodic_mean_deg": 4.44012236058712,
+          "depth_common_median_mm": 63.586830525398256,
+          "depth_common_p95_mm": 140.76143959999084,
+          "depth_hit_rate": 0.9343612240254879,
+          "silhouette_iou": 0.8857120092213154
+        }
+      },
+      "offset_-0.05": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 0.9601204692572355,
+            "camera_change_mm": 0.8186015801783652,
+            "camera_change_xyz_mm": [
+              -0.017822645022533834,
+              -0.016884058713912964,
+              -0.7195425033569336
+            ],
+            "body_pose_change_periodic_deg": 0.010988812725991011,
+            "shape_change_rmse": 0.0013881639661849476,
+            "scale_change_rmse": 0.0016427539582946338,
+            "global_rotation_parameter_change_rad": 0.019127429707405098
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 67.1130987739563,
+          "vertex_camera_mm": 84.97127606391906,
+          "vertex_translation_removed_mm": 56.212624037265776,
+          "joint_mm": 67.21605881452561,
+          "joint_camera_mm": 87.31912549257278,
+          "camera_mm": 64.60116621613503,
+          "shape_rmse": 1.0309185506403447,
+          "scale_rmse": 0.5016590705513955,
+          "global_rotation_deg": 14.80135766223073,
+          "body_pose_periodic_mean_deg": 4.440396983027458,
+          "depth_common_median_mm": 63.55835753917694,
+          "depth_common_p95_mm": 140.91284519195557,
+          "depth_hit_rate": 0.9344428695738316,
+          "silhouette_iou": 0.8854347884654998
+        }
+      },
+      "offset_0.05": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 0.9615192575752736,
+            "camera_change_mm": 0.8140841041505337,
+            "camera_change_xyz_mm": [
+              0.016968726413324475,
+              0.01743227243423462,
+              0.7197916507720947
+            ],
+            "body_pose_change_periodic_deg": 0.010936465526465327,
+            "shape_change_rmse": 0.001377284172922373,
+            "scale_change_rmse": 0.0016343747163773514,
+            "global_rotation_parameter_change_rad": 0.03514420243363929
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 67.1180014705658,
+          "vertex_camera_mm": 84.9709860944748,
+          "vertex_translation_removed_mm": 56.22357224464417,
+          "joint_mm": 67.22498274803162,
+          "joint_camera_mm": 87.31849856376648,
+          "camera_mm": 64.60500952839851,
+          "shape_rmse": 1.0308716101944446,
+          "scale_rmse": 0.5012568274885416,
+          "global_rotation_deg": 14.80897810012102,
+          "body_pose_periodic_mean_deg": 4.440688108205795,
+          "depth_common_median_mm": 63.585374321937564,
+          "depth_common_p95_mm": 140.98384950637816,
+          "depth_hit_rate": 0.9345254504680633,
+          "silhouette_iou": 0.8852780745923519
+        }
+      },
+      "offset_0.2": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 3.813686715885997,
+            "camera_change_mm": 3.2324457002058624,
+            "camera_change_xyz_mm": [
+              0.06809552860911935,
+              0.0787496566772461,
+              2.8787684440612793
+            ],
+            "body_pose_change_periodic_deg": 0.043391997781582176,
+            "shape_change_rmse": 0.005466626897105016,
+            "scale_change_rmse": 0.0064721758500672875,
+            "global_rotation_parameter_change_rad": 0.07736704912567802
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 67.13811143398284,
+          "vertex_camera_mm": 85.02980814933777,
+          "vertex_translation_removed_mm": 56.24988146066666,
+          "joint_mm": 67.2508407330513,
+          "joint_camera_mm": 87.37021350860596,
+          "camera_mm": 64.65762903690339,
+          "shape_rmse": 1.0308126766979695,
+          "scale_rmse": 0.5006644479930401,
+          "global_rotation_deg": 14.820530081242323,
+          "body_pose_periodic_mean_deg": 4.441370462179184,
+          "depth_common_median_mm": 63.68031294822693,
+          "depth_common_p95_mm": 141.15643906593323,
+          "depth_hit_rate": 0.934601496309042,
+          "silhouette_iou": 0.885025977268815
+        }
+      },
+      "noise_0.005": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 0.08254144399194047,
+            "camera_change_mm": 0.06661126548337051,
+            "camera_change_xyz_mm": [
+              0.0006729312008246779,
+              -0.00010162591934204102,
+              0.0005078315734863281
+            ],
+            "body_pose_change_periodic_deg": 0.0013886810041003627,
+            "shape_change_rmse": 0.00010885569146466878,
+            "scale_change_rmse": 0.00018735669766101637,
+            "global_rotation_parameter_change_rad": 0.0004956257647745588
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 67.11694698810578,
+          "vertex_camera_mm": 84.96408705234528,
+          "vertex_translation_removed_mm": 56.218566040992734,
+          "joint_mm": 67.22267677307129,
+          "joint_camera_mm": 87.31294504404067,
+          "camera_mm": 64.59379037618638,
+          "shape_rmse": 1.0308929277956487,
+          "scale_rmse": 0.5014604160934687,
+          "global_rotation_deg": 14.805367565155029,
+          "body_pose_periodic_mean_deg": 4.440502289533615,
+          "depth_common_median_mm": 63.5692603635788,
+          "depth_common_p95_mm": 140.94046346664427,
+          "depth_hit_rate": 0.9344903863966465,
+          "silhouette_iou": 0.8853753123432397
+        }
+      },
+      "noise_0.02": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 0.312615399453789,
+            "camera_change_mm": 0.2599461025139317,
+            "camera_change_xyz_mm": [
+              0.002610414521768689,
+              0.0017598271369934082,
+              0.000934600830078125
+            ],
+            "body_pose_change_periodic_deg": 0.004706164388044272,
+            "shape_change_rmse": 0.0004045319679971726,
+            "scale_change_rmse": 0.0006884474399521423,
+            "global_rotation_parameter_change_rad": 0.0019434666614461093
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 67.12066195964813,
+          "vertex_camera_mm": 84.95399294376374,
+          "vertex_translation_removed_mm": 56.221592128276825,
+          "joint_mm": 67.22824090719223,
+          "joint_camera_mm": 87.30236182212829,
+          "camera_mm": 64.57257810652256,
+          "shape_rmse": 1.03088902130723,
+          "scale_rmse": 0.5014682649821043,
+          "global_rotation_deg": 14.80555040627718,
+          "body_pose_periodic_mean_deg": 4.440483008027076,
+          "depth_common_median_mm": 63.565754375457765,
+          "depth_common_p95_mm": 140.9421338558197,
+          "depth_hit_rate": 0.9344922211766243,
+          "silhouette_iou": 0.885367372110486
+        }
+      }
+    },
+    "real_TRAIN_VAL_seed11": {
+      "correct": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 1.2632627514587691e-05,
+            "camera_change_mm": 0.0,
+            "camera_change_xyz_mm": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "body_pose_change_periodic_deg": 0.0,
+            "shape_change_rmse": 0.0,
+            "scale_change_rmse": 0.0,
+            "global_rotation_parameter_change_rad": 0.0
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 1.7170919929476725e-05,
+            "camera_change_mm": 0.0,
+            "camera_change_xyz_mm": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "body_pose_change_periodic_deg": 0.0,
+            "shape_change_rmse": 0.0,
+            "scale_change_rmse": 0.0,
+            "global_rotation_parameter_change_rad": 0.0
+          }
+        },
+        "synthetic": null
+      },
+      "mask_rays_only": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 46.063509787674306,
+            "camera_change_mm": 35.981006748146484,
+            "camera_change_xyz_mm": [
+              0.9981390586709258,
+              -5.343495074797559,
+              -23.094765383888173
+            ],
+            "body_pose_change_periodic_deg": 0.9890040032979515,
+            "shape_change_rmse": 0.14259838083483,
+            "scale_change_rmse": 0.32632577903913673,
+            "global_rotation_parameter_change_rad": 0.37263470582116426
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 25.029827147722244,
+            "camera_change_mm": 18.052812360227108,
+            "camera_change_xyz_mm": [
+              -1.622551898472011,
+              -4.717968434095383,
+              5.9434846341609955
+            ],
+            "body_pose_change_periodic_deg": 0.5668272324837744,
+            "shape_change_rmse": 0.10717912157997489,
+            "scale_change_rmse": 0.20720914052799344,
+            "global_rotation_parameter_change_rad": 0.023533680534455925
+          }
+        },
+        "synthetic": null
+      },
+      "absolute_only": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 4.262254077458271,
+            "camera_change_mm": 2.3654938300174693,
+            "camera_change_xyz_mm": [
+              -0.017798727947390743,
+              0.11128159584822478,
+              1.4957723518212636
+            ],
+            "body_pose_change_periodic_deg": 0.08823644321118654,
+            "shape_change_rmse": 0.009735243963304028,
+            "scale_change_rmse": 0.015576171918871331,
+            "global_rotation_parameter_change_rad": 0.09707611443957796
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 5.485946252942085,
+            "camera_change_mm": 3.647229612339288,
+            "camera_change_xyz_mm": [
+              0.030524970032274723,
+              -0.05000550299882889,
+              3.5250764340162277
+            ],
+            "body_pose_change_periodic_deg": 0.0896563395508565,
+            "shape_change_rmse": 0.010955996564007364,
+            "scale_change_rmse": 0.016970065225905273,
+            "global_rotation_parameter_change_rad": 0.007873026705055963
+          }
+        },
+        "synthetic": null
+      },
+      "relative_only": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 44.95121701999946,
+            "camera_change_mm": 35.89105438772175,
+            "camera_change_xyz_mm": [
+              0.6497209368928991,
+              -5.354483917355537,
+              -23.320206064868856
+            ],
+            "body_pose_change_periodic_deg": 0.980010317052128,
+            "shape_change_rmse": 0.14402753754553418,
+            "scale_change_rmse": 0.32564903497350994,
+            "global_rotation_parameter_change_rad": 0.3645414015476558
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 24.461391493678093,
+            "camera_change_mm": 18.141089089214802,
+            "camera_change_xyz_mm": [
+              -1.7773848725482821,
+              -5.0471154525876045,
+              5.082484349608421
+            ],
+            "body_pose_change_periodic_deg": 0.5701341084204614,
+            "shape_change_rmse": 0.10936275508720428,
+            "scale_change_rmse": 0.21225772611796856,
+            "global_rotation_parameter_change_rad": 0.02179352438542992
+          }
+        },
+        "synthetic": null
+      },
+      "flat_center": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 4.589573810704881,
+            "camera_change_mm": 2.7531448989520193,
+            "camera_change_xyz_mm": [
+              0.07744281043953917,
+              0.2943116619631096,
+              2.0419952427899397
+            ],
+            "body_pose_change_periodic_deg": 0.08977045888874541,
+            "shape_change_rmse": 0.01005665466423293,
+            "scale_change_rmse": 0.01533527870035161,
+            "global_rotation_parameter_change_rad": 0.0970781404942466
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 5.66276516020298,
+            "camera_change_mm": 3.6771172620356083,
+            "camera_change_xyz_mm": [
+              0.11853425553999841,
+              0.40331482887268066,
+              3.4701358526945114
+            ],
+            "body_pose_change_periodic_deg": 0.10205377155216411,
+            "shape_change_rmse": 0.012369189156743232,
+            "scale_change_rmse": 0.018050021360977553,
+            "global_rotation_parameter_change_rad": 0.0081906108171097
+          }
+        },
+        "synthetic": null
+      },
+      "lowpass_shape": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 0.39916241155394044,
+            "camera_change_mm": 0.28436485911866094,
+            "camera_change_xyz_mm": [
+              0.0045603458700632605,
+              0.021056237596052664,
+              0.01181993219587538
+            ],
+            "body_pose_change_periodic_deg": 0.009918083253001829,
+            "shape_change_rmse": 0.001065476719338255,
+            "scale_change_rmse": 0.0021574692696386018,
+            "global_rotation_parameter_change_rad": 0.0014331190287453798
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 0.136721471673809,
+            "camera_change_mm": 0.09467667306307703,
+            "camera_change_xyz_mm": [
+              0.003098859451711178,
+              0.018846243619918823,
+              0.04592910408973694
+            ],
+            "body_pose_change_periodic_deg": 0.00379428617816302,
+            "shape_change_rmse": 0.0004172220076270605,
+            "scale_change_rmse": 0.0007135754926821392,
+            "global_rotation_parameter_change_rad": 0.00018755350976107366
+          }
+        },
+        "synthetic": null
+      },
+      "highpass_shape": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 4.385516316319506,
+            "camera_change_mm": 2.5930004831127547,
+            "camera_change_xyz_mm": [
+              0.0684268748887849,
+              0.27908564165786465,
+              2.047592297748283
+            ],
+            "body_pose_change_periodic_deg": 0.08493739177248683,
+            "shape_change_rmse": 0.00949585233778365,
+            "scale_change_rmse": 0.014076920417951274,
+            "global_rotation_parameter_change_rad": 0.057955522081842736
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 5.579098530113697,
+            "camera_change_mm": 3.633475790731609,
+            "camera_change_xyz_mm": [
+              0.11658959533087909,
+              0.3955624997615814,
+              3.428960219025612
+            ],
+            "body_pose_change_periodic_deg": 0.10060174186946824,
+            "shape_change_rmse": 0.01224701861065114,
+            "scale_change_rmse": 0.017876791753224097,
+            "global_rotation_parameter_change_rad": 0.008059822030190844
+          }
+        },
+        "synthetic": null
+      },
+      "cross_identity_fixed_mask": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 4.302881802966888,
+            "camera_change_mm": 2.808239997963904,
+            "camera_change_xyz_mm": [
+              0.11139827750243797,
+              -0.10180859654038042,
+              -1.6887139666963507
+            ],
+            "body_pose_change_periodic_deg": 0.08812785085670098,
+            "shape_change_rmse": 0.010677670608115645,
+            "scale_change_rmse": 0.019895993514014495,
+            "global_rotation_parameter_change_rad": 0.09817212754030522
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 2.3429013257846236,
+            "camera_change_mm": 1.6142929082270712,
+            "camera_change_xyz_mm": [
+              0.04488279321230948,
+              0.14560669660568237,
+              -0.18281862139701843
+            ],
+            "body_pose_change_periodic_deg": 0.055786879238439724,
+            "shape_change_rmse": 0.009279444078856613,
+            "scale_change_rmse": 0.014722657848324161,
+            "global_rotation_parameter_change_rad": 0.00282948037602182
+          }
+        },
+        "synthetic": null
+      },
+      "local_shuffle_fixed_mask": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 0.27920245283274675,
+            "camera_change_mm": 0.1951773716244605,
+            "camera_change_xyz_mm": [
+              0.006058526216764692,
+              0.01503361596001519,
+              -0.009878504055517693
+            ],
+            "body_pose_change_periodic_deg": 0.007048026800004193,
+            "shape_change_rmse": 0.000793378571727401,
+            "scale_change_rmse": 0.001522223577576706,
+            "global_rotation_parameter_change_rad": 0.0006541458033876989
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 0.09571167035028338,
+            "camera_change_mm": 0.06802939163753763,
+            "camera_change_xyz_mm": [
+              0.0010855437722057104,
+              0.011547468602657318,
+              -0.04437193274497986
+            ],
+            "body_pose_change_periodic_deg": 0.002872618493711343,
+            "shape_change_rmse": 0.00037772154792037327,
+            "scale_change_rmse": 0.0006616974075086546,
+            "global_rotation_parameter_change_rad": 0.00011000219754464524
+          }
+        },
+        "synthetic": null
+      },
+      "offset_-0.2": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 3.0070863692779786,
+            "camera_change_mm": 2.103552716197791,
+            "camera_change_xyz_mm": [
+              -0.01278944118638281,
+              -0.3150836047199037,
+              -1.40860331831155
+            ],
+            "body_pose_change_periodic_deg": 0.07882941974956474,
+            "shape_change_rmse": 0.010411541708486361,
+            "scale_change_rmse": 0.01970495555616691,
+            "global_rotation_parameter_change_rad": 0.04847994432438335
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 2.108476352877915,
+            "camera_change_mm": 1.4277409040369093,
+            "camera_change_xyz_mm": [
+              -0.09056000178679824,
+              -0.49906596541404724,
+              0.5652308464050293
+            ],
+            "body_pose_change_periodic_deg": 0.059812539868289605,
+            "shape_change_rmse": 0.010525214442168362,
+            "scale_change_rmse": 0.018225482461275533,
+            "global_rotation_parameter_change_rad": 0.0018386064120932133
+          }
+        },
+        "synthetic": null
+      },
+      "offset_-0.05": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 0.7269865786742971,
+            "camera_change_mm": 0.5150901388540795,
+            "camera_change_xyz_mm": [
+              -0.0002947365175242787,
+              -0.07248587078518337,
+              -0.35870861676004195
+            ],
+            "body_pose_change_periodic_deg": 0.019022519137016154,
+            "shape_change_rmse": 0.0024808776747872966,
+            "scale_change_rmse": 0.004630570962035563,
+            "global_rotation_parameter_change_rad": 0.0011770606918414866
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 0.5196629606653005,
+            "camera_change_mm": 0.351042790687643,
+            "camera_change_xyz_mm": [
+              -0.016905833035707474,
+              -0.11994130909442902,
+              0.1565646380186081
+            ],
+            "body_pose_change_periodic_deg": 0.014830915759375785,
+            "shape_change_rmse": 0.002543877057178179,
+            "scale_change_rmse": 0.004377245939394925,
+            "global_rotation_parameter_change_rad": 0.0004428448278304131
+          }
+        },
+        "synthetic": null
+      },
+      "offset_0.05": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 0.6938056488849085,
+            "camera_change_mm": 0.4961948779075303,
+            "camera_change_xyz_mm": [
+              0.0029136424849706658,
+              0.07017060286468929,
+              0.33950322756060847
+            ],
+            "body_pose_change_periodic_deg": 0.018017342962492775,
+            "shape_change_rmse": 0.0023822092734917533,
+            "scale_change_rmse": 0.004417331845750731,
+            "global_rotation_parameter_change_rad": 0.0011312887543310892
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 0.5036899188999087,
+            "camera_change_mm": 0.31143797584809363,
+            "camera_change_xyz_mm": [
+              0.018934690160676837,
+              0.10053813457489014,
+              -0.12140721082687378
+            ],
+            "body_pose_change_periodic_deg": 0.015409689818625338,
+            "shape_change_rmse": 0.002541955489505199,
+            "scale_change_rmse": 0.004309921554522589,
+            "global_rotation_parameter_change_rad": 0.0004469796783723723
+          }
+        },
+        "synthetic": null
+      },
+      "offset_0.2": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 2.6198126873070446,
+            "camera_change_mm": 1.8980552155041588,
+            "camera_change_xyz_mm": [
+              0.006649764884194294,
+              0.27196888846379735,
+              1.323027467286145
+            ],
+            "body_pose_change_periodic_deg": 0.06836298480414338,
+            "shape_change_rmse": 0.009058924076304754,
+            "scale_change_rmse": 0.01662622846197337,
+            "global_rotation_parameter_change_rad": 0.04788539218602468
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 1.9249249072745442,
+            "camera_change_mm": 1.2077921885065734,
+            "camera_change_xyz_mm": [
+              0.06923114508390427,
+              0.3851093351840973,
+              -0.46020932495594025
+            ],
+            "body_pose_change_periodic_deg": 0.056694996514124796,
+            "shape_change_rmse": 0.009636241840780713,
+            "scale_change_rmse": 0.01614895512466319,
+            "global_rotation_parameter_change_rad": 0.0015754860614833888
+          }
+        },
+        "synthetic": null
+      },
+      "noise_0.005": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 0.035405914971811905,
+            "camera_change_mm": 0.021443261283113517,
+            "camera_change_xyz_mm": [
+              -0.00030727069652466857,
+              -0.0005728668636745877,
+              -0.0032616986168755423
+            ],
+            "body_pose_change_periodic_deg": 0.0009648427898422665,
+            "shape_change_rmse": 8.772808757839812e-05,
+            "scale_change_rmse": 0.00015022871702462403,
+            "global_rotation_parameter_change_rad": 7.639207343909557e-05
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 0.027554945670999587,
+            "camera_change_mm": 0.017714458968839608,
+            "camera_change_xyz_mm": [
+              -4.612957127392292e-05,
+              0.0004684552550315857,
+              -0.0008717179298400879
+            ],
+            "body_pose_change_periodic_deg": 0.0008147647745317954,
+            "shape_change_rmse": 7.86135511248176e-05,
+            "scale_change_rmse": 0.00013096909140131174,
+            "global_rotation_parameter_change_rad": 3.714011165101283e-05
+          }
+        },
+        "synthetic": null
+      },
+      "noise_0.02": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 0.11393883247445855,
+            "camera_change_mm": 0.06715929504274823,
+            "camera_change_xyz_mm": [
+              -0.0007625429942790004,
+              -0.0024991178954089127,
+              -0.016618795968868116
+            ],
+            "body_pose_change_periodic_deg": 0.0028999831180650895,
+            "shape_change_rmse": 0.000307295914640067,
+            "scale_change_rmse": 0.0005355864750442749,
+            "global_rotation_parameter_change_rad": 0.00024797772443989704
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 0.08805490972008556,
+            "camera_change_mm": 0.05753359367372468,
+            "camera_change_xyz_mm": [
+              -0.0008508213795721531,
+              -0.0006966292858123779,
+              0.00476837158203125
+            ],
+            "body_pose_change_periodic_deg": 0.0024353560720555834,
+            "shape_change_rmse": 0.0002703368511447479,
+            "scale_change_rmse": 0.00044107368853474327,
+            "global_rotation_parameter_change_rad": 0.00011750187678671864
+          }
+        },
+        "synthetic": null
+      }
+    },
+    "synthetic_VAL_seed23": {
+      "correct": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 1.7241203621303215e-05,
+            "camera_change_mm": 0.0,
+            "camera_change_xyz_mm": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "body_pose_change_periodic_deg": 0.0,
+            "shape_change_rmse": 0.0,
+            "scale_change_rmse": 0.0,
+            "global_rotation_parameter_change_rad": 0.0
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 66.57317969322204,
+          "vertex_camera_mm": 86.0344717335701,
+          "vertex_translation_removed_mm": 56.313568484783175,
+          "joint_mm": 66.53098335027694,
+          "joint_camera_mm": 88.05137820959091,
+          "camera_mm": 65.50584904968738,
+          "shape_rmse": 1.025071569532156,
+          "scale_rmse": 0.512646103054285,
+          "global_rotation_deg": 14.717864139676093,
+          "body_pose_periodic_mean_deg": 4.485153433084488,
+          "depth_common_median_mm": 65.14535366535186,
+          "depth_common_p95_mm": 143.08498829364777,
+          "depth_hit_rate": 0.9321940068155528,
+          "silhouette_iou": 0.8819316202402114
+        }
+      },
+      "mask_rays_only": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 80.39545066356659,
+            "camera_change_mm": 79.18395053744317,
+            "camera_change_xyz_mm": [
+              -0.6169250288978219,
+              -21.456175903081895,
+              -35.387635717391966
+            ],
+            "body_pose_change_periodic_deg": 1.228784057199955,
+            "shape_change_rmse": 0.20998249238356947,
+            "scale_change_rmse": 0.3631723304092884,
+            "global_rotation_parameter_change_rad": 0.9759552154643462
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 84.90691333770752,
+          "vertex_camera_mm": 119.74673442363739,
+          "vertex_translation_removed_mm": 67.75882638692856,
+          "joint_mm": 84.80969501972199,
+          "joint_camera_mm": 122.67982286930084,
+          "camera_mm": 104.38232451796532,
+          "shape_rmse": 1.0613026264309884,
+          "scale_rmse": 0.7092599369585514,
+          "global_rotation_deg": 15.017429049015044,
+          "body_pose_periodic_mean_deg": 4.717978412508964,
+          "depth_common_median_mm": 95.91296956539153,
+          "depth_common_p95_mm": 187.40746106147765,
+          "depth_hit_rate": 0.918301821872592,
+          "silhouette_iou": 0.8849860732257366
+        }
+      },
+      "absolute_only": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 45.32766699194908,
+            "camera_change_mm": 40.621575311869385,
+            "camera_change_xyz_mm": [
+              0.5599055147729814,
+              -0.4568116450309753,
+              40.16598350048065
+            ],
+            "body_pose_change_periodic_deg": 0.3783376137819141,
+            "shape_change_rmse": 0.03875574102916289,
+            "scale_change_rmse": 0.06297493790742009,
+            "global_rotation_parameter_change_rad": 0.6560901869263034
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 71.40949062585831,
+          "vertex_camera_mm": 97.70069105625153,
+          "vertex_translation_removed_mm": 59.706794724464416,
+          "joint_mm": 70.33824108362198,
+          "joint_camera_mm": 99.19555634021759,
+          "camera_mm": 77.0310802167654,
+          "shape_rmse": 1.026447199881077,
+          "scale_rmse": 0.5136299632489681,
+          "global_rotation_deg": 14.482484572082758,
+          "body_pose_periodic_mean_deg": 4.496884784698486,
+          "depth_common_median_mm": 77.9097170829773,
+          "depth_common_p95_mm": 159.83591508865356,
+          "depth_hit_rate": 0.9297453056275845,
+          "silhouette_iou": 0.8830201380699872
+        }
+      },
+      "relative_only": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 77.28950736999512,
+            "camera_change_mm": 73.82610355854034,
+            "camera_change_xyz_mm": [
+              -0.11198849719017744,
+              -20.643857395648958,
+              -35.371047716140744
+            ],
+            "body_pose_change_periodic_deg": 1.2384898258745671,
+            "shape_change_rmse": 0.20393677016720177,
+            "scale_change_rmse": 0.3609789454564452,
+            "global_rotation_parameter_change_rad": 1.207182200588286
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 87.40073802947998,
+          "vertex_camera_mm": 117.76212492465973,
+          "vertex_translation_removed_mm": 69.44592135429383,
+          "joint_mm": 86.69676179409026,
+          "joint_camera_mm": 120.26335997581482,
+          "camera_mm": 100.08957902789116,
+          "shape_rmse": 1.0603182268142701,
+          "scale_rmse": 0.7070322213321925,
+          "global_rotation_deg": 15.331734141856431,
+          "body_pose_periodic_mean_deg": 4.736879850029945,
+          "depth_common_median_mm": 93.12716620922089,
+          "depth_common_p95_mm": 188.47880480766295,
+          "depth_hit_rate": 0.917564967572689,
+          "silhouette_iou": 0.8833274813741445
+        }
+      },
+      "offset_0.2": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 3.2224524407088757,
+            "camera_change_mm": 2.38146548146382,
+            "camera_change_xyz_mm": [
+              0.061955756936222316,
+              0.09099796414375305,
+              1.9885575771331787
+            ],
+            "body_pose_change_periodic_deg": 0.029786774166859688,
+            "shape_change_rmse": 0.0029977417169720867,
+            "scale_change_rmse": 0.004584924880764447,
+            "global_rotation_parameter_change_rad": 0.05982565339043504
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 66.51543704986572,
+          "vertex_camera_mm": 85.98363992214203,
+          "vertex_translation_removed_mm": 56.24488883733749,
+          "joint_mm": 66.47634377241134,
+          "joint_camera_mm": 88.00822967529297,
+          "camera_mm": 65.53006843686104,
+          "shape_rmse": 1.024987604469061,
+          "scale_rmse": 0.5119581241160631,
+          "global_rotation_deg": 14.7217421323061,
+          "body_pose_periodic_mean_deg": 4.486856606602669,
+          "depth_common_median_mm": 65.05069402217865,
+          "depth_common_p95_mm": 142.905326461792,
+          "depth_hit_rate": 0.9319237200915813,
+          "silhouette_iou": 0.8815655215084552
+        }
+      }
+    },
+    "real_TRAIN_VAL_seed23": {
+      "correct": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 1.1707408011271579e-05,
+            "camera_change_mm": 0.0,
+            "camera_change_xyz_mm": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "body_pose_change_periodic_deg": 0.0,
+            "shape_change_rmse": 0.0,
+            "scale_change_rmse": 0.0,
+            "global_rotation_parameter_change_rad": 0.0
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 1.3825336502404362e-05,
+            "camera_change_mm": 0.0,
+            "camera_change_xyz_mm": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "body_pose_change_periodic_deg": 0.0,
+            "shape_change_rmse": 0.0,
+            "scale_change_rmse": 0.0,
+            "global_rotation_parameter_change_rad": 0.0
+          }
+        },
+        "synthetic": null
+      },
+      "mask_rays_only": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 30.226697284866265,
+            "camera_change_mm": 17.388207397527164,
+            "camera_change_xyz_mm": [
+              2.0059121368211454,
+              -5.372681758470005,
+              4.376581857601802
+            ],
+            "body_pose_change_periodic_deg": 0.6546748006474916,
+            "shape_change_rmse": 0.0978653461292938,
+            "scale_change_rmse": 0.1619927613625165,
+            "global_rotation_parameter_change_rad": 0.35780134104209504
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 20.311107888817787,
+            "camera_change_mm": 14.450169458985329,
+            "camera_change_xyz_mm": [
+              0.5104513987898827,
+              -3.7109479308128357,
+              13.79026286303997
+            ],
+            "body_pose_change_periodic_deg": 0.37749583926051855,
+            "shape_change_rmse": 0.07325363939162344,
+            "scale_change_rmse": 0.12075187836308032,
+            "global_rotation_parameter_change_rad": 0.02776322903810069
+          }
+        },
+        "synthetic": null
+      },
+      "absolute_only": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 6.145437029707763,
+            "camera_change_mm": 2.4736959848001048,
+            "camera_change_xyz_mm": [
+              0.04118293189202195,
+              0.43473572090820034,
+              1.782280565411956
+            ],
+            "body_pose_change_periodic_deg": 0.09296926681633556,
+            "shape_change_rmse": 0.009459700929221947,
+            "scale_change_rmse": 0.01368388509999258,
+            "global_rotation_parameter_change_rad": 0.14072716445998934
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 6.488721586763859,
+            "camera_change_mm": 3.121476197615266,
+            "camera_change_xyz_mm": [
+              0.11287425877526402,
+              0.6662970408797264,
+              2.698902040719986
+            ],
+            "body_pose_change_periodic_deg": 0.09513269510352984,
+            "shape_change_rmse": 0.010540717288677115,
+            "scale_change_rmse": 0.014003319476614706,
+            "global_rotation_parameter_change_rad": 0.013562751206336543
+          }
+        },
+        "synthetic": null
+      },
+      "relative_only": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 29.43708809934281,
+            "camera_change_mm": 17.362056884776663,
+            "camera_change_xyz_mm": [
+              1.8703795114739075,
+              -5.423232510685921,
+              4.385439286629359
+            ],
+            "body_pose_change_periodic_deg": 0.6534242185039653,
+            "shape_change_rmse": 0.09883904009540048,
+            "scale_change_rmse": 0.16272298234549384,
+            "global_rotation_parameter_change_rad": 0.3556795987996911
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 19.45193886756897,
+            "camera_change_mm": 14.633350551128387,
+            "camera_change_xyz_mm": [
+              0.4635683810338378,
+              -4.283400237560272,
+              13.778615713119507
+            ],
+            "body_pose_change_periodic_deg": 0.3927473600488156,
+            "shape_change_rmse": 0.07726976863341406,
+            "scale_change_rmse": 0.12681439006701112,
+            "global_rotation_parameter_change_rad": 0.023922355743707158
+          }
+        },
+        "synthetic": null
+      },
+      "offset_0.2": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 2.3043744358820493,
+            "camera_change_mm": 1.3749692816399384,
+            "camera_change_xyz_mm": [
+              -0.024776863460256544,
+              0.23980487000059203,
+              -0.3916056895697558
+            ],
+            "body_pose_change_periodic_deg": 0.054941915238655555,
+            "shape_change_rmse": 0.00689979936578311,
+            "scale_change_rmse": 0.010511002680653258,
+            "global_rotation_parameter_change_rad": 0.005060601322148379
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 1.509857659228146,
+            "camera_change_mm": 1.0305011481978,
+            "camera_change_xyz_mm": [
+              -0.04382464976515621,
+              0.2960124984383583,
+              -0.8633285760879517
+            ],
+            "body_pose_change_periodic_deg": 0.0383801513526123,
+            "shape_change_rmse": 0.006796804314944893,
+            "scale_change_rmse": 0.01058461147476919,
+            "global_rotation_parameter_change_rad": 0.001767235565239389
+          }
+        },
+        "synthetic": null
+      }
+    },
+    "synthetic_VAL_seed37": {
+      "correct": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 1.71751215592586e-05,
+            "camera_change_mm": 0.0,
+            "camera_change_xyz_mm": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "body_pose_change_periodic_deg": 0.0,
+            "shape_change_rmse": 0.0,
+            "scale_change_rmse": 0.0,
+            "global_rotation_parameter_change_rad": 0.0
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 67.10811441898346,
+          "vertex_camera_mm": 88.71906534671784,
+          "vertex_translation_removed_mm": 56.20358590602875,
+          "joint_mm": 66.77324969291686,
+          "joint_camera_mm": 90.7741216468811,
+          "camera_mm": 68.33745246648789,
+          "shape_rmse": 1.022365799099207,
+          "scale_rmse": 0.5009875853359699,
+          "global_rotation_deg": 14.48647346585989,
+          "body_pose_periodic_mean_deg": 4.447763516306877,
+          "depth_common_median_mm": 67.62876989841462,
+          "depth_common_p95_mm": 146.94182827949524,
+          "depth_hit_rate": 0.9310125163197518,
+          "silhouette_iou": 0.8811079211533069
+        }
+      },
+      "mask_rays_only": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 145.79568726062774,
+            "camera_change_mm": 164.1978847694397,
+            "camera_change_xyz_mm": [
+              -2.2283239002153277,
+              -38.34723577857017,
+              -125.12551854610443
+            ],
+            "body_pose_change_periodic_deg": 1.786936442553997,
+            "shape_change_rmse": 0.359249678440392,
+            "scale_change_rmse": 0.6910374511778354,
+            "global_rotation_parameter_change_rad": 1.0442084520147181
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 106.62525364398957,
+          "vertex_camera_mm": 167.144507188797,
+          "vertex_translation_removed_mm": 80.30157482624054,
+          "joint_mm": 107.45022440433502,
+          "joint_camera_mm": 171.8021022081375,
+          "camera_mm": 171.17013023853303,
+          "shape_rmse": 1.1022968955338002,
+          "scale_rmse": 0.9604394400119781,
+          "global_rotation_deg": 15.27346077889204,
+          "body_pose_periodic_mean_deg": 4.893466168642044,
+          "depth_common_median_mm": 144.51956224441528,
+          "depth_common_p95_mm": 243.0276482772827,
+          "depth_hit_rate": 0.8948350678384304,
+          "silhouette_iou": 0.8649047196656465
+        }
+      },
+      "absolute_only": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 30.30628941819072,
+            "camera_change_mm": 23.802604159861804,
+            "camera_change_xyz_mm": [
+              0.33384925581514835,
+              -2.6046293890476226,
+              21.23535037994385
+            ],
+            "body_pose_change_periodic_deg": 0.33737408828455956,
+            "shape_change_rmse": 0.03840767609130125,
+            "scale_change_rmse": 0.07967474505188875,
+            "global_rotation_parameter_change_rad": 0.6029717942449497
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 69.67379697322845,
+          "vertex_camera_mm": 94.95050067901612,
+          "vertex_translation_removed_mm": 58.1407607460022,
+          "joint_mm": 69.08780728816986,
+          "joint_camera_mm": 96.54281573295593,
+          "camera_mm": 73.47603096485138,
+          "shape_rmse": 1.0238529726862908,
+          "scale_rmse": 0.5226384829729795,
+          "global_rotation_deg": 14.545682954192161,
+          "body_pose_periodic_mean_deg": 4.46747287273407,
+          "depth_common_median_mm": 73.83387044429779,
+          "depth_common_p95_mm": 153.96933534622192,
+          "depth_hit_rate": 0.9296209699660539,
+          "silhouette_iou": 0.88349653840065
+        }
+      },
+      "relative_only": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 131.62473579883576,
+            "camera_change_mm": 148.6396994495392,
+            "camera_change_xyz_mm": [
+              -2.456659087315202,
+              -35.52875068902969,
+              -110.38608777523041
+            ],
+            "body_pose_change_periodic_deg": 1.7048064401745797,
+            "shape_change_rmse": 0.34182242818176745,
+            "scale_change_rmse": 0.6419335729628801,
+            "global_rotation_parameter_change_rad": 1.1490930074523202
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 103.17184767723083,
+          "vertex_camera_mm": 156.29784815311433,
+          "vertex_translation_removed_mm": 78.0867237854004,
+          "joint_mm": 103.51619619846343,
+          "joint_camera_mm": 161.1534682559967,
+          "camera_mm": 157.79432195186615,
+          "shape_rmse": 1.0955328929424286,
+          "scale_rmse": 0.9190719074010849,
+          "global_rotation_deg": 15.302128514051438,
+          "body_pose_periodic_mean_deg": 4.850019860267639,
+          "depth_common_median_mm": 133.2346000957489,
+          "depth_common_p95_mm": 230.85087498664856,
+          "depth_hit_rate": 0.8970676501840353,
+          "silhouette_iou": 0.8679428673535585
+        }
+      },
+      "offset_0.2": {
+        "responses": {
+          "VAL": {
+            "vertex_camera_change_mm": 3.6257932905852797,
+            "camera_change_mm": 3.087101840954274,
+            "camera_change_xyz_mm": [
+              0.13117299776524305,
+              0.05920037627220154,
+              2.3242074251174927
+            ],
+            "body_pose_change_periodic_deg": 0.04178773208521307,
+            "shape_change_rmse": 0.005869788409327157,
+            "scale_change_rmse": 0.010407333030598239,
+            "global_rotation_parameter_change_rad": 0.07787484717693588
+          }
+        },
+        "synthetic": {
+          "vertex_body_mm": 67.10766210556031,
+          "vertex_camera_mm": 88.72978175163269,
+          "vertex_translation_removed_mm": 56.195109910964966,
+          "joint_mm": 66.76431777477265,
+          "joint_camera_mm": 90.74709325790406,
+          "camera_mm": 68.49341783761979,
+          "shape_rmse": 1.0219100905954839,
+          "scale_rmse": 0.5016142031550408,
+          "global_rotation_deg": 14.480747267454863,
+          "body_pose_periodic_mean_deg": 4.447682567834854,
+          "depth_common_median_mm": 67.82759493350983,
+          "depth_common_p95_mm": 146.99697597503663,
+          "depth_hit_rate": 0.9313614433258772,
+          "silhouette_iou": 0.8809098882228136
+        }
+      }
+    },
+    "real_TRAIN_VAL_seed37": {
+      "correct": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 1.1439542703986607e-05,
+            "camera_change_mm": 0.0,
+            "camera_change_xyz_mm": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "body_pose_change_periodic_deg": 0.0,
+            "shape_change_rmse": 0.0,
+            "scale_change_rmse": 0.0,
+            "global_rotation_parameter_change_rad": 0.0
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 1.8329459883226207e-05,
+            "camera_change_mm": 0.0,
+            "camera_change_xyz_mm": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "body_pose_change_periodic_deg": 0.0,
+            "shape_change_rmse": 0.0,
+            "scale_change_rmse": 0.0,
+            "global_rotation_parameter_change_rad": 0.0
+          }
+        },
+        "synthetic": null
+      },
+      "mask_rays_only": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 32.52734588638501,
+            "camera_change_mm": 26.13932553871914,
+            "camera_change_xyz_mm": [
+              0.8875330661561477,
+              -10.97931687589045,
+              5.37069630070969
+            ],
+            "body_pose_change_periodic_deg": 0.8495676206010911,
+            "shape_change_rmse": 0.12720372251459156,
+            "scale_change_rmse": 0.29163657542732024,
+            "global_rotation_parameter_change_rad": 0.08391773984287823
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 20.983061224222183,
+            "camera_change_mm": 18.47681999206543,
+            "camera_change_xyz_mm": [
+              -0.330537935718894,
+              -8.522881180047989,
+              15.019627287983894
+            ],
+            "body_pose_change_periodic_deg": 0.5203431164845824,
+            "shape_change_rmse": 0.10651326319202781,
+            "scale_change_rmse": 0.20835822657682002,
+            "global_rotation_parameter_change_rad": 0.01540054263023194
+          }
+        },
+        "synthetic": null
+      },
+      "absolute_only": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 3.4508514238038552,
+            "camera_change_mm": 1.8028994401640912,
+            "camera_change_xyz_mm": [
+              0.0029305669660162595,
+              0.020563740421224528,
+              1.4144318799177806
+            ],
+            "body_pose_change_periodic_deg": 0.07094459904086155,
+            "shape_change_rmse": 0.008262733983833136,
+            "scale_change_rmse": 0.013764374631002147,
+            "global_rotation_parameter_change_rad": 0.09042922844117937
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 3.7966919355094433,
+            "camera_change_mm": 2.5354444179683924,
+            "camera_change_xyz_mm": [
+              -0.015236815670505166,
+              -0.011811964213848114,
+              2.4030879139900208
+            ],
+            "body_pose_change_periodic_deg": 0.06011941281030886,
+            "shape_change_rmse": 0.00806347219258896,
+            "scale_change_rmse": 0.014032070568646304,
+            "global_rotation_parameter_change_rad": 0.0031856305267865537
+          }
+        },
+        "synthetic": null
+      },
+      "relative_only": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 32.02618505281431,
+            "camera_change_mm": 26.128407081520116,
+            "camera_change_xyz_mm": [
+              0.9288007424092264,
+              -11.009455059413556,
+              5.23742077196086
+            ],
+            "body_pose_change_periodic_deg": 0.8464211330024732,
+            "shape_change_rmse": 0.1267862749820644,
+            "scale_change_rmse": 0.2917414717031298,
+            "global_rotation_parameter_change_rad": 0.08419072768635857
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 20.84090866148472,
+            "camera_change_mm": 18.472973197698593,
+            "camera_change_xyz_mm": [
+              -0.30199223570525646,
+              -8.614682577550411,
+              14.823837205767632
+            ],
+            "body_pose_change_periodic_deg": 0.5229533379897475,
+            "shape_change_rmse": 0.10696828435175121,
+            "scale_change_rmse": 0.21086805639788508,
+            "global_rotation_parameter_change_rad": 0.015655102557502687
+          }
+        },
+        "synthetic": null
+      },
+      "offset_0.2": {
+        "responses": {
+          "TRAIN": {
+            "vertex_camera_change_mm": 2.8271214265928224,
+            "camera_change_mm": 2.1213199299139283,
+            "camera_change_xyz_mm": [
+              -0.05397407757118344,
+              0.6026551127433777,
+              -0.17761439085006714
+            ],
+            "body_pose_change_periodic_deg": 0.07356295041326019,
+            "shape_change_rmse": 0.009217335214661608,
+            "scale_change_rmse": 0.017692713021123952,
+            "global_rotation_parameter_change_rad": 0.1333138755378766
+          },
+          "VAL": {
+            "vertex_camera_change_mm": 2.367986438795924,
+            "camera_change_mm": 1.823610793799162,
+            "camera_change_xyz_mm": [
+              0.07291082851588726,
+              0.6967512890696526,
+              -1.3597644865512848
+            ],
+            "body_pose_change_periodic_deg": 0.0621223721827846,
+            "shape_change_rmse": 0.010224958379694726,
+            "scale_change_rmse": 0.018735313511569984,
+            "global_rotation_parameter_change_rad": 0.0014279804008765495
+          }
+        },
+        "synthetic": null
+      }
+    }
+  },
+  "test_used": false,
+  "training_budget": "100 TRAIN IDs / 800 views; 50 VAL IDs / 400 views; seed11; eight epochs"
+}
