@@ -1,0 +1,85 @@
+{
+  "stage": "R0_PREPARATION_NOT_FORMAL_TRAINING",
+  "official_model": "facebook/sam-3d-body-vith",
+  "sam_source_commit": "b5c765a0d89d789985e186d396315e7590887b94",
+  "checkpoint_sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+  "mhr_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+  "source_config_status": "Existing licensed local configuration; public file metadata differs in byte length; preserve and audit before full forward",
+  "rgb_feature_contract": {
+    "channels": 1280,
+    "height": 32,
+    "width": 24,
+    "tokens": 768,
+    "patch_size": 16,
+    "rgb_crop_hw": [
+      512,
+      384
+    ]
+  },
+  "depth_channels": [
+    "metric_camera_z_m",
+    "relative_person_z_m",
+    "valid_depth_mask",
+    "camera_ray_x_over_z",
+    "camera_ray_y_over_z"
+  ],
+  "stage1_trainable": [
+    "fusion.depth_encoder",
+    "fusion.rgb_projection",
+    "fusion.attention",
+    "fusion.output_projection",
+    "fusion.gate"
+  ],
+  "stage1_frozen": [
+    "official.backbone",
+    "official.decoder",
+    "official.head_pose",
+    "official.head_camera",
+    "official.MHR_asset"
+  ],
+  "zero_gate_semantics": "Official feature equivalence at initialization; depth encoder gradients become nonzero after gate opens, not on first step",
+  "first_real_archives": [
+    "point_cameras.7z",
+    "smpl_params.7z",
+    "point_kinect_mask.7z",
+    "point_kinect_depth_part_11.7z",
+    "point_kinect_color_part_02.7z"
+  ],
+  "archive_bytes": 23929760223,
+  "storage_budget_gib": 200,
+  "planned_peak_budget_gib": {
+    "compressed_real_archives": 23,
+    "selectively_extracted_real": 35,
+    "synthetic_initial": 5,
+    "official_weights_and_sources": 5,
+    "environment_and_download_cache": 8,
+    "feature_cache": 15,
+    "experimental_checkpoints": 40,
+    "reports": 4,
+    "reserved_free": 40
+  },
+  "identity_split_status": "FROZEN_IDENTITY_ROLES_FRAME_PREPARATION_PENDING",
+  "real_input_camera": "Kinect 000 RGB plus calibrated registered Depth",
+  "real_heldout_camera": "Kinect 001 sensor observations, never supplied to optimizer/input",
+  "first_supervised_truth": "Native MHR synthetic parameters/vertices/joints generated from the frozen official asset; not SMPL-to-MHR labels",
+  "synthetic_status": "Generator and native MHR execution not yet complete; no synthetic training result claimed",
+  "baselines": [
+    "E0 official RGB",
+    "E1 official+Cheap Txyz",
+    "E2 RGB-only same-data finetuning",
+    "E3 spatial residual RGB-D",
+    "E4 spatial cross-attention RGB-D",
+    "E5 native MHR RGB+Depth optimization"
+  ],
+  "pressurepose_role": "Already consumed, approximate-calibration diagnostic; not final unseen or medical ground truth",
+  "old_large_training": "CT/reference-anchored/nine-run route paused; historical assets preserved",
+  "identity_split_file": "INITIAL_IDENTITY_SPLIT_V1.json",
+  "identity_counts": {
+    "TEST": 6,
+    "VAL": 4,
+    "TRAIN": 18
+  },
+  "first_real_common_sequences": 44,
+  "first_real_common_subjects": 28,
+  "selected_two_camera_uncompressed_bytes": 2222575731
+}

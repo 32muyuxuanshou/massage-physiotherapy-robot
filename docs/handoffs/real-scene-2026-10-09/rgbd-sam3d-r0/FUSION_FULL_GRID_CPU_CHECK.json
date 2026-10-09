@@ -1,0 +1,150 @@
+{
+  "scope": "FUSION_MODULE_ONLY_NOT_NATIVE_MHR_R1",
+  "rgb_feature_shape": [
+    1,
+    1280,
+    32,
+    24
+  ],
+  "depth_shape": [
+    1,
+    1,
+    512,
+    384
+  ],
+  "methods": {
+    "cross_attention": {
+      "initial_rgb_equivalence": true,
+      "missing_depth_equivalence": true,
+      "depth_changed_output": true,
+      "depth_change_rms": 7.229907623695908e-06,
+      "gradient_steps": [
+        {
+          "gate": 5.483972927322611e-06,
+          "depth_encoder.0.weight": 0.0,
+          "depth_encoder.0.bias": 0.0,
+          "depth_encoder.2.weight": 0.0,
+          "depth_encoder.2.bias": 0.0,
+          "rgb_projection.weight": 0.0,
+          "rgb_projection.bias": 0.0,
+          "attention.in_proj_weight": 0.0,
+          "attention.in_proj_bias": 0.0,
+          "attention.out_proj.weight": 0.0,
+          "attention.out_proj.bias": 0.0,
+          "output_projection.weight": 0.0,
+          "output_projection.bias": 0.0
+        },
+        {
+          "gate": 1.7653321719990345e-06,
+          "depth_encoder.0.weight": 6.480298253563888e-08,
+          "depth_encoder.0.bias": 8.395661055260462e-09,
+          "depth_encoder.2.weight": 3.478752432783949e-07,
+          "depth_encoder.2.bias": 2.5872921582958952e-08,
+          "rgb_projection.weight": 7.641076139874858e-12,
+          "rgb_projection.bias": 1.7048229418881872e-13,
+          "attention.in_proj_weight": 9.915103049706886e-08,
+          "attention.in_proj_bias": 6.817311515305846e-08,
+          "attention.out_proj.weight": 1.2938912163917848e-07,
+          "attention.out_proj.bias": 1.2388397863105638e-07,
+          "output_projection.weight": 1.2478228939016844e-07,
+          "output_projection.bias": 1.998508167844193e-07
+        },
+        {
+          "gate": 8.52424909680849e-06,
+          "depth_encoder.0.weight": 1.1238306285576982e-07,
+          "depth_encoder.0.bias": 1.4560061600832341e-08,
+          "depth_encoder.2.weight": 6.380263357641525e-07,
+          "depth_encoder.2.bias": 4.755047200433182e-08,
+          "rgb_projection.weight": 1.4158093100680169e-11,
+          "rgb_projection.bias": 3.099635077687818e-13,
+          "attention.in_proj_weight": 1.8151162350932282e-07,
+          "attention.in_proj_bias": 1.2642009039609547e-07,
+          "attention.out_proj.weight": 2.365368203527396e-07,
+          "attention.out_proj.bias": 2.3058454701185838e-07,
+          "output_projection.weight": 2.2477146899291256e-07,
+          "output_projection.bias": 3.7252652873576153e-07
+        }
+      ],
+      "updated_parameters": [
+        "gate",
+        "depth_encoder.0.weight",
+        "depth_encoder.0.bias",
+        "depth_encoder.2.weight",
+        "depth_encoder.2.bias",
+        "rgb_projection.weight",
+        "rgb_projection.bias",
+        "attention.in_proj_weight",
+        "attention.in_proj_bias",
+        "attention.out_proj.weight",
+        "attention.out_proj.bias",
+        "output_projection.weight",
+        "output_projection.bias"
+      ],
+      "note": "Zero gate intentionally gives zero encoder gradients on step 0; verified nonzero later."
+    },
+    "residual": {
+      "initial_rgb_equivalence": true,
+      "missing_depth_equivalence": true,
+      "depth_changed_output": true,
+      "depth_change_rms": 1.9074997908319347e-05,
+      "gradient_steps": [
+        {
+          "gate": 7.518770871683955e-06,
+          "depth_encoder.0.weight": 0.0,
+          "depth_encoder.0.bias": 0.0,
+          "depth_encoder.2.weight": 0.0,
+          "depth_encoder.2.bias": 0.0,
+          "rgb_projection.weight": null,
+          "rgb_projection.bias": null,
+          "attention.in_proj_weight": null,
+          "attention.in_proj_bias": null,
+          "attention.out_proj.weight": null,
+          "attention.out_proj.bias": null,
+          "output_projection.weight": 0.0,
+          "output_projection.bias": 0.0
+        },
+        {
+          "gate": 1.1476913641672581e-06,
+          "depth_encoder.0.weight": 1.4961386796130682e-07,
+          "depth_encoder.0.bias": 1.926952997166609e-08,
+          "depth_encoder.2.weight": 8.279423582280288e-07,
+          "depth_encoder.2.bias": 5.927393331717212e-08,
+          "rgb_projection.weight": null,
+          "rgb_projection.bias": null,
+          "attention.in_proj_weight": null,
+          "attention.in_proj_bias": null,
+          "attention.out_proj.weight": null,
+          "attention.out_proj.bias": null,
+          "output_projection.weight": 2.9852907346139546e-07,
+          "output_projection.bias": 1.9710384435711603e-07
+        },
+        {
+          "gate": 2.870854405045975e-05,
+          "depth_encoder.0.weight": 2.518830797271221e-07,
+          "depth_encoder.0.bias": 3.247150459628756e-08,
+          "depth_encoder.2.weight": 1.257344706573349e-06,
+          "depth_encoder.2.bias": 8.993078637331564e-08,
+          "rgb_projection.weight": null,
+          "rgb_projection.bias": null,
+          "attention.in_proj_weight": null,
+          "attention.in_proj_bias": null,
+          "attention.out_proj.weight": null,
+          "attention.out_proj.bias": null,
+          "output_projection.weight": 4.716866044418566e-07,
+          "output_projection.bias": 3.048325822874176e-07
+        }
+      ],
+      "updated_parameters": [
+        "gate",
+        "depth_encoder.0.weight",
+        "depth_encoder.0.bias",
+        "depth_encoder.2.weight",
+        "depth_encoder.2.bias",
+        "output_projection.weight",
+        "output_projection.bias"
+      ],
+      "note": "Zero gate intentionally gives zero encoder gradients on step 0; verified nonzero later."
+    }
+  },
+  "status": "PASS"
+}

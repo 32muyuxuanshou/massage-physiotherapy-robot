@@ -1,0 +1,52 @@
+{
+  "command": [
+    "/root/autodl-tmp/rgbd_sam3d/envs/rgbd/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--no-index",
+    "--no-build-isolation",
+    "--find-links",
+    "/root/autodl-tmp/rgbd_sam3d/feature_cache/linux_wheels",
+    "opencv-python-headless<5",
+    "scipy",
+    "timm",
+    "yacs",
+    "einops",
+    "pytorch-lightning",
+    "hydra-core",
+    "roma",
+    "dill",
+    "pyrender",
+    "fvcore",
+    "pycocotools",
+    "scikit-image",
+    "webdataset",
+    "loguru",
+    "optree",
+    "rich",
+    "pyrootutils",
+    "huggingface_hub",
+    "py7zr",
+    "trimesh",
+    "joblib",
+    "pandas",
+    "tensorboard",
+    "wandb",
+    "pytest"
+  ],
+  "exit_code": 0,
+  "base_before": {
+    "torch": "2.12.1+cu130",
+    "torchvision": "0.27.1+cu130",
+    "numpy": "2.4.6"
+  },
+  "status": "R0_DEPENDENCIES_AND_IMPORT_PASS_NOT_FULL_MODEL",
+  "base_after": {
+    "torch": "2.12.1+cu130",
+    "torchvision": "0.27.1+cu130",
+    "numpy": "2.4.6"
+  },
+  "native_source_import": true,
+  "full_model_executed": false
+}

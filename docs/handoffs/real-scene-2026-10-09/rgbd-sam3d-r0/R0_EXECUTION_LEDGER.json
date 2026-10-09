@@ -1,0 +1,38 @@
+{
+  "status": "R0_DOWNLOAD_INSTALL_CODE_PREPARATION_COMPLETE_GPU_R1_PENDING",
+  "resource_timestamp": "2026-10-09",
+  "compute_host": "connect.cqa1.seetacloud.com",
+  "compute_port": 39846,
+  "root": "/root/autodl-tmp/rgbd_sam3d",
+  "allocated_cpu_cores": 0.5,
+  "allocated_ram_bytes": 2147483648,
+  "cuda_available": false,
+  "data_capacity_bytes": 214748364800,
+  "data_available_bytes": 187260227584,
+  "backup_host": "172.18.6.218",
+  "backup_port": 436,
+  "backup_root": "/raid5/xuhd/rgbd_sam3d_backups/2026-10-09_r0",
+  "actual_sam_source_git_commit": "b5c765a0d89d789985e186d396315e7590887b94",
+  "source_archive_sha256": "56a3ae5763e4638c9da0b0af12d86721d0f33dd26ae86d2efaf6cd3e293011d8",
+  "git_clone_status": "Full clone timed out; sparse clone failed TLS; exact selected project files transferred by SFTP, final snapshot bound to local Git commit and file hashes",
+  "checks": [
+    "official_model_and_MHR_actual_server_SHA_match",
+    "all_5_official_HuMMan_archive_SHA_match",
+    "44_RGB_Depth_sequence_intersection_28_subjects",
+    "both_camera000_001_person_mask_files_present",
+    "44_released_calibration_metadata_parse",
+    "isolated_venv_official_source_import",
+    "tiny_and_full_grid_fusion_CPU_gradient",
+    "registered_metric_Depth_affine_analytic_check",
+    "218_weight_source_backup_SHA_match"
+  ],
+  "not_executed": [
+    "full_native_SAM_MHR_forward",
+    "native_MHR_fixture_render",
+    "native_MHR_loss_backward_optimizer",
+    "real_frame_synchronization_pixel_QA",
+    "R2_training",
+    "R3_or_R4_real_geometry_evaluation"
+  ],
+  "planned_next": "User switches existing instance to GPU mode; recheck actual GPU/CUDA/memory; run check_native_r1.py, then synthetic supervised training."
+}

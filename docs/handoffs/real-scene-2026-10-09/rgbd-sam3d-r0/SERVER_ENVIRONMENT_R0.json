@@ -1,0 +1,47 @@
+{
+  "host": "connect.cqa1.seetacloud.com",
+  "port": 39846,
+  "hostkey_sha256": "6zkijTPdPT6WfS5rwH9cKmrjcUOEAXfeneFegE8bUbw",
+  "probe": {
+    "cpu_count": 208,
+    "os_release": "PRETTY_NAME=\"Ubuntu 22.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"22.04\"\nVERSION=\"22.04.5 LTS (Jammy Jellyfish)\"\nVERSION_CODENAME=jammy\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=jammy\n",
+    "python_executable": "/root/miniconda3/bin/python",
+    "torch_present": true,
+    "data_directory_exists": true,
+    "gpu": {
+      "status": "PermissionError",
+      "errno": 13
+    },
+    "disk": {
+      "exit": 0,
+      "stdout": "Filesystem        1B-blocks     Used    Available Use% Mounted on\n/dev/md0       214748364800    24576 214748340224   1% /root/autodl-tmp\noverlay         32212254720 54554624  32157700096   1% /\n",
+      "stderr": ""
+    },
+    "memory": {
+      "exit": 0,
+      "stdout": "               total        used        free      shared  buff/cache   available\nMem:           1.0Ti        31Gi       260Gi       569Mi       715Gi       969Gi\nSwap:             0B          0B          0B\n",
+      "stderr": ""
+    },
+    "python": {
+      "exit": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": ""
+    },
+    "nvcc": {
+      "status": "FileNotFoundError",
+      "errno": 2
+    },
+    "pip": {
+      "exit": 0,
+      "stdout": "pip 24.0 from /root/miniconda3/lib/python3.12/site-packages/pip (python 3.12)\n",
+      "stderr": ""
+    },
+    "torch": {
+      "version": "2.12.1+cu130",
+      "cuda_build": "13.0",
+      "cuda_available": false,
+      "device_count": 0
+    }
+  },
+  "stderr": ""
+}

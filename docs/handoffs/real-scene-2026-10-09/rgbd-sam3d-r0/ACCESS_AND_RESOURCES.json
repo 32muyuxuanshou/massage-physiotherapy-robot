@@ -1,0 +1,35 @@
+{
+  "module_presence": {
+    "torch": true,
+    "torchvision": true,
+    "cv2": false,
+    "scipy": false,
+    "numpy": true,
+    "timm": false,
+    "yacs": false,
+    "einops": false,
+    "pytorch_lightning": false,
+    "hydra": false,
+    "roma": false,
+    "dill": false,
+    "pyrender": false,
+    "detectron2": false,
+    "huggingface_hub": false,
+    "mhr": false,
+    "pymomentum": false
+  },
+  "cgroup": {
+    "/sys/fs/cgroup/cpu.max": "50000 100000",
+    "/sys/fs/cgroup/memory.max": "2147483648",
+    "/sys/fs/cgroup/cpuset.cpus.effective": "0-207"
+  },
+  "git_path": "/usr/bin/git",
+  "model_access": {
+    "facebook/sam-3d-body-vith": {
+      "error": "URLError"
+    },
+    "facebook/sam-3d-body-dinov3": {
+      "error": "URLError"
+    }
+  }
+}
