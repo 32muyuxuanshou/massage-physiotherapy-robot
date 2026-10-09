@@ -36,9 +36,12 @@ def train(root, output, mode, seed, epochs, train_ids, source_commit, resume=Fal
         state=torch.load(output/'last.pt',map_location='cpu',weights_only=False)
         assert state['execution_identity']==identity,'R4_RESUME_CONTRACT_CHANGED'
         model.fusion.load_state_dict(state['fusion']);optimizer.load_state_dict(state['optimizer']);scheduler.load_state_dict(state['scheduler'])
+        assert all(torch.equal(x.detach().cpu(),state['fusion'][name]) for name,x in model.fusion.state_dict().items())
         torch.set_rng_state(state['torch_rng_state']);torch.cuda.set_rng_state_all(state['cuda_rng_state'])
         rng.bit_generator.state=state['numpy_generator_state'];best=state['best_score'];first=state['epoch']+1
         curves=json.loads((output/'CURVES.json').read_text())
+        (output/'RESUME_STATE_RESTORE.json').write_text(json.dumps(dict(status='PASS',fusion_reloaded_exact=True,
+            saved_epoch=state['epoch'],next_epoch=first,optimizer_restored=True,scheduler_restored=True,rng_restored=True)))
     (output/'EXECUTION_IDENTITY.json').write_text(json.dumps(identity,indent=2))
     started=time.monotonic();bs=16;reason='COMPLETED'
     with (output/'training.jsonl').open('a' if resume else 'w') as log:

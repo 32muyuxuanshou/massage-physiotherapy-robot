@@ -52,9 +52,12 @@ def build(root,out):
         contract='same posed vertices/texture/light/K; physically change camera Z, jointly rerender RGB and Depth; bbox changes from sensor mask'),indent=2))
     (out/'GEOMETRY_QA.json').write_text(json.dumps(dict(status='PASS',records=qa,mesh_constant_each_identity=True),indent=2))
     del official,renderer;torch.cuda.empty_cache()
-    prepare(root,out,out.parent/'physical_camera_cache')
+    prepare(root,out,out.parent/'physical_camera_cache',parameter_tolerance=1e-5)
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
-    a=p.parse_args();torch.set_num_threads(2);build(a.root,a.out)
+    p.add_argument('--cache-only',action='store_true')
+    a=p.parse_args();torch.set_num_threads(2)
+    if a.cache_only:prepare(a.root,a.out,a.out.parent/'physical_camera_cache',parameter_tolerance=1e-5)
+    else:build(a.root,a.out)
