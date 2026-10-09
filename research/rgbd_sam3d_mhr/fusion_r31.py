@@ -38,7 +38,7 @@ class GeometryAttention(SpatialDepthFusion):
             ix=available.nonzero().flatten();xyz=xyz[ix];rr=rr[ix];cover=coverage[ix]
             q=self.rgb_projection(rgb[ix]).flatten(2).transpose(1,2)
             kv=depth[ix].flatten(2).transpose(1,2)+self.geometry_projection(xyz)
-            if self.disable_geometry_bias:bias=torch.zeros((len(ix),xyz.shape[1],xyz.shape[1]),device=rgb.device)
+            if self.disable_geometry_bias:bias=-torch.cdist(rr,rr).square()/(2*.2**2)
             else:
                 distance=torch.cdist(xyz,xyz).square()/(2*.15**2)
                 # RGB queries without measured depth retain calibrated ray locality.
@@ -97,6 +97,8 @@ class MHRGeometryRefinement(nn.Module):
         score=score.masked_fill(~coverage[:,None],-1e4)
         weight=score.softmax(-1)*coverage[:,None]
         weight=weight/weight.sum(-1,keepdim=True).clamp_min(1e-6)
+        if self.disable_correspondence:
+            weight=(coverage.float()/coverage.sum(-1,keepdim=True).clamp_min(1))[:,None].expand(-1,24,-1)
         observed=weight@xyz
         projected=self.rgb_projection(rgb).flatten(2).transpose(1,2)
         visual=weight@projected
