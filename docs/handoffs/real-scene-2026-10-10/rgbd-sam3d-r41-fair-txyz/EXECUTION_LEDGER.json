@@ -1,0 +1,73 @@
+{
+  "status": "EXECUTION_BACKUP_COMPLETE_PAUSED_FOR_REVIEW",
+  "task": "R4.1 fair cached-native Txyz comparison",
+  "input_commit": "1ff8575d28f36d5b1b73af3321902b18eb035211",
+  "training": false,
+  "inference": false,
+  "data_regeneration": false,
+  "test_read": false,
+  "execution_host": "Local Windows CPU: 6 geometry workers",
+  "source_host": "AutoDL original instance in user-enabled no-GPU mode (0.5 CPU quota), only asset verification/export",
+  "environment": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "milestones": {
+    "EXECUTION_CONFIG.json": "2026-10-10T10:50:52.006788+08:00",
+    "ASSET_PREFLIGHT.json": "2026-10-10T10:51:14.855251+08:00",
+    "SMALL_CONSISTENCY.json": "2026-10-10T10:51:19.228179+08:00",
+    "OFFICIAL_REPRODUCTION_GATE.json": "2026-10-10T10:52:21.552047+08:00",
+    "EXECUTION_COMPLETE.json": "2026-10-10T10:55:34.713646+08:00",
+    "AUXILIARY_COMPONENTS.json": "2026-10-10T10:59:04.424778+08:00",
+    "POST_EXECUTION_INTEGRITY.json": "2026-10-10T11:02:24.704762+08:00"
+  },
+  "stages": [
+    "original actual asset/checkpoint verification and export",
+    "frozen contract/4-frame consistency",
+    "full 232-frame Official reproduction gate",
+    "six model cells x232 same-Txyz correction and exact before/after evaluation",
+    "equal aggregation/regional/native parameter diagnostics",
+    "16 old review frames x3 seed mechanical A-only components",
+    "48 cached visual panels",
+    "actual all-file pre/post audits and saved-mesh re-evaluation",
+    "persistent backup and Git review delivery"
+  ],
+  "counts": {
+    "identities": 22,
+    "frames": 232,
+    "train_frames": 192,
+    "val_frames": 40,
+    "cached_raw_models": 7,
+    "new_corrected_meshes": 1624,
+    "paired_records": 1624,
+    "frame_method_metrics": 3248,
+    "visual_panels": 48
+  },
+  "stop_after_delivery": true,
+  "next_training_approved": false,
+  "shutdown": {
+    "time": "2026-10-10T11:23:39.004828+08:00",
+    "command": "/usr/bin/shutdown",
+    "reason": "R4.1 completed, native/results backups verified; no more compute tasks authorized this round.",
+    "stdout": "",
+    "stderr": "",
+    "exit_status": 0,
+    "post_probe": "ConnectionRefusedError",
+    "interpretation": "Shutdown command was the final shell command on AutoDL; SSH channel closure/port probe only, not an independent billing/power audit."
+  },
+  "final_delivery_code_sha256": {
+    "analyze_r41_txyz.py": "a0c7970925a6d47c15b6a0fbfc22e8d9c1a048828fd35084294b32306a0d4cc4",
+    "audit_r41_txyz.py": "19f48b9cfa7d5ecaded9779a7abb96f202cb1c25d932340fe00e05262e700de9",
+    "auxiliary_r41_components.py": "804c497fff6b3e28c49732b148dd3f041f266313f0a9198dfa0760437ed3f4b8",
+    "diagnose_r31.py": "4df3cb80cf0210b4100b93b72ece021149e342b1cffa7d12b4d538617439a6b1",
+    "evaluate_r3_humman.py": "467a1a2f794f78a96691c96da47ab27ccb5c47e433eca3c4c1c832b2524eb6f8",
+    "humman_geometry.py": "82e33398a57858ba63d637dc08fa88bfe3818f1b2abbd8938df4752381c31bee",
+    "prepare_r41_assets.py": "36c0d0c58c7a47a8395424131becda1ab0d2e37b7f55e3989c3b167e88fa1edc",
+    "restore_r41_assets.py": "8229ccd3d1e31d304f328c1b4763c7a3b317bc93e4b87577010d3c0b27809075",
+    "run_r41_txyz.py": "44ec9521a4d534ddc40e74020032b94ae2bab6377acbf8f8a3efde22a6221ae2",
+    "surface_metrics.py": "619b32af927ae466203a2e48bf44389511d28cddb32dff7c4d36d551a9194d81",
+    "visualize_r41_txyz.py": "ebf5c1fa9569374b4be5b1a846d3bfc2afbffd7aa35fa6f43657ce1bfc4e923c"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "R4.1",
+  "training": false,
+  "test_read": false,
+  "seeds": [
+    11,
+    23,
+    37
+  ],
+  "checkpoint": "R4 Best chosen by synthetic VAL",
+  "frames": 232,
+  "train_frames": 192,
+  "val_frames": 40,
+  "fit_camera": "kinect_000",
+  "evaluation_camera": "kinect_001",
+  "fit_points": "R31 original fixed indices <=5000",
+  "evaluation_points": 2048,
+  "txyz": {
+    "anchors": 16384,
+    "iterations": 6,
+    "trim_upper_fraction": 0.2,
+    "per_axis_step_limit_m": 0.05,
+    "total_norm_limit_m": 0.17788820176363326,
+    "fallback": "zero applied T if final raw norm exceeds bound"
+  },
+  "aggregation": "frame median/P95/50mm coverage -> equal sequence mean -> equal identity mean -> mean/sample SD over 3 seeds",
+  "reproduction_tolerances": {
+    "translation_m": 1e-09,
+    "trace_m": 1e-09,
+    "vertices_m": 1e-09,
+    "metrics_mm": 1e-06
+  },
+  "source_sha256": {
+    "diagnose_r31.py": "4df3cb80cf0210b4100b93b72ece021149e342b1cffa7d12b4d538617439a6b1",
+    "evaluate_r3_humman.py": "467a1a2f794f78a96691c96da47ab27ccb5c47e433eca3c4c1c832b2524eb6f8",
+    "humman_geometry.py": "82e33398a57858ba63d637dc08fa88bfe3818f1b2abbd8938df4752381c31bee",
+    "prepare_r41_assets.py": "36c0d0c58c7a47a8395424131becda1ab0d2e37b7f55e3989c3b167e88fa1edc",
+    "run_r41_txyz.py": "44ec9521a4d534ddc40e74020032b94ae2bab6377acbf8f8a3efde22a6221ae2",
+    "surface_metrics.py": "619b32af927ae466203a2e48bf44389511d28cddb32dff7c4d36d551a9194d81"
+  },
+  "interpretation": "Real native MHR correspondence truth unavailable; visible surface only; no anatomy or acupoint accuracy claim."
+}

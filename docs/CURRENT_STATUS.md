@@ -2,13 +2,15 @@
 
 更新时间：2026-10-10。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
 
-**主线：**R3/R3.1/R4已实跑完成。R4四组8轮、G0/G1各三seed×30轮以及232帧独立Camera B、Depth消融和物理距离评价完成。G1合成PVE86.95→59.55mm、Camera66.47→27.07mm，距离响应斜率0.488→1.013；真实VAL median28.59→22.83mm但P95 68.19→70.32mm，p001196未稳定改善。保留G1研究候选，不升级最终工程模型；最强工程对照仍为Official+Txyz（HuMMan B VAL11.23/41.60mm）。见[R4最终报告](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/FINAL_REPORT.md)、[逐人审计](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/PER_IDENTITY_REVIEW.md)。TEST未读取；R4短跑与正式checkpoint/native输出已核对SHA并备份到本地及218持久服务器。10月10日08:55最后执行AutoDL关机命令，SSH channel关闭、随后SSH端口拒绝连接；独立电源/计费状态未确认，详见R4关机回执。
+**主线：**R3/R3.1/R4及R4.1公平Txyz诊断已完成。R4.1复用232帧原始A采样/固定B点与六个R4 Best模型，Official+Txyz逐帧trace/顶点/指标回归差值0。G1+Txyz三seed VAL median/P95为19.26/97.27、12.47/47.70、14.98/60.95mm，均未超过Official+Txyz 11.23/41.60mm；TRAIN median优势主要由救回11个Official超限帧贡献，正常应用帧三seed平均配对误差均更高。p001196及腰/四肢尾部仍恶化。工程维持Official+Txyz，研究建议先Camera/Body解耦再人体几何；不据此宣称真实Pose/Shape/穴位优势。见[R4.1最终报告](handoffs/real-scene-2026-10-10/rgbd-sam3d-r41-fair-txyz/FINAL_REPORT.md)、[逐身份](handoffs/real-scene-2026-10-10/rgbd-sam3d-r41-fair-txyz/PER_IDENTITY.md)。TEST未读；本轮零训练/新推理，3248条帧方法评价、48张固定对照图及缓存自审PASS。完整证据备份到本地与218持久服务器；11:23执行AutoDL关机exit0、SSH随后拒绝连接；交付后暂停，不自动续训。R4公制响应证据仍成立，不将它等同人体几何精度。
 
 ## 目标
 
 真实**俯卧背部 RGB-D → 双模态融合 → 个体原生 MHR Mesh → 标准模板固定拓扑点位传播 → 后续机器人坐标接口**。工程效果与可发表的方法贡献并行推进，表面距离、点位稳定性、医学准确率及部署精度分别验收。本轮优先人体几何，不训练独立穴位网络；目前无部署相机和独立临床穴位真值。
 
 ## 最新实际交付
+
+[R4.1公平Txyz比较](handoffs/real-scene-2026-10-10/rgbd-sam3d-r41-fair-txyz/FINAL_REPORT.md)：七缓存基底×232帧，同原Anchor/点集/算法。G1+Txyz VAL平均15.57/68.64mm，工程基线11.23/41.60mm；全部seed和负面身份保留。A-only组件诊断支持平移之外仍有局部残差，真实无MHR解剖真值。原R4的模型与训练均保留，本轮结束暂停。
 
 [R4公制Camera与局部几何候选](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/FINAL_REPORT.md)：自审PASS后完成四短跑与六正式cell。公制机制有合成/物理证据，真实尾部优势未成立；G2/G3没有晋升。4800正式合成native预测、1392真实native预测和12正式checkpoint备份通过；全部失败保留，不作为临床穴位或俯卧裸背精度。下一轮优先真实A表面监督和背向/俯卧域覆盖，保持B仅考试，解冻Decoder需单独消融。
 
