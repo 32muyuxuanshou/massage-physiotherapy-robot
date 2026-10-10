@@ -10,6 +10,8 @@
 
 ## 最新实际交付
 
+[Official＋Txyz三种子重复检查](handoffs/real-scene-2026-10-10/rgbd-sam3d-r41-official-seed-audit/README.md)：缓存Official初值、Anchor和A/B点集固定，在Python/NumPy seeds 11/23/37下实际复跑696次Txyz/精确B评价，所有trace/平移/网格/逐点距离差异0，TRAIN 24.65/80.32、VAL 11.23/41.60mm，重复SD为0。这是缓存算法重复性，不是三个Official训练模型，也未检查重新运行GPU的数值波动；G0/G1三训练seed的波动保留，R4.1结论不变。全本地执行，AutoDL保持关机。
+
 [R4.1公平Txyz比较](handoffs/real-scene-2026-10-10/rgbd-sam3d-r41-fair-txyz/FINAL_REPORT.md)：七缓存基底×232帧，同原Anchor/点集/算法。G1+Txyz VAL平均15.57/68.64mm，工程基线11.23/41.60mm；全部seed和负面身份保留。A-only组件诊断支持平移之外仍有局部残差，真实无MHR解剖真值。原R4的模型与训练均保留，本轮结束暂停。
 
 [R4公制Camera与局部几何候选](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/FINAL_REPORT.md)：自审PASS后完成四短跑与六正式cell。公制机制有合成/物理证据，真实尾部优势未成立；G2/G3没有晋升。4800正式合成native预测、1392真实native预测和12正式checkpoint备份通过；全部失败保留，不作为临床穴位或俯卧裸背精度。下一轮优先真实A表面监督和背向/俯卧域覆盖，保持B仅考试，解冻Decoder需单独消融。
