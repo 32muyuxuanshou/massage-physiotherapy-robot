@@ -1,0 +1,199 @@
+{
+  "status": "SOURCE_AUDIT_NOT_NEW_TRAINING",
+  "source_commit": "7bf0974367d685168f126bc1cfc6923abc6b3203",
+  "r1": "Seven native-output mean-square terms, equal weighting, three optimizer steps on one fixture; structural QA only.",
+  "r2": {
+    "stage": "R2_FIRST_GEOMETRY_TRAINING_PILOT",
+    "dataset_seed": 20261009,
+    "identities": 32,
+    "train_identities": 24,
+    "val_identities": 4,
+    "test_identities": 4,
+    "views_per_identity": 8,
+    "train_seed": 42,
+    "epochs": 8,
+    "batch_size": 1,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "methods": [
+      "rgb_only",
+      "residual",
+      "cross_attention"
+    ],
+    "trainable": "Feature adapter only; official backbone/decoder/MHR/camera parameters frozen",
+    "loss_weights": {
+      "vertices": 5.0,
+      "joints": 5.0,
+      "camera": 2.0,
+      "body_pose": 0.1,
+      "global_rotation": 0.2,
+      "shape": 0.01,
+      "scale": 0.01,
+      "hand": 0.0001,
+      "rendered_depth": 0.2,
+      "silhouette": 0.2
+    },
+    "model_selection": "All predeclared epochs; retain last checkpoint, report every epoch validation. No final-test evaluation in pilot.",
+    "limitations": "Simple materials, modest pose variation, no clothes/bed. This pilot does not establish real RGB-D benefit or prone accuracy. RGB-only adapter has a different parameter count; report counts."
+  },
+  "r3": {
+    "stage": "R3_SYNTHETIC_SCALE_MULTISEED",
+    "dataset_seed": 2026101001,
+    "identities": 500,
+    "train_identities": 400,
+    "val_identities": 50,
+    "test_identities": 50,
+    "poses_per_identity": 2,
+    "cameras_per_pose": 4,
+    "shape_std": 1.0,
+    "scale_std": 0.3,
+    "pose_stds": [
+      0.1,
+      0.24
+    ],
+    "focal_range_px": [
+      320,
+      1000
+    ],
+    "camera_distance_note": "Lower focal values cover real HuMMan roughly 2-3 m depths while keeping full bodies in the 640x480 frame; distances determined from fixed multi-pose bounds, never model predictions",
+    "train_seeds": [
+      11,
+      23,
+      37
+    ],
+    "methods": [
+      "rgb_only",
+      "residual",
+      "cross_attention"
+    ],
+    "lr_candidates": [
+      0.0001,
+      0.0003
+    ],
+    "lr_screen_seed": 7,
+    "lr_screen_epochs": 5,
+    "lr_selection": "minimum mean VAL identity-equal vertex_camera_mm across all three methods at epoch 5; tie selects 1e-4; never real/test",
+    "epochs": 30,
+    "batch_size": 16,
+    "optimizer": "AdamW",
+    "scheduler": "cosine decay to 0.1 initial lr; 2 epoch linear warmup",
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "checkpoint_selection": "best synthetic VAL identity-equal vertex_camera_mm; also retain last",
+    "loss_weights": {
+      "vertices": 5.0,
+      "joints": 5.0,
+      "camera": 2.0,
+      "body_pose": 0.1,
+      "global_rotation": 0.2,
+      "shape": 0.01,
+      "scale": 0.01,
+      "hand": 0.0001,
+      "rendered_depth": 0.2,
+      "silhouette": 0.2
+    },
+    "depth_offsets_m": [
+      -0.2,
+      -0.05,
+      0.05,
+      0.2
+    ],
+    "real_roles": [
+      "TRAIN",
+      "VAL"
+    ],
+    "real_input_camera": "kinect_000",
+    "real_evaluation_camera": "kinect_001",
+    "real_evaluation_samples": "all 232 prepared TRAIN/VAL timestamps; no TEST",
+    "trainable": "existing feature adapter only; official backbone/decoder/heads/MHR frozen",
+    "cache": "native backbone output bfloat16, same dtype as official; parameter forward numerical equivalence QA <=2e-6, vertices <=0.001 mm; not bitwise prediction equality",
+    "storage_estimate_gib": {
+      "new_native_data": 3,
+      "backbone_cache_and_targets": 42,
+      "checkpoints_and_outputs": 12,
+      "reserve_free": 40
+    },
+    "limitations": "Procedural surface colour patterns, modest native poses and shape variation; no photoreal clothing, bed/contact deformation or clinical points. Real evaluation is transfer diagnosis; no absolute GT accuracy or unseen-by-official-pretraining claim."
+  },
+  "r31": "train_r31_pilot delegates its actual train to train_r3_multiseed.train_one; qa-only square-output loss is not training objective.",
+  "r4": "train_r4 directly loads R3_SCALE_CONFIG_V1.json and render_losses.loss_components, ten weighted terms, lr=3e-4.",
+  "r42": "Deterministic 39-coefficient ridge fit, Camera-A Txyz pseudo targets, lambda=100 chosen within TRAIN LOO; not ground-truth root supervision.",
+  "r5": {
+    "samples": 3072,
+    "roles": {
+      "TRAIN": 2304,
+      "VAL": 768
+    },
+    "identities": {
+      "TRAIN": 9,
+      "VAL": 3
+    },
+    "source_assets": 48,
+    "truncated": 464,
+    "native_mhr_supervision_available": false
+  },
+  "source_files": [
+    {
+      "path": "research/rgbd_sam3d_mhr/check_native_r1.py",
+      "sha256": "4f43c1944a69e6e37eb6335634748c38e9dca55aae421915f27f5456c7f5648c"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/train_native_pilot.py",
+      "sha256": "c819c3c8589f204dd0f0dbcd5ba31babfc4a812e8c7d20d3a45476bd551e1db0"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/SYNTHETIC_PILOT_CONFIG_V1.json",
+      "sha256": "9f41392452a1624b63343998990d1e0258f74b6a9c24fcfec6f276accfa3eba6"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/R3_SCALE_CONFIG_V1.json",
+      "sha256": "83f698927298ac4477926b4cad345727b6f8b6f87ad4436eaff29fa420f66ca8"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/train_r3_multiseed.py",
+      "sha256": "ef684cb07b7d26ad0ca1e1842360ab1861883b6d586b85f91fbe079e2b1838a8"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/train_r31_pilot.py",
+      "sha256": "5cb57d51169763d230f35aefa2fdf8a6bc5ef92b1dd27f3a643a49ad72e1c117"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/train_r4.py",
+      "sha256": "604aaae4396c3406d7717b679ac41510d4f7a5ae6f4e13a4f7e07806dbf57627"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/fusion_r4.py",
+      "sha256": "b489e282fffb098d790aa35d14772e36fed734f66b01dde1140a6a8824fc268a"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/render_losses.py",
+      "sha256": "94c133ac7b6afbc22d2c3e050f6276e28a4c7022d7cacd17cf50c16ab4f04e2a"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/r3_common.py",
+      "sha256": "6207404de1a677d86f6b5f39b99c4a5a39e2031f5ed5ba723008633492a125b0"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/native_data_r3.py",
+      "sha256": "b06c3ab8dafa1b856e4c9fe9bfd46b4bfc67c57a39ee89c6110d9c2d18752eda"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/train_r42_camera_only.py",
+      "sha256": "9eec67993b91470a6b4c43e8b4787b9644b0135c814af92035cae2a46d12297c"
+    },
+    {
+      "path": "research/rgbd_sam3d_mhr/synthesis_r5/pack_dataset.py",
+      "sha256": "3755daa7d314bc9630afa6e8b6a180db22fd9b983f4c0b33cc77b391ded3a126"
+    },
+    {
+      "path": "docs/handoffs/real-scene-2026-10-10/humman-controlled-camera-r5-v2/MANIFEST.json",
+      "sha256": "487f109fce2e69fd0481d4c95c3cef78d0f158e732087b135d96a4fdb4b8fcad"
+    },
+    {
+      "path": "docs/handoffs/real-scene-2026-10-10/rgbd-sam3d-r42-camera-body-decoupling/FINAL_REPORT.md",
+      "sha256": "30f01805e6e1afd207a83551f1af727da5a8a23e600572857503b5ae69a55f5f"
+    }
+  ]
+}
