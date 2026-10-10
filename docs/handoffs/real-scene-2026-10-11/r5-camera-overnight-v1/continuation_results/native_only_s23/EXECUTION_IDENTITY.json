@@ -1,0 +1,13 @@
+{
+  "mode": "native_only",
+  "seed": 23,
+  "epochs": 20,
+  "parent_sha256": "dbf1ea7530999d1fccf299c06dc24bfa7d19a4560536998d93b01da3e6b7c051",
+  "weak_freeze_sha256": "31740b5ce06159b212274b62c0ccf2814e1efbc5e485498424cdc02c2824db7b",
+  "native_order_and_exposure": "same parent RNG, 3200 native rows / epoch, batch16, 200 updates",
+  "added_scan_cost": "four scan rows / update only in mixed arm",
+  "schedule": "both arms reset to lr3e-4, cosine20 floor .1; optimizer moments preserved",
+  "checkpoint_selection": "native VAL identity-equal Camera L2 only",
+  "TEST_read": false,
+  "camera_B_read": false
+}

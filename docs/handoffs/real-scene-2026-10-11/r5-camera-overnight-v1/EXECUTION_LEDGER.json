@@ -1,6 +1,6 @@
 {
-  "timestamp_Beijing": "2026-10-11 01:12",
-  "state": "READY_TO_START_ORIGINAL_RENDERER_CONTINUATION",
+  "timestamp_Beijing": "2026-10-11T01:40:57+08:00",
+  "state": "COMPLETED",
   "deadline_Beijing": "2026-10-11 09:00",
   "stop_training_unix": 1791677700,
   "completed": [
@@ -10,17 +10,16 @@
     "3072 textured scan Official caches",
     "AutoDL original raster analytic and gradient QA",
     "constant TRAIN feature repair, native exact invariant",
-    "scan/parent transfer SHA verified"
+    "scan/parent transfer SHA verified",
+    "6 matched continuation cells x20 epochs",
+    "18 original-renderer scan/Depth diagnostics",
+    "15 x232 repaired real A/Txyz/B evaluations + exact Official baseline gate",
+    "93 actual perspective mesh panels",
+    "3480 actual saved output Body/translation pair audit",
+    "GPU and real bundles SHA verified on local E and218"
   ],
-  "running": [
-    "218 repaired native held-out B evaluation"
-  ],
-  "pending": [
-    "matched 3-seed native-only/mixed continuation20",
-    "Depth ablations and scan VAL/group evaluation",
-    "continuation held-out B evaluation",
-    "visualizations and final backup/Git"
-  ],
+  "running": [],
+  "pending": [],
   "unused": "Anchor weak loss QA only; no alternative training executed",
   "servers": {
     "218": {
@@ -33,7 +32,11 @@
       "host": "connect.cqa1.seetacloud.com",
       "port": 39846,
       "root": "/root/autodl-tmp/rgbd_sam3d/runs/r5_camera_overnight_v1",
-      "shutdown": "only after no longer needed and backup verified"
+      "shutdown": {
+        "command": "shutdown -h now",
+        "exit_code": 0,
+        "reason": "all GPU jobs complete; SHA verified local+218 backup before shutdown"
+      }
     }
   },
   "quota_policy": {
@@ -44,5 +47,32 @@
     "stable_long_run_exit": "preflight PASS + actual epoch advancement + best/last saved + independent process"
   },
   "model_selection": "native VAL only; no TEST or B fit/selection",
-  "normalization_bug_fix": "See NORMALIZATION_FIX.md; unmasked run stopped after preserving outputs; no retraining or B-derived mask"
+  "normalization_bug_fix": "See NORMALIZATION_FIX.md; unmasked run stopped after preserving outputs; no retraining or B-derived mask",
+  "source_commit": "cda8f34d",
+  "gpu_queue_independent_of_chat": true,
+  "stable_long_run_verified": {
+    "original_raster_QA": "PASS",
+    "actual_mixed_epoch_seen": {
+      "11": 20,
+      "23": 20,
+      "37": 20
+    },
+    "native_continuation_completed_epochs": 20,
+    "best_last_saved": true,
+    "server_queue_independent": true
+  },
+  "counts": {
+    "native_models": 9,
+    "continuation_models": 6,
+    "total_head_epochs": 390,
+    "scan_official_cache": 3072,
+    "diagnostics": 18,
+    "real_model_frame_records": 3480,
+    "real_identity_records": 330,
+    "real_visualizations": 81,
+    "scan_visualizations": 12
+  },
+  "source_before_closeout_commit": "cda8f34de5255e9e2215b0a5b16a708e944e6e73",
+  "scientific_outcome": "scan helps all3 seeds vs native-only; no real VAL improvement over Official+Txyz; retain engineering baseline",
+  "stopped_early_reason": "All planned jobs and diagnostics complete; no extra training to fill forecast windows"
 }
