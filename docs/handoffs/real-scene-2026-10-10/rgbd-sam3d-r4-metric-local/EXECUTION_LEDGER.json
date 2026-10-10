@@ -1,0 +1,123 @@
+{
+  "status": "TRAIN_EVAL_INTEGRITY_BACKUP_COMPLETE_CLOSEOUT",
+  "timezone": "Asia/Shanghai",
+  "formal_source_commit": "6c39a027db66e4d8f4b6604ead55926e1bbc3a28",
+  "pilot_source_commit": "3e455f78",
+  "compute": {
+    "host": "connect.cqa1.seetacloud.com:39846",
+    "root": "/root/autodl-tmp/rgbd_sam3d",
+    "code": "r4_code",
+    "run": "runs/r4_geometry_v1",
+    "python": "envs/rgbd/bin/python",
+    "gpu": "RTX 6000D 85651 MiB",
+    "torch": "2.12.1+cu130"
+  },
+  "phases": [
+    {
+      "name": "PREEXECUTION_GATE.json",
+      "completed_beijing": "2026-10-10T02:11:00.615099+08:00",
+      "status": "PASS"
+    },
+    {
+      "name": "PILOTS_COMPLETE.json",
+      "completed_beijing": "2026-10-10T02:23:28.148718+08:00",
+      "status": "COMPLETE"
+    },
+    {
+      "name": "PILOT_GATE_DECISION.json",
+      "completed_beijing": "2026-10-10T02:28:43.698893+08:00",
+      "status": "APPROVED_FOR_PAIRED_SEED_CHARACTERIZATION"
+    },
+    {
+      "name": "FORMAL_QUEUE_DONE.json",
+      "completed_beijing": "2026-10-10T04:54:07.713641+08:00",
+      "status": "COMPLETE"
+    },
+    {
+      "name": "formal/EVALUATIONS_COMPLETE.json",
+      "completed_beijing": "2026-10-10T04:59:30.282111+08:00",
+      "status": "COMPLETE"
+    },
+    {
+      "name": "POST_EXECUTION_INTEGRITY.json",
+      "completed_beijing": "2026-10-10T08:39:55.120868+08:00",
+      "status": "PASS"
+    }
+  ],
+  "resource_monitor": {
+    "records": 578,
+    "first_beijing": "2026-10-10T02:28:43.879401+08:00",
+    "last_beijing": "2026-10-10T04:53:52.717762+08:00",
+    "sampling_seconds": 15,
+    "max_device_memory_mib": 33206.0
+  },
+  "idle_gap": {
+    "automated_evaluation_completed_beijing": "2026-10-10T04:59:30.282111+08:00",
+    "interactive_closeout_resumed_beijing": "2026-10-10T08:36:09+08:00",
+    "explanation": "Automated training/evaluation finished before interactive closeout resumed. GPU was idle in this interval; no claim of continuous compute or continuous interactive monitoring. Shutdown remained pending required backups and delivery."
+  },
+  "test_read": false,
+  "real_B_fitted": false,
+  "training": {
+    "formal_models": 2,
+    "formal_seeds": [
+      11,
+      23,
+      37
+    ],
+    "formal_epochs_per_cell": 30,
+    "pilots": 4,
+    "pilot_epochs_per_cell": 8,
+    "best_selection": "synthetic VAL corresponding vertex error",
+    "normal_formal_resumes": 0
+  },
+  "integrity": "POST_EXECUTION_INTEGRITY.json",
+  "checkpoint_manifest": "CHECKPOINT_MANIFEST.json",
+  "backups": {
+    "PILOT_BACKUP_RECEIPT.json": {
+      "status": "VERIFIED",
+      "archive": "r4_pilot_native_v1.tar.gz",
+      "bytes": 1836848197,
+      "sha256": "26e57b5fe360d91e19895ca9136531829bed6ed78d9baaf547069293019e45d2",
+      "compute_path": "/root/autodl-tmp/rgbd_sam3d/r4_pilot_native_v1.tar.gz",
+      "local_path": "E:/\u9879\u76ee-\u6309\u6469\u7406\u7597\u673a\u5668\u4eba/output/r4_development/private_backup/r4_pilot_native_v1.tar.gz",
+      "backup_path": "/raid5/xuhd/rgbd_sam3d_backups/2026-10-10_r4_geometry_v1/r4_pilot_native_v1.tar.gz",
+      "backup_actual_sha256": "26e57b5fe360d91e19895ca9136531829bed6ed78d9baaf547069293019e45d2",
+      "time_unix": 1791571156.1960557
+    },
+    "FORMAL_BACKUP_RECEIPT.json": {
+      "status": "VERIFIED",
+      "time_unix": 1791593165.9344594,
+      "archive": "r4_formal_native_v1.tar.gz",
+      "bytes": 2686045965,
+      "sha256": "caa531e2b878d46f7e17b60f21bc2f838ccf8dd5b03599ecd7e30b9658115c9f",
+      "compute_path": "/root/autodl-tmp/rgbd_sam3d/r4_formal_native_v1.tar.gz",
+      "local_path": "E:/\u9879\u76ee-\u6309\u6469\u7406\u7597\u673a\u5668\u4eba/output/r4_development/private_backup/r4_formal_native_v1.tar.gz",
+      "backup_host": "172.18.6.218:436",
+      "backup_path": "/raid5/xuhd/rgbd_sam3d_backups/2026-10-10_r4_geometry_v1/r4_formal_native_v1.tar.gz",
+      "compute_local_backup_sha_equal": true,
+      "contents": "Six formal cells: 12 best/last checkpoints with optimizer/scheduler/RNG; 4800 native synthetic VAL outputs; 1392 real native NPZ; full ablations/physical/metrics; source snapshot and integrity."
+    },
+    "CLOSEOUT_BACKUP_RECEIPT.json": {
+      "status": "VERIFIED",
+      "time_unix": 1791593480.9757893,
+      "archive": "r4_closeout_evidence_v1.tar.gz",
+      "bytes": 1286486362,
+      "sha256": "6688136addc84940f20f06dcebc729a3a5e87d0408fced429701117e59e26df3",
+      "compute_path": "/root/autodl-tmp/rgbd_sam3d/r4_closeout_evidence_v1.tar.gz",
+      "local_path": "E:/\u9879\u76ee-\u6309\u6469\u7406\u7597\u673a\u5668\u4eba/output/r4_development/private_backup/r4_closeout_evidence_v1.tar.gz",
+      "backup_host": "172.18.6.218:436",
+      "backup_path": "/raid5/xuhd/rgbd_sam3d_backups/2026-10-10_r4_geometry_v1/r4_closeout_evidence_v1.tar.gz",
+      "compute_local_backup_sha_equal": true,
+      "contents": "Full R4 non-formal/non-pilot evidence: actual QA/initial failure records, raw physical probes/cache, visualizations, logs, camera swaps, final diagnostics/report/ledger, evaluation asset receipt; final model/data remain in formal and pilot native archives.",
+      "scope_note": "Archive is evidence snapshot before final Git/shutdown receipts; final public delivery is Git, later shutdown receipt is necessarily outside this archive."
+    }
+  },
+  "shutdown": {
+    "status": "PENDING_FINAL_DELIVERY",
+    "command": "/usr/bin/shutdown",
+    "policy": "last compute-host command after all evaluation/backup/delivery"
+  },
+  "evaluation_asset_receipt": "EVALUATION_ASSET_RECEIPT.json",
+  "heldout_actual_points_sha_verified": 232
+}

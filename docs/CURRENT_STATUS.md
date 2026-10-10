@@ -2,7 +2,7 @@
 
 更新时间：2026-10-10。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
 
-**主线：**R3/R3.1已完成并备份；R4原生自审和四组100身份×8epoch短跑完成，正在执行G1公制Camera与匹配G0的三seed×30epoch正式开发训练。短跑G1合成PVE105.70→100.84mm、Camera84.44→77.87mm，但真实VAL20.32→21.83mm恶化；G2/G3没有晋升大训练。最强历史工程基线仍是Official+Cheap Txyz，HuMMan独立B VAL11.23mm。见 [R4实际状态](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/README.md)、[短跑决定](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/SHORT_PILOT_REPORT.md)、[R3.1完整交付](handoffs/real-scene-2026-10-10/rgbd-sam3d-r31-diagnosis-pilot/README.md)。本页不提前宣称R4完成或有稳定真实优势。封存TEST不使用。持久备份218；R4备份/交付后关闭AutoDL。
+**主线：**R3/R3.1/R4已实跑完成。R4四组8轮、G0/G1各三seed×30轮以及232帧独立Camera B、Depth消融和物理距离评价完成。G1合成PVE86.95→59.55mm、Camera66.47→27.07mm，距离响应斜率0.488→1.013；真实VAL median28.59→22.83mm但P95 68.19→70.32mm，p001196未稳定改善。保留G1研究候选，不升级最终工程模型；最强工程对照仍为Official+Txyz（HuMMan B VAL11.23/41.60mm）。见[R4最终报告](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/FINAL_REPORT.md)、[逐人审计](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/PER_IDENTITY_REVIEW.md)。TEST未读取；R4短跑与正式checkpoint/native输出已核对SHA并备份到本地及218持久服务器。关机状态以执行Ledger/回执为准。
 
 ## 目标
 
@@ -10,7 +10,7 @@
 
 ## 最新实际交付
 
-[R4公制Camera与局部几何候选](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/README.md)：Camera raw参数接入官方投影链、FP32局部XYZ attention、实际内部梯度/四样本过拟合/恢复检查、16图物理距离QA、1/2/3路并发、四组短跑及同232帧B/Depth消融完成。正式3seed训练运行中；所有数字按实际文件，不是最终临床或穴位准确率。
+[R4公制Camera与局部几何候选](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/FINAL_REPORT.md)：自审PASS后完成四短跑与六正式cell。公制机制有合成/物理证据，真实尾部优势未成立；G2/G3没有晋升。4800正式合成native预测、1392真实native预测和12正式checkpoint备份通过；全部失败保留，不作为临床穴位或俯卧裸背精度。下一轮优先真实A表面监督和背向/俯卧域覆盖，保持B仅考试，解冻Decoder需单独消融。
 
 [R3.1诊断与匹配小规模验证](handoffs/real-scene-2026-10-10/rgbd-sam3d-r31-diagnosis-pilot/FINAL_REPORT.md)：三seed fixed-mask Depth、七历史模型基底1624次Cheap Txyz、14历史失败图、两个原生MHR候选实作、四组100身份×8epochs、全部232帧独立B及机制干预完成。B合成camera顶点83.23mm优于RGB-only97.69mm，但真实VAL24.35mm劣于RGB-only21.31mm与Official+Txyz11.23mm。研究机制线索保留，稳定真实优势未成立。
 
@@ -83,7 +83,7 @@
 11. 旧8点atlas：canonical原始cm，修正为×10 mm；缓存m×1000不变。同拓扑通过，但旧GV14/GV4上下颠倒、中线种子偏侧、左右与历史轴声明冲突。**语义HOLD，不生成医学标签或治疗目标。**[资产审计](handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/results/p0/POINT_ASSET_AUDIT.json)
 12. [公开数据资格](handoffs/real-scene-2026-10-03/prone-back-point-validation-v1/DATA_QUALIFICATION.md)：DMD历史205组全部视觉检查，1张确认俯卧；当前V2为0图。PCdare324非Output点云与1,326线候选已枚举，有源码支持的几何重新绑定；没有三维穴位GT或已核验校准prone RGB-D关联。
 
-PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼成同一项精度。全部失败和缺失保留。上述早期几何阶段没有训练；最新只训练体表线小模型，没有SAM微调。
+PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼成同一项精度。全部失败和缺失保留。上述为早期几何/体表线历史结果；最新R3/R4已训练原生SAM3D融合适配器，官方backbone/Decoder冻结，不能把早期“无SAM训练”当作当前状态。
 
 ## 已有基础
 
@@ -92,7 +92,7 @@ PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼�
 - [固定顺序复现V1.4.12](handoffs/real-scene-2026-09-14/sam3d-txyz-reproducibility-isolation-v1/formal-execution-v1.4.12/README.md)历史Gate通过，225次SAM B–F固定顺序精确一致、27特征稳定；另有最大约0.001 mm帧顺序浮点效应，后续保持帧顺序冻结。
 - 历史合成RTMPose只证明合成工程任务可行，不能推导当前真人穴位定位精度。
 
-## 当前 Gate
+## 历史几何与穴位 Gate（不覆盖本页R4状态）
 
 | 事项 | 状态 |
 |---|---|
@@ -108,12 +108,14 @@ PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼�
 | Mesh+规则代理链 | 跑通；椎体/B-cun输入为代理 |
 | 独立三维穴位/可靠目标对应 | 尚无资格数据，不报告准确率 |
 | 体表线小模型训练与迁移 | 已完成；源域改善、俯卧仍厘米级分歧 |
-| SAM微调、Mesh teacher、DMD37伪标签 | 未启动/未放行 |
+| SAM3D融合适配器 / Mesh teacher / DMD37伪标签 | R3/R4融合训练已完成；官方Decoder未解冻；医学teacher/伪标签未放行 |
 | 部署相机、机器人变换及接触控制 | 未验收 |
 
 ## 运行位置
 
-最新实际执行服务器：`xuhd@172.18.18.151:436`，`/raid5/xuhd`及既有环境/数据今日先前曾恢复并实读，随后又出现磁盘等待/SSH失败；22:26核查仍无法SSH登录，当前远端任务与存储状态不能核实。GPU0/2080Ti此前实际完成六小模型训练和俯卧迁移；PyTorch2.4.0+cu121、Python3.10.20。本地CPU另完成S107真实点云接口，未训练或改动Mesh。没有新SAM推理、Mesh拟合或SAM微调。不要将较早的存储恢复记录理解为当前服务器可用。
+最新计算服务器：`root@connect.cqa1.seetacloud.com:39846`，根目录`/root/autodl-tmp/rgbd_sam3d`，R4代码`r4_code`、输出`runs/r4_geometry_v1`、Python`envs/rgbd/bin/python`。持久备份`xuhd@172.18.6.218:436`的`/raid5/xuhd/rgbd_sam3d_backups/2026-10-10_r4_geometry_v1`；本地备份`output/r4_development/private_backup`。关机状态见R4执行Ledger。
+
+以下为10月5日前后历史几何路线位置，当前可用性不能由旧记录推断：`xuhd@172.18.18.151:436`当时出现磁盘等待/SSH失败。GPU0/2080Ti此前完成六个体表线小模型；其“没有SAM微调”描述只适用于当时任务，不覆盖R3/R4。
 
 - 有界参考对应：`/raid5/xuhd/datasets/bounded_reference_correspondence_v1_20261004`
 - 俯卧参考Mesh接口：`/raid5/xuhd/datasets/prone_reference_mesh_interface_v1_20261004`
@@ -134,7 +136,9 @@ PressurePose和BEHAVE的区域、相机和聚合不同，不把绝对数值拼�
 
 ## 下一步
 
-最新训练证明缺失增强有帮助，迁移也部分改善；但工程点对输入与初始化仍厘米级变化，没有可靠医学身份。保留这个基线，不继续用16名已消费测试角色调参追分。下一项应确定俯卧可用的可重复后正中参考及上下端身份、源/目标输入坐标合同，再用可靠参考比较拓扑传播和规则定位。现有公开数据没有独立三维穴位真值；不把作者画线、稳定输出或小贴面分数当医学teacher。相机标定、完整Mesh质量及部署验收仍分别推进。
+现役R4下一步：保留G1＋匹配G0＋Official/Txyz，优先设计真实TRAIN相机A表面监督和背向/俯卧域覆盖的独立对照；B只考试，TEST不碰，解冻Decoder另设消融。不继续机械堆G2/G3或只挑最好seed。当前没有证明最终俯卧/穴位精度。
+
+早期体表线训练的历史结论：缺失增强有帮助，但工程点仍厘米级变化、没有可靠医学身份。其几何基线保留，不继续用16名已消费角色调参追分。穴位阶段仍需可靠后正中参考及上下端身份，再比较拓扑传播与规则；不能把作者画线、稳定输出或小贴面分数当医学teacher。相机标定、完整Mesh质量及部署验收分别推进。
 
 本轮原计划见[工程模板与几何机制验证计划V2](research/2026-10-03-no-deployment-camera/NEXT_EXECUTION_PLAN_V2.md)，执行结果以上方最新报告为准。完整原RGB新副本在本地 `output/back_geometry_correspondence_v2/private_review/INDEX.html`。
 

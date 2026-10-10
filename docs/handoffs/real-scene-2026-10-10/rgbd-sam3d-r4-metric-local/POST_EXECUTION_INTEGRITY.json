@@ -1,0 +1,216 @@
+{
+  "status": "PASS",
+  "time_unix": 1791592795.1210973,
+  "runtime_files": [
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/checkpoints/official/sam-3d-body-vith/model.ckpt",
+      "sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+      "bytes": 1691205237,
+      "post_sha256": "3b1cb897f4bbd977bf81cbb0b30780a9582681ac642ee112865790ceb4d66056",
+      "match": true
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/checkpoints/official/sam-3d-body-vith/assets/mhr_model.pt",
+      "sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "bytes": 696110248,
+      "post_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "match": true
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/datasets/cache/native_scale_v2/CACHE_MANIFEST.json",
+      "sha256": "cb0d14a2ecd893f9b4f7b27b7fdd8ae6cc3141c0d74ce2ed1b165d54ea846558",
+      "bytes": 1594848,
+      "post_sha256": "cb0d14a2ecd893f9b4f7b27b7fdd8ae6cc3141c0d74ce2ed1b165d54ea846558",
+      "match": true
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/datasets/cache/humman_development_v1/CACHE_MANIFEST.json",
+      "sha256": "1f7391350652d6553c33ff32f5486e366974bde7922d84345866169c833aabb1",
+      "bytes": 658503,
+      "post_sha256": "1f7391350652d6553c33ff32f5486e366974bde7922d84345866169c833aabb1",
+      "match": true
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/datasets/heldout/humman_r3_k1_v1/MANIFEST.json",
+      "sha256": "293dba5e6de8453e85344e60100e620d7ca5291489ffaacb969e2ec47dfb028f",
+      "bytes": 111700,
+      "post_sha256": "293dba5e6de8453e85344e60100e620d7ca5291489ffaacb969e2ec47dfb028f",
+      "match": true
+    }
+  ],
+  "formal_cells": [
+    {
+      "cell": "g0_seed11",
+      "epochs": 30,
+      "best_epoch": 20,
+      "synthetic_native_predictions": {
+        "best": 400,
+        "last": 400
+      },
+      "real_native_predictions": 232,
+      "source_commit": "6c39a027db66e4d8f4b6604ead55926e1bbc3a28",
+      "source_files_match": true,
+      "test_loaded": false,
+      "seconds": 4517.5794540955685
+    },
+    {
+      "cell": "g0_seed23",
+      "epochs": 30,
+      "best_epoch": 26,
+      "synthetic_native_predictions": {
+        "best": 400,
+        "last": 400
+      },
+      "real_native_predictions": 232,
+      "source_commit": "6c39a027db66e4d8f4b6604ead55926e1bbc3a28",
+      "source_files_match": true,
+      "test_loaded": false,
+      "seconds": 4364.937864758074
+    },
+    {
+      "cell": "g0_seed37",
+      "epochs": 30,
+      "best_epoch": 24,
+      "synthetic_native_predictions": {
+        "best": 400,
+        "last": 400
+      },
+      "real_native_predictions": 232,
+      "source_commit": "6c39a027db66e4d8f4b6604ead55926e1bbc3a28",
+      "source_files_match": true,
+      "test_loaded": false,
+      "seconds": 4525.084975406062
+    },
+    {
+      "cell": "g1_seed11",
+      "epochs": 30,
+      "best_epoch": 29,
+      "synthetic_native_predictions": {
+        "best": 400,
+        "last": 400
+      },
+      "real_native_predictions": 232,
+      "source_commit": "6c39a027db66e4d8f4b6604ead55926e1bbc3a28",
+      "source_files_match": true,
+      "test_loaded": false,
+      "seconds": 4105.704847618006
+    },
+    {
+      "cell": "g1_seed23",
+      "epochs": 30,
+      "best_epoch": 29,
+      "synthetic_native_predictions": {
+        "best": 400,
+        "last": 400
+      },
+      "real_native_predictions": 232,
+      "source_commit": "6c39a027db66e4d8f4b6604ead55926e1bbc3a28",
+      "source_files_match": true,
+      "test_loaded": false,
+      "seconds": 4091.517014745157
+    },
+    {
+      "cell": "g1_seed37",
+      "epochs": 30,
+      "best_epoch": 24,
+      "synthetic_native_predictions": {
+        "best": 400,
+        "last": 400
+      },
+      "real_native_predictions": 232,
+      "source_commit": "6c39a027db66e4d8f4b6604ead55926e1bbc3a28",
+      "source_files_match": true,
+      "test_loaded": false,
+      "seconds": 4104.236827028915
+    }
+  ],
+  "expected_formal": 6,
+  "official_weights_frozen": true,
+  "explanation": "Trainer hashes all official parameters before/after; external checkpoint, MHR, cache and held-out manifest hashes also unchanged.",
+  "checkpoint_files": [
+    {
+      "cell": "g0_seed11",
+      "kind": "best",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g0_seed11/run/best.pt",
+      "sha256": "7dc950a35807cec87c277ac87dd7f705d121985e381575c5a6f522cbe4456dca",
+      "bytes": 17490893
+    },
+    {
+      "cell": "g0_seed11",
+      "kind": "last",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g0_seed11/run/last.pt",
+      "sha256": "634e432a992348feb37d9775bb4e768a40a48db1a8340c1a1243bf83347d6e5a",
+      "bytes": 17490893
+    },
+    {
+      "cell": "g0_seed23",
+      "kind": "best",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g0_seed23/run/best.pt",
+      "sha256": "e4802817f2c6e13689f0da72ed66b0ccdfa48f511124bd9142a327cd4b17d822",
+      "bytes": 17490893
+    },
+    {
+      "cell": "g0_seed23",
+      "kind": "last",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g0_seed23/run/last.pt",
+      "sha256": "f0626fcf5618f923c731205654af6f2ca22744ac35720c42272de122c30eb72c",
+      "bytes": 17490893
+    },
+    {
+      "cell": "g0_seed37",
+      "kind": "best",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g0_seed37/run/best.pt",
+      "sha256": "c7053cc8090a94befb4f7a6efc1283eb5d42bcad9126c3a6c954d51e8698d58d",
+      "bytes": 17490893
+    },
+    {
+      "cell": "g0_seed37",
+      "kind": "last",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g0_seed37/run/last.pt",
+      "sha256": "ab570a347c29f4fbef899a818d1715ded78c9eebb771d55bda1f518aee141ef3",
+      "bytes": 17490893
+    },
+    {
+      "cell": "g1_seed11",
+      "kind": "best",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g1_seed11/run/best.pt",
+      "sha256": "8ad025317ea978c848b9e638aee686e54a8b2b0c318290c8a5a31bfa2d2d00bc",
+      "bytes": 19734703
+    },
+    {
+      "cell": "g1_seed11",
+      "kind": "last",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g1_seed11/run/last.pt",
+      "sha256": "96e582e4d37aba5523fc17ad60f5f202b9891e7c0e611c42f5e785de4fe3ca3c",
+      "bytes": 19734703
+    },
+    {
+      "cell": "g1_seed23",
+      "kind": "best",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g1_seed23/run/best.pt",
+      "sha256": "02f7c6ddc37315838c3df5465622cf2b5410746177c4c0890fe7485b8b68c96a",
+      "bytes": 19734703
+    },
+    {
+      "cell": "g1_seed23",
+      "kind": "last",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g1_seed23/run/last.pt",
+      "sha256": "2b9eac5b1bced22de3c83b96268bfaf7fe0333e70ab4517242fff9767e9caa6a",
+      "bytes": 19734703
+    },
+    {
+      "cell": "g1_seed37",
+      "kind": "best",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g1_seed37/run/best.pt",
+      "sha256": "f69f0abd5c193930e636740c3e219c3f660770c836333ef7fdd26bf8c5c0ea48",
+      "bytes": 19734703
+    },
+    {
+      "cell": "g1_seed37",
+      "kind": "last",
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r4_geometry_v1/formal/g1_seed37/run/last.pt",
+      "sha256": "52bb2c9c24e8c65b2ee44e0b2073e9ecdb66496b8c22b3028927a03f18251257",
+      "bytes": 19734703
+    }
+  ]
+}

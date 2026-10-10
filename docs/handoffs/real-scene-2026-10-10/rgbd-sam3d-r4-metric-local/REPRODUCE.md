@@ -34,4 +34,19 @@ Camera B 的原始固定点集 manifest SHA记录在 `qa/RUNTIME_ASSETS.json`，
 
 R4训练不保证逐位相同。保存best/last、Adam状态、scheduler、CPU/CUDA RNG及numpy sampler，支持epoch边界恢复；自审已验证恢复状态及开发指标一致性。混合精度只保留官方backbone native BF16，adapter/公制几何FP32。每个模型/seed在独立进程运行。
 
-截止前停止启动新训练，保留最佳/末轮；完整checkpoint/native缓存要先传至本地和持久服务器 `/raid5/xuhd/rgbd_sam3d_backups` 并核对SHA。最后再执行AutoDL官方 `/usr/bin/shutdown`，不会在R3.1结束时提前关机。
+本轮已完成。正式训练源commit：`6c39a027db66e4d8f4b6604ead55926e1bbc3a28`；Best/Last的执行身份与各训练文件SHA保存在每cell。公开交付commit含后续分析/报告，不能替代此训练源版本。完整checkpoint/native缓存已传至本地和持久服务器 `/raid5/xuhd/rgbd_sam3d_backups` 并核对SHA，关机实际状态见 `SHUTDOWN_RECEIPT.json` 和执行Ledger。
+
+```bash
+# 下列只读取完成结果/保存Mesh，不重新训练或拟合。
+$PY "$C/attribute_r4_camera.py" --root "$R" --base "$W/formal/g0_seed11/real" --new "$W/formal/g1_seed11/real" --out "$W/formal_camera_attribution_seed11.json"
+# 同样对seed23/37运行。
+$PY "$C/visualize_r4.py" --root "$R" --cells "$W/formal" --names g0_seed11 g1_seed11 --out "$W/formal_visuals"
+$PY "$C/closeout_r4_native.py" --root "$R"
+
+# 公共JSON本地重算三seed、逐人、配对帧与统计图；不需要GPU或私有Mesh。
+python research/rgbd_sam3d_mhr/analyze_r4_delivery.py \
+  --delivery docs/handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local \
+  --baseline docs/handoffs/real-scene-2026-10-10/rgbd-sam3d-r31-diagnosis-pilot/diagnostics/CHEAP_TXYZ_COMPARISON.json
+```
+
+`closeout_r4_native.py`会重新校验完成结果并写正式备份档案；重跑应先保留现有档案。审查时不需要执行训练命令。实际模型大数组使用持久备份中的 `r4_formal_native_v1.tar.gz` 和 `r4_pilot_native_v1.tar.gz`；代码/公共JSON见Git，SHA见回执。公开 `FILES_MANIFEST.json` 校验Git blob字节，Windows working copy换行可能不同；运行时源文件SHA以各训练执行身份及原生备份为准。

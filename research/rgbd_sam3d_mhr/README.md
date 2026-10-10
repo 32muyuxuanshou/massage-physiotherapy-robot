@@ -1,4 +1,4 @@
-> 2026-10-10现役状态：R3与R3.1实跑完成；见 [R3.1完整审查](../../docs/handoffs/real-scene-2026-10-10/rgbd-sam3d-r31-diagnosis-pilot/README.md)。下文R0/R1准备状态保留为历史说明，不代表仍未训练。R4经独立自审/短跑后执行，不覆盖R3checkpoint或cache。
+> 2026-10-10现役状态：R3、R3.1、R4全部实跑完成；见 [R4最终审查](../../docs/handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/FINAL_REPORT.md)。G1三seed公制Camera与合成Mesh改善，但真实尾部未稳定、未胜Official+Txyz。下文R0/R1准备状态保留为历史说明，不代表仍未训练。官方模型/旧checkpoint/cache保留；TEST未读取。
 
 # RGB-D SAM3D / native MHR
 
