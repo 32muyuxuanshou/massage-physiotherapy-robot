@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "camera_only_QA": {
+    "raw_bounded": {
+      "zero_initialization_error_m": 0.0,
+      "nonzero_target_gradient": 0.147910937666893,
+      "camera_changed_after_step_m": 0.004215558059513569,
+      "body_exact_equal": {
+        "pred_vertices": true,
+        "global_rot": true,
+        "body_pose": true,
+        "shape": true,
+        "scale": true,
+        "hand": true
+      },
+      "missing_depth_exact_Official": true
+    },
+    "metric_xyz": {
+      "zero_initialization_error_m": 0.0,
+      "nonzero_target_gradient": 0.2392808347940445,
+      "camera_changed_after_step_m": 0.004033464007079601,
+      "body_exact_equal": {
+        "pred_vertices": true,
+        "global_rot": true,
+        "body_pose": true,
+        "shape": true,
+        "scale": true,
+        "hand": true
+      },
+      "missing_depth_exact_Official": true
+    },
+    "rgb_only_xyz": {
+      "zero_initialization_error_m": 0.0,
+      "nonzero_target_gradient": 0.2405262589454651,
+      "camera_changed_after_step_m": 0.004165813326835632,
+      "body_exact_equal": {
+        "pred_vertices": true,
+        "global_rot": true,
+        "body_pose": true,
+        "shape": true,
+        "scale": true,
+        "hand": true
+      },
+      "missing_depth_exact_Official": true
+    }
+  },
+  "raw_bounded_capacity": {
+    "TRAIN": {
+      "samples": 3200,
+      "outside_bound": 9,
+      "per_axis_outside_bound": [
+        8,
+        1,
+        2
+      ],
+      "gt_Z_range_m": [
+        2.090413808822632,
+        6.5476789474487305
+      ]
+    },
+    "VAL": {
+      "samples": 400,
+      "outside_bound": 0,
+      "per_axis_outside_bound": [
+        0,
+        0,
+        0
+      ],
+      "gt_Z_range_m": [
+        2.288973569869995,
+        6.167059898376465
+      ]
+    }
+  },
+  "train_identities": 400,
+  "val_identities": 50,
+  "device": "cuda",
+  "test_read": false,
+  "camera_B_read": false,
+  "raw_capacity_note": "A capacity diagnosis, not checkpoint selection or evidence of training superiority"
+}
