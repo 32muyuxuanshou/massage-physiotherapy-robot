@@ -13,6 +13,9 @@ class CameraHead(nn.Module):
         self.mode = mode
         self.register_buffer('metric_mean', torch.as_tensor(metric_mean).float())
         self.register_buffer('metric_std', torch.as_tensor(metric_std).float().clamp_min(1e-4))
+        # TRAIN-constant channels have no learned effect; never amplify unseen
+        # principal-point changes through the arbitrary standard-deviation floor.
+        self.register_buffer('metric_active', torch.as_tensor(metric_std)>0)
         self.rgb = nn.Sequential(nn.LayerNorm(1280), nn.Linear(1280, 128), nn.GELU())
         self.metric = nn.Sequential(nn.Linear(len(metric_mean), 128), nn.GELU(), nn.Linear(128, 128), nn.GELU())
         self.output = nn.Sequential(nn.Linear(256, 128), nn.GELU(), nn.Linear(128, 3))
@@ -21,6 +24,7 @@ class CameraHead(nn.Module):
 
     def forward(self, rgb, metric, original_camera, K, center, box, available):
         g = (metric-self.metric_mean)/self.metric_std
+        g = torch.where(self.metric_active, g, torch.zeros_like(g))
         if self.mode == 'rgb_only_xyz':
             g = g*0  # actual absence of measured-Depth features, not a renamed RGB-D model
         change = self.output(torch.cat((self.rgb(rgb), self.metric(g)), -1))

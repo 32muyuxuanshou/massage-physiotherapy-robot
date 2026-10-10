@@ -1,0 +1,48 @@
+{
+  "timestamp_Beijing": "2026-10-11 01:12",
+  "state": "READY_TO_START_ORIGINAL_RENDERER_CONTINUATION",
+  "deadline_Beijing": "2026-10-11 09:00",
+  "stop_training_unix": 1791677700,
+  "completed": [
+    "218 CUDA QA",
+    "TRAIN/VAL compact export and verified transfer",
+    "9 native Camera-only cells x 30 epochs",
+    "3072 textured scan Official caches",
+    "AutoDL original raster analytic and gradient QA",
+    "constant TRAIN feature repair, native exact invariant",
+    "scan/parent transfer SHA verified"
+  ],
+  "running": [
+    "218 repaired native held-out B evaluation"
+  ],
+  "pending": [
+    "matched 3-seed native-only/mixed continuation20",
+    "Depth ablations and scan VAL/group evaluation",
+    "continuation held-out B evaluation",
+    "visualizations and final backup/Git"
+  ],
+  "unused": "Anchor weak loss QA only; no alternative training executed",
+  "servers": {
+    "218": {
+      "host": "172.18.6.218",
+      "port": 436,
+      "root": "/raid5/xuhd/rgbd_sam3d/r5_camera_overnight_v1",
+      "shutdown": false
+    },
+    "AutoDL": {
+      "host": "connect.cqa1.seetacloud.com",
+      "port": 39846,
+      "root": "/root/autodl-tmp/rgbd_sam3d/runs/r5_camera_overnight_v1",
+      "shutdown": "only after no longer needed and backup verified"
+    }
+  },
+  "quota_policy": {
+    "monitor_id": "r5",
+    "interval_minutes": 30,
+    "threshold_remaining_percent": 5,
+    "action": "pause Codex orchestration until resetsAt; keep server programs running",
+    "stable_long_run_exit": "preflight PASS + actual epoch advancement + best/last saved + independent process"
+  },
+  "model_selection": "native VAL only; no TEST or B fit/selection",
+  "normalization_bug_fix": "See NORMALIZATION_FIX.md; unmasked run stopped after preserving outputs; no retraining or B-derived mask"
+}

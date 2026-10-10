@@ -1,0 +1,127 @@
+{
+  "status": "PASS",
+  "channels": [
+    15,
+    16
+  ],
+  "constant_value": [
+    0.5,
+    0.5
+  ],
+  "rationale": "Previously unseen real principal point produced normalized magnitudes24/118 through std floor1e-4; untrained channel weights caused metre-scale false Camera changes",
+  "native_outputs_exact_equal": true,
+  "retraining": false,
+  "weight_tuning": false,
+  "historical_results_preserved": "/root/autodl-tmp/rgbd_sam3d/runs/r5_camera_overnight_v1/native_v1_unmasked",
+  "receipts": [
+    {
+      "cell": "metric_xyz_s11",
+      "file": "best.pt",
+      "parent_sha256": "eb4dd134aed65e777c9ebd32f37e7a7ff75ac3aa053143a0051ae4dbd6ce7be2",
+      "repaired_sha256": "d6750678e8ce82bea6fcb261ca55fc8c4d886f9f3c9c7de814aff2f619d6c2fd"
+    },
+    {
+      "cell": "metric_xyz_s11",
+      "file": "last.pt",
+      "parent_sha256": "c8b3071c15fe5431526d8c31c24de1a8856c227214076a7a72606a517e89d0ca",
+      "repaired_sha256": "e86b798c7815c6ea22012a069ae281c8111bff9d79e023d6bf04390fe434947f"
+    },
+    {
+      "cell": "metric_xyz_s23",
+      "file": "best.pt",
+      "parent_sha256": "d67f68f7b760c1ab2b306891b22fa1ad1d56ac7ab74bf62b5af3c980d63185d6",
+      "repaired_sha256": "d3ac7c962727ee84f784f2ba597560d5da7bcd87db4012abb3dcfb59b682c770"
+    },
+    {
+      "cell": "metric_xyz_s23",
+      "file": "last.pt",
+      "parent_sha256": "1c23a86259f3b1416fca1fd2297e42f4d35d59880cda42d7de2b6ae7dab6d8c2",
+      "repaired_sha256": "dbf1ea7530999d1fccf299c06dc24bfa7d19a4560536998d93b01da3e6b7c051"
+    },
+    {
+      "cell": "metric_xyz_s37",
+      "file": "best.pt",
+      "parent_sha256": "3d3b4979545b71a6b96e49e6e77d8aae5da747b1ddcab9a5573174bd5795adac",
+      "repaired_sha256": "5994d22008952915041706d0a7d12e9742a0a7cf4ab2d9df2d0c804323e7a7f0"
+    },
+    {
+      "cell": "metric_xyz_s37",
+      "file": "last.pt",
+      "parent_sha256": "ce7f63a2aa6502b5f3ada89e3fad2896c71e2e8e4306a3a5d446785ac6d93641",
+      "repaired_sha256": "1c318c2064f4034fe86b9d67c0103fe5b95401477c1fb9669866bf8fd91cd107"
+    },
+    {
+      "cell": "raw_bounded_s11",
+      "file": "best.pt",
+      "parent_sha256": "2c0fe703c31e720c6990eaec63bc9227a82e6509c4a33854a1c20a90a3ead938",
+      "repaired_sha256": "fde22e86b151497aec3e0edc0c6af8e4936cecde0133ed7e2f214e90b4faa825"
+    },
+    {
+      "cell": "raw_bounded_s11",
+      "file": "last.pt",
+      "parent_sha256": "55fd46f98969e887d942fff3137325988e82e7cfa1eedb8c328d5d37ab15c268",
+      "repaired_sha256": "ce43f5b54b4cf7f37cb006d2ea27379813ff7731d91086cb9f25929a8de08934"
+    },
+    {
+      "cell": "raw_bounded_s23",
+      "file": "best.pt",
+      "parent_sha256": "370ee37e9a38c5300c45c562f6504d17cb1bf5199bfa33914290ef7804160c0f",
+      "repaired_sha256": "a31c7e33bb9244eb64aca3ea510de2c1f64f9cc3d15e9b43bcd38d6048feb222"
+    },
+    {
+      "cell": "raw_bounded_s23",
+      "file": "last.pt",
+      "parent_sha256": "14cd0df0adb91a794de5e19e1f8b8f1a39ce6128166ea53949b9c757f7cc26d1",
+      "repaired_sha256": "78063c8720116fbb71a955f572071067751a118f6222b0cc2d6f767a1ed4f791"
+    },
+    {
+      "cell": "raw_bounded_s37",
+      "file": "best.pt",
+      "parent_sha256": "0b5f17d45cdd827f5787840e69021d1051ecd1c14f5937327ee782d9183e0d88",
+      "repaired_sha256": "530344c983b7bc6083eca30d761db109699390f23a1ad504b6b0f539de7dd7ca"
+    },
+    {
+      "cell": "raw_bounded_s37",
+      "file": "last.pt",
+      "parent_sha256": "445f8c38153c636b2fea8df48867b8351284191fee1ab3adfe46d63c7485c830",
+      "repaired_sha256": "e446b3ca8b1135eee94482f8b2a97e29471ed751ce6070b3ebfef83f3a879bf2"
+    },
+    {
+      "cell": "rgb_only_xyz_s11",
+      "file": "best.pt",
+      "parent_sha256": "b92d35612605a2984e33d62261458b1bd989cc092d60b223f2031157b7b1765a",
+      "repaired_sha256": "b7e3fd4339e974b9cdf33d5c789319d82fc845b834e3fb70507f15c36539922d"
+    },
+    {
+      "cell": "rgb_only_xyz_s11",
+      "file": "last.pt",
+      "parent_sha256": "60e85c2bc93094125691086938bd1294256160e58b1c4a4086257248a6c189a5",
+      "repaired_sha256": "c1164d4579dee14786666b6abc8535c8d9bea60234440fbd75a0975203ad1679"
+    },
+    {
+      "cell": "rgb_only_xyz_s23",
+      "file": "best.pt",
+      "parent_sha256": "fd5f9059baa4593effc7b890284234e7896087fc8c68a2b6bb462a345fbc1e96",
+      "repaired_sha256": "4427ae20b20ec9a2ec796d04a114fd60fa9527d1f136e586e461d19eb4899b11"
+    },
+    {
+      "cell": "rgb_only_xyz_s23",
+      "file": "last.pt",
+      "parent_sha256": "3110ac3bd3d9ba6f8e488c3a9248fd8dbbec4a0bfcb579a0759d6aa2c16af9af",
+      "repaired_sha256": "705eb277a0602437d440bdbb0ef38a6f36e662b657836e2096c95076a898ddfe"
+    },
+    {
+      "cell": "rgb_only_xyz_s37",
+      "file": "best.pt",
+      "parent_sha256": "f4b123cafa88b4549cd603d14aa063e15695d0efc3238eb3898081e0091cf461",
+      "repaired_sha256": "bb3c5094c69f6bdc58fd3d408b365c32134de8809094adc1339f2a38af5bf8de"
+    },
+    {
+      "cell": "rgb_only_xyz_s37",
+      "file": "last.pt",
+      "parent_sha256": "45fad9eb03cd7ead8656cb0bfc57e248a444a95c85cb2a20dca80ccedaf7950e",
+      "repaired_sha256": "a248bf653e8210353ece6b199e7cd2526c916bf6788e93b2c8eee371eea3d514"
+    }
+  ],
+  "TEST_read": false
+}

@@ -13,7 +13,7 @@
 |23:54–00:45|218环境、已有数据/权重核实；旧TRAIN/VAL缓存压缩迁移；Camera头能力范围与正向QA|CUDA实测、迁移SHA、范围审计、Body精确保持、缺Depth回退|
 |00:45–02:00|Camera-only原生GT训练；三个头各seeds11/23/37，先检查首个epoch再继续30epochs|9个best/last、逐seed曲线、400张VAL逐身份指标|
 |同时，约00:45–03:00|3,072张新scan只做冻结Official RGB初始化；5卡分片；所有视角/截断保留|完整MHR输出、K、原始/更新Camera、输入SHA、无伪root标签|
-|02:00–06:30|若scan初始化和梯度检查完成：以同一native预训练状态比较继续native-only vs加入scan表面弱监督；各3seeds，追加20epochs；先冻结TRAIN梯度量级校准|native曝光/更新次数一致、额外scan计算单列、固定权重回执、逐seed曲线|
+|02:00–06:30|scan初始化已完成；原GPU渲染与梯度检查通过后：以同一native预训练状态比较继续native-only vs加入scan表面弱监督；各3seeds，追加20epochs；先冻结TRAIN梯度量级校准|native曝光/更新次数一致、额外scan计算单列、固定权重回执、逐seed曲线|
 |06:30–08:15|冻结checkpoint后Depth消融、scan条件分组和真实232帧评价；保留Official＋Txyz强基线|正确/扰乱/缺失Depth、独立B表面评价、P95失败、实际耗时|
 |08:15–09:00|不启动新训练；已运行训练在完整epoch边界保存；生成图表、结果包、本地备份与Git交付|完成/部分/失败分别记录、SHA回执、最终目录及commit|
 
@@ -45,15 +45,17 @@ Depth + rays + K + 固定Body统计 → 小Camera头 → t_final
 
 原生监督只用逐图、逐轴Smooth-L1 Camera，beta=0.05m；AdamW lr3e-4、weight decay1e-4、有效batch16、clip1、cosine/2epoch warm-up。沿用历史可对账起点，不称最优。Body固定时局部/去平移误差应不变；不能声称Pose/Shape改善。
 
-扫描弱监督必须另记监督来源。优先检验实际可微几何链；如本机无法完成原渲染器编译，允许预先独立命名的**点到固定表面Anchor的3D弱监督替代实验**，仅训练Camera，不把它称为渲染深度loss或精确三角面loss。权重只能由固定TRAIN批次的输出平移梯度比冻结；不能使用真实B或scan VAL调权重。native-only与mixed必须从同一预训练last状态起步，native批次和更新数完全一致。无法通过梯度QA则不运行混训。
+扫描弱监督使用**原nvdiffrast透视渲染器、640×480原始K**：完整clean person-mask内逐图Smooth-L1 axial Z（beta .02m，未命中Z=0仍计入），加逐图antialiased silhouette IoU。固定TRAIN32 native +32 scan测米制Camera输出梯度范数，分别冻结Z/轮廓相对于Camera监督的权重。不得用VAL或B改权重。native-only与mixed从同一预训练last状态起步，optimizer与native shuffle状态相同，追加20epoch相同cosine日程；native每批16、mixed另加scan4。记录每轮实际native顺序SHA以及scan曝光。两个几何项可能与衣物/Body误差冲突，要报告失败而不回调权重。
+
+用户00:49恢复既有AutoDL GPU并明确“不需要替代”。已核实RTX6000D 85,651MiB、Torch2.12.1 cu130、原RasterizeCudaContext可用。218上此前仅做过Anchor梯度QA，**没有启动该替代训练**，该QA更名`ANCHOR_QA_UNUSED.json`，不作为正式Gate。正式扫描监督和两组续训在AutoDL同一环境完成；此前native30epoch预训练在218 Torch2.5.1 cu118完成，迁移不会改变两组相同起点。环境变化公开记录。
 
 checkpoint选择只用原生合成VAL的Camera L2等权均值；scan/真实结果不回流选模型。scan的衣物表面仅为弱几何监督，不是MHR解剖对应真值。新旧架构和监督变化分别披露。
 
 ## 并行与稳定运行
 
-- 218：172.18.6.218:436，8×2080Ti；0/1/2用于三个训练seed并行；3–7用于扫描初始化。按实际显存/吞吐调整并发，不假设显存空闲等于算力空闲。
+- 218：172.18.6.218:436，8×2080Ti；已完成9组native训练和5卡scan初始化。后续优先CPU独立B评价和备份。AutoDL既有RTX6000D负责3个seed的续训并发，先测实际吞吐/显存。
 - 工作目录：`/raid5/xuhd/rgbd_sam3d/r5_camera_overnight_v1`。
-- 每个epoch保存best/last、optimizer、scheduler和随机状态。服务器队列由独立进程运行，断开SSH/聊天不停止；禁止关闭服务器。
+- 每个epoch保存best/last、optimizer、scheduler和随机状态。服务器队列由独立进程运行，断开SSH/聊天不停止；218不关闭；AutoDL按用户最新授权，在本轮不再需要且结果已备份后可关闭。
 - 停止新科学任务时间08:15；09:00是本轮收尾目标，不是服务器关机时间。
 
 ## Codex低额度等待

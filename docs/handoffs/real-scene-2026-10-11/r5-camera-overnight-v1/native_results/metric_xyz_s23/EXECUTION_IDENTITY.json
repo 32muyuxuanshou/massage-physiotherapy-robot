@@ -1,0 +1,22 @@
+{
+  "mode": "metric_xyz",
+  "seed": 23,
+  "lr": 0.0003,
+  "epochs": 30,
+  "batch_size": 16,
+  "data_manifest_sha256": "6c251ce17628843529fe343ea04fd42c4a35ac378693dac7cde1f6015bdacb9f",
+  "source_sha256": {
+    "camera_head.py": "83d877155af76244384de6be5ac4000a63d1a829606f3fba660f457f063aff9c",
+    "train_camera.py": "51fb404734f81f5bcebeb25b2774aa22d74327e742c6ad19a5de37cfe12d0986",
+    "run_native_queue.py": "e6016229ee0346ab8b238de6a5044447ac55d833c5fd593f5cd2e2c7dc47986b",
+    "preflight.py": "84b4126affc2b4e2bf436ce3d104cecc8d1ce82b437b92e647b7f78e33fc5a1f",
+    "prepare_scan.py": "f87a537881391b437288c1ad757104e09e095fe9870d8bbfd6a5b0ac36ad2ee7",
+    "export_compact.py": "e26df0072858f6a0dffc622ab167a12e828d572507704bd60cb5e67c40d12bbe"
+  },
+  "supervision": "mean per-axis SmoothL1 native GT Camera, beta=.05 metres",
+  "checkpoint_selection": "native VAL identity-equal Camera L2 mean",
+  "body_path": "full frozen Official cached RGB output; no early fusion",
+  "rgb_representation": "pooled frozen backbone 1280; explicit new pilot representation",
+  "test_read": false,
+  "camera_B_read": false
+}
