@@ -4,11 +4,15 @@
 
 **主线：**R3/R3.1/R4及R4.1公平Txyz诊断已完成。R4.1复用232帧原始A采样/固定B点与六个R4 Best模型，Official+Txyz逐帧trace/顶点/指标回归差值0。G1+Txyz三seed VAL median/P95为19.26/97.27、12.47/47.70、14.98/60.95mm，均未超过Official+Txyz 11.23/41.60mm；TRAIN median优势主要由救回11个Official超限帧贡献，正常应用帧三seed平均配对误差均更高。p001196及腰/四肢尾部仍恶化。工程维持Official+Txyz，研究建议先Camera/Body解耦再人体几何；不据此宣称真实Pose/Shape/穴位优势。见[R4.1最终报告](handoffs/real-scene-2026-10-10/rgbd-sam3d-r41-fair-txyz/FINAL_REPORT.md)、[逐身份](handoffs/real-scene-2026-10-10/rgbd-sam3d-r41-fair-txyz/PER_IDENTITY.md)。TEST未读；本轮零训练/新推理，3248条帧方法评价、48张固定对照图及缓存自审PASS。完整证据备份到本地与218持久服务器；11:23执行AutoDL关机exit0、SSH随后拒绝连接；交付后暂停，不自动续训。R4公制响应证据仍成立，不将它等同人体几何精度。
 
+**最新R4.2：**232帧全量Camera/Body双向交换完成。保持Official Body并用G1 Camera＋Txyz，VAL三个seed为19.69/56.38、12.26/45.05、15.36/50.52mm，尾部低于耦合G1，但仍未超过Official＋Txyz。相同Body的最终Camera仍有14–26mm逐帧中位差异，不能把Txyz后差距全归给人体参数。39系数Camera-only头实际以18 TRAIN身份的A伪监督训练、TRAIN内留一身份选λ，VAL＋Txyz29.98/81.59mm，失败不晋升；训练域与R4合成不同，不声称架构公平排名。全程TEST未读，B只评价；1856新网格组/5568缓存文件与8组距离重放自审PASS，27帧×3seed＝81张图含全部11旧fallback。几何/训练在本地CPU，无卡AutoDL仅CPU接口QA与RGB导出。当前不启动大训练；工程保留Official＋Txyz，研究保留独立Camera路径，下一项是同合成数据的final-only Camera短跑与可见表面监督。见[R4.2报告](handoffs/real-scene-2026-10-10/rgbd-sam3d-r42-camera-body-decoupling/FINAL_REPORT.md)。
+
 ## 目标
 
 真实**俯卧背部 RGB-D → 双模态融合 → 个体原生 MHR Mesh → 标准模板固定拓扑点位传播 → 后续机器人坐标接口**。工程效果与可发表的方法贡献并行推进，表面距离、点位稳定性、医学准确率及部署精度分别验收。本轮优先人体几何，不训练独立穴位网络；目前无部署相机和独立临床穴位真值。
 
 ## 最新实际交付
+
+[R4.2 Camera/Body解耦与CPU小模型验证](handoffs/real-scene-2026-10-10/rgbd-sam3d-r42-camera-body-decoupling/README.md)：支持人体路径隔离以减少尾部干扰，但位置与小模型仍不可靠，不替代Official＋Txyz；完整逐人逐帧、81图、原生缓存/模型私有备份及执行自审交付。
 
 [Official＋Txyz三种子重复检查](handoffs/real-scene-2026-10-10/rgbd-sam3d-r41-official-seed-audit/README.md)：缓存Official初值、Anchor和A/B点集固定，在Python/NumPy seeds 11/23/37下实际复跑696次Txyz/精确B评价，所有trace/平移/网格/逐点距离差异0，TRAIN 24.65/80.32、VAL 11.23/41.60mm，重复SD为0。这是缓存算法重复性，不是三个Official训练模型，也未检查重新运行GPU的数值波动；G0/G1三训练seed的波动保留，R4.1结论不变。全本地执行，AutoDL保持关机。
 

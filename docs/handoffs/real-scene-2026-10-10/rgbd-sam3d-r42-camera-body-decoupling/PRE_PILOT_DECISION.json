@@ -1,0 +1,24 @@
+{
+  "status": "PARTIAL_SUPPORT_CAMERA_ONLY_PILOT",
+  "evidence": {
+    "11": {
+      "VAL_p95_body_fixed": 56.375834421929966,
+      "VAL_p95_g1": 97.26822138715927,
+      "camera_only_fallback": 0
+    },
+    "23": {
+      "VAL_p95_body_fixed": 45.05186624926577,
+      "VAL_p95_g1": 47.69792568908708,
+      "camera_only_fallback": 0
+    },
+    "37": {
+      "VAL_p95_body_fixed": 50.51753737908555,
+      "VAL_p95_g1": 60.9465835969284,
+      "camera_only_fallback": 0
+    }
+  },
+  "reason": "All three exchanged fixed-body P95 improve over coupled G1; all old 11 fallback cases avoid fallback. However none beats Official+Txyz on VAL and median is mixed.",
+  "authorized_next": "Tiny real TRAIN A-only pseudo-supervised Camera head; no large training. Model frozen before its B evaluation.",
+  "pre_pilot_head_B_evaluation": false,
+  "mechanical_exchange_is_final_model": false
+}

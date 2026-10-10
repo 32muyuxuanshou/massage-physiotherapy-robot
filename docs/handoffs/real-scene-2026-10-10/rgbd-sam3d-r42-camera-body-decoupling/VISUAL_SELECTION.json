@@ -1,0 +1,2034 @@
+{
+  "selection": "16 unchanged historical review frames UNION all 11 historical Official fallback frames; before new model outcome selection",
+  "historical_keys": [
+    "p001196_a000388_000011",
+    "p001196_a000388_000040",
+    "p001196_a000388_000069",
+    "p001196_a000388_000098",
+    "p001196_a000388_000127",
+    "p001196_a000388_000156",
+    "p001196_a000388_000185",
+    "p001196_a000388_000214",
+    "p100072_a001242_000048",
+    "p100072_a001242_000063",
+    "p001202_a001230_000021",
+    "p001202_a001230_000040",
+    "p100069_a005191_000006",
+    "p001202_a001230_000028",
+    "p001194_a000062_000005",
+    "p001199_a001398_000001"
+  ],
+  "original_fallback_keys": [
+    "p001195_a000053_000006",
+    "p001195_a000053_000021",
+    "p001195_a000053_000037",
+    "p001195_a000053_000052",
+    "p001195_a000053_000068",
+    "p001195_a000053_000083",
+    "p001195_a000053_000114",
+    "p001195_a000986_000011",
+    "p001195_a000986_000096",
+    "p001195_a000986_000182",
+    "p001195_a000986_000210"
+  ],
+  "records": [
+    {
+      "sequence": "p001194_a000062",
+      "identity": "p001194",
+      "role": "VAL",
+      "frame": 5,
+      "views": {
+        "kinect_000": {
+          "file": "p001194_a000062/kinect_000_000005.npz",
+          "sha256": "523ec3fdadf553e2715d71661e2fae37eb87ebcf08be461788c4d8d120d8c4aa",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 29449,
+          "person_points": 29449,
+          "depth_range_m": [
+            1.4846975803375244,
+            2.4080982208251953
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 29449,
+            "projected_inside_color_image": 29449,
+            "projected_person_points_after_front_surface_filter": 29449,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 29449,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001194_a000062/kinect_001_000005.npz",
+          "sha256": "88ff3145d6a9140b6d80425f78ad1e965a7f767da28b93014fd29b0c36454b77",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 24873,
+          "person_points": 24873,
+          "depth_range_m": [
+            1.474224328994751,
+            2.9158966541290283
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 24873,
+            "projected_inside_color_image": 24873,
+            "projected_person_points_after_front_surface_filter": 24873,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 24873,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001194_a000062_000005.pt",
+      "key": "p001194_a000062_000005"
+    },
+    {
+      "sequence": "p001195_a000053",
+      "identity": "p001195",
+      "role": "TRAIN",
+      "frame": 6,
+      "views": {
+        "kinect_000": {
+          "file": "p001195_a000053/kinect_000_000006.npz",
+          "sha256": "b81b6eb0cbb510f9336519f223d89b8a196c6cd6528d60663771c1a9af1a597e",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 18991,
+          "person_points": 18991,
+          "depth_range_m": [
+            1.3198010921478271,
+            2.6189186573028564
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 18991,
+            "projected_inside_color_image": 18991,
+            "projected_person_points_after_front_surface_filter": 18991,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 18991,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001195_a000053/kinect_001_000006.npz",
+          "sha256": "ad21cac63b247515fdcf1bcc3353fd93440c6208cd0def1453be020d516d884a",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 18700,
+          "person_points": 18700,
+          "depth_range_m": [
+            1.727060317993164,
+            2.4664559364318848
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 18700,
+            "projected_inside_color_image": 18700,
+            "projected_person_points_after_front_surface_filter": 18700,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 18700,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001195_a000053_000006.pt",
+      "key": "p001195_a000053_000006"
+    },
+    {
+      "sequence": "p001195_a000053",
+      "identity": "p001195",
+      "role": "TRAIN",
+      "frame": 21,
+      "views": {
+        "kinect_000": {
+          "file": "p001195_a000053/kinect_000_000021.npz",
+          "sha256": "5e727a84a094a5f5d4a51929126bdcc687ed80af987c4548dfca7785d5c7be9c",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 19196,
+          "person_points": 19196,
+          "depth_range_m": [
+            1.8140285015106201,
+            2.5761075019836426
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 19196,
+            "projected_inside_color_image": 19196,
+            "projected_person_points_after_front_surface_filter": 19196,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 19196,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001195_a000053/kinect_001_000021.npz",
+          "sha256": "033742fd53371c475600a994bc6bf58cfaff47816eb7e38b1e7dd1f18aa1ed51",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 18812,
+          "person_points": 18812,
+          "depth_range_m": [
+            1.71934974193573,
+            2.4131577014923096
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 18812,
+            "projected_inside_color_image": 18812,
+            "projected_person_points_after_front_surface_filter": 18812,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 18812,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001195_a000053_000021.pt",
+      "key": "p001195_a000053_000021"
+    },
+    {
+      "sequence": "p001195_a000053",
+      "identity": "p001195",
+      "role": "TRAIN",
+      "frame": 37,
+      "views": {
+        "kinect_000": {
+          "file": "p001195_a000053/kinect_000_000037.npz",
+          "sha256": "ee0b25a2c31d8c886ba62d01315aa7a43308be6a9b74df63e6b3896b6c9b9874",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 23422,
+          "person_points": 23422,
+          "depth_range_m": [
+            1.1470239162445068,
+            2.6103577613830566
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 23423,
+            "projected_inside_color_image": 23423,
+            "projected_person_points_after_front_surface_filter": 23422,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 23422,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001195_a000053/kinect_001_000037.npz",
+          "sha256": "96c6aa8c85aeb02dec2581ab5aad97254618640a5276b90b99da81ae17b5900c",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 24345,
+          "person_points": 24345,
+          "depth_range_m": [
+            1.2349300384521484,
+            2.595906972885132
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 24345,
+            "projected_inside_color_image": 24345,
+            "projected_person_points_after_front_surface_filter": 24345,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 24345,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001195_a000053_000037.pt",
+      "key": "p001195_a000053_000037"
+    },
+    {
+      "sequence": "p001195_a000053",
+      "identity": "p001195",
+      "role": "TRAIN",
+      "frame": 52,
+      "views": {
+        "kinect_000": {
+          "file": "p001195_a000053/kinect_000_000052.npz",
+          "sha256": "6dfb60435367eb2de90a5d0c1ab4595670f3437c5ec17f215ea021a904cb380b",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 20851,
+          "person_points": 20851,
+          "depth_range_m": [
+            1.2648488283157349,
+            2.672851085662842
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 20851,
+            "projected_inside_color_image": 20851,
+            "projected_person_points_after_front_surface_filter": 20851,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 20851,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001195_a000053/kinect_001_000052.npz",
+          "sha256": "7fbac4e29f65935a2c129376b7e699d6f52828e158c44df8200d165327760828",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 21726,
+          "person_points": 21726,
+          "depth_range_m": [
+            1.1124298572540283,
+            2.6705780029296875
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 21726,
+            "projected_inside_color_image": 21726,
+            "projected_person_points_after_front_surface_filter": 21726,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 21726,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001195_a000053_000052.pt",
+      "key": "p001195_a000053_000052"
+    },
+    {
+      "sequence": "p001195_a000053",
+      "identity": "p001195",
+      "role": "TRAIN",
+      "frame": 68,
+      "views": {
+        "kinect_000": {
+          "file": "p001195_a000053/kinect_000_000068.npz",
+          "sha256": "b9eb05bdcf550c3e928dfdabdd8ab502254523adf4bb1db98a83c13dde6985dd",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 20216,
+          "person_points": 20216,
+          "depth_range_m": [
+            1.0444601774215698,
+            2.679124355316162
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 20216,
+            "projected_inside_color_image": 20216,
+            "projected_person_points_after_front_surface_filter": 20216,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 20216,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001195_a000053/kinect_001_000068.npz",
+          "sha256": "1ccbb4b9ff66cbb5ca422994f82c088a316d8fbf1fb91e6bb8bd8135eafa6094",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 21435,
+          "person_points": 21435,
+          "depth_range_m": [
+            1.0754942893981934,
+            2.61551833152771
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 21435,
+            "projected_inside_color_image": 21435,
+            "projected_person_points_after_front_surface_filter": 21435,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 21435,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001195_a000053_000068.pt",
+      "key": "p001195_a000053_000068"
+    },
+    {
+      "sequence": "p001195_a000053",
+      "identity": "p001195",
+      "role": "TRAIN",
+      "frame": 83,
+      "views": {
+        "kinect_000": {
+          "file": "p001195_a000053/kinect_000_000083.npz",
+          "sha256": "889427246960050df41b5343fe3e5ae1443d0381df560ef5f8f06da6bdf8f374",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 18450,
+          "person_points": 18450,
+          "depth_range_m": [
+            1.333083152770996,
+            2.6181869506835938
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 18450,
+            "projected_inside_color_image": 18450,
+            "projected_person_points_after_front_surface_filter": 18450,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 18450,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001195_a000053/kinect_001_000083.npz",
+          "sha256": "af6cc1041beb9d9fc5864c984b4b91dc9f3c1e6feec99a36f5c4e9c739fe8837",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 18945,
+          "person_points": 18945,
+          "depth_range_m": [
+            1.23097825050354,
+            2.451820135116577
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 18946,
+            "projected_inside_color_image": 18946,
+            "projected_person_points_after_front_surface_filter": 18945,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 18945,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001195_a000053_000083.pt",
+      "key": "p001195_a000053_000083"
+    },
+    {
+      "sequence": "p001195_a000053",
+      "identity": "p001195",
+      "role": "TRAIN",
+      "frame": 114,
+      "views": {
+        "kinect_000": {
+          "file": "p001195_a000053/kinect_000_000114.npz",
+          "sha256": "4d9e66d0e813f3f9f72ce9481d80768c5c19304c44614cc27cf6cb5c17c49e2c",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 19292,
+          "person_points": 19292,
+          "depth_range_m": [
+            1.3135497570037842,
+            2.595933198928833
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 19292,
+            "projected_inside_color_image": 19292,
+            "projected_person_points_after_front_surface_filter": 19292,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 19292,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001195_a000053/kinect_001_000114.npz",
+          "sha256": "903bdfbb76a13ceb7e4620d30e301483890245055932bdffdd073eb07e3146b5",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 17760,
+          "person_points": 17760,
+          "depth_range_m": [
+            1.7167515754699707,
+            2.4438436031341553
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 17760,
+            "projected_inside_color_image": 17760,
+            "projected_person_points_after_front_surface_filter": 17760,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 17760,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001195_a000053_000114.pt",
+      "key": "p001195_a000053_000114"
+    },
+    {
+      "sequence": "p001195_a000986",
+      "identity": "p001195",
+      "role": "TRAIN",
+      "frame": 11,
+      "views": {
+        "kinect_000": {
+          "file": "p001195_a000986/kinect_000_000011.npz",
+          "sha256": "a63c7fe9c9aa0a5a249d84932b0ee0ca30da2b609ecac4166eff273492d70083",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 17237,
+          "person_points": 17237,
+          "depth_range_m": [
+            1.9757417440414429,
+            2.7211077213287354
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 17237,
+            "projected_inside_color_image": 17237,
+            "projected_person_points_after_front_surface_filter": 17237,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 17237,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001195_a000986/kinect_001_000011.npz",
+          "sha256": "faf0ea44e3aaf47775323c7bd42de4afb4bb734299e28b89c2b1923c2626ea2e",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 17140,
+          "person_points": 17140,
+          "depth_range_m": [
+            1.5116827487945557,
+            2.5676586627960205
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 17140,
+            "projected_inside_color_image": 17140,
+            "projected_person_points_after_front_surface_filter": 17140,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 17140,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001195_a000986_000011.pt",
+      "key": "p001195_a000986_000011"
+    },
+    {
+      "sequence": "p001195_a000986",
+      "identity": "p001195",
+      "role": "TRAIN",
+      "frame": 96,
+      "views": {
+        "kinect_000": {
+          "file": "p001195_a000986/kinect_000_000096.npz",
+          "sha256": "e46ffcee65346edea9acad40eb3ba4321d0efacf1984fdcf6b5d144650d5bbd6",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 19468,
+          "person_points": 19468,
+          "depth_range_m": [
+            1.4639267921447754,
+            2.687289237976074
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 19468,
+            "projected_inside_color_image": 19468,
+            "projected_person_points_after_front_surface_filter": 19468,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 19468,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001195_a000986/kinect_001_000096.npz",
+          "sha256": "1385e7c6b2006180bc2cddbe1fa511ed71425d18795433b70f48986e73aa7ccc",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 19333,
+          "person_points": 19333,
+          "depth_range_m": [
+            1.4233980178833008,
+            2.5542149543762207
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 19333,
+            "projected_inside_color_image": 19333,
+            "projected_person_points_after_front_surface_filter": 19333,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 19333,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001195_a000986_000096.pt",
+      "key": "p001195_a000986_000096"
+    },
+    {
+      "sequence": "p001195_a000986",
+      "identity": "p001195",
+      "role": "TRAIN",
+      "frame": 182,
+      "views": {
+        "kinect_000": {
+          "file": "p001195_a000986/kinect_000_000182.npz",
+          "sha256": "7741af88a3c0b998825356c642a1c1d783aecd4257672516f4a60f22642a6abc",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 21136,
+          "person_points": 21136,
+          "depth_range_m": [
+            1.6504170894622803,
+            2.677260398864746
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 21136,
+            "projected_inside_color_image": 21136,
+            "projected_person_points_after_front_surface_filter": 21136,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 21136,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001195_a000986/kinect_001_000182.npz",
+          "sha256": "3247be3c699eb3ca944b2dc419724479160c17f03250d3bf95e97f6998e16f41",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 18319,
+          "person_points": 18319,
+          "depth_range_m": [
+            1.2812172174453735,
+            2.6371705532073975
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 18320,
+            "projected_inside_color_image": 18320,
+            "projected_person_points_after_front_surface_filter": 18319,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 18319,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001195_a000986_000182.pt",
+      "key": "p001195_a000986_000182"
+    },
+    {
+      "sequence": "p001195_a000986",
+      "identity": "p001195",
+      "role": "TRAIN",
+      "frame": 210,
+      "views": {
+        "kinect_000": {
+          "file": "p001195_a000986/kinect_000_000210.npz",
+          "sha256": "d6a8b00d96c84fac5999bfbd2cd4783b12b32145a992dcd7ca0370a91c9ec784",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 17456,
+          "person_points": 17456,
+          "depth_range_m": [
+            1.4514323472976685,
+            2.7818450927734375
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 17456,
+            "projected_inside_color_image": 17456,
+            "projected_person_points_after_front_surface_filter": 17456,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 17456,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001195_a000986/kinect_001_000210.npz",
+          "sha256": "af8a0bf5c4b803ac0140654d3b027daa9221656d216854bac3ced72c2a93da4a",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 17066,
+          "person_points": 17066,
+          "depth_range_m": [
+            1.8761216402053833,
+            2.5984699726104736
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 17066,
+            "projected_inside_color_image": 17066,
+            "projected_person_points_after_front_surface_filter": 17066,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 17066,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001195_a000986_000210.pt",
+      "key": "p001195_a000986_000210"
+    },
+    {
+      "sequence": "p001196_a000388",
+      "identity": "p001196",
+      "role": "VAL",
+      "frame": 11,
+      "views": {
+        "kinect_000": {
+          "file": "p001196_a000388/kinect_000_000011.npz",
+          "sha256": "c8058e7df17b698724eb0687727f866c198e098aaf9fb6b2ad316e0c12402eb4",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 33131,
+          "person_points": 33131,
+          "depth_range_m": [
+            1.5277156829833984,
+            2.5300698280334473
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 33189,
+            "projected_inside_color_image": 33131,
+            "projected_person_points_after_front_surface_filter": 33131,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 33131,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001196_a000388/kinect_001_000011.npz",
+          "sha256": "a2e223eb514f2686a3d38c7ba116f741a208276de5462d22d6dd117907ac8f40",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 31592,
+          "person_points": 31592,
+          "depth_range_m": [
+            1.4795308113098145,
+            2.447180986404419
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 31592,
+            "projected_inside_color_image": 31592,
+            "projected_person_points_after_front_surface_filter": 31592,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 31592,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001196_a000388_000011.pt",
+      "key": "p001196_a000388_000011"
+    },
+    {
+      "sequence": "p001196_a000388",
+      "identity": "p001196",
+      "role": "VAL",
+      "frame": 40,
+      "views": {
+        "kinect_000": {
+          "file": "p001196_a000388/kinect_000_000040.npz",
+          "sha256": "3c5e015da45c3d05e2691c0400d39fb22bbf8cca97f0cc537d682e3bd3e6501e",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 34422,
+          "person_points": 34422,
+          "depth_range_m": [
+            1.3176937103271484,
+            2.6383297443389893
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 34423,
+            "projected_inside_color_image": 34423,
+            "projected_person_points_after_front_surface_filter": 34422,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 34422,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001196_a000388/kinect_001_000040.npz",
+          "sha256": "86bf55f6affa06e85fcc0f2c9c0547e988e05492e1c7c397d22ed173ce22ea85",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 32798,
+          "person_points": 32798,
+          "depth_range_m": [
+            1.228007435798645,
+            2.4139647483825684
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 32804,
+            "projected_inside_color_image": 32804,
+            "projected_person_points_after_front_surface_filter": 32798,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 32798,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001196_a000388_000040.pt",
+      "key": "p001196_a000388_000040"
+    },
+    {
+      "sequence": "p001196_a000388",
+      "identity": "p001196",
+      "role": "VAL",
+      "frame": 69,
+      "views": {
+        "kinect_000": {
+          "file": "p001196_a000388/kinect_000_000069.npz",
+          "sha256": "e55a3e14a8574bda9a0da309c5025005f11f135cb14b2ba86c7cb109c26b76d6",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 30904,
+          "person_points": 30904,
+          "depth_range_m": [
+            1.2995506525039673,
+            2.9139158725738525
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 30904,
+            "projected_inside_color_image": 30904,
+            "projected_person_points_after_front_surface_filter": 30904,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 30904,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001196_a000388/kinect_001_000069.npz",
+          "sha256": "832e4da473f0b6949795e0b5ee4ab4de2b0a863cca8b7280fbc528372da29e12",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 26500,
+          "person_points": 26500,
+          "depth_range_m": [
+            1.3136647939682007,
+            2.7231242656707764
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 26511,
+            "projected_inside_color_image": 26511,
+            "projected_person_points_after_front_surface_filter": 26500,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 26500,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001196_a000388_000069.pt",
+      "key": "p001196_a000388_000069"
+    },
+    {
+      "sequence": "p001196_a000388",
+      "identity": "p001196",
+      "role": "VAL",
+      "frame": 98,
+      "views": {
+        "kinect_000": {
+          "file": "p001196_a000388/kinect_000_000098.npz",
+          "sha256": "561ed888589485700ba208ef217ae485d1c0b2f8d0d3943e0428107c98fb58f4",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 35369,
+          "person_points": 35369,
+          "depth_range_m": [
+            1.4384669065475464,
+            2.5349783897399902
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 35518,
+            "projected_inside_color_image": 35369,
+            "projected_person_points_after_front_surface_filter": 35369,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 35369,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001196_a000388/kinect_001_000098.npz",
+          "sha256": "635de4ccc24c733807e0f84e64efd0dd14c915bf2562813f7ae62db66afabec9",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 31518,
+          "person_points": 31518,
+          "depth_range_m": [
+            1.4436742067337036,
+            2.48691463470459
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 31518,
+            "projected_inside_color_image": 31518,
+            "projected_person_points_after_front_surface_filter": 31518,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 31518,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001196_a000388_000098.pt",
+      "key": "p001196_a000388_000098"
+    },
+    {
+      "sequence": "p001196_a000388",
+      "identity": "p001196",
+      "role": "VAL",
+      "frame": 127,
+      "views": {
+        "kinect_000": {
+          "file": "p001196_a000388/kinect_000_000127.npz",
+          "sha256": "6440b85996743be2819201b9ddfdfbf2db5aa3900080ac48205fe739953cae09",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 34345,
+          "person_points": 34345,
+          "depth_range_m": [
+            1.4712270498275757,
+            2.885241985321045
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 34468,
+            "projected_inside_color_image": 34345,
+            "projected_person_points_after_front_surface_filter": 34345,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 34345,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001196_a000388/kinect_001_000127.npz",
+          "sha256": "756b85a001ddf79262e6e8b329750b4ea9af8601baba83936a378c7cfb26cd52",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 30096,
+          "person_points": 30096,
+          "depth_range_m": [
+            1.406930923461914,
+            2.4232449531555176
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 30096,
+            "projected_inside_color_image": 30096,
+            "projected_person_points_after_front_surface_filter": 30096,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 30096,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001196_a000388_000127.pt",
+      "key": "p001196_a000388_000127"
+    },
+    {
+      "sequence": "p001196_a000388",
+      "identity": "p001196",
+      "role": "VAL",
+      "frame": 156,
+      "views": {
+        "kinect_000": {
+          "file": "p001196_a000388/kinect_000_000156.npz",
+          "sha256": "31e1d5a49db1fc53fa0b5fe09e875d733aae2b77dd1ffb4e1faa2050cb1433c5",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 27011,
+          "person_points": 27011,
+          "depth_range_m": [
+            0.9047827124595642,
+            2.473480224609375
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 27020,
+            "projected_inside_color_image": 27020,
+            "projected_person_points_after_front_surface_filter": 27011,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 27011,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001196_a000388/kinect_001_000156.npz",
+          "sha256": "896d20d23d0c01da892c1fc9f0d2cbf12c98738ac9d057a6ac9b54f8b4c2fe14",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 30097,
+          "person_points": 30097,
+          "depth_range_m": [
+            1.1259031295776367,
+            2.4399940967559814
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 30097,
+            "projected_inside_color_image": 30097,
+            "projected_person_points_after_front_surface_filter": 30097,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 30097,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001196_a000388_000156.pt",
+      "key": "p001196_a000388_000156"
+    },
+    {
+      "sequence": "p001196_a000388",
+      "identity": "p001196",
+      "role": "VAL",
+      "frame": 185,
+      "views": {
+        "kinect_000": {
+          "file": "p001196_a000388/kinect_000_000185.npz",
+          "sha256": "90b976145e991d245b57be9f1fbb2b6642e107473799b1960c2891229131dc23",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 32674,
+          "person_points": 32674,
+          "depth_range_m": [
+            1.288889765739441,
+            2.471618890762329
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 32732,
+            "projected_inside_color_image": 32674,
+            "projected_person_points_after_front_surface_filter": 32674,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 32674,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001196_a000388/kinect_001_000185.npz",
+          "sha256": "c5d79dde025a2a5686ec23a2bbafe7a5c9eb7447b3cccf99282d2d2659831da2",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 32134,
+          "person_points": 32134,
+          "depth_range_m": [
+            1.3808332681655884,
+            2.4629175662994385
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 32134,
+            "projected_inside_color_image": 32134,
+            "projected_person_points_after_front_surface_filter": 32134,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 32134,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001196_a000388_000185.pt",
+      "key": "p001196_a000388_000185"
+    },
+    {
+      "sequence": "p001196_a000388",
+      "identity": "p001196",
+      "role": "VAL",
+      "frame": 214,
+      "views": {
+        "kinect_000": {
+          "file": "p001196_a000388/kinect_000_000214.npz",
+          "sha256": "f3c6f6133d5dbaf7a588db45e347f5d365f281cb5e6faa7a855a6e41ee4a721b",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 36951,
+          "person_points": 36951,
+          "depth_range_m": [
+            1.445970058441162,
+            2.48441219329834
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 37161,
+            "projected_inside_color_image": 36952,
+            "projected_person_points_after_front_surface_filter": 36951,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 36951,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001196_a000388/kinect_001_000214.npz",
+          "sha256": "93c525ef45ca6fd2275cfd0038bed2278edbaf02554cbfb89645e0e8d394128c",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 30322,
+          "person_points": 30322,
+          "depth_range_m": [
+            1.5276150703430176,
+            2.4374659061431885
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 30322,
+            "projected_inside_color_image": 30322,
+            "projected_person_points_after_front_surface_filter": 30322,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 30322,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001196_a000388_000214.pt",
+      "key": "p001196_a000388_000214"
+    },
+    {
+      "sequence": "p001199_a001398",
+      "identity": "p001199",
+      "role": "VAL",
+      "frame": 1,
+      "views": {
+        "kinect_000": {
+          "file": "p001199_a001398/kinect_000_000001.npz",
+          "sha256": "f4ff1ddcbcaffb64a3cb59430d8dc72bb7be2ad6074744915775a9952d0b7507",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 20454,
+          "person_points": 20454,
+          "depth_range_m": [
+            1.7010248899459839,
+            2.5290777683258057
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 20454,
+            "projected_inside_color_image": 20454,
+            "projected_person_points_after_front_surface_filter": 20454,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 20454,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001199_a001398/kinect_001_000001.npz",
+          "sha256": "d40bf578c1361097c28c09edfa34e0edd50b7c1199fd991bff1efc446ef610fe",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 19248,
+          "person_points": 19248,
+          "depth_range_m": [
+            1.6835856437683105,
+            2.521949291229248
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 19248,
+            "projected_inside_color_image": 19248,
+            "projected_person_points_after_front_surface_filter": 19248,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 19248,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001199_a001398_000001.pt",
+      "key": "p001199_a001398_000001"
+    },
+    {
+      "sequence": "p001202_a001230",
+      "identity": "p001202",
+      "role": "TRAIN",
+      "frame": 21,
+      "views": {
+        "kinect_000": {
+          "file": "p001202_a001230/kinect_000_000021.npz",
+          "sha256": "915a6dc85c5af9f3e21c54a6e95813b5e63195d6d579b18d74e9d08dea9d7f0e",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 28608,
+          "person_points": 28608,
+          "depth_range_m": [
+            1.8289461135864258,
+            2.923301935195923
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 28608,
+            "projected_inside_color_image": 28608,
+            "projected_person_points_after_front_surface_filter": 28608,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 28608,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001202_a001230/kinect_001_000021.npz",
+          "sha256": "20c9adf5b8a77e8b85600e6b5337be56dcc15732ed08fcd7fc78d67137133dad",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 27545,
+          "person_points": 27545,
+          "depth_range_m": [
+            1.6600242853164673,
+            2.7238385677337646
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 27547,
+            "projected_inside_color_image": 27546,
+            "projected_person_points_after_front_surface_filter": 27545,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 27545,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001202_a001230_000021.pt",
+      "key": "p001202_a001230_000021"
+    },
+    {
+      "sequence": "p001202_a001230",
+      "identity": "p001202",
+      "role": "TRAIN",
+      "frame": 28,
+      "views": {
+        "kinect_000": {
+          "file": "p001202_a001230/kinect_000_000028.npz",
+          "sha256": "439d1c80cd834c1bd4dbc06bfc965de04c3629d7d100975f652cb8d4a3894f26",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 28492,
+          "person_points": 28492,
+          "depth_range_m": [
+            1.8354213237762451,
+            2.9131391048431396
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 28492,
+            "projected_inside_color_image": 28492,
+            "projected_person_points_after_front_surface_filter": 28492,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 28492,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001202_a001230/kinect_001_000028.npz",
+          "sha256": "a011b0e8274e05dba7b2b8bafa9f122a07f16a4ca328358e9f5a95eeb270f9cb",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 27497,
+          "person_points": 27497,
+          "depth_range_m": [
+            1.661591649055481,
+            2.4793622493743896
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 27499,
+            "projected_inside_color_image": 27497,
+            "projected_person_points_after_front_surface_filter": 27497,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 27497,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001202_a001230_000028.pt",
+      "key": "p001202_a001230_000028"
+    },
+    {
+      "sequence": "p001202_a001230",
+      "identity": "p001202",
+      "role": "TRAIN",
+      "frame": 40,
+      "views": {
+        "kinect_000": {
+          "file": "p001202_a001230/kinect_000_000040.npz",
+          "sha256": "09b7bd21afa047d13aa6fb6a2f445d649a703860febd1947579f36cde4460552",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 28425,
+          "person_points": 28425,
+          "depth_range_m": [
+            1.3810063600540161,
+            2.926985025405884
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 28425,
+            "projected_inside_color_image": 28425,
+            "projected_person_points_after_front_surface_filter": 28425,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 28425,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p001202_a001230/kinect_001_000040.npz",
+          "sha256": "d5d1e03d3450712b8ae77431ca68539844a8061562d339ae752f6c4a1c24a7ff",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 27383,
+          "person_points": 27383,
+          "depth_range_m": [
+            1.6612910032272339,
+            2.529242515563965
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 27383,
+            "projected_inside_color_image": 27383,
+            "projected_person_points_after_front_surface_filter": 27383,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 27383,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p001202_a001230_000040.pt",
+      "key": "p001202_a001230_000040"
+    },
+    {
+      "sequence": "p100069_a005191",
+      "identity": "p100069",
+      "role": "TRAIN",
+      "frame": 6,
+      "views": {
+        "kinect_000": {
+          "file": "p100069_a005191/kinect_000_000006.npz",
+          "sha256": "981f6d6e48094cf9456797b185ce87d4787c04499f56281a3c6bea33606f3dba",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 22408,
+          "person_points": 22408,
+          "depth_range_m": [
+            1.1614959239959717,
+            2.592710018157959
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 22413,
+            "projected_inside_color_image": 22413,
+            "projected_person_points_after_front_surface_filter": 22408,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 22408,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p100069_a005191/kinect_001_000006.npz",
+          "sha256": "27845d4c7de0cda40f6e66b94adb702133cf2453a3d2a8cd9b47d28e3ce6bd07",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 24965,
+          "person_points": 24965,
+          "depth_range_m": [
+            1.3308073282241821,
+            2.4327807426452637
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 24965,
+            "projected_inside_color_image": 24965,
+            "projected_person_points_after_front_surface_filter": 24965,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 24965,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p100069_a005191_000006.pt",
+      "key": "p100069_a005191_000006"
+    },
+    {
+      "sequence": "p100072_a001242",
+      "identity": "p100072",
+      "role": "TRAIN",
+      "frame": 48,
+      "views": {
+        "kinect_000": {
+          "file": "p100072_a001242/kinect_000_000048.npz",
+          "sha256": "1b705b13a3a7770842af825fdb750fb4930b396045033eae8af224d9b428ebf7",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 12395,
+          "person_points": 12395,
+          "depth_range_m": [
+            1.337543249130249,
+            2.674809217453003
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 12395,
+            "projected_inside_color_image": 12395,
+            "projected_person_points_after_front_surface_filter": 12395,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 12395,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p100072_a001242/kinect_001_000048.npz",
+          "sha256": "d94328011b3a156069659ef03402408480ce1c2b05b16f805f4a831d23490732",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 15964,
+          "person_points": 15964,
+          "depth_range_m": [
+            1.4281370639801025,
+            2.815908908843994
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 15971,
+            "projected_inside_color_image": 15971,
+            "projected_person_points_after_front_surface_filter": 15964,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 15964,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p100072_a001242_000048.pt",
+      "key": "p100072_a001242_000048"
+    },
+    {
+      "sequence": "p100072_a001242",
+      "identity": "p100072",
+      "role": "TRAIN",
+      "frame": 63,
+      "views": {
+        "kinect_000": {
+          "file": "p100072_a001242/kinect_000_000063.npz",
+          "sha256": "51f45241e860e67ce9db89171a21ac638328ddf95e9e119d7c9f6b7fd778a3fc",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 12360,
+          "person_points": 12360,
+          "depth_range_m": [
+            1.3425931930541992,
+            2.653191328048706
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 12361,
+            "projected_inside_color_image": 12361,
+            "projected_person_points_after_front_surface_filter": 12360,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 12360,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "INPUT_OPTIMIZATION"
+        },
+        "kinect_001": {
+          "file": "p100072_a001242/kinect_001_000063.npz",
+          "sha256": "b617437f8c8fdcaeb1f1b6bc5800ae30cdad7ca0adbb8876e5853a70734cba01",
+          "rgb_shape": [
+            1080,
+            1920,
+            3
+          ],
+          "depth_shape": [
+            576,
+            640
+          ],
+          "valid_registered_pixels": 15385,
+          "person_points": 15385,
+          "depth_range_m": [
+            1.4268207550048828,
+            2.795713186264038
+          ],
+          "registration": {
+            "raw_valid_person_depth_points": 15392,
+            "projected_inside_color_image": 15392,
+            "projected_person_points_after_front_surface_filter": 15385,
+            "visibility_filter": "frontmost projected depth within 5 mm per color pixel",
+            "person_points_retained_after_projection": 15385,
+            "mask_coordinate_frame": "paired Kinect depth image (640x576 in inspected files)",
+            "depth_unit": "millimetre_uint16_converted_to_metre",
+            "depth_definition": "z_depth",
+            "extrinsic_convention": "X_camera=R_world_to_camera@X_world+T_world_to_camera",
+            "distortion": "coefficients_absent_in_public_release; released image/K used as-is"
+          },
+          "use": "HELD_OUT_ONLY"
+        }
+      },
+      "cache_file": "p100072_a001242_000063.pt",
+      "key": "p100072_a001242_000063"
+    }
+  ]
+}

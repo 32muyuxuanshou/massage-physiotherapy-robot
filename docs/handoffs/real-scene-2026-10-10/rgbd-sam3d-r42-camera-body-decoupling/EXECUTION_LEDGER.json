@@ -1,0 +1,99 @@
+{
+  "status": "COMPLETE_PAUSED_AFTER_R42",
+  "timestamp_utc": "2026-10-10T06:04:13.206069+00:00",
+  "source_delivery_commit": "852a9bcf",
+  "baseline_R41_commit": "97afeae585528edfa0fd80d399bd0b9493c4ee54",
+  "compute": {
+    "geometry_training": "Local Windows CPU",
+    "autodl": "no-GPU 0.5 CPU core / 2GiB cgroup; Torch projection QA and 22 RGB exports only",
+    "training_GPU_used": false,
+    "new_full_SAM_inference": false
+  },
+  "environment": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "events": [
+    {
+      "stage": "full_cached_component_exchange",
+      "seeds": [
+        11,
+        23,
+        37
+      ],
+      "new_cases": 1392,
+      "seconds": 225.43799999996554
+    },
+    {
+      "stage": "deterministic_Camera_only_training",
+      "frames": 192,
+      "identities": 18,
+      "coefficients": 39,
+      "selection": "TRAIN A-only leave-one-identity-out",
+      "seconds": 1.1559999999590218
+    },
+    {
+      "stage": "pilot_and_no_learned_offset_ablation",
+      "new_cases": 464,
+      "scope": "232 original frames x 2 models x before/after; model frozen before B evaluation"
+    },
+    {
+      "stage": "metadata_bug_fix",
+      "detail": "Ablation depth-response mistakenly used learned coefficients; fixed and re-evaluated without model refit. Surface metrics unchanged."
+    },
+    {
+      "stage": "CPU_Torch_projection_QA",
+      "status": "PASS",
+      "cases": 4,
+      "initial_failure": "QA namespace collision between geometry and head perspective_projection; fixed, official algorithms unchanged."
+    },
+    {
+      "stage": "RGB_export",
+      "frames": 11,
+      "source_files": 22,
+      "actual_source_SHA_matches": true
+    },
+    {
+      "stage": "primary_reporting",
+      "records": 2784,
+      "frame_method_stage_metrics": 5568,
+      "identities_per_method": 22,
+      "baseline_cached_results_reused": true
+    },
+    {
+      "stage": "visualization",
+      "panels": 81,
+      "unique_frames": 27,
+      "selection": "16 old review + 11 old fallback; all three G1 seeds"
+    },
+    {
+      "stage": "integrity",
+      "actual_input_checks": 696,
+      "new_native_cases": 1856,
+      "cache_files": 5568,
+      "independent_distance_replays": 8,
+      "status": "PASS"
+    },
+    {
+      "stage": "private_backup",
+      "status": "REMOTE_SHA256_VERIFIED",
+      "server": "172.18.6.218",
+      "bytes": 2479455449,
+      "sha256": "bf7a2578786fa74220b0783ef576d580e076fe7f18de1f4d21da21197d61d3f7"
+    },
+    {
+      "stage": "AutoDL_shutdown",
+      "status": "SHUTDOWN_COMMAND_ACCEPTED_SSH_CLOSED",
+      "last_command": "/usr/bin/shutdown",
+      "exit_status": 0
+    }
+  ],
+  "test_read": false,
+  "B_fitting": false,
+  "B_hyperparameter_selection": false,
+  "large_training_started": false,
+  "next_stage": "PAUSE_AFTER_DELIVERY",
+  "completion_timestamp_utc": "2026-10-10T06:18:45.031942+00:00"
+}

@@ -1,0 +1,448 @@
+{
+  "status": "TRAINED_FROZEN_FOR_EVALUATION",
+  "config": {
+    "stage": "R4.2_CAMERA_ONLY_CPU_PILOT",
+    "train_ids": [
+      "p001195",
+      "p001197",
+      "p001202",
+      "p001203",
+      "p001204",
+      "p001210",
+      "p001216",
+      "p001225",
+      "p001226",
+      "p001231",
+      "p100067",
+      "p100069",
+      "p100072",
+      "p100085",
+      "p100086",
+      "p100089",
+      "p100090",
+      "p100092"
+    ],
+    "train_frames": 192,
+    "target": "Official pred_cam_t + historical raw 6-step A Txyz (even when baseline fallback applied zero)",
+    "target_is_ground_truth": false,
+    "teacher_camera": "A",
+    "camera_B_read_for_training": false,
+    "input": "12 centered observed/body-anchor IQR geometry features; absolute median XYZ in explicit base",
+    "architecture": "metric translation-equivariant base + 12-to-3 ridge affine surface/root offset",
+    "trainable_coefficients": 39,
+    "body_frozen": true,
+    "regularization_candidates": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "selection": "leave-one-TRAIN-identity-out identity-equal teacher root L2; tie lower listed lambda",
+    "evaluation": "original 232 frames after model frozen; B not used for model selection",
+    "training_domain_change": "R4 synthetic supervised versus this real TRAIN A pseudo-supervised pilot",
+    "training_seed": "not applicable: deterministic closed-form ridge, no random init or shuffle",
+    "trainable_network_decoding": false,
+    "test_read": false,
+    "head_sha256": "6d4ae829d24ef8c6ee14cc1b86b42cbb37b469fcc084b5ef621a63799eb47472",
+    "trainer_sha256": "9eec67993b91470a6b4c43e8b4787b9644b0135c814af92035cae2a46d12297c",
+    "source_paired_sha256": "ee141ac417a4f0f9003ffebb0625359f5ae073831db2ab14dc88938180c7cb17"
+  },
+  "selected": {
+    "regularization": 100.0,
+    "identity_equal_teacher_root_error_mm": 183.68692920843174,
+    "folds": [
+      {
+        "heldout_TRAIN_identity": "p001195",
+        "teacher_root_mean_L2_mm": 130.34852239444044
+      },
+      {
+        "heldout_TRAIN_identity": "p001197",
+        "teacher_root_mean_L2_mm": 90.28664299493619
+      },
+      {
+        "heldout_TRAIN_identity": "p001202",
+        "teacher_root_mean_L2_mm": 151.15381791481622
+      },
+      {
+        "heldout_TRAIN_identity": "p001203",
+        "teacher_root_mean_L2_mm": 107.34450086842065
+      },
+      {
+        "heldout_TRAIN_identity": "p001204",
+        "teacher_root_mean_L2_mm": 141.29776825446382
+      },
+      {
+        "heldout_TRAIN_identity": "p001210",
+        "teacher_root_mean_L2_mm": 278.57553265793223
+      },
+      {
+        "heldout_TRAIN_identity": "p001216",
+        "teacher_root_mean_L2_mm": 160.8500587031833
+      },
+      {
+        "heldout_TRAIN_identity": "p001225",
+        "teacher_root_mean_L2_mm": 136.8531660068108
+      },
+      {
+        "heldout_TRAIN_identity": "p001226",
+        "teacher_root_mean_L2_mm": 26.6084033816502
+      },
+      {
+        "heldout_TRAIN_identity": "p001231",
+        "teacher_root_mean_L2_mm": 135.03741716148153
+      },
+      {
+        "heldout_TRAIN_identity": "p100067",
+        "teacher_root_mean_L2_mm": 18.684261245930305
+      },
+      {
+        "heldout_TRAIN_identity": "p100069",
+        "teacher_root_mean_L2_mm": 114.76226619462528
+      },
+      {
+        "heldout_TRAIN_identity": "p100072",
+        "teacher_root_mean_L2_mm": 217.26496923246546
+      },
+      {
+        "heldout_TRAIN_identity": "p100085",
+        "teacher_root_mean_L2_mm": 257.4675353748078
+      },
+      {
+        "heldout_TRAIN_identity": "p100086",
+        "teacher_root_mean_L2_mm": 194.2246029231505
+      },
+      {
+        "heldout_TRAIN_identity": "p100089",
+        "teacher_root_mean_L2_mm": 98.69569368662705
+      },
+      {
+        "heldout_TRAIN_identity": "p100090",
+        "teacher_root_mean_L2_mm": 501.8566775759997
+      },
+      {
+        "heldout_TRAIN_identity": "p100092",
+        "teacher_root_mean_L2_mm": 545.0528891800301
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "regularization": 0.1,
+      "identity_equal_teacher_root_error_mm": 210.96785490485533,
+      "folds": [
+        {
+          "heldout_TRAIN_identity": "p001195",
+          "teacher_root_mean_L2_mm": 100.61652868307189
+        },
+        {
+          "heldout_TRAIN_identity": "p001197",
+          "teacher_root_mean_L2_mm": 123.38995687083836
+        },
+        {
+          "heldout_TRAIN_identity": "p001202",
+          "teacher_root_mean_L2_mm": 133.39663049849105
+        },
+        {
+          "heldout_TRAIN_identity": "p001203",
+          "teacher_root_mean_L2_mm": 115.75971282609865
+        },
+        {
+          "heldout_TRAIN_identity": "p001204",
+          "teacher_root_mean_L2_mm": 112.59084684392451
+        },
+        {
+          "heldout_TRAIN_identity": "p001210",
+          "teacher_root_mean_L2_mm": 257.6003358670383
+        },
+        {
+          "heldout_TRAIN_identity": "p001216",
+          "teacher_root_mean_L2_mm": 280.73026463523297
+        },
+        {
+          "heldout_TRAIN_identity": "p001225",
+          "teacher_root_mean_L2_mm": 235.49979627128093
+        },
+        {
+          "heldout_TRAIN_identity": "p001226",
+          "teacher_root_mean_L2_mm": 52.12089518882488
+        },
+        {
+          "heldout_TRAIN_identity": "p001231",
+          "teacher_root_mean_L2_mm": 149.50732905904604
+        },
+        {
+          "heldout_TRAIN_identity": "p100067",
+          "teacher_root_mean_L2_mm": 51.61414598086815
+        },
+        {
+          "heldout_TRAIN_identity": "p100069",
+          "teacher_root_mean_L2_mm": 114.30544473961511
+        },
+        {
+          "heldout_TRAIN_identity": "p100072",
+          "teacher_root_mean_L2_mm": 193.49695652260124
+        },
+        {
+          "heldout_TRAIN_identity": "p100085",
+          "teacher_root_mean_L2_mm": 383.5004925668002
+        },
+        {
+          "heldout_TRAIN_identity": "p100086",
+          "teacher_root_mean_L2_mm": 222.91357958381738
+        },
+        {
+          "heldout_TRAIN_identity": "p100089",
+          "teacher_root_mean_L2_mm": 201.21944908734858
+        },
+        {
+          "heldout_TRAIN_identity": "p100090",
+          "teacher_root_mean_L2_mm": 326.6132248267527
+        },
+        {
+          "heldout_TRAIN_identity": "p100092",
+          "teacher_root_mean_L2_mm": 742.5457982357451
+        }
+      ]
+    },
+    {
+      "regularization": 1.0,
+      "identity_equal_teacher_root_error_mm": 202.71879079457733,
+      "folds": [
+        {
+          "heldout_TRAIN_identity": "p001195",
+          "teacher_root_mean_L2_mm": 97.65352125536128
+        },
+        {
+          "heldout_TRAIN_identity": "p001197",
+          "teacher_root_mean_L2_mm": 117.7988538853025
+        },
+        {
+          "heldout_TRAIN_identity": "p001202",
+          "teacher_root_mean_L2_mm": 144.86029495190968
+        },
+        {
+          "heldout_TRAIN_identity": "p001203",
+          "teacher_root_mean_L2_mm": 108.3847582801374
+        },
+        {
+          "heldout_TRAIN_identity": "p001204",
+          "teacher_root_mean_L2_mm": 98.2044671008431
+        },
+        {
+          "heldout_TRAIN_identity": "p001210",
+          "teacher_root_mean_L2_mm": 262.4392852341736
+        },
+        {
+          "heldout_TRAIN_identity": "p001216",
+          "teacher_root_mean_L2_mm": 274.8179399879446
+        },
+        {
+          "heldout_TRAIN_identity": "p001225",
+          "teacher_root_mean_L2_mm": 228.77382500583622
+        },
+        {
+          "heldout_TRAIN_identity": "p001226",
+          "teacher_root_mean_L2_mm": 49.096043572228815
+        },
+        {
+          "heldout_TRAIN_identity": "p001231",
+          "teacher_root_mean_L2_mm": 146.38050976347498
+        },
+        {
+          "heldout_TRAIN_identity": "p100067",
+          "teacher_root_mean_L2_mm": 50.18029123896737
+        },
+        {
+          "heldout_TRAIN_identity": "p100069",
+          "teacher_root_mean_L2_mm": 117.76954367293801
+        },
+        {
+          "heldout_TRAIN_identity": "p100072",
+          "teacher_root_mean_L2_mm": 194.96019790859498
+        },
+        {
+          "heldout_TRAIN_identity": "p100085",
+          "teacher_root_mean_L2_mm": 382.0482436885874
+        },
+        {
+          "heldout_TRAIN_identity": "p100086",
+          "teacher_root_mean_L2_mm": 228.034054715459
+        },
+        {
+          "heldout_TRAIN_identity": "p100089",
+          "teacher_root_mean_L2_mm": 181.50025616046506
+        },
+        {
+          "heldout_TRAIN_identity": "p100090",
+          "teacher_root_mean_L2_mm": 280.68858778844765
+        },
+        {
+          "heldout_TRAIN_identity": "p100092",
+          "teacher_root_mean_L2_mm": 685.3475600917197
+        }
+      ]
+    },
+    {
+      "regularization": 10.0,
+      "identity_equal_teacher_root_error_mm": 185.55521383763306,
+      "folds": [
+        {
+          "heldout_TRAIN_identity": "p001195",
+          "teacher_root_mean_L2_mm": 99.3976093821877
+        },
+        {
+          "heldout_TRAIN_identity": "p001197",
+          "teacher_root_mean_L2_mm": 99.25623655003965
+        },
+        {
+          "heldout_TRAIN_identity": "p001202",
+          "teacher_root_mean_L2_mm": 173.78957733239582
+        },
+        {
+          "heldout_TRAIN_identity": "p001203",
+          "teacher_root_mean_L2_mm": 94.89084308837641
+        },
+        {
+          "heldout_TRAIN_identity": "p001204",
+          "teacher_root_mean_L2_mm": 94.16680179336493
+        },
+        {
+          "heldout_TRAIN_identity": "p001210",
+          "teacher_root_mean_L2_mm": 267.14202965098144
+        },
+        {
+          "heldout_TRAIN_identity": "p001216",
+          "teacher_root_mean_L2_mm": 227.95963420402836
+        },
+        {
+          "heldout_TRAIN_identity": "p001225",
+          "teacher_root_mean_L2_mm": 196.1706708060879
+        },
+        {
+          "heldout_TRAIN_identity": "p001226",
+          "teacher_root_mean_L2_mm": 33.29847420949606
+        },
+        {
+          "heldout_TRAIN_identity": "p001231",
+          "teacher_root_mean_L2_mm": 130.48133319258824
+        },
+        {
+          "heldout_TRAIN_identity": "p100067",
+          "teacher_root_mean_L2_mm": 39.253849112448904
+        },
+        {
+          "heldout_TRAIN_identity": "p100069",
+          "teacher_root_mean_L2_mm": 122.95716810676906
+        },
+        {
+          "heldout_TRAIN_identity": "p100072",
+          "teacher_root_mean_L2_mm": 207.05705984173264
+        },
+        {
+          "heldout_TRAIN_identity": "p100085",
+          "teacher_root_mean_L2_mm": 365.90062246376687
+        },
+        {
+          "heldout_TRAIN_identity": "p100086",
+          "teacher_root_mean_L2_mm": 241.9573163699195
+        },
+        {
+          "heldout_TRAIN_identity": "p100089",
+          "teacher_root_mean_L2_mm": 113.22840983888977
+        },
+        {
+          "heldout_TRAIN_identity": "p100090",
+          "teacher_root_mean_L2_mm": 275.84784161334227
+        },
+        {
+          "heldout_TRAIN_identity": "p100092",
+          "teacher_root_mean_L2_mm": 557.2383715209799
+        }
+      ]
+    },
+    {
+      "regularization": 100.0,
+      "identity_equal_teacher_root_error_mm": 183.68692920843174,
+      "folds": [
+        {
+          "heldout_TRAIN_identity": "p001195",
+          "teacher_root_mean_L2_mm": 130.34852239444044
+        },
+        {
+          "heldout_TRAIN_identity": "p001197",
+          "teacher_root_mean_L2_mm": 90.28664299493619
+        },
+        {
+          "heldout_TRAIN_identity": "p001202",
+          "teacher_root_mean_L2_mm": 151.15381791481622
+        },
+        {
+          "heldout_TRAIN_identity": "p001203",
+          "teacher_root_mean_L2_mm": 107.34450086842065
+        },
+        {
+          "heldout_TRAIN_identity": "p001204",
+          "teacher_root_mean_L2_mm": 141.29776825446382
+        },
+        {
+          "heldout_TRAIN_identity": "p001210",
+          "teacher_root_mean_L2_mm": 278.57553265793223
+        },
+        {
+          "heldout_TRAIN_identity": "p001216",
+          "teacher_root_mean_L2_mm": 160.8500587031833
+        },
+        {
+          "heldout_TRAIN_identity": "p001225",
+          "teacher_root_mean_L2_mm": 136.8531660068108
+        },
+        {
+          "heldout_TRAIN_identity": "p001226",
+          "teacher_root_mean_L2_mm": 26.6084033816502
+        },
+        {
+          "heldout_TRAIN_identity": "p001231",
+          "teacher_root_mean_L2_mm": 135.03741716148153
+        },
+        {
+          "heldout_TRAIN_identity": "p100067",
+          "teacher_root_mean_L2_mm": 18.684261245930305
+        },
+        {
+          "heldout_TRAIN_identity": "p100069",
+          "teacher_root_mean_L2_mm": 114.76226619462528
+        },
+        {
+          "heldout_TRAIN_identity": "p100072",
+          "teacher_root_mean_L2_mm": 217.26496923246546
+        },
+        {
+          "heldout_TRAIN_identity": "p100085",
+          "teacher_root_mean_L2_mm": 257.4675353748078
+        },
+        {
+          "heldout_TRAIN_identity": "p100086",
+          "teacher_root_mean_L2_mm": 194.2246029231505
+        },
+        {
+          "heldout_TRAIN_identity": "p100089",
+          "teacher_root_mean_L2_mm": 98.69569368662705
+        },
+        {
+          "heldout_TRAIN_identity": "p100090",
+          "teacher_root_mean_L2_mm": 501.8566775759997
+        },
+        {
+          "heldout_TRAIN_identity": "p100092",
+          "teacher_root_mean_L2_mm": 545.0528891800301
+        }
+      ]
+    }
+  ],
+  "model_sha256": "422fe8dbc4f217dc5bf548dbe02c079ed70877de8421263b917ba99cc9189e02",
+  "seconds": 1.1559999999590218,
+  "official_parameters_updated": false,
+  "camera_B_read": false,
+  "VAL_targets_used": false,
+  "feature_condition_number": 12.997447819071517
+}

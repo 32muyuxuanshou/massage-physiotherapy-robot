@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/root/autodl-tmp/rgbd_sam3d/r42_cpu/check_r42_camera_output.py", line 74, in <module>
+    p.add_argument('--cache',type=Path,required=True);p.add_argument('--out',type=Path,required=True);main(p.parse_args())
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/rgbd_sam3d/r42_cpu/check_r42_camera_output.py", line 49, in main
+    result=camera_only_output(official,output,batch,data['points_camera_A'],state,anchor['face_index'],anchor['barycentric'],faces)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/rgbd_sam3d/r42_cpu/camera_only_r42.py", line 67, in camera_only_output
+    result = official.camera_project(result,batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/meta_arch/sam3d_body.py", line 932, in camera_project
+    cam_out = head_camera.perspective_projection(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/heads/camera_head.py", line 103, in perspective_projection
+    j2d = perspective_projection(j3d_cam, cam_int)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: perspective_projection() missing 5 required positional arguments: 'pred_cam', 'bbox_center', 'bbox_size', 'img_size', and 'cam_int'

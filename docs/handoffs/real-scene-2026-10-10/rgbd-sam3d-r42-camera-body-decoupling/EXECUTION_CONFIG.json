@@ -1,0 +1,37 @@
+{
+  "stage": "R4.2_COMPONENT_DIAGNOSTIC",
+  "source_commit": "852a9bcf",
+  "frames": 232,
+  "seeds": [
+    11,
+    23,
+    37
+  ],
+  "source_paired_sha256": "ee141ac417a4f0f9003ffebb0625359f5ae073831db2ab14dc88938180c7cb17",
+  "frame_contract_sha256": "1f7391350652d6553c33ff32f5486e366974bde7922d84345866169c833aabb1",
+  "anchor_sha256": "e227a6a1d20a4fd285b08f1dfdec06deae9d542f251c7a8ce6138aa34ee406da",
+  "checker_sha256": "a96d953ac686aefb132b0ed40682c20986a3c8402eb2e0afe6ad208c7c2060b9",
+  "test_read": false,
+  "camera_B_fitting": false,
+  "numerical_source_sha256": {
+    "diagnose_r31.py": "4df3cb80cf0210b4100b93b72ece021149e342b1cffa7d12b4d538617439a6b1",
+    "evaluate_r3_humman.py": "467a1a2f794f78a96691c96da47ab27ccb5c47e433eca3c4c1c832b2524eb6f8",
+    "humman_geometry.py": "82e33398a57858ba63d637dc08fa88bfe3818f1b2abbd8938df4752381c31bee",
+    "prepare_r41_assets.py": "36c0d0c58c7a47a8395424131becda1ab0d2e37b7f55e3989c3b167e88fa1edc",
+    "run_r41_txyz.py": "44ec9521a4d534ddc40e74020032b94ae2bab6377acbf8f8a3efde22a6221ae2",
+    "surface_metrics.py": "619b32af927ae466203a2e48bf44389511d28cddb32dff7c4d36d551a9194d81"
+  },
+  "body_invariant": "native global_rot/body_pose/shape/scale exact; relative vertices within float32 rounding",
+  "methods": [
+    "official",
+    "g1",
+    "official_body_g1_camera",
+    "g1_body_official_camera"
+  ],
+  "stages": [
+    "before",
+    "after"
+  ],
+  "txyz": "unchanged frozen R3.1/R4.1",
+  "interpretation": "Full cached mechanical decomposition, not a final trainable model or causal training attribution."
+}
