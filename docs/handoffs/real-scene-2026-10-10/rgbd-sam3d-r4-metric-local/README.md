@@ -17,3 +17,5 @@ G1合成PVE86.95→59.55mm、Camera66.47→27.07mm；物理距离响应斜率0.4
 - [上一轮完整结果](../rgbd-sam3d-r31-diagnosis-pilot/FINAL_REPORT.md)
 
 工程目标仍是 RGB-D 俯卧背部 Mesh，再验证模板工程点/穴位传播。HuMMan 本轮只验证人体几何和深度机制，不证明俯卧皮肤或穴位定位精度。
+
+正式结果提交 `7f9bb75c` 已推送；10月10日08:55最后在计算实例执行 `/usr/bin/shutdown`，SSH channel关闭且没有返回exit-status；随后仅做协议连通检查，端口拒绝连接，未再执行远端命令。详见[关机回执](SHUTDOWN_RECEIPT.json)。未把SSH回执当作独立计费/电源状态证明。

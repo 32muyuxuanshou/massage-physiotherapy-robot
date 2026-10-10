@@ -2,7 +2,7 @@
 
 更新时间：2026-10-10。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
 
-**主线：**R3/R3.1/R4已实跑完成。R4四组8轮、G0/G1各三seed×30轮以及232帧独立Camera B、Depth消融和物理距离评价完成。G1合成PVE86.95→59.55mm、Camera66.47→27.07mm，距离响应斜率0.488→1.013；真实VAL median28.59→22.83mm但P95 68.19→70.32mm，p001196未稳定改善。保留G1研究候选，不升级最终工程模型；最强工程对照仍为Official+Txyz（HuMMan B VAL11.23/41.60mm）。见[R4最终报告](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/FINAL_REPORT.md)、[逐人审计](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/PER_IDENTITY_REVIEW.md)。TEST未读取；R4短跑与正式checkpoint/native输出已核对SHA并备份到本地及218持久服务器。关机状态以执行Ledger/回执为准。
+**主线：**R3/R3.1/R4已实跑完成。R4四组8轮、G0/G1各三seed×30轮以及232帧独立Camera B、Depth消融和物理距离评价完成。G1合成PVE86.95→59.55mm、Camera66.47→27.07mm，距离响应斜率0.488→1.013；真实VAL median28.59→22.83mm但P95 68.19→70.32mm，p001196未稳定改善。保留G1研究候选，不升级最终工程模型；最强工程对照仍为Official+Txyz（HuMMan B VAL11.23/41.60mm）。见[R4最终报告](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/FINAL_REPORT.md)、[逐人审计](handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/PER_IDENTITY_REVIEW.md)。TEST未读取；R4短跑与正式checkpoint/native输出已核对SHA并备份到本地及218持久服务器。10月10日08:55最后执行AutoDL关机命令，SSH channel关闭、随后SSH端口拒绝连接；独立电源/计费状态未确认，详见R4关机回执。
 
 ## 目标
 

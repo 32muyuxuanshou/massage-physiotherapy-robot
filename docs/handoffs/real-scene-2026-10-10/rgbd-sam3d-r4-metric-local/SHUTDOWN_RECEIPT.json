@@ -1,0 +1,22 @@
+{
+  "host": "connect.cqa1.seetacloud.com:39846",
+  "command": "/usr/bin/shutdown",
+  "requested_time_unix": 1791593708.6554627,
+  "requested_beijing": "2026-10-10T08:55:08.655463+08:00",
+  "scientific_delivery_commit": "7f9bb75c9aaa0fe73094a64fd611008413d5f5b2",
+  "pre_shutdown_check": "PRE_SHUTDOWN_CHECK.json",
+  "last_compute_host_command": true,
+  "stdout": "",
+  "stderr": "",
+  "exit_status": -1,
+  "status": "COMMAND_SENT_CHANNEL_CLOSED_NO_EXIT_STATUS",
+  "power_state_independently_confirmed": false,
+  "scope": "Official AutoDL shutdown command receipt; no further compute-host commands after shutdown. SSH return does not independently confirm billing/power state.",
+  "exit_status_meaning": "Paramiko -1: channel closed without a server exit-status message; not a shell error code.",
+  "post_command_network_probe": {
+    "time_unix": 1791593767.0927553,
+    "type": "SSH protocol handshake only; no authentication or remote command",
+    "ssh_transport_reachable": false,
+    "result": "ConnectionRefusedError"
+  }
+}

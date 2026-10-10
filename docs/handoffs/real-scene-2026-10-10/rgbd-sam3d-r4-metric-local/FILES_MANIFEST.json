@@ -48,9 +48,9 @@
     },
     {
       "path": "EXECUTION_LEDGER.json",
-      "bytes": 5539,
-      "sha256": "b67c1d6e1fd3e022ad406e7fc8b7097ace2f19bc0b637c07dba66865e58d4907",
-      "working_copy_sha256": "565f4d35d3542f8fbb98b125ffcea24d984af45cbf1013a7a9e83674545f0490"
+      "bytes": 6636,
+      "sha256": "3b2699cc8f247c42818aa18716a0c14ff4dc5c0292183c7200814b57ff71b513",
+      "working_copy_sha256": "212eef42afc2a6af750e2663227647eafe34cafe3a6c13a7598bb8a2f5426f8c"
     },
     {
       "path": "FINAL_DIAGNOSTICS.json",
@@ -125,10 +125,16 @@
       "working_copy_sha256": "a2f12b696d7a6bb49c92671dcdf0ed1cc7a1b36346a6dc5177cca665910df834"
     },
     {
+      "path": "PRE_SHUTDOWN_CHECK.json",
+      "bytes": 869,
+      "sha256": "c46cc2f7ced9626e3fab20d2abeee68523f49d6bcda416e048eae834d0999623",
+      "working_copy_sha256": "c46cc2f7ced9626e3fab20d2abeee68523f49d6bcda416e048eae834d0999623"
+    },
+    {
       "path": "README.md",
-      "bytes": 1533,
-      "sha256": "e9b70cf1ff52efd1934d705ba7a0fbad5627bb74b3e10c85d9fa986eea8dfe7e",
-      "working_copy_sha256": "e9b70cf1ff52efd1934d705ba7a0fbad5627bb74b3e10c85d9fa986eea8dfe7e"
+      "bytes": 1870,
+      "sha256": "45e9bc1905051763bd780ca9eab4e9c871016a0d9d92d20e25b61fa663c60e90",
+      "working_copy_sha256": "c80d45eaaf15c7eaed89d1de465bcd824b591427a1a043d23dc567259fe5807c"
     },
     {
       "path": "REPRODUCE.md",
@@ -153,6 +159,12 @@
       "bytes": 3156,
       "sha256": "405886e02c9bed46d468f72f9ca4da3d36cbdd20e11e548e304fef621c8aeee4",
       "working_copy_sha256": "405886e02c9bed46d468f72f9ca4da3d36cbdd20e11e548e304fef621c8aeee4"
+    },
+    {
+      "path": "SHUTDOWN_RECEIPT.json",
+      "bytes": 1029,
+      "sha256": "1a80cdb0adf572021a454e238fba3f1e390ac4820c483e00257d32ca3830d231",
+      "working_copy_sha256": "54b85dc758f0cb5d9fce29399708312b83cc37c71852f17d841473a59018c5be"
     },
     {
       "path": "VISUAL_INDEX.md",
@@ -1619,5 +1631,7 @@
       "working_copy_sha256": "3dc976a6da1ffc4bfc91840f6f32f7da353141e7391f2ce32dffc97b0632109f"
     }
   ],
-  "count": 269
+  "count": 271,
+  "scientific_delivery_commit": "7f9bb75c9aaa0fe73094a64fd611008413d5f5b2",
+  "closeout_includes": "shutdown command receipt and protocol-only post-command connection check"
 }
