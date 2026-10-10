@@ -1,0 +1,11 @@
+{
+  "issue": "camera-reference residual 0.0014121008402478857 mm exceeded arbitrary 0.001 mm numeric tolerance",
+  "affected_frames": 47,
+  "cause": "Blender mathutils float32 matrices; independent image/depth and cached projection QA pass",
+  "fix": "numerical tolerance = 8 * float32 epsilon * maximum reference Z (3.814697265625e-6 m for 4m)",
+  "rendered_data_changed": false,
+  "camera_plan_changed": false,
+  "model_metrics_or_thresholds_changed": false,
+  "rerun": "camera-factor QA and preview generation only; all full-cache hashes already verified",
+  "additional_cache_qa": "Elevation group added to explicit camera-reference audit; 3072/3072 references PASS, no regeneration"
+}
