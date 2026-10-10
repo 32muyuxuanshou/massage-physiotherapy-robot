@@ -1,0 +1,10 @@
+{
+  "coordinate_bug": "Initial visual review showed all subjects upside down. Official toolbox places world in Kinect color_000 OpenCV coordinates (+Y down); corrected source-to-scene rotation by -90 deg about X before centring/floor placement. Original wrong-orientation output isolated and excluded from deliverable.",
+  "depth_bug": "Initial radial-distance conversion was wrong for tested Blender 4.5 Cycles. Independent ray/triangle and pixel-depth checks established axial Z; removed duplicate radial conversion.",
+  "source_to_scene_formula": "scene_xyz = source_xyz @ [[1,0,0],[0,0,1],[0,-1,0]].T + source_to_scene_t_m",
+  "initial_source_transform_vertex_max_error_m": 2.085838317622546e-07,
+  "model_inference_or_training_rerun": false,
+  "frozen_source_ids_poses_cameras_lights_changed_by_fixes": false,
+  "sampling_or_model_result_based_selection": false,
+  "discarded_local_directory": "output/r5_synthetic_enrichment_v1/diagnostic_y_axis_wrong_discarded"
+}

@@ -1,0 +1,69 @@
+{
+  "status": "COMPLETED_AND_BACKED_UP",
+  "date": "2026-10-10",
+  "model_training_started": false,
+  "paid_gpu_started": false,
+  "source_download": {
+    "direct_server": true,
+    "source_assets": 48,
+    "source_identities": 12,
+    "files": 144,
+    "raw_bytes": 439794603
+  },
+  "pilot": {
+    "upright_samples": 24,
+    "max_ray_error_mm": 0.0002378893357857237,
+    "min_mask_iou": 0.999711274722102,
+    "max_blender_depth_p95_mm": 0.00858306884765625
+  },
+  "full_plan": {
+    "samples": 1152,
+    "TRAIN": 864,
+    "VAL": 288
+  },
+  "server_running": true,
+  "server_dataset_path": "/root/autodl-tmp/rgbd_sam3d/datasets/synthetic/humman_recon_r5_v1",
+  "completed_local": "2026-10-10T19:21:34.452803",
+  "actual_samples": 1152,
+  "actual_roles": {
+    "TRAIN": 864,
+    "VAL": 288
+  },
+  "actual_identities": {
+    "p000448": 96,
+    "p000460": 96,
+    "p000495": 96,
+    "p000496": 96,
+    "p000526": 96,
+    "p000534": 96,
+    "p000560": 96,
+    "p000587": 96,
+    "p000592": 96,
+    "p000598": 96,
+    "p000599": 96,
+    "p100047": 96
+  },
+  "full_geometry_qa": {
+    "status": "GEOMETRY_QA_PASS",
+    "samples": 1152,
+    "max_ray_error_mm": 0.00023841240537336716,
+    "min_rgb_depth_mask_iou": 0.999711274722102,
+    "max_independent_cycles_depth_p95_mm": 0.011205673217773438,
+    "max_scene_floor_under_20m_depth_p95_mm": 0.16689300537109375,
+    "depth_definition": "camera +Z metres, integer pixel centres; Blender 4.5 Cycles Depth is axial Z (independently verified)",
+    "scope": "Simulator RGB/depth/camera consistency, not accuracy of source human reconstruction"
+  },
+  "cached_sample_hashes_verified": 1152,
+  "source_transform_max_error_m": 2.681884765376452e-07,
+  "private_source_backup": "VERIFIED",
+  "private_generated_backup": "VERIFIED",
+  "private_generated_backup_sha256": "46b41e715615c3d53f503b2aa758c4dc0720b0caf57766bd71f2112ef618e859",
+  "completed_server_sync": "2026-10-10T19:45:27",
+  "server_dataset_qa": "SERVER_DATASET_QA_PASS",
+  "server_generated_receipt": "SERVER_GENERATED_RECEIPT.json",
+  "server_dataset_qa_file": "SERVER_DATASET_QA.json",
+  "private_backup_receipts": [
+    "SOURCE_BACKUP_RECEIPT.json",
+    "BACKUP_GENERATED_RECEIPT.json"
+  ]
+}

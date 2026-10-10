@@ -1,5 +1,7 @@
 > 2026-10-10现役状态：R3、R3.1、R4全部实跑完成；见 [R4最终审查](../../docs/handoffs/real-scene-2026-10-10/rgbd-sam3d-r4-metric-local/FINAL_REPORT.md)。G1三seed公制Camera与合成Mesh改善，但真实尾部未稳定、未胜Official+Txyz。下文R0/R1准备状态保留为历史说明，不代表仍未训练。官方模型/旧checkpoint/cache保留；TEST未读取。
 
+> R5数据升级：[HuMMan摄影纹理 Mesh 再合成](../../docs/handoffs/real-scene-2026-10-10/humman-textured-resynthesis-r5-v1/README.md)。源扫描体48帧/12人，固定12相机×2光照；使用摄影纹理和衣物几何。实际完成量/QA见该交付记录；未启动新训练，扫描体没有原生 MHR 参数真值，不能直接替代原 native_scale_v2 的参数监督。
+
 # RGB-D SAM3D / native MHR
 
 新主线：校准 RGB-D → RGB backbone + metric Depth encoder → 空间融合 → 原 SAM3D decoder → 原生 MHR 与 Camera。标准 MHR 的固定拓扑穴位传播仍是后续工程接口，本目录不训练穴位检测器。
