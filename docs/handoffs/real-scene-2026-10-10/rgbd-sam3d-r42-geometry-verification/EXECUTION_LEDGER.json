@@ -1,0 +1,65 @@
+{
+  "scope": "R4.2 independent geometry supplement; prior swaps and CPU pilot reused",
+  "source_commit": "4ac1f4133c34ef5d39889de8a799ed6466a5bea8",
+  "environment": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "opencv": "5.0.0",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "local_geometry_seconds": 109.23499999998603,
+  "events": [
+    {
+      "action": "download official calibration/toolbox sources",
+      "artifact": "OFFICIAL_SOURCE_RECEIPT.json",
+      "artifact_mtime_utc": "2026-10-10T06:48:31.024300+00:00",
+      "timestamp_kind": "artifact mtime; not claimed exact execution start"
+    },
+    {
+      "action": "first export failed: VISUAL_SELECTION dict read as list",
+      "artifact": "export.log",
+      "artifact_mtime_utc": "2026-10-10T07:09:14.072944+00:00",
+      "timestamp_kind": "artifact mtime; not claimed exact execution start"
+    },
+    {
+      "action": "correct records field, export 54 raw sensor views and sequential RGB fixtures",
+      "artifact": "export_fixed.log",
+      "artifact_mtime_utc": "2026-10-10T07:09:14.505554+00:00",
+      "timestamp_kind": "artifact mtime; not claimed exact execution start"
+    },
+    {
+      "action": "232 calibration checks, 27x14 A audits and 64 independent B controls",
+      "artifact": "GEOMETRY_AUDIT.json",
+      "artifact_mtime_utc": "2026-10-10T07:00:31.990275+00:00",
+      "timestamp_kind": "artifact mtime; not claimed exact execution start"
+    },
+    {
+      "action": "54 original depth replay and 8 temporal checks",
+      "artifact": "RAW_SENSOR_QA.json",
+      "artifact_mtime_utc": "2026-10-10T07:12:50.696415+00:00",
+      "timestamp_kind": "artifact mtime; not claimed exact execution start"
+    },
+    {
+      "action": "four fixed raw sensor visualizations",
+      "artifact": "visualizations/RAW_MANIFEST.json",
+      "artifact_mtime_utc": "2026-10-10T07:15:41.310356+00:00",
+      "timestamp_kind": "artifact mtime; not claimed exact execution start"
+    },
+    {
+      "action": "verify original 696 inputs and 378 native outputs",
+      "artifact": "POST_EXECUTION_INTEGRITY.json",
+      "artifact_mtime_utc": "2026-10-10T07:24:18.322969+00:00",
+      "timestamp_kind": "artifact mtime; not claimed exact execution start"
+    }
+  ],
+  "first_export_failure": "TypeError from iterating top-level dict; fixed records lookup, full exporter rerun",
+  "first_local_audit_failure": "selection length assertion for same dict/list issue; corrected records lookup and full audit rerun",
+  "remote_mode": "existing AutoDL no-GPU, cpu.max=50000 100000, memory.max=2147483648",
+  "new_scientific_training_runs": 0,
+  "new_SAM_inference_runs": 0,
+  "prior_CPU_pilot_retrained": false,
+  "unchanged_primary_evaluation": "fixed 2048 B points, exact triangle distances, frame->sequence->identity",
+  "completed_utc": "2026-10-10T07:24:18.525078+00:00",
+  "server_disposition": "Keep existing AutoDL no-GPU online by latest user instruction; no shutdown command executed"
+}

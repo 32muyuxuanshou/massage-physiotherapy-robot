@@ -1,0 +1,13 @@
+{
+  "status": "SSH_ONLINE_NO_GPU_MODE_RETAINED",
+  "checked_utc": "2026-10-10T07:41:28.461879+00:00",
+  "host": "connect.cqa1.seetacloud.com",
+  "port": 39846,
+  "command": "cat /sys/fs/cgroup/cpu.max /sys/fs/cgroup/memory.max; uptime; ps -eo pid,comm,pcpu,pmem --sort=-pcpu | head -n 8",
+  "exit_code": 0,
+  "observed": "50000 100000\n2147483648\n 15:41:27 up 46 days,  4:05,  0 users,  load average: 1.80, 1.91, 2.38\n   PID COMMAND         %CPU %MEM\n  1878 sshd             8.0  0.0\n   710 supervisord      1.8  0.0\n   734 autopanel        0.2  0.0\n   732 jupyter-lab      0.1  0.0\n   733 proxy            0.1  0.0\n     1 bash             0.0  0.0\n   728 sshd             0.0  0.0\n",
+  "stderr": "",
+  "shutdown_executed": false,
+  "user_instruction": "Only shut down when explicitly requested; supersedes earlier automatic shutdown preference",
+  "training_running": false
+}
