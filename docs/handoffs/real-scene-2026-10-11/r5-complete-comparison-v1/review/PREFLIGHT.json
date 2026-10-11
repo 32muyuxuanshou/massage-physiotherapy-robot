@@ -1,0 +1,281 @@
+{
+  "perspective_renderer_QA": {
+    "status": "PASS",
+    "oblique_triangle_axial_Z_max_error_m": 2.384185791015625e-07,
+    "gradient_norm": 0.5857930183410645,
+    "integer_pixel_centres": true,
+    "perspective_not_orthographic": true
+  },
+  "plane_directional_QA": {
+    "status": "PASS",
+    "correction": [
+      [
+        0.0,
+        0.0,
+        2.97029709815979
+      ]
+    ],
+    "eigenvalues": [
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "curved_directional_QA": {
+    "status": "PASS",
+    "raw": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "filtered": [
+      [
+        0.9708738327026367,
+        1.9417476654052734,
+        2.91262149810791
+      ]
+    ],
+    "eigenvalues": [
+      [
+        0.3333333432674408,
+        0.3333333432674408,
+        0.3333333432674408
+      ]
+    ]
+  },
+  "rgb_only": {
+    "status": "PASS",
+    "zero_init_max_abs": {
+      "pred_vertices": 6.556510925292969e-07,
+      "pred_cam_t": 9.5367431640625e-07,
+      "global_rot": 2.384185791015625e-07,
+      "body_pose": 6.258487701416016e-07,
+      "shape": 7.450580596923828e-07,
+      "scale": 1.1548399925231934e-06
+    },
+    "same_batch_Official_vs_historical_cache": {
+      "pred_vertices": 8.106231689453125e-06,
+      "pred_cam_t": 5.245208740234375e-06,
+      "global_rot": 6.9141387939453125e-06,
+      "body_pose": 1.683831214904785e-05,
+      "shape": 2.1278858184814453e-05,
+      "scale": 4.458427429199219e-05
+    },
+    "gradient_norm": 0.0036624420899897814,
+    "body_exact_equal": false,
+    "camera_moved_m": 5.998163942422252e-06,
+    "visible_queries": [
+      0.0,
+      0.0
+    ],
+    "trainable_parameters": 656897,
+    "peak_memory_bytes": 3569794048,
+    "seconds": 11.899818146135658
+  },
+  "residual": {
+    "status": "PASS",
+    "zero_init_max_abs": {
+      "pred_vertices": 8.940696716308594e-07,
+      "pred_cam_t": 4.470348358154297e-08,
+      "global_rot": 2.384185791015625e-07,
+      "body_pose": 6.407499313354492e-07,
+      "shape": 6.556510925292969e-07,
+      "scale": 9.313225746154785e-07
+    },
+    "same_batch_Official_vs_historical_cache": {
+      "pred_vertices": 8.106231689453125e-06,
+      "pred_cam_t": 5.245208740234375e-06,
+      "global_rot": 6.9141387939453125e-06,
+      "body_pose": 1.683831214904785e-05,
+      "shape": 2.1278858184814453e-05,
+      "scale": 4.458427429199219e-05
+    },
+    "gradient_norm": 0.03722336143255234,
+    "body_exact_equal": false,
+    "camera_moved_m": 6.475363079516683e-06,
+    "visible_queries": [
+      0.0,
+      0.0
+    ],
+    "trainable_parameters": 863873,
+    "peak_memory_bytes": 3603581952,
+    "seconds": 7.008229197002947
+  },
+  "cross_attention": {
+    "status": "PASS",
+    "zero_init_max_abs": {
+      "pred_vertices": 8.940696716308594e-07,
+      "pred_cam_t": 5.960464477539063e-08,
+      "global_rot": 2.384185791015625e-07,
+      "body_pose": 6.407499313354492e-07,
+      "shape": 8.344650268554688e-07,
+      "scale": 1.1399388313293457e-06
+    },
+    "same_batch_Official_vs_historical_cache": {
+      "pred_vertices": 8.106231689453125e-06,
+      "pred_cam_t": 5.245208740234375e-06,
+      "global_rot": 6.9141387939453125e-06,
+      "body_pose": 1.683831214904785e-05,
+      "shape": 2.1278858184814453e-05,
+      "scale": 4.458427429199219e-05
+    },
+    "gradient_norm": 0.008268644101917744,
+    "body_exact_equal": false,
+    "camera_moved_m": 2.701246557990089e-06,
+    "visible_queries": [
+      0.0,
+      0.0
+    ],
+    "trainable_parameters": 1454977,
+    "peak_memory_bytes": 3634570240,
+    "seconds": 6.681688759941608
+  },
+  "g1": {
+    "status": "PASS",
+    "zero_init_max_abs": {
+      "pred_vertices": 7.152557373046875e-07,
+      "pred_cam_t": 2.384185791015625e-07,
+      "global_rot": 4.76837158203125e-07,
+      "body_pose": 6.407499313354492e-07,
+      "shape": 7.301568984985352e-07,
+      "scale": 9.5367431640625e-07
+    },
+    "same_batch_Official_vs_historical_cache": {
+      "pred_vertices": 8.225440979003906e-06,
+      "pred_cam_t": 4.76837158203125e-06,
+      "global_rot": 6.198883056640625e-06,
+      "body_pose": 1.6689300537109375e-05,
+      "shape": 2.1457672119140625e-05,
+      "scale": 4.5299530029296875e-05
+    },
+    "gradient_norm": 0.37960052490234375,
+    "body_exact_equal": false,
+    "camera_moved_m": 0.0024791269097477198,
+    "visible_queries": [
+      0.0,
+      0.0
+    ],
+    "trainable_parameters": 1640964,
+    "peak_memory_bytes": 3647304192,
+    "seconds": 6.705062406137586
+  },
+  "pooled_mlp": {
+    "status": "PASS",
+    "zero_init_max_abs": {
+      "pred_vertices": 0.0,
+      "pred_cam_t": 0.0,
+      "global_rot": 0.0,
+      "body_pose": 0.0,
+      "shape": 0.0,
+      "scale": 0.0
+    },
+    "same_batch_Official_vs_historical_cache": {
+      "pred_vertices": 0.0,
+      "pred_cam_t": 0.0,
+      "global_rot": 0.0,
+      "body_pose": 0.0,
+      "shape": 0.0,
+      "scale": 0.0
+    },
+    "gradient_norm": 1.3561373949050903,
+    "body_exact_equal": true,
+    "camera_moved_m": 0.013848704285919666,
+    "visible_queries": [
+      0.0,
+      0.0
+    ],
+    "trainable_parameters": 221059,
+    "peak_memory_bytes": 171864064,
+    "seconds": 0.08456809911876917
+  },
+  "coarse": {
+    "status": "PASS",
+    "zero_init_max_abs": {
+      "pred_vertices": 0.0,
+      "pred_cam_t": 0.0,
+      "global_rot": 0.0,
+      "body_pose": 0.0,
+      "shape": 0.0,
+      "scale": 0.0
+    },
+    "same_batch_Official_vs_historical_cache": {
+      "pred_vertices": 0.0,
+      "pred_cam_t": 0.0,
+      "global_rot": 0.0,
+      "body_pose": 0.0,
+      "shape": 0.0,
+      "scale": 0.0
+    },
+    "gradient_norm": 1.7042137384414673,
+    "body_exact_equal": true,
+    "camera_moved_m": 0.015815839171409607,
+    "visible_queries": [
+      0.0,
+      0.0
+    ],
+    "trainable_parameters": 228803,
+    "peak_memory_bytes": 173073920,
+    "seconds": 0.0322619266808033
+  },
+  "full": {
+    "status": "PASS",
+    "zero_init_max_abs": {
+      "pred_vertices": 0.0,
+      "pred_cam_t": 0.0,
+      "global_rot": 0.0,
+      "body_pose": 0.0,
+      "shape": 0.0,
+      "scale": 0.0
+    },
+    "same_batch_Official_vs_historical_cache": {
+      "pred_vertices": 0.0,
+      "pred_cam_t": 0.0,
+      "global_rot": 0.0,
+      "body_pose": 0.0,
+      "shape": 0.0,
+      "scale": 0.0
+    },
+    "gradient_norm": 3.3054165840148926,
+    "body_exact_equal": true,
+    "camera_moved_m": 0.020446475595235825,
+    "visible_queries": [
+      134,
+      72
+    ],
+    "trainable_parameters": 371206,
+    "peak_memory_bytes": 190246400,
+    "seconds": 0.09069587895646691,
+    "fine_head_gradient_norm": 0.10665819048881531,
+    "raw_vs_directional_fine_m": {
+      "fine_raw_delta": [
+        [
+          -0.0017824691021814942,
+          0.002989957109093666,
+          -0.0030076010152697563
+        ],
+        [
+          -0.0018270928412675858,
+          0.00316660781390965,
+          -0.0031869416125118732
+        ]
+      ],
+      "fine_delta": [
+        [
+          -0.0017173936357721686,
+          0.0028345559258013964,
+          -0.002947763307020068
+        ],
+        [
+          -0.0017836723709478974,
+          0.00297954841516912,
+          -0.0031415079720318317
+        ]
+      ]
+    }
+  },
+  "status": "PASS",
+  "test_read": false,
+  "camera_B_read": false
+}

@@ -1,8 +1,10 @@
 # 项目当前状态
 
-更新时间：2026-10-10。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
+更新时间：2026-10-11。现役入口以本页及所链接的机器可读结果为准；历史 handoff 保留当时的合同与结论。
 
-**服务器操作偏好（最新）：**只有用户明确要求关机才关闭；先前“任务结束自动关闭AutoDL”的要求已撤销。当前原AutoDL保持无卡模式，未开启新付费GPU或训练。
+**服务器操作偏好（最新）：**只有用户明确要求关机才关闭。当前已获授权的AutoDL原实例在线GPU模式（RTX6000D），完整R5对照正在训练；本轮没有开新付费实例。218承担异机备份，当前缺原渲染CUDA编译环境。
+
+**最新执行主线：完整R5与旧架构三种子公平对照。** 用户已批准执行。冻结Official Body、公制点集coarse、可见几何fine及法线方向处理已实现并通过七组GPU前向/反向QA；14个LR短筛完成，正式七组×seed11/23/37、每组50轮队列已启动。统一native TRAIN3200/VAL400与纹理scan TRAIN2304/VAL768，真实232开发帧A输入/B独立评价。新模型raw不加Txyz；Official＋Txyz历史逐帧重现通过，VAL11.226mm。输入16.20GB与首批checkpoint已备份到E盘及218，后续评价/消融/全量图/完整性与Git交付已串联。当前还没有最终三seed排名，不宣布R5优势；TEST封存。见[实际执行交付](handoffs/real-scene-2026-10-11/r5-complete-comparison-v1/README.md)、[自审](handoffs/real-scene-2026-10-11/r5-complete-comparison-v1/SELF_AUDIT.md)、[已批准计划](research/2026-10-11-r5-completion-plan/EXECUTION_PLAN.md)。下文R4/R5早期条目是历史结论，不代表当前没有训练。
 
 **最新数据主线 R5 V2 已生成：**优先使用 `172.18.6.218:436` 的八张 2080 Ti，完成 HuMMan-Recon 摄影纹理扫描的受控相机合成：12 个既有身份、48 个固定源 Mesh、64 个物理相机配置，共 3,072 张 RGB-D（9 TRAIN / 2,304 图，3 VAL / 768 图）。涵盖固定视角不同距离、多方向与距离、俯仰、光轴 roll、偏心和焦距；固定人体及世界灯光，464 张截断图保留。全量哈希、独立射线/Blender 深度、相机及源坐标检查通过，导出 3,072 张 JPEG、48 张全相机联系图和离线筛选网页。数据与完整备份位于218并复制本地；旧数据保留、TEST未读、未训练。扫描中心不是MHR root，无原生Pose/Shape参数GT，相机倾斜不等于真实俯卧。本轮先完成数据；架构仍待定位诊断后决定。见[R5 V2报告](handoffs/real-scene-2026-10-10/humman-controlled-camera-r5-v2/FINAL_REPORT.md)。
 
