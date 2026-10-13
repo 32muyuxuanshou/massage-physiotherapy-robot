@@ -1,13 +1,13 @@
 # BEHAVE 现有模型统一评价计划
 
-日期：2026-10-13。状态：**方案已整理，正式实验未启动。**
+日期：2026-10-13。状态：**本计划的 270 帧正式推理、8,100 条评价和 1,620 张可视化已完成，完整性通过；大文件备份正在后台收尾。** [实际结果及审计](../../handoffs/real-scene-2026-10-13/behave-r5-comparison-v1/FINAL_REPORT.md)。以下为执行前制定的方案；本轮发现观测支撑中存在物体/异常深度，实际报告保留该限制。
 
 ## Material Passport
 
 - Origin Skill: academic-research-suite / experiment-agent
 - Origin Mode: plan
 - Origin Date: 2026-10-13
-- Verification Status: UNVERIFIED（指本计划的正式实验）
+- Verification Status: FIXED_COHORT_EXECUTION_VERIFIED（纯人体表面/临床精度不在通过范围）
 - Version Label: behave_comparison_plan_v1
 
 ## 目标
