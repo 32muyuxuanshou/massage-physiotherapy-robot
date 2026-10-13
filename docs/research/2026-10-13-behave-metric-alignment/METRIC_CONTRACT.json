@@ -1,0 +1,53 @@
+{
+  "schema": "BEHAVE_MHR_SMPL_PVE_CONTRACT_V1",
+  "status": "CPU_COMPUTATION_READY_M3_PROTOCOL_UNCONFIRMED",
+  "source_topology": {
+    "family": "MHR",
+    "lod": 1,
+    "vertices": 18439,
+    "faces": 36874,
+    "faces_sha256": "79d3954cae04ae7a16ad2005238df81da2003b971b5b582457495430182b77c5"
+  },
+  "target_topology": {
+    "family": "SMPL_compatible",
+    "vertices": 6890
+  },
+  "mapping_sha256": "4bfe2fd6abb598f38ba3a3aa5506ac45b4efb3cdaed7fe4757cfbbf20bbe6ac7",
+  "mapping_policy": "fixed_barycentric_no_parameter_fitting_no_reference_access",
+  "input_unit": "meters",
+  "output_unit": "millimeters",
+  "reference": "person/fit02/person_fit.ply",
+  "reference_kind": "multi_view_fitted_reference_not_skin_or_acupoint_ground_truth",
+  "prediction_coordinate": "selected_input_camera",
+  "reference_transform": "sequence_date_camera_extrinsic_only",
+  "primary_metric": "pve_absolute_mm",
+  "metric_formula": "1000*mean_i(norm2(predicted_smpl_vertex_i-reference_smpl_vertex_i))",
+  "primary_vertex_subset": "all_6890_no_filter",
+  "diagnostic_metrics": [
+    "pve_centroid_centered_mm",
+    "pa_pve_similarity_mm"
+  ],
+  "centroid_is_not_pelvis": true,
+  "root_and_joint_metrics_require_topology_matched_regressor": true,
+  "joint_regressor_asset_verified": false,
+  "new_benchmark_aggregation": {
+    "primary": "frame_equal_mean",
+    "supporting": "frame_then_sequence_then_identity_equal_mean",
+    "per_frame_records_required": true
+  },
+  "m3_reported": {
+    "pve_mm_amass_only": 93.1,
+    "pve_mm_behave_finetuned": 70.9,
+    "mpjpe_mm_behave_finetuned": 57.9,
+    "alignment": "UNSPECIFIED",
+    "joint_set": "UNSPECIFIED",
+    "frame_manifest": "UNPUBLISHED",
+    "camera_sampling": "UNSPECIFIED",
+    "aggregation": "UNSPECIFIED"
+  },
+  "m3_exact_equivalence": false,
+  "m3_literature_row_label": "reported_reference_protocol_incomplete_not_direct_reproduced_baseline",
+  "test_sequence_rule": "official split.json test only; historical 45 frames not substitute",
+  "formal_test_frames_selected": false,
+  "formal_benchmark_executed": false
+}

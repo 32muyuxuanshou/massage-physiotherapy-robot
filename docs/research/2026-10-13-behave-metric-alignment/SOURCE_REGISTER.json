@@ -1,0 +1,91 @@
+{
+  "M3": {
+    "url": "https://arxiv.org/html/2508.08178v2",
+    "local_pdf_sha256": "89d25f4bd8285a7634bed8698267c8397d00b6a271f0a75fe1daa4a251285e2a",
+    "evidence_sections": [
+      "3.1",
+      "3.2",
+      "4",
+      "5.1",
+      "5.2.1",
+      "Table 3",
+      "Table 4"
+    ],
+    "unresolved": [
+      "alignment",
+      "frame list",
+      "camera sampling",
+      "aggregation",
+      "joint set"
+    ]
+  },
+  "SAM3D": {
+    "url": "https://arxiv.org/html/2602.15989v1#S8",
+    "evidence": "Evaluation states MHR meshes are mapped to SMPL for SMPL-based datasets"
+  },
+  "MHR_code": {
+    "repo": "facebookresearch/MHR",
+    "commit": "d96fafa33bbf018647c70c3525e91f53e79d2a14",
+    "files": [
+      {
+        "path": "tools/mhr_smpl_conversion/conversion.py",
+        "url": "https://raw.githubusercontent.com/facebookresearch/MHR/d96fafa33bbf018647c70c3525e91f53e79d2a14/tools/mhr_smpl_conversion/conversion.py",
+        "sha256": "c0c3175d72c1b5704f8c691b3db31f431069f4707dc1d20e8c89daa697f41fe1"
+      },
+      {
+        "path": "tools/mhr_smpl_conversion/file_assets.py",
+        "url": "https://raw.githubusercontent.com/facebookresearch/MHR/d96fafa33bbf018647c70c3525e91f53e79d2a14/tools/mhr_smpl_conversion/file_assets.py",
+        "sha256": "4c3b7f59d988fa956b99c78d3127323eb71e1246a62fe251a6ec077a0722d188"
+      },
+      {
+        "path": "tools/mhr_smpl_conversion/utils.py",
+        "url": "https://raw.githubusercontent.com/facebookresearch/MHR/d96fafa33bbf018647c70c3525e91f53e79d2a14/tools/mhr_smpl_conversion/utils.py",
+        "sha256": "310bfe99ffa3d580992704312e0bca852451568c8260ffaf5b9817dfdefeac1a"
+      },
+      {
+        "path": "tools/mhr_smpl_conversion/README.md",
+        "url": "https://raw.githubusercontent.com/facebookresearch/MHR/d96fafa33bbf018647c70c3525e91f53e79d2a14/tools/mhr_smpl_conversion/README.md",
+        "sha256": "06006a60378fbbf22c10d395dcef36868b06c54b059704e305a9f178308d69d9"
+      }
+    ]
+  },
+  "mapping": {
+    "files": [
+      {
+        "name": "mhr2smpl_mapping.npz",
+        "sha256": "4bfe2fd6abb598f38ba3a3aa5506ac45b4efb3cdaed7fe4757cfbbf20bbe6ac7",
+        "bytes": 170721,
+        "source": "existing authorized local MHR checkout"
+      },
+      {
+        "name": "smpl2mhr_mapping.npz",
+        "sha256": "84f908ad534f470dc5db072a4aeb9ccb4f9aa4484d2bce2558cc1a346df95c98",
+        "bytes": 590582,
+        "source": "existing authorized local MHR checkout"
+      },
+      {
+        "name": "mhr_face_mask.ply",
+        "sha256": "db8ed4fca24a744b1e1f4ed9562f55aff837c9f270debbb34a9d1537a3ac62e1",
+        "bytes": 774669,
+        "source": "existing authorized local MHR checkout"
+      },
+      {
+        "name": "head_hand_mask.npz",
+        "sha256": "60a64a305731dcc1c09f167dfa844246443b3115ae05abebe3813aa64a9ba2ae",
+        "bytes": 222040,
+        "source": "existing authorized local MHR checkout"
+      }
+    ],
+    "source_repo": "facebookresearch/MHR",
+    "source_checkout": "AI感知模块\\研究资料\\真实场景关键点定位_2026-09-06\\local\\MHR",
+    "official_head_inspected": "d96fafa33bbf018647c70c3525e91f53e79d2a14",
+    "source_checkout_commit": "e412e12c9d7287a598f00edf19242b476b440211"
+  },
+  "BEHAVE": {
+    "demo": "https://github.com/xiexh20/behave-dataset/blob/main/behave_demo.py",
+    "reader": "https://github.com/xiexh20/behave-dataset/blob/main/data/frame_data.py",
+    "split": "https://datasets.d2.mpi-inf.mpg.de/cvpr22behave/split.json",
+    "evidence": "fitting reference loaded through get_smplfit; demo applies world2local_meshes before rendering"
+  },
+  "external_author_contacted": false
+}
