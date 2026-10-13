@@ -22,12 +22,24 @@
   "expected_frames": 270,
   "source_files": [
     {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/build_report.py",
+      "sha256": "f3632db96b6c27b73364298fdc5ebe82d239b74135cf1817e728f0d7629a31f1"
+    },
+    {
       "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/cache_official_gpu.py",
       "sha256": "d2c970279385fe24f98f88ad1ec3a8d97476a7ba19ca416b22e30d540c8b054d"
     },
     {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/check_execution.py",
+      "sha256": "79f190e3f6a059f2c7650559c28646a23ede14a7866ff6924d1304b6846ad2ba"
+    },
+    {
       "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/check_official_mapping.py",
       "sha256": "998f061ffde4b86ba0dd40130b82421c53037dabc230500468112a26e6b49476"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/check_parallel_schedule.py",
+      "sha256": "c0f6d1ebfdcde2590f17313ed0bba40e9b51617ff6ba3f114fd7f4d50e928898"
     },
     {
       "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/dataset_io.py",
@@ -63,7 +75,7 @@
     },
     {
       "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/run_benchmark.py",
-      "sha256": "a3c1c606e0226a28addb03da0e43a7a5571c7a2b0d55e370ed1103b9813ff8ea"
+      "sha256": "1dc180b1980adbebf67ee63d97735b3898d9faeec12a2d58535b75d4d1cdd1dc"
     },
     {
       "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/sanity.py",
@@ -76,6 +88,10 @@
     {
       "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/summarize_benchmark.py",
       "sha256": "18357fafbe80e0d36678190484a8d171b354a811e985645c0776c8f6ffdc7b6e"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/visualize_benchmark.py",
+      "sha256": "f6f92601b66f78abb1ba67e3bd8a9f5a3def3e48436f79e3dcce55ceffa652f0"
     },
     {
       "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/create_webdataset.py",
@@ -497,5 +513,22 @@
   "heldout_each_camera_points": 2048,
   "new_model_Txyz": false,
   "checkpoint_selection": "Original native VAL Best and epoch50 Last, separately reported; no BEHAVE selection",
-  "M3_protocol": "Paper-reported reference only; unconfirmed alignment, timestamps, cameras, weights, and foreground preprocessing"
+  "M3_protocol": "Paper-reported reference only; unconfirmed alignment, timestamps, cameras, weights, and foreground preprocessing",
+  "execution_revision": {
+    "scope": "8 independent CPU evaluation processes plus cached visualization/reporting",
+    "changed_files": [
+      "run_benchmark.py",
+      "visualize_benchmark.py",
+      "build_report.py",
+      "check_execution.py",
+      "check_parallel_schedule.py"
+    ],
+    "numeric_evaluator_changed": false,
+    "models_inputs_samples_metrics_checkpoints_unchanged": true,
+    "parallel_serial_QA": "27/27 exact RESULTS.json SHA equality on fixed six-frame smoke",
+    "formal_evaluation_workers": 8,
+    "smoke_actual_integrity": "PASS",
+    "smoke_panels": 36,
+    "frozen_unix": 1791894527.6603546
+  }
 }
