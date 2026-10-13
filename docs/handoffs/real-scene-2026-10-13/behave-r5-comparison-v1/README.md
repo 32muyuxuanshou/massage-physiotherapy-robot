@@ -1,6 +1,21 @@
-# BEHAVE / R5 对照：正式执行中
+# BEHAVE / R5 对照：科学评价已完成
 
-日期：2026-10-13。状态：**用户已开启原实例 GPU；6 帧核验通过，固定 270 帧推理完成，独立几何评价正在运行。** 完整正式结果尚未交付。
+日期：2026-10-13。状态：**270 帧完整评价、1,620 张可视化与三维查看数据已完成；运行后完整性和本地重聚合核验通过。大文件两卷备份正在传输，最终异机回执尚未完成。**
+
+## 正式交付入口
+
+- [最终报告与独立分析](FINAL_REPORT.md)
+- [审计版 HTML（下载后打开）](results/BEHAVE_R5_最终对照_审计版.html)
+- [30 个组合的完整汇总](results/AGGREGATED.json) · [8,100 条逐帧表](results/PER_FRAME.csv)
+- [全部原始数值结果](results/raw) · [配对失败与回退归因](results/INTERPRETATION.json)
+- [运行后实际完整性](results/POST_EXECUTION_INTEGRITY.json) · [实际 checkpoint 轮次](results/CHECKPOINT_EPOCHS.json)
+- [异常支撑点：原像素/深度/拟合参考](results/WORST_REFERENCE_SUPPORT_AUDIT.json)
+- [全部图片索引与数值](visualizations/VISUALIZATION_MANIFEST.json) · [三维查看索引](results/VERTEX_VIEWER_MANIFEST.json)
+- 用户本机已打开私有查看入口：`http://127.0.0.1:8779/`，通过 SSH 连接 AutoDL；双方 HTTP 均仅绑定 localhost，没有公开原始图片。
+
+三 seed 平均：Official PVE **97.64 mm**；Official+Txyz **56.24 mm**；R5 Full Best **89.57 mm**，Last **61.06 mm**。R5 Last 改善位置并保留身体；还没有稳定超过强基线。Best/Last 分开，未用 BEHAVE 重新选 checkpoint。
+
+**观测距离仅按原冻结支撑点诊断。** 数据包含物体/遮挡和异常原始深度，部分 P95 接近 2.8 m；拟合参考也对同点集出现极大残差。全部分数和失败保留，没有事后删点。不能解释成纯人体、裸背或穴位精度。
 
 ## 本轮执行进展
 
@@ -9,7 +24,7 @@
 - 27 个 CPU 评价任务在 8 路并行重算后，与串行 `RESULTS.json` 的实际 SHA **27/27 完全一致**。正式采用 8 路独立评价；算法、样本、点集、聚合、阈值及权重均未改变。
 - 首批三 seed 平均表面距离：Official 20.01、Official+Txyz 20.30、G1 Best 24.89、R5 Full Best 35.34 mm。**这是两个 Sub03 序列的 6 帧核验，不是 270 帧结论，不据此调参或换样本。**
 - 已生成首批 36 张全部 seed / Best–Last 叠图，以及三维对应顶点查看器。图片是缓存网格生成；不重新拟合。全部正式图片及最终 HTML 将在完整评价后生成。
-- 固定 270 帧的 Official 三次重复和 24 个训练模型组合均已完成，正在评价 8,100 条方法–帧记录。预/后运行将同时校验实际资产、科学配置和输入清单。
+- 固定 270 帧的 Official 三次重复和 24 个训练模型组合均已完成；8,100 条评价记录齐全。运行前/后实际资产、科学配置和输入清单检查通过。
 - 新增的物体遮挡核查仅诊断，不删除测试点：首帧 K1 的 730/2,048 个评价点投影位于官方 rendered object mask 内；这种 mask 含遮挡重叠，不能直接判定所有点都误标。提示背包/衣物表面与潜在人体表面并非同一对象。
 
 [首批数值](smoke/AGGREGATED.json) · [实际完整性](smoke/POST_EXECUTION_INTEGRITY.json) · [并行一致性](smoke/PARALLEL_SCHEDULE_QA.json)
@@ -47,10 +62,10 @@
 - 现有权重：`/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/formal/`。
 - [执行代码](../../../../research/behave_metric_alignment)；[完整计划](../../../research/2026-10-13-behave-model-comparison-plan/PLAN.md)。
 
-GPU 开启后先运行 `run_benchmark.py --scope smoke`；确认原生输出、Body 保留、三 seed 对照和评价结果正常，再运行 `--scope formal`。无卡准备不运行这两个命令。
+已依次完成 `--scope smoke` 和固定 `--scope formal --evaluation-workers 8`。科学计算未重跑；画图采用通过 36 张实际 JPEG SHA 等价验证的独立范围并行调度，见 `VISUALIZATION_EXECUTION_REVISION.json`。
 
-RGB 核查图和原始数据仅保留本地/私有服务器；Git 不上传原始图像、人体资产和权重。正式 HTML、全部失败可视化、完整几何评价及最终备份尚未完成。
+RGB 和原始数据留在本地/私有服务器；Git 不上传原始图片、人体资产、权重和大型 NPZ。正式 HTML、全量可视化及几何评价已完成。两卷备份分别保存全部实验资产、6 个运行资产与 24 个 checkpoint；正在进行 Windows/218 实际 SHA 核验。后续监控只收尾备份，不追加训练或关闭服务器。
 
 ## 当前不能下的结论
 
-尚未得到本轮任何新模型 PVE；不能说 R5 已超过 M³、Official 或 Official+Txyz。BEHAVE 不是专门的俯卧床上数据，不能把本轮结果当成按摩穴位精度。
+不能说本轮严格超过 M³、已经解决身体几何或达到按摩穴位精度。BEHAVE 不是专门的俯卧床上数据；M³ 的对齐/采样/前景协议尚未完整确认，不能按两个不同协议的毫米值排名。

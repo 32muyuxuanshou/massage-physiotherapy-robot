@@ -1,0 +1,534 @@
+{
+  "r5_code": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete",
+  "r41_code": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/assets/real_evaluation/code",
+  "seeds": [
+    11,
+    23,
+    37
+  ],
+  "methods": [
+    "official",
+    "official_txyz",
+    "rgb_only",
+    "g1",
+    "coarse",
+    "full"
+  ],
+  "checkpoints": [
+    "best",
+    "last"
+  ],
+  "expected_evaluation_cells": 30,
+  "expected_frames": 270,
+  "source_files": [
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/build_report.py",
+      "sha256": "f3632db96b6c27b73364298fdc5ebe82d239b74135cf1817e728f0d7629a31f1"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/cache_official_gpu.py",
+      "sha256": "d2c970279385fe24f98f88ad1ec3a8d97476a7ba19ca416b22e30d540c8b054d"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/check_execution.py",
+      "sha256": "79f190e3f6a059f2c7650559c28646a23ede14a7866ff6924d1304b6846ad2ba"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/check_official_mapping.py",
+      "sha256": "998f061ffde4b86ba0dd40130b82421c53037dabc230500468112a26e6b49476"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/check_parallel_schedule.py",
+      "sha256": "c0f6d1ebfdcde2590f17313ed0bba40e9b51617ff6ba3f114fd7f4d50e928898"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/dataset_io.py",
+      "sha256": "2e9807db417dd3507ca12561257f6d5401837b000aeafca4df8e7e2156d0155b"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/download_subset.py",
+      "sha256": "5d89f510f4cb4a854805afcf07632a9e071d075cbff11a169428593cf32d2443"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/evaluate_cached_cpu.py",
+      "sha256": "f6d756f527762f1ddc42ec4901934ad27ee48ad06b477dca17e657350a7f8d0d"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/inspect_archive.py",
+      "sha256": "3153bdf057a29ac50162d9611c30cd698714fe147b8da61246a1f84288aa899d"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/metrics.py",
+      "sha256": "829434fa0335290dc6f97b7a23a23905155b69a1bde7bdc7a24401b7462b92fb"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/predict_existing_gpu.py",
+      "sha256": "8399143c7cdb82ee87bd3f3f832c3f9b45681cda392a287ee36c38318353f0ac"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/prepare_inputs_cpu.py",
+      "sha256": "48fe1baebf7ec6e7ebcf6d47ee86a20513c9406c874fa3e6f0894647efcd8efc"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/qa_real_coordinates.py",
+      "sha256": "135c041b62d47d428572679756fd0c3ecd52df9bcc76e28103ddc97aff77a9b5"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/run_benchmark.py",
+      "sha256": "1dc180b1980adbebf67ee63d97735b3898d9faeec12a2d58535b75d4d1cdd1dc"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/sanity.py",
+      "sha256": "11cfe64610d4cfdfcce30fcf50fc9bb9b5fd056ac6066258617d3495a7565baf"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/self_check_preparation.py",
+      "sha256": "d0762eb51b0aa9f9477b5cc8feb1a2ba953aa861bf836e62228e1a1950b33104"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/summarize_benchmark.py",
+      "sha256": "18357fafbe80e0d36678190484a8d171b354a811e985645c0776c8f6ffdc7b6e"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/code/visualize_benchmark.py",
+      "sha256": "f6f92601b66f78abb1ba67e3bd8a9f5a3def3e48436f79e3dcce55ceffa652f0"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/create_webdataset.py",
+      "sha256": "bd75145fb63a822701d14973930c16e59db71fc3123afb30f5fdbd5c198f4b9c"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/download.py",
+      "sha256": "2060cf9563ee207a998cd1bef00f7c92803a53a450c668eda6b980ba5eab7cf2"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/egohumans/__init__.py",
+      "sha256": "8237b90af518854b588cfb500c5fe0992557774922490616f901e93bce1756d9"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/egohumans/_init_paths.py",
+      "sha256": "42e10e2d57fe8d52413ceef62360a3de63aae9e99ad2c0ea0febee7f625cc6d7"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/egohumans/config/__init__.py",
+      "sha256": "fc60ffbc2dba0b5339f08b079cf60700b5dfeadce11278ef3ebdff3d69eb3b17"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/egohumans/config/default.py",
+      "sha256": "acccd065b343b31e0c9c6e36fa48cb556ed2c46007015c5c80364e0b0301cd0e"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/egohumans/undistort_images.py",
+      "sha256": "9a85465a2cf7314eea66036496cfa0744d6da388b5fba9a8f12cd616c0f7171a"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/harmony4d/_init_paths.py",
+      "sha256": "42e10e2d57fe8d52413ceef62360a3de63aae9e99ad2c0ea0febee7f625cc6d7"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/harmony4d/config/__init__.py",
+      "sha256": "63f5cc05b80755230171cb14d5e0bf8ac045fa8830d2fe48387f1c5598ae34fd"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/harmony4d/config/default.py",
+      "sha256": "efb08fa6d26c155ff0d05c654717e25173cf58b37704ce9c4071318f27b1c73f"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/data/scripts/harmony4d/undistort_images.py",
+      "sha256": "a9c9b81e9b68bd536721bcf212894b15587cd2717161db1e55f5d4afdd355604"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/demo.py",
+      "sha256": "c6f366a66a7e8c836b3d3fa6577d03bb3507145dcebce5cea29bce1768fb0b89"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/notebook/__init__.py",
+      "sha256": "8d17129676131d623a69b29e796b6dbcad41135fc6250fb0d4bff878483051b5"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/notebook/utils.py",
+      "sha256": "9d3c209c1e818a84b7e948e265224251cb12ca2169984816f639748c32b13a91"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/__init__.py",
+      "sha256": "caac69470c6c12cc1f5a44f1bde70bb9c67eecbc1fea44e0f843eb426c399d1c"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/build_models.py",
+      "sha256": "d879d33819a1faa4127289587a2e37095b232f1b8064dcec719904ec06c393de"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/data/__init__.py",
+      "sha256": "8237b90af518854b588cfb500c5fe0992557774922490616f901e93bce1756d9"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/data/transforms/__init__.py",
+      "sha256": "7aa10e4be254207a16c3a96b01260222d4a843ee5ea301fe93932363841347ec"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/data/transforms/bbox_utils.py",
+      "sha256": "265613cf59a99cb5d62cccaf6eb6305c720d8ebc36c9a6f646e0e4311c315053"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/data/transforms/common.py",
+      "sha256": "e6e1f95880ee0ab8074342e38762ead9293eba1b75dcbb4d40848fde1c3e3634"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/data/utils/io.py",
+      "sha256": "bf9e3931c95537eb6eff78ac8b7e3a299738bec840a5d4f16d7a157b1e79d1fe"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/data/utils/prepare_batch.py",
+      "sha256": "993d62352ff67d42b2c6d6a707a45818992422cfe863e584702a2deb7fe09257"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/metadata/__init__.py",
+      "sha256": "c3eb36d84ccbbe0f69c874dd3386924ff1e6db72b135c0b853916596497b6d82"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/metadata/mhr70.py",
+      "sha256": "cad296020ff233d744b3f31ad751b059f6728047534f75f745648ae6d9d4bd9c"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/__init__.py",
+      "sha256": "8237b90af518854b588cfb500c5fe0992557774922490616f901e93bce1756d9"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/backbones/__init__.py",
+      "sha256": "3f335cef4cb00ddd3841746f957646cebf3e13b4d453ab7b7eccd19657456acb"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/backbones/dinov3.py",
+      "sha256": "656470f90f500ce7c615b8a5f485dbc4f23a8d10e1330bf6013aa5bff66e3be5"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/backbones/vit.py",
+      "sha256": "9c33ade429f4686b108cb76c3a3fc8e90e08c4368de02bbf535e02981f954e33"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/decoders/__init__.py",
+      "sha256": "d18426ca76ffcd3eb945ea73a3178d7d3731096bbaa0821d189da5eeda12437c"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/decoders/keypoint_prompt_sampler.py",
+      "sha256": "62d5c944218401b62bd05d100d4d1dc2f4360775dca6718fd4da266e2aad8bc3"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/decoders/prompt_encoder.py",
+      "sha256": "2bb0054bfe499d13073a696f6daa9b703d94e55ac038c3b6cce45358f16b2fd2"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/decoders/promptable_decoder.py",
+      "sha256": "2d1c15a06fbb8b9a30e8b841da6fa4a49e9bf1260d4f7013e35725de081e280c"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/heads/__init__.py",
+      "sha256": "4d0366cbd6a136b8e092c1b60876447d349d0d2b564ebab3245668fc5ff9c517"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/heads/camera_head.py",
+      "sha256": "57d8e60f1073eab798dc4910a33a5df186ab600fb5496b186c1e5b3bf4c2daf0"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/heads/mhr_head.py",
+      "sha256": "1e4b5482f78b337a2c739c945f29a02f579b3aca99523f69f5436c3f1e394bf8"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/meta_arch/__init__.py",
+      "sha256": "72bdf541335b12da301a7efcd8d7bb919da79e5d2759619383ba1d5e149cdf05"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/meta_arch/base_lightning_module.py",
+      "sha256": "0e59ea0f8e1cf3a30173ba29b55551a7ba5fcaa029c8ca03deae7a21ff193070"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/meta_arch/base_model.py",
+      "sha256": "ebc9174c5fc7ca9286cbe9d04d103ce5868bb40e414b172295f4f2e5b5d61b68"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/meta_arch/sam3d_body.py",
+      "sha256": "d123798e9519fe1ea9cfbfcc07982d33ca9f4d9dfe796d10f234cc314f3e3de9"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/modules/__init__.py",
+      "sha256": "46046f92448d2e72cb1266be8780f902a990bf1e3cb9d6576a97832a7821fab7"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/modules/camera_embed.py",
+      "sha256": "4583c5538ff2d51b79bba88e8d0222850d1ea257581c762ac9e472d44e5f20ac"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/modules/drop_path.py",
+      "sha256": "a6e9c97e9c4f02b799d71ca27abb642fc00574af54df16dead5db24541420ec9"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/modules/geometry_utils.py",
+      "sha256": "8ce32a7540ec5aae17a65fd09f2e02b7fab5b26de65b0b7f58e4250057beb6cb"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/modules/layer_scale.py",
+      "sha256": "3543467eb762a23ad19ca2d4d1de9c10ebc151aa22fa059b33dbb7c89de98cf4"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/modules/mhr_utils.py",
+      "sha256": "a25c0bc7165fdb490f14f28bf4b007ad0ece3dc0c8c0bc4230eb2d743cf6c210"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/modules/misc.py",
+      "sha256": "81389fb3cada9ca6c32cfdce63dd767480b1b75fa31ba79552ad2ba85fd07e7b"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/modules/swiglu_ffn.py",
+      "sha256": "787f5d896858a26166df82f4bea16845e3e36ed216151ce146358f45c6be21c9"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/modules/transformer.py",
+      "sha256": "7d972a5ec163fc69c72e2f2849426d08cee44fc4eda8615791b4dd180582dd76"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/optim/__init__.py",
+      "sha256": "8237b90af518854b588cfb500c5fe0992557774922490616f901e93bce1756d9"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/models/optim/fp16_utils.py",
+      "sha256": "b9baf808c2b14e189bd716c372bdddeff15c908d4f9cec6beb392a5ef1254a34"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/sam_3d_body_estimator.py",
+      "sha256": "9690d55273db4a8e56660407a2366cc398b09b98a7f9d4fcf7772d13497c04d8"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/utils/__init__.py",
+      "sha256": "b391f1a1f06c1608f45dcacaf312f48a86599180f87630c23b550411b0c7aadd"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/utils/checkpoint.py",
+      "sha256": "fd2e385d24e248a2baa89022e5ca49f63ed9f7fea525524767ace6bfef58c0e2"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/utils/config.py",
+      "sha256": "374adc40423bb63a6fa64d305da26ea7b06f1a037d9c11e7ffe683b80081b817"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/utils/dist.py",
+      "sha256": "f991fb070b1f5d653e5fec8d048f20ccaa37e2cda1a43deea8b83dd3c0499b77"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/utils/logging.py",
+      "sha256": "93395fb1578bf6c02483f6c03c9beb01b1d7a569f7a479fc1b9a33f842b2a6fd"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/visualization/__init__.py",
+      "sha256": "8237b90af518854b588cfb500c5fe0992557774922490616f901e93bce1756d9"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/visualization/renderer.py",
+      "sha256": "d528de087974a5648d4df5e402781f357f3478cf9b361bd23c9da53b45ff3178"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/visualization/skeleton_visualizer.py",
+      "sha256": "b83975a156bf9b87c7c1445dee993ddf4c6f66529546758757e2112f2b796906"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/sam_3d_body/visualization/utils.py",
+      "sha256": "8eab06fa46ffb56f66af0cd1fa0d0779a4ce13ea90b4f7217394f4ac5523a714"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/tools/__init__.py",
+      "sha256": "8237b90af518854b588cfb500c5fe0992557774922490616f901e93bce1756d9"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/tools/build_detector.py",
+      "sha256": "8e990040dc0f93cd3d17d7549a2aa24647c86240d115680784e48ef24ad11e22"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/tools/build_fov_estimator.py",
+      "sha256": "039dfdc7d689a28e30e03c26e6d9136703a1cfb33af752bdab1a48ad9e7658d4"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/tools/build_sam.py",
+      "sha256": "e6c96c202cb6c6634e692ad96c2c6b0b8cf85e899bd5b15648c0e14595750e74"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/tools/cascade_mask_rcnn_vitdet_h_75ep.py",
+      "sha256": "6484914a93b5fefaed2bd9c2fb228032c0b19fff7d88e1343f90517ca6d85540"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/external/sam-3d-body/tools/vis_utils.py",
+      "sha256": "28bb4178b24b3d959d46cbb489371345a3475489963ab7bd12c68a886723fa9d"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/assets/real_evaluation/code/diagnose_r31.py",
+      "sha256": "4df3cb80cf0210b4100b93b72ece021149e342b1cffa7d12b4d538617439a6b1"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/assets/real_evaluation/code/run_r41_txyz.py",
+      "sha256": "44ec9521a4d534ddc40e74020032b94ae2bab6377acbf8f8a3efde22a6221ae2"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/assets/real_evaluation/code/surface_metrics.py",
+      "sha256": "619b32af927ae466203a2e48bf44389511d28cddb32dff7c4d36d551a9194d81"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/fusion.py",
+      "sha256": "d6ff399525f7e771605f802f92cb12186bd3b7815770b98d6ca5021ec2803535"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/fusion_r4.py",
+      "sha256": "b489e282fffb098d790aa35d14772e36fed734f66b01dde1140a6a8824fc268a"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/geometry.py",
+      "sha256": "f02c290848a67666a60597ba9b510ac6e6fc6c3f5fd794a5a9f21dd741ad1e0f"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r3_common.py",
+      "sha256": "6207404de1a677d86f6b5f39b99c4a5a39e2031f5ed5ba723008633492a125b0"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_camera_only/camera_head.py",
+      "sha256": "b305b7b4ff1a688ebeb22d94d18d3ad4cb5d22a733325addf2f730dbff632b4b"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_camera_only/evaluate_scan.py",
+      "sha256": "e20f631384ed87fc80666440bf4a5f15d3a8bf52d7c1b9eb1688a156d369f11b"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_camera_only/scan_render.py",
+      "sha256": "c0e0a1ae95614613b06a6568cd45c92a7b79184082c1f83b74f79ccb778e7c01"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_camera_only/train_camera.py",
+      "sha256": "51fb404734f81f5bcebeb25b2774aa22d74327e742c6ad19a5de37cfe12d0986"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_camera_only/visualize_scan.py",
+      "sha256": "ddf2478af5a46c2cd4e7b850580b961cb92419979914931c647e5309e0295394"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/ablate_depth.py",
+      "sha256": "0281cb13bc3edf8ecec890224badd1d69cce29cb97bf0970aabb747fd29b0dc4"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/benchmark.py",
+      "sha256": "9fbacb0162024a6efb46859d49e14a5bf9d5405de172aefcb8de0e6e3e6e71d8"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/calibrate_scan.py",
+      "sha256": "fea38292d6eec5d97bf1a254d1790f620661e5446432a98a20a5be347ff059b8"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/checkpoint_snapshots.py",
+      "sha256": "9383cc46c578330092826973871d15b59b9767347d025f3200bb876d64d91023"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/compact_scan_cache.py",
+      "sha256": "be4c3b546bcc93ca00e3c9fc9f62eb66a3a5def0eeee6603c66f399c558f13eb"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/data.py",
+      "sha256": "406f147952e7d6b4dc256c562ffba9ada3b4e46b8691dc19ca4208eb569ed385"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/engine.py",
+      "sha256": "8933531586d0d440a46211b9a26cd9e5fa0ffc4d1c3bdc92e34a6501380e0dc8"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/evaluate.py",
+      "sha256": "0d2df0425bab731e7cbfaf34a5806d828bd64b9d364376ba071c072e072675d6"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/evaluate_real_cpu.py",
+      "sha256": "078d46bed39ea259634c5f503282623d81ed70f9afec0fdda705a30d6b85ef86"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/infer_registered.py",
+      "sha256": "090bb8f96fd437ca043eac8bdcc280720b981218f16f0fba2074e0d5087d2ada"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/merge_scan.py",
+      "sha256": "42e2907a90b84db69a71349dc0451b6caa753e0645d9a31b465fa9e8ac8d99ae"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/model.py",
+      "sha256": "2d4cfe42e77951f2d86b4b19cada3d81f560585fbc2ba9fbb74efcf60e75876f"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/output_preflight.py",
+      "sha256": "78b4c69bd147fdbecc0f28cb3d4104b591ad1d2692abbc1d5b994a900e4bdd8f"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/pack_delivery.py",
+      "sha256": "e6e268159da16cc39245f44acc9203ee6e3c570ea99a58ff61d296b63b1d53e4"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/post_integrity.py",
+      "sha256": "100e9e38a43b117565c426e17b17bb7460edab7db865b5079e08fa8b9482f71c"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/preflight.py",
+      "sha256": "bc39a8e0d47c29d90c72e202841668f795c3125afbe1fd0c1e254e9a3de79d2d"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/prepare_pipeline.py",
+      "sha256": "ba000bc0dcee6477c75ff1e0b5f2b56409d9e71e3136fba32d4e7a94aec710b0"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/prepare_scan.py",
+      "sha256": "bb6e8d6a0673e75c475f831d14dd0b2308c291139683a3e5168febb39639337f"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/report_diagnostics.py",
+      "sha256": "122003e81fffa75f20635fd50d119b60c4a063847c3cd397d7f2ba0b4e7bf38d"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/run_postprocess.py",
+      "sha256": "7e939a4949c5e88434d6ea0600dea55628a6ff73fd4d4d252ba5373f69fce825"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/run_queue.py",
+      "sha256": "eeb01499fe4f72049810883bc5243f4f5874fef0ee041a37531aed4b9ed2c0f3"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/summarize.py",
+      "sha256": "97dea7a695c9a3449fa92795cd37b8ccff792817bf8a7b3e9408e620237c7ef7"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/train.py",
+      "sha256": "a769fa403dece1b21a5caa1f071b9e51280c409c834d93e0859957643e586565"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/r5_complete/visualize.py",
+      "sha256": "f2f373f4254b5793268a2d163d4467fd0abf85bdcc0e609b286b0583cd476542"
+    },
+    {
+      "path": "/root/autodl-tmp/rgbd_sam3d/runs/r5_complete_comparison_v1/code/render_losses.py",
+      "sha256": "94c133ac7b6afbc22d2c3e050f6276e28a4c7022d7cacd17cf50c16ab4f04e2a"
+    }
+  ],
+  "pve_primary": "Per-frame 6890 corresponding vertex mean L2, then frame-equal mean",
+  "surface_aggregation": "Camera scalar mean -> frame mean within sequence -> sequence mean within subject -> subject mean",
+  "input_policy": "All methods: K0 RGB LINEAR undistortion; axial Z/mask NEAREST undistortion; destination K unchanged; dataset-mask bbox padding25px and same mask input to prepare_batch; no detector",
+  "A_fit_max_points": 5000,
+  "heldout_each_camera_points": 2048,
+  "new_model_Txyz": false,
+  "checkpoint_selection": "Original native VAL Best and epoch50 Last, separately reported; no BEHAVE selection",
+  "M3_protocol": "Paper-reported reference only; unconfirmed alignment, timestamps, cameras, weights, and foreground preprocessing",
+  "execution_revision": {
+    "scope": "8 independent CPU evaluation processes plus cached visualization/reporting",
+    "changed_files": [
+      "run_benchmark.py",
+      "visualize_benchmark.py",
+      "build_report.py",
+      "check_execution.py",
+      "check_parallel_schedule.py"
+    ],
+    "numeric_evaluator_changed": false,
+    "models_inputs_samples_metrics_checkpoints_unchanged": true,
+    "parallel_serial_QA": "27/27 exact RESULTS.json SHA equality on fixed six-frame smoke",
+    "formal_evaluation_workers": 8,
+    "smoke_actual_integrity": "PASS",
+    "smoke_panels": 36,
+    "frozen_unix": 1791894527.6603546
+  }
+}
