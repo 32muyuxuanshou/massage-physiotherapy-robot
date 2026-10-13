@@ -1,0 +1,257 @@
+{
+  "status": "PASS_CODE_REPROJECTION_AND_CLOUD_SANITY",
+  "records": [
+    {
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0014.000",
+      "reference_vertices": 6890,
+      "reference_faces": 13776,
+      "reference_sha256": "c1fd5c6405191e43d5e8f248121d1ecc74bc578bde3b5710430f311434627da5",
+      "cameras": [
+        {
+          "camera": "K0",
+          "official_transform_max_difference_m": 2.6645352591003757e-15,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 152232,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 3.811956906215339e-05,
+          "sensor_reprojection_p95_px": 8.45010673505738e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 19.535044827998068,
+          "pass": true
+        },
+        {
+          "camera": "K1",
+          "official_transform_max_difference_m": 0.0,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 106371,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 4.358023774848163e-05,
+          "sensor_reprojection_p95_px": 9.258680244358158e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 32.97246122565885,
+          "pass": true
+        },
+        {
+          "camera": "K2",
+          "official_transform_max_difference_m": 3.552713678800501e-15,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 76430,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 3.847207686567244e-05,
+          "sensor_reprojection_p95_px": 7.816440294713675e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 17.93059606604329,
+          "pass": true
+        },
+        {
+          "camera": "K3",
+          "official_transform_max_difference_m": 2.220446049250313e-15,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 83124,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 3.537498911875025e-05,
+          "sensor_reprojection_p95_px": 8.591480554840975e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 14.98849751090793,
+          "pass": true
+        }
+      ],
+      "world_cloud_overlap": [
+        {
+          "pair": "K0-K1",
+          "symmetric_nearest_median_mm": 123.77728731574403,
+          "broad_sanity_pass": true
+        },
+        {
+          "pair": "K0-K2",
+          "symmetric_nearest_median_mm": 105.2593146798884,
+          "broad_sanity_pass": true
+        },
+        {
+          "pair": "K0-K3",
+          "symmetric_nearest_median_mm": 52.32573851413455,
+          "broad_sanity_pass": true
+        }
+      ],
+      "visualization": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/reports/coordinate_qa/Date03_Sub03_backpack_back_t0014.000.jpg"
+    },
+    {
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0026.000",
+      "reference_vertices": 6890,
+      "reference_faces": 13776,
+      "reference_sha256": "d760eb91f147478bf5cc8408b95a93c7255aea58e5cb75401a15a5b56f0f40b1",
+      "cameras": [
+        {
+          "camera": "K0",
+          "official_transform_max_difference_m": 3.1086244689504383e-15,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 113920,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 3.161899796566355e-05,
+          "sensor_reprojection_p95_px": 8.053331711529077e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 20.66349127482659,
+          "pass": true
+        },
+        {
+          "camera": "K1",
+          "official_transform_max_difference_m": 0.0,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 162293,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 3.112540474424498e-05,
+          "sensor_reprojection_p95_px": 8.236991663882117e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 21.513740221497095,
+          "pass": true
+        },
+        {
+          "camera": "K2",
+          "official_transform_max_difference_m": 3.552713678800501e-15,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 102702,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 3.8481867392908245e-05,
+          "sensor_reprojection_p95_px": 7.674695996694984e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 22.546687862734046,
+          "pass": true
+        },
+        {
+          "camera": "K3",
+          "official_transform_max_difference_m": 2.6645352591003757e-15,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 126610,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 2.914206944894801e-05,
+          "sensor_reprojection_p95_px": 7.361133345177133e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 25.68805224560073,
+          "pass": true
+        }
+      ],
+      "world_cloud_overlap": [
+        {
+          "pair": "K0-K1",
+          "symmetric_nearest_median_mm": 60.89761208959233,
+          "broad_sanity_pass": true
+        },
+        {
+          "pair": "K0-K2",
+          "symmetric_nearest_median_mm": 97.26881655300896,
+          "broad_sanity_pass": true
+        },
+        {
+          "pair": "K0-K3",
+          "symmetric_nearest_median_mm": 41.221339340440316,
+          "broad_sanity_pass": true
+        }
+      ],
+      "visualization": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/reports/coordinate_qa/Date03_Sub03_backpack_back_t0026.000.jpg"
+    },
+    {
+      "sequence": "Date03_Sub03_backpack_back",
+      "frame": "t0036.000",
+      "reference_vertices": 6890,
+      "reference_faces": 13776,
+      "reference_sha256": "bae4f29f72f09b9dbbedac3eb3c6aef071b9a4f5dfcee8163622e2f615cbd3bc",
+      "cameras": [
+        {
+          "camera": "K0",
+          "official_transform_max_difference_m": 2.6645352591003757e-15,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 114592,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 3.0257666345408347e-05,
+          "sensor_reprojection_p95_px": 8.297645880268135e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 15.400403606900484,
+          "pass": true
+        },
+        {
+          "camera": "K1",
+          "official_transform_max_difference_m": 0.0,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 158703,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 4.559820098017184e-05,
+          "sensor_reprojection_p95_px": 9.94772849670926e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 21.147030192392524,
+          "pass": true
+        },
+        {
+          "camera": "K2",
+          "official_transform_max_difference_m": 3.552713678800501e-15,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 57846,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 4.098643144577302e-05,
+          "sensor_reprojection_p95_px": 7.578596376796159e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 16.978953482090734,
+          "pass": true
+        },
+        {
+          "camera": "K3",
+          "official_transform_max_difference_m": 2.6645352591003757e-15,
+          "positive_reference_vertex_fraction": 1.0,
+          "sensor_valid_person_points": 126888,
+          "depth_pixel_shape": [
+            1536,
+            2048
+          ],
+          "sensor_reprojection_median_px": 3.174995028264793e-05,
+          "sensor_reprojection_p95_px": 7.467172155865292e-05,
+          "fitted_reference_to_observed_vertex_nearest_median_mm": 17.719748537647934,
+          "pass": true
+        }
+      ],
+      "world_cloud_overlap": [
+        {
+          "pair": "K0-K1",
+          "symmetric_nearest_median_mm": 86.90221678891191,
+          "broad_sanity_pass": true
+        },
+        {
+          "pair": "K0-K2",
+          "symmetric_nearest_median_mm": 130.8843671595198,
+          "broad_sanity_pass": true
+        },
+        {
+          "pair": "K0-K3",
+          "symmetric_nearest_median_mm": 50.39356105613561,
+          "broad_sanity_pass": true
+        }
+      ],
+      "visualization": "/root/autodl-tmp/rgbd_sam3d/evaluations/behave_model_comparison_v1/reports/coordinate_qa/Date03_Sub03_backpack_back_t0036.000.jpg"
+    }
+  ],
+  "official_code_loading": "Direct import of pinned official KinectTransform and its original pose loaders; dependencies isolated in vendor_python; no source modification",
+  "physical_calibration_accuracy_mm": "NOT_ESTABLISHED_BY_THIS_QA",
+  "interpretation": "Official code agreement, real sensor reprojection and cross-camera cloud sanity; fitted reference is not direct skin/acupoint GT; nearest-vertex distances are QA only, not benchmark metrics"
+}
