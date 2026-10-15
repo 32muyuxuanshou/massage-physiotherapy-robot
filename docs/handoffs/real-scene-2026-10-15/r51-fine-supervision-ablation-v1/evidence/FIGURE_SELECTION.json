@@ -1,0 +1,26 @@
+{
+  "seed": 11,
+  "selection": "last",
+  "cases": [
+    {
+      "key": "p001195_a000053_000006",
+      "reason": "预先已知失败身份的首帧 p001195"
+    },
+    {
+      "key": "p001196_a000388_000011",
+      "reason": "预先已知失败身份的首帧 p001196"
+    },
+    {
+      "key": "p001196_a000388_000098",
+      "reason": "seed11 VAL中移除Camera相对E0的median退化最大帧"
+    }
+  ],
+  "jobs": {
+    "Parent": "parent_s11_e00",
+    "E0": "E0_s11_e06",
+    "E1_half": "E1_half_s11_e06",
+    "E1_zero": "E1_zero_s11_e06",
+    "E2_l2": "E2_l2_s11_e06"
+  },
+  "criteria": "Two pre-known identities plus worst degradation, no filtering of evaluation data"
+}
