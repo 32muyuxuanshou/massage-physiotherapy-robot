@@ -1,0 +1,21 @@
+{
+  "name": "HUMMAN_A_ONLY_MATCHED_TRANSLATION_RIGID_V1",
+  "status": "FIXED_BEFORE_NEW_B_EVALUATION",
+  "frames": 232,
+  "initialization": "Historical Official native vertices, actual SHA checked against original results",
+  "observations": "Original fixed Camera A maximum 5000 points, unchanged source indices",
+  "surface": "Original 16384 barycentric anchors, fixed shape and scale",
+  "iterations": 6,
+  "correspondence": "observed A points to nearest transformed anchor",
+  "trim": "retain distance <= 80th percentile",
+  "matched_translation": "mean residual, per-axis step clipped to +/-0.05m",
+  "matched_rigid": "proper fixed-scale Kabsch on same retained pairs; full rotation step; translation step clipped to +/-0.05m",
+  "rigid_pivot": "fixed centroid of original Official mesh in Camera A",
+  "rigid_parameterization": "v_new=(v-pivot)@R.T+pivot+d",
+  "final_bound_m": 0.17788820176363325,
+  "fallback": "if norm(d)>bound, apply original mesh (identity rotation and zero translation)",
+  "reference_baseline": "Historical median-update Cheap Txyz remains separate; mean-update is a matched control, not relabeled Cheap Txyz",
+  "evaluation": "Only after transforms fixed/saved, original Camera B 2048 points to historical exact triangles",
+  "interpretation": "Algorithm-specific rotation diagnostic, not optimal SE3 oracle or proof rotation is universally unnecessary",
+  "selection": "all TRAIN/VAL frames retained; no B tuning; no sealed TEST"
+}
