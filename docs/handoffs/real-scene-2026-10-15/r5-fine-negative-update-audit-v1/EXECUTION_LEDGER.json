@@ -1,0 +1,82 @@
+{
+  "status": "COMPLETE",
+  "updated_at": "2026-10-15T08:27:09.097744+00:00",
+  "compute_host": "172.18.6.218:436",
+  "gpu_indices": [
+    0,
+    1,
+    2
+  ],
+  "seeds": [
+    11,
+    23,
+    37
+  ],
+  "migration_actual_files": 1442,
+  "migration_bytes": 15344760005,
+  "query_records": 2706,
+  "primary_query_association_records": 2705,
+  "native_visible_surface_records": 1200,
+  "query_replay_runtime": [
+    {
+      "seed": 11,
+      "status": "QUERY_REPLAY_COMPLETE",
+      "checkpoint_sha256": "c4b141ede98c8405804e920401ebac982c874cf8f0e542a6e496f09dccdfc750",
+      "torch": "2.5.1+cu118",
+      "cuda": "11.8",
+      "GPU": "NVIDIA GeForce RTX 2080 Ti",
+      "original_weights_and_science_code_unchanged": true,
+      "training": false,
+      "camera_B_model_input": false,
+      "query_count_equal": 902,
+      "numeric_reproduction_pass": 902,
+      "trace_eligible": 902,
+      "frozen_historical_coarse": true,
+      "query_trace_scope": "Replayed actual local-MLP input; original per-query masks were not stored, count equality alone is not historical per-query identity proof",
+      "peak_GPU_memory_bytes": 44217344,
+      "seconds": 179.1325549390167
+    },
+    {
+      "seed": 23,
+      "status": "QUERY_REPLAY_COMPLETE",
+      "checkpoint_sha256": "2cb095cf3cfb594e97d8ce589e621b432b6009a8a5c68ba10dae69b99fc4577c",
+      "torch": "2.5.1+cu118",
+      "cuda": "11.8",
+      "GPU": "NVIDIA GeForce RTX 2080 Ti",
+      "original_weights_and_science_code_unchanged": true,
+      "training": false,
+      "camera_B_model_input": false,
+      "query_count_equal": 901,
+      "numeric_reproduction_pass": 902,
+      "trace_eligible": 901,
+      "frozen_historical_coarse": true,
+      "query_trace_scope": "Replayed actual local-MLP input; original per-query masks were not stored, count equality alone is not historical per-query identity proof",
+      "peak_GPU_memory_bytes": 44217344,
+      "seconds": 176.45545384287834
+    },
+    {
+      "seed": 37,
+      "status": "QUERY_REPLAY_COMPLETE",
+      "checkpoint_sha256": "a76926323b1d54d7840cff68f6af1f7fec47f9683614fa940438c23550c3bf2c",
+      "torch": "2.5.1+cu118",
+      "cuda": "11.8",
+      "GPU": "NVIDIA GeForce RTX 2080 Ti",
+      "original_weights_and_science_code_unchanged": true,
+      "training": false,
+      "camera_B_model_input": false,
+      "query_count_equal": 902,
+      "numeric_reproduction_pass": 902,
+      "trace_eligible": 902,
+      "frozen_historical_coarse": true,
+      "query_trace_scope": "Replayed actual local-MLP input; original per-query masks were not stored, count equality alone is not historical per-query identity proof",
+      "peak_GPU_memory_bytes": 44217344,
+      "seconds": 178.0473438827321
+    }
+  ],
+  "integrity": "POST_INTEGRITY.json",
+  "backup": "BACKUP_RECEIPT.json",
+  "training": false,
+  "original_primary_results_changed": false,
+  "next_training_started": false,
+  "servers_shutdown": false
+}

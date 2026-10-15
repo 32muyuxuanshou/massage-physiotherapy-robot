@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "torch": "2.5.1+cu118",
+  "cuda": "11.8",
+  "GPU": "NVIDIA GeForce RTX 2080 Ti",
+  "checks": [
+    {
+      "pixel": [
+        320,
+        240
+      ],
+      "expected_z_m": 2.0,
+      "rendered_z_m": 2.0,
+      "error_m": 0.0
+    },
+    {
+      "pixel": [
+        330,
+        240
+      ],
+      "expected_z_m": 2.0408163265306123,
+      "rendered_z_m": 2.040816307067871,
+      "error_m": 1.9462741196463185e-08
+    },
+    {
+      "pixel": [
+        320,
+        250
+      ],
+      "expected_z_m": 2.0,
+      "rendered_z_m": 2.0,
+      "error_m": 0.0
+    },
+    {
+      "pixel": [
+        310,
+        230
+      ],
+      "expected_z_m": 1.9607843137254901,
+      "rendered_z_m": 1.9607844352722168,
+      "error_m": 1.2154672668351907e-07
+    }
+  ],
+  "seconds": 16.859293453395367
+}
